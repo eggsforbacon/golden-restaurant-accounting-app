@@ -1,6 +1,6 @@
 package model;
-
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Order {
 
@@ -11,22 +11,26 @@ public class Order {
   }
 
   /**
-  *Generates a unique 8 digit ID for each order.<br>
-  *<b>Pre: </b><br>
-  *<b>Post: </b>The ID is generated.<br>
+   * Generates a unique 8 digit ID for each order.<br>
+   * <b>Pre: </b><br>
+   * <b>Post: </b>The ID is generated.<br>
   */
   private void generateID(ArrayList<String> IDs) {
-    String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvwxyz";
+    final char[] ALPHABET = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvwxyz").toCharArray();
     StringBuilder sb = new StringBuilder();
-    SecureRandom r = new SecureRandom();
-    for (int i = 0; i < 4; i++) {
-      int index = alphabet.length() * r.nextInt();
-      sb.append(alphabet.charAt(index));
+    final int LENGTH = 8;
+    for (int i = 0; i < LENGTH; i++) {
+      sb.append(ALPHABET[new Random().nextInt(ALPHABET.length)]);
     }
-    ID = sb.toString();
-    if (IDs.contains(ID)) generateID(IDs);
+    if(IDs.contains(sb.toString())) generateID(IDs);
+    else ID = sb.toString();
   }
 
+  //Getters
+
+  /**
+   * @return The order's ID.<br>
+   */
   public String getID() {
     return ID;
   }
