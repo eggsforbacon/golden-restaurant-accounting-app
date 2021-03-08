@@ -2,9 +2,8 @@ package model;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Order {
+public class Order extends SystemObject {	//The atribute "name" of the SystemObject class will act as the atribute "ID"
 
-  String ID;
 
   public Order(ArrayList<String> IDs) {
     generateID(IDs);
@@ -23,16 +22,15 @@ public class Order {
       sb.append(ALPHABET[new Random().nextInt(ALPHABET.length)]);
     }
     if(IDs.contains(sb.toString())) generateID(IDs);
-    else ID = sb.toString();
+    else name = sb.toString();
   }
 
-  //Getters
+  
 
-  /**
-   * @return The order's ID.<br>
-   */
-  public String getID() {
-    return ID;
-  }
+@Override
+public String showInformation() {
+	//WIP
+	return null;
+}
 
 }
