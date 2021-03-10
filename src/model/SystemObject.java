@@ -4,8 +4,9 @@ public abstract class SystemObject{
 	private boolean enabled;
 	protected String name;
 	
-	public SystemObject() {
+	public SystemObject(String name) {
 		enabled = true;
+		this.name=name;
 	}
 	
 	

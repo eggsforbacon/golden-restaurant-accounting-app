@@ -6,6 +6,7 @@ public class Order extends SystemObject {	//The atribute "name" of the SystemObj
 
 
   public Order(ArrayList<String> IDs) {
+	super("");
     generateID(IDs);
   }
 
