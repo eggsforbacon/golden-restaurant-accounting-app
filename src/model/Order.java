@@ -2,7 +2,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Order extends SystemObject {	//The atribute "name" of the SystemObject class will act as the atribute "ID"
+public class Order extends SystemObject {	//The attribute "name" of the SystemObject class will act as the attribute "ID"
 
 
   public Order(ArrayList<String> IDs) {
