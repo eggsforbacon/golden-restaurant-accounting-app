@@ -1,4 +1,5 @@
 package ui;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,7 +10,11 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
-  MainGUIController controller = new MainGUIController();
+  MainGUIController controller;
+
+  public Main() {
+    controller = new MainGUIController();
+  }
 
   public static void main(String[] args) {
     launch();
@@ -20,17 +25,19 @@ public class Main extends Application {
     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("splash-screen.fxml"));
     fxmlLoader.setController(controller);
     Parent root = fxmlLoader.load();
-    Image icon = new Image("ui/resources/gh-icon.png");
+    Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
     primaryStage.getIcons().add(icon);
     Scene scene = new Scene(root);
     primaryStage.initStyle(StageStyle.UNDECORATED);
     primaryStage.setScene(scene);
-    System.out.println(primaryStage.getX());
-    System.out.println(primaryStage.getY());
-    primaryStage.setX(736.0);
-    primaryStage.setY(356.0);
     primaryStage.show();
-    System.out.println(primaryStage.getX());
-    System.out.println(primaryStage.getY());
+  }
+
+  public static void wait(int millis) {
+    try {
+      Thread.sleep(millis);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
   }
 }
