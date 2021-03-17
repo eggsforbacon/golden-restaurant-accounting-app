@@ -6,7 +6,7 @@ public class Product extends SystemObject{
 	
 	private PlateType pt;
 	private int ptIndicator;
-	private ArrayList<Ingredient> ingrdnts;
+	private final ArrayList<Ingredient> ingrdnts;
 	private int ingrdntsSize;
 	private int[] sizesPrices; 
 
