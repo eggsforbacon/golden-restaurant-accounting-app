@@ -7,6 +7,7 @@ public class Product extends SystemObject{
 	private PlateType pt;
 	private ArrayList<Ingredient> ingrdnts;
 	private int ingrdntsSize;
+	private Sizes productSize;
 	private int[] sizesPrices; 
 
 	public Product(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,int[] sizesPrices) {
@@ -84,6 +85,18 @@ public class Product extends SystemObject{
 			ingredients += ingrdnts.get(i)+",";
 		}
 		return ingredients;
+	}
+	
+	public String chooseASize(int indicator) {
+		productSize = Sizes.values()[indicator-1];
+		String info = productSize+" "+getName();
+		return info;
+	}
+	
+	public String priceOfASize(int indicator) {
+		int sizePrice = sizesPrices[indicator-1];
+		String info = sizePrice+"";
+		return info;
 	}
 	
 	@Override
