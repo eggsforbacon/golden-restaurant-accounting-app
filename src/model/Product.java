@@ -5,15 +5,13 @@ import java.util.ArrayList;
 public class Product extends SystemObject{
 	
 	private PlateType pt;
-	private int ptIndicator;
 	private ArrayList<Ingredient> ingrdnts;
 	private int ingrdntsSize;
 	private int[] sizesPrices; 
 
-	public Product(String name,int ptIndicator,ArrayList<Ingredient> ingrdnts,int[] sizesPrices) {
+	public Product(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,int[] sizesPrices) {
 		super(name);
-		this.ptIndicator=ptIndicator;			// I don't remember why i did this:   this.setPtIndicator(ptIndicator);
-		pt=PlateType.values()[ptIndicator-1];
+		this.pt=pt;
 		this.ingrdnts=ingrdnts;
 		ingrdntsSize = ingrdnts.size();
 		this.sizesPrices=sizesPrices;
@@ -23,14 +21,6 @@ public class Product extends SystemObject{
 	
 
 
-	/**
-	Updates the existing enums <br>
-	<b> pre: </b>It is only useful if there is changes to the enums<br>
-	<b> post: </b>Gives the right value after an update in the enums <br>
-	*/
-	public void updateEnums() {
-		pt=PlateType.values()[ptIndicator-1];
-	}
 	
 	/**
 	Adds an ingredient to the ingredients ArrayList <br>
@@ -100,7 +90,7 @@ public class Product extends SystemObject{
 	public String showInformation() {
 		String info = "";
 		info += getName()+";";	//Name
-		info += pt.toString()+";";	//P
+		info += pt.getName()+";";	//P
 		info += getTheIngredients()+";";
 		info += Sizes.LARGE+": "+sizesPrices[0]+";";
 		info += Sizes.MEDIUM+": "+sizesPrices[1]+";";
@@ -120,8 +110,8 @@ public class Product extends SystemObject{
 	/**
 	* @return An int that indicates the type of the dish.<br>
 	*/
-	public int getPtIndicator() {
-		return ptIndicator;
+	public PlateType getPt() {
+		return pt;
 	}
 
 	
@@ -130,8 +120,8 @@ public class Product extends SystemObject{
 	/**
 	 * @param  An int that indicates the type of the dish
 	 */
-	public void setPtIndicator(int ptIndicator) {
-		this.ptIndicator = ptIndicator;
+	public void setPt(PlateType pt) {
+		this.pt = pt;
 	}
 
 	

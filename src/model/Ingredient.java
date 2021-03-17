@@ -7,8 +7,9 @@ public class Ingredient extends SystemObject{
 
 	@Override
 	public String showInformation() {
-		// WIP
-		return null;
+		String info = "";
+		info+=getName();
+		return info;
 	}
 	
 }
