@@ -1,14 +1,16 @@
 package model;
-public class Employee extends SystemObject{
+public class Employee extends Person{
 
-	public Employee(String name) {
-		super(name);
+	public Employee(String name,String lastname,String id) {
+		super(name,lastname,id);
 	}
 
 	@Override
 	public String showInformation() {
-		// WIP
-		return null;
+		String info = getName()+";";
+		info+= getLastname()+";";
+		info += getId()+";";
+		return info;
 	}
 	
 }
