@@ -1,12 +1,13 @@
 package ui;
 
+import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
+import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
@@ -17,27 +18,28 @@ public class Main extends Application {
   }
 
   public static void main(String[] args) {
-    launch();
+    LauncherImpl.launchApplication(Main.class, GHPreloader.class, args);
   }
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("splash-screen.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main-pane.fxml"));
     fxmlLoader.setController(controller);
     Parent root = fxmlLoader.load();
     Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
     primaryStage.getIcons().add(icon);
     Scene scene = new Scene(root);
-    primaryStage.initStyle(StageStyle.UNDECORATED);
     primaryStage.setScene(scene);
+    primaryStage.setTitle("Golden House Restaurant: Inicio");
     primaryStage.show();
   }
 
-  public static void wait(int millis) {
-    try {
-      Thread.sleep(millis);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
+  @Override
+  public void init() {
+    int COUNT_LIMIT = 50000;
+    for (int i = 0; i < COUNT_LIMIT; i++) {
+      double progress = (100.0 * i) / COUNT_LIMIT;
+      LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
     }
   }
 }
