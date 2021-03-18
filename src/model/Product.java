@@ -86,13 +86,24 @@ public class Product extends SystemObject{
 		}
 		return ingredients;
 	}
-	
+	/**
+	Defines product size <br>
+	<b> pre: </b><br>
+	<b> post: </b>Now the product has a specific size <br>
+	@return info
+	*/
 	public String chooseASize(int indicator) {
 		productSize = Sizes.values()[indicator-1];
 		String info = productSize+" "+getName();
 		return info;
 	}
 	
+	/**
+	Defines product price based in the size <br>
+	<b> pre: </b><br>
+	<b> post: </b>Now the product has a specific price <br>
+	@return info
+	*/
 	public String priceOfASize(int indicator) {
 		int sizePrice = sizesPrices[indicator-1];
 		String info = sizePrice+"";
@@ -121,7 +132,7 @@ public class Product extends SystemObject{
 		return ingrdnts;
 	}
 	/**
-	* @return An int that indicates the type of the dish.<br>
+	* @return An object of type PlateType that indicates the type of the product.<br>
 	*/
 	public PlateType getPt() {
 		return pt;
@@ -131,7 +142,7 @@ public class Product extends SystemObject{
 	//Setters
 	
 	/**
-	 * @param  An int that indicates the type of the dish
+	 * @param pt An object of type PlateType that indicates the type of the product
 	 */
 	public void setPt(PlateType pt) {
 		this.pt = pt;
