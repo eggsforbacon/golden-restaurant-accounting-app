@@ -3,4 +3,5 @@ golden-restaurant-accounting-app.iml
 out
 .classpath
 .project
-/bin/
+bin
+.settings
