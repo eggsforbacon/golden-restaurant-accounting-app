@@ -20,8 +20,6 @@ public class Product extends SystemObject{
 	}
 	
 	
-
-
 	
 	/**
 	Adds an ingredient to the ingredients ArrayList <br>
@@ -80,11 +78,11 @@ public class Product extends SystemObject{
 	@return ingredients
 	*/
 	private String getTheIngredients() {
-		String ingredients = "";
+		StringBuilder ingredients = new StringBuilder();
 		for(int i = 0;i<ingrdntsSize;i++) {
-			ingredients += ingrdnts.get(i)+",";
+			ingredients.append(ingrdnts.get(i)).append(",");
 		}
-		return ingredients;
+		return ingredients.toString();
 	}
 	/**
 	Defines product size <br>
