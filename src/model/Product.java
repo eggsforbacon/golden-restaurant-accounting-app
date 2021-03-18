@@ -80,11 +80,11 @@ public class Product extends SystemObject{
 	@return ingredients
 	*/
 	private String getTheIngredients() {
-		String ingredients = "";
+		StringBuilder ingredients = new StringBuilder();
 		for(int i = 0;i<ingrdntsSize;i++) {
-			ingredients += ingrdnts.get(i)+",";
+			ingredients.append(ingrdnts.get(i)).append(",");
 		}
-		return ingredients;
+		return ingredients.toString();
 	}
 	
 	public String chooseASize(int indicator) {
@@ -131,7 +131,7 @@ public class Product extends SystemObject{
 	//Setters
 	
 	/**
-	 * @param  An int that indicates the type of the dish
+	 * @param pt An int that indicates the type of the dish
 	 */
 	public void setPt(PlateType pt) {
 		this.pt = pt;
