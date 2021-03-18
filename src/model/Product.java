@@ -131,7 +131,7 @@ public class Product extends SystemObject{
 	//Setters
 	
 	/**
-	 * @param ptIndicator An int that indicates the type of the dish
+	 * @param pt An int that indicates the type of the dish
 	 */
 	public void setPt(PlateType pt) {
 		this.pt = pt;
