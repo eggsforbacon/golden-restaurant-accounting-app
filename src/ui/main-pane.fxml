@@ -8,29 +8,91 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="969.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="969.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <left>
-            <VBox alignment="TOP_CENTER" prefHeight="541.0" prefWidth="228.0" spacing="10.0" style="-fx-background-color: #211917;" BorderPane.alignment="CENTER">
+            <VBox fx:id="sidebarVBOX" alignment="CENTER" prefHeight="541.0" prefWidth="228.0" spacing="10.0" style="-fx-background-color: #211917;" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="198.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="184.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                      <image>
                         <Image url="@resources/golden-house.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="159.0" text="Productos" />
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="159.0" text="Ingredientes" />
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="159.0" text="Clientes" />
-                  <Label text=" ">
+                  <Button mnemonicParsing="false" onAction="#productsClicked" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #56503E; -fx-background-radius: 7;" text="Productos">
+                     <textFill>
+                        <RadialGradient centerX="0.45454545454545453" centerY="0.37864077669902907" cycleMethod="REPEAT" radius="0.7439024390243902">
+                           <stops>
+                              <Stop color="#e1be66" />
+                              <Stop color="#9e8b5b" offset="0.3496732026143792" />
+                              <Stop color="#9d8a5a" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
                      <font>
-                        <Font size="30.0" />
+                        <Font name="System Bold" size="15.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#ingredientsClicked" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #56503E; -fx-background-radius: 7;" text="Ingredientes">
+                     <textFill>
+                        <RadialGradient centerX="0.45454545454545453" centerY="0.37864077669902907" cycleMethod="REPEAT" radius="0.7439024390243902">
+                           <stops>
+                              <Stop color="#e1be66" />
+                              <Stop color="#9e8b5b" offset="0.3496732026143792" />
+                              <Stop color="#9d8a5a" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
                      </font>
-                  </Label>
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="159.0" text="Personal" />
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="159.0" text="Usuarios" />
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clientsClicked" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #56503E; -fx-background-radius: 7;" text="Clientes">
+                     <textFill>
+                        <RadialGradient centerX="0.45454545454545453" centerY="0.37864077669902907" cycleMethod="REPEAT" radius="0.7439024390243902">
+                           <stops>
+                              <Stop color="#e1be66" />
+                              <Stop color="#9e8b5b" offset="0.3496732026143792" />
+                              <Stop color="#9d8a5a" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="spacer1" VBox.vgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#personalClicked" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #56503E; -fx-background-radius: 7;" text="Personal">
+                     <textFill>
+                        <RadialGradient centerX="0.45454545454545453" centerY="0.37864077669902907" cycleMethod="REPEAT" radius="0.7439024390243902">
+                           <stops>
+                              <Stop color="#e1be66" />
+                              <Stop color="#9e8b5b" offset="0.3496732026143792" />
+                              <Stop color="#9d8a5a" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#usersClicked" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #56503E; -fx-background-radius: 7;" text="Usuarios">
+                     <textFill>
+                        <RadialGradient centerX="0.45454545454545453" centerY="0.37864077669902907" cycleMethod="REPEAT" radius="0.7439024390243902">
+                           <stops>
+                              <Stop color="#e1be66" />
+                              <Stop color="#9e8b5b" offset="0.3496732026143792" />
+                              <Stop color="#9d8a5a" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
                   <ImageView fx:id="randomIMV" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </VBox>
@@ -38,17 +100,23 @@
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #675E5B;" BorderPane.alignment="CENTER">
                <top>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                     <BorderPane.margin>
-                        <Insets right="25.0" />
-                     </BorderPane.margin>
+                  <HBox alignment="CENTER" prefHeight="57.0" prefWidth="741.0" BorderPane.alignment="CENTER">
                      <children>
-                        <ImageView fitHeight="48.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="56.0" onMouseClicked="#hideMenuClicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/gh-hide-menu.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="space2" prefHeight="21.0" prefWidth="651.0" />
+                        <ImageView fitHeight="40.0" fitWidth="37.0" onDragDetected="#popOutClicked" onMouseClicked="#hideMenuClicked" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@resources/gh-pop-off.png" />
                            </image>
                         </ImageView>
                      </children>
+                     <BorderPane.margin>
+                        <Insets right="5.0" />
+                     </BorderPane.margin>
                   </HBox>
                </top>
             </BorderPane>
