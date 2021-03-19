@@ -9,6 +9,7 @@ public class Restaurant{
 	private int usersSize;
 	private User currentUser;
 	private ArrayList<Product> restaurantProducts;
+	private int restaurantProductsSize;
 	private ArrayList<Ingredient> restaurantIngredients;
 	private ArrayList<PlateType> restaurantPlateTypes;
 	public Restaurant() {
@@ -18,6 +19,7 @@ public class Restaurant{
 		users = new ArrayList<User>();
 		usersSize=users.size();
 		restaurantProducts = new ArrayList<Product>();
+		restaurantProductsSize = restaurantProducts.size();
 		restaurantIngredients = new ArrayList<Ingredient>();
 		restaurantPlateTypes = new ArrayList<PlateType>();
 		PlateType mainDish = new PlateType("Main dish");
@@ -82,7 +84,79 @@ public class Restaurant{
 		return index;
 	}
 	
+	/**
+	 * Adds a product to the products ArrayList<br>
+	 * <b>Pre: </b><br>
+	 * <b>Post: </b>Adds a product to the products ArrayList if there isn't conflicts with it<br>
+	 * @return True if the product was added, false if not
+	 */
 	public boolean addProduct(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Integer> sizesPrices) {
-		return true; //unfinished
+		productInsertionSort();
+		int index = binarySearch(restaurantProducts,name);
+		if(index==-1) {
+			Product toAdd = new Product(name,pt,ingrdnts,productSizes,sizesPrices);
+			restaurantProducts.add(toAdd);
+			restaurantProductsSize++;
+			return true;
+		}
+		return false;
 	}
+	
+	
+	public boolean deleteProduct(String name) {
+		int index=binarySearch(restaurantProducts,name);
+		if(index!=-1) {
+			restaurantProducts.remove(index);
+			restaurantProductsSize--;
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Sorts the products in the ArrayList<br>
+	 * <b>Pre: </b><br>
+	 * <b>Post: </b>Now the products in the ArrayList are sorted <br>
+	 */
+	 public void productInsertionSort(){                                            
+		    int i=0;
+		    int j=0;
+		    Product aux;
+		    for (i = 1; i < restaurantProductsSize; i++){
+		    	aux = restaurantProducts.get(i);        
+		    	j = i - 1;           
+		    	while ((j >= 0) && (aux.getName().compareTo(restaurantProducts.get(j).getName())<0)){                             
+		    		restaurantProducts.set(j+1,restaurantProducts.get(j));
+		    		j--;        
+		    	}
+		    	restaurantProducts.set(j+1, aux);
+		    }
+		}
+	 
+	 /**
+		Does a search in the restaurant <br>
+		<b> pre: </b><br>
+		<b> post: </b>The object is found or doesn't exist<br>
+		@param aL The ArrayList in which the object will be searched
+		@param name The name of the object that will be searched
+		@return index
+		*/
+	 public int binarySearch(ArrayList<?> aL,String name) {
+		 int pos = -1;
+			int i = 0;
+			int j = aL.size()-1;
+			while(i<=j && pos<0) {
+				int m = (i+j)/2;
+				if(((SystemObject) aL.get(m)).getName().equalsIgnoreCase(name)) {
+					pos=m;
+				}
+				else if((((SystemObject) aL.get(m)).getName().compareTo(name))>0){
+					j=m-1;
+				}
+				else {
+					i=m+1;
+				}
+			}
+			return pos;
+	 }
 }
