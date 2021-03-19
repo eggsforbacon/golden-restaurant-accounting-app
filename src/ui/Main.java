@@ -3,6 +3,7 @@ package ui;
 import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
 import javafx.application.Preloader;
+import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,6 +31,8 @@ public class Main extends Application {
     primaryStage.getIcons().add(icon);
     Scene scene = new Scene(root);
     primaryStage.setScene(scene);
+    primaryStage.setMinHeight(663.0);
+    primaryStage.setMinWidth(866.0);
     primaryStage.setTitle("Golden House Restaurant: Inicio");
     primaryStage.show();
   }

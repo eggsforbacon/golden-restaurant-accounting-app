@@ -60,6 +60,9 @@ public class MainGUIController implements Initializable {
         randomIMV.setImage(new Image(String.valueOf(getClass().getResource(randomImage()))));
         homeScreenIMV.fitHeightProperty().bind(mainPane.heightProperty());
         homeScreenIMV.fitWidthProperty().bind(mainPane.widthProperty());
+
+        currentScene.prefHeightProperty().bind(mainPane.heightProperty());
+        currentScene.prefWidthProperty().bind(mainPane.widthProperty());
     }
 
     @FXML
