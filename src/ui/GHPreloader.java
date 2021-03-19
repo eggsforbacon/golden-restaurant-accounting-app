@@ -34,9 +34,6 @@ public class GHPreloader extends Preloader {
     @Override
     public void handleStateChangeNotification(StateChangeNotification info) {
         StateChangeNotification.Type type = info.getType();
-        if (type == StateChangeNotification.Type.BEFORE_START) {
-            System.out.println("Before Start.");
-            preloaderStage.hide();
-        }
+        if (type == StateChangeNotification.Type.BEFORE_START) preloaderStage.hide();
     }
 }

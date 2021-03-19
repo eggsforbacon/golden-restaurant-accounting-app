@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -14,11 +12,11 @@
 
 <BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="969.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <BorderPane fx:id="currentScene" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <left>
             <VBox fx:id="sidebarVBOX" alignment="CENTER" prefHeight="541.0" prefWidth="228.0" spacing="10.0" style="-fx-background-color: #211917;" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="184.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                  <ImageView fitHeight="184.0" fitWidth="183.0" onMouseClicked="#houseClicked" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                      <image>
                         <Image url="@resources/golden-house.png" />
                      </image>
@@ -65,7 +63,7 @@
                      </font>
                   </Button>
                   <Label fx:id="spacer1" VBox.vgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" onAction="#personalClicked" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #56503E; -fx-background-radius: 7;" text="Personal">
+                  <Button mnemonicParsing="false" onAction="#personnelClicked" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #56503E; -fx-background-radius: 7;" text="Personal">
                      <textFill>
                         <RadialGradient centerX="0.45454545454545453" centerY="0.37864077669902907" cycleMethod="REPEAT" radius="0.7439024390243902">
                            <stops>
@@ -98,28 +96,11 @@
             </VBox>
          </left>
          <center>
-            <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #675E5B;" BorderPane.alignment="CENTER">
-               <top>
-                  <HBox alignment="CENTER" prefHeight="57.0" prefWidth="741.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="56.0" onMouseClicked="#hideMenuClicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/gh-hide-menu.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="space2" prefHeight="21.0" prefWidth="651.0" />
-                        <ImageView fitHeight="40.0" fitWidth="37.0" onDragDetected="#popOutClicked" onMouseClicked="#hideMenuClicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/gh-pop-off.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <BorderPane.margin>
-                        <Insets right="5.0" />
-                     </BorderPane.margin>
-                  </HBox>
-               </top>
-            </BorderPane>
+            <ImageView fx:id="homeScreenIMV" fitHeight="615.0" fitWidth="677.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@resources/golden-house-squareflash.jpg" />
+               </image>
+            </ImageView>
          </center>
       </BorderPane>
    </center>
