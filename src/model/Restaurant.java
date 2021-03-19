@@ -8,12 +8,24 @@ public class Restaurant{
 	private ArrayList<User> users;
 	private int usersSize;
 	private User currentUser;
+	private ArrayList<Product> restaurantProducts;
+	private ArrayList<Ingredient> restaurantIngredients;
+	private ArrayList<PlateType> restaurantPlateTypes;
 	public Restaurant() {
 		rootUser = new User("Generic","user","none","Root","admin");
 		firstTime = true;
 		currentUser = rootUser;
 		users = new ArrayList<User>();
 		usersSize=users.size();
+		restaurantProducts = new ArrayList<Product>();
+		restaurantIngredients = new ArrayList<Ingredient>();
+		restaurantPlateTypes = new ArrayList<PlateType>();
+		PlateType mainDish = new PlateType("Main dish");
+		PlateType sideDish = new PlateType("Side dish");
+		PlateType drink = new PlateType("Drink");
+		restaurantPlateTypes.add(mainDish);
+		restaurantPlateTypes.add(sideDish);
+		restaurantPlateTypes.add(drink);
 	}
 	
 	/**
@@ -70,4 +82,7 @@ public class Restaurant{
 		return index;
 	}
 	
+	public boolean addProduct(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Integer> sizesPrices) {
+		return true; //unfinished
+	}
 }

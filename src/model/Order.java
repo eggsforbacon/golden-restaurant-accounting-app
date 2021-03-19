@@ -9,21 +9,21 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	private int statusIndicator;
 	private ArrayList<Product> orderProducts;
 	private int arraylistSize;
-	private ArrayList<Integer> productsSizes;
+	private ArrayList<Integer> chosenSizes;
 	private ArrayList<Integer> productsQuantity;
 	private Client orderClient;
 	private Employee orderEmployee;
 	private String date;
 	private String observations;
 
-	public Order(ArrayList<String> IDs,int statusIndicator,ArrayList<Product> orderProducts,ArrayList<Integer> productsSizes,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
+	public Order(ArrayList<String> IDs,int statusIndicator,ArrayList<Product> orderProducts,ArrayList<Integer> chosenSizes,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
 		super("");
 		generateID(IDs);
 		this.statusIndicator=statusIndicator;
 		orderStatus = Status.values()[statusIndicator-1];
 		this.orderProducts=orderProducts;
 		arraylistSize = orderProducts.size();
-		this.productsSizes = productsSizes;
+		this.chosenSizes = chosenSizes;
 		this.productsQuantity=productsQuantity;
 		this.orderClient=orderClient;
 		this.orderEmployee=orderEmployee;
@@ -57,7 +57,7 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 		String info = "";
 		int indicator = 0;
 		for(int i=0;i<arraylistSize;i++) {
-			indicator = productsSizes.get(i);
+			indicator = chosenSizes.get(i);
 			info += orderProducts.get(i).chooseASize(indicator)+";";
 			info += productsQuantity.get(i)+";";
 			info += orderProducts.get(i).priceOfASize(indicator)+";";

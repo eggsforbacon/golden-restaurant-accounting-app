@@ -7,14 +7,17 @@ public class Product extends SystemObject{
 	private PlateType pt;
 	private ArrayList<Ingredient> ingrdnts;
 	private int ingrdntsSize;
-	private Sizes productSize;
-	private int[] sizesPrices; 
+	private ArrayList<String> productSizes;
+	private int productSizesSize;
+	private ArrayList<Integer> sizesPrices; 
 
-	public Product(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,int[] sizesPrices) {
+	public Product(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Integer> sizesPrices) {
 		super(name);
 		this.pt=pt;
 		this.ingrdnts=ingrdnts;
 		ingrdntsSize = ingrdnts.size();
+		this.productSizes=productSizes;
+		productSizesSize = productSizes.size();
 		this.sizesPrices=sizesPrices;
 		
 	}
@@ -30,7 +33,7 @@ public class Product extends SystemObject{
 	*/
 	public boolean addAnIngredient(Ingredient ingredient) {
 		String check = ingredient.getName();
-		if(searchAnIngredient(check)==-1) {
+		if(binarySearchAnIngredient(check)==-1) {
 			ingrdnts.add(ingredient);
 			ingrdntsSize++;	
 			return true;
@@ -45,15 +48,45 @@ public class Product extends SystemObject{
 	@param name The name of the ingredient that will be searched
 	@return index
 	*/
-	private int searchAnIngredient(String name) {
-		int index = -1;
-		for(int i=0;i<ingrdntsSize;i++) {
-			if(name.equals(ingrdnts.get(i).getName())) {
-				index = i;
+	private int binarySearchAnIngredient(String name) {
+		ingredientsBubbleSort();
+		int pos = -1;
+		int i = 0;
+		int j = ingrdntsSize-1;
+		while(i<=j && pos<0) {
+			int m = (i+j)/2;
+			if(ingrdnts.get(m).getName().equalsIgnoreCase(name)) {
+				pos=m;
+			}
+			else if((ingrdnts.get(m).getName().compareTo(name))>0){			//books[m]>valueToSearch
+				j=m-1;
+			}
+			else {
+				i=m+1;
 			}
 		}
-		return index;
+		return pos;
 	}
+	
+	/**
+	Sorts the ingredients ArrayList of the product <br>
+	<b> pre: </b><br>
+	<b> post: </b>The ingredients are sorted<br>
+	*/
+	public void ingredientsBubbleSort() {
+		int changes = 0;
+		for(int i = 1;i<ingrdntsSize&&changes>0;i++){ 
+	        changes = 0;
+	      for(int j=0;j<ingrdntsSize-i;j++){
+	        if(ingrdnts.get(j).getName().compareTo(ingrdnts.get(j+1).getName())>0){
+	          Ingredient temp = ingrdnts.get(j);
+	          ingrdnts.set(j,ingrdnts.get(j+1));
+	          ingrdnts.set(j+1,temp);
+	          changes++;
+	        }
+	      }
+		} 
+}
 	
 	/**
 	Deletes an ingredient of the ingredients ArrayList of the product <br>
@@ -63,9 +96,10 @@ public class Product extends SystemObject{
 	@return True if the ingredient was deleted, false if not
 	*/
 	public boolean deleteAnIngredient(String name) {
-		int index=searchAnIngredient(name);
+		int index=binarySearchAnIngredient(name);
 		if(index!=-1) {
 			ingrdnts.remove(index);
+			ingrdntsSize--;
 			return true;
 		}
 		return false;
@@ -91,8 +125,8 @@ public class Product extends SystemObject{
 	@return info
 	*/
 	public String chooseASize(int indicator) {
-		productSize = Sizes.values()[indicator-1];
-		String info = productSize+" "+getName();
+		String chosenSize = productSizes.get(indicator);
+		String info = chosenSize+" "+getName();
 		return info;
 	}
 	
@@ -103,8 +137,22 @@ public class Product extends SystemObject{
 	@return info
 	*/
 	public String priceOfASize(int indicator) {
-		int sizePrice = sizesPrices[indicator-1];
+		int sizePrice = sizesPrices.get(indicator);
 		String info = sizePrice+"";
+		return info;
+	}
+	/**
+	Shows the information of the Sizes and their respective prices <br>
+	<b> pre: </b><br>
+	<b> post: </b>The sizes and their prices are now in a String<br>
+	@return info
+	*/
+	public String sizesInformation() {
+		String info = "";
+		for(int i=0;i<productSizesSize;i++) {
+			info += productSizes.get(i)+";";
+			info += sizesPrices.get(i)+";";
+		}
 		return info;
 	}
 	
@@ -114,9 +162,7 @@ public class Product extends SystemObject{
 		info += getName()+";";	//Name
 		info += pt.getName()+";";	//P
 		info += getTheIngredients()+";";
-		info += Sizes.LARGE+": "+sizesPrices[0]+";";
-		info += Sizes.MEDIUM+": "+sizesPrices[1]+";";
-		info += Sizes.SMALL+": "+sizesPrices[2]+";";
+		info += sizesInformation();
 		
 		return info;
 	}
