@@ -9,6 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import model.Ingredient;
+import model.PlateType;
+import model.Restaurant;
+
+import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -16,6 +21,16 @@ public class Main extends Application {
 
   public Main() {
     controller = new MainGUIController();
+    Restaurant GH = new Restaurant();
+    PlateType pt = new PlateType("Tipo");
+    ArrayList<Ingredient> ingredients = new ArrayList<>();
+    ingredients.add(new Ingredient("Papa"));
+    ingredients.add(new Ingredient("Tomate"));
+    ArrayList<String> sizes = new ArrayList<>();
+    sizes.add("Tamaño");
+    ArrayList<Double> prices = new ArrayList<>();
+    prices.add(5.0);
+    GH.addProduct("Nombre", pt, ingredients, sizes, prices);
   }
 
   public static void main(String[] args) {
