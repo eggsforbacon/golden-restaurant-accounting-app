@@ -15,6 +15,7 @@ public class Restaurant{
 	private int restaurantProductsSize;
 	private int productsWithTheirSizesSize;
 	private ArrayList<Ingredient> restaurantIngredients;
+	private int restaurantIngredientsSize;
 	private ArrayList<PlateType> restaurantPlateTypes;
 	public Restaurant() {
 		rootUser = new User("Generic","user","none","Root","admin");
@@ -26,6 +27,7 @@ public class Restaurant{
 		restaurantProductsSize = restaurantProducts.size();
 		productsWithTheirSizesSize=0;
 		restaurantIngredients = new ArrayList<Ingredient>();
+		restaurantIngredientsSize=restaurantIngredients.size();
 		restaurantPlateTypes = new ArrayList<PlateType>();
 		PlateType mainDish = new PlateType("Main dish");
 		PlateType sideDish = new PlateType("Side dish");
@@ -38,7 +40,7 @@ public class Restaurant{
 	
 	/**
 	Does a search in the restaurant <br>
-	<b> pre: </b><br>
+	<b> pre: </b>The arrayList it receives must be sorted<br>
 	<b> post: </b>The object is found or doesn't exist<br>
 	@param aL The ArrayList in which the object will be searched
 	@param name The name of the object that will be searched
@@ -135,14 +137,23 @@ public class Restaurant{
 	 * @return True if the product was added, false if not
 	 */
 	public boolean addProduct(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
-		ProductInsertionSortByName();
-		int index = productIndexWithName(name);
-		if(index==-1&&pt.getEnabled()) {
+		if(restaurantProducts.isEmpty()&&pt.getEnabled()) {
 			Product toAdd = new Product(name,pt,ingrdnts,productSizes,sizesPrices);
 			restaurantProducts.add(toAdd);
 			addToproductsWithTheirSizes(toAdd);
 			restaurantProductsSize++;
 			return true;
+		}
+		else {
+			ProductInsertionSortByName();
+			int index = productIndexWithName(name);
+			if(index==-1&&pt.getEnabled()) {
+				Product toAdd = new Product(name,pt,ingrdnts,productSizes,sizesPrices);
+				restaurantProducts.add(toAdd);
+				addToproductsWithTheirSizes(toAdd);
+				restaurantProductsSize++;
+				return true;
+			}
 		}
 		return false;
 	}
@@ -166,7 +177,7 @@ public class Restaurant{
 
 	/**
 	 * Given the name, returns the index of a product of the products ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
+	 * <b>Pre: </b>The arrayList "restaurantProducts" must be sorted. To be useful, there must be at least one product in the ArrayList<br>
 	 * <b>Post: </b>The index of the product is obtained if it exists<br>
 	 * @param name The name of the product
 	 * @return index
@@ -450,10 +461,43 @@ public class Restaurant{
 	  * @param name The name of the ingredient
 	  * @return True if the product was added, false if not
 	  */
-	// public boolean addAnIngredientToTheRestaurant(String name) {
+	 //public boolean addAnIngredientToTheRestaurant(String name) {
 		 
 	// }
 	 
+	 /**
+		 * Given the name, returns the index of a ingredient of the ingredient ArrayList<br>
+		 * <b>Pre: </b>The arrayList "restaurantIngredients" must be sorted. To be useful, there must be at least one ingredient in the ArrayList<br>
+		 * <b>Post: </b>The index of the ingredient is obtained if it exists<br>
+		 * @param name The name of the ingredient
+		 * @return index
+		 */
+		public int ingredientIndexWithName(String name) {	//Use it when you have the product name but not the product itself
+			int index =  binarySearch(restaurantIngredients,name);
+			return index;
+		}
+		
+		/**
+		 * Sorts the ingredients in the ArrayList<br>
+		 * <b>Pre: </b><br>
+		 * <b>Post: </b>Now the products in the ArrayList are sorted <br>
+		 */
+		public void SelectionSortIngredients() { 
+	        int n = restaurantIngredientsSize;
+	        for (int i = 0; i < n-1; i++){ 
+	            int min_idx = i; 
+	            for (int j = i+1; j < n; j++) {
+	            	if (restaurantIngredients.get(j).compareTo(restaurantIngredients.get(min_idx))<0 ) {
+	                	min_idx = j;	
+	                } 
+	            }	
+	            Ingredient temp = restaurantIngredients.get(min_idx); 
+	            restaurantIngredients.set(min_idx,restaurantIngredients.get(i)); 
+	            restaurantIngredients.set(i, temp);    
+	        } 
+	    } 
+	 
+	
 	 
 	 
 	 
