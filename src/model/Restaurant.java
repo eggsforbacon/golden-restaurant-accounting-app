@@ -130,7 +130,7 @@ public class Restaurant{
 	public boolean addProduct(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Integer> sizesPrices) {
 		productInsertionSort();
 		int index = productIndexWithName(name);
-		if(index==-1&&pt.isEnabled()) {
+		if(index==-1&&pt.getEnabled()) {
 			Product toAdd = new Product(name,pt,ingrdnts,productSizes,sizesPrices);
 			restaurantProducts.add(toAdd);
 			restaurantProductsSize++;
@@ -255,7 +255,7 @@ public class Restaurant{
 	  * @return True if the product's name was changed, false if not
 	  */
 	 public boolean changeProductPlateType(int index,PlateType newPlateType) {
-		 if(index!=-1 && newPlateType.isEnabled()) {
+		 if(index!=-1 && newPlateType.getEnabled()) {
 			 restaurantProducts.get(index).setPt(newPlateType);
 			 return true;
 		 }
