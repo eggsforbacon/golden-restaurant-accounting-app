@@ -1,0 +1,27 @@
+.table-view .column-header .label {
+    -fx-text-fill: #e1be66;
+    -fx-font-weight: bold;
+}
+
+.button {
+  -fx-background-color: #56503E;
+  -fx-background-radius: 7;
+  -fx-font-size: 15;
+  -fx-text-fill: #e1be66;
+  -fx-font-weight: bold;
+  -fx-pref-width: 159.0;
+  -fx-pref-height: 31.0;
+}
+
+.button:hover {
+  -fx-background-color: #e3c66d;
+  -fx-background-radius: 7;
+  -fx-font-size: 15;
+  -fx-text-fill: #56503E;
+  -fx-font-weight: bold;
+}
+
+.label {
+  -fx-text-fill: #e1be66;
+  -fx-font-weight: bold;
+}
