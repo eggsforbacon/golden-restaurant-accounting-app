@@ -15,7 +15,7 @@ public abstract class SystemObject{
 	/**
 	* @return A boolean that indicates if the object is enabled or not.<br>
 	*/
-	public boolean isEnabled() {
+	public boolean getEnabled() {
 		return enabled;
 	}
 	/**

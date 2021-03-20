@@ -33,7 +33,7 @@ public class Product extends SystemObject{
 	*/
 	public boolean addAnIngredient(Ingredient ingredient) {
 		String check = ingredient.getName();
-		if(binarySearchAnIngredient(check)==-1 && ingredient.isEnabled()) {
+		if(binarySearchAnIngredient(check)==-1 && ingredient.getEnabled()) {
 			ingrdnts.add(ingredient);
 			ingrdntsSize++;	
 			return true;

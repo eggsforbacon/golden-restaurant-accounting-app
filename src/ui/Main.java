@@ -30,9 +30,10 @@ public class Main extends Application {
     Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
     primaryStage.getIcons().add(icon);
     Scene scene = new Scene(root);
+    scene.getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
     primaryStage.setScene(scene);
-    primaryStage.setMinHeight(663.0);
-    primaryStage.setMinWidth(866.0);
+    primaryStage.setMinHeight(763.0);
+    primaryStage.setMinWidth(1250.0);
     primaryStage.setTitle("Golden House Restaurant: Inicio");
     primaryStage.show();
   }
