@@ -31,8 +31,8 @@ public class Main extends Application {
     primaryStage.getIcons().add(icon);
     Scene scene = new Scene(root);
     primaryStage.setScene(scene);
-    primaryStage.setMinHeight(663.0);
-    primaryStage.setMinWidth(866.0);
+    primaryStage.setMinHeight(763.0);
+    primaryStage.setMinWidth(966.0);
     primaryStage.setTitle("Golden House Restaurant: Inicio");
     primaryStage.show();
   }
