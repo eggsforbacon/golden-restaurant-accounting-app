@@ -33,7 +33,7 @@ public class Product extends SystemObject{
 	*/
 	public boolean addAnIngredient(Ingredient ingredient) {
 		String check = ingredient.getName();
-		if(binarySearchAnIngredient(check)==-1) {
+		if(binarySearchAnIngredient(check)==-1 && ingredient.isEnabled()) {
 			ingrdnts.add(ingredient);
 			ingrdntsSize++;	
 			return true;
@@ -73,7 +73,7 @@ public class Product extends SystemObject{
 	<b> pre: </b><br>
 	<b> post: </b>The ingredients are sorted<br>
 	*/
-	public void ingredientsBubbleSort() {
+	private void ingredientsBubbleSort() {
 		int changes = 0;
 		for(int i = 1;i<ingrdntsSize&&changes>0;i++){ 
 	        changes = 0;
