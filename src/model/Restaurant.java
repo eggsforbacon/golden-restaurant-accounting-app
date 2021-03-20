@@ -114,6 +114,7 @@ public class Restaurant{
 		return index;
 	}
 	
+	
 	//Product Options
 	
 	/**
@@ -294,8 +295,18 @@ public class Restaurant{
 		 return b;
 	 }
 	 
+	 //Ingredients Methods
 	 
-	 
+	 /**
+	  * Adds an ingredient to the ingredients ArrayList<br>
+	  * <b>Pre: </b><br>
+	  * <b>Post: </b>Adds an ingredient to the ingredients ArrayList if there isn't conflicts with it<br>
+	  * @param name The name of the ingredient
+	  * @return True if the product was added, false if not
+	  */
+	// public boolean addAnIngredientToTheRestaurant(String name) {
+		 
+	// }
 	 
 	 
 	 
