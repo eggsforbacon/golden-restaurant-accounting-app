@@ -24,6 +24,7 @@ public class Restaurant{
 		users = new ArrayList<User>();
 		usersSize=users.size();
 		restaurantProducts = new ArrayList<Product>();
+		productsWithTheirSizes = new ArrayList<Product>();
 		restaurantProductsSize = restaurantProducts.size();
 		productsWithTheirSizesSize=0;
 		restaurantIngredients = new ArrayList<Ingredient>();
@@ -137,14 +138,6 @@ public class Restaurant{
 	 * @return True if the product was added, false if not
 	 */
 	public boolean addProduct(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
-		if(restaurantProducts.isEmpty()&&pt.getEnabled()) {
-			Product toAdd = new Product(name,pt,ingrdnts,productSizes,sizesPrices);
-			restaurantProducts.add(toAdd);
-			addToproductsWithTheirSizes(toAdd);
-			restaurantProductsSize++;
-			return true;
-		}
-		else {
 			ProductInsertionSortByName();
 			int index = productIndexWithName(name);
 			if(index==-1&&pt.getEnabled()) {
@@ -153,20 +146,18 @@ public class Restaurant{
 				addToproductsWithTheirSizes(toAdd);
 				restaurantProductsSize++;
 				return true;
-			}
 		}
 		return false;
 	}
 	/**
 	 * Adds a product for each size to the productsWithTheirSizes ArrayList<br>
 	 * <b>Pre: </b><br>
-	 * <b>Post: </b>Adds a product for each sie to the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
+	 * <b>Post: </b>Adds a product for each size to the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
 	 * @param product The original product in the restaurantProducts ArrayList
 	 */
 	private void addToproductsWithTheirSizes(Product product) {
-		Product pToAdd;
-		for(int i=0;i<product.getProductSizesSize();i++) {
-			pToAdd = product;
+		Product pToAdd=product;
+		for(int i=0;i<pToAdd.getProductSizesSize();i++) {
 			pToAdd.setProductActualSize(i);
 			pToAdd.setProductPrice(i);
 			productsWithTheirSizes.add(pToAdd);

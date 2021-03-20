@@ -20,6 +20,7 @@ public class Main extends Application {
   MainGUIController controller;
 
   public Main() {
+	 
     controller = new MainGUIController();
     Restaurant GH = new Restaurant();
     PlateType pt = new PlateType("Tipo");
