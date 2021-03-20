@@ -1,6 +1,6 @@
 package model;
 
-public abstract class SystemObject{
+public abstract class SystemObject implements Comparable<SystemObject>{
 	private boolean enabled;
 	protected String name;
 	
@@ -9,6 +9,11 @@ public abstract class SystemObject{
 		this.name=name;
 	}
 	
+	
+	@Override
+	public int compareTo(SystemObject o) {
+		return name.compareTo(o.getName());
+	}
 	
 	//Getters
 	

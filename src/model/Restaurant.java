@@ -1,6 +1,8 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Restaurant{
 	private User rootUser;
@@ -9,7 +11,9 @@ public class Restaurant{
 	private int usersSize;
 	private User currentUser;
 	private ArrayList<Product> restaurantProducts;
+	private ArrayList<Product> productsWithTheirSizes;
 	private int restaurantProductsSize;
+	private int productsWithTheirSizesSize;
 	private ArrayList<Ingredient> restaurantIngredients;
 	private ArrayList<PlateType> restaurantPlateTypes;
 	public Restaurant() {
@@ -20,6 +24,7 @@ public class Restaurant{
 		usersSize=users.size();
 		restaurantProducts = new ArrayList<Product>();
 		restaurantProductsSize = restaurantProducts.size();
+		productsWithTheirSizesSize=0;
 		restaurantIngredients = new ArrayList<Ingredient>();
 		restaurantPlateTypes = new ArrayList<PlateType>();
 		PlateType mainDish = new PlateType("Main dish");
@@ -117,6 +122,7 @@ public class Restaurant{
 	
 	//Product Options
 	
+	
 	/**
 	 * Adds a product to the products ArrayList<br>
 	 * <b>Pre: </b><br>
@@ -128,16 +134,33 @@ public class Restaurant{
 	 * @param sizesPrices The respective prices of the sizes of the product
 	 * @return True if the product was added, false if not
 	 */
-	public boolean addProduct(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Integer> sizesPrices) {
-		productInsertionSort();
+	public boolean addProduct(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
+		ProductInsertionSortByName();
 		int index = productIndexWithName(name);
 		if(index==-1&&pt.getEnabled()) {
 			Product toAdd = new Product(name,pt,ingrdnts,productSizes,sizesPrices);
 			restaurantProducts.add(toAdd);
+			addToproductsWithTheirSizes(toAdd);
 			restaurantProductsSize++;
 			return true;
 		}
 		return false;
+	}
+	/**
+	 * Adds a product for each size to the productsWithTheirSizes ArrayList<br>
+	 * <b>Pre: </b><br>
+	 * <b>Post: </b>Adds a product for each sie to the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
+	 * @param product The original product in the restaurantProducts ArrayList
+	 */
+	private void addToproductsWithTheirSizes(Product product) {
+		Product pToAdd;
+		for(int i=0;i<product.getProductSizesSize();i++) {
+			pToAdd = product;
+			pToAdd.setProductActualSize(i);
+			pToAdd.setProductPrice(i);
+			productsWithTheirSizes.add(pToAdd);
+			productsWithTheirSizesSize++;
+		}
 	}
 	
 
@@ -174,15 +197,31 @@ public class Restaurant{
 	 */
 	public boolean deleteProduct(int index) {
 		if(index!=-1) {
+			Product deleted = restaurantProducts.get(index);
+			deleteInproductsWithTheirSizes(deleted);
 			restaurantProducts.remove(index);
 			restaurantProductsSize--;
 			return true;
 		}
 		return false;
 	}
+	/**
+	 * Deletes products of the productsWithTheirSizes ArrayList for each size of the product in the original ArrayList<br>
+	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
+	 * <b>Post: </b>Deletes products of the productsWithTheirSizes ArrayList for each size of the product in the original ArrayList if there isn't conflicts with it<br>
+	 * @param product The original product in the restaurantProducts ArrayList
+	 */
+	private void deleteInproductsWithTheirSizes(Product product) {
+		for(int i=0;i<productsWithTheirSizesSize;i++) {
+			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
+				productsWithTheirSizes.remove(i);
+				productsWithTheirSizesSize--;
+			}
+		}
+	}
 	
 	/**
-	 * Disables a product of the products ArrayList<br>
+	 * Disables a product of the restaurantProducts ArrayList<br>
 	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
 	 * <b>Post: </b>Disables a product of the products ArrayList if there isn't conflicts with it<br>
 	 * @param The index of the product that is going to be disabled
@@ -190,10 +229,25 @@ public class Restaurant{
 	 */
 	public boolean disableProduct(int index) {
 		if(index!=-1) {
+			Product disabled = restaurantProducts.get(index);
 			restaurantProducts.get(index).setEnabled(false);
+			disableInproductsWithTheirSizes(disabled);
 			return true;
 		}
 		return false;
+	}
+	/**
+	 * Disables products of the productsWithTheirSizes ArrayList<br>
+	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
+	 * <b>Post: </b>Disables products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
+	 * @param product The original product in the restaurantProducts ArrayList
+	 */
+	private void disableInproductsWithTheirSizes(Product product) {
+		for(int i=0;i<productsWithTheirSizesSize;i++) {
+			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
+				productsWithTheirSizes.get(i).setEnabled(false);
+			}
+		}
 	}
 	
 	/**
@@ -205,10 +259,26 @@ public class Restaurant{
 	 */
 	public boolean enableProduct(int index) {
 		if(index!=-1) {
+			Product enabled = restaurantProducts.get(index);
 			restaurantProducts.get(index).setEnabled(true);
+			enableInproductsWithTheirSizes(enabled);
 			return true;
 		}
 		return false;
+	}
+	
+	/**
+	 * Enables products of the productsWithTheirSizes ArrayList<br>
+	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
+	 * <b>Post: </b>Enables products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
+	 * @param product The original product in the restaurantProducts ArrayList
+	 */
+	private void enableInproductsWithTheirSizes(Product product) {
+		for(int i=0;i<productsWithTheirSizesSize;i++) {
+			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
+				productsWithTheirSizes.get(i).setEnabled(true);
+			}
+		}
 	}
 	
 	/**
@@ -216,20 +286,26 @@ public class Restaurant{
 	 * <b>Pre: </b><br>
 	 * <b>Post: </b>Now the products in the ArrayList are sorted <br>
 	 */
-	 public void productInsertionSort(){                                            
+	 public void ProductInsertionSortByName(){                                            
 		    int i=0;
 		    int j=0;
 		    Product aux;
 		    for (i = 1; i < restaurantProductsSize; i++){
 		    	aux = restaurantProducts.get(i);        
 		    	j = i - 1;           
-		    	while ((j >= 0) && (aux.getName().compareTo(restaurantProducts.get(j).getName())<0)){                             
+		    	while ((j >= 0) && (aux.compareTo(restaurantProducts.get(j))<0)){                             
 		    		restaurantProducts.set(j+1,restaurantProducts.get(j));
 		    		j--;        
 		    	}
 		    	restaurantProducts.set(j+1, aux);
 		    }
 		}
+	 
+	 
+	 public void sortProductsByPrice() {
+		 Comparator<Product> priceComparator = new priceComparator();
+		 Collections.sort(productsWithTheirSizes,priceComparator);
+	 }
 	 
 	 /**
 	  * Changes the name of a product of the products ArrayList<br>
@@ -241,27 +317,59 @@ public class Restaurant{
 	  */
 	 public boolean changeProductName(int index,String newName) {
 		 if(index!=-1) {
+			 Product productToChangeName=restaurantProducts.get(index);
 			 restaurantProducts.get(index).setName(newName);
+			 changeNameInproductsWithTheirSizes(productToChangeName, newName);
 			 return true;
 		 }
 		 return false;
 	 }
+	 /**
+	  * Changes names of the products of the productsWithTheirSizes ArrayList<br>
+	  * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
+	  * <b>Post: </b>Changes names of the products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
+	  * @param product The original product in the restaurantProducts ArrayList
+	  * @param name The new name for the products
+	  */
+		private void changeNameInproductsWithTheirSizes(Product product,String name) {
+			for(int i=0;i<productsWithTheirSizesSize;i++) {
+				if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
+					productsWithTheirSizes.get(i).setName(name);
+				}
+			}
+		}
 	 
 	 /**
-	  * Changes the name of a product of the products ArrayList<br>
+	  * Changes the Plate Type of a product of the products ArrayList<br>
 	  * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	  * <b>Post: </b>Changes the name of a product of the products ArrayList if there isn't conflicts with it<br>
+	  * <b>Post: </b>Changes the plate type of a product of the products ArrayList if there isn't conflicts with it<br>
 	  * @param index the index of the product whose name will be changed
 	  * @param newPlateType The new plate type of the product
 	  * @return True if the product's name was changed, false if not
 	  */
 	 public boolean changeProductPlateType(int index,PlateType newPlateType) {
 		 if(index!=-1 && newPlateType.getEnabled()) {
+			 Product productToChangePlateType=restaurantProducts.get(index);
 			 restaurantProducts.get(index).setPt(newPlateType);
+			 changePlateTypeInproductsWithTheirSizes(productToChangePlateType, newPlateType);
 			 return true;
 		 }
 		 return false;
 	 }
+	 /**
+	  * Changes the plate type of the products of the productsWithTheirSizes ArrayList<br>
+	  * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
+	  * <b>Post: </b>Changes the plate type of the products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
+	  * @param product The original product in the restaurantProducts ArrayList
+	  * @param pt The new plate type for the products
+	  */
+		private void changePlateTypeInproductsWithTheirSizes(Product product,PlateType pt) {
+			for(int i=0;i<productsWithTheirSizesSize;i++) {
+				if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
+					productsWithTheirSizes.get(i).setPt(pt);
+				}
+			}
+		}
 	 
 	 /**
 	  * Adds an ingredient to a product of the products ArrayList<br>
@@ -274,10 +382,29 @@ public class Restaurant{
 	 public boolean addAnIngredientToAProduct(int index,Ingredient ingredient) {
 		 boolean b=false;
 		 if(index!=-1) {
+			 Product productToAddAnIngredient = restaurantProducts.get(index);
 			 b=restaurantProducts.get(index).addAnIngredient(ingredient);
+			 if(b) {
+				 addAnIngredientInproductsWithTheirSizes(productToAddAnIngredient, ingredient); 
+			 }
 		 }
 		 return b;
 	 }
+	 
+	 /**
+	  * Adds an ingredient to the products of the productsWithTheirSizes ArrayList<br>
+	  * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
+	  * <b>Post: </b>Adds an ingredient to the products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
+	  * @param product The original product in the restaurantProducts ArrayList
+	  * @param ingredient The ingredient that will be added
+	  */
+		private void addAnIngredientInproductsWithTheirSizes(Product product,Ingredient ingredient) {
+			for(int i=0;i<productsWithTheirSizesSize;i++) {
+				if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
+					productsWithTheirSizes.get(i).addAnIngredient(ingredient);
+				}
+			}
+		}
 	 
 	 /**
 	  * Deletes an ingredient of a product of the products ArrayList<br>
@@ -290,10 +417,29 @@ public class Restaurant{
 	 public boolean deleteAnIngredientToAProduct(int index,String ingredientName) {
 		 boolean b=false;
 		 if(index!=-1) {
+			 Product productToDeleteAnIngredient = restaurantProducts.get(index);
 			 b=restaurantProducts.get(index).deleteAnIngredient(ingredientName);
+			 if(b) {
+				 deletesAnIngredientInproductsWithTheirSizes(productToDeleteAnIngredient, ingredientName);
+			 }
 		 }
 		 return b;
 	 }
+	 
+	 /**
+	  * Adds an ingredient to the products of the productsWithTheirSizes ArrayList<br>
+	  * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
+	  * <b>Post: </b>Adds an ingredient to the products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
+	  * @param product The original product in the restaurantProducts ArrayList
+	  * @param ingredient The ingredient that will be added
+	  */
+		private void deletesAnIngredientInproductsWithTheirSizes(Product product,String name) {
+			for(int i=0;i<productsWithTheirSizesSize;i++) {
+				if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
+					productsWithTheirSizes.get(i).deleteAnIngredient(name);
+				}
+			}
+		}
 	 
 	 //Ingredients Methods
 	 

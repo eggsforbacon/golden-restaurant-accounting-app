@@ -11,5 +11,4 @@ public class Ingredient extends SystemObject{
 		info+=getName();
 		return info;
 	}
-	
 }

@@ -9,9 +9,11 @@ public class Product extends SystemObject{
 	private int ingrdntsSize;
 	private ArrayList<String> productSizes;
 	private int productSizesSize;
-	private ArrayList<Integer> sizesPrices; 
+	private ArrayList<Double> sizesPrices;
+	private double productPrice;
+	private String productActualSize;
 
-	public Product(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Integer> sizesPrices) {
+	public Product(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
 		super(name);
 		this.pt=pt;
 		this.ingrdnts=ingrdnts;
@@ -21,6 +23,7 @@ public class Product extends SystemObject{
 		this.sizesPrices=sizesPrices;
 		
 	}
+	
 	
 	
 	
@@ -58,7 +61,7 @@ public class Product extends SystemObject{
 			if(ingrdnts.get(m).getName().equalsIgnoreCase(name)) {
 				pos=m;
 			}
-			else if((ingrdnts.get(m).getName().compareTo(name))>0){			//books[m]>valueToSearch
+			else if((ingrdnts.get(m).getName().compareTo(name))>0){
 				j=m-1;
 			}
 			else {
@@ -78,7 +81,7 @@ public class Product extends SystemObject{
 		for(int i = 1;i<ingrdntsSize&&changes>0;i++){ 
 	        changes = 0;
 	      for(int j=0;j<ingrdntsSize-i;j++){
-	        if(ingrdnts.get(j).getName().compareTo(ingrdnts.get(j+1).getName())>0){
+	        if(ingrdnts.get(j).compareTo(ingrdnts.get(j+1))>0){
 	          Ingredient temp = ingrdnts.get(j);
 	          ingrdnts.set(j,ingrdnts.get(j+1));
 	          ingrdnts.set(j+1,temp);
@@ -124,23 +127,12 @@ public class Product extends SystemObject{
 	<b> post: </b>Now the product has a specific size <br>
 	@return info
 	*/
-	public String chooseASize(int indicator) {
-		String chosenSize = productSizes.get(indicator);
-		String info = chosenSize+" "+getName();
+	public String chooseASize() {
+		String info = productActualSize+" "+getName();
 		return info;
 	}
-	
-	/**
-	Defines product price based in the size <br>
-	<b> pre: </b><br>
-	<b> post: </b>Now the product has a specific price <br>
-	@return info
-	*/
-	public String priceOfASize(int indicator) {
-		int sizePrice = sizesPrices.get(indicator);
-		String info = sizePrice+"";
-		return info;
-	}
+
+
 	/**
 	Shows the information of the Sizes and their respective prices <br>
 	<b> pre: </b><br>
@@ -181,6 +173,27 @@ public class Product extends SystemObject{
 	public PlateType getPt() {
 		return pt;
 	}
+	
+	/**
+	* @return productActualSize A String that indicates the size chosen for the product
+	*/
+	public String getProductActualSize() {
+		return productActualSize;
+	}
+	/**
+	* @return productPrice A double that indicates the price chosen for the product
+	*/
+	public double getProductPrice() {
+		return productPrice;
+	}
+	
+	/**
+	* @return productPrice An int that indicates the size of the product sizes ArrayList
+	*/
+	public int getProductSizesSize() {
+		return productSizesSize;
+	}
+	
 
 	
 	//Setters
@@ -191,6 +204,21 @@ public class Product extends SystemObject{
 	public void setPt(PlateType pt) {
 		this.pt = pt;
 	}
+	/**
+	 * @param index An index that indicates the size chosen for the product
+	 */
+	public void setProductActualSize(int index) {
+		productActualSize=productSizes.get(index);
+	}
+	/**
+	 * @param index An index that indicates the price chosen for the product
+	 */
+	public void setProductPrice(int index) {
+		productPrice=sizesPrices.get(index);
+	}
+
+
+	
 
 	
 	

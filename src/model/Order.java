@@ -55,12 +55,10 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	 */
 	public String showProducts() {
 		String info = "";
-		int indicator = 0;
 		for(int i=0;i<arraylistSize;i++) {
-			indicator = chosenSizes.get(i);
-			info += orderProducts.get(i).chooseASize(indicator)+";";
+			info += orderProducts.get(i).getProductActualSize()+";"; 
 			info += productsQuantity.get(i)+";";
-			info += orderProducts.get(i).priceOfASize(indicator)+";";
+			info += orderProducts.get(i).getProductPrice()+";";
 		}
 		return info;
 	}
