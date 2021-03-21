@@ -67,3 +67,8 @@
   -fx-opacity: 0.8;
   -fx-text-fill: #efcf74;
 }
+
+.list-view {
+  -fx-background-color: #845650;
+  -fx-border-color: #471c09;
+}

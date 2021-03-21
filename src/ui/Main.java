@@ -34,6 +34,7 @@ public class Main extends Application {
     prices.add(3.0);
     prices.add(7.9);
     GH.addProduct("Nombre", pt, ingredients, sizes, prices);
+    GH.getRestaurantIngredients().addAll(ingredients);
     controller = new MainGUIController(GH);
   }
 
