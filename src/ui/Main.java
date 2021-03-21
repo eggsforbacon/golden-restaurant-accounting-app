@@ -20,8 +20,6 @@ public class Main extends Application {
   MainGUIController controller;
 
   public Main() {
-	 
-    controller = new MainGUIController();
     Restaurant GH = new Restaurant();
     PlateType pt = new PlateType("Tipo");
     ArrayList<Ingredient> ingredients = new ArrayList<>();
@@ -32,6 +30,7 @@ public class Main extends Application {
     ArrayList<Double> prices = new ArrayList<>();
     prices.add(5.0);
     GH.addProduct("Nombre", pt, ingredients, sizes, prices);
+    controller = new MainGUIController(GH);
   }
 
   public static void main(String[] args) {

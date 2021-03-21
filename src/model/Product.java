@@ -114,12 +114,12 @@ public class Product extends SystemObject{
 	<b> post: </b>The ingredients are organized in a String<br>
 	@return ingredients
 	*/
-	private String getTheIngredients() {
-		StringBuilder ingredients = new StringBuilder();
+	public String getTheIngredients() {
+		String ingredients = "";
 		for(int i = 0;i<ingrdntsSize;i++) {
-			ingredients.append(ingrdnts.get(i)).append(",");
+			ingredients += (ingrdnts.get(i).getName()) + (",");
 		}
-		return ingredients.toString();
+		return ingredients;
 	}
 	/**
 	Defines product size <br>

@@ -1,5 +1,7 @@
 package ui;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -7,8 +9,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import model.PlateType;
 import model.Product;
+import model.Restaurant;
 import model.User;
 
 import java.net.URL;
@@ -47,22 +51,24 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Label lastUserLBL;
 
-    public CenterPanesGUIController() {
-
+    private Restaurant GH;
+    public CenterPanesGUIController(Restaurant GH) {
+        this.GH = GH;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("We're in");
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         nameCol.setStyle( "\n-fx-alignment: CENTER;");
         enabledCol.setCellValueFactory(new PropertyValueFactory<>("enabled"));
         enabledCol.setStyle( "\n-fx-alignment: CENTER;");
-        ingredientsCol.setCellValueFactory(new PropertyValueFactory<>("ingrdnts"));
+        ingredientsCol.setCellValueFactory(new PropertyValueFactory<>("theIngredients"));
         ingredientsCol.setStyle( "\n-fx-alignment: CENTER;");
         typeCol.setCellValueFactory(new PropertyValueFactory<>("pt"));
         typeCol.setStyle( "\n-fx-alignment: CENTER;");
 
+        ObservableList<Product> productsList = FXCollections.observableArrayList(GH.getProductsWithTheirSizes());
+        productTBV.setItems(productsList);
     }
 
     @FXML
@@ -80,17 +86,22 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     @FXML
-    void editPriceLarge(ActionEvent event) {
+    void editPrices(ActionEvent event) {
 
     }
 
     @FXML
-    void editPriceMedium(ActionEvent event) {
+    void editSizes(ActionEvent event) {
 
     }
 
     @FXML
-    void editPriceSmall(ActionEvent event) {
+    void editType(ActionEvent event) {
 
+    }
+
+    @FXML
+    void fullProductDetails(MouseEvent event) {
+        System.out.println("It works?");
     }
 }

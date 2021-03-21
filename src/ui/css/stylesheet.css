@@ -8,6 +8,10 @@
     -fx-font-weight: bold;
 }
 
+.table-view {
+  -fx-background-color:  #827571;
+}
+
 .button {
   -fx-background-color: #56503E;
   -fx-background-radius: 7;
@@ -29,4 +33,11 @@
 .label {
   -fx-text-fill: #e1be66;
   -fx-font-weight: bold;
+}
+
+.text-field {
+  -fx-background-color: #845650;
+  -fx-text-fill: #efcf74;
+  -fx-border-color: #471c09;
+  -fx-background-radius: 7;
 }
