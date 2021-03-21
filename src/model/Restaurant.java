@@ -17,6 +17,7 @@ public class Restaurant{
 	private ArrayList<Ingredient> restaurantIngredients;
 	private int restaurantIngredientsSize;
 	private ArrayList<PlateType> restaurantPlateTypes;
+	private int restaurantPlateTypesSize;
 	public Restaurant() {
 		rootUser = new User("Generic","user","none","Root","admin");
 		firstTime = true;
@@ -36,6 +37,7 @@ public class Restaurant{
 		restaurantPlateTypes.add(mainDish);
 		restaurantPlateTypes.add(sideDish);
 		restaurantPlateTypes.add(drink);
+		restaurantPlateTypesSize=restaurantPlateTypes.size();
 	}
 
 	
@@ -483,7 +485,7 @@ public class Restaurant{
 		 * @param ingredient The ingredient searched
 		 * @return index
 		 */
-		public int productIndexWithProduct(Ingredient ingredient) { //Use it when you have the ingredient itself
+		public int ingredientIndexWithIngredient(Ingredient ingredient) { //Use it when you have the ingredient itself
 			int index = restaurantIngredients.indexOf(ingredient);
 			return index;
 		}
@@ -509,7 +511,7 @@ public class Restaurant{
 	    } 
 		
 		/**
-		 * Deletes a ingredient of the ingredients ArrayList<br>
+		 * Deletes an ingredient of the ingredients ArrayList<br>
 		 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
 		 * <b>Post: </b>Deletes a ingredient of the ingredients ArrayList if there isn't conflicts with it<br>
 		 * @param The index of the ingredient that is going to be deleted
@@ -543,11 +545,154 @@ public class Restaurant{
 			}
 			return false;
 		}
+		
+		/**
+		 * Enables an ingredient of the ingredients ArrayList<br>
+		 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
+		 * <b>Post: </b>Enables a ingredient of the ingredients ArrayList if there isn't conflicts with it<br>
+		 * @param The index of the ingredient that is going to be enabled
+		 * @return True if the ingredient was enabled, false if not
+		 */
+		public boolean enableIngredient(int index) {
+			if(index!=-1) {
+				restaurantIngredients.get(index).setEnabled(true);
+				return true;
+			}
+			return false;
+		}
+		
+		/*
+		 * Disables an ingredient of the ingredients ArrayList<br>
+		 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
+		 * <b>Post: </b>Disables a ingredient of the ingredients ArrayList if there isn't conflicts with it<br>
+		 * @param The index of the ingredient that is going to be disabled
+		 * @return True if the ingredient was disabled, false if not
+		 */
+		public boolean disableIngredient(int index) {
+			if(index!=-1) {
+				restaurantIngredients.get(index).setEnabled(false);
+				return true;
+			}
+			return false;
+		}
+		
+		 /**
+		  * Changes the name of a ingredient of the ingredients ArrayList<br>
+		  * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
+		  * <b>Post: </b>Changes the name of a ingredient of the ingredients ArrayList if there isn't conflicts with it<br>
+		  * @param index the index of the ingredient whose name will be changed
+		  * @param newName The new name of the ingredient
+		  * @return True if the ingredient's name was changed, false if not
+		  */
+		 public boolean changeingredientName(int index,String newName) {
+			 if(index!=-1) {
+				 restaurantIngredients.get(index).setName(newName);
+				 return true;
+			 }
+			 return false;
+		 }
+		
+		 
+		 //PlateType methods
+		 /**
+		  * Adds a plateType to the plateTypes ArrayList<br>
+		  * <b>Pre: </b><br>
+		  * <b>Post: </b>Adds a plateType to the plateTypes ArrayList if there isn't conflicts with it<br>
+		  * @param name The name of the plateType
+		  * @return True if the product was added, false if not
+		  */
+		public boolean addAPlateTypeToTheRestaurant(String name) {
+			 collectionSortPlateTypes();
+			 int index = plateTypeIndexWithName(name);
+			 if(index==-1) {
+				 PlateType toAdd = new PlateType(name);
+				 restaurantPlateTypes.add(toAdd);
+				 restaurantPlateTypesSize++;
+				 return true;
+			 }
+			 return false;
+		}
+		
+		public void collectionSortPlateTypes() {
+			Comparator<PlateType> PlateTypeNameComparator = new PlateTypeNameComparator();
+			Collections.sort(restaurantPlateTypes,PlateTypeNameComparator);
+		}
+		 
+		 /**
+			 * Given the name, returns the index of a plateType of the plateType ArrayList<br>
+			 * <b>Pre: </b>The arrayList "restaurantplateTypes" must be sorted. To be useful, there must be at least one plateType in the ArrayList<br>
+			 * <b>Post: </b>The index of the plateType is obtained if it exists<br>
+			 * @param name The name of the plateType
+			 * @return index
+			 */
+			public int plateTypeIndexWithName(String name) {	//Use it when you have the plateType name but not the plateType itself
+				int index =  binarySearch(restaurantPlateTypes,name);
+				return index;
+			}
+			
+			/**
+			 * Given the plateType, returns the index of that plateType in the plateTypes ArrayList<br>
+			 * <b>Pre: </b>To be useful, there must be at least one plateType in the ArrayList<br>
+			 * <b>Post: </b>The index of the plateType is obtained if it exists<br>
+			 * @param plateType The plateType searched
+			 * @return index
+			 */
+			public int plateTypeIndexWithplateType(PlateType plateType) { //Use it when you have the plateType itself
+				int index = restaurantPlateTypes.indexOf(plateType);
+				return index;
+			}
 
-	 
-	
-	 
-	 
-	 
-	 
+
+			
+			//Getters
+			public ArrayList<Product> getRestaurantProducts() {
+				return restaurantProducts;
+			}
+			public ArrayList<Product> getProductsWithTheirSizes() {
+				return productsWithTheirSizes;
+			}
+			public int getRestaurantProductsSize() {
+				return restaurantProductsSize;
+			}
+			public int getProductsWithTheirSizesSize() {
+				return productsWithTheirSizesSize;
+			}
+			public ArrayList<Ingredient> getRestaurantIngredients() {
+				return restaurantIngredients;
+			}
+			public int getRestaurantIngredientsSize() {
+				return restaurantIngredientsSize;
+			}
+			public ArrayList<PlateType> getRestaurantPlateTypes() {
+				return restaurantPlateTypes;
+			}
+			public int getRestaurantPlateTypesSize() {
+				return restaurantPlateTypesSize;
+			}
+
+			//Setters
+			public void setRestaurantProducts(ArrayList<Product> restaurantProducts) {
+				this.restaurantProducts = restaurantProducts;
+			}
+			public void setProductsWithTheirSizes(ArrayList<Product> productsWithTheirSizes) {
+				this.productsWithTheirSizes = productsWithTheirSizes;
+			}
+			public void setRestaurantProductsSize(int restaurantProductsSize) {
+				this.restaurantProductsSize = restaurantProductsSize;
+			}
+			public void setProductsWithTheirSizesSize(int productsWithTheirSizesSize) {
+				this.productsWithTheirSizesSize = productsWithTheirSizesSize;
+			}
+			public void setRestaurantIngredients(ArrayList<Ingredient> restaurantIngredients) {
+				this.restaurantIngredients = restaurantIngredients;
+			}
+			public void setRestaurantIngredientsSize(int restaurantIngredientsSize) {
+				this.restaurantIngredientsSize = restaurantIngredientsSize;
+			}
+			public void setRestaurantPlateTypes(ArrayList<PlateType> restaurantPlateTypes) {
+				this.restaurantPlateTypes = restaurantPlateTypes;
+			}
+			public void setRestaurantPlateTypesSize(int restaurantPlateTypesSize) {
+				this.restaurantPlateTypesSize = restaurantPlateTypesSize;
+			}
 }
