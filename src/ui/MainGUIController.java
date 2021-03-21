@@ -11,6 +11,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import model.Restaurant;
+
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -19,8 +21,9 @@ public class MainGUIController implements Initializable {
 
     CenterPanesGUIController cenPaneController;
 
-    public MainGUIController() {
-        cenPaneController = new CenterPanesGUIController();
+    public MainGUIController(Restaurant GH) {
+        this.GH = GH;
+        cenPaneController = new CenterPanesGUIController(GH);
     }
 
     /*Splash screen*/
@@ -50,6 +53,8 @@ public class MainGUIController implements Initializable {
 
     @FXML
     private Label spacer1;
+
+    private Restaurant GH;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
