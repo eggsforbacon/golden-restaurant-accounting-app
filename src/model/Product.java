@@ -173,7 +173,7 @@ public class Product extends SystemObject{
 	public String getPt() {
 		return pt.getName();
 	}
-	
+	 
 	/**
 	* @return productActualSize A String that indicates the size chosen for the product
 	*/
