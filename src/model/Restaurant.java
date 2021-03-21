@@ -620,7 +620,7 @@ public class Restaurant{
 		 
 		 /**
 			 * Given the name, returns the index of a plateType of the plateType ArrayList<br>
-			 * <b>Pre: </b>The arrayList "restaurantplateTypes" must be sorted. To be useful, there must be at least one plateType in the ArrayList<br>
+			 * <b>Pre: </b>The arrayList "restaurantPlateTypes" must be sorted. To be useful, there must be at least one plateType in the ArrayList<br>
 			 * <b>Post: </b>The index of the plateType is obtained if it exists<br>
 			 * @param name The name of the plateType
 			 * @return index
@@ -641,6 +641,87 @@ public class Restaurant{
 				int index = restaurantPlateTypes.indexOf(plateType);
 				return index;
 			}
+			
+			/**
+			 * Deletes a plateType of the plateTypes ArrayList<br>
+			 * <b>Pre: </b>To be useful, there must be at least one plateType in the ArrayList<br>
+			 * <b>Post: </b>Deletes a plateType of the plateTypes ArrayList if there isn't conflicts with it<br>
+			 * @param The index of the plateType that is going to be deleted
+			 * @return True if the plateType was deleted, false if not
+			 */
+			public boolean deletePlateType(int index) {
+				if(index!=-1) {
+					PlateType deleted = restaurantPlateTypes.get(index);
+					if(!productHasThePlateType(deleted)) {
+						restaurantPlateTypes.remove(index);
+						restaurantPlateTypesSize--;
+						return true;
+					}
+					
+				}
+				return false;
+			}
+			/**
+			 * Checks if a plateType is in one of the plateTypes ArrayList of the products ArrayList<br>
+			 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
+			 * <b>Post: </b>Indicates if the plateType is used or not<br>
+			 * @param plateType The plateType that will be searched
+			 * @return True if the plateType was found, false if not
+			 */
+			public boolean productHasThePlateType(PlateType plateType) {
+				for(int i=0;i<restaurantProductsSize;i++) {
+					if(restaurantProducts.get(i).getName().equalsIgnoreCase(plateType.getName())) {
+						return true;
+					}
+				}
+				return false;
+			}
+			/**
+			 * Enables a plateType of the plateTypes ArrayList<br>
+			 * <b>Pre: </b>To be useful, there must be at least one plateType in the ArrayList<br>
+			 * <b>Post: </b>Enables a plateType of the plateTypes ArrayList if there isn't conflicts with it<br>
+			 * @param The index of the plateType that is going to be enabled
+			 * @return True if the plateType was enabled, false if not
+			 */
+			public boolean enablePlateType(int index) {
+				if(index!=-1) {
+					restaurantPlateTypes.get(index).setEnabled(true);
+					return true;
+				}
+				return false;
+			}
+			
+			/*
+			 * Disables a plateType of the plateTypes ArrayList<br>
+			 * <b>Pre: </b>To be useful, there must be at least one plateType in the ArrayList<br>
+			 * <b>Post: </b>Disables a plateType of the plateTypes ArrayList if there isn't conflicts with it<br>
+			 * @param The index of the plateType that is going to be disabled
+			 * @return True if the plateType was disabled, false if not
+			 */
+			public boolean disablePlateType(int index) {
+				if(index!=-1) {
+					restaurantPlateTypes.get(index).setEnabled(false);
+					return true;
+				}
+				return false;
+			}
+			
+			 /**
+			  * Changes the name of a plateType of the plateTypes ArrayList<br>
+			  * <b>Pre: </b>To be useful, there must be at least one plateType in the ArrayList<br>
+			  * <b>Post: </b>Changes the name of a plateType of the plateTypes ArrayList if there isn't conflicts with it<br>
+			  * @param index the index of the plateType whose name will be changed
+			  * @param newName The new name of the plateType
+			  * @return True if the plateType's name was chaged, false if not
+			  */
+			 public boolean changePlateTypeName(int index,String newName) {
+				 if(index!=-1) {
+					 restaurantPlateTypes.get(index).setName(newName);
+					 return true;
+				 }
+				 return false;
+			 }
+
 
 
 			
