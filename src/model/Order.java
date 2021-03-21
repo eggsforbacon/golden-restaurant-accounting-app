@@ -112,8 +112,14 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	/**
 	* @return The date of the order.<br>
 	*/
-	private String getDate() {
+	public String getDate() {
 		return date;
+	}
+	public ArrayList<Product> getOrderProducts(){
+		return orderProducts;
+	}
+	public Client getOrderclient() {
+		return orderClient;
 	}
 	
 	//Setters

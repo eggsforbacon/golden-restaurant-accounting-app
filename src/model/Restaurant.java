@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -21,6 +20,9 @@ public class Restaurant{
 	private int restaurantPlateTypesSize;
 	private ArrayList<Client> restaurantClients;
 	private int restaurantClientsSize;
+	private long timeOfSearch;
+	private ArrayList<Order> restaurantOrders;
+	private int restaurantOrdersSize;
 	public Restaurant() {
 		rootUser = new User("Generic","user","none","Root","admin");
 		firstTime = true;
@@ -43,6 +45,9 @@ public class Restaurant{
 		restaurantPlateTypesSize=restaurantPlateTypes.size();
 		restaurantClients = new ArrayList<Client>();
 		restaurantClientsSize = restaurantClients.size();
+		timeOfSearch=0;
+		restaurantOrders=new ArrayList<Order>();
+		restaurantOrdersSize=restaurantOrders.size();
 	}
 
 	
@@ -208,10 +213,29 @@ public class Restaurant{
 	public boolean deleteProduct(int index) {
 		if(index!=-1) {
 			Product deleted = restaurantProducts.get(index);
-			deleteInproductsWithTheirSizes(deleted);
-			restaurantProducts.remove(index);
-			restaurantProductsSize--;
-			return true;
+			if(!OrderHasTheProduct(deleted)) {
+				deleteInproductsWithTheirSizes(deleted);
+				restaurantProducts.remove(index);
+				restaurantProductsSize--;
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * Checks if a product exists in the orders ArrayList<br>
+	 * <b>Pre: </b>To be useful, there must be at least one order in the ArrayList<br>
+	 * <b>Post: </b>Indicates if the product is used or not<br>
+	 * @param product The product that will be searched
+	 * @return True if the product was found, false if not
+	 */
+	public boolean OrderHasTheProduct(Product product) {
+		for(int i=0;i<restaurantOrdersSize;i++) {
+			ArrayList<Product> pdcts = restaurantOrders.get(i).getOrderProducts();
+			if(pdcts.contains(product)) {
+				return true;
+			}
 		}
 		return false;
 	}
@@ -676,7 +700,7 @@ public class Restaurant{
 			 */
 			public boolean productHasThePlateType(PlateType plateType) {
 				for(int i=0;i<restaurantProductsSize;i++) {
-					if(restaurantProducts.get(i).getName().equalsIgnoreCase(plateType.getName())) {
+					if(restaurantProducts.get(i).getPt().equalsIgnoreCase(plateType.getName())) {
 						return true;
 					}
 				}
@@ -749,25 +773,120 @@ public class Restaurant{
 					return true;
 				}
 				else {
-					//restaurantClients.
+					int index = neatlyInsertClients(name,lastname);
+					if(index!=-1) {
+						Client toAdd = new Client(name,lastname,id,address,phoneNumber,observations);
+						restaurantClients.add(index,toAdd);
+						restaurantClientsSize++;
+						return true;
+					}
 				}
 				return false;
-				/*
-				collectionSortClients();
-				 int index = clientIndexWithName(name);
-				 if(index==-1) {
-					 Client toAdd = new Client(name);
-					 restaurantClients.add(toAdd);
-					 restaurantClientsSize++;
-					 return true;
-				 }
-				 return false;
-				 */
+				
 			}
 			
-			//public int compareClients(String name,String lastname) {
-				
-			//}
+			public int neatlyInsertClients(String name,String lastname) {
+				int indexToInsert = 0;
+				boolean found = false;
+				String valueToSearch = lastname+name;
+				for (int i = 0; i < restaurantClientsSize; i++){
+					String valueOfArrayList = restaurantClients.get(i).getLastname()+restaurantClients.get(i).getName();
+						if ( !found && (valueToSearch.compareTo(valueOfArrayList)) == 0){
+							found = true;
+							indexToInsert = -1;
+				        }
+						else if(!found && (valueToSearch.compareTo(valueOfArrayList)) >= 0) {
+							found = true;
+							indexToInsert = i;
+							i--;
+				        }
+				}
+				if(!found){
+				        indexToInsert = restaurantClientsSize;
+				}
+				return indexToInsert;
+			}
+			
+			 public int binarySearchForPersons(ArrayList<?> aL,String name,String lastname) {
+				 long startTime = System.nanoTime();
+				 int pos = -1;
+					int i = 0;
+					int j = aL.size()-1;
+					String valueToSearch = lastname+name;
+					while(i<=j && pos<0) {
+						int m = (i+j)/2;
+						String stringOfArrayList = ((Person) aL.get(m)).getLastname()+((Person) aL.get(m)).getName();
+						if(stringOfArrayList.equalsIgnoreCase(valueToSearch)) {
+							pos=m;
+						}
+						else if(stringOfArrayList.compareTo(valueToSearch)>0){
+							j=m-1;
+						}
+						else {
+							i=m+1;
+						}
+					}
+					long endTime = System.nanoTime();
+					long timeElapsed = endTime - startTime;
+					timeOfSearch=timeElapsed;
+					return pos;
+			 }
+			
+			/**
+			 * Given the name, returns the index of a client of the client ArrayList<br>
+			 * <b>Pre: </b>The arrayList "restaurantClients" must be sorted. To be useful, there must be at least one client in the ArrayList<br>
+			 * <b>Post: </b>The index of the client is obtained if it exists<br>
+			 * @param name The name of the client
+			 * @return index
+			 */
+			public int clientIndexWithNameAndLastname(String name,String lastname) {	//Use it when you have the client name but not the client itself
+				int index =  binarySearchForPersons(restaurantClients,name,lastname);
+				return index;
+			}
+			
+			/**
+			 * Given the client, returns the index of that client in the clients ArrayList<br>
+			 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
+			 * <b>Post: </b>The index of the client is obtained if it exists<br>
+			 * @param client The client searched
+			 * @return index
+			 */
+			public int clientIndexWithclient(Client client) { //Use it when you have the client itself
+				int index = restaurantClients.indexOf(client);
+				return index;
+			}
+			
+			/**
+			 * Deletes a client of the clients ArrayList<br>
+			 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
+			 * <b>Post: </b>Deletes a client of the clients ArrayList if there isn't conflicts with it<br>
+			 * @param The index of the client that is going to be deleted
+			 * @return True if the client was deleted, false if not
+			 */
+			public boolean deleteClient(int index) {
+				if(index!=-1) {
+					Client deleted = restaurantClients.get(index);
+					if(!orderHasTheClient(deleted)) {
+						restaurantClients.remove(index);
+						restaurantClientsSize--;
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public boolean orderHasTheClient(Client client) {
+				String aux1 = client.getLastname()+client.getName();
+				for(int i=0;i<restaurantOrdersSize;i++) {
+					Client check = restaurantOrders.get(i).getOrderclient();
+					String aux2 = check.getLastname()+check.getName();
+					if(aux1.equalsIgnoreCase(aux2)) {
+						return true;
+					}
+				}
+				return false;
+			}
+			
 			
 			
 			//Getters
@@ -815,6 +934,9 @@ public class Restaurant{
 			}
 			public int getRestaurantPlateTypesSize() {
 				return restaurantPlateTypesSize;
+			}
+			public long getTimeOfSearch() {
+				return timeOfSearch;
 			}
 
 			//Setters
