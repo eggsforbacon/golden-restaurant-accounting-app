@@ -886,7 +886,131 @@ public class Restaurant{
 				}
 				return false;
 			}
+			/**
+			 * Enables a client of the clients ArrayList<br>
+			 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
+			 * <b>Post: </b>Enables a client of the clients ArrayList if there isn't conflicts with it<br>
+			 * @param The index of the client that is going to be enabled
+			 * @return True if the client was enabled, false if not
+			 */
+			public boolean enableClient(int index) {
+				if(index!=-1) {
+					restaurantClients.get(index).setEnabled(true);
+					return true;
+				}
+				return false;
+			}
 			
+			/*
+			 * Disables a client of the clients ArrayList<br>
+			 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
+			 * <b>Post: </b>Disables a client of the clients ArrayList if there isn't conflicts with it<br>
+			 * @param The index of the client that is going to be disabled
+			 * @return True if the client was disabled, false if not
+			 */
+			public boolean disableClient(int index) {
+				if(index!=-1) {
+					restaurantClients.get(index).setEnabled(false);
+					return true;
+				}
+				return false;
+			}
+			/**
+			  * Changes the name of a client of the clients ArrayList<br>
+			  * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
+			  * <b>Post: </b>Changes the name of a client of the clients ArrayList if there isn't conflicts with it<br>
+			  * @param index the index of the client whose name will be changed
+			  * @param newName The new name of the client
+			  * @return True if the client's name was changed, false if not
+			  */
+			 public boolean changeClientName(int index,String newName) {
+				 if(index!=-1) {
+					 restaurantClients.get(index).setName(newName);
+					 return true;
+				 }
+				 return false;
+			 }
+			 
+			 /**
+			  * Changes the lastname of a client of the clients ArrayList<br>
+			  * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
+			  * <b>Post: </b>Changes the lastname of a client of the clients ArrayList if there isn't conflicts with it<br>
+			  * @param index the index of the client whose lastname will be changed
+			  * @param newLastname The new lastname of the client
+			  * @return True if the client's lastname was changed, false if not
+			  */
+			 public boolean changeClientLastname(int index,String newLastname) {
+				 if(index!=-1) {
+					 restaurantClients.get(index).setLastname(newLastname);
+					 return true;
+				 }
+				 return false;
+			 }
+			
+			 /**
+			  * Changes the id of a client of the clients ArrayList<br>
+			  * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
+			  * <b>Post: </b>Changes the id of a client of the clients ArrayList if there isn't conflicts with it<br>
+			  * @param index the index of the client whose id will be changed
+			  * @param newId The new id of the client
+			  * @return True if the client's id was changed, false if not
+			  */
+			 public boolean changeClientId(int index,String newId) {
+				 if(index!=-1) {
+					 restaurantClients.get(index).setId(newId);
+					 return true;
+				 }
+				 return false;
+			 }
+			 
+			 /**
+			  * Changes the address of a client of the clients ArrayList<br>
+			  * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
+			  * <b>Post: </b>Changes the address of a client of the clients ArrayList if there isn't conflicts with it<br>
+			  * @param index the index of the client whose address will be changed
+			  * @param newAddress The new address of the client
+			  * @return True if the client's address was changed, false if not
+			  */
+			 public boolean changeClientAddress(int index,String newAddress) {
+				 if(index!=-1) {
+					 restaurantClients.get(index).setAddress(newAddress);
+					 return true;
+				 }
+				 return false;
+			 }
+			 
+			 /**
+			  * Changes the phoneNumber of a client of the clients ArrayList<br>
+			  * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
+			  * <b>Post: </b>Changes the phoneNumber of a client of the clients ArrayList if there isn't conflicts with it<br>
+			  * @param index the index of the client whose phoneNumber will be changed
+			  * @param newPhoneNumber The new phoneNumber of the client
+			  * @return True if the client's phoneNumber was changed, false if not
+			  */
+			 public boolean changeClientPhoneNumber(int index,String newPhoneNumber) {
+				 if(index!=-1) {
+					 restaurantClients.get(index).setPhoneNumber(newPhoneNumber);
+					 return true;
+				 }
+				 return false;
+			 }
+			 
+			 /**
+			  * Changes the observations of a client of the clients ArrayList<br>
+			  * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
+			  * <b>Post: </b>Changes the observations of a client of the clients ArrayList if there isn't conflicts with it<br>
+			  * @param index the index of the client whose observations will be changed
+			  * @param newObservations The new observations of the client
+			  * @return True if the client's observations was changed, false if not
+			  */
+			 public boolean changeClientObservations(int index,String newObservations) {
+				 if(index!=-1) {
+					 restaurantClients.get(index).setObservations(newObservations);
+					 return true;
+				 }
+				 return false;
+			 }
+			 
 			
 			
 			//Getters
