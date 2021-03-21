@@ -162,11 +162,12 @@ public class Restaurant{
 	 * @param product The original product in the restaurantProducts ArrayList
 	 */
 	private void addToproductsWithTheirSizes(Product product) {
-		Product pToAdd=product;
-		for(int i=0;i<pToAdd.getProductSizesSize();i++) {
-			pToAdd.setProductActualSize(i);
-			pToAdd.setProductPrice(i);
-			productsWithTheirSizes.add(pToAdd);
+		Product[] pToAdd=new Product[product.getProductSizesSize()];
+		for(int i=0;i<product.getProductSizesSize();i++) {
+			pToAdd[i]=product;
+			pToAdd[i].setProductActualSize(i);
+			pToAdd[i].setProductPrice(i);
+			productsWithTheirSizes.add(pToAdd[i]);
 			productsWithTheirSizesSize++;
 		}
 	}
