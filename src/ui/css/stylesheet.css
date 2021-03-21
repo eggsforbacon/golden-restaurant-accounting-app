@@ -41,3 +41,29 @@
   -fx-border-color: #471c09;
   -fx-background-radius: 7;
 }
+
+.text-area .content {
+  -fx-background-color: #845650;
+  -fx-border-color: #471c09;
+}
+
+.text-area {
+  -fx-text-fill: #efcf74;
+}
+
+.menu-button {
+  -fx-background-color: #845650;
+  -fx-text-fill: #efcf74;
+  -fx-border-color: #471c09;
+}
+
+.table-row-cell {
+  -fx-background-color: transparent;
+  -fx-text-fill: #efcf74;
+}
+
+.table-row-cell:odd {
+  -fx-background-color: transparent;
+  -fx-opacity: 0.8;
+  -fx-text-fill: #efcf74;
+}

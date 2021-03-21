@@ -28,9 +28,9 @@
             <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="450.0" prefWidth="203.0" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
                   <Button mnemonicParsing="false" text="Importar" />
-                  <Button mnemonicParsing="false" text="Añadir" />
+                  <Button mnemonicParsing="false" text="Exportar" />
                   <Label fx:id="spacer2" prefHeight="65.0" prefWidth="0.0" />
-                  <Button mnemonicParsing="false" text="Agregar" />
+                  <Button mnemonicParsing="false" onAction="#addProductCLicked" text="Agregar" />
                   <Button mnemonicParsing="false" text="Eliminar" />
                   <Label fx:id="spacer3" />
                   <Label prefHeight="42.0" prefWidth="137.0" text="Editado por última vez por:" wrapText="true" />
