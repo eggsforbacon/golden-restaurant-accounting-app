@@ -452,9 +452,17 @@ public class Restaurant{
 	  * @param name The name of the ingredient
 	  * @return True if the product was added, false if not
 	  */
-	 //public boolean addAnIngredientToTheRestaurant(String name) {
-		 
-	// }
+	public boolean addAnIngredientToTheRestaurant(String name) {
+		 selectionSortIngredients();
+		 int index = ingredientIndexWithName(name);
+		 if(index==-1) {
+			 Ingredient toAdd = new Ingredient(name);
+			 restaurantIngredients.add(toAdd);
+			 restaurantIngredientsSize++;
+			 return true;
+		 }
+		 return false;
+	}
 	 
 	 /**
 		 * Given the name, returns the index of a ingredient of the ingredient ArrayList<br>
@@ -463,8 +471,20 @@ public class Restaurant{
 		 * @param name The name of the ingredient
 		 * @return index
 		 */
-		public int ingredientIndexWithName(String name) {	//Use it when you have the product name but not the product itself
+		public int ingredientIndexWithName(String name) {	//Use it when you have the ingredient name but not the ingredient itself
 			int index =  binarySearch(restaurantIngredients,name);
+			return index;
+		}
+		
+		/**
+		 * Given the ingredient, returns the index of that ingredient in the ingredients ArrayList<br>
+		 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
+		 * <b>Post: </b>The index of the ingredient is obtained if it exists<br>
+		 * @param ingredient The ingredient searched
+		 * @return index
+		 */
+		public int productIndexWithProduct(Ingredient ingredient) { //Use it when you have the ingredient itself
+			int index = restaurantIngredients.indexOf(ingredient);
 			return index;
 		}
 		
@@ -473,7 +493,7 @@ public class Restaurant{
 		 * <b>Pre: </b><br>
 		 * <b>Post: </b>Now the products in the ArrayList are sorted <br>
 		 */
-		public void SelectionSortIngredients() { 
+		public void selectionSortIngredients() { 
 	        int n = restaurantIngredientsSize;
 	        for (int i = 0; i < n-1; i++){ 
 	            int min_idx = i; 
@@ -487,6 +507,43 @@ public class Restaurant{
 	            restaurantIngredients.set(i, temp);    
 	        } 
 	    } 
+		
+		/**
+		 * Deletes a ingredient of the ingredients ArrayList<br>
+		 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
+		 * <b>Post: </b>Deletes a ingredient of the ingredients ArrayList if there isn't conflicts with it<br>
+		 * @param The index of the ingredient that is going to be deleted
+		 * @return True if the ingredient was deleted, false if not
+		 */
+		public boolean deleteIngredient(int index) {
+			if(index!=-1) {
+				Ingredient deleted = restaurantIngredients.get(index);
+				if(!productHasTheIngredient(deleted)) {
+					restaurantIngredients.remove(index);
+					restaurantIngredientsSize--;
+					return true;
+				}
+				
+			}
+			return false;
+		}
+		/**
+		 * Checks if a ingredient is in one of the ingredients ArrayList of the products ArrayList<br>
+		 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
+		 * <b>Post: </b>Indicates if the ingredient is used or not<br>
+		 * @param ingredient The ingredient that will be searched
+		 * @return True if the ingredient was found, false if not
+		 */
+		public boolean productHasTheIngredient(Ingredient ingredient) {
+			for(int i=0;i<restaurantProductsSize;i++) {
+				ArrayList<Ingredient> ingredients = restaurantProducts.get(i).getIngrdnts();
+				if(ingredients.contains(ingredient)) {
+					return true;
+				}
+			}
+			return false;
+		}
+
 	 
 	
 	 
