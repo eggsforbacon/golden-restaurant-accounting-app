@@ -32,7 +32,7 @@ public class Main extends Application {
     ArrayList<Double> prices = new ArrayList<>();
     prices.add(5.0);
     prices.add(3.0);
-    prices.add(7.2);
+    prices.add(7.9);
     GH.addProduct("Nombre", pt, ingredients, sizes, prices);
     controller = new MainGUIController(GH);
   }

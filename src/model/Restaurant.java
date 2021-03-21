@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -149,7 +150,7 @@ public class Restaurant{
 			if(index==-1&&pt.getEnabled()) {
 				Product toAdd = new Product(name,pt,ingrdnts,productSizes,sizesPrices);
 				restaurantProducts.add(toAdd);
-				addToproductsWithTheirSizes(toAdd);
+				addToproductsWithTheirSizes(name,pt,ingrdnts,productSizes,sizesPrices);
 				restaurantProductsSize++;
 				return true;
 		}
@@ -161,14 +162,14 @@ public class Restaurant{
 	 * <b>Post: </b>Adds a product for each size to the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
 	 * @param product The original product in the restaurantProducts ArrayList
 	 */
-	private void addToproductsWithTheirSizes(Product product) {
-		Product[] pToAdd=new Product[product.getProductSizesSize()];
-		for(int i=0;i<product.getProductSizesSize();i++) {
-			pToAdd[i]=product;
-			pToAdd[i].setProductActualSize(i);
-			pToAdd[i].setProductPrice(i);
-			productsWithTheirSizes.add(pToAdd[i]);
+	private void addToproductsWithTheirSizes(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
+		for(int i=0;i<productSizes.size();i++) {
+			productsWithTheirSizes.add(new Product(name,pt,ingrdnts,productSizes,sizesPrices));
 			productsWithTheirSizesSize++;
+		}
+		for(int i=0;i<productSizes.size();i++) {
+			productsWithTheirSizes.get(i).setProductActualSize(i);
+			productsWithTheirSizes.get(i).setProductPrice(i);
 		}
 	}
 	
