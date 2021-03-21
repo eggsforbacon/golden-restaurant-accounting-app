@@ -23,6 +23,16 @@ public abstract class SystemObject implements Comparable<SystemObject>{
 	public boolean getEnabled() {
 		return enabled;
 	}
+	public String getEnabledString() {
+		String info = "";
+		if(getEnabled()) {
+			info+="SI";
+		}
+		else {
+			info += "NO";
+		}
+		return info;
+	}
 	/**
 	* @return A String that indicates the name.<br>
 	*/

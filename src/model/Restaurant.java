@@ -18,6 +18,8 @@ public class Restaurant{
 	private int restaurantIngredientsSize;
 	private ArrayList<PlateType> restaurantPlateTypes;
 	private int restaurantPlateTypesSize;
+	private ArrayList<Client> restaurantClients;
+	private int restaurantClientsSize;
 	public Restaurant() {
 		rootUser = new User("Generic","user","none","Root","admin");
 		firstTime = true;
@@ -38,6 +40,8 @@ public class Restaurant{
 		restaurantPlateTypes.add(sideDish);
 		restaurantPlateTypes.add(drink);
 		restaurantPlateTypesSize=restaurantPlateTypes.size();
+		restaurantClients = new ArrayList<Client>();
+		restaurantClientsSize = restaurantClients.size();
 	}
 
 	
@@ -722,12 +726,58 @@ public class Restaurant{
 				 return false;
 			 }
 
-
-
+			 //Clients
+			 /**
+			  * Adds a client to the clients ArrayList<br>
+			  * <b>Pre: </b><br>
+			  * <b>Post: </b>Adds a client to the clients ArrayList if there isn't conflicts with it<br>
+			  * @param name The name of the client
+			  * @param lastname The lastname of the client
+			  * @param id The id of the client
+			  * @param address The address of the client
+			  * @param phoneNumber The phone number of the client
+			  * @param observations The observations of the client
+			  * @return True if the product was added, false if not
+			  */
+			public boolean addAClientToTheRestaurant(String name,String lastname,String id,String address,String phoneNumber,String observations) {
+				if(restaurantClients.isEmpty()) {
+					Client toAdd = new Client(name,lastname,id,address,phoneNumber,observations);
+					restaurantClients.add(toAdd);
+					restaurantClientsSize++;
+					return true;
+				}
+				else {
+					//restaurantClients.
+				}
+				return false;
+				/*
+				collectionSortClients();
+				 int index = clientIndexWithName(name);
+				 if(index==-1) {
+					 Client toAdd = new Client(name);
+					 restaurantClients.add(toAdd);
+					 restaurantClientsSize++;
+					 return true;
+				 }
+				 return false;
+				 */
+			}
+			
+			//public int compareClients(String name,String lastname) {
+				
+			//}
+			
 			
 			//Getters
 			public ArrayList<Product> getRestaurantProducts() {
 				return restaurantProducts;
+			}
+			public String getRestaurantProductsString() {
+				String info="";
+				for(int i = 0;i<restaurantProductsSize;i++) {
+					info += (restaurantProducts.get(i).showInformation()) + (",");
+				}
+				return info;
 			}
 			public ArrayList<Product> getProductsWithTheirSizes() {
 				return productsWithTheirSizes;
@@ -741,11 +791,25 @@ public class Restaurant{
 			public ArrayList<Ingredient> getRestaurantIngredients() {
 				return restaurantIngredients;
 			}
+			public String getRestaurantIngredientsString() {
+				String info="";
+				for(int i = 0;i<restaurantIngredientsSize;i++) {
+					info += (restaurantIngredients.get(i).showInformation()) + (",");
+				}
+				return info;
+			}
 			public int getRestaurantIngredientsSize() {
 				return restaurantIngredientsSize;
 			}
 			public ArrayList<PlateType> getRestaurantPlateTypes() {
 				return restaurantPlateTypes;
+			}
+			public String getRestaurantPlateTypesString() {
+				String info="";
+				for(int i = 0;i<restaurantPlateTypesSize;i++) {
+					info += (restaurantPlateTypes.get(i).showInformation()) + (",");
+				}
+				return info;
 			}
 			public int getRestaurantPlateTypesSize() {
 				return restaurantPlateTypesSize;
