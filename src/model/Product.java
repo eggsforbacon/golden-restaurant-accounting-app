@@ -170,7 +170,7 @@ public class Product extends SystemObject{
 	/**
 	* @return An object of type PlateType that indicates the type of the product.<br>
 	*/
-	public String getPt() {
+	public String getPt() { 
 		return pt.getName();
 	}
 	 
