@@ -69,13 +69,16 @@ public class CenterPanesGUIController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         nameCol.setStyle( "\n-fx-alignment: CENTER;");
-        enabledCol.setCellValueFactory(new PropertyValueFactory<>("enabled"));
+        enabledCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
         enabledCol.setStyle( "\n-fx-alignment: CENTER;");
         ingredientsCol.setCellValueFactory(new PropertyValueFactory<>("theIngredients"));
         ingredientsCol.setStyle( "\n-fx-alignment: CENTER;");
         typeCol.setCellValueFactory(new PropertyValueFactory<>("pt"));
         typeCol.setStyle( "\n-fx-alignment: CENTER;");
-
+        sizesCol.setCellValueFactory(new PropertyValueFactory<>("productActualSize"));
+        sizesCol.setStyle( "\n-fx-alignment: CENTER;");
+        pricesCol.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
+        pricesCol.setStyle("\n-fx-alignment: CENTER;");
         ObservableList<Product> productsList = FXCollections.observableArrayList(GH.getProductsWithTheirSizes());
         productTBV.setItems(productsList);
     }

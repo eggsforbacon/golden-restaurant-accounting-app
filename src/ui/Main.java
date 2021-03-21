@@ -27,8 +27,12 @@ public class Main extends Application {
     ingredients.add(new Ingredient("Tomate"));
     ArrayList<String> sizes = new ArrayList<>();
     sizes.add("Tamaño");
+    sizes.add("Tamañito");
+    sizes.add("Tamañote");
     ArrayList<Double> prices = new ArrayList<>();
     prices.add(5.0);
+    prices.add(3.0);
+    prices.add(7.2);
     GH.addProduct("Nombre", pt, ingredients, sizes, prices);
     controller = new MainGUIController(GH);
   }
