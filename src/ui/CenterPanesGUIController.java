@@ -64,9 +64,6 @@ public class CenterPanesGUIController implements Initializable {
     private TextField newProdNameTF;
 
     @FXML
-    private MenuButton newProdIngredientsMB;
-
-    @FXML
     private TextField newProdTypeTF;
 
     @FXML
@@ -76,7 +73,7 @@ public class CenterPanesGUIController implements Initializable {
     private TextArea newProdPricesTA;
 
     @FXML
-    private ListView<Ingredient> selectedItemsLV;
+    private ListView<String> selectedItemsLV;
 
     private Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
@@ -120,7 +117,6 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void addProductCLicked(ActionEvent event) {
         try {
-            System.out.println("We tried");
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("add-product.fxml"));
             fxmlLoader.setController(this);
             Parent root = fxmlLoader.load();
@@ -147,22 +143,12 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void confirmProduct(ActionEvent event) {
-        System.out.println("We're in");
         String newProdName = newProdNameTF.getText();
-        ArrayList<CheckMenuItem> items = new ArrayList<>();
-        for (Ingredient ing: GH.getRestaurantIngredients()) items.add(new CheckMenuItem(ing.getName()));
-        for (CheckMenuItem item : items) {
-            item.selectedProperty().addListener((observableValue, oldValue, newValue) -> {
-                Ingredient itemIng = GH.getRestaurantIngredients().get(GH.binarySearch(GH.getRestaurantIngredients(), item.getText()));
-                if (newValue) {
-                    System.out.println("true");
-                    selectedItemsLV.getItems().add(itemIng);
-                }
-                else selectedItemsLV.getItems().remove(itemIng);
-            });
+        ArrayList<Ingredient> newProdIngredients = new ArrayList<>();
+        for (String ingName: selectedItemsLV.getSelectionModel().getSelectedItems()) {
+            Ingredient ingtoadd = GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(ingName));
+            newProdIngredients.add(ingtoadd);
         }
-        ArrayList<Ingredient> newProdIngredients = new ArrayList<>(selectedItemsLV.getItems());
-        System.out.println(newProdIngredients.toString());
         PlateType newProdPlateType = new PlateType(newProdTypeTF.getText());
         ArrayList<String> newProdSizes = new ArrayList<>(Arrays.asList(newProdSizesTA.getText().split(",")));
         ArrayList<Double> newProdPrices = new ArrayList<>();
@@ -173,9 +159,33 @@ public class CenterPanesGUIController implements Initializable {
         boolean productIngredientsValid = !selectedItemsLV.getItems().isEmpty();
         boolean ptIsValid = !newProdPlateType.getName().isEmpty();
         boolean sizesAndPricesValid = newProdPrices.size() == newProdSizes.size() && !newProdPrices.isEmpty();
-        System.out.println(productIngredientsValid);
+        System.out.println(newProdPrices.toString());
+        System.out.println(newProdSizes.toString());
         if (productNameValid && productIngredientsValid && ptIsValid && sizesAndPricesValid) {
+            Product newP = new Product(newProdName,newProdPlateType,newProdIngredients,newProdSizes,newProdPrices);
+            for (int i = 0; i < newP.getProductSizesSize(); i++) {
+                System.out.println(
+                        "-Name: " + newP.getName() + "\n" +
+                                "-Pt: " + newP.getPt() + "\n" +
+                                "-Ing: " + newP.getTheIngredients() +
+                                "\n-Size: ("+ i + ") " + newP.getProductActualSize() +
+                                "\n-Price: " + newP.getProductPrice() +
+                                "\n------------------------------------------"
+                );
+            }
+            System.out.println("-------------------------------------------------------------------------");
             GH.addProduct(newProdName,newProdPlateType,newProdIngredients,newProdSizes,newProdPrices);
+            int in = 0;
+            for (int i = GH.getProductsWithTheirSizesSize() - newProdSizes.size(); i < GH.getProductsWithTheirSizesSize(); i++) {
+                Product pp = GH.getProductsWithTheirSizes().get(i);
+                System.out.println("-Name: " + pp.getName() + "\n" +
+                        "-Pt: " + pp.getPt() + "\n" +
+                        "-Ing: " + pp.getTheIngredients() +
+                        "\n-Size: ("+ in + ") " + pp.getProductActualSize() +
+                        "\n-Price: " + pp.getProductPrice() +
+                        "\n------------------------------------------");
+                in++;
+            }
             initProductPane();
             try {
                 ((Stage) productPane.getScene().getWindow()).close();
@@ -209,10 +219,9 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     private void initAddProductPane() {
-        ArrayList<CheckMenuItem> items = new ArrayList<>();
-        for (Ingredient ing: GH.getRestaurantIngredients()) {
-            items.add(new CheckMenuItem(ing.getName()));
-        }
-        newProdIngredientsMB.getItems().addAll(items);
+        ObservableList<String> items = FXCollections.observableArrayList();
+        for (Ingredient ing: GH.getRestaurantIngredients()) items.add(ing.getName());
+        selectedItemsLV.setItems(items);
+        selectedItemsLV.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 }

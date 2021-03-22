@@ -68,7 +68,9 @@
   -fx-text-fill: #efcf74;
 }
 
-.list-view {
+.list-view, .list-view .list-cell {
   -fx-background-color: #845650;
+  -fx-text-fill: #efcf74;
+  -fx-font-weight: bold;
   -fx-border-color: #471c09;
 }
