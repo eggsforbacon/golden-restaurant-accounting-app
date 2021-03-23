@@ -1,10 +1,10 @@
 package model;
 public class Client extends Person{
-	
+
 	private String address;
 	private String phoneNumber;
 	private String observations;
-	
+
 	public Client(String name,String lastname,String id,String address,String phoneNumber,String observations) {
 		super(name,lastname,id);
 		this.phoneNumber=phoneNumber;
@@ -24,24 +24,24 @@ public class Client extends Person{
 
 	//Getters
 	/**
-	* @return An String with the address of a client.<br>
-	*/
+	 * @return An String with the address of a client.<br>
+	 */
 	public String getAddress() {
 		return address;
 	}
 	/**
-	* @return An String with the phone number of a client.<br>
-	*/
+	 * @return An String with the phone number of a client.<br>
+	 */
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 	/**
-	* @return An String with the observations of a client.<br>
-	*/
+	 * @return An String with the observations of a client.<br>
+	 */
 	public String getObservations() {
 		return observations;
 	}
-	
+
 	//Setters
 	/**
 	 * @param address An String with the address of a person.
@@ -61,5 +61,5 @@ public class Client extends Person{
 	public void setObservations(String observations) {
 		this.observations = observations;
 	}
-	
+
 }

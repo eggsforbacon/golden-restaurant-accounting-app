@@ -12,5 +12,5 @@ public class Employee extends Person{
 		info += getId()+";";
 		return info;
 	}
-	
+
 }

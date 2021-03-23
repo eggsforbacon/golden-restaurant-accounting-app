@@ -74,44 +74,44 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 		info += getDate()+";";
 		info += getObservations()+";";
 		info += showProducts();
-		
+
 		return info;
 	}
-	
+
 	//Getters
 	/**
-	* @return The observations of the order<br>
-	*/
+	 * @return The observations of the order<br>
+	 */
 	public String getObservations() {
 		return observations;
 	}
 	/**
-	* @return The status indicator of the order.<br>
-	*/
+	 * @return The status indicator of the order.<br>
+	 */
 	public int getStatusIndicator() {
 		return statusIndicator;
 	}
 	/**
-	* @return The client who requested the order.<br>
-	*/
+	 * @return The client who requested the order.<br>
+	 */
 	public Client getOrderClient() {
 		return orderClient;
 	}
 	/**
-	* @return The employee who made the order.<br>
-	*/
+	 * @return The employee who made the order.<br>
+	 */
 	public Employee getOrderEmployee() {
 		return orderEmployee;
 	}
 	/**
-	* @return The status of the order.<br>
-	*/
+	 * @return The status of the order.<br>
+	 */
 	public String getOrderStatus() {
 		return orderStatus.toString();
 	}
 	/**
-	* @return The date of the order.<br>
-	*/
+	 * @return The date of the order.<br>
+	 */
 	public String getDate() {
 		return date;
 	}
@@ -121,7 +121,7 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	public Client getOrderclient() {
 		return orderClient;
 	}
-	
+
 	//Setters
 	/**
 	 * @param statusIndicator The status indicator of the order
@@ -147,7 +147,7 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	public void setObservations(String observations) {
 		this.observations = observations;
 	}
-	
-	
+
+
 
 }

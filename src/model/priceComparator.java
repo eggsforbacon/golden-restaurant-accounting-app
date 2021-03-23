@@ -15,5 +15,5 @@ public class priceComparator implements Comparator<Product> {
 			return o1.getName().compareTo(o2.getName());
 		}
 	}
-	
+
 }

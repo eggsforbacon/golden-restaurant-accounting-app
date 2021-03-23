@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class Product extends SystemObject{
-	
+
 	private PlateType pt;
 	private ArrayList<Ingredient> ingrdnts;
 	private int ingrdntsSize;
@@ -24,19 +24,19 @@ public class Product extends SystemObject{
 		this.sizesPrices=sizesPrices;
 		setProductActualSize(indicator);
 		setProductPrice(indicator);
-		
+
 	}
-	
-	
-	
-	
+
+
+
+
 	/**
 	Adds an ingredient to the ingredients ArrayList <br>
 	<b> pre: </b>The ingredient doesn't already exist in the ArrayList<br>
 	<b> post: </b>The ingredient is added if the precondition is fulfilled<br>
 	@param ingredient An ingredient from the restaurant
 	@return true If the ingredient was added, false if not
-	*/
+	 */
 	public boolean addAnIngredient(Ingredient ingredient) {
 		String check = ingredient.getName();
 		if(binarySearchAnIngredient(check)==-1 && ingredient.getEnabled()) {
@@ -46,14 +46,14 @@ public class Product extends SystemObject{
 		}
 		return false;
 	}
-	
+
 	/**
 	Searchs an ingredient in the ingredients ArrayList of the product <br>
 	<b> pre: </b><br>
 	<b> post: </b>The ingredient is found or doesn't exist<br>
 	@param name The name of the ingredient that will be searched
 	@return index
-	*/
+	 */
 	private int binarySearchAnIngredient(String name) {
 		ingredientsBubbleSort();
 		int pos = -1;
@@ -73,34 +73,34 @@ public class Product extends SystemObject{
 		}
 		return pos;
 	}
-	
+
 	/**
 	Sorts the ingredients ArrayList of the product <br>
 	<b> pre: </b><br>
 	<b> post: </b>The ingredients are sorted<br>
-	*/
+	 */
 	private void ingredientsBubbleSort() {
 		int changes = 0;
 		for(int i = 1;i<ingrdntsSize&&changes>0;i++){ 
-	        changes = 0;
-	      for(int j=0;j<ingrdntsSize-i;j++){
-	        if(ingrdnts.get(j).compareTo(ingrdnts.get(j+1))>0){
-	          Ingredient temp = ingrdnts.get(j);
-	          ingrdnts.set(j,ingrdnts.get(j+1));
-	          ingrdnts.set(j+1,temp);
-	          changes++;
-	        }
-	      }
+			changes = 0;
+			for(int j=0;j<ingrdntsSize-i;j++){
+				if(ingrdnts.get(j).compareTo(ingrdnts.get(j+1))>0){
+					Ingredient temp = ingrdnts.get(j);
+					ingrdnts.set(j,ingrdnts.get(j+1));
+					ingrdnts.set(j+1,temp);
+					changes++;
+				}
+			}
 		} 
-}
-	
+	}
+
 	/**
 	Deletes an ingredient of the ingredients ArrayList of the product <br>
 	<b> pre: </b>It is only useful if the ingredient exists in the ArrayList<br>
 	<b> post: </b>The ingredient is deleted if it existed in the first place<br>
 	@param name The name of the ingredient that will be deleted
 	@return True if the ingredient was deleted, false if not
-	*/
+	 */
 	public boolean deleteAnIngredient(String name) {
 		int index=binarySearchAnIngredient(name);
 		if(index!=-1) {
@@ -110,13 +110,13 @@ public class Product extends SystemObject{
 		}
 		return false;
 	}
-	
+
 	/**
 	Organizes the ingredients in a String <br>
 	<b> pre: </b>The ingredients ArrayList has to be initialized<br>
 	<b> post: </b>The ingredients are organized in a String<br>
 	@return ingredients
-	*/
+	 */
 	public String getTheIngredients() {
 		String ingredients = "";
 		for(int i = 0;i<ingrdntsSize;i++) {
@@ -129,7 +129,7 @@ public class Product extends SystemObject{
 	<b> pre: </b><br>
 	<b> post: </b>Now the product has a specific size <br>
 	@return info
-	*/
+	 */
 	public String chooseASize() {
 		String info = productActualSize+" "+getName();
 		return info;
@@ -141,7 +141,7 @@ public class Product extends SystemObject{
 	<b> pre: </b><br>
 	<b> post: </b>The sizes and their prices are now in a String<br>
 	@return info
-	*/
+	 */
 	public String sizesInformation() {
 		String info = "";
 		for(int i=0;i<productSizesSize;i++) {
@@ -150,7 +150,7 @@ public class Product extends SystemObject{
 		}
 		return info;
 	}
-	
+
 	@Override
 	public String showInformation() {
 		String info = "";
@@ -158,49 +158,49 @@ public class Product extends SystemObject{
 		info += pt.getName()+";";	//P
 		info += getTheIngredients()+";";
 		info += sizesInformation();
-		
+
 		return info;
 	}
 
 	//Getters
-	
+
 	/**
-	* @return An arrayList that contains the ingredients of the dish.<br>
-	*/
+	 * @return An arrayList that contains the ingredients of the dish.<br>
+	 */
 	public ArrayList<Ingredient> getIngrdnts() {
 		return ingrdnts;
 	}
 	/**
-	* @return An object of type PlateType that indicates the type of the product.<br>
-	*/
+	 * @return An object of type PlateType that indicates the type of the product.<br>
+	 */
 	public String getPt() { 
 		return pt.getName();
 	}
-	 
+
 	/**
-	* @return productActualSize A String that indicates the size chosen for the product
-	*/
+	 * @return productActualSize A String that indicates the size chosen for the product
+	 */
 	public String getProductActualSize() {
 		return productActualSize;
 	}
 	/**
-	* @return productPrice A double that indicates the price chosen for the product
-	*/
+	 * @return productPrice A double that indicates the price chosen for the product
+	 */
 	public double getProductPrice() {
 		return productPrice;
 	}
-	
+
 	/**
-	* @return productPrice An int that indicates the size of the product sizes ArrayList
-	*/
+	 * @return productPrice An int that indicates the size of the product sizes ArrayList
+	 */
 	public int getProductSizesSize() {
 		return productSizesSize;
 	}
-	
 
-	
+
+
 	//Setters
-	
+
 	/**
 	 * @param pt An object of type PlateType that indicates the type of the product
 	 */
@@ -217,7 +217,7 @@ public class Product extends SystemObject{
 		else {
 			productActualSize=productSizes.get(index);
 		}
-		
+
 	}
 	/**
 	 * @param index An index that indicates the price chosen for the product
@@ -232,9 +232,9 @@ public class Product extends SystemObject{
 	}
 
 
-	
 
-	
-	
-	
+
+
+
+
 }
