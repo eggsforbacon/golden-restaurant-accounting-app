@@ -75,6 +75,9 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private ListView<String> selectedItemsLV;
 
+    @FXML
+    private Label ingredientsInfoLabel;
+
     private Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
         this.GH = GH;
@@ -138,7 +141,11 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void cancelProduct(ActionEvent event) {
-
+        try {
+            ((Stage) productPane.getScene().getWindow()).close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
     }
 
     @FXML
@@ -223,5 +230,15 @@ public class CenterPanesGUIController implements Initializable {
         for (Ingredient ing: GH.getRestaurantIngredients()) items.add(ing.getName());
         selectedItemsLV.setItems(items);
         selectedItemsLV.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    }
+
+    @FXML
+    void hideIngInfo(MouseEvent event) {
+        ingredientsInfoLabel.setVisible(false);
+    }
+
+    @FXML
+    void showIngInfo(MouseEvent event) {
+        ingredientsInfoLabel.setVisible(true);
     }
 }

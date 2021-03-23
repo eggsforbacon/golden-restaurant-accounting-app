@@ -13,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import model.Restaurant;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -61,9 +62,9 @@ public class MainGUIController implements Initializable {
         label = progress;
         spacer1.prefHeightProperty().bind(mainPane.heightProperty());
         randomIMV.setImage(new Image(String.valueOf(getClass().getResource(randomImage()))));
+
         homeScreenIMV.fitHeightProperty().bind(mainPane.heightProperty());
         homeScreenIMV.fitWidthProperty().bind(mainPane.widthProperty());
-
         currentScene.prefHeightProperty().bind(mainPane.heightProperty());
         currentScene.prefWidthProperty().bind(mainPane.widthProperty());
     }

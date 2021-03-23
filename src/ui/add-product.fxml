@@ -20,10 +20,11 @@
                   <TextField fx:id="newProdNameTF" prefWidth="170.0" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" VBox.vgrow="ALWAYS">
+            <HBox alignment="CENTER" prefHeight="136.0" prefWidth="580.0" spacing="15.0" VBox.vgrow="ALWAYS">
                <children>
                   <Label text="Ingredientes:" />
-                  <ListView fx:id="selectedItemsLV" minHeight="-Infinity" prefHeight="21.0" prefWidth="164.0" />
+                  <ListView fx:id="selectedItemsLV" minHeight="-Infinity" onMouseEntered="#showIngInfo" onMouseExited="#hideIngInfo" prefHeight="33.0" prefWidth="164.0" />
+                  <Label fx:id="ingredientsInfoLabel" alignment="CENTER" prefHeight="122.0" prefWidth="189.0" text="(Para seleccionar varios ingredientes, presionar la tecla CTRL mientras hace click sobre el ingrediente a seleccionar)" textAlignment="JUSTIFY" visible="false" wrapText="true" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                <children>

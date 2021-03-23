@@ -74,3 +74,16 @@
   -fx-font-weight: bold;
   -fx-border-color: #471c09;
 }
+
+.list-view .list-cell:odd {
+  -fx-background-color: #ab645b;
+  -fx-text-fill: #efcf74;
+  -fx-font-weight: bold;
+  -fx-border-color: #471c09;
+}
+
+.list-view .list-cell:selected {
+  -fx-background-color: #efcf74;
+  -fx-text-fill: #ab645b;
+  -fx-font-weight: bold;
+}

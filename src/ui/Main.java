@@ -13,14 +13,17 @@ import model.Ingredient;
 import model.PlateType;
 import model.Restaurant;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main extends Application {
 
   MainGUIController controller;
+  LoginGUIController logController;
+  Restaurant GH;
 
   public Main() {
-    Restaurant GH = new Restaurant();
+    GH = new Restaurant();
     PlateType pt = new PlateType("Tipo");
     ArrayList<Ingredient> ingredients = new ArrayList<>();
     ingredients.add(new Ingredient("Papa"));
@@ -36,6 +39,7 @@ public class Main extends Application {
     GH.addProduct("Nombre", pt, ingredients, sizes, prices);
     GH.getRestaurantIngredients().addAll(ingredients);
     controller = new MainGUIController(GH);
+    logController = new LoginGUIController(GH);
   }
 
   public static void main(String[] args) {
