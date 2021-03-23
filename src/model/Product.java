@@ -12,8 +12,9 @@ public class Product extends SystemObject{
 	private ArrayList<Double> sizesPrices;
 	private double productPrice;
 	private String productActualSize;
+	private int indicator;
 
-	public Product(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
+	public Product(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices,int indicator) {
 		super(name);
 		this.pt=pt;
 		this.ingrdnts=ingrdnts;
@@ -21,6 +22,8 @@ public class Product extends SystemObject{
 		this.productSizes=productSizes;
 		productSizesSize = productSizes.size();
 		this.sizesPrices=sizesPrices;
+		setProductActualSize(indicator);
+		setProductPrice(indicator);
 		
 	}
 	
@@ -208,13 +211,24 @@ public class Product extends SystemObject{
 	 * @param index An index that indicates the size chosen for the product
 	 */
 	public void setProductActualSize(int index) {
-		productActualSize=productSizes.get(index);
+		if(index==-1) {
+			productActualSize="Aun sin definir";
+		}
+		else {
+			productActualSize=productSizes.get(index);
+		}
+		
 	}
 	/**
 	 * @param index An index that indicates the price chosen for the product
 	 */
 	public void setProductPrice(int index) {
-		productPrice=sizesPrices.get(index);
+		if(index==-1) {
+			productPrice=0;
+		}
+		else {
+			productPrice=sizesPrices.get(index);
+		}
 	}
 
 

@@ -169,7 +169,7 @@ public class CenterPanesGUIController implements Initializable {
         System.out.println(newProdPrices.toString());
         System.out.println(newProdSizes.toString());
         if (productNameValid && productIngredientsValid && ptIsValid && sizesAndPricesValid) {
-            Product newP = new Product(newProdName,newProdPlateType,newProdIngredients,newProdSizes,newProdPrices);
+            Product newP = new Product(newProdName,newProdPlateType,newProdIngredients,newProdSizes,newProdPrices,-1);
             for (int i = 0; i < newP.getProductSizesSize(); i++) {
                 System.out.println(
                         "-Name: " + newP.getName() + "\n" +
@@ -181,7 +181,7 @@ public class CenterPanesGUIController implements Initializable {
                 );
             }
             System.out.println("-------------------------------------------------------------------------");
-            GH.addProduct(newProdName,newProdPlateType,newProdIngredients,newProdSizes,newProdPrices);
+           GH.addProduct(newProdName,newProdPlateType,newProdIngredients,newProdSizes,newProdPrices);
             int in = 0;
             for (int i = GH.getProductsWithTheirSizesSize() - newProdSizes.size(); i < GH.getProductsWithTheirSizesSize(); i++) {
                 Product pp = GH.getProductsWithTheirSizes().get(i);

@@ -23,6 +23,8 @@ public class Restaurant{
 	private long timeOfSearch;
 	private ArrayList<Order> restaurantOrders;
 	private int restaurantOrdersSize;
+	private ArrayList<Employee> restaurantEmployees;
+	private int restaurantEmployeesSize;
 	public Restaurant() {
 		rootUser = new User("Generic","user","none","Root","admin");
 		firstTime = true;
@@ -48,6 +50,8 @@ public class Restaurant{
 		timeOfSearch=0;
 		restaurantOrders=new ArrayList<Order>();
 		restaurantOrdersSize=restaurantOrders.size();
+		restaurantEmployees = new ArrayList<Employee>();
+		restaurantEmployeesSize = restaurantEmployees.size();
 	}
 
 	
@@ -153,7 +157,7 @@ public class Restaurant{
 			ProductInsertionSortByName();
 			int index = productIndexWithName(name);
 			if(index==-1&&pt.getEnabled()) {
-				Product toAdd = new Product(name,pt,ingrdnts,productSizes,sizesPrices);
+				Product toAdd = new Product(name,pt,ingrdnts,productSizes,sizesPrices,-1);
 				restaurantProducts.add(toAdd);
 				addToproductsWithTheirSizes(name,pt,ingrdnts,productSizes,sizesPrices);
 				restaurantProductsSize++;
@@ -169,13 +173,15 @@ public class Restaurant{
 	 */
 	private void addToproductsWithTheirSizes(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
 		for(int i=0;i<productSizes.size();i++) {
-			productsWithTheirSizes.add(new Product(name,pt,ingrdnts,productSizes,sizesPrices));
+			productsWithTheirSizes.add(new Product(name,pt,ingrdnts,productSizes,sizesPrices,i));
 			productsWithTheirSizesSize++;
 		}
+		/*
 		for(int i=0;i<productSizes.size();i++) {
 			productsWithTheirSizes.get(i).setProductActualSize(i);
 			productsWithTheirSizes.get(i).setProductPrice(i);
 		}
+		*/
 	}
 	
 
@@ -807,7 +813,7 @@ public class Restaurant{
 				return indexToInsert;
 			}
 			
-			 public int binarySearchForPersons(ArrayList<?> aL,String name,String lastname) {
+			 public int binarySearchForClients(ArrayList<?> aL,String name,String lastname) {
 				 long startTime = System.nanoTime();
 				 int pos = -1;
 					int i = 0;
@@ -819,7 +825,7 @@ public class Restaurant{
 						if(stringOfArrayList.equalsIgnoreCase(valueToSearch)) {
 							pos=m;
 						}
-						else if(stringOfArrayList.compareTo(valueToSearch)>0){
+						else if(stringOfArrayList.compareTo(valueToSearch)<0){   ///Changed because is descending
 							j=m-1;
 						}
 						else {
@@ -840,7 +846,7 @@ public class Restaurant{
 			 * @return index
 			 */
 			public int clientIndexWithNameAndLastname(String name,String lastname) {	//Use it when you have the client name but not the client itself
-				int index =  binarySearchForPersons(restaurantClients,name,lastname);
+				int index =  binarySearchForClients(restaurantClients,name,lastname);
 				return index;
 			}
 			
@@ -1011,7 +1017,54 @@ public class Restaurant{
 				 return false;
 			 }
 			 
-			
+			 //Employee methods
+			 /**
+			  * Adds a employee to the employees ArrayList<br>
+			  * <b>Pre: </b><br>
+			  * <b>Post: </b>Adds a employee to the employees ArrayList if there isn't conflicts with it<br>
+			  * @param name The name of the employee
+			  * @param lastname The lastname of the employee
+			  * @param id The id of the employee
+			  * @return True if the product was added, false if not
+			  */
+			public boolean addAnEmployeeToTheRestaurant(String name,String lastname,String id) { //Remember to work in this
+				sortEmployeesById();
+				int index = employeeIndexWithId(id);
+				if(index==-1) {
+					Employee toAdd = new Employee(name,lastname,id);
+					restaurantEmployees.add(toAdd);
+					restaurantEmployeesSize++;
+					return true;	
+				}
+				return false;
+			}
+			public int employeeIndexWithId(String id) {
+				int index = binarySearchForEmployees(restaurantEmployees,id);
+				return index;
+			}
+			public int binarySearchForEmployees(ArrayList<Employee> aL,String id) {
+				 int pos = -1;
+					int i = 0;
+					int j = aL.size()-1;
+					while(i<=j && pos<0) {
+						int m = (i+j)/2;
+						if((aL.get(m).getId().equalsIgnoreCase(id))) {
+							pos=m;
+						}
+						else if(((aL.get(m).getId()).compareTo(id))>0){
+							j=m-1;
+						}
+						else {
+							i=m+1;
+						}
+					}
+					return pos;
+			 }
+			 public void sortEmployeesById() {
+				 Comparator<Employee> idComparator = new IDComparator();
+				 Collections.sort(restaurantEmployees,idComparator);
+			 }
+			 
 			
 			//Getters
 			public ArrayList<Product> getRestaurantProducts() {
