@@ -1107,6 +1107,83 @@ public class Restaurant{
 		}
 		return false;
 	}
+	
+	/**
+	 * Enables a employee of the employees ArrayList<br>
+	 * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
+	 * <b>Post: </b>Enables a employee of the employees ArrayList if there isn't conflicts with it<br>
+	 * @param The index of the employee that is going to be enabled
+	 * @return True if the employee was enabled, false if not
+	 */
+	public boolean enableEmployee(int index) {
+		if(index!=-1) {
+			restaurantEmployees.get(index).setEnabled(true);
+			return true;
+		}
+		return false;
+	}
+	
+	/*
+	 * Disables a employee of the employees ArrayList<br>
+	 * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
+	 * <b>Post: </b>Disables a employee of the employees ArrayList if there isn't conflicts with it<br>
+	 * @param The index of the employee that is going to be disabled
+	 * @return True if the employee was disabled, false if not
+	 */
+	public boolean disableEmployee(int index) {
+		if(index!=-1) {
+			restaurantEmployees.get(index).setEnabled(false);
+			return true;
+		}
+		return false;
+	}
+	/**
+	  * Changes the name of a employee of the employees ArrayList<br>
+	  * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
+	  * <b>Post: </b>Changes the name of a employee of the employees ArrayList if there isn't conflicts with it<br>
+	  * @param index the index of the employee whose name will be changed
+	  * @param newName The new name of the employee
+	  * @return True if the employee's name was changed, false if not
+	  */
+	 public boolean changeEmployeeName(int index,String newName) {
+		 if(index!=-1) {
+			 restaurantEmployees.get(index).setName(newName);
+			 return true;
+		 }
+		 return false;
+	 }
+	 
+	 /**
+	  * Changes the lastname of a employee of the employees ArrayList<br>
+	  * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
+	  * <b>Post: </b>Changes the lastname of a employee of the employees ArrayList if there isn't conflicts with it<br>
+	  * @param index the index of the employee whose lastname will be changed
+	  * @param newLastname The new lastname of the employee
+	  * @return True if the employee's lastname was changed, false if not
+	  */
+	 public boolean changeEmployeeLastname(int index,String newLastname) {
+		 if(index!=-1) {
+			 restaurantEmployees.get(index).setLastname(newLastname);
+			 return true;
+		 }
+		 return false;
+	 }
+	
+	 /**
+	  * Changes the id of a employee of the employees ArrayList<br>
+	  * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
+	  * <b>Post: </b>Changes the id of a employee of the employees ArrayList if there isn't conflicts with it<br>
+	  * @param index the index of the employee whose id will be changed
+	  * @param newId The new id of the employee
+	  * @return True if the employee's id was changed, false if not
+	  */
+	 public boolean changeEmployeeId(int index,String newId) {
+		 if(index!=-1) {
+			 restaurantEmployees.get(index).setId(newId);
+			 return true;
+		 }
+		 return false;
+	 }
 
 
 
