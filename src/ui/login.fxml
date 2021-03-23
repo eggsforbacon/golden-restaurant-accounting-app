@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5c524f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
@@ -16,19 +15,19 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Nombre de Usuario:" />
-                  <TextField />
+                  <TextField fx:id="userNameTF" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Contraseña:             " />
-                  <PasswordField />
+                  <PasswordField fx:id="passwordPF" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="Iniciar Sesión" />
-                  <Button mnemonicParsing="false" text="Registrarse" />
+                  <Button fx:id="loginBTN" disable="true" mnemonicParsing="false" onAction="#loginPressed" text="Iniciar Sesión" />
+                  <Button fx:id="registerBTN" mnemonicParsing="false" onAction="#registerPressed" text="Registrarse" />
                </children>
             </HBox>
          </children>

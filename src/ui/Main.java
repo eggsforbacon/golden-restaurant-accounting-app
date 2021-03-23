@@ -3,7 +3,6 @@ package ui;
 import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
 import javafx.application.Preloader;
-import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,8 +11,6 @@ import javafx.stage.Stage;
 import model.Ingredient;
 import model.PlateType;
 import model.Restaurant;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main extends Application {
@@ -40,6 +37,7 @@ public class Main extends Application {
     GH.getRestaurantIngredients().addAll(ingredients);
     controller = new MainGUIController(GH);
     logController = new LoginGUIController(GH);
+    System.out.println(GH.checkFirstTime());
   }
 
   public static void main(String[] args) {
@@ -48,6 +46,7 @@ public class Main extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
+
     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main-pane.fxml"));
     fxmlLoader.setController(controller);
     Parent root = fxmlLoader.load();
@@ -58,7 +57,6 @@ public class Main extends Application {
     scene.getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
     primaryStage.setMinHeight(708.0);
     primaryStage.setMinWidth(1250.0);
-
     primaryStage.setTitle("Golden House Restaurant: Inicio");
     primaryStage.show();
   }
