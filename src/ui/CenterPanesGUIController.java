@@ -1,6 +1,7 @@
 package ui;
 
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldTableCell;
 import  model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -47,10 +48,10 @@ public class CenterPanesGUIController implements Initializable {
     private TableColumn<Product, String> typeCol;
 
     @FXML
-    private TableColumn<Product, ArrayList<String>> sizesCol;
+    private TableColumn<Product, String> sizesCol;
 
     @FXML
-    private TableColumn<Product, ArrayList<String>> pricesCol;
+    private TableColumn<Product, Double> pricesCol;
 
     @FXML
     private Label spacer2;
@@ -207,7 +208,6 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     void fullProductDetails(Product rowData) {
-
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("prodInfo.fxml"));
             fxmlLoader.setController(this);
@@ -292,10 +292,16 @@ public class CenterPanesGUIController implements Initializable {
         ObservableList<Product> productsList = FXCollections.observableArrayList(GH.getProductsWithTheirSizes());
         productTBV.setItems(productsList);
 
+        nameCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        enabledCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        ingredientsCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        typeCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        sizesCol.setCellFactory(TextFieldTableCell.forTableColumn());
+
         productTBV.setRowFactory(tv -> {
             TableRow<Product> row = new TableRow<>();
-            row.setOnMouseClicked(event -> {
-                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+            row.setOnContextMenuRequested(event -> {
+                if (! row.isEmpty()) {
                     Product rowData = row.getItem();
                     fullProductDetails(rowData);
                 }
