@@ -7,8 +7,8 @@ import java.util.Comparator;
 public class Restaurant{
 	private User rootUser;
 	private boolean firstTime;
-	private ArrayList<User> users;
-	private int usersSize;
+	private ArrayList<User> restaurantUsers;
+	private int restaurantUsersSize;
 	private User currentUser;
 	private ArrayList<Product> restaurantProducts;
 	private ArrayList<Product> productsWithTheirSizes;
@@ -29,8 +29,8 @@ public class Restaurant{
 		rootUser = new User("Generic","user","none","Root","admin");
 		firstTime = true;
 		currentUser = rootUser;
-		users = new ArrayList<User>();
-		usersSize=users.size();
+		restaurantUsers = new ArrayList<User>();
+		restaurantUsersSize=restaurantUsers.size();
 		restaurantProducts = new ArrayList<Product>();
 		productsWithTheirSizes = new ArrayList<Product>();
 		restaurantProductsSize = restaurantProducts.size();
@@ -105,7 +105,7 @@ public class Restaurant{
 	 */
 	public boolean changeUser(int index) {
 		if(index!=-1) {
-			this.currentUser=users.get(index);
+			this.currentUser=restaurantUsers.get(index);
 			return true;
 		}
 		else if(index==-2) {
@@ -126,8 +126,8 @@ public class Restaurant{
 	public int login(String username,String password) {
 		int index = -1;
 		boolean band = false;
-		for(int i=0;i<usersSize&&!band;i++) {
-			if((users.get(i).getUsername().equals(username))&&(users.get(i).getPassword().equals(password))) {
+		for(int i=0;i<restaurantUsersSize&&!band;i++) {
+			if((restaurantUsers.get(i).getUsername().equals(username))&&(restaurantUsers.get(i).getPassword().equals(password))) {
 				index = i;
 				band = true;
 			}
@@ -1027,6 +1027,9 @@ public class Restaurant{
 		if(index==-1) {
 			Employee toAdd = new Employee(name,lastname,id);
 			restaurantEmployees.add(toAdd);
+			User employeeUser = new User(name,lastname,id,name,id);
+			restaurantUsers.add(employeeUser);
+			restaurantUsersSize++;
 			restaurantEmployeesSize++;
 			return true;	
 		}
@@ -1089,11 +1092,24 @@ public class Restaurant{
 			Employee deleted = restaurantEmployees.get(index);
 			if(!orderHasTheEmployee(deleted)) {
 				restaurantEmployees.remove(index);
+				restaurantUsers.remove(deleted);
+				restaurantUsers.remove(indexOfAnUser(deleted));
+				restaurantUsersSize--;
 				restaurantEmployeesSize--;
 				return true;
 			}
 		}
 		return false;
+	}
+	
+	public int indexOfAnUser(Employee employee) {
+		String comparator = employee.getId();
+		for(int i=0;i<restaurantUsersSize;i++) {
+			if(comparator.equalsIgnoreCase(restaurantUsers.get(i).getId())) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public boolean orderHasTheEmployee(Employee employee) {
@@ -1117,7 +1133,9 @@ public class Restaurant{
 	 */
 	public boolean enableEmployee(int index) {
 		if(index!=-1) {
+			Employee enabled = restaurantEmployees.get(index);
 			restaurantEmployees.get(index).setEnabled(true);
+			restaurantUsers.get(indexOfAnUser(enabled)).setEnabled(true);
 			return true;
 		}
 		return false;
@@ -1132,7 +1150,9 @@ public class Restaurant{
 	 */
 	public boolean disableEmployee(int index) {
 		if(index!=-1) {
+			Employee disabled = restaurantEmployees.get(index);
 			restaurantEmployees.get(index).setEnabled(false);
+			restaurantUsers.get(indexOfAnUser(disabled)).setEnabled(false);
 			return true;
 		}
 		return false;
@@ -1147,7 +1167,9 @@ public class Restaurant{
 	  */
 	 public boolean changeEmployeeName(int index,String newName) {
 		 if(index!=-1) {
+			 Employee changeName=restaurantEmployees.get(index);
 			 restaurantEmployees.get(index).setName(newName);
+			 restaurantUsers.get(indexOfAnUser(changeName)).setName(newName);
 			 return true;
 		 }
 		 return false;
@@ -1163,7 +1185,9 @@ public class Restaurant{
 	  */
 	 public boolean changeEmployeeLastname(int index,String newLastname) {
 		 if(index!=-1) {
+			 Employee changeLastname=restaurantEmployees.get(index);
 			 restaurantEmployees.get(index).setLastname(newLastname);
+			 restaurantUsers.get(indexOfAnUser(changeLastname)).setLastname(newLastname);
 			 return true;
 		 }
 		 return false;
@@ -1179,6 +1203,8 @@ public class Restaurant{
 	  */
 	 public boolean changeEmployeeId(int index,String newId) {
 		 if(index!=-1) {
+			 Employee changeId=restaurantEmployees.get(index);
+			 restaurantUsers.get(indexOfAnUser(changeId)).setId(newId);
 			 restaurantEmployees.get(index).setId(newId);
 			 return true;
 		 }
@@ -1235,6 +1261,12 @@ public class Restaurant{
 	}
 	public long getTimeOfSearch() {
 		return timeOfSearch;
+	}
+	public int getRestaurantEmployeesSize() {
+		return restaurantEmployeesSize;
+	}
+	public ArrayList<User> getRestaurantUsers(){
+		return restaurantUsers;
 	}
 
 	//Setters
