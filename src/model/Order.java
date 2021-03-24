@@ -16,14 +16,13 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	private String date;
 	private String observations;
 
-	public Order(ArrayList<String> IDs,int statusIndicator,ArrayList<Product> orderProducts,ArrayList<Integer> chosenSizes,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
+	public Order(ArrayList<String> IDs,ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
 		super("");
 		generateID(IDs);
-		this.statusIndicator=statusIndicator;
+		statusIndicator=1;
 		orderStatus = Status.values()[statusIndicator-1];
 		this.orderProducts=orderProducts;
 		arraylistSize = orderProducts.size();
-		this.chosenSizes = chosenSizes;
 		this.productsQuantity=productsQuantity;
 		this.orderClient=orderClient;
 		this.orderEmployee=orderEmployee;
@@ -56,6 +55,7 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	public String showProducts() {
 		String info = "";
 		for(int i=0;i<arraylistSize;i++) {
+			info += orderProducts.get(i).getName()+";";
 			info += orderProducts.get(i).getProductActualSize()+";"; 
 			info += productsQuantity.get(i)+";";
 			info += orderProducts.get(i).getProductPrice()+";";
@@ -67,6 +67,7 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 		Client client = getOrderClient();
 		Employee employee = getOrderEmployee();
 		String info = "";
+		info += getName()+";";
 		info += client.getName()+";";
 		info += client.getAddress()+";";
 		info += client.getPhoneNumber()+";";
@@ -121,6 +122,9 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	public Client getOrderclient() {
 		return orderClient;
 	}
+	public ArrayList<Integer> getChosenSizes(){
+		return chosenSizes;
+	}
 
 	//Setters
 	/**
@@ -147,7 +151,7 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	public void setObservations(String observations) {
 		this.observations = observations;
 	}
-
+	
 
 
 }

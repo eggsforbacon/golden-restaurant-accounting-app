@@ -8,6 +8,7 @@ public class Client extends Person{
 	public Client(String name,String lastname,String id,String address,String phoneNumber,String observations) {
 		super(name,lastname,id);
 		this.phoneNumber=phoneNumber;
+		this.address=address;
 		this.observations=observations;
 	}	
 

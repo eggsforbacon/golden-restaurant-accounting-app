@@ -25,6 +25,7 @@ public class Restaurant{
 	private int restaurantOrdersSize;
 	private ArrayList<Employee> restaurantEmployees;
 	private int restaurantEmployeesSize;
+	private ArrayList<String> orderIDs;
 	public Restaurant() {
 		rootUser = new User("Generic","user","none","Root","admin");
 		firstTime = true;
@@ -52,6 +53,7 @@ public class Restaurant{
 		restaurantOrdersSize=restaurantOrders.size();
 		restaurantEmployees = new ArrayList<Employee>();
 		restaurantEmployeesSize = restaurantEmployees.size();
+		orderIDs=new ArrayList<String>();
 	}
 
 
@@ -1268,6 +1270,14 @@ public class Restaurant{
 		 }
 		 return false;
 	 }
+	 
+	 //Order methods
+	 public void createAnOrder(ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
+		 Order newOrder = new Order(orderIDs,orderProducts,productsQuantity,orderClient,orderEmployee,observations);
+		 restaurantOrders.add(newOrder);
+		 orderIDs.add(newOrder.getName());
+		 restaurantOrdersSize++;
+	 }
 
 
 
@@ -1325,6 +1335,9 @@ public class Restaurant{
 	}
 	public ArrayList<User> getRestaurantUsers(){
 		return restaurantUsers;
+	}
+	public ArrayList<Order> getRestaurantOrders(){
+		return restaurantOrders;
 	}
 
 	//Setters
