@@ -22,6 +22,11 @@ import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class CenterPanesGUIController implements Initializable {
+
+    /*Delete Pane (General use)*/
+    @FXML
+    private Label deleteMessageLBL;
+
     /*Product pane*/
     @FXML
     private BorderPane productPane;
@@ -201,8 +206,8 @@ public class CenterPanesGUIController implements Initializable {
         }
     }
 
-    void fullProductDetails(TableRow<Product> row) {
-        Product rowData = row.getItem();
+    void fullProductDetails(Product rowData) {
+
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("prodInfo.fxml"));
             fxmlLoader.setController(this);
@@ -219,6 +224,36 @@ public class CenterPanesGUIController implements Initializable {
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
             System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void deleteProductClicked(ActionEvent event) {
+        Product removed = productTBV.getSelectionModel().getSelectedItems().get(0);
+        if (removed == null) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("delete.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage productInfo = new Stage();
+                productInfo.setScene(new Scene(root));
+                productInfo.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                productInfo.getIcons().add(icon);
+                productInfo.setTitle("Error");
+                deleteMessageLBL.setText("No hay selección. Intente de nuevo.");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                productInfo.setResizable(false);
+                productInfo.show();
+            } catch (Exception e) {
+                System.out.println("Can't load window at the moment.");
+                System.out.println(e.getMessage());
+            }
+        } else {
+            productTBV.getItems().removeAll(productTBV.getSelectionModel().getSelectedItems());
+            productTBV.refresh();
+            //WIP
         }
     }
 
@@ -261,7 +296,8 @@ public class CenterPanesGUIController implements Initializable {
             TableRow<Product> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
-                    fullProductDetails(row);
+                    Product rowData = row.getItem();
+                    fullProductDetails(rowData);
                 }
             });
             return row ;
