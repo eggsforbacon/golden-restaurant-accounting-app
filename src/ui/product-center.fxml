@@ -12,7 +12,7 @@
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="productTBV" editable="true" onMouseClicked="#fullProductDetails" prefHeight="450.0" prefWidth="570.0" HBox.hgrow="ALWAYS">
+            <TableView fx:id="productTBV" editable="true" prefHeight="450.0" prefWidth="570.0" HBox.hgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="nameCol" minWidth="-Infinity" onEditCommit="#editName" prefWidth="85.0" text="Producto" />
                 <TableColumn fx:id="enabledCol" minWidth="-Infinity" onEditCommit="#editEnabled" prefWidth="93.0" text="Habilitado" />

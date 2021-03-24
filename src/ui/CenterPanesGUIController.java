@@ -1,6 +1,5 @@
 package ui;
 
-import javafx.beans.value.ObservableValue;
 import javafx.scene.control.*;
 import  model.*;
 import javafx.collections.FXCollections;
@@ -17,8 +16,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -77,6 +74,31 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     private Label ingredientsInfoLabel;
+
+    //Info Pane
+    @FXML
+    private Label prodNameInfoLBL;
+
+    @FXML
+    private Label prodEnabledInfoLBL;
+
+    @FXML
+    private Label prodPTInfoLBL;
+
+    @FXML
+    private Label prodIngInfoLBL;
+
+    @FXML
+    private Label prodSizeInfoLBL;
+
+    @FXML
+    private Label prodPricesInfoLBL;
+
+    @FXML
+    private Label prodCreatorInfoLBL;
+
+    @FXML
+    private Label prodEditorInfoLBL;
 
     private Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
@@ -169,30 +191,7 @@ public class CenterPanesGUIController implements Initializable {
         System.out.println(newProdPrices.toString());
         System.out.println(newProdSizes.toString());
         if (productNameValid && productIngredientsValid && ptIsValid && sizesAndPricesValid) {
-            Product newP = new Product(newProdName,newProdPlateType,newProdIngredients,newProdSizes,newProdPrices,-1);
-            for (int i = 0; i < newP.getProductSizesSize(); i++) {
-                System.out.println(
-                        "-Name: " + newP.getName() + "\n" +
-                                "-Pt: " + newP.getPt() + "\n" +
-                                "-Ing: " + newP.getTheIngredients() +
-                                "\n-Size: ("+ i + ") " + newP.getProductActualSize() +
-                                "\n-Price: " + newP.getProductPrice() +
-                                "\n------------------------------------------"
-                );
-            }
-            System.out.println("-------------------------------------------------------------------------");
            GH.addProduct(newProdName,newProdPlateType,newProdIngredients,newProdSizes,newProdPrices);
-            int in = 0;
-            for (int i = GH.getProductsWithTheirSizesSize() - newProdSizes.size(); i < GH.getProductsWithTheirSizesSize(); i++) {
-                Product pp = GH.getProductsWithTheirSizes().get(i);
-                System.out.println("-Name: " + pp.getName() + "\n" +
-                        "-Pt: " + pp.getPt() + "\n" +
-                        "-Ing: " + pp.getTheIngredients() +
-                        "\n-Size: ("+ in + ") " + pp.getProductActualSize() +
-                        "\n-Price: " + pp.getProductPrice() +
-                        "\n------------------------------------------");
-                in++;
-            }
             initProductPane();
             try {
                 ((Stage) productPane.getScene().getWindow()).close();
@@ -202,10 +201,44 @@ public class CenterPanesGUIController implements Initializable {
         }
     }
 
+    void fullProductDetails(TableRow<Product> row) {
+        Product rowData = row.getItem();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("prodInfo.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage productInfo = new Stage();
+            productInfo.setScene(new Scene(root));
+            productInfo.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            productInfo.getIcons().add(icon);
+            productInfo.setTitle("Información de Producto");
+            initProductInfo(rowData);
+            productInfo.show();
+        } catch (Exception e) {
+            System.out.println("Can't load window at the moment.");
+            System.out.println(e.getMessage());
+        }
+    }
 
-    @FXML
-    void fullProductDetails(MouseEvent event) {
-        System.out.println("It works?");
+    private void initProductInfo(Product rowData) {
+        prodNameInfoLBL.setText(rowData.getName());
+        prodEnabledInfoLBL.setText(new String((rowData.getEnabled()) ? "(Habilitado)" : "(Deshabilitado)"));
+        prodEnabledInfoLBL.setId("enabled-label");
+        prodPTInfoLBL.setText(rowData.getPt());
+        prodIngInfoLBL.setText(rowData.getTheIngredients());
+        String[] split = rowData.sizesInformation().split(";");
+        StringBuilder sizes = new StringBuilder();
+        StringBuilder prices = new StringBuilder();
+        for (int i = 0, splitLength = split.length; i < splitLength; i++) {
+            String s = split[i];
+            if (i % 2 == 0) sizes.append(s).append("\n");
+            else prices.append(s).append("\n");
+        }
+        prodSizeInfoLBL.setText(sizes.toString());
+        prodPricesInfoLBL.setText(prices.toString());
+        ((Stage)prodNameInfoLBL.getScene().getWindow()).setMaxWidth(520.0);
     }
 
     private void initProductPane() {
@@ -223,6 +256,16 @@ public class CenterPanesGUIController implements Initializable {
         pricesCol.setStyle("\n-fx-alignment: CENTER;");
         ObservableList<Product> productsList = FXCollections.observableArrayList(GH.getProductsWithTheirSizes());
         productTBV.setItems(productsList);
+
+        productTBV.setRowFactory(tv -> {
+            TableRow<Product> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+                    fullProductDetails(row);
+                }
+            });
+            return row ;
+        });
     }
 
     private void initAddProductPane() {

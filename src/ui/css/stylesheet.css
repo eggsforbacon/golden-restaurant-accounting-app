@@ -1,3 +1,7 @@
+.root {
+  -fx-font-family: "Helvetica"
+}
+
 .table-view .column-header {
   -fx-background-color:  #5c524f;
   -fx-border-color:  black;
@@ -33,6 +37,11 @@
 .label {
   -fx-text-fill: #e1be66;
   -fx-font-weight: bold;
+}
+
+#enabled-label {
+  -fx-text-fill: #e1be66;
+  -fx-font-style: italic;
 }
 
 .text-field {
