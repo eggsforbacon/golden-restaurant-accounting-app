@@ -84,6 +84,64 @@ public class Restaurant{
 
 	//User options
 
+	public boolean initializeUser(int index,String username,String password) {
+		if(index!=-1) {
+			restaurantUsers.get(index).setUsername(username);
+			restaurantUsers.get(index).setPassword(password);
+			return true;
+		}
+		return false;
+	}
+	/**
+	 * Given the id, returns the index of a user of the user ArrayList<br>
+	 * <b>Pre: </b>The arrayList "restaurantUsers" must be sorted. To be useful, there must be at least one user in the ArrayList<br>
+	 * <b>Post: </b>The index of the user is obtained if it exists<br>
+	 * @param id The id of the user
+	 * @return index
+	 */
+	public int userIndexWithId(String id) {	//Use it when you have the user id but not the user itself
+		int index = binarySearchForEmployees(restaurantUsers,id);
+		return index;
+	}
+	/**
+	 * Given the user, returns the index of that user in the users ArrayList<br>
+	 * <b>Pre: </b>To be useful, there must be at least one user in the ArrayList<br>
+	 * <b>Post: </b>The index of the user is obtained if it exists<br>
+	 * @param user The user searched
+	 * @return index
+	 */
+	public int UserIndexWithUser(User user) { //Use it when you have the user itself
+		int index = restaurantUsers.indexOf(user);
+		return index;
+	}
+	public boolean changeUsername(int index,String newUsername) {
+		if(index!=-1) {
+			restaurantUsers.get(index).setUsername(newUsername);
+			return true;
+		}
+		return false;
+	}
+	public boolean changePassword(int index,String newPassword) {
+		if(index!=-1) {
+			restaurantUsers.get(index).setPassword(newPassword);
+			return true;
+		}
+		return false;
+	}
+	public boolean enableUser(int index) {
+		if(index!=-1) {
+			restaurantUsers.get(index).setEnabled(true);
+			return true;
+		}
+		return false;
+	}
+	public boolean disableUser(int index) {
+		if(index!=-1) {
+			restaurantUsers.get(index).setEnabled(false);
+			return true;
+		}
+		return false;
+	}
 	/**
 	 * Checks if the user that is being used isn't the root user.<br>
 	 * <b>Pre: </b><br>
@@ -105,11 +163,11 @@ public class Restaurant{
 	 */
 	public boolean changeUser(int index) {
 		if(index!=-1) {
-			this.currentUser=restaurantUsers.get(index);
+			currentUser=restaurantUsers.get(index);
 			return true;
 		}
 		else if(index==-2) {
-			this.currentUser=rootUser;
+			currentUser=rootUser;
 			return true;
 		}
 		return false;
@@ -1057,16 +1115,16 @@ public class Restaurant{
 		int index = restaurantEmployees.indexOf(employee);
 		return index;
 	}
-	public int binarySearchForEmployees(ArrayList<Employee> aL,String id) {
+	public int binarySearchForEmployees(ArrayList<?> aL,String id) {
 		int pos = -1;
 		int i = 0;
 		int j = aL.size()-1;
 		while(i<=j && pos<0) {
 			int m = (i+j)/2;
-			if((aL.get(m).getId().equalsIgnoreCase(id))) {
+			if((((Employee)aL.get(m)).getId().equalsIgnoreCase(id))) {
 				pos=m;
 			}
-			else if(((aL.get(m).getId()).compareTo(id))>0){
+			else if(((((Employee)aL.get(m)).getId()).compareTo(id))>0){
 				j=m-1;
 			}
 			else {
