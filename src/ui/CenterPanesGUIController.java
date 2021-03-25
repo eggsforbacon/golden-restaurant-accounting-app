@@ -1,5 +1,6 @@
 package ui;
 
+import javafx.application.HostServices;
 import javafx.scene.control.*;
 import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -19,6 +20,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import sun.security.action.OpenFileInputStreamAction;
+
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,6 +30,7 @@ import java.util.ResourceBundle;
 
 public class CenterPanesGUIController implements Initializable {
 
+    private static final String SEPARATOR = ";";
     /*Delete Pane (General use)*/
     @FXML
     private Label deleteMessageLBL;
@@ -119,32 +124,32 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     @FXML
-    void editName(CellEditEvent<Product, String> event) {
+    void editNameProd(CellEditEvent<Product, String> event) {
         (event.getRowValue()).setName(event.getNewValue());
     }
 
     @FXML
-    void editEnabled(CellEditEvent<Product, String> event) {
+    void editEnabledProd(CellEditEvent<Product, String> event) {
         (event.getRowValue()).setEnabled(event.getNewValue().equals("SI"));
     }
 
     @FXML
-    void editIngredient(ActionEvent event) {
+    void editIngredientProd(ActionEvent event) {
         //WIP
     }
 
     @FXML
-    void editType(CellEditEvent<Product, String> event) {
+    void editTypeProd(CellEditEvent<Product, String> event) {
         (event.getRowValue()).setPt(new PlateType(event.getNewValue()));
     }
 
     @FXML
-    void editSizes(CellEditEvent<Product, String> event) {
+    void editSizesProd(CellEditEvent<Product, String> event) {
         //WIP
     }
 
     @FXML
-    void editPrices(CellEditEvent<Product, String> event) {
+    void editPricesProd(CellEditEvent<Product, String> event) {
         //WIP
     }
 
@@ -329,5 +334,21 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void showIngInfo(MouseEvent event) {
         ingredientsInfoLabel.setVisible(true);
+    }
+
+    @FXML
+    void exportProductData(ActionEvent event) throws Exception {
+        String fileName = "src/data/PRODUCTS.csv";
+        PrintWriter pw = new PrintWriter(fileName);
+        for(int i = 0; i < GH.getProductsWithTheirSizesSize(); i++){
+            Product p = GH.getProductsWithTheirSizes().get(i);
+            pw.println(p.showInformation());
+        }
+        pw.close();
+    }
+
+    @FXML
+    void importProductData(ActionEvent event) {
+
     }
 }
