@@ -1,7 +1,9 @@
 package ui;
 
 import javafx.scene.control.*;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.util.converter.DoubleStringConverter;
 import  model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -117,32 +119,33 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     @FXML
-    void editEnabled(ActionEvent event) {
+    void editName(CellEditEvent<Product, String> event) {
+        (event.getRowValue()).setName(event.getNewValue());
+    }
+
+    @FXML
+    void editEnabled(CellEditEvent<Product, String> event) {
+        (event.getRowValue()).setEnabled(event.getNewValue().equals("SI"));
     }
 
     @FXML
     void editIngredient(ActionEvent event) {
-
+        //WIP
     }
 
     @FXML
-    void editName(ActionEvent event) {
-
+    void editType(CellEditEvent<Product, String> event) {
+        (event.getRowValue()).setPt(new PlateType(event.getNewValue()));
     }
 
     @FXML
-    void editPrices(ActionEvent event) {
-
+    void editSizes(CellEditEvent<Product, String> event) {
+        //WIP
     }
 
     @FXML
-    void editSizes(ActionEvent event) {
-
-    }
-
-    @FXML
-    void editType(ActionEvent event) {
-
+    void editPrices(CellEditEvent<Product, String> event) {
+        //WIP
     }
 
     @FXML
@@ -297,6 +300,7 @@ public class CenterPanesGUIController implements Initializable {
         ingredientsCol.setCellFactory(TextFieldTableCell.forTableColumn());
         typeCol.setCellFactory(TextFieldTableCell.forTableColumn());
         sizesCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        pricesCol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
 
         productTBV.setRowFactory(tv -> {
             TableRow<Product> row = new TableRow<>();
