@@ -26,6 +26,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.ResourceBundle;
 
 public class CenterPanesGUIController implements Initializable {
@@ -274,10 +275,9 @@ public class CenterPanesGUIController implements Initializable {
         String[] split = rowData.sizesInformation().split(";");
         StringBuilder sizes = new StringBuilder();
         StringBuilder prices = new StringBuilder();
-        for (int i = 0, splitLength = split.length; i < splitLength; i++) {
-            String s = split[i];
-            if (i % 2 == 0) sizes.append(s).append("\n");
-            else prices.append(s).append("\n");
+        for (String s : split) {
+            sizes.append(s.split(",")[0]).append("\n");
+            prices.append(s.split(",")[1]).append("\n");
         }
         prodSizeInfoLBL.setText(sizes.toString());
         prodPricesInfoLBL.setText(prices.toString());
@@ -340,15 +340,34 @@ public class CenterPanesGUIController implements Initializable {
     void exportProductData(ActionEvent event) throws Exception {
         String fileName = "src/data/PRODUCTS.csv";
         PrintWriter pw = new PrintWriter(fileName);
-        for(int i = 0; i < GH.getProductsWithTheirSizesSize(); i++){
-            Product p = GH.getProductsWithTheirSizes().get(i);
+        for(int i = 0; i < GH.getRestaurantProductsSize(); i++){
+            Product p = GH.getRestaurantProducts().get(i);
             pw.println(p.showInformation());
         }
         pw.close();
     }
 
     @FXML
-    void importProductData(ActionEvent event) {
-
+    void importProductData(ActionEvent event) throws IOException {
+        String fileName = "src/data/PRODUCTS.csv";
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        String line = br.readLine();
+        while(line!=null){
+            String[] parts = line.split(";");
+            ArrayList<Ingredient> newIng = new ArrayList<>();
+            for (String s: parts[2].split(",")) {
+                newIng.add(new Ingredient(s));
+            }
+            ArrayList<String> newSizes = new ArrayList<>();
+            ArrayList<Double> newPrices = new ArrayList<>();
+            for (int i = 3; i < parts.length; i++) {
+                newSizes.add(parts[i].split(",")[0]);
+                newPrices.add(Double.parseDouble(parts[i].split(",")[1]));
+            }
+            GH.addProduct(parts[0],new PlateType(parts[1]),newIng,newSizes,newPrices);
+            line = br.readLine();
+        }
+        br.close();
+        initProductPane();
     }
 }
