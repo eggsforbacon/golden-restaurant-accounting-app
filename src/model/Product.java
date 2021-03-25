@@ -144,7 +144,7 @@ public class Product extends SystemObject{
 	public String sizesInformation() {
 		String info = "";
 		for(int i=0;i<productSizesSize;i++) {
-			info += productSizes.get(i);
+			info += productSizes.get(i)+",";
 			info += sizesPrices.get(i)+";";
 		}
 		return info;
