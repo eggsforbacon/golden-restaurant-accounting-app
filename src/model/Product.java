@@ -12,7 +12,6 @@ public class Product extends SystemObject{
 	private ArrayList<Double> sizesPrices;
 	private double productPrice;
 	private String productActualSize;
-	private int indicator;
 
 	public Product(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices,int indicator) {
 		super(name);
@@ -145,7 +144,7 @@ public class Product extends SystemObject{
 	public String sizesInformation() {
 		String info = "";
 		for(int i=0;i<productSizesSize;i++) {
-			info += productSizes.get(i)+";";
+			info += productSizes.get(i);
 			info += sizesPrices.get(i)+";";
 		}
 		return info;
