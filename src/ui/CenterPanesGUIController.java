@@ -127,11 +127,13 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void editNameProd(CellEditEvent<Product, String> event) {
         (event.getRowValue()).setName(event.getNewValue());
+        event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
     @FXML
     void editEnabledProd(CellEditEvent<Product, String> event) {
         (event.getRowValue()).setEnabled(event.getNewValue().equals("SI"));
+        event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
     @FXML
@@ -141,7 +143,8 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editTypeProd(CellEditEvent<Product, String> event) {
-        (event.getRowValue()).setPt(new PlateType(event.getNewValue()));
+        event.getRowValue().setPt(new PlateType(event.getNewValue(),GH.getCurrentUser()));
+        event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
     @FXML
@@ -172,7 +175,7 @@ public class CenterPanesGUIController implements Initializable {
             createProduct.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 
@@ -193,7 +196,7 @@ public class CenterPanesGUIController implements Initializable {
             Ingredient ingtoadd = GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(ingName));
             newProdIngredients.add(ingtoadd);
         }
-        PlateType newProdPlateType = new PlateType(newProdTypeTF.getText());
+        PlateType newProdPlateType = new PlateType(newProdTypeTF.getText(),GH.getCurrentUser());
         ArrayList<String> newProdSizes = new ArrayList<>(Arrays.asList(newProdSizesTA.getText().split(",")));
         ArrayList<Double> newProdPrices = new ArrayList<>();
         for (String s: newProdPricesTA.getText().split(",")) {
@@ -268,7 +271,7 @@ public class CenterPanesGUIController implements Initializable {
 
     private void initProductInfo(Product rowData) {
         prodNameInfoLBL.setText(rowData.getName());
-        prodEnabledInfoLBL.setText(new String((rowData.getEnabled()) ? "(Habilitado)" : "(Deshabilitado)"));
+        prodEnabledInfoLBL.setText((rowData.getEnabled()) ? "(Habilitado)" : "(Deshabilitado)");
         prodEnabledInfoLBL.setId("enabled-label");
         prodPTInfoLBL.setText(rowData.getPt());
         prodIngInfoLBL.setText(rowData.getTheIngredients());
@@ -353,10 +356,10 @@ public class CenterPanesGUIController implements Initializable {
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         String line = br.readLine();
         while(line!=null){
-            String[] parts = line.split(";");
+            String[] parts = line.split(SEPARATOR);
             ArrayList<Ingredient> newIng = new ArrayList<>();
             for (String s: parts[2].split(",")) {
-                newIng.add(new Ingredient(s));
+                newIng.add(new Ingredient(s,GH.getCurrentUser()));
             }
             ArrayList<String> newSizes = new ArrayList<>();
             ArrayList<Double> newPrices = new ArrayList<>();
@@ -364,7 +367,7 @@ public class CenterPanesGUIController implements Initializable {
                 newSizes.add(parts[i].split(",")[0]);
                 newPrices.add(Double.parseDouble(parts[i].split(",")[1]));
             }
-            GH.addProduct(parts[0],new PlateType(parts[1]),newIng,newSizes,newPrices);
+            GH.addProduct(parts[0],new PlateType(parts[1],GH.getCurrentUser()),newIng,newSizes,newPrices);
             line = br.readLine();
         }
         br.close();

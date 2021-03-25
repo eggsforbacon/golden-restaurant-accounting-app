@@ -21,10 +21,10 @@ public class Main extends Application {
 
   public Main() {
     GH = new Restaurant();
-    PlateType pt = new PlateType("Tipo");
+    PlateType pt = new PlateType("Tipo",GH.getRootUser());
     ArrayList<Ingredient> ingredients = new ArrayList<>();
-    ingredients.add(new Ingredient("Papa"));
-    ingredients.add(new Ingredient("Tomate"));
+    ingredients.add(new Ingredient("Papa",GH.getRootUser()));
+    ingredients.add(new Ingredient("Tomate",GH.getRootUser()));
     ArrayList<String> sizes = new ArrayList<>();
     sizes.add("Tamaño");
     sizes.add("Tamañito");
