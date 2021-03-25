@@ -1315,12 +1315,25 @@ public class Restaurant{
 	 
 	 //Order methods
 	 
-	 //Have to check if the objects are enabled (REMEMBER JUAN DAVID)
-	 public void createAnOrder(ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
-		 Order newOrder = new Order(currentUser, orderIDs,orderProducts,productsQuantity,orderClient,orderEmployee,observations);
-		 restaurantOrders.add(newOrder);
-		 orderIDs.add(newOrder.getName());
-		 restaurantOrdersSize++;
+	 public boolean createAnOrder(ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
+		boolean validQuantitys = productsQuantity.size()==orderProducts.size();
+		 if(orderProductsAreEnabled(orderProducts) && validQuantitys && orderClient.getEnabled() && orderEmployee.getEnabled()) {
+			 Order newOrder = new Order(currentUser, orderIDs,orderProducts,productsQuantity,orderClient,orderEmployee,observations);
+			 restaurantOrders.add(newOrder);
+			 orderIDs.add(newOrder.getName());
+			 restaurantOrdersSize++;
+			 return true;
+		}
+		 return false;
+		 
+	 }
+	 public boolean orderProductsAreEnabled(ArrayList<Product> p) {
+		 for(int i=0;i<p.size();i++) {
+			 if(!p.get(i).getEnabled()) {
+				 return false;
+			 }
+		 }
+		 return true;
 	 }
 	 public boolean changeOrderStatus(int index,int indicator) { 
 		 if(index!=-1) {
