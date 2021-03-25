@@ -1,8 +1,8 @@
 package model;
 public class PlateType extends SystemObject{
 
-	public PlateType(String name) {
-		super(name);
+	public PlateType(String name,User creatorUser) {
+		super(name,creatorUser);
 	}
 
 	@Override

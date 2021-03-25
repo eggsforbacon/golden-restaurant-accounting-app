@@ -1,8 +1,8 @@
 package model;
 public class Employee extends Person{
 
-	public Employee(String name,String lastname,String id) {
-		super(name,lastname,id);
+	public Employee(String name,User creatorUser,String lastname,String id) {
+		super(name,creatorUser,lastname,id);
 	}
 
 	@Override

@@ -3,12 +3,15 @@ package model;
 public abstract class SystemObject implements Comparable<SystemObject>{
 	private boolean enabled;
 	protected String name;
+	private User creatorUser;
+	private User modifierUser;
 
-	public SystemObject(String name) {
+	public SystemObject(String name,User creatorUser) {
 		enabled = true;
 		this.name=name;
+		this.creatorUser=creatorUser;
+		modifierUser=creatorUser;
 	}
-
 
 	@Override
 	public int compareTo(SystemObject o) {
@@ -39,6 +42,12 @@ public abstract class SystemObject implements Comparable<SystemObject>{
 	public String getName() {
 		return name;
 	}
+	public User getCreatorUser() {
+		return creatorUser;
+	}
+	public User getModifierUser() {
+		return modifierUser;
+	}
 
 
 	//Setters
@@ -55,6 +64,12 @@ public abstract class SystemObject implements Comparable<SystemObject>{
 	 */
 	public void setName(String name) {
 		this.name=name;
+	}
+	public void setModifierUser(User modifierUser) {
+		this.modifierUser = modifierUser;
+	}
+	public void setCreatorUser(User creatorUser) {
+		this.creatorUser = creatorUser;
 	}
 
 	public abstract String showInformation();

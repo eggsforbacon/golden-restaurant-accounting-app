@@ -16,8 +16,8 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	private String date;
 	private String observations;
 
-	public Order(ArrayList<String> IDs,ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
-		super("");
+	public Order(User creatorUser,ArrayList<String> IDs,ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
+		super("",creatorUser);
 		generateID(IDs);
 		statusIndicator=1;
 		orderStatus = Status.values()[statusIndicator];

@@ -4,8 +4,8 @@ public abstract class Person extends SystemObject{
 	private String lastname;
 	private String id;
 
-	public Person(String name,String lastname,String id) {
-		super(name);
+	public Person(String name,User creatorUser,String lastname,String id) {
+		super(name,creatorUser);
 		this.lastname=lastname;
 		this.id=id;
 	}

@@ -13,8 +13,8 @@ public class Product extends SystemObject{
 	private double productPrice;
 	private String productActualSize;
 
-	public Product(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices,int indicator) {
-		super(name);
+	public Product(String name,User creatorUser,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices,int indicator) {
+		super(name,creatorUser);
 		this.pt=pt;
 		this.ingrdnts=ingrdnts;
 		ingrdntsSize = ingrdnts.size();

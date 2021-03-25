@@ -27,7 +27,7 @@ public class Restaurant{
 	private int restaurantEmployeesSize;
 	private ArrayList<String> orderIDs;
 	public Restaurant() {
-		rootUser = new User("Generic","user","none","Root","admin");
+		rootUser = new User("Generic",null,"user","none","Root","admin");
 		firstTime = true;
 		currentUser = rootUser;
 		restaurantUsers = new ArrayList<User>();
@@ -39,9 +39,9 @@ public class Restaurant{
 		restaurantIngredients = new ArrayList<Ingredient>();
 		restaurantIngredientsSize=restaurantIngredients.size();
 		restaurantPlateTypes = new ArrayList<PlateType>();
-		PlateType mainDish = new PlateType("Main dish");
-		PlateType sideDish = new PlateType("Side dish");
-		PlateType drink = new PlateType("Drink");
+		PlateType mainDish = new PlateType("Main dish",currentUser);
+		PlateType sideDish = new PlateType("Side dish",currentUser);
+		PlateType drink = new PlateType("Drink",currentUser);
 		restaurantPlateTypes.add(mainDish);
 		restaurantPlateTypes.add(sideDish);
 		restaurantPlateTypes.add(drink);
@@ -90,6 +90,7 @@ public class Restaurant{
 		if(index!=-1) {
 			restaurantUsers.get(index).setUsername(username);
 			restaurantUsers.get(index).setPassword(password);
+			restaurantUsers.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -119,6 +120,7 @@ public class Restaurant{
 	public boolean changeUsername(int index,String newUsername) {
 		if(index!=-1) {
 			restaurantUsers.get(index).setUsername(newUsername);
+			restaurantUsers.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -126,6 +128,7 @@ public class Restaurant{
 	public boolean changePassword(int index,String newPassword) {
 		if(index!=-1) {
 			restaurantUsers.get(index).setPassword(newPassword);
+			restaurantUsers.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -133,6 +136,7 @@ public class Restaurant{
 	public boolean enableUser(int index) {
 		if(index!=-1) {
 			restaurantUsers.get(index).setEnabled(true);
+			restaurantUsers.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -140,6 +144,7 @@ public class Restaurant{
 	public boolean disableUser(int index) {
 		if(index!=-1) {
 			restaurantUsers.get(index).setEnabled(false);
+			restaurantUsers.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -217,7 +222,7 @@ public class Restaurant{
 		ProductInsertionSortByName();
 		int index = productIndexWithName(name);
 		if(index==-1&&pt.getEnabled()) {
-			Product toAdd = new Product(name,pt,ingrdnts,productSizes,sizesPrices,-1);
+			Product toAdd = new Product(name,currentUser,pt,ingrdnts,productSizes,sizesPrices,-1);
 			restaurantProducts.add(toAdd);
 			addToproductsWithTheirSizes(name,pt,ingrdnts,productSizes,sizesPrices);
 			restaurantProductsSize++;
@@ -233,7 +238,7 @@ public class Restaurant{
 	 */
 	private void addToproductsWithTheirSizes(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
 		for(int i=0;i<productSizes.size();i++) {
-			productsWithTheirSizes.add(new Product(name,pt,ingrdnts,productSizes,sizesPrices,i));
+			productsWithTheirSizes.add(new Product(name,currentUser,pt,ingrdnts,productSizes,sizesPrices,i));
 			productsWithTheirSizesSize++;
 		}
 	}
@@ -325,6 +330,7 @@ public class Restaurant{
 		if(index!=-1) {
 			Product disabled = restaurantProducts.get(index);
 			restaurantProducts.get(index).setEnabled(false);
+			restaurantProducts.get(index).setModifierUser(currentUser);
 			disableInproductsWithTheirSizes(disabled);
 			return true;
 		}
@@ -340,6 +346,7 @@ public class Restaurant{
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).setEnabled(false);
+				productsWithTheirSizes.get(i).setModifierUser(currentUser);
 			}
 		}
 	}
@@ -355,6 +362,7 @@ public class Restaurant{
 		if(index!=-1) {
 			Product enabled = restaurantProducts.get(index);
 			restaurantProducts.get(index).setEnabled(true);
+			restaurantProducts.get(index).setModifierUser(currentUser);
 			enableInproductsWithTheirSizes(enabled);
 			return true;
 		}
@@ -371,6 +379,7 @@ public class Restaurant{
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).setEnabled(true);
+				productsWithTheirSizes.get(i).setModifierUser(currentUser);
 			}
 		}
 	}
@@ -413,6 +422,7 @@ public class Restaurant{
 		if(index!=-1) {
 			Product productToChangeName=restaurantProducts.get(index);
 			restaurantProducts.get(index).setName(newName);
+			restaurantProducts.get(index).setModifierUser(currentUser);
 			changeNameInproductsWithTheirSizes(productToChangeName, newName);
 			return true;
 		}
@@ -429,6 +439,7 @@ public class Restaurant{
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).setName(name);
+				productsWithTheirSizes.get(i).setModifierUser(currentUser);
 			}
 		}
 	}
@@ -445,6 +456,7 @@ public class Restaurant{
 		if(index!=-1 && newPlateType.getEnabled()) {
 			Product productToChangePlateType=restaurantProducts.get(index);
 			restaurantProducts.get(index).setPt(newPlateType);
+			restaurantProducts.get(index).setModifierUser(currentUser);
 			changePlateTypeInproductsWithTheirSizes(productToChangePlateType, newPlateType);
 			return true;
 		}
@@ -461,6 +473,7 @@ public class Restaurant{
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).setPt(pt);
+				productsWithTheirSizes.get(i).setModifierUser(currentUser);
 			}
 		}
 	}
@@ -479,6 +492,7 @@ public class Restaurant{
 			Product productToAddAnIngredient = restaurantProducts.get(index);
 			b=restaurantProducts.get(index).addAnIngredient(ingredient);
 			if(b) {
+				restaurantProducts.get(index).setModifierUser(currentUser);
 				addAnIngredientInproductsWithTheirSizes(productToAddAnIngredient, ingredient); 
 			}
 		}
@@ -496,6 +510,7 @@ public class Restaurant{
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).addAnIngredient(ingredient);
+				productsWithTheirSizes.get(i).setModifierUser(currentUser);
 			}
 		}
 	}
@@ -508,12 +523,13 @@ public class Restaurant{
 	 * @param ingredient The name of the ingredient that will be deleted
 	 * @return b True if the ingredient was deleted, false if not
 	 */
-	public boolean deleteAnIngredientToAProduct(int index,String ingredientName) {
+	public boolean deleteAnIngredientOfAProduct(int index,String ingredientName) {
 		boolean b=false;
 		if(index!=-1) {
 			Product productToDeleteAnIngredient = restaurantProducts.get(index);
 			b=restaurantProducts.get(index).deleteAnIngredient(ingredientName);
 			if(b) {
+				restaurantProducts.get(index).setModifierUser(currentUser);
 				deletesAnIngredientInproductsWithTheirSizes(productToDeleteAnIngredient, ingredientName);
 			}
 		}
@@ -531,6 +547,8 @@ public class Restaurant{
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).deleteAnIngredient(name);
+				productsWithTheirSizes.get(i).setModifierUser(currentUser);
+				
 			}
 		}
 	}
@@ -548,7 +566,7 @@ public class Restaurant{
 		selectionSortIngredients();
 		int index = ingredientIndexWithName(name);
 		if(index==-1) {
-			Ingredient toAdd = new Ingredient(name);
+			Ingredient toAdd = new Ingredient(name,currentUser);
 			restaurantIngredients.add(toAdd);
 			restaurantIngredientsSize++;
 			return true;
@@ -646,6 +664,7 @@ public class Restaurant{
 	public boolean enableIngredient(int index) {
 		if(index!=-1) {
 			restaurantIngredients.get(index).setEnabled(true);
+			restaurantIngredients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -661,6 +680,7 @@ public class Restaurant{
 	public boolean disableIngredient(int index) {
 		if(index!=-1) {
 			restaurantIngredients.get(index).setEnabled(false);
+			restaurantIngredients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -677,6 +697,7 @@ public class Restaurant{
 	public boolean changeingredientName(int index,String newName) {
 		if(index!=-1) {
 			restaurantIngredients.get(index).setName(newName);
+			restaurantIngredients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -695,7 +716,7 @@ public class Restaurant{
 		collectionSortPlateTypes();
 		int index = plateTypeIndexWithName(name);
 		if(index==-1) {
-			PlateType toAdd = new PlateType(name);
+			PlateType toAdd = new PlateType(name,currentUser);
 			restaurantPlateTypes.add(toAdd);
 			restaurantPlateTypesSize++;
 			return true;
@@ -776,6 +797,7 @@ public class Restaurant{
 	public boolean enablePlateType(int index) {
 		if(index!=-1) {
 			restaurantPlateTypes.get(index).setEnabled(true);
+			restaurantPlateTypes.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -791,6 +813,7 @@ public class Restaurant{
 	public boolean disablePlateType(int index) {
 		if(index!=-1) {
 			restaurantPlateTypes.get(index).setEnabled(false);
+			restaurantPlateTypes.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -827,7 +850,7 @@ public class Restaurant{
 	 */
 	public boolean addAClientToTheRestaurant(String name,String lastname,String id,String address,String phoneNumber,String observations) {
 		if(restaurantClients.isEmpty()) {
-			Client toAdd = new Client(name,lastname,id,address,phoneNumber,observations);
+			Client toAdd = new Client(name,currentUser,lastname,id,address,phoneNumber,observations);
 			restaurantClients.add(toAdd);
 			restaurantClientsSize++;
 			return true;
@@ -835,7 +858,7 @@ public class Restaurant{
 		else {
 			int index = neatlyInsertClients(name,lastname);
 			if(index!=-1) {
-				Client toAdd = new Client(name,lastname,id,address,phoneNumber,observations);
+				Client toAdd = new Client(name,currentUser,lastname,id,address,phoneNumber,observations);
 				restaurantClients.add(index,toAdd);
 				restaurantClientsSize++;
 				return true;
@@ -956,6 +979,7 @@ public class Restaurant{
 	public boolean enableClient(int index) {
 		if(index!=-1) {
 			restaurantClients.get(index).setEnabled(true);
+			restaurantClients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -971,6 +995,7 @@ public class Restaurant{
 	public boolean disableClient(int index) {
 		if(index!=-1) {
 			restaurantClients.get(index).setEnabled(false);
+			restaurantClients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -986,6 +1011,7 @@ public class Restaurant{
 	public boolean changeClientName(int index,String newName) {
 		if(index!=-1) {
 			restaurantClients.get(index).setName(newName);
+			restaurantClients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -1002,6 +1028,7 @@ public class Restaurant{
 	public boolean changeClientLastname(int index,String newLastname) {
 		if(index!=-1) {
 			restaurantClients.get(index).setLastname(newLastname);
+			restaurantClients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -1018,6 +1045,7 @@ public class Restaurant{
 	public boolean changeClientId(int index,String newId) {
 		if(index!=-1) {
 			restaurantClients.get(index).setId(newId);
+			restaurantClients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -1034,6 +1062,7 @@ public class Restaurant{
 	public boolean changeClientAddress(int index,String newAddress) {
 		if(index!=-1) {
 			restaurantClients.get(index).setAddress(newAddress);
+			restaurantClients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -1050,6 +1079,7 @@ public class Restaurant{
 	public boolean changeClientPhoneNumber(int index,String newPhoneNumber) {
 		if(index!=-1) {
 			restaurantClients.get(index).setPhoneNumber(newPhoneNumber);
+			restaurantClients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -1066,6 +1096,7 @@ public class Restaurant{
 	public boolean changeClientObservations(int index,String newObservations) {
 		if(index!=-1) {
 			restaurantClients.get(index).setObservations(newObservations);
+			restaurantClients.get(index).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -1085,9 +1116,9 @@ public class Restaurant{
 		sortEmployeesById();
 		int index = employeeIndexWithId(id);
 		if(index==-1) {
-			Employee toAdd = new Employee(name,lastname,id);
+			Employee toAdd = new Employee(name,currentUser,lastname,id);
 			restaurantEmployees.add(toAdd);
-			User employeeUser = new User(name,lastname,id,name,id);
+			User employeeUser = new User(name,currentUser,lastname,id,name,id);
 			restaurantUsers.add(employeeUser);
 			restaurantUsersSize++;
 			restaurantEmployeesSize++;
@@ -1163,9 +1194,9 @@ public class Restaurant{
 	}
 	
 	public int indexOfAnUser(Employee employee) {
-		String comparator = employee.getId();
+		String aux = employee.getId();
 		for(int i=0;i<restaurantUsersSize;i++) {
-			if(comparator.equalsIgnoreCase(restaurantUsers.get(i).getId())) {
+			if(aux.equalsIgnoreCase(restaurantUsers.get(i).getId())) {
 				return i;
 			}
 		}
@@ -1195,7 +1226,10 @@ public class Restaurant{
 		if(index!=-1) {
 			Employee enabled = restaurantEmployees.get(index);
 			restaurantEmployees.get(index).setEnabled(true);
+			restaurantEmployees.get(index).setModifierUser(currentUser);
 			restaurantUsers.get(indexOfAnUser(enabled)).setEnabled(true);
+			restaurantUsers.get(indexOfAnUser(enabled)).setModifierUser(currentUser);
+			
 			return true;
 		}
 		return false;
@@ -1212,7 +1246,9 @@ public class Restaurant{
 		if(index!=-1) {
 			Employee disabled = restaurantEmployees.get(index);
 			restaurantEmployees.get(index).setEnabled(false);
+			restaurantEmployees.get(index).setModifierUser(currentUser);
 			restaurantUsers.get(indexOfAnUser(disabled)).setEnabled(false);
+			restaurantUsers.get(indexOfAnUser(disabled)).setModifierUser(currentUser);
 			return true;
 		}
 		return false;
@@ -1229,7 +1265,9 @@ public class Restaurant{
 		 if(index!=-1) {
 			 Employee changeName=restaurantEmployees.get(index);
 			 restaurantEmployees.get(index).setName(newName);
+			 restaurantEmployees.get(index).setModifierUser(currentUser);
 			 restaurantUsers.get(indexOfAnUser(changeName)).setName(newName);
+			 restaurantUsers.get(indexOfAnUser(changeName)).setModifierUser(currentUser);
 			 return true;
 		 }
 		 return false;
@@ -1247,7 +1285,9 @@ public class Restaurant{
 		 if(index!=-1) {
 			 Employee changeLastname=restaurantEmployees.get(index);
 			 restaurantEmployees.get(index).setLastname(newLastname);
+			 restaurantEmployees.get(index).setModifierUser(currentUser);
 			 restaurantUsers.get(indexOfAnUser(changeLastname)).setLastname(newLastname);
+			 restaurantUsers.get(indexOfAnUser(changeLastname)).setModifierUser(currentUser);
 			 return true;
 		 }
 		 return false;
@@ -1265,15 +1305,19 @@ public class Restaurant{
 		 if(index!=-1) {
 			 Employee changeId=restaurantEmployees.get(index);
 			 restaurantUsers.get(indexOfAnUser(changeId)).setId(newId);
+			 restaurantUsers.get(indexOfAnUser(changeId)).setModifierUser(currentUser);
 			 restaurantEmployees.get(index).setId(newId);
+			 restaurantEmployees.get(index).setModifierUser(currentUser);
 			 return true;
 		 }
 		 return false;
 	 }
 	 
 	 //Order methods
+	 
+	 //Have to check if the objects are enabled (REMEMBER JUAN DAVID)
 	 public void createAnOrder(ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
-		 Order newOrder = new Order(orderIDs,orderProducts,productsQuantity,orderClient,orderEmployee,observations);
+		 Order newOrder = new Order(currentUser, orderIDs,orderProducts,productsQuantity,orderClient,orderEmployee,observations);
 		 restaurantOrders.add(newOrder);
 		 orderIDs.add(newOrder.getName());
 		 restaurantOrdersSize++;
@@ -1283,6 +1327,7 @@ public class Restaurant{
 			 String check = restaurantOrders.get(index).getOrderStatus();
 			 if(!check.equals("DELIVERED") && !check.equals("CANCELLED")) {
 				 restaurantOrders.get(index).setStatusIndicator(indicator);
+				 restaurantOrders.get(index).setModifierUser(currentUser);
 				 return true;
 			 }
 		 }

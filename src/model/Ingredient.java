@@ -1,8 +1,8 @@
 package model;
 public class Ingredient extends SystemObject{
 
-	public Ingredient(String name) {
-		super(name);
+	public Ingredient(String name,User creatorUser) {
+		super(name,creatorUser);
 	}
 
 	@Override

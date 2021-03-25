@@ -5,8 +5,8 @@ public class User extends Employee{
 	private String username;
 	private String password;
 
-	public User(String name,String lastname,String id,String username,String password) {
-		super(name,lastname,id);
+	public User(String name,User creatorUser,String lastname,String id,String username,String password) {
+		super(name,creatorUser,lastname,id);
 		this.username=username;
 		this.password=password;
 	}
