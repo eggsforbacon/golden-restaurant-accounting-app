@@ -1402,6 +1402,12 @@ public class Restaurant{
 	public ArrayList<Order> getRestaurantOrders(){
 		return restaurantOrders;
 	}
+	public User getRootUser() {
+		return rootUser;
+	}
+	public User getCurrentUser() {
+		return currentUser;
+	}
 
 	//Setters
 	public void setRestaurantProducts(ArrayList<Product> restaurantProducts) {
@@ -1427,5 +1433,11 @@ public class Restaurant{
 	}
 	public void setRestaurantPlateTypesSize(int restaurantPlateTypesSize) {
 		this.restaurantPlateTypesSize = restaurantPlateTypesSize;
+	}
+	public void setRootUser(User rootUser) {
+		this.rootUser=rootUser;
+	}
+	public void setCurrentUser(User currentUser) {
+		this.currentUser=currentUser;
 	}
 }
