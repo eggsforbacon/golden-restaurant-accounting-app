@@ -20,7 +20,7 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 		super("");
 		generateID(IDs);
 		statusIndicator=1;
-		orderStatus = Status.values()[statusIndicator-1];
+		orderStatus = Status.values()[statusIndicator];
 		this.orderProducts=orderProducts;
 		arraylistSize = orderProducts.size();
 		this.productsQuantity=productsQuantity;
@@ -131,7 +131,14 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	 * @param statusIndicator The status indicator of the order
 	 */
 	public void setStatusIndicator(int statusIndicator) {
-		this.statusIndicator = statusIndicator;
+		if(statusIndicator==1) {
+			this.statusIndicator = statusIndicator+1;
+			orderStatus=Status.values()[statusIndicator];
+		}
+		else {
+			this.statusIndicator = 0;
+			orderStatus=Status.values()[statusIndicator];
+		}
 	}
 	/**
 	 * @param orderClient The client who requested the order

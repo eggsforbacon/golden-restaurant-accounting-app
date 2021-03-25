@@ -1278,7 +1278,24 @@ public class Restaurant{
 		 orderIDs.add(newOrder.getName());
 		 restaurantOrdersSize++;
 	 }
-	 
+	 public boolean changeOrderStatus(int index,int indicator) { 
+		 if(index!=-1) {
+			 String check = restaurantOrders.get(index).getOrderStatus();
+			 if(!check.equals("DELIVERED") && !check.equals("CANCELLED")) {
+				 restaurantOrders.get(index).setStatusIndicator(indicator);
+				 return true;
+			 }
+		 }
+		 return false;
+	 }
+	 public int searchAnOrder(String id) {
+		 for(int i=0;i<restaurantOrdersSize;i++) {
+			 if(id.equals(restaurantOrders.get(i).getName())) {
+				 return i;
+			 }
+		 }
+		 return -1;
+	 }
 
 
 
