@@ -1,6 +1,5 @@
 package ui;
 
-import javafx.application.HostServices;
 import javafx.scene.control.*;
 import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -20,13 +19,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import sun.security.action.OpenFileInputStreamAction;
-
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.ResourceBundle;
 
 public class CenterPanesGUIController implements Initializable {
@@ -160,7 +156,7 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void addProductCLicked(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("add-product.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productGUI/add-product.fxml"));
             fxmlLoader.setController(this);
             Parent root = fxmlLoader.load();
             Stage createProduct = new Stage();
@@ -221,7 +217,7 @@ public class CenterPanesGUIController implements Initializable {
 
     void fullProductDetails(Product rowData) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("prodInfo.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productGUI/prodInfo.fxml"));
             fxmlLoader.setController(this);
             Parent root = fxmlLoader.load();
             Stage productInfo = new Stage();

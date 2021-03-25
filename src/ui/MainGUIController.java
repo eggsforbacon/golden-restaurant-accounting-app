@@ -12,8 +12,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import model.Restaurant;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -72,7 +70,7 @@ public class MainGUIController implements Initializable {
     @FXML
     void clientsClicked(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("clients-center.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("clientsGUI/clients-center.fxml"));
             fxmlLoader.setController(cenPaneController);
             Parent root = fxmlLoader.load();
             currentScene.setCenter(root);
@@ -84,7 +82,7 @@ public class MainGUIController implements Initializable {
     @FXML
     void ingredientsClicked(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ingredients-center.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ingredientsGUI/ingredients-center.fxml"));
             fxmlLoader.setController(cenPaneController);
             Parent root = fxmlLoader.load();
             currentScene.setCenter(root);
@@ -96,7 +94,7 @@ public class MainGUIController implements Initializable {
     @FXML
     void personnelClicked(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("personnel-center.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("personnelGUI/personnel-center.fxml"));
             fxmlLoader.setController(cenPaneController);
             Parent root = fxmlLoader.load();
             currentScene.setCenter(root);
@@ -108,7 +106,7 @@ public class MainGUIController implements Initializable {
     @FXML
     void productsClicked(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("product-center.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productGUI/product-center.fxml"));
             fxmlLoader.setController(cenPaneController);
             Parent root = fxmlLoader.load();
             currentScene.setCenter(root);
@@ -120,7 +118,7 @@ public class MainGUIController implements Initializable {
     @FXML
     void usersClicked(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("users-center.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("usersGUI/users-center.fxml"));
             fxmlLoader.setController(cenPaneController);
             Parent root = fxmlLoader.load();
             currentScene.setCenter(root);
