@@ -292,6 +292,8 @@ public class CenterPanesGUIController implements Initializable {
         }
         prodSizeInfoLBL.setText(sizes.toString());
         prodPricesInfoLBL.setText(prices.toString());
+        prodCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
+        prodEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
         ((Stage)prodNameInfoLBL.getScene().getWindow()).setMaxWidth(520.0);
     }
 
@@ -391,6 +393,9 @@ public class CenterPanesGUIController implements Initializable {
 
         ObservableList<Ingredient> ingredientsList = FXCollections.observableArrayList(GH.getRestaurantIngredients());
         ingredientsTBV.setItems(ingredientsList);
+
+        nameIngCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        enabledIngCol.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
     @FXML
