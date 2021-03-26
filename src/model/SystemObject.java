@@ -1,6 +1,8 @@
 package model;
 
 public abstract class SystemObject implements Comparable<SystemObject>{
+	
+	private String SEPARATOR=";";
 	private boolean enabled;
 	protected String name;
 	private User creatorUser;
@@ -47,6 +49,9 @@ public abstract class SystemObject implements Comparable<SystemObject>{
 	}
 	public User getModifierUser() {
 		return modifierUser;
+	}
+	public String getSeparator() {
+		return SEPARATOR;
 	}
 
 

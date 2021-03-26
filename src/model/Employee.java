@@ -12,9 +12,9 @@ public class Employee extends Person implements Serializable{
 
 	@Override
 	public String showInformation() {
-		String info = getName()+";";
-		info+= getLastname()+";";
-		info += getId()+";";
+		String info = getName()+getSeparator();
+		info+= getLastname()+getSeparator();
+		info += getId()+getSeparator();
 		return info;
 	}
 

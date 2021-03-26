@@ -780,6 +780,11 @@ public class Restaurant{
 		} 
 	} 
 
+	public void descendantSortIngredients() {
+		Comparator<Ingredient> nameComparator = new IngredientNameComparator();
+		Collections.sort(restaurantIngredients,nameComparator);
+	}
+	
 	/**
 	 * Deletes an ingredient of the ingredients ArrayList<br>
 	 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>

@@ -18,11 +18,11 @@ public class User extends Employee implements Serializable{
 
 	@Override
 	public String showInformation() {
-		String info = getName()+";";
-		info+= getLastname()+";";
-		info += getId()+";";
-		info += getUsername()+";";
-		info += getPassword()+";";
+		String info = getName()+getSeparator();
+		info+= getLastname()+getSeparator();
+		info += getId()+getSeparator();
+		info += getUsername()+getSeparator();
+		info += getPassword()+getSeparator();
 		return info;
 	}
 

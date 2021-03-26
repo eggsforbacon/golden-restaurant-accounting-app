@@ -18,12 +18,12 @@ public class Client extends Person implements Serializable{
 
 	@Override
 	public String showInformation() {
-		String info = getName()+";";
-		info+= getLastname()+";";
-		info += getId()+";";
-		info += getAddress()+";";
-		info += getPhoneNumber()+";";
-		info += getObservations()+";";
+		String info = getName()+getSeparator();
+		info+= getLastname()+getSeparator();
+		info += getId()+getSeparator();
+		info += getAddress()+getSeparator();
+		info += getPhoneNumber()+getSeparator();
+		info += getObservations()+getSeparator();
 		return info;
 	}
 

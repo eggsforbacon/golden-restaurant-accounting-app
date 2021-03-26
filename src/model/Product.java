@@ -148,7 +148,7 @@ public class Product extends SystemObject implements Serializable{
 		String info = "";
 		for(int i=0;i<productSizesSize;i++) {
 			info += productSizes.get(i)+",";
-			info += sizesPrices.get(i)+";";
+			info += sizesPrices.get(i)+getSeparator();
 		}
 		return info;
 	}
@@ -156,9 +156,9 @@ public class Product extends SystemObject implements Serializable{
 	@Override
 	public String showInformation() {
 		String info = "";
-		info += getName()+";";	//Name
-		info += pt.getName()+";";	//P
-		info += getTheIngredients()+";";
+		info += getName()+getSeparator();	//Name
+		info += pt.getName()+getSeparator();	//P
+		info += getTheIngredients()+getSeparator();
 		info += sizesInformation();
 
 		return info;

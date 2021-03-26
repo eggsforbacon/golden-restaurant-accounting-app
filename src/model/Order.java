@@ -58,10 +58,10 @@ public class Order extends SystemObject implements Serializable {
 	public String showProducts() {
 		String info = "";
 		for(int i=0;i<arraylistSize;i++) {
-			info += orderProducts.get(i).getName()+";";
-			info += orderProducts.get(i).getProductActualSize()+";"; 
-			info += productsQuantity.get(i)+";";
-			info += orderProducts.get(i).getProductPrice()+";";
+			info += orderProducts.get(i).getName()+getSeparator();
+			info += orderProducts.get(i).getProductActualSize()+getSeparator(); 
+			info += productsQuantity.get(i)+getSeparator();
+			info += orderProducts.get(i).getProductPrice()+getSeparator();
 		}
 		return info;
 	}
@@ -70,13 +70,13 @@ public class Order extends SystemObject implements Serializable {
 		Client client = getOrderClient();
 		Employee employee = getOrderEmployee();
 		String info = "";
-		info += getName()+";";
-		info += client.getName()+";";
-		info += client.getAddress()+";";
-		info += client.getPhoneNumber()+";";
-		info += employee.getName()+";";
-		info += getDate()+";";
-		info += getObservations()+";";
+		info += getName()+getSeparator();
+		info += client.getName()+getSeparator();
+		info += client.getAddress()+getSeparator();
+		info += client.getPhoneNumber()+getSeparator();
+		info += employee.getName()+getSeparator();
+		info += getDate()+getSeparator();
+		info += getObservations()+getSeparator();
 		info += showProducts();
 
 		return info;
