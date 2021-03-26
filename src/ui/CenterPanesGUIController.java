@@ -40,31 +40,25 @@ public class CenterPanesGUIController implements Initializable {
     private TableView<Product> productTBV;
 
     @FXML
-    private TableColumn<Product, String> nameCol;
+    private TableColumn<Product, String> nameProdCol;
 
     @FXML
-    private TableColumn<Product, String> enabledCol;
+    private TableColumn<Product, String> enabledProdCol;
 
     @FXML
-    private TableColumn<Product, String> ingredientsCol;
+    private TableColumn<Product, String> ingredientsProdCol;
 
     @FXML
-    private TableColumn<Product, String> typeCol;
+    private TableColumn<Product, String> typeProdCol;
 
     @FXML
-    private TableColumn<Product, String> sizesCol;
+    private TableColumn<Product, String> sizesProdCol;
 
     @FXML
-    private TableColumn<Product, Double> pricesCol;
+    private TableColumn<Product, Double> pricesProdCol;
 
     @FXML
     private Label spacer2;
-
-    @FXML
-    private Label spacer3;
-
-    @FXML
-    private Label lastUserLBL;
 
     //Add Pane
     @FXML
@@ -110,6 +104,23 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Label prodEditorInfoLBL;
 
+    /*Ingredients Pane*/
+    @FXML
+    private BorderPane ingredientsPane;
+
+    @FXML
+    private TableView<Ingredient> ingredientsTBV;
+
+    @FXML
+    private TableColumn<Ingredient, String> nameIngCol;
+
+    @FXML
+    private TableColumn<Ingredient, String> enabledIngCol;
+
+    @FXML
+    private Label spacer3;
+
+
     private Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
         this.GH = GH;
@@ -118,6 +129,7 @@ public class CenterPanesGUIController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initProductPane();
+        initIngredientPane();
     }
 
     @FXML
@@ -284,27 +296,27 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     private void initProductPane() {
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        nameCol.setStyle( "\n-fx-alignment: CENTER;");
-        enabledCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
-        enabledCol.setStyle( "\n-fx-alignment: CENTER;");
-        ingredientsCol.setCellValueFactory(new PropertyValueFactory<>("theIngredients"));
-        ingredientsCol.setStyle( "\n-fx-alignment: CENTER;");
-        typeCol.setCellValueFactory(new PropertyValueFactory<>("pt"));
-        typeCol.setStyle( "\n-fx-alignment: CENTER;");
-        sizesCol.setCellValueFactory(new PropertyValueFactory<>("productActualSize"));
-        sizesCol.setStyle( "\n-fx-alignment: CENTER;");
-        pricesCol.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
-        pricesCol.setStyle("\n-fx-alignment: CENTER;");
+        nameProdCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameProdCol.setStyle( "\n-fx-alignment: CENTER;");
+        enabledProdCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
+        enabledProdCol.setStyle( "\n-fx-alignment: CENTER;");
+        ingredientsProdCol.setCellValueFactory(new PropertyValueFactory<>("theIngredients"));
+        ingredientsProdCol.setStyle( "\n-fx-alignment: CENTER;");
+        typeProdCol.setCellValueFactory(new PropertyValueFactory<>("pt"));
+        typeProdCol.setStyle( "\n-fx-alignment: CENTER;");
+        sizesProdCol.setCellValueFactory(new PropertyValueFactory<>("productActualSize"));
+        sizesProdCol.setStyle( "\n-fx-alignment: CENTER;");
+        pricesProdCol.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
+        pricesProdCol.setStyle("\n-fx-alignment: CENTER;");
         ObservableList<Product> productsList = FXCollections.observableArrayList(GH.getProductsWithTheirSizes());
         productTBV.setItems(productsList);
 
-        nameCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        enabledCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        ingredientsCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        typeCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        sizesCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        pricesCol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+        nameProdCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        enabledProdCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        ingredientsProdCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        typeProdCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        sizesProdCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        pricesProdCol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
 
         productTBV.setRowFactory(tv -> {
             TableRow<Product> row = new TableRow<>();
@@ -351,7 +363,7 @@ public class CenterPanesGUIController implements Initializable {
         String fileName = "src/data/PRODUCTS.csv";
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         String line = br.readLine();
-        while(line!=null){
+        while(line!=null) {
             String[] parts = line.split(SEPARATOR);
             ArrayList<Ingredient> newIng = new ArrayList<>();
             for (String s: parts[2].split(",")) {
@@ -368,5 +380,46 @@ public class CenterPanesGUIController implements Initializable {
         }
         br.close();
         initProductPane();
+    }
+
+
+    private void initIngredientPane() {
+        nameIngCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameIngCol.setStyle( "\n-fx-alignment: CENTER;");
+        enabledIngCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
+        enabledIngCol.setStyle( "\n-fx-alignment: CENTER;");
+
+        ObservableList<Ingredient> ingredientsList = FXCollections.observableArrayList(GH.getRestaurantIngredients());
+        ingredientsTBV.setItems(ingredientsList);
+    }
+
+    @FXML
+    void addIngredientCLicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void deleteIngredientClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editEnabledIng(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editNameIng(ActionEvent event) {
+
+    }
+
+    @FXML
+    void exportIngredientData(ActionEvent event) {
+
+    }
+
+    @FXML
+    void importIngredientData(ActionEvent event) {
+
     }
 }
