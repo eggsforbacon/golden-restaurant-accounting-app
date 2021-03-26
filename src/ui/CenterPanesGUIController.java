@@ -362,6 +362,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void importProductData(ActionEvent event) throws IOException {
+
         String fileName = "src/data/PRODUCTS.csv";
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         String line = br.readLine();
