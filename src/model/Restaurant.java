@@ -1,10 +1,26 @@
 package model;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+
 public class Restaurant{
+	
+	public final static String PRODUCT_SAVE_PATH_FILE = "data/savedfiles/product.z&1";
+	public final static String INGREDIENT_SAVE_PATH_FILE = "data/savedfiles/ingredient.z&1";
+	public final static String PLATETYPE_SAVE_PATH_FILE = "data/savedfiles/platetype.z&1";
+	public final static String CLIENT_SAVE_PATH_FILE = "data/savedfiles/client.z&1";
+	public final static String EMPLOYEE_SAVE_PATH_FILE = "data/savedfiles/employee.z&1";
+	public final static String USER_SAVE_PATH_FILE = "data/savedfiles/user.z&1";
+	public final static String ORDER_SAVE_PATH_FILE = "data/savedfiles/order.z&1";
+	
 	private User rootUser;
 	private boolean firstTime;
 	private ArrayList<User> restaurantUsers;
@@ -54,7 +70,153 @@ public class Restaurant{
 		restaurantEmployees = new ArrayList<Employee>();
 		restaurantEmployeesSize = restaurantEmployees.size();
 		orderIDs=new ArrayList<String>();
+		
 	}
+
+	//Serialization methods
+	
+	 public void saveProductData() throws IOException{
+		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(PRODUCT_SAVE_PATH_FILE));
+		 oos.writeObject(restaurantProducts);
+		 oos.close();
+	 }
+	 
+	 @SuppressWarnings("unchecked")
+	 public boolean loadProductData() throws IOException, ClassNotFoundException{
+		 File f = new File(PRODUCT_SAVE_PATH_FILE);
+		 boolean loaded = false;
+		 if(f.exists()){
+			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			 restaurantProducts = (ArrayList<Product>)ois.readObject();
+			 ois.close();
+			 loaded = true;
+		 }
+		 return loaded;
+	 }
+	 public void saveIngredientData() throws IOException{
+		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(INGREDIENT_SAVE_PATH_FILE));
+		 oos.writeObject(restaurantIngredients);
+		 oos.close();
+	 }
+	 
+	 @SuppressWarnings("unchecked")
+	 public boolean loadIngredientData() throws IOException, ClassNotFoundException{
+		 File f = new File(INGREDIENT_SAVE_PATH_FILE);
+		 boolean loaded = false;
+		 if(f.exists()){
+			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			 restaurantIngredients = (ArrayList<Ingredient>)ois.readObject();
+			 ois.close();
+			 loaded = true;
+		 }
+		 return loaded;
+	 }
+	 
+	 public void savePlateTypeData() throws IOException{
+		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(PLATETYPE_SAVE_PATH_FILE));
+		 oos.writeObject(restaurantProducts);
+		 oos.close();
+	 }
+	 
+	 @SuppressWarnings("unchecked")
+	 public boolean loadPlateTypeData() throws IOException, ClassNotFoundException{
+		 File f = new File(PLATETYPE_SAVE_PATH_FILE);
+		 boolean loaded = false;
+		 if(f.exists()){
+			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			 restaurantPlateTypes = (ArrayList<PlateType>)ois.readObject();
+			 ois.close();
+			 loaded = true;
+		 }
+		 return loaded;
+	 }
+	 
+	 public void saveClientData() throws IOException{
+		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(CLIENT_SAVE_PATH_FILE));
+		 oos.writeObject(restaurantClients);
+		 oos.close();
+	 }
+	 
+	 @SuppressWarnings("unchecked")
+	 public boolean loadClientData() throws IOException, ClassNotFoundException{
+		 File f = new File(CLIENT_SAVE_PATH_FILE);
+		 boolean loaded = false;
+		 if(f.exists()){
+			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			 restaurantClients = (ArrayList<Client>)ois.readObject();
+			 ois.close();
+			 loaded = true;
+		 }
+		 return loaded;
+	 }
+	 
+	 public void saveEmployeeData() throws IOException{
+		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(EMPLOYEE_SAVE_PATH_FILE));
+		 oos.writeObject(restaurantEmployees);
+		 oos.close();
+	 }
+	 
+	 @SuppressWarnings("unchecked")
+	 public boolean loadEmployeesData() throws IOException, ClassNotFoundException{
+		 File f = new File(EMPLOYEE_SAVE_PATH_FILE);
+		 boolean loaded = false;
+		 if(f.exists()){
+			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			 restaurantEmployees = (ArrayList<Employee>)ois.readObject();
+			 ois.close();
+			 loaded = true;
+		 }
+		 return loaded;
+	 }
+	 
+	 public void saveUserData() throws IOException{
+		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(USER_SAVE_PATH_FILE));
+		 oos.writeObject(restaurantUsers);
+		 oos.close();
+	 }
+	 
+	 @SuppressWarnings("unchecked")
+	 public boolean loadUserData() throws IOException, ClassNotFoundException{
+		 File f = new File(USER_SAVE_PATH_FILE);
+		 boolean loaded = false;
+		 if(f.exists()){
+			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			 restaurantUsers = (ArrayList<User>)ois.readObject();
+			 ois.close();
+			 loaded = true;
+		 }
+		 return loaded;
+	 }
+	 
+	 public void saveOrderData() throws IOException{
+		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ORDER_SAVE_PATH_FILE));
+		 oos.writeObject(restaurantOrders);
+		 oos.close();
+	 }
+	 
+	 @SuppressWarnings("unchecked")
+	 public boolean loadOrderData() throws IOException, ClassNotFoundException{
+		 File f = new File(PRODUCT_SAVE_PATH_FILE);
+		 boolean loaded = false;
+		 if(f.exists()){
+			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			 restaurantOrders = (ArrayList<Order>)ois.readObject();
+			 ois.close();
+			 loaded = true;
+		 }
+		 return loaded;
+	 }
+	 
+	 public void saveAllData() throws IOException{
+		 saveProductData();
+		 saveIngredientData();
+		 savePlateTypeData();
+		 saveClientData();
+		 saveEmployeeData();
+		 saveUserData();
+		 saveOrderData();
+	 }
+
 
 
 	/**
@@ -86,7 +248,7 @@ public class Restaurant{
 
 	//User options
 
-	public boolean initializeUser(int index,String username,String password) {
+	public boolean initializeUser(int index,String username,String password) throws IOException {
 		if(index!=-1) {
 			restaurantUsers.get(index).setUsername(username);
 			restaurantUsers.get(index).setPassword(password);

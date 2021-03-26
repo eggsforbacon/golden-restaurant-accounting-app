@@ -1,6 +1,11 @@
 package model;
-public class PlateType extends SystemObject{
 
+import java.io.Serializable;
+
+public class PlateType extends SystemObject implements Serializable{
+
+	private static final long serialVersionUID = 1;
+	
 	public PlateType(String name,User creatorUser) {
 		super(name,creatorUser);
 	}

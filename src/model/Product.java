@@ -1,9 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Product extends SystemObject{
+public class Product extends SystemObject implements Serializable{
 
+	private static final long serialVersionUID = 1;
+	
 	private PlateType pt;
 	private ArrayList<Ingredient> ingrdnts;
 	private int ingrdntsSize;

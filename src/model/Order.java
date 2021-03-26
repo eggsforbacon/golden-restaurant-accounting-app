@@ -1,10 +1,13 @@
 package model;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Order extends SystemObject {	//The attribute "name" of the SystemObject class will act as the attribute "ID"
+public class Order extends SystemObject implements Serializable {	
 
+	private static final long serialVersionUID = 1;
+	
 	private Status orderStatus;
 	private int statusIndicator;
 	private ArrayList<Product> orderProducts;
@@ -17,7 +20,7 @@ public class Order extends SystemObject {	//The attribute "name" of the SystemOb
 	private String observations;
 
 	public Order(User creatorUser,ArrayList<String> IDs,ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
-		super("",creatorUser);
+		super("",creatorUser); //The attribute "name" of the SystemObject class will act as the attribute "ID"
 		generateID(IDs);
 		statusIndicator=1;
 		orderStatus = Status.values()[statusIndicator];
