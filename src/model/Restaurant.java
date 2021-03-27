@@ -103,16 +103,12 @@ public class Restaurant{
 		String columns = "Nombre"+separator+"Apellido"+separator+"ID"+separator+"Pedidos entregados"+
 		separator+"Valor total de los pedidos";
 		pw.println(columns);
-		  for(int i=0;i<restaurantOrdersSize;i++){
-		    	Order auxOrder = restaurantOrders.get(i);
-		    	LocalDateTime dateOfOrder = auxOrder.getDate();
-		    	if(dateOfOrder.isAfter(startDate) && dateOfOrder.isBefore(endDate)) {
-		    		auxOrder.setSeparator(separator);
-		    		pw.println(auxOrder.showInformation());
-		    	}
-		    }
-		
+		 for(int i=0;i<restaurantEmployeesSize;i++) {
+			 pw.println(restaurantEmployees.get(i).showReportInformation(startDate, endDate));
+		 }
+		pw.close();
 	}
+	
 	//Serialization methods
 	
 	 public void saveProductData() throws IOException{

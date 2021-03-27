@@ -1,18 +1,24 @@
 package model;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Employee extends Person implements Serializable{
 
 	private static final long serialVersionUID = 1;
 	
-	private int ordersDelivered;
-	private double totalPriceOfTheOrders;
+	private ArrayList<LocalDateTime> dateOfTheOrdersDelivered;
+	private ArrayList<Double> priceOfTheOrdersDelivered;
+	private int allOrdersDelivered;
+	private int specifiedOrdersDelivered;
 
 	public Employee(String name,User creatorUser,String lastname,String id) {
 		super(name,creatorUser,lastname,id);
-		ordersDelivered=0;
-		totalPriceOfTheOrders=0;
+		dateOfTheOrdersDelivered = new ArrayList<LocalDateTime>();
+		priceOfTheOrdersDelivered = new ArrayList<Double>();
+		allOrdersDelivered=0;
+		specifiedOrdersDelivered=0;
 	}
 
 	@Override
@@ -20,22 +26,46 @@ public class Employee extends Person implements Serializable{
 		String info = getName()+getSeparator();
 		info+= getLastname()+getSeparator();
 		info += getId()+getSeparator();
-		info += getEmployeeOrdersDelivered()+getSeparator();
-		info += getTotalPriceOfTheOrders()+getSeparator();
+		return info;
+	}
+	public String showReportInformation(LocalDateTime startDate,LocalDateTime endDate) {
+		String info = getName()+getSeparator();
+		info+= getLastname()+getSeparator();
+		info += getId()+getSeparator();
+		double aux = getTotalPriceOfTheOrders(startDate,endDate);
+		info += getSpecifiedOrdersDelivered()+getSeparator();
+		info += aux+getSeparator();
+		
+		
 		return info;
 	}
 	
 	public void addAnOrderDelivered() {
-		ordersDelivered++;
+		dateOfTheOrdersDelivered.add(LocalDateTime.now());
+		allOrdersDelivered++;
 	}
 	public void addAPriceOfAnOrder(double priceOfAnOrder) {
-		totalPriceOfTheOrders+=priceOfAnOrder;
+		priceOfTheOrdersDelivered.add(priceOfAnOrder);
 	}
-	public int getEmployeeOrdersDelivered() {
-		return ordersDelivered;
+	public int getAllEmployeeOrdersDelivered() {
+		return allOrdersDelivered;
 	}
-	public double getTotalPriceOfTheOrders() {
-		return totalPriceOfTheOrders;
+	public double getTotalPriceOfTheOrders(LocalDateTime startDate,LocalDateTime endDate) {
+		double total = 0;
+		specifiedOrdersDelivered=0;
+		for(int i=0;i<allOrdersDelivered;i++) {
+			if(dateOfTheOrdersDelivered.get(i).isAfter(startDate) && dateOfTheOrdersDelivered.get(i).isBefore(endDate)) {
+				total += priceOfTheOrdersDelivered.get(i);
+				specifiedOrdersDelivered++;
+			}
+		}
+		return total;
+	}
+	public ArrayList<LocalDateTime> getDateOfTheOrdersDelivered(){
+		return dateOfTheOrdersDelivered;
+	}
+	public int getSpecifiedOrdersDelivered() {
+		return specifiedOrdersDelivered;
 	}
 
 }
