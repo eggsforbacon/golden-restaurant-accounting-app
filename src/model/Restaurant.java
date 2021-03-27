@@ -384,7 +384,6 @@ public class Restaurant{
 	 * @return True if the product was added, false if not
 	 */
 	public boolean addProduct(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
-		ProductInsertionSortByName();
 		int index = productIndexWithName(name);
 		if(index==-1&&pt.getEnabled()) {
 			Product toAdd = new Product(name,currentUser,pt,ingrdnts,productSizes,sizesPrices,-1);
@@ -417,6 +416,7 @@ public class Restaurant{
 	 * @return index
 	 */
 	public int productIndexWithName(String name) {	//Use it when you have the product name but not the product itself
+		ProductInsertionSortByName();
 		int index =  binarySearch(restaurantProducts,name);
 		return index;
 	}
@@ -883,7 +883,6 @@ public class Restaurant{
 	 * @return True if the product was added, false if not
 	 */
 	public boolean addAPlateTypeToTheRestaurant(String name) {
-		collectionSortPlateTypes();
 		int index = plateTypeIndexWithName(name);
 		if(index==-1) {
 			PlateType toAdd = new PlateType(name,currentUser);
@@ -907,6 +906,7 @@ public class Restaurant{
 	 * @return index
 	 */
 	public int plateTypeIndexWithName(String name) {	//Use it when you have the plateType name but not the plateType itself
+		collectionSortPlateTypes();
 		int index =  binarySearch(restaurantPlateTypes,name);
 		return index;
 	}
