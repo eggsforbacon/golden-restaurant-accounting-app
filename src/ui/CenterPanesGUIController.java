@@ -210,7 +210,7 @@ public class CenterPanesGUIController implements Initializable {
         String newProdName = newProdNameTF.getText();
         ArrayList<Ingredient> newProdIngredients = new ArrayList<>();
         for (String ingName: selectedItemsLV.getSelectionModel().getSelectedItems()) {
-            System.out.println(GH.ingredientIndexWithName(ingName) + "\n" + ingName + "\n" + GH.getRestaurantIngredients().toString());
+            System.out.println(GH.ingredientIndexWithName(ingName) + "\n" + ingName + "\n" + GH.getRestaurantIngredientsString()+GH.getRestaurantIngredients().toString());
             Ingredient ingtoadd = GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(ingName));
             newProdIngredients.add(ingtoadd);
         }

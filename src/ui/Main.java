@@ -34,7 +34,8 @@ public class Main extends Application {
     prices.add(3.0);
     prices.add(7.9);
     GH.addProduct("Nombre", pt, ingredients, sizes, prices);
-    GH.getRestaurantIngredients().addAll(ingredients);
+    GH.addAnIngredientToTheRestaurant("Papa");
+    GH.addAnIngredientToTheRestaurant("Tomate");
     controller = new MainGUIController(GH);
     logController = new LoginGUIController(GH);
     System.out.println(GH.checkFirstTime());

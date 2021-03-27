@@ -17,7 +17,9 @@ public abstract class SystemObject implements Comparable<SystemObject>{
 
 	@Override
 	public int compareTo(SystemObject o) {
-		return name.compareTo(o.getName());
+		String nameDownCase = name.toLowerCase();
+		String objectNameDownCase = o.getName().toLowerCase();
+		return nameDownCase.compareTo(objectNameDownCase);
 	}
 
 	//Getters

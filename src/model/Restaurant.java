@@ -231,12 +231,15 @@ public class Restaurant{
 		int pos = -1;
 		int i = 0;
 		int j = aL.size()-1;
+		
 		while(i<=j && pos<0) {
 			int m = (i+j)/2;
-			if(((SystemObject) aL.get(m)).getName().equalsIgnoreCase(name)) {
+			String objectNameLowerCase = ((SystemObject) aL.get(m)).getName().toLowerCase();
+			String nameLowerCase = name.toLowerCase();
+			if(objectNameLowerCase.equals(nameLowerCase)) {
 				pos=m;
 			}
-			else if((((SystemObject) aL.get(m)).getName().compareTo(name))>0){
+			else if((objectNameLowerCase.compareTo(nameLowerCase))>0){
 				j=m-1;
 			}
 			else {
@@ -725,7 +728,6 @@ public class Restaurant{
 	 * @return True if the product was added, false if not
 	 */
 	public boolean addAnIngredientToTheRestaurant(String name) {
-		selectionSortIngredients();
 		int index = ingredientIndexWithName(name);
 		if(index==-1) {
 			Ingredient toAdd = new Ingredient(name,currentUser);
@@ -744,6 +746,7 @@ public class Restaurant{
 	 * @return index
 	 */
 	public int ingredientIndexWithName(String name) {	//Use it when you have the ingredient name but not the ingredient itself
+		selectionSortIngredients();
 		int index =  binarySearch(restaurantIngredients,name);
 		return index;
 	}
