@@ -12,8 +12,7 @@ public class Order extends SystemObject implements Serializable {
 	private Status orderStatus;
 	private int statusIndicator;
 	private ArrayList<Product> orderProducts;
-	private int arraylistSize;
-	private ArrayList<Integer> chosenSizes;
+	private int orderProductsSize;
 	private ArrayList<Integer> productsQuantity;
 	private Client orderClient;
 	private Employee orderEmployee;
@@ -21,6 +20,7 @@ public class Order extends SystemObject implements Serializable {
 	private LocalDateTime date;
 	private String dateString;
 	private String observations;
+	private double priceOfTheOrder;
 
 	public Order(User creatorUser,ArrayList<String> IDs,ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
 		super("",creatorUser); //The attribute "name" of the SystemObject class will act as the attribute "ID"
@@ -28,7 +28,7 @@ public class Order extends SystemObject implements Serializable {
 		statusIndicator=1;
 		orderStatus = Status.values()[statusIndicator];
 		this.orderProducts=orderProducts;
-		arraylistSize = orderProducts.size();
+		orderProductsSize= orderProducts.size();
 		this.productsQuantity=productsQuantity;
 		this.orderClient=orderClient;
 		this.orderEmployee=orderEmployee;
@@ -53,7 +53,15 @@ public class Order extends SystemObject implements Serializable {
 		if(IDs.contains(sb.toString())) generateID(IDs);
 		else name = sb.toString();
 	}
-
+	
+	public void calculatePriceOfTheOrder() {
+		double price = 0;
+		for(int i=0;i<orderProductsSize;i++) {
+			price += orderProducts.get(i).getProductPrice() * productsQuantity.get(i);
+		}
+		this.priceOfTheOrder=price;
+	}
+	
 	/**
 	 * Shows the products of the order with their respective size, quantity and size.<br>
 	 * <b>Pre: </b><br>
@@ -62,7 +70,7 @@ public class Order extends SystemObject implements Serializable {
 	 */
 	public String showProducts() {
 		String info = "";
-		for(int i=0;i<arraylistSize;i++) {
+		for(int i=0;i<orderProductsSize;i++) {
 			info += orderProducts.get(i).getName()+getSeparator();
 			info += productsQuantity.get(i)+getSeparator();
 			info += orderProducts.get(i).getProductPrice()+getSeparator();
@@ -133,10 +141,9 @@ public class Order extends SystemObject implements Serializable {
 	public Client getOrderclient() {
 		return orderClient;
 	}
-	public ArrayList<Integer> getChosenSizes(){
-		return chosenSizes;
+	public double getPriceOfTheOrder() {
+		return priceOfTheOrder;
 	}
-
 	//Setters
 	/**
 	 * @param statusIndicator The status indicator of the order

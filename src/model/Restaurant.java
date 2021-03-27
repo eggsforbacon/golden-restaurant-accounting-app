@@ -97,6 +97,22 @@ public class Restaurant{
 	    pw.close();
 	  }
 	
+	public void generateEmployeeReport(String fileName,String separator,LocalDateTime startDate,LocalDateTime endDate) throws FileNotFoundException{
+		PrintWriter pw = new PrintWriter(fileName);
+		sortEmployeesById();
+		String columns = "Nombre"+separator+"Apellido"+separator+"ID"+separator+"Pedidos entregados"+
+		separator+"Valor total de los pedidos";
+		pw.println(columns);
+		  for(int i=0;i<restaurantOrdersSize;i++){
+		    	Order auxOrder = restaurantOrders.get(i);
+		    	LocalDateTime dateOfOrder = auxOrder.getDate();
+		    	if(dateOfOrder.isAfter(startDate) && dateOfOrder.isBefore(endDate)) {
+		    		auxOrder.setSeparator(separator);
+		    		pw.println(auxOrder.showInformation());
+		    	}
+		    }
+		
+	}
 	//Serialization methods
 	
 	 public void saveProductData() throws IOException{
@@ -500,11 +516,15 @@ public class Restaurant{
 	 * @param product The original product in the restaurantProducts ArrayList
 	 */
 	private void deleteInproductsWithTheirSizes(Product product) {
+		ArrayList<Product> productsToDelete = new ArrayList<Product>();
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
-				productsWithTheirSizes.remove(i);
-				productsWithTheirSizesSize--;
+				productsToDelete.add(productsWithTheirSizes.get(i));
 			}
+		}
+		for(int i=0;i<productsToDelete.size();i++) {
+			productsWithTheirSizes.remove(productsToDelete.get(i));
+			productsWithTheirSizesSize--;
 		}
 	}
 
@@ -1536,9 +1556,14 @@ public class Restaurant{
 	 public boolean changeOrderStatus(int index,int indicator) { 
 		 if(index!=-1) {
 			 String check = restaurantOrders.get(index).getOrderStatus();
-			 if(!check.equals("DELIVERED") && !check.equals("CANCELLED")) {
+			 if(!check.equals("ENTREGADO") && !check.equals("CANCELADO")) {
 				 restaurantOrders.get(index).setStatusIndicator(indicator);
 				 restaurantOrders.get(index).setModifierUser(currentUser);
+				 if(restaurantOrders.get(index).getOrderStatus()=="ENTREGADO") {
+					 double priceOfTheOrder = restaurantOrders.get(index).getPriceOfTheOrder();
+					 restaurantOrders.get(index).getOrderEmployee().addAnOrderDelivered();
+					 restaurantOrders.get(index).getOrderEmployee().addAPriceOfAnOrder(priceOfTheOrder);
+				 }
 				 return true;
 			 }
 		 }
