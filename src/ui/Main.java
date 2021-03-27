@@ -24,7 +24,7 @@ public class Main extends Application {
     PlateType pt = new PlateType("Tipo",GH.getRootUser());
     ArrayList<Ingredient> ingredients = new ArrayList<>();
     ingredients.add(new Ingredient("Papa",GH.getRootUser()));
-    ingredients.add(new Ingredient("Tomate",GH.getRootUser()));
+    //ingredients.add(new Ingredient("Tomate",GH.getRootUser()));
     ArrayList<String> sizes = new ArrayList<>();
     sizes.add("Tamaño");
     sizes.add("Tamañito");
