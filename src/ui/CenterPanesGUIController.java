@@ -128,7 +128,17 @@ public class CenterPanesGUIController implements Initializable {
     private TextField newIngNameTF;
 
     //Info Pane
+    @FXML
+    private Label ingNameInfoLBL;
 
+    @FXML
+    private Label ingEnabledInfoLBL;
+
+    @FXML
+    private Label ingCreatorInfoLBL;
+
+    @FXML
+    private Label ingEditorInfoLBL;
 
     private Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
@@ -210,7 +220,7 @@ public class CenterPanesGUIController implements Initializable {
         String newProdName = newProdNameTF.getText();
         ArrayList<Ingredient> newProdIngredients = new ArrayList<>();
         for (String ingName: selectedItemsLV.getSelectionModel().getSelectedItems()) {
-            System.out.println(GH.ingredientIndexWithName(ingName) + "\n" + ingName + "\n" + GH.getRestaurantIngredients().toString());
+            System.out.println(GH.ingredientIndexWithName(ingName) + "\n" + ingName + "\n" + GH.getRestaurantIngredientsString());
             Ingredient ingtoadd = GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(ingName));
             newProdIngredients.add(ingtoadd);
         }
@@ -407,6 +417,17 @@ public class CenterPanesGUIController implements Initializable {
 
         nameIngCol.setCellFactory(TextFieldTableCell.forTableColumn());
         enabledIngCol.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        ingredientsTBV.setRowFactory(tv -> {
+            TableRow<Ingredient> row = new TableRow<>();
+            row.setOnContextMenuRequested(event -> {
+                if (! row.isEmpty()) {
+                    Ingredient rowData = row.getItem();
+                    fullIngredientDetails(rowData);
+                }
+            });
+            return row ;
+        });
     }
 
     @FXML
@@ -476,7 +497,34 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void deleteIngredientClicked(ActionEvent event) {
-
+        Ingredient removed = ingredientsTBV.getSelectionModel().getSelectedItems().get(0);
+        if (removed == null) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage productInfo = new Stage();
+                productInfo.setScene(new Scene(root));
+                productInfo.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                productInfo.getIcons().add(icon);
+                productInfo.setTitle("Error");
+                deleteMessageLBL.setText("No hay selección. Intente de nuevo.");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                productInfo.setResizable(false);
+                productInfo.show();
+            } catch (Exception e) {
+                System.out.println("Can't load window at the moment.");
+                System.out.println(e.getMessage());
+            }
+        } else {
+            ingredientsTBV.getItems().removeAll(ingredientsTBV.getSelectionModel().getSelectedItems());
+            String removedName = ingredientsTBV.getSelectionModel().getSelectedItems().get(0).getName();
+            Ingredient rmSuccessfully = GH.getRestaurantIngredients().remove(GH.ingredientIndexWithName(removedName));
+            System.out.println(rmSuccessfully.showInformation());
+            ingredientsTBV.refresh();
+        }
     }
 
     @FXML
@@ -500,4 +548,33 @@ public class CenterPanesGUIController implements Initializable {
     void importIngredientData(ActionEvent event) {
 
     }
+
+    public void fullIngredientDetails(Ingredient rowData) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ingredientsGUI/ingInfo.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage ingredientInfo = new Stage();
+            ingredientInfo.setScene(new Scene(root));
+            ingredientInfo.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            ingredientInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            ingredientInfo.getIcons().add(icon);
+            ingredientInfo.setTitle("Información de Ingrediente");
+            initIngredientInfo(rowData);
+            ingredientInfo.show();
+        } catch (Exception e) {
+            System.out.println("Can't load window at the moment.");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private void initIngredientInfo(Ingredient rowData) {
+        ingNameInfoLBL.setText(rowData.getName());
+        ingEnabledInfoLBL.setText((rowData.getEnabled()) ? "(Habilitado)" : "(Deshabilitado)");
+        ingEnabledInfoLBL.setId("enabled-label");
+        ingCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
+        ingEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
+    }
 }
+
