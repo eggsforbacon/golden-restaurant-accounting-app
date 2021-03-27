@@ -2,10 +2,13 @@ package model;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -73,6 +76,27 @@ public class Restaurant{
 		
 	}
 
+	//Export methods
+	
+	public void generateOrderReport(String fileName,String separator,LocalDateTime startDate,LocalDateTime endDate) throws FileNotFoundException{
+	    PrintWriter pw = new PrintWriter(fileName);
+	    sortOrdersByDate();
+	    String columns = "Codigo"+separator+"Nombre del cliente"+separator+"Direccion del cliente"+separator+
+	    "Telefono del cliente"+separator+"Nombre del empleado que entrega el producto"+separator+
+	    "Estado del pedido"+separator+"Fecha y hora"+separator+"Observaciones";
+	    pw.println(columns);
+	    for(int i=0;i<restaurantOrdersSize;i++){
+	    	Order auxOrder = restaurantOrders.get(i);
+	    	LocalDateTime dateOfOrder = auxOrder.getDate();
+	    	if(dateOfOrder.isAfter(startDate) && dateOfOrder.isBefore(endDate)) {
+	    		auxOrder.setSeparator(separator);
+	    		pw.println(auxOrder.showInformation());
+	    	}
+	    }
+
+	    pw.close();
+	  }
+	
 	//Serialization methods
 	
 	 public void saveProductData() throws IOException{
@@ -1486,16 +1510,20 @@ public class Restaurant{
 	 //Order methods
 	 
 	 public boolean createAnOrder(ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
-		boolean validQuantitys = productsQuantity.size()==orderProducts.size();
+		 boolean validQuantitys = productsQuantity.size()==orderProducts.size();
 		 if(orderProductsAreEnabled(orderProducts) && validQuantitys && orderClient.getEnabled() && orderEmployee.getEnabled()) {
 			 Order newOrder = new Order(currentUser, orderIDs,orderProducts,productsQuantity,orderClient,orderEmployee,observations);
 			 restaurantOrders.add(newOrder);
 			 orderIDs.add(newOrder.getName());
 			 restaurantOrdersSize++;
 			 return true;
-		}
+		 }
 		 return false;
-		 
+	 }
+	 
+	 public void sortOrdersByDate() {
+		 Comparator<Order> orderComparator = new OrderDateComparator();
+		 Collections.sort(restaurantOrders,orderComparator);
 	 }
 	 public boolean orderProductsAreEnabled(ArrayList<Product> p) {
 		 for(int i=0;i<p.size();i++) {

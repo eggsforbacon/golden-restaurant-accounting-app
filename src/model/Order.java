@@ -1,6 +1,7 @@
 package model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -16,7 +17,9 @@ public class Order extends SystemObject implements Serializable {
 	private ArrayList<Integer> productsQuantity;
 	private Client orderClient;
 	private Employee orderEmployee;
-	private String date;
+	DateTimeFormatter formatter;
+	private LocalDateTime date;
+	private String dateString;
 	private String observations;
 
 	public Order(User creatorUser,ArrayList<String> IDs,ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
@@ -29,7 +32,9 @@ public class Order extends SystemObject implements Serializable {
 		this.productsQuantity=productsQuantity;
 		this.orderClient=orderClient;
 		this.orderEmployee=orderEmployee;
-		date= LocalDateTime.now().toString();
+		formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		date = LocalDateTime.now();
+		dateString= date.format(formatter);
 		this.observations=observations;
 	}
 
@@ -59,7 +64,6 @@ public class Order extends SystemObject implements Serializable {
 		String info = "";
 		for(int i=0;i<arraylistSize;i++) {
 			info += orderProducts.get(i).getName()+getSeparator();
-			info += orderProducts.get(i).getProductActualSize()+getSeparator(); 
 			info += productsQuantity.get(i)+getSeparator();
 			info += orderProducts.get(i).getProductPrice()+getSeparator();
 		}
@@ -75,7 +79,8 @@ public class Order extends SystemObject implements Serializable {
 		info += client.getAddress()+getSeparator();
 		info += client.getPhoneNumber()+getSeparator();
 		info += employee.getName()+getSeparator();
-		info += getDate()+getSeparator();
+		info += getOrderStatus()+getSeparator();
+		info += getDateString()+getSeparator();
 		info += getObservations()+getSeparator();
 		info += showProducts();
 
@@ -116,7 +121,10 @@ public class Order extends SystemObject implements Serializable {
 	/**
 	 * @return The date of the order.<br>
 	 */
-	public String getDate() {
+	public String getDateString() {
+		return dateString;
+	}
+	public LocalDateTime getDate() {
 		return date;
 	}
 	public ArrayList<Product> getOrderProducts(){

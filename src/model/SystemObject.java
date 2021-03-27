@@ -78,6 +78,9 @@ public abstract class SystemObject implements Comparable<SystemObject>{
 	public void setCreatorUser(User creatorUser) {
 		this.creatorUser = creatorUser;
 	}
+	public void setSeparator(String separator) {
+		this.SEPARATOR=separator;
+	}
 
 	public abstract String showInformation();
 
