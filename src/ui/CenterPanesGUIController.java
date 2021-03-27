@@ -120,6 +120,15 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Label spacer3;
 
+    //Add Pane
+    @FXML
+    private BorderPane ingredientPane;
+
+    @FXML
+    private TextField newIngNameTF;
+
+    //Info Pane
+
 
     private Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
@@ -201,6 +210,7 @@ public class CenterPanesGUIController implements Initializable {
         String newProdName = newProdNameTF.getText();
         ArrayList<Ingredient> newProdIngredients = new ArrayList<>();
         for (String ingName: selectedItemsLV.getSelectionModel().getSelectedItems()) {
+            System.out.println(GH.ingredientIndexWithName(ingName) + "\n" + ingName + "\n" + GH.getRestaurantIngredients().toString());
             Ingredient ingtoadd = GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(ingName));
             newProdIngredients.add(ingtoadd);
         }
@@ -252,7 +262,7 @@ public class CenterPanesGUIController implements Initializable {
         Product removed = productTBV.getSelectionModel().getSelectedItems().get(0);
         if (removed == null) {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("delete.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
                 fxmlLoader.setController(this);
                 Parent root = fxmlLoader.load();
                 Stage productInfo = new Stage();
@@ -401,8 +411,68 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void addIngredientCLicked(ActionEvent event) {
-
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ingredientsGUI/add-ingredient.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage createIngredient = new Stage();
+            createIngredient.setScene(new Scene(root));
+            createIngredient.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            createIngredient.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            createIngredient.getIcons().add(icon);
+            createIngredient.setTitle("Golden Restaurant: Añadir Ingrediente");
+            createIngredient.setResizable(false);
+            createIngredient.show();
+        } catch (Exception e) {
+            System.out.println("Can't load window at the moment.");
+            System.out.println(e.getMessage());
+        }
     }
+
+    @FXML
+    void cancelIngredient(ActionEvent event) {
+        try {
+            ((Stage) ingredientPane.getScene().getWindow()).close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
+    }
+
+    @FXML
+    void confirmIngredient(ActionEvent event) {
+        String newIngName = newIngNameTF.getText();
+        if (!GH.addAnIngredientToTheRestaurant(newIngName)) {
+            try {
+                ((Stage) ingredientPane.getScene().getWindow()).close();
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage productInfo = new Stage();
+                productInfo.setScene(new Scene(root));
+                productInfo.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                productInfo.getIcons().add(icon);
+                productInfo.setTitle("Error");
+                deleteMessageLBL.setText("El ingrediente no pudo ser agregado");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                productInfo.setResizable(false);
+                productInfo.show();
+            } catch (Exception e) {
+                System.out.println("Something went wrong.");
+            }
+        }
+        else {
+            try {
+                ((Stage) ingredientPane.getScene().getWindow()).close();
+            } catch (Exception e) {
+                System.out.println("Something went wrong.");
+            }
+        }
+        initIngredientPane();
+    }
+
 
     @FXML
     void deleteIngredientClicked(ActionEvent event) {
@@ -410,13 +480,15 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     @FXML
-    void editEnabledIng(ActionEvent event) {
-
+    void editEnabledIng(CellEditEvent<Product, String> event) {
+        (event.getRowValue()).setEnabled(event.getNewValue().equals("SI"));
+        event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
     @FXML
-    void editNameIng(ActionEvent event) {
-
+    void editNameIng(CellEditEvent<Product, String> event) {
+        (event.getRowValue()).setName(event.getNewValue());
+        event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
     @FXML
