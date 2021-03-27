@@ -60,6 +60,7 @@ public class Main extends Application {
     primaryStage.setMinWidth(1250.0);
     primaryStage.setTitle("Golden House Restaurant: Inicio");
     primaryStage.show();
+
   }
 
   @Override

@@ -153,24 +153,34 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editNameProd(CellEditEvent<Product, String> event) {
-        (event.getRowValue()).setName(event.getNewValue());
+        GH.changeProductName(GH.productIndexWithName(event.getRowValue().getName()),event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
     @FXML
     void editEnabledProd(CellEditEvent<Product, String> event) {
-        (event.getRowValue()).setEnabled(event.getNewValue().equals("SI"));
+        if (event.getNewValue().equalsIgnoreCase("SI")) GH.enableProduct(GH.productIndexWithName(event.getRowValue().getName()));
+        else GH.disableProduct(GH.productIndexWithName(event.getRowValue().getName()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
     @FXML
     void editIngredientProd(ActionEvent event) {
         //WIP
+
     }
 
     @FXML
     void editTypeProd(CellEditEvent<Product, String> event) {
         event.getRowValue().setPt(new PlateType(event.getNewValue(),GH.getCurrentUser()));
+        int newPtIndex = GH.plateTypeIndexWithName(event.getNewValue());
+        PlateType newPlateType;
+        if (newPtIndex == -1) {
+            GH.addAPlateTypeToTheRestaurant(event.getNewValue());
+            newPtIndex = GH.plateTypeIndexWithName(event.getNewValue());
+        }
+        newPlateType = GH.getRestaurantPlateTypes().get(newPtIndex);
+        GH.changeProductPlateType(GH.productIndexWithName(event.getRowValue().getName()),newPlateType);
         event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
@@ -269,8 +279,15 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void deleteProductClicked(ActionEvent event) {
-        Product removed = productTBV.getSelectionModel().getSelectedItems().get(0);
-        if (removed == null) {
+        boolean noSelection = productTBV.getSelectionModel().getSelectedItems() == null;
+        if (!noSelection) {
+            for (int i = 0; i < productTBV.getSelectionModel().getSelectedItems().size(); i++) {
+                Product removed = productTBV.getSelectionModel().getSelectedItems().get(i);
+                GH.deleteProduct(GH.productIndexWithName(removed.getName()));
+            }
+            productTBV.getItems().removeAll(productTBV.getSelectionModel().getSelectedItems());
+            productTBV.refresh();
+        } else {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
                 fxmlLoader.setController(this);
@@ -290,10 +307,6 @@ public class CenterPanesGUIController implements Initializable {
                 System.out.println("Can't load window at the moment.");
                 System.out.println(e.getMessage());
             }
-        } else {
-            productTBV.getItems().removeAll(productTBV.getSelectionModel().getSelectedItems());
-            productTBV.refresh();
-            //WIP
         }
     }
 
@@ -382,15 +395,16 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void importProductData(ActionEvent event) throws IOException {
-
         String fileName = "src/data/PRODUCTS.csv";
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         String line = br.readLine();
         while(line!=null) {
             String[] parts = line.split(SEPARATOR);
+            GH.addAPlateTypeToTheRestaurant(parts[1]);
             ArrayList<Ingredient> newIng = new ArrayList<>();
             for (String s: parts[2].split(",")) {
-                newIng.add(new Ingredient(s,GH.getCurrentUser()));
+                GH.addAnIngredientToTheRestaurant(s);
+                newIng.add(GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(s)));
             }
             ArrayList<String> newSizes = new ArrayList<>();
             ArrayList<Double> newPrices = new ArrayList<>();
@@ -518,12 +532,29 @@ public class CenterPanesGUIController implements Initializable {
                 System.out.println("Can't load window at the moment.");
                 System.out.println(e.getMessage());
             }
-        } else {
+        } else if (GH.deleteIngredient(GH.ingredientIndexWithIngredient(removed))){
             ingredientsTBV.getItems().removeAll(ingredientsTBV.getSelectionModel().getSelectedItems());
-            String removedName = ingredientsTBV.getSelectionModel().getSelectedItems().get(0).getName();
-            Ingredient rmSuccessfully = GH.getRestaurantIngredients().remove(GH.ingredientIndexWithName(removedName));
-            System.out.println(rmSuccessfully.showInformation());
             ingredientsTBV.refresh();
+        } else {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage productInfo = new Stage();
+                productInfo.setScene(new Scene(root));
+                productInfo.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                productInfo.getIcons().add(icon);
+                productInfo.setTitle("Error");
+                deleteMessageLBL.setText("El ingrediente no pudo ser eliminado.");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                productInfo.setResizable(false);
+                productInfo.show();
+            } catch (Exception e) {
+                System.out.println("Can't load window at the moment.");
+                System.out.println(e.getMessage());
+            }
         }
     }
 
@@ -540,13 +571,27 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     @FXML
-    void exportIngredientData(ActionEvent event) {
-
+    void exportIngredientData(ActionEvent event) throws FileNotFoundException {
+        String fileName = "src/data/INGREDIENTS.csv";
+        PrintWriter pw = new PrintWriter(fileName);
+        for(int i = 0; i < GH.getRestaurantIngredientsSize(); i++){
+            Ingredient ing = GH.getRestaurantIngredients().get(i);
+            pw.println(ing.getName());
+        }
+        pw.close();
     }
 
     @FXML
-    void importIngredientData(ActionEvent event) {
-
+    void importIngredientData(ActionEvent event) throws IOException {
+        String fileName = "src/data/INGREDIENTS.csv";
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        String line = br.readLine();
+        while(line!=null) {
+            GH.addAnIngredientToTheRestaurant(line);
+            line = br.readLine();
+        }
+        br.close();
+        initProductPane();
     }
 
     public void fullIngredientDetails(Ingredient rowData) {
