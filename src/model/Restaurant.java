@@ -721,11 +721,11 @@ public class Restaurant{
 	public boolean addAnIngredientToAProduct(int index,Ingredient ingredient) {
 		boolean b=false;
 		if(index!=-1) {
-			Product productToAddAnIngredient = restaurantProducts.get(index);
+			//Product productToAddAnIngredient = restaurantProducts.get(index);
 			b=restaurantProducts.get(index).addAnIngredient(ingredient);
 			if(b) {
 				restaurantProducts.get(index).setModifierUser(currentUser);
-				addAnIngredientInproductsWithTheirSizes(productToAddAnIngredient, ingredient); 
+				//addAnIngredientInproductsWithTheirSizes(productToAddAnIngredient, ingredient); 
 			}
 		}
 		return b;

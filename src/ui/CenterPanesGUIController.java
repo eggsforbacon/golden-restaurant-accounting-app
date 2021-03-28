@@ -179,10 +179,11 @@ public class CenterPanesGUIController implements Initializable {
                 GH.addAnIngredientToAProduct(indexOfProduct,GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(s)));
             } else {
                 unAddedIngredients.append(s).append("\n");
+                System.out.println("Esto sucedio");
             }
         }
 
-        if (unAddedIngredients.length() == 0) {
+        if (unAddedIngredients.length() != 0) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
                 fxmlLoader.setController(this);

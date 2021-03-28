@@ -72,6 +72,7 @@ public class Product extends SystemObject implements Serializable{
 	 */
 	public boolean addAnIngredient(Ingredient ingredient) {
 		String check = ingredient.getName();
+		System.out.println(binarySearchAnIngredient(check)+ " Es el resultado de la busqueda binaria");
 		if(binarySearchAnIngredient(check)==-1 && ingredient.getEnabled()) {
 			ingrdnts.add(ingredient);
 			ingrdntsSize++;	
