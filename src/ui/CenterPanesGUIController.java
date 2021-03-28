@@ -153,7 +153,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editNameProd(CellEditEvent<Product, String> event) {
-        GH.changeProductName(GH.productIndexWithName(event.getRowValue().getName()),event.getNewValue());
+        System.out.println(GH.changeProductName(GH.productIndexWithName(event.getRowValue().getName()),event.getNewValue()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 

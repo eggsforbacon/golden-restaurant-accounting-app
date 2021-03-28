@@ -715,9 +715,9 @@ public class Restaurant{
 	public boolean changeProductName(int index,String newName) {
 		if(index!=-1) {
 			Product productToChangeName=restaurantProducts.get(index);
+			changeNameInproductsWithTheirSizes(productToChangeName, newName);
 			restaurantProducts.get(index).setName(newName);
 			restaurantProducts.get(index).setModifierUser(currentUser);
-			changeNameInproductsWithTheirSizes(productToChangeName, newName);
 			return true;
 		}
 		return false;
