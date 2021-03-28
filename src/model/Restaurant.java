@@ -721,31 +721,15 @@ public class Restaurant{
 	public boolean addAnIngredientToAProduct(int index,Ingredient ingredient) {
 		boolean b=false;
 		if(index!=-1) {
-			//Product productToAddAnIngredient = restaurantProducts.get(index);
 			b=restaurantProducts.get(index).addAnIngredient(ingredient);
 			if(b) {
 				restaurantProducts.get(index).setModifierUser(currentUser);
-				//addAnIngredientInproductsWithTheirSizes(productToAddAnIngredient, ingredient); 
 			}
 		}
 		return b;
 	}
 
-	/**
-	 * Adds an ingredient to the products of the productsWithTheirSizes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Adds an ingredient to the products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
-	 * @param product The original product in the restaurantProducts ArrayList
-	 * @param ingredient The ingredient that will be added
-	 */
-	private void addAnIngredientInproductsWithTheirSizes(Product product,Ingredient ingredient) {
-		for(int i=0;i<productsWithTheirSizesSize;i++) {
-			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
-				productsWithTheirSizes.get(i).addAnIngredient(ingredient);
-				productsWithTheirSizes.get(i).setModifierUser(currentUser);
-			}
-		}
-	}
+	
 
 	/**
 	 * Deletes an ingredient of a product of the products ArrayList<br>

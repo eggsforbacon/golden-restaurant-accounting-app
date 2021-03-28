@@ -10,7 +10,6 @@ public class Product extends SystemObject implements Serializable{
 	
 	private PlateType pt;
 	private ArrayList<Ingredient> ingrdnts;
-	private int ingrdntsSize;
 	private ArrayList<String> productSizes;
 	private int productSizesSize;
 	private ArrayList<Double> sizesPrices;
@@ -25,7 +24,6 @@ public class Product extends SystemObject implements Serializable{
 		super(name,creatorUser);
 		this.pt=pt;
 		this.ingrdnts=ingrdnts;
-		ingrdntsSize = ingrdnts.size();
 		this.productSizes=productSizes;
 		productSizesSize = productSizes.size();
 		this.sizesPrices=sizesPrices;
@@ -72,10 +70,8 @@ public class Product extends SystemObject implements Serializable{
 	 */
 	public boolean addAnIngredient(Ingredient ingredient) {
 		String check = ingredient.getName();
-		System.out.println(binarySearchAnIngredient(check)+ " Es el resultado de la busqueda binaria");
 		if(binarySearchAnIngredient(check)==-1 && ingredient.getEnabled()) {
 			ingrdnts.add(ingredient);
-			ingrdntsSize++;	
 			return true;
 		}
 		return false;
@@ -139,7 +135,6 @@ public class Product extends SystemObject implements Serializable{
 		int index=binarySearchAnIngredient(name);
 		if(index!=-1) {
 			ingrdnts.remove(index);
-			ingrdntsSize--;
 			return true;
 		}
 		return false;
@@ -276,6 +271,7 @@ public class Product extends SystemObject implements Serializable{
 			productPrice=sizesPrices.get(index);
 		}
 	}
+	
 
 
 

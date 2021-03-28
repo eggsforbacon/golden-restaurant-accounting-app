@@ -166,12 +166,10 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editIngredientProd(CellEditEvent<Product, String> event) {
-    	System.out.println(event.getRowValue().showInformation());
     	Product productToUse = GH.getRestaurantProducts().get(GH.productIndexWithName(event.getRowValue().getName()));
     	int indexOfProduct = GH.productIndexWithProduct(productToUse);
         for (String s:productToUse.getTheIngredients().split(",")) {
             GH.deleteAnIngredientOfAProduct(indexOfProduct,s);
-            System.out.println("Se elimino"+s);
         }
         StringBuilder unAddedIngredients = new StringBuilder();
         for (String s: event.getNewValue().split(",")) {
@@ -179,7 +177,6 @@ public class CenterPanesGUIController implements Initializable {
                 GH.addAnIngredientToAProduct(indexOfProduct,GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(s)));
             } else {
                 unAddedIngredients.append(s).append("\n");
-                System.out.println("Esto sucedio");
             }
         }
 
