@@ -138,6 +138,9 @@ public class Order extends SystemObject implements Serializable {
 	public ArrayList<Product> getOrderProducts(){
 		return orderProducts;
 	}
+	public ArrayList<Integer> getProductsQuantity(){
+		return productsQuantity;
+	}
 	public Client getOrderclient() {
 		return orderClient;
 	}

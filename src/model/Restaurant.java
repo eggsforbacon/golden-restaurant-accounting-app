@@ -98,6 +98,8 @@ public class Restaurant{
 	  }
 	
 	public void generateEmployeeReport(String fileName,String separator,LocalDateTime startDate,LocalDateTime endDate) throws FileNotFoundException{
+		int totalDeliveries = 0;
+		double totalPrices = 0;
 		PrintWriter pw = new PrintWriter(fileName);
 		sortEmployeesById();
 		String columns = "Nombre"+separator+"Apellido"+separator+"ID"+separator+"Pedidos entregados"+
@@ -105,7 +107,32 @@ public class Restaurant{
 		pw.println(columns);
 		 for(int i=0;i<restaurantEmployeesSize;i++) {
 			 pw.println(restaurantEmployees.get(i).showReportInformation(startDate, endDate));
+			 totalPrices+=restaurantEmployees.get(i).getTotalPriceOfTheOrders(startDate, endDate);
+			 totalDeliveries+=restaurantEmployees.get(i).getSpecifiedOrdersDelivered();
 		 }
+		String finalColumns = restaurantEmployeesSize+" empleados"+separator+""+separator+""+separator+
+		totalDeliveries+" pedidos entregados"+separator+totalPrices+" generados";
+		pw.println(finalColumns);
+		pw.close();
+	}
+	
+	public void generateProductReport(String fileName,String separator,LocalDateTime startDate,LocalDateTime endDate) throws FileNotFoundException {
+		int allTimesRequired = 0;
+		double totalPrice = 0;
+		PrintWriter pw = new PrintWriter(fileName);
+		ProductInsertionSortByName();
+		String columns = "Nombre del producto"+separator+"Tipo de producto"+separator+"Ingredientes"+separator+
+		"Numero de veces que se pidio"+separator+"Total pagado";
+		pw.println(columns);
+		for(int i=0;i<restaurantProductsSize;i++) {
+			pw.println(restaurantProducts.get(i).showReportInformation(startDate, endDate));
+			double[] typ = restaurantProducts.get(i).getTotalTimesAndPrice(startDate, endDate);
+			allTimesRequired += typ[0];
+			totalPrice += typ[1];
+		}
+		String finalColumns = restaurantProductsSize+" productos en el restaurante"
+		+separator+""+separator+""+separator+allTimesRequired+" productos pedidos"+totalPrice;
+		pw.println(finalColumns);
 		pw.close();
 	}
 	
@@ -1557,13 +1584,26 @@ public class Restaurant{
 				 restaurantOrders.get(index).setModifierUser(currentUser);
 				 if(restaurantOrders.get(index).getOrderStatus()=="ENTREGADO") {
 					 double priceOfTheOrder = restaurantOrders.get(index).getPriceOfTheOrder();
-					 restaurantOrders.get(index).getOrderEmployee().addAnOrderDelivered();
-					 restaurantOrders.get(index).getOrderEmployee().addAPriceOfAnOrder(priceOfTheOrder);
+					 int employeeIndex = employeeIndexWithemployee(restaurantOrders.get(index).getOrderEmployee());
+					 restaurantEmployees.get(employeeIndex).addAnOrderDelivered();
+					 restaurantEmployees.get(employeeIndex).addAPriceOfAnOrder(priceOfTheOrder);
+					 ArrayList<Product> products = restaurantOrders.get(index).getOrderProducts();
+					 ArrayList<Integer> quantitys = restaurantOrders.get(index).getProductsQuantity();
+					 addTimesRequestedToProducts(products, quantitys);
 				 }
 				 return true;
 			 }
 		 }
 		 return false;
+	 }
+	 public void addTimesRequestedToProducts(ArrayList<Product> products,ArrayList<Integer> quantity) {
+		 for(int i=0;i<products.size();i++) {
+			 String productSearched = products.get(i).getName();
+			 int productIndex = productIndexWithName(productSearched);
+			 restaurantProducts.get(productIndex).addDateOfRequest();
+			 restaurantProducts.get(productIndex).addTimesItWasRequested(quantity.get(i));
+			 restaurantProducts.get(productIndex).addPricesPaidForProduct(products.get(i).getProductPrice()*quantity.get(i));
+		 }
 	 }
 	 public int searchAnOrder(String id) {
 		 for(int i=0;i<restaurantOrdersSize;i++) {

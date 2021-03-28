@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Product extends SystemObject implements Serializable{
@@ -15,6 +16,10 @@ public class Product extends SystemObject implements Serializable{
 	private ArrayList<Double> sizesPrices;
 	private double productPrice;
 	private String productActualSize;
+	private ArrayList<Integer> timesItWasRequested;
+	private int timesItWasRequestedSize;
+	private ArrayList<LocalDateTime> datesOfTimeItWasRequested;
+	private ArrayList<Double> pricesPaidForProduct;
 
 	public Product(String name,User creatorUser,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices,int indicator) {
 		super(name,creatorUser);
@@ -26,11 +31,37 @@ public class Product extends SystemObject implements Serializable{
 		this.sizesPrices=sizesPrices;
 		setProductActualSize(indicator);
 		setProductPrice(indicator);
-
+		timesItWasRequested=new ArrayList<Integer>();
+		timesItWasRequestedSize=timesItWasRequested.size();
+		datesOfTimeItWasRequested=new ArrayList<LocalDateTime>();
+		pricesPaidForProduct=new ArrayList<Double>();
 	}
 
-
-
+	
+	public void addDateOfRequest() {
+		datesOfTimeItWasRequested.add(LocalDateTime.now());
+	}
+	public void addTimesItWasRequested(int requested) {
+		timesItWasRequested.add(requested);
+		timesItWasRequestedSize++;
+	}
+	public void addPricesPaidForProduct(double price) {
+		pricesPaidForProduct.add(price);
+	}
+	public double[] getTotalTimesAndPrice(LocalDateTime startDate,LocalDateTime endDate) {
+		double timesAndPrice[] = new double[2];
+		int times = 0;
+		double price = 0;
+		for(int i=0;i<timesItWasRequestedSize;i++) {
+			if(datesOfTimeItWasRequested.get(i).isAfter(startDate) && datesOfTimeItWasRequested.get(i).isBefore(endDate)) {
+				times+= timesItWasRequested.get(i);
+				price+= pricesPaidForProduct.get(i);
+			}
+		}
+		timesAndPrice[0]=times;
+		timesAndPrice[1]=price;
+		return timesAndPrice;
+	}
 
 	/**
 	Adds an ingredient to the ingredients ArrayList <br>
@@ -163,6 +194,17 @@ public class Product extends SystemObject implements Serializable{
 
 		return info;
 	}
+	
+	public String showReportInformation(LocalDateTime startDate,LocalDateTime endDate) {
+		String info = "";
+		info += getName()+getSeparator();	//Name
+		info += pt.getName()+getSeparator();	//Plate Type
+		info += getTheIngredients()+getSeparator();  //Ingredients
+		double[] pyt = getTotalTimesAndPrice(startDate,endDate);
+		info += ((int) pyt[0])+getSeparator();   //Times requested
+		info += pyt[1]+getSeparator();		//Total price
+		return info;
+	}
 
 	//Getters
 
@@ -198,7 +240,6 @@ public class Product extends SystemObject implements Serializable{
 	public int getProductSizesSize() {
 		return productSizesSize;
 	}
-
 
 
 	//Setters

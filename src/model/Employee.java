@@ -35,8 +35,6 @@ public class Employee extends Person implements Serializable{
 		double aux = getTotalPriceOfTheOrders(startDate,endDate);
 		info += getSpecifiedOrdersDelivered()+getSeparator();
 		info += aux+getSeparator();
-		
-		
 		return info;
 	}
 	
