@@ -91,7 +91,7 @@ public class Product extends SystemObject implements Serializable{
 		ingredientsBubbleSort();
 		int pos = -1;
 		int i = 0;
-		int j = ingrdntsSize-1;
+		int j = ingrdnts.size()-1;
 		while(i<=j && pos<0) {
 			int m = (i+j)/2;
 			if(ingrdnts.get(m).getName().equalsIgnoreCase(name)) {
@@ -114,9 +114,9 @@ public class Product extends SystemObject implements Serializable{
 	 */
 	private void ingredientsBubbleSort() {
 		int changes = 0;
-		for(int i = 1;i<ingrdntsSize&&changes>0;i++){ 
+		for(int i = 1;i<ingrdnts.size()&&changes>0;i++){ 
 			changes = 0;
-			for(int j=0;j<ingrdntsSize-i;j++){
+			for(int j=0;j<ingrdnts.size()-i;j++){
 				if(ingrdnts.get(j).compareTo(ingrdnts.get(j+1))>0){
 					Ingredient temp = ingrdnts.get(j);
 					ingrdnts.set(j,ingrdnts.get(j+1));
@@ -152,9 +152,10 @@ public class Product extends SystemObject implements Serializable{
 	 */
 	public String getTheIngredients() {
 		String ingredients = "";
-		for(int i = 0;i<ingrdntsSize;i++) {
+		for(int i = 0;i<ingrdnts.size();i++) {
 			ingredients += (ingrdnts.get(i).getName()) + (",");
 		}
+		ingredients = ingredients.substring(0, ingredients.length()-1);
 		return ingredients;
 	}
 	/**
@@ -191,6 +192,7 @@ public class Product extends SystemObject implements Serializable{
 		info += pt.getName()+getSeparator();	//P
 		info += getTheIngredients()+getSeparator();
 		info += sizesInformation();
+		info += getProductActualSize();
 
 		return info;
 	}
@@ -273,6 +275,7 @@ public class Product extends SystemObject implements Serializable{
 			productPrice=sizesPrices.get(index);
 		}
 	}
+
 
 
 
