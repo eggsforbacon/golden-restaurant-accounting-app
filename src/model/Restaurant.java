@@ -12,6 +12,7 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -79,22 +80,63 @@ public class Restaurant{
 	}
 
 	//Import methods
-	 public void importClientInformation(String fileName) throws IOException{
-		    BufferedReader br = new BufferedReader(new FileReader(fileName));
-		    String line = br.readLine();
-		    while(line!=null){
-		      String[] parts = line.split(";");
-		      String name = parts[0];
-		      String lastname = parts[1];
-		      String id = parts[2];
-		      String addresss = parts[3];
-		      String phoneNumber = parts[4];
-		      String observations = parts[5];
-		      addAClientToTheRestaurant(name, lastname, id, addresss, phoneNumber, observations);
-		      line = br.readLine();
-		    }
-		    br.close();
-		  }
+	public void importClientInformation(String fileName) throws IOException{
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		String line = br.readLine();
+		while(line!=null){
+			String[] parts = line.split(";");
+			String name = parts[0];
+			String lastname = parts[1];
+			String id = parts[2];
+			String addresss = parts[3];
+			String phoneNumber = parts[4];
+			String observations = parts[5];
+			addAClientToTheRestaurant(name, lastname, id, addresss, phoneNumber, observations);
+			line = br.readLine();
+		}
+		br.close();
+	}
+	public void importProductInformation(String fileName) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		String line = br.readLine();
+		while(line!=null){
+			String[] parts = line.split(";");
+			String productName = parts[0];
+			PlateType productPlateType;
+			String plateTypeName = parts[1];
+			if(plateTypeIndexWithName(plateTypeName)!=-1) {
+				productPlateType=restaurantPlateTypes.get(plateTypeIndexWithName(plateTypeName));
+			}
+			else {
+				productPlateType = new PlateType(plateTypeName,currentUser);
+				addAPlateTypeToTheRestaurant(plateTypeName);
+			}
+			String[] ingredientsParts = parts[2].split(",");
+			ArrayList<Ingredient> ingredientsOfProduct = new ArrayList<Ingredient>();
+			for(int i=0;i<ingredientsParts.length;i++) {
+				String ingredientName = ingredientsParts[i];
+				if(ingredientIndexWithName(ingredientName)!=-1) {
+					ingredientsOfProduct.add(restaurantIngredients.get(ingredientIndexWithName(ingredientName)));
+				}
+				else {
+					ingredientsOfProduct.add(new Ingredient(ingredientName,currentUser));
+					addAnIngredientToTheRestaurant(ingredientName);
+				}
+			}
+			
+			String[] sizesStringArray = parts[3].split(",");
+			ArrayList<String> productsSizes = (ArrayList<String>)Arrays.asList(sizesStringArray);
+			
+			String[] pricesStringArray = parts[4].split(",");
+			ArrayList<Double> productsPrices = new ArrayList<Double>();
+			for(int i=0;i<pricesStringArray.length;i++) {
+				productsPrices.add(Double.parseDouble(pricesStringArray[i]));
+			}
+			addProduct(productName,productPlateType,ingredientsOfProduct,productsSizes,productsPrices);
+			line = br.readLine();
+		}
+		br.close();
+	}
 	
 	//Export methods
 	
