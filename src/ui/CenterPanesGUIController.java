@@ -165,9 +165,40 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     @FXML
-    void editIngredientProd(ActionEvent event) {
-        //WIP
+    void editIngredientProd(CellEditEvent<Product, String> event) {
+        for (String s:event.getRowValue().getTheIngredients().split(",")) {
+            GH.deleteAnIngredientOfAProduct(GH.productIndexWithName(event.getRowValue().getName()),s);
+        }
+        StringBuilder unAddedIngredients = new StringBuilder();
+        for (String s: event.getNewValue().split(",")) {
+            if (GH.getRestaurantIngredientsString().contains(s)) {
+                GH.addAnIngredientToAProduct(GH.productIndexWithName(event.getRowValue().getName()),GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(s)));
+            } else {
+                unAddedIngredients.append(s).append("\n");
+            }
+        }
 
+        if (unAddedIngredients.length() == 0) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage productInfo = new Stage();
+                productInfo.setScene(new Scene(root));
+                productInfo.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                productInfo.getIcons().add(icon);
+                productInfo.setTitle("Error");
+                deleteMessageLBL.setText("Los siguientes ingredientes no existen en el restaurante:\n" + unAddedIngredients.toString());
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                productInfo.setResizable(false);
+                productInfo.show();
+            } catch (Exception e) {
+                System.out.println("Can't load window at the moment.");
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     @FXML
@@ -286,7 +317,7 @@ public class CenterPanesGUIController implements Initializable {
                 GH.deleteProduct(GH.productIndexWithName(removed.getName()));
             }
             productTBV.getItems().removeAll(productTBV.getSelectionModel().getSelectedItems());
-            productTBV.refresh();
+            initProductPane();
         } else {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
