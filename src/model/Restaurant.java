@@ -144,6 +144,7 @@ public class Restaurant{
 	}
 	
 	public void importOrderInformation(String fileName) throws IOException{
+		System.out.println("Esta ingresando pero Juan David hizo algo mal yei");
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
 		br.readLine();
 		String line = br.readLine();
@@ -1272,13 +1273,15 @@ public class Restaurant{
 		int indexToInsert = 0;
 		boolean found = false;
 		String valueToSearch = lastname+name;
+		String auxValueToSearch = valueToSearch.toLowerCase();
 		for (int i = 0; i < restaurantClientsSize; i++){
 			String valueOfArrayList = restaurantClients.get(i).getLastname()+restaurantClients.get(i).getName();
-			if ( !found && (valueToSearch.compareTo(valueOfArrayList)) == 0){
+			String auxValueOfArrayList = valueOfArrayList.toLowerCase();
+			if ( !found && (auxValueToSearch.compareTo(auxValueOfArrayList)) == 0){
 				found = true;
 				indexToInsert = -1;
 			}
-			else if(!found && (valueToSearch.compareTo(valueOfArrayList)) >= 0) {
+			else if(!found && (auxValueToSearch.compareTo(auxValueOfArrayList)) >= 0) {
 				found = true;
 				indexToInsert = i;
 				i--;
@@ -1290,7 +1293,13 @@ public class Restaurant{
 		return indexToInsert;
 	}
 
+	public void sortClientsByLastnameAndName() {   //Note: This method should be used because when the first or last name is modified, the order of these in the arrayList is changed.
+		Comparator<Client> nylnComparator = new LastNameAndNameComparator();
+		Collections.sort(restaurantClients,nylnComparator);
+	}
+	
 	public int binarySearchForClients(ArrayList<?> aL,String name,String lastname) {
+		sortClientsByLastnameAndName();
 		long startTime = System.nanoTime();
 		int pos = -1;
 		int i = 0;
