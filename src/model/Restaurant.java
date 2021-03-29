@@ -882,6 +882,48 @@ public class Restaurant{
 			}
 		}
 	}
+	
+	public boolean changeSizeOfTheProduct(int index,String oldSize,String newSize) {
+		if(index!=-1) {
+			int sizeIndex = sizeIndexWithName(restaurantProducts.get(index).getProductsSizes(),oldSize);
+			if(sizeIndex!=-1) {
+				int sizeIsRepeated = sizeIndexWithName(restaurantProducts.get(index).getProductsSizes(),newSize);
+				if(sizeIsRepeated==-1) {
+					restaurantProducts.get(index).getProductsSizes().set(sizeIndex, newSize);
+					changeRespectiveSize(restaurantProducts.get(index).getName(),oldSize,sizeIndex);
+				}
+			}
+		}
+		return false;
+	}
+	
+	private void changeRespectiveSize(String name,String size,int sizeIndex) {
+		for(int i=0;i<productsWithTheirSizesSize;i++) {
+			if(productsWithTheirSizes.get(i).getName().equalsIgnoreCase(name)&&productsWithTheirSizes.get(i).getProductActualSize().equalsIgnoreCase(size)) {
+				productsWithTheirSizes.get(i).setProductActualSize(sizeIndex);
+			}
+		}
+	}
+	
+	public boolean changePriceOfTheProduct(int index,String size,Double newPrice) {
+		if(index!=-1) {
+			int sizeIndex = sizeIndexWithName(restaurantProducts.get(index).getProductsSizes(),size);
+			if(sizeIndex!=-1) {
+				restaurantProducts.get(index).getSizesPrices().set(sizeIndex, newPrice);
+				//ch
+			}
+		}
+		return false;
+	}
+	
+	public void changeRespectivePrice(String name,String size,int sizeIndex) {
+		for(int i=0;i<productsWithTheirSizesSize;i++) {
+			if(productsWithTheirSizes.get(i).getName().equalsIgnoreCase(name)&&productsWithTheirSizes.get(i).getProductActualSize().equalsIgnoreCase(size)) {
+				productsWithTheirSizes.get(i).setProductPrice(sizeIndex);
+			}
+		}
+	}
+	
 
 	//Ingredients Methods
 
