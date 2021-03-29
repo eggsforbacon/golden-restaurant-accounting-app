@@ -61,9 +61,9 @@ public class Restaurant{
 		restaurantIngredients = new ArrayList<Ingredient>();
 		restaurantIngredientsSize=restaurantIngredients.size();
 		restaurantPlateTypes = new ArrayList<PlateType>();
-		PlateType mainDish = new PlateType("Main dish",currentUser);
-		PlateType sideDish = new PlateType("Side dish",currentUser);
-		PlateType drink = new PlateType("Drink",currentUser);
+		PlateType mainDish = new PlateType("Plato principal",currentUser);
+		PlateType sideDish = new PlateType("Plato adicional",currentUser);
+		PlateType drink = new PlateType("Bebida",currentUser);
 		restaurantPlateTypes.add(mainDish);
 		restaurantPlateTypes.add(sideDish);
 		restaurantPlateTypes.add(drink);
