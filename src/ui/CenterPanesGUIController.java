@@ -140,6 +140,60 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Label ingEditorInfoLBL;
 
+    /*Clients Pane*/
+    @FXML
+    private BorderPane clientsPane;
+
+    @FXML
+    private TableView<Client> clientsTBV;
+
+    @FXML
+    private TableColumn<Client, String> nameCliCol;
+
+    @FXML
+    private TableColumn<Client, String> lastNameCliCol;
+
+    @FXML
+    private TableColumn<Client, String> idCliCol;
+
+    @FXML
+    private TableColumn<Client, String> addressCliCol;
+
+    @FXML
+    private TableColumn<Client, String> teleCliCol;
+
+    @FXML
+    private TableColumn<Client, String> enabledCliCol;
+
+    @FXML
+    private TableColumn<Client, String> obsCliCol;
+
+    @FXML
+    private Label spacer4;
+
+    //Add Pane
+    @FXML
+    private BorderPane clientPane;
+
+    @FXML
+    private TextField newCliNameTF;
+
+    @FXML
+    private TextField newCliLastNameTF;
+
+    @FXML
+    private TextField newCliAddressTF;
+
+    @FXML
+    private TextField newCliIDTF;
+
+    @FXML
+    private TextField newCliTeleTF;
+
+    @FXML
+    private TextArea newCliObsTA;
+
+
     private Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
         this.GH = GH;
@@ -149,6 +203,7 @@ public class CenterPanesGUIController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         initProductPane();
         initIngredientPane();
+        initClientPane();
     }
 
     @FXML
@@ -166,15 +221,13 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editIngredientProd(CellEditEvent<Product, String> event) {
-    	Product productToUse = GH.getRestaurantProducts().get(GH.productIndexWithName(event.getRowValue().getName()));
-    	int indexOfProduct = GH.productIndexWithProduct(productToUse);
-        for (String s:productToUse.getTheIngredients().split(",")) {
-            GH.deleteAnIngredientOfAProduct(indexOfProduct,s);
+        for (String s:event.getRowValue().getTheIngredients().split(",")) {
+            GH.deleteAnIngredientOfAProduct(GH.productIndexWithName(event.getRowValue().getName()),s);
         }
         StringBuilder unAddedIngredients = new StringBuilder();
         for (String s: event.getNewValue().split(",")) {
             if (GH.getRestaurantIngredientsString().contains(s)) {
-                GH.addAnIngredientToAProduct(indexOfProduct,GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(s)));
+                GH.addAnIngredientToAProduct(GH.productIndexWithName(event.getRowValue().getName()),GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(s)));
             } else {
                 unAddedIngredients.append(s).append("\n");
             }
@@ -271,7 +324,7 @@ public class CenterPanesGUIController implements Initializable {
         ArrayList<String> newProdSizes = new ArrayList<>(Arrays.asList(newProdSizesTA.getText().split(",")));
         ArrayList<Double> newProdPrices = new ArrayList<>();
         for (String s: newProdPricesTA.getText().split(",")) {
-            newProdPrices.add(Double.parseDouble(s));
+            if (!s.isEmpty()) newProdPrices.add(Double.parseDouble(s));
         }
         boolean productNameValid = !newProdName.isEmpty() && GH.productIndexWithName(newProdName) == -1;
         boolean productIngredientsValid = !selectedItemsLV.getItems().isEmpty();
@@ -286,6 +339,27 @@ public class CenterPanesGUIController implements Initializable {
                 ((Stage) productPane.getScene().getWindow()).close();
             } catch (Exception e) {
                 System.out.println("Something went wrong.");
+            }
+        } else {
+            try {
+                ((Stage) productPane.getScene().getWindow()).close();
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage productInfo = new Stage();
+                productInfo.setScene(new Scene(root));
+                productInfo.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                productInfo.getIcons().add(icon);
+                productInfo.setTitle("Error");
+                deleteMessageLBL.setText("No fue posible agregar el producto.");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                productInfo.setResizable(false);
+                productInfo.show();
+            } catch (Exception e) {
+                System.out.println("Can't load window at the moment. EEEEEEEE");
+                e.printStackTrace();
             }
         }
     }
@@ -653,6 +727,170 @@ public class CenterPanesGUIController implements Initializable {
         ingEnabledInfoLBL.setId("enabled-label");
         ingCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
         ingEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
+    }
+
+    private void initClientPane() {
+        nameCliCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameCliCol.setStyle( "\n-fx-alignment: CENTER;");
+        enabledCliCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
+        enabledCliCol.setStyle( "\n-fx-alignment: CENTER;");
+        lastNameCliCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
+        lastNameCliCol.setStyle( "\n-fx-alignment: CENTER;");
+        idCliCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idCliCol.setStyle( "\n-fx-alignment: CENTER;");
+        addressCliCol.setCellValueFactory(new PropertyValueFactory<>("address"));
+        addressCliCol.setStyle( "\n-fx-alignment: CENTER;");
+        teleCliCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+        teleCliCol.setStyle("\n-fx-alignment: CENTER;");
+        obsCliCol.setCellValueFactory(new PropertyValueFactory<>("observations"));
+        obsCliCol.setStyle("\n-fx-alignment: CENTER;");
+        ObservableList<Client> clientsList = FXCollections.observableArrayList(GH.getRestaurantClients());
+        clientsTBV.setItems(clientsList);
+
+        nameCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        enabledCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        lastNameCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        idCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        addressCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        teleCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        obsCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        clientsTBV.setRowFactory(tv -> {
+            TableRow<Client> row = new TableRow<>();
+            row.setOnContextMenuRequested(event -> {
+                if (! row.isEmpty()) {
+                    Client rowData = row.getItem();
+                    fullClientData(rowData);
+                }
+            });
+            return row ;
+        });
+    }
+
+    private void fullClientData(Client rowData) {
+
+    }
+
+    @FXML
+    void addClientClicked(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("clientsGUI/add-client.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage createIngredient = new Stage();
+            createIngredient.setScene(new Scene(root));
+            createIngredient.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            createIngredient.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            createIngredient.getIcons().add(icon);
+            createIngredient.setTitle("Golden Restaurant: Añadir Ingrediente");
+            createIngredient.setResizable(false);
+            createIngredient.show();
+        } catch (Exception e) {
+            System.out.println("Can't load window at the moment.");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void deleteClientClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editAddressCli(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editEnabledCli(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editIdCli(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editLastNameCli(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editNameCli(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editObsCli(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editTeleCli(ActionEvent event) {
+
+    }
+
+    @FXML
+    void cancelClient(ActionEvent event) {
+        try {
+            ((Stage) clientPane.getScene().getWindow()).close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
+    }
+
+    @FXML
+    void confirmClient(ActionEvent event) {
+        String newName = newCliNameTF.getText();
+        String newLastName = newCliLastNameTF.getText();
+        String newAddress = newCliAddressTF.getText();
+        String newId = newCliIDTF.getText();
+        String newTelephone = newCliTeleTF.getText();
+        String newObs = (newCliObsTA.getText().isEmpty()) ? "-" : newCliObsTA.getText();
+        boolean canCreateClient = !newName.isEmpty() && !newLastName.isEmpty() && !newAddress.isEmpty() && ! newId.isEmpty() && !newTelephone.isEmpty();
+        if (canCreateClient) {
+            boolean userCreated = GH.addAClientToTheRestaurant(newName,newLastName,newId,newAddress,newTelephone,newObs);
+            System.out.println("User created: " + userCreated);
+            initClientPane();
+            try {
+                ((Stage) clientPane.getScene().getWindow()).close();
+            } catch (Exception e) {
+                System.out.println("Something went wrong.");
+            }
+        } else {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage productInfo = new Stage();
+                productInfo.setScene(new Scene(root));
+                productInfo.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                productInfo.getIcons().add(icon);
+                productInfo.setTitle("Error");
+                deleteMessageLBL.setText("El cliente no pudo ser creado.");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                productInfo.setResizable(false);
+                productInfo.show();
+                ((Stage) clientPane.getScene().getWindow()).close();
+            } catch (Exception e) {
+                System.out.println("Can't load window at the moment.");
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    @FXML
+    void exportClientData(ActionEvent event) {
+
+    }
+
+    @FXML
+    void importClientData(ActionEvent event) {
+
     }
 }
 

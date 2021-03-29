@@ -1766,6 +1766,9 @@ public class Restaurant{
 	public ArrayList<User> getRestaurantUsers(){
 		return restaurantUsers;
 	}
+	public ArrayList<Client> getRestaurantClients() {
+		return restaurantClients;
+	}
 	public ArrayList<Order> getRestaurantOrders(){
 		return restaurantOrders;
 	}
