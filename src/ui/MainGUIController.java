@@ -137,7 +137,14 @@ public class MainGUIController implements Initializable {
 
     @FXML
     void plateTypesClicked(ActionEvent event) {
-
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("typesGUI/types-center.fxml"));
+            fxmlLoader.setController(cenPaneController);
+            Parent root = fxmlLoader.load();
+            currentScene.setCenter(root);
+        } catch (Exception e) {
+            System.out.println("Can't load scene at the moment");
+        }
     }
 
     @FXML

@@ -12,17 +12,17 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Label text="Nombre de Ingrediente:" />
-                  <Label fx:id="ingNameInfoLBL" text="Label" />
-                  <Label fx:id="ingEnabledInfoLBL" text="(Label)" />
+                  <Label text="Nombre de Producto:" />
+                  <Label fx:id="typeNameInfoLBL" text="Label" />
+                  <Label fx:id="typeEnabledInfoLBL" text="(Label)" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Creado por:" />
-                  <Label fx:id="ingCreatorInfoLBL" text="Label" />
+                  <Label fx:id="typeCreatorInfoLBL" text="Label" />
                   <Separator prefHeight="0.0" prefWidth="37.0" visible="false" />
                   <Label text="Editado por:" />
-                  <Label fx:id="ingEditorInfoLBL" text="Label" />
+                  <Label fx:id="typeEditorInfoLBL" text="Label" />
                </children>
             </HBox>
          </children>

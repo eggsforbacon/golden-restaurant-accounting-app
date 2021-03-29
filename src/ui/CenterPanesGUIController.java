@@ -231,6 +231,26 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private TableColumn<PlateType, String> enabledTypeCol;
 
+    //Add Pane
+    @FXML
+    private BorderPane typePane;
+
+    @FXML
+    private TextField newTypeNameTF;
+
+    //Info Pane
+    @FXML
+    private Label typeNameInfoLBL;
+
+    @FXML
+    private Label typeEnabledInfoLBL;
+
+    @FXML
+    private Label typeCreatorInfoLBL;
+
+    @FXML
+    private Label typeEditorInfoLBL;
+
 
     private final Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
@@ -242,6 +262,7 @@ public class CenterPanesGUIController implements Initializable {
         initProductPane();
         initIngredientPane();
         initClientPane();
+        initPlateTypePane();
     }
 
     @FXML
@@ -362,7 +383,6 @@ public class CenterPanesGUIController implements Initializable {
             Ingredient ingtoadd = GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(ingName));
             newProdIngredients.add(ingtoadd);
         }
-        PlateType newProdPlateType = new PlateType(newProdTypeTF.getText(),GH.getCurrentUser());
         ArrayList<String> newProdSizes = new ArrayList<>(Arrays.asList(newProdSizesTA.getText().split(",")));
         ArrayList<Double> newProdPrices = new ArrayList<>();
         for (String s: newProdPricesTA.getText().split(",")) {
@@ -370,12 +390,13 @@ public class CenterPanesGUIController implements Initializable {
         }
         boolean productNameValid = !newProdName.isEmpty() && GH.productIndexWithName(newProdName) == -1;
         boolean productIngredientsValid = !selectedItemsLV.getItems().isEmpty();
-        boolean ptIsValid = !newProdPlateType.getName().isEmpty();
+        boolean ptIsValid = !newProdTypeTF.getText().isEmpty();
         boolean sizesAndPricesValid = newProdPrices.size() == newProdSizes.size() && !newProdPrices.isEmpty();
         System.out.println(newProdPrices.toString());
         System.out.println(newProdSizes.toString());
         if (productNameValid && productIngredientsValid && ptIsValid && sizesAndPricesValid) {
-           GH.addProduct(newProdName,newProdPlateType,newProdIngredients,newProdSizes,newProdPrices);
+           GH.addAPlateTypeToTheRestaurant(newProdTypeTF.getText());
+           GH.addProduct(newProdName,GH.getRestaurantPlateTypes().get(GH.plateTypeIndexWithName(newProdTypeTF.getText())), newProdIngredients,newProdSizes,newProdPrices);
             initProductPane();
             try {
                 ((Stage) productPane.getScene().getWindow()).close();
@@ -1026,6 +1047,184 @@ public class CenterPanesGUIController implements Initializable {
         }
         br.close();
         initClientPane();
+    }
+
+    @FXML
+    void addTypeClicked(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("typesGUI/add-type.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage createIngredient = new Stage();
+            createIngredient.setScene(new Scene(root));
+            createIngredient.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            createIngredient.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            createIngredient.getIcons().add(icon);
+            createIngredient.setTitle("Golden Restaurant: Añadir Tipo");
+            createIngredient.setResizable(false);
+            createIngredient.show();
+        } catch (Exception e) {
+            System.out.println("Can't load window at the moment.");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void deleteTypeClicked(ActionEvent event) {
+        PlateType removed = typesTBV.getSelectionModel().getSelectedItems().get(0);
+        if (removed == null) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage error = new Stage();
+                error.setScene(new Scene(root));
+                error.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                error.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                error.getIcons().add(icon);
+                error.setTitle("Error");
+                deleteMessageLBL.setText("No hay selección. Intente de nuevo.");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                error.setResizable(false);
+                error.show();
+            } catch (Exception e) {
+                System.out.println("Can't load window at the moment.");
+                System.out.println(e.getMessage());
+            }
+        } else if (GH.deletePlateType(GH.plateTypeIndexWithplateType(removed))){
+            typesTBV.getItems().removeAll(typesTBV.getSelectionModel().getSelectedItems());
+            typesTBV.refresh();
+        } else {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage error = new Stage();
+                error.setScene(new Scene(root));
+                error.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                error.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                error.getIcons().add(icon);
+                error.setTitle("Error");
+                deleteMessageLBL.setText("El tipo de plato no pudo ser eliminado.");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                error.setResizable(false);
+                error.show();
+            } catch (Exception e) {
+                System.out.println("Can't load window at the moment.");
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    @FXML
+    void editEnabledType(CellEditEvent<PlateType, String> event) {
+        if (event.getNewValue().equalsIgnoreCase("SI")) GH.enablePlateType(GH.plateTypeIndexWithName(event.getRowValue().getName()));
+        else GH.disablePlateType(GH.plateTypeIndexWithName(event.getRowValue().getName()));
+        event.getRowValue().setModifierUser(GH.getCurrentUser());
+    }
+
+    @FXML
+    void editNameType(CellEditEvent<PlateType, String> event) {
+        GH.changePlateTypeName(GH.plateTypeIndexWithName(event.getRowValue().getName()),event.getNewValue());
+        event.getRowValue().setModifierUser(GH.getCurrentUser());
+    }
+
+    @FXML
+    void cancelType(ActionEvent event) {
+        try {
+            ((Stage) typePane.getScene().getWindow()).close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
+    }
+
+    @FXML
+    void confirmType(ActionEvent event) {
+        String newTypeName = newTypeNameTF.getText();
+        if (!GH.addAPlateTypeToTheRestaurant(newTypeName)) {
+            try {
+                ((Stage) ingredientPane.getScene().getWindow()).close();
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage productInfo = new Stage();
+                productInfo.setScene(new Scene(root));
+                productInfo.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                productInfo.getIcons().add(icon);
+                productInfo.setTitle("Error");
+                deleteMessageLBL.setText("El tipo no pudo ser agregado");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                productInfo.setResizable(false);
+                productInfo.show();
+            } catch (Exception e) {
+                System.out.println("Something went wrong.");
+            }
+        }
+        else {
+            try {
+                ((Stage) typePane.getScene().getWindow()).close();
+            } catch (Exception e) {
+                System.out.println("Something went wrong.");
+            }
+        }
+        initPlateTypePane();
+    }
+
+    private void initPlateTypePane() {
+        nameTypeCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameTypeCol.setStyle( "\n-fx-alignment: CENTER;");
+        enabledTypeCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
+        enabledTypeCol.setStyle( "\n-fx-alignment: CENTER;");
+
+        ObservableList<PlateType> typesList = FXCollections.observableArrayList(GH.getRestaurantPlateTypes());
+        typesTBV.setItems(typesList);
+
+        nameTypeCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        enabledTypeCol.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        typesTBV.setRowFactory(tv -> {
+            TableRow<PlateType> row = new TableRow<>();
+            row.setOnContextMenuRequested(event -> {
+                if (! row.isEmpty()) {
+                    PlateType rowData = row.getItem();
+                    fullPLateTypeDetails(rowData);
+                }
+            });
+            return row ;
+        });
+    }
+
+    private void fullPLateTypeDetails(PlateType rowData) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("typesGUI/typeInfo.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage plateTypeInfo = new Stage();
+            plateTypeInfo.setScene(new Scene(root));
+            plateTypeInfo.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            plateTypeInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            plateTypeInfo.getIcons().add(icon);
+            plateTypeInfo.setTitle("Información de Ingrediente");
+            initTypeInfo(rowData);
+            plateTypeInfo.show();
+        } catch (Exception e) {
+            System.out.println("Can't load window at the moment.");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private void initTypeInfo(PlateType rowData) {
+        typeNameInfoLBL.setText(rowData.getName());
+        typeEnabledInfoLBL.setText((rowData.getEnabled()) ? "Habilitado" : "Deshabilitado");
+        typeCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
+        typeEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
+        ((Stage)typeNameInfoLBL.getScene().getWindow()).setResizable(false);
     }
 }
 
