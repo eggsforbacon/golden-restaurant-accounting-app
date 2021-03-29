@@ -612,6 +612,14 @@ public class Restaurant{
 		int index =  binarySearch(restaurantProducts,name);
 		return index;
 	}
+	public int productWithSizeIndexWithNameAndSize(String name,String size) {
+		for(int i=0;i<productsWithTheirSizesSize;i++) {
+			if(productsWithTheirSizes.get(i).getName().equalsIgnoreCase(name) && productsWithTheirSizes.get(i).getProductActualSize().equalsIgnoreCase(size)) {
+				return 1;
+			}
+		}
+		return -1;
+	}
 
 	/**
 	 * Given the product, returns the index of that product in the products ArrayList<br>
