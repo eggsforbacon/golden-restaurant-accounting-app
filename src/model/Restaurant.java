@@ -427,10 +427,13 @@ public class Restaurant{
 
 	public boolean initializeUser(int index,String username,String password) throws IOException {
 		if(index!=-1) {
-			restaurantUsers.get(index).setUsername(username);
-			restaurantUsers.get(index).setPassword(password);
-			restaurantUsers.get(index).setModifierUser(currentUser);
-			return true;
+			int userIsRepeated = userIndexWithUsername(username);
+			if(userIsRepeated==-1) {
+				restaurantUsers.get(index).setUsername(username);
+				restaurantUsers.get(index).setPassword(password);
+				restaurantUsers.get(index).setModifierUser(currentUser);
+				return true;
+			}
 		}
 		return false;
 	}
