@@ -763,11 +763,14 @@ public class Restaurant{
 	 */
 	public boolean changeProductName(int index,String newName) {
 		if(index!=-1) {
-			Product productToChangeName=restaurantProducts.get(index);
-			changeNameInproductsWithTheirSizes(productToChangeName, newName);
-			restaurantProducts.get(index).setName(newName);
-			restaurantProducts.get(index).setModifierUser(currentUser);
-			return true;
+			int nameIsRepeated = productIndexWithName(newName);
+			if(nameIsRepeated==-1) {
+				Product productToChangeName=restaurantProducts.get(index);
+				changeNameInproductsWithTheirSizes(productToChangeName, newName);
+				restaurantProducts.get(index).setName(newName);
+				restaurantProducts.get(index).setModifierUser(currentUser);
+				return true;
+			}
 		}
 		return false;
 	}
@@ -1028,9 +1031,12 @@ public class Restaurant{
 	 */
 	public boolean changeingredientName(int index,String newName) {
 		if(index!=-1) {
-			restaurantIngredients.get(index).setName(newName);
-			restaurantIngredients.get(index).setModifierUser(currentUser);
-			return true;
+			int ingredientIsRepeated = ingredientIndexWithName(newName);
+			if(ingredientIsRepeated==-1) {
+				restaurantIngredients.get(index).setName(newName);
+				restaurantIngredients.get(index).setModifierUser(currentUser);
+				return true;
+			}
 		}
 		return false;
 	}
@@ -1161,8 +1167,11 @@ public class Restaurant{
 	 */
 	public boolean changePlateTypeName(int index,String newName) {
 		if(index!=-1) {
-			restaurantPlateTypes.get(index).setName(newName);
-			return true;
+			int plateTypeIsRepeated = plateTypeIndexWithName(newName);
+			if(plateTypeIsRepeated==-1) {
+				restaurantPlateTypes.get(index).setName(newName);
+				return true;
+			}
 		}
 		return false;
 	}
@@ -1342,9 +1351,12 @@ public class Restaurant{
 	 */
 	public boolean changeClientName(int index,String newName) {
 		if(index!=-1) {
-			restaurantClients.get(index).setName(newName);
-			restaurantClients.get(index).setModifierUser(currentUser);
-			return true;
+			int clientIsRepeated = clientIndexWithNameAndLastname(newName,restaurantClients.get(index).getLastname());
+			if(clientIsRepeated==-1) {
+				restaurantClients.get(index).setName(newName);
+				restaurantClients.get(index).setModifierUser(currentUser);
+				return true;
+			}
 		}
 		return false;
 	}
@@ -1359,9 +1371,12 @@ public class Restaurant{
 	 */
 	public boolean changeClientLastname(int index,String newLastname) {
 		if(index!=-1) {
-			restaurantClients.get(index).setLastname(newLastname);
-			restaurantClients.get(index).setModifierUser(currentUser);
-			return true;
+			int clientIsRepeated = clientIndexWithNameAndLastname(restaurantClients.get(index).getName(),newLastname);
+			if(clientIsRepeated==-1) {
+				restaurantClients.get(index).setLastname(newLastname);
+				restaurantClients.get(index).setModifierUser(currentUser);
+				return true;	
+			}
 		}
 		return false;
 	}
@@ -1635,12 +1650,15 @@ public class Restaurant{
 	  */
 	 public boolean changeEmployeeId(int index,String newId) {
 		 if(index!=-1) {
-			 Employee changeId=restaurantEmployees.get(index);
-			 restaurantUsers.get(indexOfAnUser(changeId)).setId(newId);
-			 restaurantUsers.get(indexOfAnUser(changeId)).setModifierUser(currentUser);
-			 restaurantEmployees.get(index).setId(newId);
-			 restaurantEmployees.get(index).setModifierUser(currentUser);
-			 return true;
+			 int employeeIsRepeated = employeeIndexWithId(newId);
+			 if(employeeIsRepeated==-1) {
+				 Employee changeId=restaurantEmployees.get(index);
+				 restaurantUsers.get(indexOfAnUser(changeId)).setId(newId);
+				 restaurantUsers.get(indexOfAnUser(changeId)).setModifierUser(currentUser);
+				 restaurantEmployees.get(index).setId(newId);
+				 restaurantEmployees.get(index).setModifierUser(currentUser);
+				 return true; 
+			 }
 		 }
 		 return false;
 	 }
