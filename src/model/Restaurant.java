@@ -1787,6 +1787,9 @@ public class Restaurant{
 	public ArrayList<Client> getRestaurantClients() {
 		return restaurantClients;
 	}
+	public int getRestaurantClientsSize() {
+		return restaurantClientsSize;
+	}
 	public ArrayList<Order> getRestaurantOrders(){
 		return restaurantOrders;
 	}

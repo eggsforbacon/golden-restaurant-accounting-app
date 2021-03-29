@@ -65,7 +65,7 @@ public class Main extends Application {
 
   @Override
   public void init() {
-    int COUNT_LIMIT = 50000;
+    int COUNT_LIMIT = 60000;
     for (int i = 0; i < COUNT_LIMIT; i++) {
       double progress = (100.0 * i) / COUNT_LIMIT;
       LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
