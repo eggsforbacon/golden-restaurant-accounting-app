@@ -28,6 +28,7 @@
                   <Label fx:id="spacer3" prefHeight="65.0" prefWidth="0.0" />
                   <Button mnemonicParsing="false" onAction="#addIngredientCLicked" text="Agregar" />
                   <Button mnemonicParsing="false" onAction="#deleteIngredientClicked" text="Eliminar" />
+                  <Button mnemonicParsing="false" onAction="#sortIngredients" text="Ordenar" />
                </children>
             </VBox>
          </children>

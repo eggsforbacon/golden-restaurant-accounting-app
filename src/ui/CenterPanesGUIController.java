@@ -1,10 +1,5 @@
 package ui;
 
-import javafx.scene.control.*;
-import javafx.scene.control.TableColumn.CellEditEvent;
-import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.util.converter.DoubleStringConverter;
-import  model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,14 +8,24 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.converter.DoubleStringConverter;
+import model.*;
+
 import java.io.*;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.MonthDay;
+import java.time.Year;
+import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -28,6 +33,7 @@ import java.util.ResourceBundle;
 public class CenterPanesGUIController implements Initializable {
 
     private static final String SEPARATOR = ";";
+    private static final LocalDateTime START = LocalDateTime.of(Year.now().getValue(), YearMonth.now().getMonth(), MonthDay.now().getDayOfMonth(), 0, 0, 0);
     /*Delete Pane (General use)*/
     @FXML
     private Label deleteMessageLBL;
@@ -37,25 +43,25 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane productPane;
 
     @FXML
-    private TableView<Product> productTBV;
+    private  TableView<Product> productTBV = new TableView<>();
 
     @FXML
-    private TableColumn<Product, String> nameProdCol;
+    private  TableColumn<Product, String> nameProdCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Product, String> enabledProdCol;
+    private  TableColumn<Product, String> enabledProdCol = new TableColumn<>() ;
 
     @FXML
-    private TableColumn<Product, String> ingredientsProdCol;
+    private  TableColumn<Product, String> ingredientsProdCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Product, String> typeProdCol;
+    private  TableColumn<Product, String> typeProdCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Product, String> sizesProdCol;
+    private  TableColumn<Product, String> sizesProdCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Product, Double> pricesProdCol;
+    private  TableColumn<Product, Double> pricesProdCol = new TableColumn<>();
 
     @FXML
     private Label spacer2;
@@ -109,13 +115,13 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane ingredientsPane;
 
     @FXML
-    private TableView<Ingredient> ingredientsTBV;
+    private  TableView<Ingredient> ingredientsTBV = new TableView<>();
 
     @FXML
-    private TableColumn<Ingredient, String> nameIngCol;
+    private  TableColumn<Ingredient, String> nameIngCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Ingredient, String> enabledIngCol;
+    private  TableColumn<Ingredient, String> enabledIngCol = new TableColumn<>();
 
     @FXML
     private Label spacer3;
@@ -145,31 +151,37 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane clientsPane;
 
     @FXML
-    private TableView<Client> clientsTBV;
+    private  TableView<Client> clientsTBV = new TableView<>();
 
     @FXML
-    private TableColumn<Client, String> nameCliCol;
+    private  TableColumn<Client, String> nameCliCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Client, String> lastNameCliCol;
+    private  TableColumn<Client, String> lastNameCliCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Client, String> idCliCol;
+    private  TableColumn<Client, String> idCliCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Client, String> addressCliCol;
+    private  TableColumn<Client, String> addressCliCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Client, String> teleCliCol;
+    private  TableColumn<Client, String> teleCliCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Client, String> enabledCliCol;
+    private  TableColumn<Client, String> enabledCliCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Client, String> obsCliCol;
+    private  TableColumn<Client, String> obsCliCol = new TableColumn<>();
 
     @FXML
     private Label spacer4;
+
+    @FXML
+    private TextField searchUserTF;
+
+    @FXML
+    private Label searchTimeLBL;
 
     //Add Pane
     @FXML
@@ -223,13 +235,13 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane typesPane;
 
     @FXML
-    private TableView<PlateType> typesTBV;
+    private  TableView<PlateType> typesTBV = new TableView<>();
 
     @FXML
-    private TableColumn<PlateType, String> nameTypeCol;
+    private  TableColumn<PlateType, String> nameTypeCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<PlateType, String> enabledTypeCol;
+    private  TableColumn<PlateType, String> enabledTypeCol = new TableColumn<>();
 
     //Add Pane
     @FXML
@@ -253,39 +265,56 @@ public class CenterPanesGUIController implements Initializable {
 
     /*Order Pane*/
     @FXML
-    private TableView<Order> orderTBV;
+    private  TableView<Order> orderTBV = new TableView<>();
 
     @FXML
-    private TableColumn<Order, String> codeCol;
+    private  TableColumn<Order, String> codeCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Order, String> enabledOrderCol;
+    private  TableColumn<Order, String> statusOrderCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Order, String> statusOrderCol;
+    private  TableColumn<Order, String> prodOrderCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Order, String> prodOrderCol;
+    private  TableColumn<Order, String> quantityOrderCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Order, String> quantityOrderCol;
+    private  TableColumn<Order, String> ordererCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Order, String> ordererCol;
+    private  TableColumn<Order, String> serverCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Order, String> serverCol;
+    private  TableColumn<Order, String> orderedDateCol = new TableColumn<>();
 
     @FXML
-    private TableColumn<Order, String> orderedDateCol;
-
-    @FXML
-    private TableColumn<Order, String> obsOrderCol;
+    private  TableColumn<Order, String> obsOrderCol = new TableColumn<>();
 
     @FXML
     private Label spacer5;
 
     //Add Pane
+    @FXML
+    private BorderPane orderPane;
+
+    @FXML
+    private TextField clientOrderTF;
+
+    @FXML
+    private ListView<String> selectedProductsLV;
+
+    @FXML
+    private Label productsInfoLabel;
+
+    @FXML
+    private TextArea newProdQuantitiesTA;
+
+    @FXML
+    private TextArea newOrderObsTA;
+
+    @FXML
+    private TextField employeeOrderTF;
 
     //Info Pane
     @FXML
@@ -319,7 +348,8 @@ public class CenterPanesGUIController implements Initializable {
     private Label orderEditorInfoLBL;
 
 
-    private final Restaurant GH;
+    private  Restaurant GH;
+
     public CenterPanesGUIController(Restaurant GH) {
         this.GH = GH;
     }
@@ -335,14 +365,15 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editNameProd(CellEditEvent<Product, String> event) {
-        GH.changeProductName(GH.productIndexWithName(event.getRowValue().getName()),event.getNewValue());
+        GH.changeProductName(GH.productIndexWithName(event.getRowValue().getName()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initProductPane();
     }
 
     @FXML
     void editEnabledProd(CellEditEvent<Product, String> event) {
-        if (event.getNewValue().equalsIgnoreCase("SI")) GH.enableProduct(GH.productIndexWithName(event.getRowValue().getName()));
+        if (event.getNewValue().equalsIgnoreCase("SI"))
+            GH.enableProduct(GH.productIndexWithName(event.getRowValue().getName()));
         else GH.disableProduct(GH.productIndexWithName(event.getRowValue().getName()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initProductPane();
@@ -350,13 +381,13 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editIngredientProd(CellEditEvent<Product, String> event) {
-        for (String s:event.getRowValue().getTheIngredients().split(",")) {
-            GH.deleteAnIngredientOfAProduct(GH.productIndexWithName(event.getRowValue().getName()),s);
+        for (String s : event.getRowValue().getTheIngredients().split(",")) {
+            GH.deleteAnIngredientOfAProduct(GH.productIndexWithName(event.getRowValue().getName()), s);
         }
         StringBuilder unAddedIngredients = new StringBuilder();
-        for (String s: event.getNewValue().split(",")) {
+        for (String s : event.getNewValue().split(",")) {
             if (GH.getRestaurantIngredientsString().contains(s)) {
-                GH.addAnIngredientToAProduct(GH.productIndexWithName(event.getRowValue().getName()),GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(s)));
+                GH.addAnIngredientToAProduct(GH.productIndexWithName(event.getRowValue().getName()), GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(s)));
             } else {
                 unAddedIngredients.append(s).append("\n");
             }
@@ -388,7 +419,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editTypeProd(CellEditEvent<Product, String> event) {
-        event.getRowValue().setPt(new PlateType(event.getNewValue(),GH.getCurrentUser()));
+        event.getRowValue().setPt(new PlateType(event.getNewValue(), GH.getCurrentUser()));
         int newPtIndex = GH.plateTypeIndexWithName(event.getNewValue());
         PlateType newPlateType;
         if (newPtIndex == -1) {
@@ -396,19 +427,28 @@ public class CenterPanesGUIController implements Initializable {
             newPtIndex = GH.plateTypeIndexWithName(event.getNewValue());
         }
         newPlateType = GH.getRestaurantPlateTypes().get(newPtIndex);
-        GH.changeProductPlateType(GH.productIndexWithName(event.getRowValue().getName()),newPlateType);
+        GH.changeProductPlateType(GH.productIndexWithName(event.getRowValue().getName()), newPlateType);
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initProductPane();
     }
 
     @FXML
     void editSizesProd(CellEditEvent<Product, String> event) {
-        //WIP
+        GH.changeSizeOfTheProduct(GH.productIndexWithName(event.getRowValue().getName()),event.getRowValue().getProductActualSize(),event.getNewValue());
+        event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
     @FXML
-    void editPricesProd(CellEditEvent<Product, String> event) {
-        //WIP
+    void editPricesProd(CellEditEvent<Product, Double> event) {
+        Double db = event.getNewValue();
+        GH.changePriceOfTheProduct(GH.productIndexWithName(event.getRowValue().getName()),event.getRowValue().getProductActualSize(),db);
+        event.getRowValue().setModifierUser(GH.getCurrentUser());
+    }
+
+    @FXML
+    void sortProducts(ActionEvent event) {
+        GH.sortProductsByPrice();
+        initProductPane();
     }
 
     @FXML
@@ -446,14 +486,14 @@ public class CenterPanesGUIController implements Initializable {
     void confirmProduct(ActionEvent event) {
         String newProdName = newProdNameTF.getText();
         ArrayList<Ingredient> newProdIngredients = new ArrayList<>();
-        for (String ingName: selectedItemsLV.getSelectionModel().getSelectedItems()) {
-            System.out.println(GH.ingredientIndexWithName(ingName) + "\n" + ingName + "\n" + GH.getRestaurantIngredientsString()+GH.getRestaurantIngredients().toString());
+        for (String ingName : selectedItemsLV.getSelectionModel().getSelectedItems()) {
+            System.out.println(GH.ingredientIndexWithName(ingName) + "\n" + ingName + "\n" + GH.getRestaurantIngredientsString() + GH.getRestaurantIngredients().toString());
             Ingredient ingtoadd = GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(ingName));
             newProdIngredients.add(ingtoadd);
         }
         ArrayList<String> newProdSizes = new ArrayList<>(Arrays.asList(newProdSizesTA.getText().split(",")));
         ArrayList<Double> newProdPrices = new ArrayList<>();
-        for (String s: newProdPricesTA.getText().split(",")) {
+        for (String s : newProdPricesTA.getText().split(",")) {
             if (!s.isEmpty()) newProdPrices.add(Double.parseDouble(s));
         }
         boolean productNameValid = !newProdName.isEmpty() && GH.productIndexWithName(newProdName) == -1;
@@ -463,8 +503,8 @@ public class CenterPanesGUIController implements Initializable {
         System.out.println(newProdPrices.toString());
         System.out.println(newProdSizes.toString());
         if (productNameValid && productIngredientsValid && ptIsValid && sizesAndPricesValid) {
-           GH.addAPlateTypeToTheRestaurant(newProdTypeTF.getText());
-           GH.addProduct(newProdName,GH.getRestaurantPlateTypes().get(GH.plateTypeIndexWithName(newProdTypeTF.getText())), newProdIngredients,newProdSizes,newProdPrices);
+            GH.addAPlateTypeToTheRestaurant(newProdTypeTF.getText());
+            GH.addProduct(newProdName, GH.getRestaurantPlateTypes().get(GH.plateTypeIndexWithName(newProdTypeTF.getText())), newProdIngredients, newProdSizes, newProdPrices);
             initProductPane();
             try {
                 ((Stage) productPane.getScene().getWindow()).close();
@@ -566,21 +606,21 @@ public class CenterPanesGUIController implements Initializable {
         prodPricesInfoLBL.setText(prices.toString());
         prodCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
         prodEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
-        ((Stage)prodNameInfoLBL.getScene().getWindow()).setMaxWidth(520.0);
-        ((Stage)prodNameInfoLBL.getScene().getWindow()).setMinHeight(520.0);
+        ((Stage) prodNameInfoLBL.getScene().getWindow()).setMaxWidth(520.0);
+        ((Stage) prodNameInfoLBL.getScene().getWindow()).setMinHeight(520.0);
     }
 
     private void initProductPane() {
         nameProdCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        nameProdCol.setStyle( "\n-fx-alignment: CENTER;");
+        nameProdCol.setStyle("\n-fx-alignment: CENTER;");
         enabledProdCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
-        enabledProdCol.setStyle( "\n-fx-alignment: CENTER;");
+        enabledProdCol.setStyle("\n-fx-alignment: CENTER;");
         ingredientsProdCol.setCellValueFactory(new PropertyValueFactory<>("theIngredients"));
-        ingredientsProdCol.setStyle( "\n-fx-alignment: CENTER;");
+        ingredientsProdCol.setStyle("\n-fx-alignment: CENTER;");
         typeProdCol.setCellValueFactory(new PropertyValueFactory<>("pt"));
-        typeProdCol.setStyle( "\n-fx-alignment: CENTER;");
+        typeProdCol.setStyle("\n-fx-alignment: CENTER;");
         sizesProdCol.setCellValueFactory(new PropertyValueFactory<>("productActualSize"));
-        sizesProdCol.setStyle( "\n-fx-alignment: CENTER;");
+        sizesProdCol.setStyle("\n-fx-alignment: CENTER;");
         pricesProdCol.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
         pricesProdCol.setStyle("\n-fx-alignment: CENTER;");
         ObservableList<Product> productsList = FXCollections.observableArrayList(GH.getProductsWithTheirSizes());
@@ -596,18 +636,18 @@ public class CenterPanesGUIController implements Initializable {
         productTBV.setRowFactory(tv -> {
             TableRow<Product> row = new TableRow<>();
             row.setOnContextMenuRequested(event -> {
-                if (! row.isEmpty()) {
+                if (!row.isEmpty()) {
                     Product rowData = row.getItem();
                     fullProductDetails(rowData);
                 }
             });
-            return row ;
+            return row;
         });
     }
 
     private void initAddProductPane() {
         ObservableList<String> items = FXCollections.observableArrayList();
-        for (Ingredient ing: GH.getRestaurantIngredients()) items.add(ing.getName());
+        for (Ingredient ing : GH.getRestaurantIngredients()) items.add(ing.getName());
         selectedItemsLV.setItems(items);
         selectedItemsLV.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
@@ -624,27 +664,22 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void exportProductData(ActionEvent event) throws Exception {
-        String fileName = "src/data/PRODUCTS.csv";
-        PrintWriter pw = new PrintWriter(fileName);
-        for(int i = 0; i < GH.getRestaurantProductsSize(); i++){
-            Product p = GH.getRestaurantProducts().get(i);
-            pw.println(p.showInformation());
-        }
-        pw.close();
+        GH.generateProductReport("src/data/generatedData/PRODUCT_GENERATED_DATA.csv", SEPARATOR, START, LocalDateTime.now());
     }
 
     @FXML
     void importProductData(ActionEvent event) throws IOException {
         GH.importProductInformation("src/data/generatedData/PRODUCT_GENERATED_DATA.csv");
         initProductPane();
+        System.out.println("It is in");
     }
 
 
     private void initIngredientPane() {
         nameIngCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        nameIngCol.setStyle( "\n-fx-alignment: CENTER;");
+        nameIngCol.setStyle("\n-fx-alignment: CENTER;");
         enabledIngCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
-        enabledIngCol.setStyle( "\n-fx-alignment: CENTER;");
+        enabledIngCol.setStyle("\n-fx-alignment: CENTER;");
 
         ObservableList<Ingredient> ingredientsList = FXCollections.observableArrayList(GH.getRestaurantIngredients());
         ingredientsTBV.setItems(ingredientsList);
@@ -655,12 +690,12 @@ public class CenterPanesGUIController implements Initializable {
         ingredientsTBV.setRowFactory(tv -> {
             TableRow<Ingredient> row = new TableRow<>();
             row.setOnContextMenuRequested(event -> {
-                if (! row.isEmpty()) {
+                if (!row.isEmpty()) {
                     Ingredient rowData = row.getItem();
                     fullIngredientDetails(rowData);
                 }
             });
-            return row ;
+            return row;
         });
     }
 
@@ -717,8 +752,7 @@ public class CenterPanesGUIController implements Initializable {
             } catch (Exception e) {
                 System.out.println("Something went wrong.");
             }
-        }
-        else {
+        } else {
             try {
                 ((Stage) ingredientPane.getScene().getWindow()).close();
             } catch (Exception e) {
@@ -752,7 +786,7 @@ public class CenterPanesGUIController implements Initializable {
                 System.out.println("Can't load window at the moment.");
                 System.out.println(e.getMessage());
             }
-        } else if (GH.deleteIngredient(GH.ingredientIndexWithIngredient(removed))){
+        } else if (GH.deleteIngredient(GH.ingredientIndexWithIngredient(removed))) {
             ingredientsTBV.getItems().removeAll(ingredientsTBV.getSelectionModel().getSelectedItems());
             ingredientsTBV.refresh();
         } else {
@@ -780,7 +814,8 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editEnabledIng(CellEditEvent<Ingredient, String> event) {
-        if (event.getNewValue().equalsIgnoreCase("SI")) GH.enableIngredient(GH.ingredientIndexWithName(event.getRowValue().getName()));
+        if (event.getNewValue().equalsIgnoreCase("SI"))
+            GH.enableIngredient(GH.ingredientIndexWithName(event.getRowValue().getName()));
         else GH.disableIngredient(GH.ingredientIndexWithName(event.getRowValue().getName()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initIngredientPane();
@@ -788,8 +823,14 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editNameIng(CellEditEvent<Ingredient, String> event) {
-        GH.changeingredientName(GH.ingredientIndexWithName(event.getRowValue().getName()),event.getNewValue());
+        GH.changeingredientName(GH.ingredientIndexWithName(event.getRowValue().getName()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
+        initIngredientPane();
+    }
+
+    @FXML
+    void sortIngredients(ActionEvent event) {
+        GH.descendantSortIngredients();
         initIngredientPane();
     }
 
@@ -797,7 +838,7 @@ public class CenterPanesGUIController implements Initializable {
     void exportIngredientData(ActionEvent event) throws FileNotFoundException {
         String fileName = "src/data/INGREDIENTS.csv";
         PrintWriter pw = new PrintWriter(fileName);
-        for(int i = 0; i < GH.getRestaurantIngredientsSize(); i++){
+        for (int i = 0; i < GH.getRestaurantIngredientsSize(); i++) {
             Ingredient ing = GH.getRestaurantIngredients().get(i);
             pw.println(ing.getName());
         }
@@ -809,7 +850,7 @@ public class CenterPanesGUIController implements Initializable {
         String fileName = "src/data/INGREDIENTS.csv";
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         String line = br.readLine();
-        while(line!=null) {
+        while (line != null) {
             GH.addAnIngredientToTheRestaurant(line);
             line = br.readLine();
         }
@@ -843,20 +884,20 @@ public class CenterPanesGUIController implements Initializable {
         ingEnabledInfoLBL.setId("enabled-label");
         ingCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
         ingEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
-        ((Stage)ingNameInfoLBL.getScene().getWindow()).setResizable(false);
+        ((Stage) ingNameInfoLBL.getScene().getWindow()).setResizable(false);
     }
 
     private void initClientPane() {
         nameCliCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        nameCliCol.setStyle( "\n-fx-alignment: CENTER;");
+        nameCliCol.setStyle("\n-fx-alignment: CENTER;");
         enabledCliCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
-        enabledCliCol.setStyle( "\n-fx-alignment: CENTER;");
+        enabledCliCol.setStyle("\n-fx-alignment: CENTER;");
         lastNameCliCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
-        lastNameCliCol.setStyle( "\n-fx-alignment: CENTER;");
+        lastNameCliCol.setStyle("\n-fx-alignment: CENTER;");
         idCliCol.setCellValueFactory(new PropertyValueFactory<>("id"));
-        idCliCol.setStyle( "\n-fx-alignment: CENTER;");
+        idCliCol.setStyle("\n-fx-alignment: CENTER;");
         addressCliCol.setCellValueFactory(new PropertyValueFactory<>("address"));
-        addressCliCol.setStyle( "\n-fx-alignment: CENTER;");
+        addressCliCol.setStyle("\n-fx-alignment: CENTER;");
         teleCliCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         teleCliCol.setStyle("\n-fx-alignment: CENTER;");
         obsCliCol.setCellValueFactory(new PropertyValueFactory<>("observations"));
@@ -875,12 +916,12 @@ public class CenterPanesGUIController implements Initializable {
         clientsTBV.setRowFactory(tv -> {
             TableRow<Client> row = new TableRow<>();
             row.setOnContextMenuRequested(event -> {
-                if (! row.isEmpty()) {
+                if (!row.isEmpty()) {
                     Client rowData = row.getItem();
                     fullClientDetails(rowData);
                 }
             });
-            return row ;
+            return row;
         });
     }
 
@@ -913,8 +954,8 @@ public class CenterPanesGUIController implements Initializable {
         cliObsInfoLBL.setText(rowData.getObservations());
         cliCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
         cliEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
-        ((Stage)cliFullNameInfoLBL.getScene().getWindow()).setMaxWidth(590.0);
-        ((Stage)cliFullNameInfoLBL.getScene().getWindow()).setMinHeight(458.0);
+        ((Stage) cliFullNameInfoLBL.getScene().getWindow()).setMaxWidth(590.0);
+        ((Stage) cliFullNameInfoLBL.getScene().getWindow()).setMinHeight(458.0);
     }
 
     @FXML
@@ -945,7 +986,7 @@ public class CenterPanesGUIController implements Initializable {
         if (!noSelection) {
             for (int i = 0; i < clientsTBV.getSelectionModel().getSelectedItems().size(); i++) {
                 Client removed = clientsTBV.getSelectionModel().getSelectedItems().get(i);
-                GH.deleteClient(GH.clientIndexWithNameAndLastname(removed.getName(),removed.getLastname()));
+                GH.deleteClient(GH.clientIndexWithNameAndLastname(removed.getName(), removed.getLastname()));
             }
             clientsTBV.getItems().removeAll(clientsTBV.getSelectionModel().getSelectedItems());
             initProductPane();
@@ -974,51 +1015,96 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editAddressCli(CellEditEvent<Client, String> event) {
-        GH.changeClientAddress(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(),event.getRowValue().getLastname()),event.getNewValue());
+        GH.changeClientAddress(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
     }
 
     @FXML
     void editEnabledCli(CellEditEvent<Client, String> event) {
-        if (event.getNewValue().equalsIgnoreCase("SI")) GH.enableClient(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(),event.getRowValue().getLastname()));
-        else GH.disableClient(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(),event.getRowValue().getLastname()));
+        if (event.getNewValue().equalsIgnoreCase("SI"))
+            GH.enableClient(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()));
+        else
+            GH.disableClient(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
     @FXML
     void editIdCli(CellEditEvent<Client, String> event) {
-        GH.changeClientId(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(),event.getRowValue().getLastname()),event.getNewValue());
+        GH.changeClientId(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
     }
 
     @FXML
     void editLastNameCli(CellEditEvent<Client, String> event) {
-        GH.changeClientLastname(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(),event.getRowValue().getLastname()),event.getNewValue());
+        GH.changeClientLastname(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
     }
 
     @FXML
     void editNameCli(CellEditEvent<Client, String> event) {
-        GH.changeClientName(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(),event.getRowValue().getLastname()),event.getNewValue());
+        GH.changeClientName(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
     }
 
     @FXML
     void editObsCli(CellEditEvent<Client, String> event) {
-        GH.changeClientObservations(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(),event.getRowValue().getLastname()),event.getNewValue());
+        GH.changeClientObservations(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
     }
 
     @FXML
     void editTeleCli(CellEditEvent<Client, String> event) {
-        GH.changeClientPhoneNumber(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(),event.getRowValue().getLastname()),event.getNewValue());
+        GH.changeClientPhoneNumber(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
+    }
+
+    @FXML
+    void searchPressed(ActionEvent event) {
+        System.out.println("Enter!");
+        GH.setSearchResults(searchUserTF.getText().trim());
+
+        nameCliCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameCliCol.setStyle("\n-fx-alignment: CENTER;");
+        enabledCliCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
+        enabledCliCol.setStyle("\n-fx-alignment: CENTER;");
+        lastNameCliCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
+        lastNameCliCol.setStyle("\n-fx-alignment: CENTER;");
+        idCliCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idCliCol.setStyle("\n-fx-alignment: CENTER;");
+        addressCliCol.setCellValueFactory(new PropertyValueFactory<>("address"));
+        addressCliCol.setStyle("\n-fx-alignment: CENTER;");
+        teleCliCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+        teleCliCol.setStyle("\n-fx-alignment: CENTER;");
+        obsCliCol.setCellValueFactory(new PropertyValueFactory<>("observations"));
+        obsCliCol.setStyle("\n-fx-alignment: CENTER;");
+        ObservableList<Client> clientsList = FXCollections.observableArrayList(GH.getSearchResults());
+        clientsTBV.setItems(clientsList);
+
+        nameCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        enabledCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        lastNameCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        idCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        addressCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        teleCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        obsCliCol.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        clientsTBV.setRowFactory(tv -> {
+            TableRow<Client> row = new TableRow<>();
+            row.setOnContextMenuRequested(e -> {
+                if (!row.isEmpty()) {
+                    Client rowData = row.getItem();
+                    fullClientDetails(rowData);
+                }
+            });
+            return row;
+        });
+        searchTimeLBL.setText(Long.toString(GH.getTimeOfSearch()));
     }
 
     @FXML
@@ -1038,9 +1124,9 @@ public class CenterPanesGUIController implements Initializable {
         String newId = newCliIDTF.getText();
         String newTelephone = newCliTeleTF.getText();
         String newObs = (newCliObsTA.getText().isEmpty()) ? "-" : newCliObsTA.getText();
-        boolean canCreateClient = !newName.isEmpty() && !newLastName.isEmpty() && !newAddress.isEmpty() && ! newId.isEmpty() && !newTelephone.isEmpty();
+        boolean canCreateClient = !newName.isEmpty() && !newLastName.isEmpty() && !newAddress.isEmpty() && !newId.isEmpty() && !newTelephone.isEmpty();
         if (canCreateClient) {
-            boolean userCreated = GH.addAClientToTheRestaurant(newName,newLastName,newId,newAddress,newTelephone,newObs);
+            boolean userCreated = GH.addAClientToTheRestaurant(newName, newLastName, newId, newAddress, newTelephone, newObs);
             System.out.println("User created: " + userCreated);
             initClientPane();
             try {
@@ -1076,7 +1162,7 @@ public class CenterPanesGUIController implements Initializable {
     void exportClientData(ActionEvent event) throws FileNotFoundException {
         String fileName = "src/data/CLIENTS.csv";
         PrintWriter pw = new PrintWriter(fileName);
-        for(int i = 0; i < GH.getRestaurantClientsSize(); i++){
+        for (int i = 0; i < GH.getRestaurantClientsSize(); i++) {
             Client client = GH.getRestaurantClients().get(i);
             pw.println(client.showInformation());
         }
@@ -1085,15 +1171,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void importClientData(ActionEvent event) throws IOException {
-        String fileName = "src/data/CLIENTS.csv";
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
-        String line = br.readLine();
-        while(line!=null) {
-            String[] parts = line.split(SEPARATOR);
-            GH.addAClientToTheRestaurant(parts[0],parts[1],parts[2],parts[3],parts[4],parts[5]);
-            line = br.readLine();
-        }
-        br.close();
+        GH.importClientInformation("src/data/generatedData/CLIENT_MOCK_DATA.csv");
         initClientPane();
     }
 
@@ -1141,7 +1219,7 @@ public class CenterPanesGUIController implements Initializable {
                 System.out.println("Can't load window at the moment.");
                 System.out.println(e.getMessage());
             }
-        } else if (GH.deletePlateType(GH.plateTypeIndexWithplateType(removed))){
+        } else if (GH.deletePlateType(GH.plateTypeIndexWithplateType(removed))) {
             typesTBV.getItems().removeAll(typesTBV.getSelectionModel().getSelectedItems());
             typesTBV.refresh();
         } else {
@@ -1169,14 +1247,15 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editEnabledType(CellEditEvent<PlateType, String> event) {
-        if (event.getNewValue().equalsIgnoreCase("SI")) GH.enablePlateType(GH.plateTypeIndexWithName(event.getRowValue().getName()));
+        if (event.getNewValue().equalsIgnoreCase("SI"))
+            GH.enablePlateType(GH.plateTypeIndexWithName(event.getRowValue().getName()));
         else GH.disablePlateType(GH.plateTypeIndexWithName(event.getRowValue().getName()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
     @FXML
     void editNameType(CellEditEvent<PlateType, String> event) {
-        GH.changePlateTypeName(GH.plateTypeIndexWithName(event.getRowValue().getName()),event.getNewValue());
+        GH.changePlateTypeName(GH.plateTypeIndexWithName(event.getRowValue().getName()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
     }
 
@@ -1212,8 +1291,7 @@ public class CenterPanesGUIController implements Initializable {
             } catch (Exception e) {
                 System.out.println("Something went wrong.");
             }
-        }
-        else {
+        } else {
             try {
                 ((Stage) typePane.getScene().getWindow()).close();
             } catch (Exception e) {
@@ -1225,9 +1303,9 @@ public class CenterPanesGUIController implements Initializable {
 
     private void initPlateTypePane() {
         nameTypeCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        nameTypeCol.setStyle( "\n-fx-alignment: CENTER;");
+        nameTypeCol.setStyle("\n-fx-alignment: CENTER;");
         enabledTypeCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
-        enabledTypeCol.setStyle( "\n-fx-alignment: CENTER;");
+        enabledTypeCol.setStyle("\n-fx-alignment: CENTER;");
 
         ObservableList<PlateType> typesList = FXCollections.observableArrayList(GH.getRestaurantPlateTypes());
         typesTBV.setItems(typesList);
@@ -1238,12 +1316,12 @@ public class CenterPanesGUIController implements Initializable {
         typesTBV.setRowFactory(tv -> {
             TableRow<PlateType> row = new TableRow<>();
             row.setOnContextMenuRequested(event -> {
-                if (! row.isEmpty()) {
+                if (!row.isEmpty()) {
                     PlateType rowData = row.getItem();
                     fullPLateTypeDetails(rowData);
                 }
             });
-            return row ;
+            return row;
         });
     }
 
@@ -1272,20 +1350,18 @@ public class CenterPanesGUIController implements Initializable {
         typeEnabledInfoLBL.setText((rowData.getEnabled()) ? "Habilitado" : "Deshabilitado");
         typeCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
         typeEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
-        ((Stage)typeNameInfoLBL.getScene().getWindow()).setResizable(false);
+        ((Stage) typeNameInfoLBL.getScene().getWindow()).setResizable(false);
     }
 
     private void initOrderPane() {
         codeCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        codeCol.setStyle( "\n-fx-alignment: CENTER;");
-        enabledOrderCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
-        enabledOrderCol.setStyle( "\n-fx-alignment: CENTER;");
+        codeCol.setStyle("\n-fx-alignment: CENTER;");
         statusOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderStatus"));
-        statusOrderCol.setStyle( "\n-fx-alignment: CENTER;");
+        statusOrderCol.setStyle("\n-fx-alignment: CENTER;");
         prodOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderProductsString"));
-        prodOrderCol.setStyle( "\n-fx-alignment: CENTER;");
+        prodOrderCol.setStyle("\n-fx-alignment: CENTER;");
         quantityOrderCol.setCellValueFactory(new PropertyValueFactory<>("productsQuantityString"));
-        quantityOrderCol.setStyle( "\n-fx-alignment: CENTER;");
+        quantityOrderCol.setStyle("\n-fx-alignment: CENTER;");
         ordererCol.setCellValueFactory(new PropertyValueFactory<>("orderClientName"));
         ordererCol.setStyle("\n-fx-alignment: CENTER;");
         serverCol.setCellValueFactory(new PropertyValueFactory<>("orderEmployeeName"));
@@ -1298,7 +1374,6 @@ public class CenterPanesGUIController implements Initializable {
         orderTBV.setItems(ordersList);
 
         codeCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        enabledOrderCol.setCellFactory(TextFieldTableCell.forTableColumn());
         statusOrderCol.setCellFactory(TextFieldTableCell.forTableColumn());
         prodOrderCol.setCellFactory(TextFieldTableCell.forTableColumn());
         quantityOrderCol.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -1310,12 +1385,12 @@ public class CenterPanesGUIController implements Initializable {
         orderTBV.setRowFactory(tv -> {
             TableRow<Order> row = new TableRow<>();
             row.setOnContextMenuRequested(event -> {
-                if (! row.isEmpty()) {
+                if (!row.isEmpty()) {
                     Order rowData = row.getItem();
                     fullOrderDetails(rowData);
                 }
             });
-            return row ;
+            return row;
         });
     }
 
@@ -1355,7 +1430,7 @@ public class CenterPanesGUIController implements Initializable {
         orderObservationsInfoLBL.setText(rowData.getObservations());
         orderCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
         orderEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
-        ((Stage)orderCodeInfoLBL.getScene().getWindow()).setResizable(false);
+        ((Stage) orderCodeInfoLBL.getScene().getWindow()).setResizable(false);
     }
 
     @FXML
@@ -1365,47 +1440,127 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void createOrderClicked(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ordersGUI/add-order.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage createOrder = new Stage();
+            createOrder.setScene(new Scene(root));
+            createOrder.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            createOrder.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            createOrder.getIcons().add(icon);
+            createOrder.setTitle("Golden Restaurant: Añadir orden");
+            createOrder.setResizable(false);
+            initAddOrderPane();
+            createOrder.show();
+        } catch (Exception e) {
+            System.out.println("Can't load window at the moment.");
+            System.out.println(e.getMessage());
+        }
+    }
 
+    private void initAddOrderPane() {
+        ObservableList<String> items = FXCollections.observableArrayList();
+        for (Product p : GH.getProductsWithTheirSizes()) items.add(p.getName() + " (" + p.getProductActualSize() + ")");
+        selectedProductsLV.setItems(items);
+        selectedProductsLV.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 
     @FXML
-    void editEnabledOrder(ActionEvent event) {
-
+    void cancelOrder(ActionEvent event) {
+        try {
+            ((Stage) orderPane.getScene().getWindow()).close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
     }
 
     @FXML
-    void editObsOrder(ActionEvent event) {
-
+    void confirmOrder(ActionEvent event) {
+        ArrayList<Product> newProducts = new ArrayList<>();
+        ObservableList<String> selectedProducts = selectedProductsLV.getSelectionModel().getSelectedItems();
+        for (String selectedItem : selectedProducts) {
+            String[] prodName = selectedItem.split("[()]");
+            System.out.println(prodName[0] + " " +prodName[1]);
+            Product prodtoadd = GH.getProductsWithTheirSizes().get(GH.productWithSizeIndexWithNameAndSize(prodName[0], prodName[1]));
+            newProducts.add(prodtoadd);
+        }
+        ArrayList<Integer> newProdQuantities = new ArrayList<>();
+        try {
+            for (String s : newProdQuantitiesTA.getText().split(",")) {
+                newProdQuantities.add(Integer.parseInt(s));
+            }
+        } catch (Exception e) {
+            newProdQuantities = new ArrayList<>();
+        }
+        String observations = newOrderObsTA.getText();
+        String[] clientNames = clientOrderTF.getText().split(",");
+        int newClientIndex;
+        try {
+             newClientIndex = GH.clientIndexWithNameAndLastname(clientNames[0], clientNames[1]);
+        } catch (Exception e) {
+            newClientIndex = -1;
+        }
+        int newEmployeeIndex = GH.employeeIndexWithId(employeeOrderTF.getText());
+        boolean canAdd = !newProducts.isEmpty() && !newProdQuantities.isEmpty() && newClientIndex != -1 && newEmployeeIndex != -1;
+        if (canAdd) {
+            Employee newEmployee = GH.getRestaurantEmployees().get(newEmployeeIndex);
+            Client newClient = GH.getRestaurantClients().get(newClientIndex);
+            GH.createAnOrder(newProducts,newProdQuantities,newClient,newEmployee,observations);
+            initOrderPane();
+        } else {
+            try {
+                ((Stage) orderPane.getScene().getWindow()).close();
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage productInfo = new Stage();
+                productInfo.setScene(new Scene(root));
+                productInfo.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                productInfo.getIcons().add(icon);
+                productInfo.setTitle("Error");
+                deleteMessageLBL.setText("No fue posible crear la orden.");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                productInfo.setResizable(false);
+                productInfo.show();
+            } catch (Exception e) {
+                System.out.println("Can't load window at the moment. EEEEEEEE");
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
-    void editProdOrder(ActionEvent event) {
-
+    void hideProdInfo(MouseEvent event) {
+        productsInfoLabel.setVisible(false);
     }
 
     @FXML
-    void editQuantityCol(ActionEvent event) {
-
+    void showProdInfo(MouseEvent event) {
+        productsInfoLabel.setVisible(true);
     }
 
     @FXML
-    void editServer(ActionEvent event) {
-
+    void editStatusOrder(CellEditEvent<Order, String> event) {
+        GH.changeOrderStatus(GH.searchAnOrder(event.getRowValue().getName()),Integer.parseInt(event.getNewValue()));
+        event.getRowValue().setModifierUser(GH.getCurrentUser());
+        initOrderPane();
     }
 
     @FXML
-    void editStatusOrder(ActionEvent event) {
-
+    void exportOrderData(ActionEvent event) throws FileNotFoundException {
+        GH.generateOrderReport("src/data/generatedData/ORDER_GENERATED_DATA.csv",SEPARATOR,START,LocalDateTime.now());
     }
 
     @FXML
-    void exportOrderData(ActionEvent event) {
-
-    }
-
-    @FXML
-    void importOrderData(ActionEvent event) {
-
+    void importOrderData(ActionEvent event) throws IOException {
+        GH.importProductInformation("src/data/generatedData/PRODUCT_GENERATED_DATA.csv");
+        GH.importClientInformation("src/data/generatedData/CLIENT_MOCK_DATA.csv");
+        GH.importOrderInformation("src/data/generatedData/ORDER_GENERATED_DATA.csv");
+        initOrderPane();
     }
 }
 

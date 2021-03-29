@@ -10,42 +10,43 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="productPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="580.0" style="-fx-background-color: #5c524f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="orderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="580.0" style="-fx-background-color: #5c524f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="464.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Label text="Nombre:" />
-                  <TextField fx:id="newProdNameTF" prefWidth="170.0" />
+                  <Label text="Cliente:" />
+                  <TextField fx:id="clientOrderTF" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="136.0" prefWidth="580.0" spacing="15.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Label text="Ingredientes:" />
-                  <ListView fx:id="selectedItemsLV" minHeight="-Infinity" onMouseEntered="#showIngInfo" onMouseExited="#hideIngInfo" prefHeight="33.0" prefWidth="164.0" />
-                  <Label fx:id="ingredientsInfoLabel" alignment="CENTER" prefHeight="122.0" prefWidth="189.0" text="(Para seleccionar varios ingredientes, presionar la tecla CTRL mientras hace click sobre el ingrediente a seleccionar)" textAlignment="JUSTIFY" visible="false" wrapText="true" />
+                  <Label text="Productos:" />
+                  <ListView fx:id="selectedProductsLV" minHeight="-Infinity" onMouseEntered="#showProdInfo" onMouseExited="#hideProdInfo" prefHeight="33.0" prefWidth="164.0" />
+                  <Label fx:id="productsInfoLabel" alignment="CENTER" prefHeight="122.0" prefWidth="189.0" text="(Para seleccionar varios productos, presionar la tecla CTRL mientras hace click sobre el producto a seleccionar)" textAlignment="JUSTIFY" visible="false" wrapText="true" />
                </children></HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+            <HBox alignment="CENTER" prefHeight="139.0" prefWidth="584.0" spacing="15.0">
                <children>
-                  <Label text="Tipo de Plato:" />
-                  <TextField fx:id="newProdTypeTF" prefWidth="170.0" />
-               </children></HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
-               <children>
-                  <Label text="Tamaño(s):" />
-                  <TextArea fx:id="newProdSizesTA" prefHeight="94.0" prefWidth="209.0" promptText="Separar cada tamaño con comas, y que cada tamaño corresponda a la misma posición de su precio" />
+                  <Label text="Cantidad por producto:" />
+                  <TextArea fx:id="newProdQuantitiesTA" prefHeight="113.0" prefWidth="209.0" promptText="(Poner la cantidad de cada producto en el orden de selección de los productos, separando cada producto por comas, y sin espacios)" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Precios(s):" />
-                  <TextArea fx:id="newProdPricesTA" prefHeight="94.0" prefWidth="209.0" promptText="Separar cada tamaño con comas, y que cada precio corresponda a la misma posición de su tamaño" />
+                  <Label text="Observaciones:" />
+                  <TextArea fx:id="newOrderObsTA" prefHeight="94.0" prefWidth="209.0" />
                </children></HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <Label text="Identificación empleado:" />
+                  <TextField fx:id="employeeOrderTF" />
+               </children>
+            </HBox>
          </children>
       </VBox>
    </center>
    <top>
-      <Label text="Agregar Producto" BorderPane.alignment="CENTER">
+      <Label text="Nueva Orden" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets top="25.0" />
          </BorderPane.margin>
@@ -54,8 +55,8 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="64.0" prefWidth="569.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#confirmProduct" text="Confirmar" />
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#cancelProduct" text="Cancelar" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#confirmOrder" text="Confirmar" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#cancelOrder" text="Cancelar" />
          </children>
       </HBox>
    </bottom>

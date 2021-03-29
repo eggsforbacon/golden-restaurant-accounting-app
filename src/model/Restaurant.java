@@ -47,6 +47,7 @@ public class Restaurant{
 	private ArrayList<Employee> restaurantEmployees;
 	private int restaurantEmployeesSize;
 	private ArrayList<String> orderIDs;
+	private ArrayList<Client> searchResults;
 	public Restaurant() {
 		rootUser = new User("Generic",null,"user","none","Root","admin");
 		firstTime = true;
@@ -75,7 +76,7 @@ public class Restaurant{
 		restaurantEmployees = new ArrayList<Employee>();
 		restaurantEmployeesSize = restaurantEmployees.size();
 		orderIDs=new ArrayList<String>();
-		
+		searchResults = new ArrayList<>();
 	}
 
 	//Import methods
@@ -1684,7 +1685,7 @@ public class Restaurant{
 	  * @param newName The new name of the employee
 	  * @return True if the employee's name was changed, false if not
 	  */
-	 public boolean changeEmployeeName(int index,String newName) {
+	public boolean changeEmployeeName(int index,String newName) {
 		 if(index!=-1) {
 			 Employee changeName=restaurantEmployees.get(index);
 			 restaurantEmployees.get(index).setName(newName);
@@ -1694,7 +1695,7 @@ public class Restaurant{
 			 return true;
 		 }
 		 return false;
-	 }
+	}
 	 
 	 /**
 	  * Changes the lastname of a employee of the employees ArrayList<br>
@@ -1803,9 +1804,20 @@ public class Restaurant{
 		 return -1;
 	 }
 
+	 public void setSearchResults(String match) {
+		 for (Client c : restaurantClients) {
+		 	String compare = c.getName() + " " + c.getLastname();
+		 	if (compare.contains(match)) searchResults.add(c);
+		 }
+	}
+
 
 
 	//Getters
+
+	public ArrayList<Client> getSearchResults() {
+		return searchResults;
+	}
 	public ArrayList<Product> getRestaurantProducts() {
 		return restaurantProducts;
 	}
@@ -1854,6 +1866,7 @@ public class Restaurant{
 	public long getTimeOfSearch() {
 		return timeOfSearch;
 	}
+	public ArrayList<Employee> getRestaurantEmployees() {return restaurantEmployees;}
 	public int getRestaurantEmployeesSize() {
 		return restaurantEmployeesSize;
 	}

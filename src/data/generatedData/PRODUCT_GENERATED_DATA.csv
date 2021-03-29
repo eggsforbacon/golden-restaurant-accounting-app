@@ -1,1002 +1,1002 @@
-Nombre del producto;Tipo de producto;Ingredientes;Tamaños;Precios
- papas;Adicionales;Lenteja,Leche,Harina;Grande,mediano,pequeño;62683,51884,48995
- ensalada;Comida de mar;Tomate,Cilantro,Harina;Familiar,mediano,personal;63976,31842,44659
- chocolate;Panaderia;Lenteja,Leche,Harina;500 ml,200 ml,150 ml;57310,36168,35247
- Filet;Carnes;Lenteja,Leche,Naranja;Familiar,mediano,personal;62087,35134,33434
- bbq;Plato principal;Lenteja,Queso,Bacalao;500 ml,200 ml,150 ml;64113,52220,20761
- ahumado;Plato principal;Lechuga,Cebolla,Naranja;Grande,mediano,pequeño;71792,41504,25452
- termino medio;Natural;Tomate,Pimenton,Bacalao;8 onzas,5 onzas,3 onzas;74434,34194,25293
- gourmet;Adicionales;Pan,Cebolla,Naranja;Familiar,mediano,personal;68234,50939,44356
- con salsa;Adicionales;Lechuga,Queso,Frijol;8 onzas,5 onzas,3 onzas;62142,52717,16977
- papas rico;Plato principal;Lenteja,Leche,Naranja;8 onzas,5 onzas,3 onzas;69890,50033,15851
- papas papas;Bebida;Lechuga,Queso,Naranja;Grande,mediano,pequeño;58113,38224,17867
- papas ensalada;Plato principal;Lenteja,Cilantro,Frijol;500 ml,200 ml,150 ml;62109,43145,31176
- papas chocolate;Aperitivo;Pan,Leche,Agua;Grande,mediano,pequeño;57467,36071,33383
- papas Filet;Bebida;Lenteja,Queso,Naranja;Familiar,mediano,personal;69030,26428,36448
- papas bbq;Comida chatarra;Lenteja,Pimenton,Naranja;Familiar,mediano,personal;66767,42972,34684
- papas ahumado;Adicionales;Pan,Queso,Agua;8 onzas,5 onzas,3 onzas;74458,30429,9686
- papas termino medio;Comida chatarra;Lenteja,Queso,Frijol;8 onzas,5 onzas,3 onzas;56531,50184,12950
- papas gourmet;Plato principal;Lechuga,Pimenton,Harina;500 ml,200 ml,150 ml;57117,52308,44604
- papas con salsa;Bebida;Pan,Queso,Bacalao;Grande,mediano,pequeño;72427,53017,37530
- ensalada rico;Dulces;Lechuga,Leche,Bacalao;Familiar,mediano,personal;69886,27820,42827
- ensalada papas;Comida chatarra;Lechuga,Leche,Agua;Grande,mediano,pequeño;70589,39304,46737
- ensalada ensalada;Adicionales;Lenteja,Cebolla,Naranja;8 onzas,5 onzas,3 onzas;56729,36525,19459
- ensalada chocolate;Natural;Lenteja,Cebolla,Bacalao;8 onzas,5 onzas,3 onzas;63867,40527,20183
- ensalada Filet;Comida de mar;Pan,Queso,Frijol;8 onzas,5 onzas,3 onzas;61953,41404,47830
- ensalada bbq;Adicionales;Lenteja,Cilantro,Agua;Grande,mediano,pequeño;72465,26614,38259
- ensalada ahumado;Plato principal;Pan,Queso,Naranja;8 onzas,5 onzas,3 onzas;72427,48433,13568
- ensalada termino medio;Bebida;Tomate,Cebolla,Bacalao;500 ml,200 ml,150 ml;66428,36743,13065
- ensalada gourmet;Aperitivo;Pan,Leche,Agua;500 ml,200 ml,150 ml;61811,42417,35733
- ensalada con salsa;Adicionales;Pan,Cilantro,Harina;Familiar,mediano,personal;55949,47879,31816
- chocolate rico;Carnes;Lechuga,Queso,Agua;Grande,mediano,pequeño;71011,44779,34573
- chocolate papas;Carnes;Pan,Cebolla,Bacalao;Familiar,mediano,personal;68832,28866,31271
- chocolate ensalada;Panaderia;Tomate,Queso,Bacalao;8 onzas,5 onzas,3 onzas;71414,51980,39065
- chocolate chocolate;Natural;Tomate,Pimenton,Frijol;8 onzas,5 onzas,3 onzas;71554,47715,21121
- chocolate Filet;Dulces;Lenteja,Cebolla,Naranja;500 ml,200 ml,150 ml;63657,47924,8458
- chocolate bbq;Panaderia;Tomate,Cilantro,Frijol;500 ml,200 ml,150 ml;66122,38519,40081
- chocolate ahumado;Comida chatarra;Pan,Leche,Frijol;8 onzas,5 onzas,3 onzas;57272,25919,48531
- chocolate termino medio;Comida chatarra;Tomate,Leche,Naranja;Grande,mediano,pequeño;56007,51670,24300
- chocolate gourmet;Aperitivo;Lechuga,Leche,Frijol;Grande,mediano,pequeño;65464,26207,13605
- chocolate con salsa;Plato principal;Lechuga,Cebolla,Frijol;8 onzas,5 onzas,3 onzas;65572,40051,21136
- Filet rico;Adicionales;Lechuga,Pimenton,Frijol;Grande,mediano,pequeño;57567,50267,45405
- Filet papas;Carnes;Lenteja,Cebolla,Harina;8 onzas,5 onzas,3 onzas;60382,43975,18868
- Filet ensalada;Plato principal;Lenteja,Cebolla,Agua;500 ml,200 ml,150 ml;66072,33040,15511
- Filet chocolate;Adicionales;Lenteja,Cilantro,Bacalao;Grande,mediano,pequeño;59466,39813,21731
- Filet Filet;Panaderia;Lechuga,Cilantro,Agua;8 onzas,5 onzas,3 onzas;68998,35833,28833
- Filet bbq;Plato principal;Lechuga,Queso,Agua;500 ml,200 ml,150 ml;67611,39132,21582
- Filet ahumado;Bebida;Lenteja,Leche,Frijol;500 ml,200 ml,150 ml;58403,42723,9152
- Filet termino medio;Aperitivo;Lenteja,Queso,Harina;500 ml,200 ml,150 ml;66271,37167,27831
- Filet gourmet;Natural;Lechuga,Cilantro,Bacalao;Grande,mediano,pequeño;58201,43590,49496
- Filet con salsa;Aperitivo;Lechuga,Cebolla,Bacalao;Grande,mediano,pequeño;71638,26806,42553
- bbq rico;Aperitivo;Lenteja,Leche,Frijol;Familiar,mediano,personal;72284,44043,13123
- bbq papas;Plato principal;Lenteja,Cilantro,Bacalao;Familiar,mediano,personal;64793,40203,37411
- bbq ensalada;Natural;Pan,Pimenton,Frijol;8 onzas,5 onzas,3 onzas;66165,54839,17022
- bbq chocolate;Panaderia;Lenteja,Queso,Agua;500 ml,200 ml,150 ml;70141,26730,47381
- bbq Filet;Comida de mar;Lenteja,Pimenton,Agua;Grande,mediano,pequeño;72867,39366,11451
- bbq bbq;Dulces;Pan,Leche,Bacalao;8 onzas,5 onzas,3 onzas;60653,42096,38545
- bbq ahumado;Aperitivo;Lenteja,Queso,Frijol;8 onzas,5 onzas,3 onzas;69277,28313,35411
- bbq termino medio;Bebida;Lenteja,Queso,Naranja;8 onzas,5 onzas,3 onzas;61328,52464,14820
- bbq gourmet;Bebida;Tomate,Leche,Naranja;Familiar,mediano,personal;73113,45742,12151
- bbq con salsa;Comida de mar;Pan,Cebolla,Naranja;Familiar,mediano,personal;70887,39328,12296
- ahumado rico;Carnes;Lechuga,Pimenton,Harina;8 onzas,5 onzas,3 onzas;69469,50677,10561
- ahumado papas;Carnes;Tomate,Cilantro,Bacalao;500 ml,200 ml,150 ml;59457,47177,36929
- ahumado ensalada;Comida chatarra;Tomate,Queso,Naranja;500 ml,200 ml,150 ml;61057,33394,19924
- ahumado chocolate;Carnes;Pan,Leche,Naranja;500 ml,200 ml,150 ml;59575,36829,40880
- ahumado Filet;Plato principal;Tomate,Pimenton,Harina;Grande,mediano,pequeño;60201,51891,28911
- ahumado bbq;Panaderia;Lenteja,Cilantro,Bacalao;Familiar,mediano,personal;69710,40399,37087
- ahumado ahumado;Aperitivo;Lechuga,Queso,Harina;500 ml,200 ml,150 ml;65280,35418,30105
- ahumado termino medio;Aperitivo;Lechuga,Queso,Harina;8 onzas,5 onzas,3 onzas;56213,29368,32817
- ahumado gourmet;Comida chatarra;Tomate,Cebolla,Agua;Familiar,mediano,personal;65233,48072,23981
- ahumado con salsa;Plato principal;Lechuga,Pimenton,Frijol;Familiar,mediano,personal;55751,54838,36058
- termino medio rico;Adicionales;Lenteja,Cilantro,Bacalao;Grande,mediano,pequeño;56982,30693,40481
- termino medio papas;Carnes;Pan,Cilantro,Bacalao;Grande,mediano,pequeño;74523,54650,29127
- termino medio ensalada;Dulces;Lenteja,Pimenton,Agua;Grande,mediano,pequeño;61130,33725,12312
- termino medio chocolate;Aperitivo;Lenteja,Leche,Frijol;500 ml,200 ml,150 ml;72110,37033,31144
- termino medio Filet;Comida chatarra;Tomate,Queso,Bacalao;500 ml,200 ml,150 ml;70076,34003,15236
- termino medio bbq;Plato principal;Lenteja,Queso,Agua;500 ml,200 ml,150 ml;72839,47120,19745
- termino medio ahumado;Comida chatarra;Tomate,Cilantro,Agua;Grande,mediano,pequeño;59419,43529,10352
- termino medio termino medio;Aperitivo;Tomate,Cilantro,Naranja;8 onzas,5 onzas,3 onzas;70043,40461,41169
- termino medio gourmet;Adicionales;Lenteja,Pimenton,Bacalao;Grande,mediano,pequeño;56606,44908,28635
- termino medio con salsa;Comida chatarra;Lechuga,Pimenton,Bacalao;Grande,mediano,pequeño;73985,25605,36453
- gourmet rico;Comida chatarra;Lenteja,Leche,Agua;Familiar,mediano,personal;69869,40152,36338
- gourmet papas;Adicionales;Pan,Cilantro,Agua;500 ml,200 ml,150 ml;70870,47297,9129
- gourmet ensalada;Comida de mar;Lenteja,Leche,Agua;8 onzas,5 onzas,3 onzas;56268,30806,35510
- gourmet chocolate;Aperitivo;Tomate,Cilantro,Agua;Grande,mediano,pequeño;60586,49551,29835
- gourmet Filet;Comida chatarra;Pan,Leche,Naranja;8 onzas,5 onzas,3 onzas;71967,43931,28382
- gourmet bbq;Bebida;Lechuga,Cilantro,Bacalao;8 onzas,5 onzas,3 onzas;57939,29392,44156
- gourmet ahumado;Adicionales;Tomate,Cilantro,Frijol;500 ml,200 ml,150 ml;66813,27166,14257
- gourmet termino medio;Natural;Lechuga,Cilantro,Frijol;Grande,mediano,pequeño;74801,54816,24374
- gourmet gourmet;Plato principal;Lenteja,Cebolla,Harina;500 ml,200 ml,150 ml;65052,36477,47766
- gourmet con salsa;Adicionales;Lechuga,Leche,Bacalao;Grande,mediano,pequeño;59330,32093,12754
- con salsa rico;Dulces;Lechuga,Cebolla,Naranja;500 ml,200 ml,150 ml;73964,35522,13341
- con salsa papas;Plato principal;Tomate,Cilantro,Frijol;Familiar,mediano,personal;68440,33036,44927
- con salsa ensalada;Aperitivo;Tomate,Leche,Harina;Grande,mediano,pequeño;65377,40098,33292
- con salsa chocolate;Plato principal;Lenteja,Leche,Agua;8 onzas,5 onzas,3 onzas;56567,51126,36913
- con salsa Filet;Comida de mar;Tomate,Cebolla,Harina;Familiar,mediano,personal;58439,50075,21021
- con salsa bbq;Adicionales;Pan,Cebolla,Frijol;Familiar,mediano,personal;74320,34151,33940
- con salsa ahumado;Carnes;Tomate,Queso,Frijol;8 onzas,5 onzas,3 onzas;58034,41185,39341
- con salsa termino medio;Plato principal;Pan,Pimenton,Naranja;Grande,mediano,pequeño;58628,53266,23726
- con salsa gourmet;Comida de mar;Tomate,Queso,Naranja;Grande,mediano,pequeño;59096,49786,11449
- con salsa con salsa;Bebida;Lechuga,Queso,Harina;Grande,mediano,pequeño;71140,52488,31470
- papas rico rico;Adicionales;Pan,Cebolla,Frijol;Familiar,mediano,personal;71899,29140,18355
- papas rico papas;Comida de mar;Lechuga,Queso,Agua;500 ml,200 ml,150 ml;74573,33828,8035
- papas rico ensalada;Comida de mar;Tomate,Queso,Frijol;Familiar,mediano,personal;56453,39544,34141
- papas rico chocolate;Comida chatarra;Lenteja,Pimenton,Harina;Familiar,mediano,personal;71305,34363,18321
- papas rico Filet;Plato principal;Pan,Pimenton,Agua;Grande,mediano,pequeño;69798,39432,29628
- papas rico bbq;Comida chatarra;Lenteja,Queso,Harina;500 ml,200 ml,150 ml;69640,38274,10461
- papas rico ahumado;Aperitivo;Lechuga,Cebolla,Harina;Grande,mediano,pequeño;60733,53671,47955
- papas rico termino medio;Bebida;Lenteja,Queso,Frijol;8 onzas,5 onzas,3 onzas;72600,47996,9296
- papas rico gourmet;Carnes;Lenteja,Queso,Naranja;8 onzas,5 onzas,3 onzas;56714,31066,34240
- papas rico con salsa;Bebida;Lenteja,Queso,Bacalao;500 ml,200 ml,150 ml;64678,48739,32431
- papas papas rico;Bebida;Tomate,Cebolla,Harina;Grande,mediano,pequeño;62491,54473,28623
- papas papas papas;Comida chatarra;Lechuga,Leche,Bacalao;Grande,mediano,pequeño;73386,48198,23376
- papas papas ensalada;Plato principal;Lenteja,Queso,Frijol;8 onzas,5 onzas,3 onzas;62465,34942,33015
- papas papas chocolate;Panaderia;Lechuga,Leche,Agua;8 onzas,5 onzas,3 onzas;58540,50193,15430
- papas papas Filet;Comida chatarra;Pan,Queso,Agua;Familiar,mediano,personal;68994,50708,25282
- papas papas bbq;Carnes;Tomate,Queso,Harina;Familiar,mediano,personal;57908,39740,30081
- papas papas ahumado;Comida de mar;Lechuga,Pimenton,Harina;Familiar,mediano,personal;55431,43206,13422
- papas papas termino medio;Comida de mar;Tomate,Queso,Frijol;Grande,mediano,pequeño;56823,38175,26878
- papas papas gourmet;Natural;Pan,Cilantro,Agua;Familiar,mediano,personal;66668,38197,8204
- papas papas con salsa;Comida chatarra;Tomate,Cilantro,Bacalao;Grande,mediano,pequeño;55156,46550,9205
- papas ensalada rico;Carnes;Lenteja,Cebolla,Frijol;Familiar,mediano,personal;63735,36947,38154
- papas ensalada papas;Carnes;Lenteja,Leche,Bacalao;Familiar,mediano,personal;62270,47393,15540
- papas ensalada ensalada;Comida chatarra;Pan,Queso,Naranja;Grande,mediano,pequeño;61350,40534,16255
- papas ensalada chocolate;Bebida;Lechuga,Cebolla,Agua;Grande,mediano,pequeño;64556,51647,28093
- papas ensalada Filet;Aperitivo;Pan,Queso,Frijol;Familiar,mediano,personal;74141,31312,47376
- papas ensalada bbq;Aperitivo;Pan,Cebolla,Naranja;Familiar,mediano,personal;61245,29017,44594
- papas ensalada ahumado;Comida de mar;Lechuga,Queso,Bacalao;8 onzas,5 onzas,3 onzas;69797,30959,9395
- papas ensalada termino medio;Panaderia;Tomate,Pimenton,Harina;500 ml,200 ml,150 ml;61534,40796,23046
- papas ensalada gourmet;Carnes;Tomate,Cilantro,Bacalao;Grande,mediano,pequeño;64784,47128,31891
- papas ensalada con salsa;Aperitivo;Lenteja,Pimenton,Bacalao;8 onzas,5 onzas,3 onzas;56454,38088,19197
- papas chocolate rico;Aperitivo;Tomate,Cebolla,Bacalao;500 ml,200 ml,150 ml;63544,30322,49035
- papas chocolate papas;Aperitivo;Lenteja,Cebolla,Bacalao;Familiar,mediano,personal;66156,49685,19520
- papas chocolate ensalada;Plato principal;Lenteja,Leche,Harina;8 onzas,5 onzas,3 onzas;68913,38428,12858
- papas chocolate chocolate;Aperitivo;Lenteja,Cebolla,Frijol;8 onzas,5 onzas,3 onzas;71390,52806,27098
- papas chocolate Filet;Adicionales;Pan,Cilantro,Harina;500 ml,200 ml,150 ml;62912,54318,30655
- papas chocolate bbq;Bebida;Tomate,Cebolla,Naranja;Grande,mediano,pequeño;62196,53218,16567
- papas chocolate ahumado;Dulces;Tomate,Cebolla,Frijol;Familiar,mediano,personal;56916,39607,34875
- papas chocolate termino medio;Natural;Tomate,Cebolla,Harina;Grande,mediano,pequeño;62103,45643,23995
- papas chocolate gourmet;Carnes;Tomate,Queso,Naranja;8 onzas,5 onzas,3 onzas;72690,51285,34589
- papas chocolate con salsa;Dulces;Tomate,Cebolla,Harina;500 ml,200 ml,150 ml;57322,48448,37315
- papas Filet rico;Dulces;Tomate,Cilantro,Bacalao;500 ml,200 ml,150 ml;74468,32443,36590
- papas Filet papas;Bebida;Lechuga,Cilantro,Harina;500 ml,200 ml,150 ml;65930,38746,17868
- papas Filet ensalada;Bebida;Tomate,Leche,Frijol;500 ml,200 ml,150 ml;55295,27324,34981
- papas Filet chocolate;Plato principal;Lenteja,Cebolla,Harina;Grande,mediano,pequeño;60343,43651,22672
- papas Filet Filet;Comida chatarra;Tomate,Pimenton,Harina;500 ml,200 ml,150 ml;59127,54061,30414
- papas Filet bbq;Comida de mar;Lenteja,Cebolla,Harina;Grande,mediano,pequeño;58273,42490,30334
- papas Filet ahumado;Panaderia;Pan,Pimenton,Harina;Familiar,mediano,personal;74436,40930,46153
- papas Filet termino medio;Dulces;Lenteja,Queso,Harina;Grande,mediano,pequeño;69630,35278,34062
- papas Filet gourmet;Natural;Tomate,Leche,Frijol;Grande,mediano,pequeño;63283,35321,33346
- papas Filet con salsa;Bebida;Lenteja,Queso,Harina;500 ml,200 ml,150 ml;57475,53824,17289
- papas bbq rico;Comida chatarra;Lenteja,Leche,Harina;Grande,mediano,pequeño;66331,37027,27467
- papas bbq papas;Comida de mar;Lenteja,Pimenton,Frijol;Grande,mediano,pequeño;63363,54600,33764
- papas bbq ensalada;Bebida;Lenteja,Queso,Frijol;500 ml,200 ml,150 ml;64071,41788,17859
- papas bbq chocolate;Panaderia;Pan,Cebolla,Harina;Familiar,mediano,personal;65674,38211,29635
- papas bbq Filet;Panaderia;Tomate,Pimenton,Frijol;500 ml,200 ml,150 ml;62747,53083,30636
- papas bbq bbq;Plato principal;Lenteja,Leche,Naranja;500 ml,200 ml,150 ml;61044,28642,22502
- papas bbq ahumado;Bebida;Tomate,Cebolla,Harina;8 onzas,5 onzas,3 onzas;67555,35276,15818
- papas bbq termino medio;Panaderia;Lenteja,Pimenton,Harina;Familiar,mediano,personal;67246,48486,39403
- papas bbq gourmet;Aperitivo;Pan,Queso,Agua;Grande,mediano,pequeño;64231,27274,48535
- papas bbq con salsa;Carnes;Lechuga,Leche,Agua;500 ml,200 ml,150 ml;62768,26155,16245
- papas ahumado rico;Comida chatarra;Lenteja,Pimenton,Frijol;8 onzas,5 onzas,3 onzas;74081,54251,23950
- papas ahumado papas;Panaderia;Lenteja,Cilantro,Harina;Familiar,mediano,personal;72885,26072,44080
- papas ahumado ensalada;Carnes;Lenteja,Queso,Harina;8 onzas,5 onzas,3 onzas;74907,35203,45762
- papas ahumado chocolate;Adicionales;Lechuga,Pimenton,Bacalao;500 ml,200 ml,150 ml;64697,37684,15138
- papas ahumado Filet;Carnes;Lechuga,Queso,Agua;Grande,mediano,pequeño;63970,29725,44571
- papas ahumado bbq;Dulces;Pan,Queso,Bacalao;8 onzas,5 onzas,3 onzas;65426,27827,9138
- papas ahumado ahumado;Comida de mar;Pan,Pimenton,Bacalao;8 onzas,5 onzas,3 onzas;58214,32361,31240
- papas ahumado termino medio;Dulces;Lenteja,Pimenton,Naranja;Familiar,mediano,personal;74979,36476,20373
- papas ahumado gourmet;Carnes;Lenteja,Leche,Naranja;8 onzas,5 onzas,3 onzas;66999,36835,32439
- papas ahumado con salsa;Comida chatarra;Lenteja,Cilantro,Bacalao;8 onzas,5 onzas,3 onzas;69163,33577,43300
- papas termino medio rico;Comida chatarra;Pan,Leche,Bacalao;Familiar,mediano,personal;56418,49455,29134
- papas termino medio papas;Panaderia;Lechuga,Cebolla,Frijol;Familiar,mediano,personal;70366,43914,15460
- papas termino medio ensalada;Plato principal;Lechuga,Cilantro,Frijol;Grande,mediano,pequeño;69281,38675,49763
- papas termino medio chocolate;Panaderia;Tomate,Queso,Agua;500 ml,200 ml,150 ml;71290,52630,27698
- papas termino medio Filet;Carnes;Lechuga,Pimenton,Harina;Familiar,mediano,personal;66248,42452,11414
- papas termino medio bbq;Natural;Pan,Queso,Naranja;500 ml,200 ml,150 ml;63481,40638,46223
- papas termino medio ahumado;Panaderia;Pan,Queso,Bacalao;Grande,mediano,pequeño;61181,27973,14693
- papas termino medio termino medio;Plato principal;Pan,Cilantro,Harina;Grande,mediano,pequeño;57302,42103,41908
- papas termino medio gourmet;Comida chatarra;Tomate,Leche,Frijol;500 ml,200 ml,150 ml;64081,29926,31003
- papas termino medio con salsa;Comida de mar;Lechuga,Cilantro,Bacalao;Familiar,mediano,personal;72493,34099,25752
- papas gourmet rico;Panaderia;Lechuga,Cebolla,Agua;Grande,mediano,pequeño;71409,26405,9884
- papas gourmet papas;Adicionales;Naranja,Cebolla,Lechuga;500 ml,200 ml,150 ml;64854,27210,49513
- papas gourmet ensalada;Bebida;Harina,Cilantro,Pan;Grande,mediano,pequeño;73512,51280,16775
- papas gourmet chocolate;Carnes;Bacalao,Leche,Tomate;Familiar,mediano,personal;60993,46090,19669
- papas gourmet Filet;Plato principal;Frijol,Cilantro,Lenteja;500 ml,200 ml,150 ml;57674,35061,34757
- papas gourmet bbq;Dulces;Frijol,Cilantro,Lechuga;500 ml,200 ml,150 ml;60834,35547,42882
- papas gourmet ahumado;Dulces;Naranja,Cebolla,Tomate;Grande,mediano,pequeño;55389,40662,18334
- papas gourmet termino medio;Dulces;Harina,Leche,Lechuga;8 onzas,5 onzas,3 onzas;68653,38979,27325
- papas gourmet gourmet;Panaderia;Frijol,Queso,Lechuga;Familiar,mediano,personal;70219,52768,44117
- papas gourmet con salsa;Panaderia;Agua,Huevos,Tomate;Grande,mediano,pequeño;69137,33794,18284
- papas con salsa rico;Comida chatarra;Frijol,Leche,Lenteja;8 onzas,5 onzas,3 onzas;63179,40752,15044
- papas con salsa papas;Plato principal;Frijol,Queso,Tomate;500 ml,200 ml,150 ml;68264,30461,33392
- papas con salsa ensalada;Aperitivo;Frijol,Queso,Lenteja;Familiar,mediano,personal;57533,48179,19404
- papas con salsa chocolate;Bebida;Frijol,Cilantro,Lenteja;Familiar,mediano,personal;58974,47886,38756
- papas con salsa Filet;Carnes;Harina,Cebolla,Lenteja;Familiar,mediano,personal;57961,33247,15603
- papas con salsa bbq;Adicionales;Naranja,Leche,Pan;500 ml,200 ml,150 ml;61708,34485,41477
- papas con salsa ahumado;Natural;Frijol,Queso,Lechuga;Grande,mediano,pequeño;66582,47655,40304
- papas con salsa termino medio;Dulces;Frijol,Cilantro,Lechuga;8 onzas,5 onzas,3 onzas;62136,48592,30009
- papas con salsa gourmet;Dulces;Frijol,Leche,Pan;500 ml,200 ml,150 ml;57143,46966,38503
- papas con salsa con salsa;Adicionales;Bacalao,Leche,Pan;8 onzas,5 onzas,3 onzas;71205,49271,40689
- ensalada rico rico;Panaderia;Frijol,Pimenton,Pan;500 ml,200 ml,150 ml;57885,27225,13171
- ensalada rico papas;Bebida;Harina,Pimenton,Tomate;Grande,mediano,pequeño;57559,34834,10221
- ensalada rico ensalada;Comida de mar;Frijol,Queso,Lenteja;8 onzas,5 onzas,3 onzas;57009,30276,15693
- ensalada rico chocolate;Natural;Agua,Cebolla,Pan;8 onzas,5 onzas,3 onzas;72539,30820,22546
- ensalada rico Filet;Bebida;Naranja,Queso,Lechuga;8 onzas,5 onzas,3 onzas;72802,36525,41500
- ensalada rico bbq;Panaderia;Bacalao,Huevos,Lenteja;500 ml,200 ml,150 ml;63830,52227,49366
- ensalada rico ahumado;Plato principal;Harina,Queso,Pan;Grande,mediano,pequeño;72941,43105,42434
- ensalada rico termino medio;Dulces;Agua,Cilantro,Pan;8 onzas,5 onzas,3 onzas;59136,31313,35964
- ensalada rico gourmet;Dulces;Frijol,Leche,Lenteja;500 ml,200 ml,150 ml;58990,37195,16616
- ensalada rico con salsa;Aperitivo;Frijol,Leche,Pan;500 ml,200 ml,150 ml;70888,30833,34304
- ensalada papas rico;Plato principal;Frijol,Huevos,Pan;Grande,mediano,pequeño;68245,36816,19502
- ensalada papas papas;Comida de mar;Bacalao,Leche,Pan;500 ml,200 ml,150 ml;59956,35779,24259
- ensalada papas ensalada;Dulces;Frijol,Pimenton,Lechuga;Familiar,mediano,personal;69907,54207,42181
- ensalada papas chocolate;Panaderia;Harina,Pimenton,Pan;Grande,mediano,pequeño;59132,27979,31196
- ensalada papas Filet;Panaderia;Naranja,Cilantro,Lechuga;Grande,mediano,pequeño;70072,25944,40844
- ensalada papas bbq;Plato principal;Frijol,Queso,Lechuga;Familiar,mediano,personal;57982,38646,17780
- ensalada papas ahumado;Carnes;Frijol,Huevos,Tomate;Grande,mediano,pequeño;64868,53027,11792
- ensalada papas termino medio;Bebida;Agua,Pimenton,Lenteja;500 ml,200 ml,150 ml;73599,38103,35075
- ensalada papas gourmet;Carnes;Frijol,Queso,Lenteja;Familiar,mediano,personal;72031,30085,23880
- ensalada papas con salsa;Carnes;Harina,Queso,Tomate;500 ml,200 ml,150 ml;67802,48813,40795
- ensalada ensalada rico;Panaderia;Harina,Huevos,Pan;500 ml,200 ml,150 ml;71760,46258,12874
- ensalada ensalada papas;Natural;Frijol,Cilantro,Tomate;Familiar,mediano,personal;66596,52091,28812
- ensalada ensalada ensalada;Natural;Frijol,Cebolla,Lechuga;Familiar,mediano,personal;61795,29414,21182
- ensalada ensalada chocolate;Carnes;Frijol,Queso,Lechuga;8 onzas,5 onzas,3 onzas;72662,41453,35938
- ensalada ensalada Filet;Comida chatarra;Bacalao,Cebolla,Lechuga;Familiar,mediano,personal;73694,31102,20022
- ensalada ensalada bbq;Panaderia;Frijol,Cilantro,Pan;Grande,mediano,pequeño;55143,52470,34789
- ensalada ensalada ahumado;Bebida;Naranja,Cilantro,Pan;Familiar,mediano,personal;64458,44090,16276
- ensalada ensalada termino medio;Carnes;Harina,Cebolla,Lenteja;Familiar,mediano,personal;72909,32224,8674
- ensalada ensalada gourmet;Panaderia;Harina,Cebolla,Lenteja;500 ml,200 ml,150 ml;60212,29100,37976
- ensalada ensalada con salsa;Adicionales;Frijol,Huevos,Lechuga;500 ml,200 ml,150 ml;58588,34069,22967
- ensalada chocolate rico;Panaderia;Agua,Queso,Pan;8 onzas,5 onzas,3 onzas;63164,52982,33484
- ensalada chocolate papas;Adicionales;Harina,Huevos,Tomate;500 ml,200 ml,150 ml;74195,35472,35634
- ensalada chocolate ensalada;Natural;Harina,Pimenton,Pan;Familiar,mediano,personal;71043,27047,27851
- ensalada chocolate chocolate;Carnes;Frijol,Huevos,Lechuga;Grande,mediano,pequeño;66086,38132,18006
- ensalada chocolate Filet;Plato principal;Frijol,Queso,Lechuga;Grande,mediano,pequeño;60687,39189,22348
- ensalada chocolate bbq;Bebida;Agua,Huevos,Lechuga;Familiar,mediano,personal;68087,34018,44546
- ensalada chocolate ahumado;Comida chatarra;Harina,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;68016,49850,49485
- ensalada chocolate termino medio;Adicionales;Frijol,Queso,Tomate;Grande,mediano,pequeño;69874,40062,30261
- ensalada chocolate gourmet;Panaderia;Naranja,Cilantro,Lechuga;500 ml,200 ml,150 ml;67035,47140,28289
- ensalada chocolate con salsa;Comida de mar;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;57335,34390,36149
- ensalada Filet rico;Bebida;Frijol,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;63862,31725,22794
- ensalada Filet papas;Panaderia;Harina,Pimenton,Lechuga;500 ml,200 ml,150 ml;72411,54588,48508
- ensalada Filet ensalada;Plato principal;Bacalao,Cilantro,Lechuga;Familiar,mediano,personal;66358,32075,49471
- ensalada Filet chocolate;Dulces;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;72574,53287,22837
- ensalada Filet Filet;Carnes;Bacalao,Leche,Lenteja;Familiar,mediano,personal;70741,53231,40419
- ensalada Filet bbq;Carnes;Harina,Cebolla,Lenteja;Grande,mediano,pequeño;64831,25176,49126
- ensalada Filet ahumado;Bebida;Frijol,Huevos,Tomate;8 onzas,5 onzas,3 onzas;72978,37851,36746
- ensalada Filet termino medio;Aperitivo;Bacalao,Leche,Tomate;500 ml,200 ml,150 ml;59095,53631,44792
- ensalada Filet gourmet;Comida chatarra;Bacalao,Cebolla,Pan;8 onzas,5 onzas,3 onzas;73795,26223,38392
- ensalada Filet con salsa;Natural;Harina,Cilantro,Lechuga;Familiar,mediano,personal;72149,31950,37869
- ensalada bbq rico;Carnes;Harina,Cebolla,Lechuga;Grande,mediano,pequeño;66777,34467,42083
- ensalada bbq papas;Panaderia;Harina,Cebolla,Pan;Grande,mediano,pequeño;70578,43900,36999
- ensalada bbq ensalada;Bebida;Harina,Pimenton,Lechuga;500 ml,200 ml,150 ml;55304,42532,26508
- ensalada bbq chocolate;Plato principal;Naranja,Leche,Pan;Grande,mediano,pequeño;72377,27327,49275
- ensalada bbq Filet;Carnes;Frijol,Leche,Tomate;8 onzas,5 onzas,3 onzas;64627,51538,8240
- ensalada bbq bbq;Natural;Bacalao,Huevos,Lechuga;500 ml,200 ml,150 ml;59246,28684,29443
- ensalada bbq ahumado;Natural;Bacalao,Cilantro,Pan;8 onzas,5 onzas,3 onzas;57107,50410,38675
- ensalada bbq termino medio;Panaderia;Harina,Pimenton,Pan;Grande,mediano,pequeño;55334,38328,38833
- ensalada bbq gourmet;Comida chatarra;Frijol,Pimenton,Lechuga;500 ml,200 ml,150 ml;73124,38878,20742
- ensalada bbq con salsa;Comida de mar;Naranja,Pimenton,Lenteja;Grande,mediano,pequeño;69646,31818,20836
- ensalada ahumado rico;Adicionales;Frijol,Cebolla,Tomate;Familiar,mediano,personal;59723,47388,45009
- ensalada ahumado papas;Panaderia;Frijol,Cilantro,Lechuga;Grande,mediano,pequeño;55678,53758,14614
- ensalada ahumado ensalada;Dulces;Bacalao,Cilantro,Lechuga;8 onzas,5 onzas,3 onzas;68967,48613,20057
- ensalada ahumado chocolate;Dulces;Bacalao,Cilantro,Lenteja;Familiar,mediano,personal;66054,26434,36079
- ensalada ahumado Filet;Adicionales;Harina,Leche,Lechuga;500 ml,200 ml,150 ml;64567,44653,40908
- ensalada ahumado bbq;Dulces;Harina,Queso,Pan;500 ml,200 ml,150 ml;72234,45179,29741
- ensalada ahumado ahumado;Plato principal;Harina,Pimenton,Lechuga;500 ml,200 ml,150 ml;62645,27143,14363
- ensalada ahumado termino medio;Adicionales;Bacalao,Queso,Tomate;Grande,mediano,pequeño;70885,27316,37826
- ensalada ahumado gourmet;Dulces;Naranja,Huevos,Pan;Grande,mediano,pequeño;57555,33955,26162
- ensalada ahumado con salsa;Bebida;Bacalao,Cebolla,Tomate;Grande,mediano,pequeño;60089,51891,25035
- ensalada termino medio rico;Plato principal;Agua,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;60359,52618,18949
- ensalada termino medio papas;Natural;Agua,Leche,Lechuga;Familiar,mediano,personal;63616,34834,8400
- ensalada termino medio ensalada;Natural;Frijol,Huevos,Tomate;Grande,mediano,pequeño;58720,45745,37515
- ensalada termino medio chocolate;Panaderia;Frijol,Huevos,Pan;Familiar,mediano,personal;59236,28261,48964
- ensalada termino medio Filet;Dulces;Harina,Cebolla,Lechuga;Grande,mediano,pequeño;61814,45237,25486
- ensalada termino medio bbq;Adicionales;Bacalao,Cilantro,Tomate;Familiar,mediano,personal;55108,41604,18703
- ensalada termino medio ahumado;Carnes;Naranja,Queso,Tomate;Grande,mediano,pequeño;69321,26319,19280
- ensalada termino medio termino medio;Dulces;Bacalao,Leche,Lechuga;500 ml,200 ml,150 ml;59274,49060,38294
- ensalada termino medio gourmet;Comida de mar;Agua,Leche,Tomate;500 ml,200 ml,150 ml;64013,44820,44718
- ensalada termino medio con salsa;Bebida;Bacalao,Leche,Pan;8 onzas,5 onzas,3 onzas;72643,47149,49352
- ensalada gourmet rico;Bebida;Bacalao,Huevos,Pan;8 onzas,5 onzas,3 onzas;55495,32399,47046
- ensalada gourmet papas;Aperitivo;Bacalao,Huevos,Pan;500 ml,200 ml,150 ml;60097,54392,32258
- ensalada gourmet ensalada;Natural;Agua,Cebolla,Lenteja;500 ml,200 ml,150 ml;62181,31146,14438
- ensalada gourmet chocolate;Adicionales;Frijol,Queso,Pan;Grande,mediano,pequeño;59087,38833,42521
- ensalada gourmet Filet;Panaderia;Harina,Pimenton,Lenteja;500 ml,200 ml,150 ml;65198,50601,10159
- ensalada gourmet bbq;Dulces;Bacalao,Cilantro,Lechuga;Grande,mediano,pequeño;66379,33182,40917
- ensalada gourmet ahumado;Bebida;Agua,Leche,Lechuga;8 onzas,5 onzas,3 onzas;61698,50842,35080
- ensalada gourmet termino medio;Plato principal;Naranja,Pimenton,Pan;500 ml,200 ml,150 ml;61684,51057,20157
- ensalada gourmet gourmet;Panaderia;Frijol,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;71787,53105,12136
- ensalada gourmet con salsa;Natural;Frijol,Pimenton,Tomate;Grande,mediano,pequeño;70517,39398,17309
- ensalada con salsa rico;Dulces;Harina,Cebolla,Lenteja;500 ml,200 ml,150 ml;74888,44772,39621
- ensalada con salsa papas;Dulces;Frijol,Queso,Pan;Grande,mediano,pequeño;55281,42675,37948
- ensalada con salsa ensalada;Aperitivo;Naranja,Cilantro,Tomate;Grande,mediano,pequeño;71724,51919,45788
- ensalada con salsa chocolate;Bebida;Frijol,Cebolla,Lenteja;500 ml,200 ml,150 ml;67163,46900,8070
- ensalada con salsa Filet;Carnes;Harina,Pimenton,Pan;500 ml,200 ml,150 ml;66443,41119,44656
- ensalada con salsa bbq;Carnes;Agua,Queso,Pan;Grande,mediano,pequeño;62201,29555,16752
- ensalada con salsa ahumado;Carnes;Harina,Queso,Lenteja;8 onzas,5 onzas,3 onzas;63702,43630,49945
- ensalada con salsa termino medio;Aperitivo;Harina,Queso,Pan;500 ml,200 ml,150 ml;55049,48916,26737
- ensalada con salsa gourmet;Natural;Bacalao,Queso,Lenteja;Grande,mediano,pequeño;69745,27047,49956
- ensalada con salsa con salsa;Comida chatarra;Agua,Leche,Pan;Grande,mediano,pequeño;66319,48837,46732
- chocolate rico rico;Bebida;Bacalao,Leche,Tomate;8 onzas,5 onzas,3 onzas;63449,48106,12691
- chocolate rico papas;Aperitivo;Frijol,Leche,Pan;Familiar,mediano,personal;66080,45250,30827
- chocolate rico ensalada;Aperitivo;Bacalao,Pimenton,Lechuga;Grande,mediano,pequeño;59511,45570,29238
- chocolate rico chocolate;Comida de mar;Bacalao,Cilantro,Pan;8 onzas,5 onzas,3 onzas;65002,41417,41200
- chocolate rico Filet;Panaderia;Agua,Leche,Lechuga;8 onzas,5 onzas,3 onzas;58004,28277,23619
- chocolate rico bbq;Comida de mar;Bacalao,Leche,Lechuga;Familiar,mediano,personal;58429,45246,29122
- chocolate rico ahumado;Bebida;Naranja,Pimenton,Pan;Familiar,mediano,personal;61882,47801,8207
- chocolate rico termino medio;Dulces;Naranja,Pimenton,Lenteja;500 ml,200 ml,150 ml;68738,38969,22346
- chocolate rico gourmet;Natural;Agua,Cebolla,Tomate;500 ml,200 ml,150 ml;67666,31615,39756
- chocolate rico con salsa;Comida de mar;Frijol,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;69693,33733,21452
- chocolate papas rico;Bebida;Agua,Pimenton,Tomate;500 ml,200 ml,150 ml;56439,29424,28434
- chocolate papas papas;Natural;Harina,Huevos,Lenteja;Familiar,mediano,personal;68160,26548,30959
- chocolate papas ensalada;Carnes;Agua,Cilantro,Pan;Grande,mediano,pequeño;62625,31892,8774
- chocolate papas chocolate;Comida de mar;Frijol,Cilantro,Lenteja;Familiar,mediano,personal;70366,49092,35825
- chocolate papas Filet;Panaderia;Harina,Cilantro,Lenteja;500 ml,200 ml,150 ml;58403,47728,19023
- chocolate papas bbq;Panaderia;Bacalao,Cilantro,Pan;Familiar,mediano,personal;66972,40390,45851
- chocolate papas ahumado;Adicionales;Bacalao,Leche,Lechuga;Familiar,mediano,personal;65724,49813,26084
- chocolate papas termino medio;Comida de mar;Harina,Huevos,Lechuga;500 ml,200 ml,150 ml;71414,41571,17600
- chocolate papas gourmet;Comida chatarra;Harina,Cebolla,Lechuga;Grande,mediano,pequeño;63472,27317,22638
- chocolate papas con salsa;Panaderia;Frijol,Huevos,Pan;500 ml,200 ml,150 ml;72061,39199,43031
- chocolate ensalada rico;Comida de mar;Frijol,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;69200,48510,30786
- chocolate ensalada papas;Adicionales;Frijol,Queso,Lechuga;8 onzas,5 onzas,3 onzas;70741,44961,27065
- chocolate ensalada ensalada;Comida chatarra;Frijol,Leche,Lenteja;8 onzas,5 onzas,3 onzas;64908,47112,36124
- chocolate ensalada chocolate;Panaderia;Naranja,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;74421,42243,8642
- chocolate ensalada Filet;Panaderia;Harina,Leche,Lechuga;8 onzas,5 onzas,3 onzas;59769,46748,21794
- chocolate ensalada bbq;Carnes;Harina,Queso,Tomate;500 ml,200 ml,150 ml;73498,37222,10747
- chocolate ensalada ahumado;Natural;Bacalao,Cebolla,Tomate;Grande,mediano,pequeño;66085,44496,40565
- chocolate ensalada termino medio;Natural;Bacalao,Queso,Tomate;Grande,mediano,pequeño;59274,35193,9216
- chocolate ensalada gourmet;Panaderia;Naranja,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;61029,47203,31876
- chocolate ensalada con salsa;Aperitivo;Bacalao,Pimenton,Lechuga;Familiar,mediano,personal;55425,33302,8217
- chocolate chocolate rico;Plato principal;Bacalao,Cilantro,Pan;8 onzas,5 onzas,3 onzas;67596,48466,17779
- chocolate chocolate papas;Comida de mar;Frijol,Queso,Tomate;500 ml,200 ml,150 ml;68377,33488,20319
- chocolate chocolate ensalada;Comida de mar;Frijol,Huevos,Pan;Grande,mediano,pequeño;61348,35994,34488
- chocolate chocolate chocolate;Aperitivo;Bacalao,Leche,Pan;Grande,mediano,pequeño;55132,40566,16718
- chocolate chocolate Filet;Comida de mar;Harina,Cilantro,Pan;8 onzas,5 onzas,3 onzas;72631,29457,46891
- chocolate chocolate bbq;Natural;Frijol,Pimenton,Pan;Familiar,mediano,personal;63323,51408,8956
- chocolate chocolate ahumado;Comida chatarra;Frijol,Cebolla,Lechuga;500 ml,200 ml,150 ml;64027,54735,39361
- chocolate chocolate termino medio;Panaderia;Naranja,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;55742,44329,36363
- chocolate chocolate gourmet;Comida chatarra;Frijol,Huevos,Tomate;500 ml,200 ml,150 ml;70744,29114,44148
- chocolate chocolate con salsa;Aperitivo;Harina,Pimenton,Pan;8 onzas,5 onzas,3 onzas;63643,29284,31137
- chocolate Filet rico;Aperitivo;Bacalao,Huevos,Tomate;500 ml,200 ml,150 ml;57342,29047,28759
- chocolate Filet papas;Comida de mar;Bacalao,Leche,Tomate;500 ml,200 ml,150 ml;63367,43262,13586
- chocolate Filet ensalada;Bebida;Agua,Queso,Lenteja;500 ml,200 ml,150 ml;66354,36822,18811
- chocolate Filet chocolate;Bebida;Frijol,Leche,Tomate;8 onzas,5 onzas,3 onzas;56374,42815,21340
- chocolate Filet Filet;Adicionales;Naranja,Queso,Pan;Grande,mediano,pequeño;61030,44506,34127
- chocolate Filet bbq;Bebida;Bacalao,Leche,Tomate;Familiar,mediano,personal;67149,51930,22593
- chocolate Filet ahumado;Aperitivo;Naranja,Pimenton,Lenteja;Familiar,mediano,personal;65975,45757,21051
- chocolate Filet termino medio;Panaderia;Frijol,Huevos,Pan;500 ml,200 ml,150 ml;68034,42940,33969
- chocolate Filet gourmet;Bebida;Naranja,Pimenton,Lechuga;Grande,mediano,pequeño;55032,45137,20209
- chocolate Filet con salsa;Plato principal;Naranja,Cilantro,Pan;Familiar,mediano,personal;65531,42384,39587
- chocolate bbq rico;Aperitivo;Naranja,Cebolla,Lechuga;Familiar,mediano,personal;66902,35757,14920
- chocolate bbq papas;Panaderia;Naranja,Cilantro,Lechuga;Grande,mediano,pequeño;74593,43850,48586
- chocolate bbq ensalada;Natural;Bacalao,Huevos,Lechuga;Familiar,mediano,personal;71972,43147,43122
- chocolate bbq chocolate;Plato principal;Frijol,Queso,Pan;Familiar,mediano,personal;56365,49078,30742
- chocolate bbq Filet;Comida de mar;Bacalao,Queso,Lenteja;Grande,mediano,pequeño;68301,30618,32302
- chocolate bbq bbq;Comida de mar;Naranja,Cebolla,Pan;500 ml,200 ml,150 ml;62988,44177,38301
- chocolate bbq ahumado;Dulces;Agua,Pimenton,Lechuga;Familiar,mediano,personal;61959,51877,24450
- chocolate bbq termino medio;Panaderia;Agua,Cebolla,Pan;8 onzas,5 onzas,3 onzas;62748,47879,36088
- chocolate bbq gourmet;Comida de mar;Frijol,Cilantro,Tomate;Grande,mediano,pequeño;74341,34108,31689
- chocolate bbq con salsa;Bebida;Agua,Pimenton,Lenteja;500 ml,200 ml,150 ml;74042,45639,37663
- chocolate ahumado rico;Comida chatarra;Bacalao,Cilantro,Pan;500 ml,200 ml,150 ml;62082,38908,22630
- chocolate ahumado papas;Comida chatarra;Naranja,Pimenton,Lenteja;500 ml,200 ml,150 ml;62415,38806,32696
- chocolate ahumado ensalada;Bebida;Frijol,Pimenton,Tomate;Familiar,mediano,personal;66399,42143,31576
- chocolate ahumado chocolate;Panaderia;Frijol,Cebolla,Lenteja;Grande,mediano,pequeño;62921,47962,13174
- chocolate ahumado Filet;Adicionales;Naranja,Queso,Tomate;500 ml,200 ml,150 ml;55578,38119,14858
- chocolate ahumado bbq;Comida de mar;Bacalao,Cebolla,Tomate;Familiar,mediano,personal;69816,25563,40962
- chocolate ahumado ahumado;Bebida;Bacalao,Cilantro,Tomate;Grande,mediano,pequeño;66361,53982,30910
- chocolate ahumado termino medio;Comida chatarra;Naranja,Leche,Lenteja;Grande,mediano,pequeño;55641,45282,43335
- chocolate ahumado gourmet;Plato principal;Naranja,Cebolla,Tomate;Grande,mediano,pequeño;71005,41690,34449
- chocolate ahumado con salsa;Adicionales;Frijol,Leche,Pan;Grande,mediano,pequeño;68958,33094,29333
- chocolate termino medio rico;Carnes;Naranja,Pimenton,Tomate;Grande,mediano,pequeño;55984,41956,27215
- chocolate termino medio papas;Comida chatarra;Agua,Leche,Lechuga;Grande,mediano,pequeño;66447,54834,18168
- chocolate termino medio ensalada;Comida chatarra;Agua,Pimenton,Tomate;Grande,mediano,pequeño;61181,41828,41793
- chocolate termino medio chocolate;Carnes;Bacalao,Leche,Lechuga;8 onzas,5 onzas,3 onzas;68982,54143,41254
- chocolate termino medio Filet;Comida chatarra;Naranja,Huevos,Lechuga;Grande,mediano,pequeño;62817,44065,44010
- chocolate termino medio bbq;Natural;Agua,Cebolla,Tomate;Grande,mediano,pequeño;56682,43141,33741
- chocolate termino medio ahumado;Bebida;Bacalao,Queso,Pan;Grande,mediano,pequeño;70505,34451,26916
- chocolate termino medio termino medio;Comida chatarra;Agua,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;67624,27598,38590
- chocolate termino medio gourmet;Aperitivo;Naranja,Queso,Tomate;8 onzas,5 onzas,3 onzas;70196,37434,20762
- chocolate termino medio con salsa;Plato principal;Harina,Cilantro,Pan;500 ml,200 ml,150 ml;55569,52403,10974
- chocolate gourmet rico;Comida de mar;Harina,Cilantro,Tomate;Grande,mediano,pequeño;73646,49853,21564
- chocolate gourmet papas;Panaderia;Bacalao,Cebolla,Tomate;Familiar,mediano,personal;68816,33250,31595
- chocolate gourmet ensalada;Plato principal;Frijol,Huevos,Tomate;500 ml,200 ml,150 ml;72593,25354,26344
- chocolate gourmet chocolate;Natural;Frijol,Cilantro,Tomate;500 ml,200 ml,150 ml;70817,31144,17773
- chocolate gourmet Filet;Dulces;Agua,Pimenton,Lenteja;Grande,mediano,pequeño;61098,40619,49643
- chocolate gourmet bbq;Plato principal;Agua,Queso,Pan;500 ml,200 ml,150 ml;72209,42203,49551
- chocolate gourmet ahumado;Bebida;Bacalao,Cilantro,Lenteja;Familiar,mediano,personal;68727,28850,49227
- chocolate gourmet termino medio;Dulces;Harina,Queso,Lenteja;Familiar,mediano,personal;61019,38497,15321
- chocolate gourmet gourmet;Plato principal;Naranja,Leche,Lechuga;8 onzas,5 onzas,3 onzas;59288,50451,25368
- chocolate gourmet con salsa;Bebida;Frijol,Leche,Pan;8 onzas,5 onzas,3 onzas;68450,28621,10344
- chocolate con salsa rico;Plato principal;Naranja,Huevos,Tomate;Grande,mediano,pequeño;56371,37695,24825
- chocolate con salsa papas;Bebida;Frijol,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;60746,31407,23389
- chocolate con salsa ensalada;Dulces;Frijol,Leche,Tomate;500 ml,200 ml,150 ml;59362,38043,41999
- chocolate con salsa chocolate;Adicionales;Frijol,Pimenton,Pan;8 onzas,5 onzas,3 onzas;73961,37056,16551
- chocolate con salsa Filet;Panaderia;Bacalao,Cilantro,Tomate;500 ml,200 ml,150 ml;64759,38053,42720
- chocolate con salsa bbq;Plato principal;Frijol,Leche,Pan;8 onzas,5 onzas,3 onzas;66763,43821,8525
- chocolate con salsa ahumado;Carnes;Bacalao,Leche,Lechuga;8 onzas,5 onzas,3 onzas;64673,38526,34895
- chocolate con salsa termino medio;Comida chatarra;Harina,Queso,Pan;500 ml,200 ml,150 ml;55085,54608,18673
- chocolate con salsa gourmet;Bebida;Harina,Leche,Tomate;500 ml,200 ml,150 ml;61974,32850,9742
- chocolate con salsa con salsa;Aperitivo;Naranja,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;63441,33698,26558
- Filet rico rico;Plato principal;Bacalao,Queso,Lechuga;500 ml,200 ml,150 ml;72007,46079,33485
- Filet rico papas;Carnes;Frijol,Leche,Lenteja;8 onzas,5 onzas,3 onzas;64054,38907,10684
- Filet rico ensalada;Aperitivo;Agua,Pimenton,Tomate;500 ml,200 ml,150 ml;71109,35846,14381
- Filet rico chocolate;Panaderia;Bacalao,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;68776,34106,41152
- Filet rico Filet;Adicionales;Naranja,Leche,Lenteja;500 ml,200 ml,150 ml;64228,38376,17628
- Filet rico bbq;Aperitivo;Agua,Huevos,Pan;500 ml,200 ml,150 ml;62261,51506,17787
- Filet rico ahumado;Comida de mar;Harina,Cilantro,Lechuga;Familiar,mediano,personal;62702,27819,12949
- Filet rico termino medio;Carnes;Bacalao,Leche,Lechuga;Familiar,mediano,personal;65214,28350,45781
- Filet rico gourmet;Dulces;Frijol,Cilantro,Pan;Familiar,mediano,personal;63815,50031,11138
- Filet rico con salsa;Adicionales;Naranja,Pimenton,Tomate;500 ml,200 ml,150 ml;73616,53451,34814
- Filet papas rico;Dulces;Bacalao,Leche,Pan;Familiar,mediano,personal;62855,31181,31639
- Filet papas papas;Adicionales;Agua,Queso,Lechuga;Grande,mediano,pequeño;66563,45431,18785
- Filet papas ensalada;Adicionales;Frijol,Pimenton,Pan;Familiar,mediano,personal;61048,34935,28438
- Filet papas chocolate;Comida de mar;Naranja,Leche,Tomate;Familiar,mediano,personal;70066,54186,47101
- Filet papas Filet;Comida chatarra;Bacalao,Pimenton,Tomate;Familiar,mediano,personal;73263,31721,39513
- Filet papas bbq;Natural;Bacalao,Leche,Pan;Familiar,mediano,personal;71260,30300,44145
- Filet papas ahumado;Comida chatarra;Frijol,Cilantro,Tomate;Familiar,mediano,personal;65607,43821,24135
- Filet papas termino medio;Aperitivo;Bacalao,Cebolla,Pan;8 onzas,5 onzas,3 onzas;74465,30594,27847
- Filet papas gourmet;Aperitivo;Bacalao,Cilantro,Tomate;Familiar,mediano,personal;61660,54691,12035
- Filet papas con salsa;Aperitivo;Bacalao,Queso,Lenteja;500 ml,200 ml,150 ml;68337,50541,30190
- Filet ensalada rico;Panaderia;Frijol,Cebolla,Tomate;Familiar,mediano,personal;67549,27478,9514
- Filet ensalada papas;Natural;Bacalao,Queso,Lenteja;500 ml,200 ml,150 ml;69228,28377,37177
- Filet ensalada ensalada;Panaderia;Bacalao,Cebolla,Lechuga;500 ml,200 ml,150 ml;74422,48676,17576
- Filet ensalada chocolate;Carnes;Bacalao,Queso,Lenteja;8 onzas,5 onzas,3 onzas;68396,40480,21381
- Filet ensalada Filet;Bebida;Frijol,Cebolla,Lechuga;Familiar,mediano,personal;69569,33784,9415
- Filet ensalada bbq;Natural;Harina,Cilantro,Lechuga;500 ml,200 ml,150 ml;73468,28545,25158
- Filet ensalada ahumado;Aperitivo;Naranja,Cebolla,Pan;Grande,mediano,pequeño;63319,33702,19194
- Filet ensalada termino medio;Dulces;Agua,Huevos,Pan;8 onzas,5 onzas,3 onzas;72372,53885,15906
- Filet ensalada gourmet;Comida chatarra;Agua,Cebolla,Lenteja;500 ml,200 ml,150 ml;57535,39800,33031
- Filet ensalada con salsa;Carnes;Naranja,Queso,Pan;500 ml,200 ml,150 ml;57805,38635,36137
- Filet chocolate rico;Bebida;Harina,Pimenton,Pan;500 ml,200 ml,150 ml;58527,29931,41172
- Filet chocolate papas;Panaderia;Harina,Cilantro,Pan;500 ml,200 ml,150 ml;55296,30377,43466
- Filet chocolate ensalada;Panaderia;Bacalao,Queso,Pan;Familiar,mediano,personal;56131,38673,46955
- Filet chocolate chocolate;Dulces;Harina,Queso,Lenteja;Grande,mediano,pequeño;67216,27683,33289
- Filet chocolate Filet;Plato principal;Bacalao,Leche,Pan;Grande,mediano,pequeño;65516,53038,33454
- Filet chocolate bbq;Panaderia;Naranja,Cebolla,Pan;8 onzas,5 onzas,3 onzas;73119,50114,35636
- Filet chocolate ahumado;Bebida;Agua,Cilantro,Lechuga;500 ml,200 ml,150 ml;68387,43019,40265
- Filet chocolate termino medio;Panaderia;Bacalao,Huevos,Lechuga;Familiar,mediano,personal;73386,52966,39954
- Filet chocolate gourmet;Comida de mar;Naranja,Queso,Tomate;Familiar,mediano,personal;56736,29410,24749
- Filet chocolate con salsa;Comida chatarra;Harina,Huevos,Pan;Grande,mediano,pequeño;56855,32917,31190
- Filet Filet rico;Bebida;Bacalao,Queso,Tomate;Familiar,mediano,personal;72844,25810,22544
- Filet Filet papas;Aperitivo;Agua,Cebolla,Lenteja;Grande,mediano,pequeño;65220,51952,23422
- Filet Filet ensalada;Panaderia;Agua,Queso,Lechuga;Grande,mediano,pequeño;56684,29842,45405
- Filet Filet chocolate;Plato principal;Frijol,Cebolla,Tomate;500 ml,200 ml,150 ml;60060,39284,21180
- Filet Filet Filet;Comida chatarra;Naranja,Huevos,Pan;500 ml,200 ml,150 ml;56448,29598,35560
- Filet Filet bbq;Adicionales;Agua,Cilantro,Tomate;Familiar,mediano,personal;60990,28506,30541
- Filet Filet ahumado;Panaderia;Harina,Cilantro,Lechuga;Grande,mediano,pequeño;59965,44941,43679
- Filet Filet termino medio;Aperitivo;Agua,Queso,Lechuga;Grande,mediano,pequeño;55110,46610,17073
- Filet Filet gourmet;Bebida;Naranja,Leche,Tomate;Grande,mediano,pequeño;64996,34628,41439
- Filet Filet con salsa;Natural;Naranja,Cilantro,Pan;Grande,mediano,pequeño;64224,41625,20062
- Filet bbq rico;Comida chatarra;Naranja,Leche,Lechuga;8 onzas,5 onzas,3 onzas;66843,25399,35931
- Filet bbq papas;Natural;Harina,Cebolla,Tomate;Familiar,mediano,personal;63662,26812,36116
- Filet bbq ensalada;Carnes;Agua,Huevos,Lechuga;Familiar,mediano,personal;70966,51115,36633
- Filet bbq chocolate;Bebida;Agua,Queso,Lenteja;8 onzas,5 onzas,3 onzas;56443,50904,12966
- Filet bbq Filet;Comida de mar;Agua,Huevos,Pan;Grande,mediano,pequeño;59379,31323,30435
- Filet bbq bbq;Comida chatarra;Agua,Cilantro,Pan;8 onzas,5 onzas,3 onzas;58116,32877,12298
- Filet bbq ahumado;Dulces;Frijol,Huevos,Tomate;Grande,mediano,pequeño;55843,37383,39388
- Filet bbq termino medio;Bebida;Agua,Cebolla,Tomate;500 ml,200 ml,150 ml;71837,34519,45823
- Filet bbq gourmet;Aperitivo;Naranja,Leche,Pan;Grande,mediano,pequeño;71648,41698,29483
- Filet bbq con salsa;Panaderia;Agua,Leche,Pan;8 onzas,5 onzas,3 onzas;59563,48095,8447
- Filet ahumado rico;Comida chatarra;Harina,Cilantro,Lenteja;Grande,mediano,pequeño;71691,51481,21568
- Filet ahumado papas;Natural;Frijol,Cebolla,Lechuga;Grande,mediano,pequeño;57842,49340,28902
- Filet ahumado ensalada;Comida de mar;Harina,Cebolla,Tomate;500 ml,200 ml,150 ml;74463,30202,45381
- Filet ahumado chocolate;Adicionales;Naranja,Cebolla,Lechuga;Grande,mediano,pequeño;60072,27178,26048
- Filet ahumado Filet;Natural;Harina,Pimenton,Lenteja;8 onzas,5 onzas,3 onzas;66160,34551,11969
- Filet ahumado bbq;Plato principal;Bacalao,Cilantro,Lenteja;Grande,mediano,pequeño;56969,47018,45882
- Filet ahumado ahumado;Comida chatarra;Agua,Cilantro,Tomate;500 ml,200 ml,150 ml;67371,52733,30762
- Filet ahumado termino medio;Natural;Harina,Cebolla,Lechuga;Grande,mediano,pequeño;59762,53450,44183
- Filet ahumado gourmet;Comida de mar;Agua,Cilantro,Lechuga;500 ml,200 ml,150 ml;65366,43635,21224
- Filet ahumado con salsa;Panaderia;Bacalao,Leche,Lechuga;500 ml,200 ml,150 ml;57516,34136,11947
- Filet termino medio rico;Bebida;Frijol,Cilantro,Pan;8 onzas,5 onzas,3 onzas;60517,38192,14789
- Filet termino medio papas;Adicionales;Frijol,Queso,Tomate;500 ml,200 ml,150 ml;61331,50827,16362
- Filet termino medio ensalada;Adicionales;Bacalao,Queso,Lechuga;8 onzas,5 onzas,3 onzas;59942,53203,21157
- Filet termino medio chocolate;Dulces;Naranja,Leche,Lechuga;8 onzas,5 onzas,3 onzas;70951,45343,39895
- Filet termino medio Filet;Panaderia;Harina,Pimenton,Pan;Grande,mediano,pequeño;66295,29536,44431
- Filet termino medio bbq;Panaderia;Bacalao,Queso,Pan;8 onzas,5 onzas,3 onzas;63392,35874,16663
- Filet termino medio ahumado;Comida chatarra;Agua,Cebolla,Tomate;Grande,mediano,pequeño;58956,45338,30661
- Filet termino medio termino medio;Adicionales;Agua,Cilantro,Pan;Familiar,mediano,personal;63785,41376,46884
- Filet termino medio gourmet;Panaderia;Bacalao,Queso,Lechuga;Familiar,mediano,personal;59423,26673,38976
- Filet termino medio con salsa;Bebida;Harina,Queso,Lenteja;Familiar,mediano,personal;64944,54703,33236
- Filet gourmet rico;Natural;Bacalao,Queso,Lechuga;Familiar,mediano,personal;67894,30108,35240
- Filet gourmet papas;Panaderia;Agua,Cebolla,Pan;Grande,mediano,pequeño;63776,45291,14868
- Filet gourmet ensalada;Panaderia;Agua,Cilantro,Pan;8 onzas,5 onzas,3 onzas;68167,40955,20088
- Filet gourmet chocolate;Comida de mar;Naranja,Leche,Tomate;Grande,mediano,pequeño;56353,49777,48103
- Filet gourmet Filet;Adicionales;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;60944,42736,43876
- Filet gourmet bbq;Comida de mar;Bacalao,Leche,Tomate;8 onzas,5 onzas,3 onzas;69644,45223,18926
- Filet gourmet ahumado;Natural;Frijol,Queso,Tomate;Familiar,mediano,personal;66328,43243,11110
- Filet gourmet termino medio;Carnes;Bacalao,Leche,Lenteja;500 ml,200 ml,150 ml;69224,43550,35391
- Filet gourmet gourmet;Dulces;Harina,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;71617,39560,36717
- Filet gourmet con salsa;Bebida;Bacalao,Queso,Pan;Familiar,mediano,personal;67527,47851,40149
- Filet con salsa rico;Dulces;Bacalao,Leche,Lechuga;Grande,mediano,pequeño;64168,37654,45045
- Filet con salsa papas;Aperitivo;Bacalao,Leche,Lenteja;Familiar,mediano,personal;74660,46359,21957
- Filet con salsa ensalada;Bebida;Naranja,Cilantro,Tomate;Grande,mediano,pequeño;69567,45454,20823
- Filet con salsa chocolate;Bebida;Harina,Huevos,Lechuga;Familiar,mediano,personal;69644,37236,23673
- Filet con salsa Filet;Panaderia;Frijol,Cilantro,Lechuga;500 ml,200 ml,150 ml;69400,48256,15808
- Filet con salsa bbq;Dulces;Naranja,Huevos,Lechuga;Familiar,mediano,personal;64184,53577,9307
- Filet con salsa ahumado;Natural;Bacalao,Cebolla,Pan;500 ml,200 ml,150 ml;57927,44387,25702
- Filet con salsa termino medio;Plato principal;Frijol,Cebolla,Lechuga;Familiar,mediano,personal;71802,30482,49640
- Filet con salsa gourmet;Aperitivo;Naranja,Huevos,Pan;500 ml,200 ml,150 ml;71356,44217,11746
- Filet con salsa con salsa;Panaderia;Harina,Huevos,Pan;8 onzas,5 onzas,3 onzas;65713,35529,25618
- bbq rico rico;Dulces;Naranja,Cilantro,Lechuga;Familiar,mediano,personal;62035,34648,19496
- bbq rico papas;Carnes;Frijol,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;55435,46167,26151
- bbq rico ensalada;Plato principal;Naranja,Huevos,Lechuga;500 ml,200 ml,150 ml;64271,31696,25975
- bbq rico chocolate;Comida chatarra;Bacalao,Pimenton,Lenteja;8 onzas,5 onzas,3 onzas;65591,50416,44529
- bbq rico Filet;Carnes;Harina,Leche,Pan;500 ml,200 ml,150 ml;63862,47320,14554
- bbq rico bbq;Comida chatarra;Harina,Queso,Tomate;Grande,mediano,pequeño;64343,37073,17400
- bbq rico ahumado;Bebida;Naranja,Huevos,Lechuga;500 ml,200 ml,150 ml;63899,27750,36014
- bbq rico termino medio;Comida de mar;Bacalao,Huevos,Lechuga;Grande,mediano,pequeño;55002,42245,10341
- bbq rico gourmet;Bebida;Agua,Leche,Lechuga;500 ml,200 ml,150 ml;74522,25127,14468
- bbq rico con salsa;Plato principal;Harina,Pimenton,Tomate;Grande,mediano,pequeño;56792,35376,35707
- bbq papas rico;Carnes;Harina,Queso,Lechuga;Familiar,mediano,personal;74286,25428,40823
- bbq papas papas;Comida de mar;Frijol,Cilantro,Pan;500 ml,200 ml,150 ml;73313,39251,29752
- bbq papas ensalada;Carnes;Bacalao,Leche,Lechuga;Grande,mediano,pequeño;68850,42548,37633
- bbq papas chocolate;Adicionales;Harina,Cebolla,Lenteja;500 ml,200 ml,150 ml;74309,33497,35139
- bbq papas Filet;Aperitivo;Harina,Cebolla,Pan;Familiar,mediano,personal;65552,32286,40008
- bbq papas bbq;Adicionales;Naranja,Pimenton,Pan;8 onzas,5 onzas,3 onzas;65643,35907,43533
- bbq papas ahumado;Dulces;Frijol,Queso,Tomate;8 onzas,5 onzas,3 onzas;60387,35042,37722
- bbq papas termino medio;Dulces;Frijol,Cebolla,Pan;Familiar,mediano,personal;58185,28860,41256
- bbq papas gourmet;Aperitivo;Naranja,Queso,Lechuga;8 onzas,5 onzas,3 onzas;56513,48810,24903
- bbq papas con salsa;Comida de mar;Harina,Queso,Pan;Grande,mediano,pequeño;63666,46515,26552
- bbq ensalada rico;Aperitivo;Naranja,Cebolla,Lenteja;Grande,mediano,pequeño;67967,40882,17407
- bbq ensalada papas;Dulces;Harina,Pimenton,Tomate;Familiar,mediano,personal;68327,48801,27175
- bbq ensalada ensalada;Carnes;Bacalao,Pimenton,Pan;8 onzas,5 onzas,3 onzas;64422,37313,47255
- bbq ensalada chocolate;Panaderia;Frijol,Queso,Tomate;8 onzas,5 onzas,3 onzas;59362,40902,18313
- bbq ensalada Filet;Aperitivo;Naranja,Queso,Tomate;Grande,mediano,pequeño;57928,39158,24395
- bbq ensalada bbq;Aperitivo;Bacalao,Cebolla,Lechuga;Familiar,mediano,personal;70067,40694,12679
- bbq ensalada ahumado;Panaderia;Bacalao,Pimenton,Lenteja;500 ml,200 ml,150 ml;56234,28754,41668
- bbq ensalada termino medio;Panaderia;Naranja,Leche,Tomate;8 onzas,5 onzas,3 onzas;65235,27708,40560
- bbq ensalada gourmet;Comida de mar;Frijol,Cebolla,Lenteja;Grande,mediano,pequeño;55172,34469,27886
- bbq ensalada con salsa;Plato principal;Naranja,Pimenton,Lechuga;Familiar,mediano,personal;60447,42088,46632
- bbq chocolate rico;Panaderia;Bacalao,Cebolla,Pan;Grande,mediano,pequeño;57346,27271,10076
- bbq chocolate papas;Dulces;Frijol,Queso,Tomate;500 ml,200 ml,150 ml;73503,41354,20965
- bbq chocolate ensalada;Aperitivo;Bacalao,Huevos,Lenteja;500 ml,200 ml,150 ml;56382,47936,34629
- bbq chocolate chocolate;Plato principal;Naranja,Cilantro,Pan;Familiar,mediano,personal;58617,48458,27579
- bbq chocolate Filet;Dulces;Frijol,Cilantro,Pan;Grande,mediano,pequeño;71128,31478,46223
- bbq chocolate bbq;Comida de mar;Agua,Leche,Pan;8 onzas,5 onzas,3 onzas;68498,44841,44130
- bbq chocolate ahumado;Comida de mar;Naranja,Cilantro,Pan;Familiar,mediano,personal;73879,33305,36588
- bbq chocolate termino medio;Panaderia;Bacalao,Cilantro,Lechuga;500 ml,200 ml,150 ml;63555,40805,28861
- bbq chocolate gourmet;Panaderia;Frijol,Leche,Tomate;8 onzas,5 onzas,3 onzas;73903,42999,34314
- bbq chocolate con salsa;Bebida;Naranja,Huevos,Lenteja;Grande,mediano,pequeño;64372,38277,39142
- bbq Filet rico;Panaderia;Frijol,Pimenton,Lenteja;Familiar,mediano,personal;70007,53014,46489
- bbq Filet papas;Carnes;Agua,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;72964,43123,29993
- bbq Filet ensalada;Bebida;Harina,Leche,Lechuga;Grande,mediano,pequeño;65147,47794,41591
- bbq Filet chocolate;Comida chatarra;Bacalao,Pimenton,Pan;Grande,mediano,pequeño;68107,27584,42755
- bbq Filet Filet;Adicionales;Bacalao,Pimenton,Pan;500 ml,200 ml,150 ml;73097,42921,32111
- bbq Filet bbq;Aperitivo;Agua,Huevos,Tomate;8 onzas,5 onzas,3 onzas;67138,33468,24321
- bbq Filet ahumado;Aperitivo;Agua,Leche,Pan;Familiar,mediano,personal;63403,53099,28878
- bbq Filet termino medio;Comida chatarra;Harina,Pimenton,Pan;8 onzas,5 onzas,3 onzas;72816,38292,30080
- bbq Filet gourmet;Adicionales;Frijol,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;64943,33310,31828
- bbq Filet con salsa;Adicionales;Naranja,Queso,Lechuga;Grande,mediano,pequeño;56725,28276,38552
- bbq bbq rico;Carnes;Frijol,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;56474,48263,34517
- bbq bbq papas;Carnes;Agua,Pimenton,Lenteja;500 ml,200 ml,150 ml;61696,50174,22450
- bbq bbq ensalada;Plato principal;Frijol,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;66110,46344,45396
- bbq bbq chocolate;Bebida;Harina,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;73941,37609,41811
- bbq bbq Filet;Aperitivo;Agua,Cilantro,Lechuga;8 onzas,5 onzas,3 onzas;55919,40666,48409
- bbq bbq bbq;Comida de mar;Agua,Pimenton,Lechuga;Grande,mediano,pequeño;61392,39375,41735
- bbq bbq ahumado;Plato principal;Harina,Pimenton,Pan;8 onzas,5 onzas,3 onzas;68539,29268,36430
- bbq bbq termino medio;Adicionales;Naranja,Pimenton,Lenteja;Familiar,mediano,personal;62115,26187,13511
- bbq bbq gourmet;Plato principal;Harina,Leche,Pan;Familiar,mediano,personal;63971,38207,29968
- bbq bbq con salsa;Comida de mar;Frijol,Leche,Pan;8 onzas,5 onzas,3 onzas;59544,50763,12449
- bbq ahumado rico;Plato principal;Frijol,Leche,Pan;500 ml,200 ml,150 ml;74909,48577,13090
- bbq ahumado papas;Bebida;Frijol,Cilantro,Tomate;500 ml,200 ml,150 ml;60528,31316,33971
- bbq ahumado ensalada;Natural;Bacalao,Queso,Lechuga;Grande,mediano,pequeño;72734,35821,21731
- bbq ahumado chocolate;Aperitivo;Naranja,Cebolla,Pan;Familiar,mediano,personal;66187,35886,35137
- bbq ahumado Filet;Comida de mar;Harina,Huevos,Tomate;Familiar,mediano,personal;72668,52310,17830
- bbq ahumado bbq;Adicionales;Naranja,Pimenton,Pan;500 ml,200 ml,150 ml;63437,28532,24238
- bbq ahumado ahumado;Aperitivo;Frijol,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;61182,25013,41334
- bbq ahumado termino medio;Bebida;Harina,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;65952,52548,19930
- bbq ahumado gourmet;Dulces;Frijol,Huevos,Lechuga;Familiar,mediano,personal;59840,40505,14972
- bbq ahumado con salsa;Panaderia;Agua,Cilantro,Lechuga;8 onzas,5 onzas,3 onzas;56766,36696,33897
- bbq termino medio rico;Adicionales;Bacalao,Queso,Lechuga;500 ml,200 ml,150 ml;69081,39462,25574
- bbq termino medio papas;Adicionales;Harina,Queso,Lenteja;Grande,mediano,pequeño;65668,37891,42356
- bbq termino medio ensalada;Panaderia;Harina,Cebolla,Lenteja;Grande,mediano,pequeño;72258,54807,39815
- bbq termino medio chocolate;Carnes;Frijol,Leche,Lenteja;Familiar,mediano,personal;71678,37334,47313
- bbq termino medio Filet;Adicionales;Agua,Huevos,Tomate;500 ml,200 ml,150 ml;72953,25157,11395
- bbq termino medio bbq;Dulces;Frijol,Leche,Tomate;8 onzas,5 onzas,3 onzas;71502,41768,18018
- bbq termino medio ahumado;Natural;Naranja,Huevos,Lenteja;500 ml,200 ml,150 ml;58644,28150,24538
- bbq termino medio termino medio;Bebida;Harina,Pimenton,Pan;Grande,mediano,pequeño;67278,26735,49527
- bbq termino medio gourmet;Aperitivo;Naranja,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;65450,38415,45577
- bbq termino medio con salsa;Natural;Naranja,Pimenton,Pan;Familiar,mediano,personal;56455,33846,29124
- bbq gourmet rico;Panaderia;Naranja,Queso,Tomate;Familiar,mediano,personal;73549,34084,49137
- bbq gourmet papas;Panaderia;Harina,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;67517,43684,9411
- bbq gourmet ensalada;Carnes;Frijol,Pimenton,Pan;500 ml,200 ml,150 ml;63078,30145,20229
- bbq gourmet chocolate;Panaderia;Agua,Queso,Pan;Familiar,mediano,personal;66330,34890,8314
- bbq gourmet Filet;Aperitivo;Naranja,Leche,Lenteja;8 onzas,5 onzas,3 onzas;72842,49447,26027
- bbq gourmet bbq;Natural;Bacalao,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;57210,41871,17780
- bbq gourmet ahumado;Comida de mar;Agua,Leche,Lenteja;Familiar,mediano,personal;58004,40504,23596
- bbq gourmet termino medio;Dulces;Harina,Cilantro,Lenteja;500 ml,200 ml,150 ml;74909,26385,31687
- bbq gourmet gourmet;Aperitivo;Bacalao,Cebolla,Tomate;500 ml,200 ml,150 ml;67109,28328,31621
- bbq gourmet con salsa;Adicionales;Harina,Cilantro,Pan;8 onzas,5 onzas,3 onzas;68321,44543,20782
- bbq con salsa rico;Comida de mar;Frijol,Queso,Lechuga;Familiar,mediano,personal;72760,54915,17791
- bbq con salsa papas;Natural;Agua,Huevos,Tomate;500 ml,200 ml,150 ml;65136,41522,40502
- bbq con salsa ensalada;Dulces;Frijol,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;57622,30730,10410
- bbq con salsa chocolate;Dulces;Frijol,Cilantro,Tomate;500 ml,200 ml,150 ml;71999,39537,12243
- bbq con salsa Filet;Aperitivo;Frijol,Pimenton,Tomate;500 ml,200 ml,150 ml;68975,26502,15419
- bbq con salsa bbq;Aperitivo;Naranja,Queso,Tomate;Grande,mediano,pequeño;64043,45576,42278
- bbq con salsa ahumado;Dulces;Naranja,Cilantro,Lenteja;Grande,mediano,pequeño;66057,26517,40500
- bbq con salsa termino medio;Comida de mar;Agua,Queso,Lechuga;500 ml,200 ml,150 ml;61268,45541,11203
- bbq con salsa gourmet;Bebida;Bacalao,Cebolla,Lenteja;500 ml,200 ml,150 ml;62840,51419,41047
- bbq con salsa con salsa;Carnes;Frijol,Cilantro,Lechuga;Familiar,mediano,personal;57318,29329,28003
- ahumado rico rico;Adicionales;Agua,Queso,Lechuga;Grande,mediano,pequeño;69304,47843,21635
- ahumado rico papas;Carnes;Frijol,Leche,Lechuga;8 onzas,5 onzas,3 onzas;71207,25922,41927
- ahumado rico ensalada;Panaderia;Bacalao,Cebolla,Tomate;500 ml,200 ml,150 ml;58072,53370,32594
- ahumado rico chocolate;Dulces;Harina,Huevos,Pan;500 ml,200 ml,150 ml;59832,54808,43541
- ahumado rico Filet;Plato principal;Frijol,Pimenton,Lenteja;500 ml,200 ml,150 ml;57776,53635,11129
- ahumado rico bbq;Panaderia;Bacalao,Pimenton,Tomate;500 ml,200 ml,150 ml;64911,38492,46713
- ahumado rico ahumado;Comida de mar;Naranja,Leche,Lechuga;500 ml,200 ml,150 ml;64155,46354,20231
- ahumado rico termino medio;Dulces;Frijol,Queso,Lenteja;8 onzas,5 onzas,3 onzas;74950,52990,8664
- ahumado rico gourmet;Bebida;Frijol,Leche,Lenteja;8 onzas,5 onzas,3 onzas;73245,34479,32065
- ahumado rico con salsa;Comida chatarra;Frijol,Queso,Pan;500 ml,200 ml,150 ml;60172,39737,30458
- ahumado papas rico;Bebida;Harina,Cilantro,Lenteja;500 ml,200 ml,150 ml;60284,37750,34785
- ahumado papas papas;Adicionales;Agua,Pimenton,Lechuga;Grande,mediano,pequeño;65762,41373,25745
- ahumado papas ensalada;Comida chatarra;Bacalao,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;60286,34775,25980
- ahumado papas chocolate;Comida chatarra;Harina,Leche,Lechuga;Grande,mediano,pequeño;56664,25354,43805
- ahumado papas Filet;Comida de mar;Bacalao,Queso,Pan;8 onzas,5 onzas,3 onzas;58499,43226,30543
- ahumado papas bbq;Aperitivo;Harina,Pimenton,Lechuga;Grande,mediano,pequeño;63880,31985,34724
- ahumado papas ahumado;Comida chatarra;Frijol,Leche,Pan;Familiar,mediano,personal;72711,29755,32520
- ahumado papas termino medio;Bebida;Agua,Cilantro,Pan;Familiar,mediano,personal;73212,33037,35574
- ahumado papas gourmet;Bebida;Naranja,Pimenton,Lenteja;Familiar,mediano,personal;68398,51205,16486
- ahumado papas con salsa;Aperitivo;Bacalao,Pimenton,Lechuga;Grande,mediano,pequeño;59703,38193,16936
- ahumado ensalada rico;Bebida;Naranja,Queso,Lechuga;8 onzas,5 onzas,3 onzas;70312,30254,24035
- ahumado ensalada papas;Carnes;Harina,Leche,Tomate;8 onzas,5 onzas,3 onzas;59693,25034,37200
- ahumado ensalada ensalada;Adicionales;Bacalao,Cebolla,Lechuga;500 ml,200 ml,150 ml;55787,31901,19349
- ahumado ensalada chocolate;Plato principal;Harina,Cebolla,Tomate;Grande,mediano,pequeño;72489,33470,41153
- ahumado ensalada Filet;Carnes;Bacalao,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;61146,54107,16481
- ahumado ensalada bbq;Comida de mar;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;71282,41185,31772
- ahumado ensalada ahumado;Carnes;Naranja,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;73724,27723,43330
- ahumado ensalada termino medio;Plato principal;Bacalao,Pimenton,Tomate;Familiar,mediano,personal;56721,53418,33684
- ahumado ensalada gourmet;Carnes;Naranja,Cilantro,Pan;8 onzas,5 onzas,3 onzas;63734,48104,41869
- ahumado ensalada con salsa;Carnes;Naranja,Leche,Tomate;8 onzas,5 onzas,3 onzas;68921,54972,43809
- ahumado chocolate rico;Adicionales;Agua,Leche,Tomate;Grande,mediano,pequeño;60882,26861,18979
- ahumado chocolate papas;Carnes;Harina,Pimenton,Lenteja;8 onzas,5 onzas,3 onzas;62512,27428,13959
- ahumado chocolate ensalada;Panaderia;Agua,Pimenton,Lechuga;500 ml,200 ml,150 ml;70764,46006,28948
- ahumado chocolate chocolate;Comida chatarra;Harina,Cilantro,Tomate;500 ml,200 ml,150 ml;62400,54853,15900
- ahumado chocolate Filet;Comida chatarra;Harina,Leche,Lenteja;8 onzas,5 onzas,3 onzas;68124,34432,11205
- ahumado chocolate bbq;Dulces;Bacalao,Cilantro,Lenteja;Grande,mediano,pequeño;71235,35871,20222
- ahumado chocolate ahumado;Dulces;Frijol,Cebolla,Lechuga;Familiar,mediano,personal;68681,50686,17958
- ahumado chocolate termino medio;Carnes;Naranja,Pimenton,Tomate;Familiar,mediano,personal;58540,53853,9592
- ahumado chocolate gourmet;Natural;Agua,Huevos,Tomate;Grande,mediano,pequeño;62710,45068,17198
- ahumado chocolate con salsa;Plato principal;Bacalao,Queso,Lechuga;500 ml,200 ml,150 ml;74167,49039,11584
- ahumado Filet rico;Aperitivo;Bacalao,Cilantro,Tomate;500 ml,200 ml,150 ml;57071,50282,17654
- ahumado Filet papas;Plato principal;Frijol,Cilantro,Tomate;Grande,mediano,pequeño;61707,39784,18403
- ahumado Filet ensalada;Comida chatarra;Naranja,Leche,Tomate;8 onzas,5 onzas,3 onzas;57155,34023,40682
- ahumado Filet chocolate;Carnes;Frijol,Huevos,Tomate;8 onzas,5 onzas,3 onzas;70697,52898,44039
- ahumado Filet Filet;Natural;Naranja,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;59273,48279,34617
- ahumado Filet bbq;Plato principal;Agua,Cebolla,Tomate;500 ml,200 ml,150 ml;73936,44817,49164
- ahumado Filet ahumado;Comida de mar;Bacalao,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;69847,54465,20859
- ahumado Filet termino medio;Carnes;Harina,Queso,Tomate;8 onzas,5 onzas,3 onzas;65597,54627,49431
- ahumado Filet gourmet;Panaderia;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;71861,26116,47407
- ahumado Filet con salsa;Panaderia;Agua,Huevos,Lechuga;Familiar,mediano,personal;72677,26440,13417
- ahumado bbq rico;Carnes;Bacalao,Queso,Lenteja;Familiar,mediano,personal;74552,28664,8559
- ahumado bbq papas;Dulces;Agua,Leche,Tomate;8 onzas,5 onzas,3 onzas;69718,36377,25447
- ahumado bbq ensalada;Carnes;Agua,Huevos,Tomate;8 onzas,5 onzas,3 onzas;72985,51473,33813
- ahumado bbq chocolate;Carnes;Bacalao,Huevos,Tomate;Grande,mediano,pequeño;74234,49357,37046
- ahumado bbq Filet;Comida de mar;Agua,Leche,Lenteja;Familiar,mediano,personal;67348,31913,37956
- ahumado bbq bbq;Panaderia;Harina,Pimenton,Lechuga;Familiar,mediano,personal;61284,32766,14188
- ahumado bbq ahumado;Bebida;Agua,Leche,Lechuga;Grande,mediano,pequeño;59408,34635,19042
- ahumado bbq termino medio;Adicionales;Bacalao,Queso,Lenteja;Grande,mediano,pequeño;67033,49779,21146
- ahumado bbq gourmet;Adicionales;Frijol,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;73285,54042,22991
- ahumado bbq con salsa;Comida chatarra;Agua,Queso,Lechuga;8 onzas,5 onzas,3 onzas;59275,49810,47351
- ahumado ahumado rico;Panaderia;Harina,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;55915,49989,32097
- ahumado ahumado papas;Comida de mar;Agua,Pimenton,Tomate;Grande,mediano,pequeño;65406,53734,32253
- ahumado ahumado ensalada;Natural;Agua,Cebolla,Lenteja;Familiar,mediano,personal;73690,39584,24674
- ahumado ahumado chocolate;Comida chatarra;Naranja,Huevos,Lechuga;Familiar,mediano,personal;55880,45007,41462
- ahumado ahumado Filet;Panaderia;Agua,Cilantro,Tomate;Grande,mediano,pequeño;60239,25709,13280
- ahumado ahumado bbq;Aperitivo;Naranja,Cebolla,Lechuga;Grande,mediano,pequeño;65444,40520,35353
- ahumado ahumado ahumado;Carnes;Frijol,Leche,Lenteja;500 ml,200 ml,150 ml;55578,33793,39250
- ahumado ahumado termino medio;Comida de mar;Agua,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;61728,39718,22696
- ahumado ahumado gourmet;Comida de mar;Agua,Queso,Lechuga;Grande,mediano,pequeño;57758,46259,37307
- ahumado ahumado con salsa;Aperitivo;Naranja,Cebolla,Lenteja;Grande,mediano,pequeño;74287,34918,39729
- ahumado termino medio rico;Aperitivo;Bacalao,Pimenton,Lechuga;Grande,mediano,pequeño;62758,34387,16736
- ahumado termino medio papas;Natural;Bacalao,Huevos,Pan;8 onzas,5 onzas,3 onzas;71164,25870,31970
- ahumado termino medio ensalada;Carnes;Harina,Cebolla,Lenteja;500 ml,200 ml,150 ml;71805,46263,14118
- ahumado termino medio chocolate;Natural;Naranja,Queso,Lechuga;8 onzas,5 onzas,3 onzas;68198,42331,17337
- ahumado termino medio Filet;Plato principal;Bacalao,Cilantro,Lechuga;Familiar,mediano,personal;62563,46000,33043
- ahumado termino medio bbq;Comida chatarra;Frijol,Queso,Tomate;Familiar,mediano,personal;69085,32897,22839
- ahumado termino medio ahumado;Panaderia;Agua,Queso,Tomate;500 ml,200 ml,150 ml;61646,43723,27037
- ahumado termino medio termino medio;Plato principal;Agua,Pimenton,Pan;8 onzas,5 onzas,3 onzas;70181,36136,41014
- ahumado termino medio gourmet;Plato principal;Harina,Cebolla,Lenteja;Familiar,mediano,personal;56563,34540,26505
- ahumado termino medio con salsa;Comida chatarra;Agua,Leche,Pan;Familiar,mediano,personal;73328,45349,12628
- ahumado gourmet rico;Dulces;Bacalao,Huevos,Tomate;8 onzas,5 onzas,3 onzas;72503,33015,8712
- ahumado gourmet papas;Plato principal;Naranja,Leche,Pan;Familiar,mediano,personal;57218,53884,48334
- ahumado gourmet ensalada;Dulces;Agua,Pimenton,Lechuga;500 ml,200 ml,150 ml;66710,27002,18041
- ahumado gourmet chocolate;Natural;Agua,Queso,Pan;Familiar,mediano,personal;56223,54439,44811
- ahumado gourmet Filet;Natural;Naranja,Huevos,Lenteja;Grande,mediano,pequeño;72251,43852,11483
- ahumado gourmet bbq;Comida chatarra;Harina,Huevos,Pan;Familiar,mediano,personal;61119,35407,16844
- ahumado gourmet ahumado;Carnes;Agua,Cilantro,Lechuga;Grande,mediano,pequeño;65877,31576,45103
- ahumado gourmet termino medio;Carnes;Naranja,Queso,Lechuga;Familiar,mediano,personal;62991,54975,35081
- ahumado gourmet gourmet;Natural;Agua,Cebolla,Lechuga;500 ml,200 ml,150 ml;60784,30865,23910
- ahumado gourmet con salsa;Comida chatarra;Harina,Queso,Tomate;Familiar,mediano,personal;58965,43107,22302
- ahumado con salsa rico;Plato principal;Harina,Cebolla,Tomate;Familiar,mediano,personal;63188,43571,9366
- ahumado con salsa papas;Panaderia;Naranja,Cebolla,Lechuga;Familiar,mediano,personal;66107,38643,16037
- ahumado con salsa ensalada;Comida chatarra;Harina,Leche,Pan;Familiar,mediano,personal;67657,36008,40008
- ahumado con salsa chocolate;Comida chatarra;Frijol,Cilantro,Tomate;500 ml,200 ml,150 ml;68905,37151,36173
- ahumado con salsa Filet;Aperitivo;Naranja,Queso,Pan;Grande,mediano,pequeño;73302,30622,13946
- ahumado con salsa bbq;Plato principal;Bacalao,Leche,Pan;500 ml,200 ml,150 ml;67931,41234,23796
- ahumado con salsa ahumado;Comida chatarra;Agua,Cilantro,Lechuga;8 onzas,5 onzas,3 onzas;56574,41595,15103
- ahumado con salsa termino medio;Comida de mar;Frijol,Leche,Lechuga;Grande,mediano,pequeño;66114,33628,31521
- ahumado con salsa gourmet;Bebida;Agua,Pimenton,Lechuga;Familiar,mediano,personal;56667,38255,48858
- ahumado con salsa con salsa;Panaderia;Bacalao,Cebolla,Pan;8 onzas,5 onzas,3 onzas;57527,54775,27172
- termino medio rico rico;Aperitivo;Frijol,Pimenton,Lechuga;Familiar,mediano,personal;56114,50231,22602
- termino medio rico papas;Dulces;Frijol,Huevos,Tomate;Grande,mediano,pequeño;64467,25610,26724
- termino medio rico ensalada;Plato principal;Frijol,Huevos,Tomate;Familiar,mediano,personal;72812,45496,23135
- termino medio rico chocolate;Dulces;Bacalao,Huevos,Lenteja;Grande,mediano,pequeño;56529,52905,47335
- termino medio rico Filet;Carnes;Bacalao,Cilantro,Pan;8 onzas,5 onzas,3 onzas;72098,30303,28358
- termino medio rico bbq;Bebida;Agua,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;69609,30952,17440
- termino medio rico ahumado;Plato principal;Naranja,Huevos,Lenteja;Familiar,mediano,personal;55489,48454,38218
- termino medio rico termino medio;Carnes;Bacalao,Cebolla,Pan;8 onzas,5 onzas,3 onzas;70004,31405,32040
- termino medio rico gourmet;Carnes;Bacalao,Queso,Pan;Grande,mediano,pequeño;56540,29641,41418
- termino medio rico con salsa;Comida chatarra;Harina,Leche,Pan;Grande,mediano,pequeño;60766,29530,12868
- termino medio papas rico;Panaderia;Naranja,Pimenton,Pan;Grande,mediano,pequeño;70852,34208,34581
- termino medio papas papas;Dulces;Agua,Queso,Tomate;Familiar,mediano,personal;63967,36863,29810
- termino medio papas ensalada;Comida chatarra;Harina,Cilantro,Lechuga;500 ml,200 ml,150 ml;74640,32049,19704
- termino medio papas chocolate;Comida chatarra;Naranja,Cebolla,Pan;500 ml,200 ml,150 ml;56083,37234,43044
- termino medio papas Filet;Bebida;Harina,Queso,Lechuga;Familiar,mediano,personal;70469,30359,24423
- termino medio papas bbq;Comida chatarra;Frijol,Pimenton,Tomate;500 ml,200 ml,150 ml;65436,29350,39768
- termino medio papas ahumado;Bebida;Agua,Leche,Lechuga;Grande,mediano,pequeño;63192,42196,25256
- termino medio papas termino medio;Plato principal;Agua,Cilantro,Pan;500 ml,200 ml,150 ml;71823,29902,26292
- termino medio papas gourmet;Bebida;Naranja,Queso,Tomate;500 ml,200 ml,150 ml;63980,29580,31799
- termino medio papas con salsa;Bebida;Agua,Pimenton,Pan;8 onzas,5 onzas,3 onzas;70596,49535,20161
- termino medio ensalada rico;Comida de mar;Bacalao,Cebolla,Tomate;500 ml,200 ml,150 ml;63048,38840,43838
- termino medio ensalada papas;Adicionales;Harina,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;65322,28284,42730
- termino medio ensalada ensalada;Dulces;Harina,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;58066,43727,43931
- termino medio ensalada chocolate;Carnes;Frijol,Huevos,Lechuga;Grande,mediano,pequeño;63278,44920,28864
- termino medio ensalada Filet;Comida chatarra;Harina,Pimenton,Pan;Grande,mediano,pequeño;60584,29429,8184
- termino medio ensalada bbq;Natural;Frijol,Huevos,Pan;Familiar,mediano,personal;55990,38963,8758
- termino medio ensalada ahumado;Adicionales;Harina,Pimenton,Lenteja;Grande,mediano,pequeño;68935,48995,43410
- termino medio ensalada termino medio;Adicionales;Frijol,Pimenton,Lenteja;500 ml,200 ml,150 ml;70995,28862,18892
- termino medio ensalada gourmet;Aperitivo;Harina,Queso,Pan;Grande,mediano,pequeño;63613,52676,36241
- termino medio ensalada con salsa;Comida de mar;Bacalao,Huevos,Tomate;500 ml,200 ml,150 ml;56147,33125,34897
- termino medio chocolate rico;Comida chatarra;Naranja,Pimenton,Pan;500 ml,200 ml,150 ml;68011,49361,37881
- termino medio chocolate papas;Comida de mar;Agua,Leche,Tomate;500 ml,200 ml,150 ml;65229,42145,26603
- termino medio chocolate ensalada;Dulces;Harina,Queso,Tomate;8 onzas,5 onzas,3 onzas;73844,48729,22680
- termino medio chocolate chocolate;Aperitivo;Naranja,Queso,Tomate;500 ml,200 ml,150 ml;66793,32194,41715
- termino medio chocolate Filet;Aperitivo;Harina,Cilantro,Lechuga;500 ml,200 ml,150 ml;64787,40789,40950
- termino medio chocolate bbq;Aperitivo;Bacalao,Cebolla,Pan;Grande,mediano,pequeño;74152,51092,14510
- termino medio chocolate ahumado;Panaderia;Harina,Leche,Tomate;Familiar,mediano,personal;59714,36660,30816
- termino medio chocolate termino medio;Bebida;Naranja,Cilantro,Tomate;500 ml,200 ml,150 ml;64478,50258,26385
- termino medio chocolate gourmet;Natural;Naranja,Cebolla,Pan;8 onzas,5 onzas,3 onzas;56315,42992,8357
- termino medio chocolate con salsa;Carnes;Frijol,Pimenton,Tomate;Grande,mediano,pequeño;62735,34782,40525
- termino medio Filet rico;Aperitivo;Harina,Leche,Tomate;8 onzas,5 onzas,3 onzas;67494,32220,27602
- termino medio Filet papas;Comida chatarra;Harina,Cilantro,Lenteja;Familiar,mediano,personal;71930,46331,37201
- termino medio Filet ensalada;Plato principal;Frijol,Cilantro,Pan;Grande,mediano,pequeño;65496,40203,45171
- termino medio Filet chocolate;Comida chatarra;Agua,Queso,Pan;Grande,mediano,pequeño;72123,37754,14588
- termino medio Filet Filet;Aperitivo;Agua,Huevos,Lenteja;500 ml,200 ml,150 ml;72532,46264,38390
- termino medio Filet bbq;Dulces;Frijol,Cebolla,Lenteja;500 ml,200 ml,150 ml;65650,44752,38832
- termino medio Filet ahumado;Comida chatarra;Harina,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;58226,51355,40430
- termino medio Filet termino medio;Comida de mar;Agua,Cilantro,Pan;Grande,mediano,pequeño;70437,35031,48343
- termino medio Filet gourmet;Natural;Bacalao,Cilantro,Lechuga;Familiar,mediano,personal;70826,51893,21055
- termino medio Filet con salsa;Aperitivo;Naranja,Cilantro,Lechuga;500 ml,200 ml,150 ml;69416,25922,30818
- termino medio bbq rico;Adicionales;Naranja,Huevos,Lenteja;Familiar,mediano,personal;59206,49359,26119
- termino medio bbq papas;Panaderia;Frijol,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;69108,37977,16497
- termino medio bbq ensalada;Carnes;Harina,Cebolla,Lechuga;500 ml,200 ml,150 ml;65300,30049,27339
- termino medio bbq chocolate;Comida de mar;Naranja,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;72227,51170,46038
- termino medio bbq Filet;Natural;Agua,Pimenton,Lechuga;500 ml,200 ml,150 ml;65479,50101,40501
- termino medio bbq bbq;Panaderia;Frijol,Queso,Lechuga;Familiar,mediano,personal;61484,32412,11604
- termino medio bbq ahumado;Comida chatarra;Agua,Leche,Lenteja;Grande,mediano,pequeño;69970,45553,45931
- termino medio bbq termino medio;Plato principal;Agua,Huevos,Lechuga;500 ml,200 ml,150 ml;72353,45690,44200
- termino medio bbq gourmet;Dulces;Agua,Leche,Pan;Familiar,mediano,personal;64161,29389,45116
- termino medio bbq con salsa;Bebida;Bacalao,Huevos,Lenteja;Grande,mediano,pequeño;61761,26350,49746
- termino medio ahumado rico;Comida de mar;Frijol,Leche,Tomate;8 onzas,5 onzas,3 onzas;65337,35760,18224
- termino medio ahumado papas;Dulces;Harina,Huevos,Pan;8 onzas,5 onzas,3 onzas;56035,32374,24453
- termino medio ahumado ensalada;Carnes;Naranja,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;55166,44101,28491
- termino medio ahumado chocolate;Adicionales;Agua,Leche,Lechuga;Familiar,mediano,personal;67766,29369,23172
- termino medio ahumado Filet;Dulces;Naranja,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;60669,52831,38237
- termino medio ahumado bbq;Carnes;Agua,Pimenton,Pan;Grande,mediano,pequeño;67779,25681,47184
- termino medio ahumado ahumado;Comida de mar;Bacalao,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;61674,44279,42703
- termino medio ahumado termino medio;Panaderia;Agua,Cebolla,Lenteja;Grande,mediano,pequeño;73915,28935,33454
- termino medio ahumado gourmet;Plato principal;Naranja,Huevos,Lenteja;Familiar,mediano,personal;64280,42961,19973
- termino medio ahumado con salsa;Panaderia;Harina,Queso,Lenteja;Grande,mediano,pequeño;63662,43880,30374
- termino medio termino medio rico;Adicionales;Agua,Huevos,Lenteja;Familiar,mediano,personal;69952,30977,45503
- termino medio termino medio papas;Plato principal;Agua,Cebolla,Lenteja;Grande,mediano,pequeño;70820,45515,38199
- termino medio termino medio ensalada;Dulces;Frijol,Queso,Lechuga;500 ml,200 ml,150 ml;57311,49324,31347
- termino medio termino medio chocolate;Bebida;Agua,Leche,Pan;Grande,mediano,pequeño;69774,30715,47797
- termino medio termino medio Filet;Carnes;Harina,Pimenton,Tomate;Familiar,mediano,personal;59105,28049,12074
- termino medio termino medio bbq;Comida chatarra;Bacalao,Huevos,Tomate;Familiar,mediano,personal;59808,45157,21848
- termino medio termino medio ahumado;Dulces;Naranja,Leche,Lenteja;8 onzas,5 onzas,3 onzas;61492,41604,34272
- termino medio termino medio termino medio;Plato principal;Frijol,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;68336,42880,32135
- termino medio termino medio gourmet;Bebida;Naranja,Leche,Lechuga;8 onzas,5 onzas,3 onzas;59975,53567,20758
- termino medio termino medio con salsa;Carnes;Naranja,Queso,Tomate;Grande,mediano,pequeño;57550,48374,13839
- termino medio gourmet rico;Natural;Bacalao,Cebolla,Lechuga;Grande,mediano,pequeño;73096,53136,26957
- termino medio gourmet papas;Dulces;Frijol,Queso,Lechuga;Grande,mediano,pequeño;62416,26274,38233
- termino medio gourmet ensalada;Adicionales;Harina,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;67159,49026,48833
- termino medio gourmet chocolate;Panaderia;Naranja,Cilantro,Pan;Familiar,mediano,personal;59712,33728,16904
- termino medio gourmet Filet;Natural;Agua,Cebolla,Lenteja;500 ml,200 ml,150 ml;72542,31600,20820
- termino medio gourmet bbq;Carnes;Naranja,Huevos,Pan;Familiar,mediano,personal;71153,42810,33978
- termino medio gourmet ahumado;Panaderia;Agua,Leche,Pan;Familiar,mediano,personal;72191,52063,16682
- termino medio gourmet termino medio;Panaderia;Bacalao,Cebolla,Pan;500 ml,200 ml,150 ml;74625,52303,44827
- termino medio gourmet gourmet;Bebida;Frijol,Leche,Pan;Grande,mediano,pequeño;72487,48518,18992
- termino medio gourmet con salsa;Comida de mar;Agua,Huevos,Pan;Familiar,mediano,personal;70649,36487,12693
- termino medio con salsa rico;Plato principal;Agua,Queso,Lenteja;Grande,mediano,pequeño;66453,46306,17574
- termino medio con salsa papas;Panaderia;Frijol,Huevos,Lechuga;Familiar,mediano,personal;56597,46716,29236
- termino medio con salsa ensalada;Comida chatarra;Frijol,Cebolla,Pan;Familiar,mediano,personal;71956,35862,9910
- termino medio con salsa chocolate;Carnes;Naranja,Pimenton,Tomate;Grande,mediano,pequeño;62783,53657,47359
- termino medio con salsa Filet;Natural;Harina,Pimenton,Lechuga;Familiar,mediano,personal;59394,25641,17533
- termino medio con salsa bbq;Natural;Bacalao,Pimenton,Pan;8 onzas,5 onzas,3 onzas;65999,37588,41611
- termino medio con salsa ahumado;Adicionales;Harina,Huevos,Lechuga;500 ml,200 ml,150 ml;60797,35363,16532
- termino medio con salsa termino medio;Natural;Naranja,Queso,Lenteja;Grande,mediano,pequeño;67487,39462,17396
- termino medio con salsa gourmet;Panaderia;Frijol,Cebolla,Lenteja;500 ml,200 ml,150 ml;68686,45268,19847
- termino medio con salsa con salsa;Panaderia;Naranja,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;74672,39231,36712
- gourmet rico rico;Panaderia;Agua,Huevos,Pan;8 onzas,5 onzas,3 onzas;62222,35923,43044
- gourmet rico papas;Panaderia;Agua,Huevos,Tomate;500 ml,200 ml,150 ml;69393,52376,45471
- gourmet rico ensalada;Plato principal;Naranja,Leche,Pan;Grande,mediano,pequeño;61361,35358,26347
- gourmet rico chocolate;Comida chatarra;Agua,Pimenton,Lenteja;8 onzas,5 onzas,3 onzas;58498,39859,27133
- gourmet rico Filet;Adicionales;Naranja,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;67220,34180,27751
- gourmet rico bbq;Adicionales;Agua,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;64452,49766,48242
- gourmet rico ahumado;Adicionales;Naranja,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;70254,40715,18981
- gourmet rico termino medio;Panaderia;Bacalao,Cilantro,Pan;8 onzas,5 onzas,3 onzas;72752,46194,30206
- gourmet rico gourmet;Panaderia;Frijol,Huevos,Pan;500 ml,200 ml,150 ml;65043,25612,39237
- gourmet rico con salsa;Carnes;Bacalao,Pimenton,Pan;Familiar,mediano,personal;74314,31077,45462
- gourmet papas rico;Carnes;Naranja,Leche,Tomate;500 ml,200 ml,150 ml;70314,54419,37677
- gourmet papas papas;Comida de mar;Frijol,Cebolla,Tomate;Grande,mediano,pequeño;61832,40413,47703
- gourmet papas ensalada;Carnes;Frijol,Huevos,Lenteja;Grande,mediano,pequeño;61482,41411,33868
- gourmet papas chocolate;Bebida;Agua,Huevos,Tomate;500 ml,200 ml,150 ml;59395,33760,19187
- gourmet papas Filet;Comida chatarra;Frijol,Queso,Pan;Grande,mediano,pequeño;74593,28680,15499
- gourmet papas bbq;Bebida;Harina,Cebolla,Lechuga;Familiar,mediano,personal;57705,52469,14436
- gourmet papas ahumado;Aperitivo;Harina,Huevos,Pan;8 onzas,5 onzas,3 onzas;73093,47944,47740
- gourmet papas termino medio;Carnes;Naranja,Cebolla,Pan;8 onzas,5 onzas,3 onzas;69984,44631,15957
- gourmet papas gourmet;Natural;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;55147,39222,26003
- gourmet papas con salsa;Plato principal;Naranja,Cilantro,Lechuga;Grande,mediano,pequeño;73520,34395,40471
- gourmet ensalada rico;Natural;Naranja,Cilantro,Tomate;Grande,mediano,pequeño;70700,41213,44531
- gourmet ensalada papas;Dulces;Naranja,Pimenton,Lenteja;Grande,mediano,pequeño;60852,51209,33193
- gourmet ensalada ensalada;Bebida;Agua,Pimenton,Tomate;Grande,mediano,pequeño;57033,49337,23041
- gourmet ensalada chocolate;Bebida;Harina,Queso,Lechuga;Familiar,mediano,personal;60735,37381,36901
- gourmet ensalada Filet;Comida chatarra;Frijol,Leche,Lenteja;500 ml,200 ml,150 ml;56516,53951,34890
- gourmet ensalada bbq;Bebida;Naranja,Leche,Tomate;Grande,mediano,pequeño;70143,34619,14115
- gourmet ensalada ahumado;Bebida;Harina,Huevos,Lechuga;Grande,mediano,pequeño;69129,51114,45826
- gourmet ensalada termino medio;Plato principal;Harina,Cebolla,Lechuga;Familiar,mediano,personal;65355,53262,45710
- gourmet ensalada gourmet;Comida chatarra;Naranja,Huevos,Pan;Grande,mediano,pequeño;59459,50468,49126
- gourmet ensalada con salsa;Comida chatarra;Naranja,Leche,Tomate;Familiar,mediano,personal;69395,48104,17224
- gourmet chocolate rico;Panaderia;Agua,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;63073,51497,20522
- gourmet chocolate papas;Dulces;Frijol,Pimenton,Pan;8 onzas,5 onzas,3 onzas;58918,46207,11659
- gourmet chocolate ensalada;Natural;Naranja,Leche,Tomate;Familiar,mediano,personal;64940,40788,45383
- gourmet chocolate chocolate;Bebida;Naranja,Queso,Pan;Familiar,mediano,personal;67547,43413,22572
- gourmet chocolate Filet;Plato principal;Harina,Leche,Lenteja;Grande,mediano,pequeño;60175,38449,32696
- gourmet chocolate bbq;Bebida;Agua,Cebolla,Lenteja;Familiar,mediano,personal;69384,31839,49487
- gourmet chocolate ahumado;Plato principal;Naranja,Leche,Lenteja;Grande,mediano,pequeño;73690,53378,43712
- gourmet chocolate termino medio;Adicionales;Frijol,Queso,Pan;500 ml,200 ml,150 ml;70586,26550,40703
- gourmet chocolate gourmet;Carnes;Harina,Pimenton,Tomate;Grande,mediano,pequeño;68692,44864,18091
- gourmet chocolate con salsa;Bebida;Frijol,Queso,Pan;Familiar,mediano,personal;58783,53569,47031
- gourmet Filet rico;Comida chatarra;Frijol,Cilantro,Lenteja;Familiar,mediano,personal;73361,52709,30215
- gourmet Filet papas;Panaderia;Bacalao,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;62609,27434,41206
- gourmet Filet ensalada;Comida de mar;Harina,Cilantro,Lechuga;500 ml,200 ml,150 ml;63674,39166,19470
- gourmet Filet chocolate;Comida chatarra;Bacalao,Pimenton,Lenteja;Grande,mediano,pequeño;65876,49496,14985
- gourmet Filet Filet;Dulces;Harina,Leche,Pan;Grande,mediano,pequeño;68971,52981,40616
- gourmet Filet bbq;Aperitivo;Harina,Pimenton,Pan;8 onzas,5 onzas,3 onzas;69183,30459,28288
- gourmet Filet ahumado;Plato principal;Harina,Cilantro,Pan;500 ml,200 ml,150 ml;63130,35326,13172
- gourmet Filet termino medio;Bebida;Bacalao,Pimenton,Tomate;Familiar,mediano,personal;60396,39130,29285
- gourmet Filet gourmet;Dulces;Agua,Pimenton,Pan;8 onzas,5 onzas,3 onzas;67491,48185,29842
- gourmet Filet con salsa;Carnes;Harina,Cebolla,Lenteja;Familiar,mediano,personal;70783,35636,13624
- gourmet bbq rico;Aperitivo;Agua,Pimenton,Lenteja;Familiar,mediano,personal;72039,26262,8813
- gourmet bbq papas;Comida chatarra;Frijol,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;69871,32729,25074
- gourmet bbq ensalada;Comida de mar;Naranja,Huevos,Pan;Grande,mediano,pequeño;71910,42848,41241
- gourmet bbq chocolate;Comida de mar;Agua,Huevos,Lechuga;Familiar,mediano,personal;57211,34753,25465
- gourmet bbq Filet;Dulces;Harina,Cebolla,Lenteja;Grande,mediano,pequeño;58919,26504,20154
- gourmet bbq bbq;Natural;Harina,Huevos,Lenteja;500 ml,200 ml,150 ml;70396,40063,17509
- gourmet bbq ahumado;Plato principal;Bacalao,Cilantro,Pan;500 ml,200 ml,150 ml;68427,48860,47591
- gourmet bbq termino medio;Panaderia;Agua,Pimenton,Pan;8 onzas,5 onzas,3 onzas;67417,31861,27951
- gourmet bbq gourmet;Plato principal;Frijol,Queso,Lechuga;Familiar,mediano,personal;60905,33636,8946
- gourmet bbq con salsa;Natural;Bacalao,Pimenton,Lenteja;Familiar,mediano,personal;68651,39674,15591
- gourmet ahumado rico;Comida chatarra;Frijol,Queso,Pan;Grande,mediano,pequeño;58633,27548,26044
- gourmet ahumado papas;Bebida;Frijol,Huevos,Lechuga;8 onzas,5 onzas,3 onzas;69310,33988,18256
- gourmet ahumado ensalada;Carnes;Frijol,Huevos,Tomate;Grande,mediano,pequeño;55556,47650,20102
- gourmet ahumado chocolate;Comida chatarra;Frijol,Pimenton,Lechuga;500 ml,200 ml,150 ml;55492,30199,35086
- gourmet ahumado Filet;Natural;Harina,Cebolla,Tomate;500 ml,200 ml,150 ml;73625,53431,10805
- gourmet ahumado bbq;Comida chatarra;Pimenton,Lechuga,Frijol;Grande,mediano,pequeño;66787,29000,24229
- gourmet ahumado ahumado;Panaderia;Queso,Lenteja,Frijol;Familiar,mediano,personal;66299,33857,40946
- gourmet ahumado termino medio;Comida chatarra;Queso,Tomate,Agua;8 onzas,5 onzas,3 onzas;58574,37358,48014
- gourmet ahumado gourmet;Plato principal;Cebolla,Lechuga,Harina;Familiar,mediano,personal;67913,39988,17586
- gourmet ahumado con salsa;Plato principal;Cebolla,Lenteja,Bacalao;Grande,mediano,pequeño;58418,34906,42544
- gourmet termino medio rico;Plato principal;Queso,Lechuga,Agua;Grande,mediano,pequeño;57088,31364,10907
- gourmet termino medio papas;Bebida;Queso,Tomate,Agua;Familiar,mediano,personal;64883,35722,46338
- gourmet termino medio ensalada;Bebida;Queso,Lenteja,Harina;Familiar,mediano,personal;71739,50801,36968
- gourmet termino medio chocolate;Comida de mar;Huevos,Lenteja,Agua;8 onzas,5 onzas,3 onzas;66598,46610,38852
- gourmet termino medio Filet;Comida de mar;Leche,Lenteja,Naranja;500 ml,200 ml,150 ml;63174,49587,33379
- gourmet termino medio bbq;Panaderia;Cilantro,Lechuga,Frijol;Grande,mediano,pequeño;60803,29933,35741
- gourmet termino medio ahumado;Plato principal;Cilantro,Tomate,Frijol;500 ml,200 ml,150 ml;67513,35101,15708
- gourmet termino medio termino medio;Plato principal;Cilantro,Lechuga,Bacalao;Grande,mediano,pequeño;57760,36706,37793
- gourmet termino medio gourmet;Plato principal;Pimenton,Lechuga,Naranja;8 onzas,5 onzas,3 onzas;56306,48688,9794
- gourmet termino medio con salsa;Adicionales;Huevos,Tomate,Frijol;Familiar,mediano,personal;70953,31394,39002
- gourmet gourmet rico;Aperitivo;Huevos,Lenteja,Naranja;Grande,mediano,pequeño;57575,28840,31594
- gourmet gourmet papas;Panaderia;Cebolla,Tomate,Bacalao;500 ml,200 ml,150 ml;70728,44083,37444
- gourmet gourmet ensalada;Natural;Leche,Tomate,Naranja;500 ml,200 ml,150 ml;55017,27909,16171
- gourmet gourmet chocolate;Natural;Pimenton,Lechuga,Agua;500 ml,200 ml,150 ml;74480,37036,11801
- gourmet gourmet Filet;Carnes;Leche,Tomate,Frijol;Familiar,mediano,personal;69460,47150,29974
- gourmet gourmet bbq;Bebida;Leche,Lenteja,Agua;Familiar,mediano,personal;71929,51678,49576
- gourmet gourmet ahumado;Plato principal;Queso,Lechuga,Bacalao;8 onzas,5 onzas,3 onzas;56620,50220,32781
- gourmet gourmet termino medio;Plato principal;Huevos,Lechuga,Agua;8 onzas,5 onzas,3 onzas;67912,30755,26649
- gourmet gourmet gourmet;Dulces;Leche,Tomate,Harina;Familiar,mediano,personal;57174,47022,19790
- gourmet gourmet con salsa;Plato principal;Queso,Lenteja,Agua;Grande,mediano,pequeño;72501,40509,47532
- gourmet con salsa rico;Panaderia;Leche,Tomate,Frijol;500 ml,200 ml,150 ml;55509,30968,10457
- gourmet con salsa papas;Comida chatarra;Cilantro,Lechuga,Frijol;Grande,mediano,pequeño;66068,54833,35980
- gourmet con salsa ensalada;Natural;Queso,Lenteja,Frijol;Grande,mediano,pequeño;69989,33079,23866
- gourmet con salsa chocolate;Carnes;Queso,Tomate,Naranja;Familiar,mediano,personal;59724,54259,16164
- gourmet con salsa Filet;Plato principal;Pan,Lechuga,Bacalao;8 onzas,5 onzas,3 onzas;69634,32961,31602
- gourmet con salsa bbq;Adicionales;Leche,Lenteja,Bacalao;Grande,mediano,pequeño;62581,29701,33011
- gourmet con salsa ahumado;Comida chatarra;Cilantro,Lechuga,Frijol;Grande,mediano,pequeño;71662,43766,49801
- gourmet con salsa termino medio;Bebida;Pan,Lechuga,Agua;Grande,mediano,pequeño;61619,51666,41403
- gourmet con salsa gourmet;Aperitivo;Cebolla,Lechuga,Harina;Familiar,mediano,personal;58058,35538,23524
- gourmet con salsa con salsa;Comida chatarra;Queso,Tomate,Agua;Familiar,mediano,personal;65465,28246,29600
- con salsa rico rico;Comida chatarra;Huevos,Lenteja,Bacalao;Grande,mediano,pequeño;59309,50774,36441
- con salsa rico papas;Aperitivo;Cilantro,Lenteja,Agua;8 onzas,5 onzas,3 onzas;63493,42331,25214
- con salsa rico ensalada;Natural;Pimenton,Lenteja,Agua;8 onzas,5 onzas,3 onzas;61032,35545,47331
- con salsa rico chocolate;Plato principal;Queso,Tomate,Naranja;Grande,mediano,pequeño;55003,33557,21915
- con salsa rico Filet;Panaderia;Cilantro,Lenteja,Frijol;Familiar,mediano,personal;63805,53301,46110
- con salsa rico bbq;Bebida;Cilantro,Lechuga,Harina;Grande,mediano,pequeño;70089,44724,20515
- con salsa rico ahumado;Comida chatarra;Cebolla,Lechuga,Harina;500 ml,200 ml,150 ml;55362,40118,37633
- con salsa rico termino medio;Dulces;Cebolla,Lenteja,Bacalao;Familiar,mediano,personal;64509,25074,31981
- con salsa rico gourmet;Aperitivo;Huevos,Lenteja,Naranja;Familiar,mediano,personal;64711,53729,40708
- con salsa rico con salsa;Carnes;Queso,Lechuga,Bacalao;Familiar,mediano,personal;74482,45428,32729
- con salsa papas rico;Plato principal;Pimenton,Lenteja,Naranja;Familiar,mediano,personal;66400,32362,32943
- con salsa papas papas;Carnes;Cebolla,Lenteja,Frijol;8 onzas,5 onzas,3 onzas;64284,44661,38603
- con salsa papas ensalada;Carnes;Huevos,Tomate,Harina;8 onzas,5 onzas,3 onzas;73344,39960,36408
- con salsa papas chocolate;Plato principal;Pan,Lechuga,Frijol;Grande,mediano,pequeño;72624,47892,34149
- con salsa papas Filet;Aperitivo;Leche,Tomate,Naranja;Familiar,mediano,personal;65978,27249,15364
- con salsa papas bbq;Plato principal;Cebolla,Tomate,Naranja;Familiar,mediano,personal;69714,49984,24195
- con salsa papas ahumado;Adicionales;Cebolla,Lechuga,Naranja;Familiar,mediano,personal;70444,52874,13360
- con salsa papas termino medio;Plato principal;Pan,Lenteja,Bacalao;500 ml,200 ml,150 ml;74668,33824,42066
- con salsa papas gourmet;Comida de mar;Cilantro,Lenteja,Agua;Familiar,mediano,personal;64088,28516,13916
- con salsa papas con salsa;Aperitivo;Queso,Tomate,Agua;Familiar,mediano,personal;61129,43767,24320
- con salsa ensalada rico;Natural;Pan,Lenteja,Harina;8 onzas,5 onzas,3 onzas;56136,33243,31469
- con salsa ensalada papas;Panaderia;Queso,Lechuga,Harina;8 onzas,5 onzas,3 onzas;67149,49756,19088
- con salsa ensalada ensalada;Comida chatarra;Cebolla,Lenteja,Agua;Grande,mediano,pequeño;58848,25242,31734
- con salsa ensalada chocolate;Comida chatarra;Cilantro,Lechuga,Harina;Familiar,mediano,personal;69055,50809,38236
- con salsa ensalada Filet;Bebida;Huevos,Tomate,Harina;8 onzas,5 onzas,3 onzas;66190,34974,14336
- con salsa ensalada bbq;Comida chatarra;Cebolla,Lenteja,Naranja;8 onzas,5 onzas,3 onzas;65869,37473,41980
- con salsa ensalada ahumado;Natural;Cebolla,Lechuga,Agua;Familiar,mediano,personal;57857,52008,39455
- con salsa ensalada termino medio;Natural;Leche,Lenteja,Agua;500 ml,200 ml,150 ml;72999,35647,44199
- con salsa ensalada gourmet;Carnes;Huevos,Tomate,Naranja;8 onzas,5 onzas,3 onzas;64999,29867,38174
- con salsa ensalada con salsa;Plato principal;Cilantro,Tomate,Agua;Grande,mediano,pequeño;59604,28112,14445
- con salsa chocolate rico;Comida chatarra;Pimenton,Lenteja,Bacalao;Grande,mediano,pequeño;66035,44394,21324
- con salsa chocolate papas;Carnes;Huevos,Tomate,Frijol;Familiar,mediano,personal;68601,30981,43678
- con salsa chocolate ensalada;Carnes;Cilantro,Lenteja,Bacalao;Grande,mediano,pequeño;61622,31725,28145
- con salsa chocolate chocolate;Panaderia;Cilantro,Lechuga,Agua;8 onzas,5 onzas,3 onzas;64810,49860,14478
- con salsa chocolate Filet;Carnes;Pimenton,Lechuga,Bacalao;Grande,mediano,pequeño;72557,45159,48165
- con salsa chocolate bbq;Comida de mar;Queso,Lechuga,Naranja;8 onzas,5 onzas,3 onzas;61544,26622,14334
- con salsa chocolate ahumado;Adicionales;Leche,Tomate,Agua;Grande,mediano,pequeño;70909,50817,44272
- con salsa chocolate termino medio;Adicionales;Huevos,Tomate,Harina;Grande,mediano,pequeño;64700,45837,25410
- con salsa chocolate gourmet;Panaderia;Leche,Lechuga,Frijol;500 ml,200 ml,150 ml;59665,35635,29877
- con salsa chocolate con salsa;Aperitivo;Pimenton,Lechuga,Bacalao;8 onzas,5 onzas,3 onzas;63505,50687,46879
- con salsa Filet rico;Panaderia;Cilantro,Lenteja,Frijol;500 ml,200 ml,150 ml;55547,25481,44465
- con salsa Filet papas;Dulces;Leche,Lenteja,Harina;500 ml,200 ml,150 ml;65878,46738,34786
- con salsa Filet ensalada;Aperitivo;Pimenton,Tomate,Bacalao;Familiar,mediano,personal;58354,28829,25477
- con salsa Filet chocolate;Comida de mar;Leche,Tomate,Naranja;8 onzas,5 onzas,3 onzas;72855,37135,44361
- con salsa Filet Filet;Bebida;Leche,Tomate,Agua;8 onzas,5 onzas,3 onzas;62471,27267,42796
- con salsa Filet bbq;Aperitivo;Leche,Tomate,Harina;Familiar,mediano,personal;70072,35127,46154
- con salsa Filet ahumado;Adicionales;Cilantro,Lenteja,Harina;500 ml,200 ml,150 ml;72482,44871,21536
- con salsa Filet termino medio;Carnes;Cebolla,Lechuga,Naranja;500 ml,200 ml,150 ml;68779,36512,47890
- con salsa Filet gourmet;Plato principal;Pan,Lechuga,Frijol;Familiar,mediano,personal;64172,43029,49969
- con salsa Filet con salsa;Bebida;Queso,Lechuga,Frijol;8 onzas,5 onzas,3 onzas;57236,49939,43014
- con salsa bbq rico;Carnes;Cebolla,Tomate,Harina;8 onzas,5 onzas,3 onzas;61595,26894,43767
- con salsa bbq papas;Plato principal;Cilantro,Lenteja,Naranja;500 ml,200 ml,150 ml;64536,32341,25655
- con salsa bbq ensalada;Bebida;Pimenton,Lechuga,Harina;500 ml,200 ml,150 ml;60714,45739,49994
- con salsa bbq chocolate;Plato principal;Cebolla,Lenteja,Agua;Grande,mediano,pequeño;69651,27858,29050
- con salsa bbq Filet;Natural;Queso,Lenteja,Naranja;500 ml,200 ml,150 ml;56733,45892,21311
- con salsa bbq bbq;Carnes;Pimenton,Lenteja,Harina;500 ml,200 ml,150 ml;58840,27277,14147
- con salsa bbq ahumado;Carnes;Cebolla,Lechuga,Naranja;500 ml,200 ml,150 ml;66483,39611,16662
- con salsa bbq termino medio;Natural;Cebolla,Lechuga,Frijol;8 onzas,5 onzas,3 onzas;69463,51390,40837
- con salsa bbq gourmet;Carnes;Cebolla,Tomate,Agua;8 onzas,5 onzas,3 onzas;69814,49813,14341
- con salsa bbq con salsa;Adicionales;Cilantro,Lenteja,Naranja;8 onzas,5 onzas,3 onzas;69651,49929,44281
- con salsa ahumado rico;Panaderia;Pan,Lechuga,Frijol;Grande,mediano,pequeño;55654,50106,31618
- con salsa ahumado papas;Comida de mar;Pan,Tomate,Naranja;Familiar,mediano,personal;59822,46066,14366
- con salsa ahumado ensalada;Panaderia;Cebolla,Tomate,Naranja;Familiar,mediano,personal;60774,49237,35342
- con salsa ahumado chocolate;Dulces;Queso,Lenteja,Frijol;Familiar,mediano,personal;65631,53885,45445
- con salsa ahumado Filet;Dulces;Huevos,Lenteja,Agua;Familiar,mediano,personal;65425,46754,24560
- con salsa ahumado bbq;Natural;Cilantro,Lenteja,Bacalao;500 ml,200 ml,150 ml;56034,54313,36155
- con salsa ahumado ahumado;Dulces;Pan,Lenteja,Naranja;8 onzas,5 onzas,3 onzas;59269,52529,31833
- con salsa ahumado termino medio;Comida chatarra;Queso,Lenteja,Frijol;Grande,mediano,pequeño;63890,50197,39330
- con salsa ahumado gourmet;Dulces;Cilantro,Lenteja,Naranja;500 ml,200 ml,150 ml;71575,30836,21574
- con salsa ahumado con salsa;Aperitivo;Cilantro,Lechuga,Agua;8 onzas,5 onzas,3 onzas;64304,26068,49960
- con salsa termino medio rico;Comida de mar;Pan,Lenteja,Frijol;Familiar,mediano,personal;62508,36049,10758
- con salsa termino medio papas;Carnes;Pimenton,Tomate,Agua;Familiar,mediano,personal;57966,32659,41013
- con salsa termino medio ensalada;Comida chatarra;Cilantro,Lechuga,Bacalao;500 ml,200 ml,150 ml;62075,36940,44605
- con salsa termino medio chocolate;Carnes;Pimenton,Lechuga,Frijol;Grande,mediano,pequeño;64944,50083,19717
- con salsa termino medio Filet;Comida de mar;Queso,Lenteja,Naranja;8 onzas,5 onzas,3 onzas;58714,29721,35781
- con salsa termino medio bbq;Dulces;Pan,Tomate,Naranja;Grande,mediano,pequeño;71903,36300,16266
- con salsa termino medio ahumado;Adicionales;Cebolla,Tomate,Naranja;Familiar,mediano,personal;68183,45138,49497
- con salsa termino medio termino medio;Adicionales;Cilantro,Lechuga,Frijol;Familiar,mediano,personal;71264,38511,10961
- con salsa termino medio gourmet;Aperitivo;Pimenton,Lenteja,Frijol;8 onzas,5 onzas,3 onzas;73139,53496,21490
- con salsa termino medio con salsa;Dulces;Cebolla,Lechuga,Agua;500 ml,200 ml,150 ml;70996,53161,9619
- con salsa gourmet rico;Comida de mar;Pan,Tomate,Frijol;8 onzas,5 onzas,3 onzas;73034,27800,39323
- con salsa gourmet papas;Aperitivo;Pimenton,Tomate,Harina;Familiar,mediano,personal;70598,33766,24020
- con salsa gourmet ensalada;Comida de mar;Cilantro,Lenteja,Frijol;Grande,mediano,pequeño;73616,34240,42494
- con salsa gourmet chocolate;Dulces;Queso,Lechuga,Agua;Grande,mediano,pequeño;73628,34973,37319
- con salsa gourmet Filet;Dulces;Queso,Lenteja,Frijol;500 ml,200 ml,150 ml;73894,36502,32954
- con salsa gourmet bbq;Panaderia;Huevos,Lechuga,Naranja;Familiar,mediano,personal;70251,26163,36006
- con salsa gourmet ahumado;Comida chatarra;Pan,Lechuga,Naranja;Familiar,mediano,personal;68868,53711,45314
- con salsa gourmet termino medio;Carnes;Cilantro,Tomate,Agua;500 ml,200 ml,150 ml;66542,50540,40210
- con salsa gourmet gourmet;Comida de mar;Cebolla,Lechuga,Naranja;Familiar,mediano,personal;66039,47714,10906
- con salsa gourmet con salsa;Comida de mar;Pan,Lenteja,Harina;Familiar,mediano,personal;58716,48062,39766
- con salsa con salsa rico;Adicionales;Cebolla,Lenteja,Naranja;Grande,mediano,pequeño;71079,47442,40613
- con salsa con salsa papas;Dulces;Huevos,Lechuga,Agua;Familiar,mediano,personal;59256,28829,21852
- con salsa con salsa ensalada;Aperitivo;Queso,Lechuga,Agua;8 onzas,5 onzas,3 onzas;71258,43462,14226
- con salsa con salsa chocolate;Natural;Pan,Lenteja,Harina;Grande,mediano,pequeño;69458,52117,28026
- con salsa con salsa Filet;Natural;Pan,Lenteja,Naranja;500 ml,200 ml,150 ml;60454,52108,38299
- con salsa con salsa bbq;Panaderia;Queso,Lenteja,Harina;500 ml,200 ml,150 ml;62525,54311,17352
- con salsa con salsa ahumado;Bebida;Pimenton,Tomate,Frijol;500 ml,200 ml,150 ml;65066,43906,18747
- con salsa con salsa termino medio;Carnes;Cebolla,Lechuga,Agua;Familiar,mediano,personal;60065,29134,44034
- con salsa con salsa gourmet;Dulces;Huevos,Lechuga,Bacalao;Grande,mediano,pequeño;64320,36482,38823
- con salsa con salsa con salsa;Plato principal;Cilantro,Lechuga,Frijol;8 onzas,5 onzas,3 onzas;58209,51535,24350
- papas rico rico rico;Natural;Queso,Lenteja,Frijol;Familiar,mediano,personal;66004,48415,34149
- papas rico rico papas;Panaderia;Huevos,Lechuga,Frijol;8 onzas,5 onzas,3 onzas;71912,36028,26309
+Nombre del producto;Tipo de producto;Ingredientes;TamaÃ±os;Precios
+papas;Adicionales;Lenteja,Leche,Harina;Grande,mediano,pequeÃ±o;62683,51884,48995
+ensalada;Comida de mar;Tomate,Cilantro,Harina;Familiar,mediano,personal;63976,31842,44659
+chocolate;Panaderia;Lenteja,Leche,Harina;500 ml,200 ml,150 ml;57310,36168,35247
+Filet;Carnes;Lenteja,Leche,Naranja;Familiar,mediano,personal;62087,35134,33434
+bbq;Plato principal;Lenteja,Queso,Bacalao;500 ml,200 ml,150 ml;64113,52220,20761
+ahumado;Plato principal;Lechuga,Cebolla,Naranja;Grande,mediano,pequeÃ±o;71792,41504,25452
+termino medio;Natural;Tomate,Pimenton,Bacalao;8 onzas,5 onzas,3 onzas;74434,34194,25293
+gourmet;Adicionales;Pan,Cebolla,Naranja;Familiar,mediano,personal;68234,50939,44356
+con salsa;Adicionales;Lechuga,Queso,Frijol;8 onzas,5 onzas,3 onzas;62142,52717,16977
+papas rico;Plato principal;Lenteja,Leche,Naranja;8 onzas,5 onzas,3 onzas;69890,50033,15851
+papas papas;Bebida;Lechuga,Queso,Naranja;Grande,mediano,pequeÃ±o;58113,38224,17867
+papas ensalada;Plato principal;Lenteja,Cilantro,Frijol;500 ml,200 ml,150 ml;62109,43145,31176
+papas chocolate;Aperitivo;Pan,Leche,Agua;Grande,mediano,pequeÃ±o;57467,36071,33383
+papas Filet;Bebida;Lenteja,Queso,Naranja;Familiar,mediano,personal;69030,26428,36448
+papas bbq;Comida chatarra;Lenteja,Pimenton,Naranja;Familiar,mediano,personal;66767,42972,34684
+papas ahumado;Adicionales;Pan,Queso,Agua;8 onzas,5 onzas,3 onzas;74458,30429,9686
+papas termino medio;Comida chatarra;Lenteja,Queso,Frijol;8 onzas,5 onzas,3 onzas;56531,50184,12950
+papas gourmet;Plato principal;Lechuga,Pimenton,Harina;500 ml,200 ml,150 ml;57117,52308,44604
+papas con salsa;Bebida;Pan,Queso,Bacalao;Grande,mediano,pequeÃ±o;72427,53017,37530
+ensalada rico;Dulces;Lechuga,Leche,Bacalao;Familiar,mediano,personal;69886,27820,42827
+ensalada papas;Comida chatarra;Lechuga,Leche,Agua;Grande,mediano,pequeÃ±o;70589,39304,46737
+ensalada ensalada;Adicionales;Lenteja,Cebolla,Naranja;8 onzas,5 onzas,3 onzas;56729,36525,19459
+ensalada chocolate;Natural;Lenteja,Cebolla,Bacalao;8 onzas,5 onzas,3 onzas;63867,40527,20183
+ensalada Filet;Comida de mar;Pan,Queso,Frijol;8 onzas,5 onzas,3 onzas;61953,41404,47830
+ensalada bbq;Adicionales;Lenteja,Cilantro,Agua;Grande,mediano,pequeÃ±o;72465,26614,38259
+ensalada ahumado;Plato principal;Pan,Queso,Naranja;8 onzas,5 onzas,3 onzas;72427,48433,13568
+ensalada termino medio;Bebida;Tomate,Cebolla,Bacalao;500 ml,200 ml,150 ml;66428,36743,13065
+ensalada gourmet;Aperitivo;Pan,Leche,Agua;500 ml,200 ml,150 ml;61811,42417,35733
+ensalada con salsa;Adicionales;Pan,Cilantro,Harina;Familiar,mediano,personal;55949,47879,31816
+chocolate rico;Carnes;Lechuga,Queso,Agua;Grande,mediano,pequeÃ±o;71011,44779,34573
+chocolate papas;Carnes;Pan,Cebolla,Bacalao;Familiar,mediano,personal;68832,28866,31271
+chocolate ensalada;Panaderia;Tomate,Queso,Bacalao;8 onzas,5 onzas,3 onzas;71414,51980,39065
+chocolate chocolate;Natural;Tomate,Pimenton,Frijol;8 onzas,5 onzas,3 onzas;71554,47715,21121
+chocolate Filet;Dulces;Lenteja,Cebolla,Naranja;500 ml,200 ml,150 ml;63657,47924,8458
+chocolate bbq;Panaderia;Tomate,Cilantro,Frijol;500 ml,200 ml,150 ml;66122,38519,40081
+chocolate ahumado;Comida chatarra;Pan,Leche,Frijol;8 onzas,5 onzas,3 onzas;57272,25919,48531
+chocolate termino medio;Comida chatarra;Tomate,Leche,Naranja;Grande,mediano,pequeÃ±o;56007,51670,24300
+chocolate gourmet;Aperitivo;Lechuga,Leche,Frijol;Grande,mediano,pequeÃ±o;65464,26207,13605
+chocolate con salsa;Plato principal;Lechuga,Cebolla,Frijol;8 onzas,5 onzas,3 onzas;65572,40051,21136
+Filet rico;Adicionales;Lechuga,Pimenton,Frijol;Grande,mediano,pequeÃ±o;57567,50267,45405
+Filet papas;Carnes;Lenteja,Cebolla,Harina;8 onzas,5 onzas,3 onzas;60382,43975,18868
+Filet ensalada;Plato principal;Lenteja,Cebolla,Agua;500 ml,200 ml,150 ml;66072,33040,15511
+Filet chocolate;Adicionales;Lenteja,Cilantro,Bacalao;Grande,mediano,pequeÃ±o;59466,39813,21731
+Filet Filet;Panaderia;Lechuga,Cilantro,Agua;8 onzas,5 onzas,3 onzas;68998,35833,28833
+Filet bbq;Plato principal;Lechuga,Queso,Agua;500 ml,200 ml,150 ml;67611,39132,21582
+Filet ahumado;Bebida;Lenteja,Leche,Frijol;500 ml,200 ml,150 ml;58403,42723,9152
+Filet termino medio;Aperitivo;Lenteja,Queso,Harina;500 ml,200 ml,150 ml;66271,37167,27831
+Filet gourmet;Natural;Lechuga,Cilantro,Bacalao;Grande,mediano,pequeÃ±o;58201,43590,49496
+Filet con salsa;Aperitivo;Lechuga,Cebolla,Bacalao;Grande,mediano,pequeÃ±o;71638,26806,42553
+bbq rico;Aperitivo;Lenteja,Leche,Frijol;Familiar,mediano,personal;72284,44043,13123
+bbq papas;Plato principal;Lenteja,Cilantro,Bacalao;Familiar,mediano,personal;64793,40203,37411
+bbq ensalada;Natural;Pan,Pimenton,Frijol;8 onzas,5 onzas,3 onzas;66165,54839,17022
+bbq chocolate;Panaderia;Lenteja,Queso,Agua;500 ml,200 ml,150 ml;70141,26730,47381
+bbq Filet;Comida de mar;Lenteja,Pimenton,Agua;Grande,mediano,pequeÃ±o;72867,39366,11451
+bbq bbq;Dulces;Pan,Leche,Bacalao;8 onzas,5 onzas,3 onzas;60653,42096,38545
+bbq ahumado;Aperitivo;Lenteja,Queso,Frijol;8 onzas,5 onzas,3 onzas;69277,28313,35411
+bbq termino medio;Bebida;Lenteja,Queso,Naranja;8 onzas,5 onzas,3 onzas;61328,52464,14820
+bbq gourmet;Bebida;Tomate,Leche,Naranja;Familiar,mediano,personal;73113,45742,12151
+bbq con salsa;Comida de mar;Pan,Cebolla,Naranja;Familiar,mediano,personal;70887,39328,12296
+ahumado rico;Carnes;Lechuga,Pimenton,Harina;8 onzas,5 onzas,3 onzas;69469,50677,10561
+ahumado papas;Carnes;Tomate,Cilantro,Bacalao;500 ml,200 ml,150 ml;59457,47177,36929
+ahumado ensalada;Comida chatarra;Tomate,Queso,Naranja;500 ml,200 ml,150 ml;61057,33394,19924
+ahumado chocolate;Carnes;Pan,Leche,Naranja;500 ml,200 ml,150 ml;59575,36829,40880
+ahumado Filet;Plato principal;Tomate,Pimenton,Harina;Grande,mediano,pequeÃ±o;60201,51891,28911
+ahumado bbq;Panaderia;Lenteja,Cilantro,Bacalao;Familiar,mediano,personal;69710,40399,37087
+ahumado ahumado;Aperitivo;Lechuga,Queso,Harina;500 ml,200 ml,150 ml;65280,35418,30105
+ahumado termino medio;Aperitivo;Lechuga,Queso,Harina;8 onzas,5 onzas,3 onzas;56213,29368,32817
+ahumado gourmet;Comida chatarra;Tomate,Cebolla,Agua;Familiar,mediano,personal;65233,48072,23981
+ahumado con salsa;Plato principal;Lechuga,Pimenton,Frijol;Familiar,mediano,personal;55751,54838,36058
+termino medio rico;Adicionales;Lenteja,Cilantro,Bacalao;Grande,mediano,pequeÃ±o;56982,30693,40481
+termino medio papas;Carnes;Pan,Cilantro,Bacalao;Grande,mediano,pequeÃ±o;74523,54650,29127
+termino medio ensalada;Dulces;Lenteja,Pimenton,Agua;Grande,mediano,pequeÃ±o;61130,33725,12312
+termino medio chocolate;Aperitivo;Lenteja,Leche,Frijol;500 ml,200 ml,150 ml;72110,37033,31144
+termino medio Filet;Comida chatarra;Tomate,Queso,Bacalao;500 ml,200 ml,150 ml;70076,34003,15236
+termino medio bbq;Plato principal;Lenteja,Queso,Agua;500 ml,200 ml,150 ml;72839,47120,19745
+termino medio ahumado;Comida chatarra;Tomate,Cilantro,Agua;Grande,mediano,pequeÃ±o;59419,43529,10352
+termino medio termino medio;Aperitivo;Tomate,Cilantro,Naranja;8 onzas,5 onzas,3 onzas;70043,40461,41169
+termino medio gourmet;Adicionales;Lenteja,Pimenton,Bacalao;Grande,mediano,pequeÃ±o;56606,44908,28635
+termino medio con salsa;Comida chatarra;Lechuga,Pimenton,Bacalao;Grande,mediano,pequeÃ±o;73985,25605,36453
+gourmet rico;Comida chatarra;Lenteja,Leche,Agua;Familiar,mediano,personal;69869,40152,36338
+gourmet papas;Adicionales;Pan,Cilantro,Agua;500 ml,200 ml,150 ml;70870,47297,9129
+gourmet ensalada;Comida de mar;Lenteja,Leche,Agua;8 onzas,5 onzas,3 onzas;56268,30806,35510
+gourmet chocolate;Aperitivo;Tomate,Cilantro,Agua;Grande,mediano,pequeÃ±o;60586,49551,29835
+gourmet Filet;Comida chatarra;Pan,Leche,Naranja;8 onzas,5 onzas,3 onzas;71967,43931,28382
+gourmet bbq;Bebida;Lechuga,Cilantro,Bacalao;8 onzas,5 onzas,3 onzas;57939,29392,44156
+gourmet ahumado;Adicionales;Tomate,Cilantro,Frijol;500 ml,200 ml,150 ml;66813,27166,14257
+gourmet termino medio;Natural;Lechuga,Cilantro,Frijol;Grande,mediano,pequeÃ±o;74801,54816,24374
+gourmet gourmet;Plato principal;Lenteja,Cebolla,Harina;500 ml,200 ml,150 ml;65052,36477,47766
+gourmet con salsa;Adicionales;Lechuga,Leche,Bacalao;Grande,mediano,pequeÃ±o;59330,32093,12754
+con salsa rico;Dulces;Lechuga,Cebolla,Naranja;500 ml,200 ml,150 ml;73964,35522,13341
+con salsa papas;Plato principal;Tomate,Cilantro,Frijol;Familiar,mediano,personal;68440,33036,44927
+con salsa ensalada;Aperitivo;Tomate,Leche,Harina;Grande,mediano,pequeÃ±o;65377,40098,33292
+con salsa chocolate;Plato principal;Lenteja,Leche,Agua;8 onzas,5 onzas,3 onzas;56567,51126,36913
+con salsa Filet;Comida de mar;Tomate,Cebolla,Harina;Familiar,mediano,personal;58439,50075,21021
+con salsa bbq;Adicionales;Pan,Cebolla,Frijol;Familiar,mediano,personal;74320,34151,33940
+con salsa ahumado;Carnes;Tomate,Queso,Frijol;8 onzas,5 onzas,3 onzas;58034,41185,39341
+con salsa termino medio;Plato principal;Pan,Pimenton,Naranja;Grande,mediano,pequeÃ±o;58628,53266,23726
+con salsa gourmet;Comida de mar;Tomate,Queso,Naranja;Grande,mediano,pequeÃ±o;59096,49786,11449
+con salsa con salsa;Bebida;Lechuga,Queso,Harina;Grande,mediano,pequeÃ±o;71140,52488,31470
+papas rico rico;Adicionales;Pan,Cebolla,Frijol;Familiar,mediano,personal;71899,29140,18355
+papas rico papas;Comida de mar;Lechuga,Queso,Agua;500 ml,200 ml,150 ml;74573,33828,8035
+papas rico ensalada;Comida de mar;Tomate,Queso,Frijol;Familiar,mediano,personal;56453,39544,34141
+papas rico chocolate;Comida chatarra;Lenteja,Pimenton,Harina;Familiar,mediano,personal;71305,34363,18321
+papas rico Filet;Plato principal;Pan,Pimenton,Agua;Grande,mediano,pequeÃ±o;69798,39432,29628
+papas rico bbq;Comida chatarra;Lenteja,Queso,Harina;500 ml,200 ml,150 ml;69640,38274,10461
+papas rico ahumado;Aperitivo;Lechuga,Cebolla,Harina;Grande,mediano,pequeÃ±o;60733,53671,47955
+papas rico termino medio;Bebida;Lenteja,Queso,Frijol;8 onzas,5 onzas,3 onzas;72600,47996,9296
+papas rico gourmet;Carnes;Lenteja,Queso,Naranja;8 onzas,5 onzas,3 onzas;56714,31066,34240
+papas rico con salsa;Bebida;Lenteja,Queso,Bacalao;500 ml,200 ml,150 ml;64678,48739,32431
+papas papas rico;Bebida;Tomate,Cebolla,Harina;Grande,mediano,pequeÃ±o;62491,54473,28623
+papas papas papas;Comida chatarra;Lechuga,Leche,Bacalao;Grande,mediano,pequeÃ±o;73386,48198,23376
+papas papas ensalada;Plato principal;Lenteja,Queso,Frijol;8 onzas,5 onzas,3 onzas;62465,34942,33015
+papas papas chocolate;Panaderia;Lechuga,Leche,Agua;8 onzas,5 onzas,3 onzas;58540,50193,15430
+papas papas Filet;Comida chatarra;Pan,Queso,Agua;Familiar,mediano,personal;68994,50708,25282
+papas papas bbq;Carnes;Tomate,Queso,Harina;Familiar,mediano,personal;57908,39740,30081
+papas papas ahumado;Comida de mar;Lechuga,Pimenton,Harina;Familiar,mediano,personal;55431,43206,13422
+papas papas termino medio;Comida de mar;Tomate,Queso,Frijol;Grande,mediano,pequeÃ±o;56823,38175,26878
+papas papas gourmet;Natural;Pan,Cilantro,Agua;Familiar,mediano,personal;66668,38197,8204
+papas papas con salsa;Comida chatarra;Tomate,Cilantro,Bacalao;Grande,mediano,pequeÃ±o;55156,46550,9205
+papas ensalada rico;Carnes;Lenteja,Cebolla,Frijol;Familiar,mediano,personal;63735,36947,38154
+papas ensalada papas;Carnes;Lenteja,Leche,Bacalao;Familiar,mediano,personal;62270,47393,15540
+papas ensalada ensalada;Comida chatarra;Pan,Queso,Naranja;Grande,mediano,pequeÃ±o;61350,40534,16255
+papas ensalada chocolate;Bebida;Lechuga,Cebolla,Agua;Grande,mediano,pequeÃ±o;64556,51647,28093
+papas ensalada Filet;Aperitivo;Pan,Queso,Frijol;Familiar,mediano,personal;74141,31312,47376
+papas ensalada bbq;Aperitivo;Pan,Cebolla,Naranja;Familiar,mediano,personal;61245,29017,44594
+papas ensalada ahumado;Comida de mar;Lechuga,Queso,Bacalao;8 onzas,5 onzas,3 onzas;69797,30959,9395
+papas ensalada termino medio;Panaderia;Tomate,Pimenton,Harina;500 ml,200 ml,150 ml;61534,40796,23046
+papas ensalada gourmet;Carnes;Tomate,Cilantro,Bacalao;Grande,mediano,pequeÃ±o;64784,47128,31891
+papas ensalada con salsa;Aperitivo;Lenteja,Pimenton,Bacalao;8 onzas,5 onzas,3 onzas;56454,38088,19197
+papas chocolate rico;Aperitivo;Tomate,Cebolla,Bacalao;500 ml,200 ml,150 ml;63544,30322,49035
+papas chocolate papas;Aperitivo;Lenteja,Cebolla,Bacalao;Familiar,mediano,personal;66156,49685,19520
+papas chocolate ensalada;Plato principal;Lenteja,Leche,Harina;8 onzas,5 onzas,3 onzas;68913,38428,12858
+papas chocolate chocolate;Aperitivo;Lenteja,Cebolla,Frijol;8 onzas,5 onzas,3 onzas;71390,52806,27098
+papas chocolate Filet;Adicionales;Pan,Cilantro,Harina;500 ml,200 ml,150 ml;62912,54318,30655
+papas chocolate bbq;Bebida;Tomate,Cebolla,Naranja;Grande,mediano,pequeÃ±o;62196,53218,16567
+papas chocolate ahumado;Dulces;Tomate,Cebolla,Frijol;Familiar,mediano,personal;56916,39607,34875
+papas chocolate termino medio;Natural;Tomate,Cebolla,Harina;Grande,mediano,pequeÃ±o;62103,45643,23995
+papas chocolate gourmet;Carnes;Tomate,Queso,Naranja;8 onzas,5 onzas,3 onzas;72690,51285,34589
+papas chocolate con salsa;Dulces;Tomate,Cebolla,Harina;500 ml,200 ml,150 ml;57322,48448,37315
+papas Filet rico;Dulces;Tomate,Cilantro,Bacalao;500 ml,200 ml,150 ml;74468,32443,36590
+papas Filet papas;Bebida;Lechuga,Cilantro,Harina;500 ml,200 ml,150 ml;65930,38746,17868
+papas Filet ensalada;Bebida;Tomate,Leche,Frijol;500 ml,200 ml,150 ml;55295,27324,34981
+papas Filet chocolate;Plato principal;Lenteja,Cebolla,Harina;Grande,mediano,pequeÃ±o;60343,43651,22672
+papas Filet Filet;Comida chatarra;Tomate,Pimenton,Harina;500 ml,200 ml,150 ml;59127,54061,30414
+papas Filet bbq;Comida de mar;Lenteja,Cebolla,Harina;Grande,mediano,pequeÃ±o;58273,42490,30334
+papas Filet ahumado;Panaderia;Pan,Pimenton,Harina;Familiar,mediano,personal;74436,40930,46153
+papas Filet termino medio;Dulces;Lenteja,Queso,Harina;Grande,mediano,pequeÃ±o;69630,35278,34062
+papas Filet gourmet;Natural;Tomate,Leche,Frijol;Grande,mediano,pequeÃ±o;63283,35321,33346
+papas Filet con salsa;Bebida;Lenteja,Queso,Harina;500 ml,200 ml,150 ml;57475,53824,17289
+papas bbq rico;Comida chatarra;Lenteja,Leche,Harina;Grande,mediano,pequeÃ±o;66331,37027,27467
+papas bbq papas;Comida de mar;Lenteja,Pimenton,Frijol;Grande,mediano,pequeÃ±o;63363,54600,33764
+papas bbq ensalada;Bebida;Lenteja,Queso,Frijol;500 ml,200 ml,150 ml;64071,41788,17859
+papas bbq chocolate;Panaderia;Pan,Cebolla,Harina;Familiar,mediano,personal;65674,38211,29635
+papas bbq Filet;Panaderia;Tomate,Pimenton,Frijol;500 ml,200 ml,150 ml;62747,53083,30636
+papas bbq bbq;Plato principal;Lenteja,Leche,Naranja;500 ml,200 ml,150 ml;61044,28642,22502
+papas bbq ahumado;Bebida;Tomate,Cebolla,Harina;8 onzas,5 onzas,3 onzas;67555,35276,15818
+papas bbq termino medio;Panaderia;Lenteja,Pimenton,Harina;Familiar,mediano,personal;67246,48486,39403
+papas bbq gourmet;Aperitivo;Pan,Queso,Agua;Grande,mediano,pequeÃ±o;64231,27274,48535
+papas bbq con salsa;Carnes;Lechuga,Leche,Agua;500 ml,200 ml,150 ml;62768,26155,16245
+papas ahumado rico;Comida chatarra;Lenteja,Pimenton,Frijol;8 onzas,5 onzas,3 onzas;74081,54251,23950
+papas ahumado papas;Panaderia;Lenteja,Cilantro,Harina;Familiar,mediano,personal;72885,26072,44080
+papas ahumado ensalada;Carnes;Lenteja,Queso,Harina;8 onzas,5 onzas,3 onzas;74907,35203,45762
+papas ahumado chocolate;Adicionales;Lechuga,Pimenton,Bacalao;500 ml,200 ml,150 ml;64697,37684,15138
+papas ahumado Filet;Carnes;Lechuga,Queso,Agua;Grande,mediano,pequeÃ±o;63970,29725,44571
+papas ahumado bbq;Dulces;Pan,Queso,Bacalao;8 onzas,5 onzas,3 onzas;65426,27827,9138
+papas ahumado ahumado;Comida de mar;Pan,Pimenton,Bacalao;8 onzas,5 onzas,3 onzas;58214,32361,31240
+papas ahumado termino medio;Dulces;Lenteja,Pimenton,Naranja;Familiar,mediano,personal;74979,36476,20373
+papas ahumado gourmet;Carnes;Lenteja,Leche,Naranja;8 onzas,5 onzas,3 onzas;66999,36835,32439
+papas ahumado con salsa;Comida chatarra;Lenteja,Cilantro,Bacalao;8 onzas,5 onzas,3 onzas;69163,33577,43300
+papas termino medio rico;Comida chatarra;Pan,Leche,Bacalao;Familiar,mediano,personal;56418,49455,29134
+papas termino medio papas;Panaderia;Lechuga,Cebolla,Frijol;Familiar,mediano,personal;70366,43914,15460
+papas termino medio ensalada;Plato principal;Lechuga,Cilantro,Frijol;Grande,mediano,pequeÃ±o;69281,38675,49763
+papas termino medio chocolate;Panaderia;Tomate,Queso,Agua;500 ml,200 ml,150 ml;71290,52630,27698
+papas termino medio Filet;Carnes;Lechuga,Pimenton,Harina;Familiar,mediano,personal;66248,42452,11414
+papas termino medio bbq;Natural;Pan,Queso,Naranja;500 ml,200 ml,150 ml;63481,40638,46223
+papas termino medio ahumado;Panaderia;Pan,Queso,Bacalao;Grande,mediano,pequeÃ±o;61181,27973,14693
+papas termino medio termino medio;Plato principal;Pan,Cilantro,Harina;Grande,mediano,pequeÃ±o;57302,42103,41908
+papas termino medio gourmet;Comida chatarra;Tomate,Leche,Frijol;500 ml,200 ml,150 ml;64081,29926,31003
+papas termino medio con salsa;Comida de mar;Lechuga,Cilantro,Bacalao;Familiar,mediano,personal;72493,34099,25752
+papas gourmet rico;Panaderia;Lechuga,Cebolla,Agua;Grande,mediano,pequeÃ±o;71409,26405,9884
+papas gourmet papas;Adicionales;Naranja,Cebolla,Lechuga;500 ml,200 ml,150 ml;64854,27210,49513
+papas gourmet ensalada;Bebida;Harina,Cilantro,Pan;Grande,mediano,pequeÃ±o;73512,51280,16775
+papas gourmet chocolate;Carnes;Bacalao,Leche,Tomate;Familiar,mediano,personal;60993,46090,19669
+papas gourmet Filet;Plato principal;Frijol,Cilantro,Lenteja;500 ml,200 ml,150 ml;57674,35061,34757
+papas gourmet bbq;Dulces;Frijol,Cilantro,Lechuga;500 ml,200 ml,150 ml;60834,35547,42882
+papas gourmet ahumado;Dulces;Naranja,Cebolla,Tomate;Grande,mediano,pequeÃ±o;55389,40662,18334
+papas gourmet termino medio;Dulces;Harina,Leche,Lechuga;8 onzas,5 onzas,3 onzas;68653,38979,27325
+papas gourmet gourmet;Panaderia;Frijol,Queso,Lechuga;Familiar,mediano,personal;70219,52768,44117
+papas gourmet con salsa;Panaderia;Agua,Huevos,Tomate;Grande,mediano,pequeÃ±o;69137,33794,18284
+papas con salsa rico;Comida chatarra;Frijol,Leche,Lenteja;8 onzas,5 onzas,3 onzas;63179,40752,15044
+papas con salsa papas;Plato principal;Frijol,Queso,Tomate;500 ml,200 ml,150 ml;68264,30461,33392
+papas con salsa ensalada;Aperitivo;Frijol,Queso,Lenteja;Familiar,mediano,personal;57533,48179,19404
+papas con salsa chocolate;Bebida;Frijol,Cilantro,Lenteja;Familiar,mediano,personal;58974,47886,38756
+papas con salsa Filet;Carnes;Harina,Cebolla,Lenteja;Familiar,mediano,personal;57961,33247,15603
+papas con salsa bbq;Adicionales;Naranja,Leche,Pan;500 ml,200 ml,150 ml;61708,34485,41477
+papas con salsa ahumado;Natural;Frijol,Queso,Lechuga;Grande,mediano,pequeÃ±o;66582,47655,40304
+papas con salsa termino medio;Dulces;Frijol,Cilantro,Lechuga;8 onzas,5 onzas,3 onzas;62136,48592,30009
+papas con salsa gourmet;Dulces;Frijol,Leche,Pan;500 ml,200 ml,150 ml;57143,46966,38503
+papas con salsa con salsa;Adicionales;Bacalao,Leche,Pan;8 onzas,5 onzas,3 onzas;71205,49271,40689
+ensalada rico rico;Panaderia;Frijol,Pimenton,Pan;500 ml,200 ml,150 ml;57885,27225,13171
+ensalada rico papas;Bebida;Harina,Pimenton,Tomate;Grande,mediano,pequeÃ±o;57559,34834,10221
+ensalada rico ensalada;Comida de mar;Frijol,Queso,Lenteja;8 onzas,5 onzas,3 onzas;57009,30276,15693
+ensalada rico chocolate;Natural;Agua,Cebolla,Pan;8 onzas,5 onzas,3 onzas;72539,30820,22546
+ensalada rico Filet;Bebida;Naranja,Queso,Lechuga;8 onzas,5 onzas,3 onzas;72802,36525,41500
+ensalada rico bbq;Panaderia;Bacalao,Huevos,Lenteja;500 ml,200 ml,150 ml;63830,52227,49366
+ensalada rico ahumado;Plato principal;Harina,Queso,Pan;Grande,mediano,pequeÃ±o;72941,43105,42434
+ensalada rico termino medio;Dulces;Agua,Cilantro,Pan;8 onzas,5 onzas,3 onzas;59136,31313,35964
+ensalada rico gourmet;Dulces;Frijol,Leche,Lenteja;500 ml,200 ml,150 ml;58990,37195,16616
+ensalada rico con salsa;Aperitivo;Frijol,Leche,Pan;500 ml,200 ml,150 ml;70888,30833,34304
+ensalada papas rico;Plato principal;Frijol,Huevos,Pan;Grande,mediano,pequeÃ±o;68245,36816,19502
+ensalada papas papas;Comida de mar;Bacalao,Leche,Pan;500 ml,200 ml,150 ml;59956,35779,24259
+ensalada papas ensalada;Dulces;Frijol,Pimenton,Lechuga;Familiar,mediano,personal;69907,54207,42181
+ensalada papas chocolate;Panaderia;Harina,Pimenton,Pan;Grande,mediano,pequeÃ±o;59132,27979,31196
+ensalada papas Filet;Panaderia;Naranja,Cilantro,Lechuga;Grande,mediano,pequeÃ±o;70072,25944,40844
+ensalada papas bbq;Plato principal;Frijol,Queso,Lechuga;Familiar,mediano,personal;57982,38646,17780
+ensalada papas ahumado;Carnes;Frijol,Huevos,Tomate;Grande,mediano,pequeÃ±o;64868,53027,11792
+ensalada papas termino medio;Bebida;Agua,Pimenton,Lenteja;500 ml,200 ml,150 ml;73599,38103,35075
+ensalada papas gourmet;Carnes;Frijol,Queso,Lenteja;Familiar,mediano,personal;72031,30085,23880
+ensalada papas con salsa;Carnes;Harina,Queso,Tomate;500 ml,200 ml,150 ml;67802,48813,40795
+ensalada ensalada rico;Panaderia;Harina,Huevos,Pan;500 ml,200 ml,150 ml;71760,46258,12874
+ensalada ensalada papas;Natural;Frijol,Cilantro,Tomate;Familiar,mediano,personal;66596,52091,28812
+ensalada ensalada ensalada;Natural;Frijol,Cebolla,Lechuga;Familiar,mediano,personal;61795,29414,21182
+ensalada ensalada chocolate;Carnes;Frijol,Queso,Lechuga;8 onzas,5 onzas,3 onzas;72662,41453,35938
+ensalada ensalada Filet;Comida chatarra;Bacalao,Cebolla,Lechuga;Familiar,mediano,personal;73694,31102,20022
+ensalada ensalada bbq;Panaderia;Frijol,Cilantro,Pan;Grande,mediano,pequeÃ±o;55143,52470,34789
+ensalada ensalada ahumado;Bebida;Naranja,Cilantro,Pan;Familiar,mediano,personal;64458,44090,16276
+ensalada ensalada termino medio;Carnes;Harina,Cebolla,Lenteja;Familiar,mediano,personal;72909,32224,8674
+ensalada ensalada gourmet;Panaderia;Harina,Cebolla,Lenteja;500 ml,200 ml,150 ml;60212,29100,37976
+ensalada ensalada con salsa;Adicionales;Frijol,Huevos,Lechuga;500 ml,200 ml,150 ml;58588,34069,22967
+ensalada chocolate rico;Panaderia;Agua,Queso,Pan;8 onzas,5 onzas,3 onzas;63164,52982,33484
+ensalada chocolate papas;Adicionales;Harina,Huevos,Tomate;500 ml,200 ml,150 ml;74195,35472,35634
+ensalada chocolate ensalada;Natural;Harina,Pimenton,Pan;Familiar,mediano,personal;71043,27047,27851
+ensalada chocolate chocolate;Carnes;Frijol,Huevos,Lechuga;Grande,mediano,pequeÃ±o;66086,38132,18006
+ensalada chocolate Filet;Plato principal;Frijol,Queso,Lechuga;Grande,mediano,pequeÃ±o;60687,39189,22348
+ensalada chocolate bbq;Bebida;Agua,Huevos,Lechuga;Familiar,mediano,personal;68087,34018,44546
+ensalada chocolate ahumado;Comida chatarra;Harina,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;68016,49850,49485
+ensalada chocolate termino medio;Adicionales;Frijol,Queso,Tomate;Grande,mediano,pequeÃ±o;69874,40062,30261
+ensalada chocolate gourmet;Panaderia;Naranja,Cilantro,Lechuga;500 ml,200 ml,150 ml;67035,47140,28289
+ensalada chocolate con salsa;Comida de mar;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;57335,34390,36149
+ensalada Filet rico;Bebida;Frijol,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;63862,31725,22794
+ensalada Filet papas;Panaderia;Harina,Pimenton,Lechuga;500 ml,200 ml,150 ml;72411,54588,48508
+ensalada Filet ensalada;Plato principal;Bacalao,Cilantro,Lechuga;Familiar,mediano,personal;66358,32075,49471
+ensalada Filet chocolate;Dulces;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;72574,53287,22837
+ensalada Filet Filet;Carnes;Bacalao,Leche,Lenteja;Familiar,mediano,personal;70741,53231,40419
+ensalada Filet bbq;Carnes;Harina,Cebolla,Lenteja;Grande,mediano,pequeÃ±o;64831,25176,49126
+ensalada Filet ahumado;Bebida;Frijol,Huevos,Tomate;8 onzas,5 onzas,3 onzas;72978,37851,36746
+ensalada Filet termino medio;Aperitivo;Bacalao,Leche,Tomate;500 ml,200 ml,150 ml;59095,53631,44792
+ensalada Filet gourmet;Comida chatarra;Bacalao,Cebolla,Pan;8 onzas,5 onzas,3 onzas;73795,26223,38392
+ensalada Filet con salsa;Natural;Harina,Cilantro,Lechuga;Familiar,mediano,personal;72149,31950,37869
+ensalada bbq rico;Carnes;Harina,Cebolla,Lechuga;Grande,mediano,pequeÃ±o;66777,34467,42083
+ensalada bbq papas;Panaderia;Harina,Cebolla,Pan;Grande,mediano,pequeÃ±o;70578,43900,36999
+ensalada bbq ensalada;Bebida;Harina,Pimenton,Lechuga;500 ml,200 ml,150 ml;55304,42532,26508
+ensalada bbq chocolate;Plato principal;Naranja,Leche,Pan;Grande,mediano,pequeÃ±o;72377,27327,49275
+ensalada bbq Filet;Carnes;Frijol,Leche,Tomate;8 onzas,5 onzas,3 onzas;64627,51538,8240
+ensalada bbq bbq;Natural;Bacalao,Huevos,Lechuga;500 ml,200 ml,150 ml;59246,28684,29443
+ensalada bbq ahumado;Natural;Bacalao,Cilantro,Pan;8 onzas,5 onzas,3 onzas;57107,50410,38675
+ensalada bbq termino medio;Panaderia;Harina,Pimenton,Pan;Grande,mediano,pequeÃ±o;55334,38328,38833
+ensalada bbq gourmet;Comida chatarra;Frijol,Pimenton,Lechuga;500 ml,200 ml,150 ml;73124,38878,20742
+ensalada bbq con salsa;Comida de mar;Naranja,Pimenton,Lenteja;Grande,mediano,pequeÃ±o;69646,31818,20836
+ensalada ahumado rico;Adicionales;Frijol,Cebolla,Tomate;Familiar,mediano,personal;59723,47388,45009
+ensalada ahumado papas;Panaderia;Frijol,Cilantro,Lechuga;Grande,mediano,pequeÃ±o;55678,53758,14614
+ensalada ahumado ensalada;Dulces;Bacalao,Cilantro,Lechuga;8 onzas,5 onzas,3 onzas;68967,48613,20057
+ensalada ahumado chocolate;Dulces;Bacalao,Cilantro,Lenteja;Familiar,mediano,personal;66054,26434,36079
+ensalada ahumado Filet;Adicionales;Harina,Leche,Lechuga;500 ml,200 ml,150 ml;64567,44653,40908
+ensalada ahumado bbq;Dulces;Harina,Queso,Pan;500 ml,200 ml,150 ml;72234,45179,29741
+ensalada ahumado ahumado;Plato principal;Harina,Pimenton,Lechuga;500 ml,200 ml,150 ml;62645,27143,14363
+ensalada ahumado termino medio;Adicionales;Bacalao,Queso,Tomate;Grande,mediano,pequeÃ±o;70885,27316,37826
+ensalada ahumado gourmet;Dulces;Naranja,Huevos,Pan;Grande,mediano,pequeÃ±o;57555,33955,26162
+ensalada ahumado con salsa;Bebida;Bacalao,Cebolla,Tomate;Grande,mediano,pequeÃ±o;60089,51891,25035
+ensalada termino medio rico;Plato principal;Agua,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;60359,52618,18949
+ensalada termino medio papas;Natural;Agua,Leche,Lechuga;Familiar,mediano,personal;63616,34834,8400
+ensalada termino medio ensalada;Natural;Frijol,Huevos,Tomate;Grande,mediano,pequeÃ±o;58720,45745,37515
+ensalada termino medio chocolate;Panaderia;Frijol,Huevos,Pan;Familiar,mediano,personal;59236,28261,48964
+ensalada termino medio Filet;Dulces;Harina,Cebolla,Lechuga;Grande,mediano,pequeÃ±o;61814,45237,25486
+ensalada termino medio bbq;Adicionales;Bacalao,Cilantro,Tomate;Familiar,mediano,personal;55108,41604,18703
+ensalada termino medio ahumado;Carnes;Naranja,Queso,Tomate;Grande,mediano,pequeÃ±o;69321,26319,19280
+ensalada termino medio termino medio;Dulces;Bacalao,Leche,Lechuga;500 ml,200 ml,150 ml;59274,49060,38294
+ensalada termino medio gourmet;Comida de mar;Agua,Leche,Tomate;500 ml,200 ml,150 ml;64013,44820,44718
+ensalada termino medio con salsa;Bebida;Bacalao,Leche,Pan;8 onzas,5 onzas,3 onzas;72643,47149,49352
+ensalada gourmet rico;Bebida;Bacalao,Huevos,Pan;8 onzas,5 onzas,3 onzas;55495,32399,47046
+ensalada gourmet papas;Aperitivo;Bacalao,Huevos,Pan;500 ml,200 ml,150 ml;60097,54392,32258
+ensalada gourmet ensalada;Natural;Agua,Cebolla,Lenteja;500 ml,200 ml,150 ml;62181,31146,14438
+ensalada gourmet chocolate;Adicionales;Frijol,Queso,Pan;Grande,mediano,pequeÃ±o;59087,38833,42521
+ensalada gourmet Filet;Panaderia;Harina,Pimenton,Lenteja;500 ml,200 ml,150 ml;65198,50601,10159
+ensalada gourmet bbq;Dulces;Bacalao,Cilantro,Lechuga;Grande,mediano,pequeÃ±o;66379,33182,40917
+ensalada gourmet ahumado;Bebida;Agua,Leche,Lechuga;8 onzas,5 onzas,3 onzas;61698,50842,35080
+ensalada gourmet termino medio;Plato principal;Naranja,Pimenton,Pan;500 ml,200 ml,150 ml;61684,51057,20157
+ensalada gourmet gourmet;Panaderia;Frijol,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;71787,53105,12136
+ensalada gourmet con salsa;Natural;Frijol,Pimenton,Tomate;Grande,mediano,pequeÃ±o;70517,39398,17309
+ensalada con salsa rico;Dulces;Harina,Cebolla,Lenteja;500 ml,200 ml,150 ml;74888,44772,39621
+ensalada con salsa papas;Dulces;Frijol,Queso,Pan;Grande,mediano,pequeÃ±o;55281,42675,37948
+ensalada con salsa ensalada;Aperitivo;Naranja,Cilantro,Tomate;Grande,mediano,pequeÃ±o;71724,51919,45788
+ensalada con salsa chocolate;Bebida;Frijol,Cebolla,Lenteja;500 ml,200 ml,150 ml;67163,46900,8070
+ensalada con salsa Filet;Carnes;Harina,Pimenton,Pan;500 ml,200 ml,150 ml;66443,41119,44656
+ensalada con salsa bbq;Carnes;Agua,Queso,Pan;Grande,mediano,pequeÃ±o;62201,29555,16752
+ensalada con salsa ahumado;Carnes;Harina,Queso,Lenteja;8 onzas,5 onzas,3 onzas;63702,43630,49945
+ensalada con salsa termino medio;Aperitivo;Harina,Queso,Pan;500 ml,200 ml,150 ml;55049,48916,26737
+ensalada con salsa gourmet;Natural;Bacalao,Queso,Lenteja;Grande,mediano,pequeÃ±o;69745,27047,49956
+ensalada con salsa con salsa;Comida chatarra;Agua,Leche,Pan;Grande,mediano,pequeÃ±o;66319,48837,46732
+chocolate rico rico;Bebida;Bacalao,Leche,Tomate;8 onzas,5 onzas,3 onzas;63449,48106,12691
+chocolate rico papas;Aperitivo;Frijol,Leche,Pan;Familiar,mediano,personal;66080,45250,30827
+chocolate rico ensalada;Aperitivo;Bacalao,Pimenton,Lechuga;Grande,mediano,pequeÃ±o;59511,45570,29238
+chocolate rico chocolate;Comida de mar;Bacalao,Cilantro,Pan;8 onzas,5 onzas,3 onzas;65002,41417,41200
+chocolate rico Filet;Panaderia;Agua,Leche,Lechuga;8 onzas,5 onzas,3 onzas;58004,28277,23619
+chocolate rico bbq;Comida de mar;Bacalao,Leche,Lechuga;Familiar,mediano,personal;58429,45246,29122
+chocolate rico ahumado;Bebida;Naranja,Pimenton,Pan;Familiar,mediano,personal;61882,47801,8207
+chocolate rico termino medio;Dulces;Naranja,Pimenton,Lenteja;500 ml,200 ml,150 ml;68738,38969,22346
+chocolate rico gourmet;Natural;Agua,Cebolla,Tomate;500 ml,200 ml,150 ml;67666,31615,39756
+chocolate rico con salsa;Comida de mar;Frijol,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;69693,33733,21452
+chocolate papas rico;Bebida;Agua,Pimenton,Tomate;500 ml,200 ml,150 ml;56439,29424,28434
+chocolate papas papas;Natural;Harina,Huevos,Lenteja;Familiar,mediano,personal;68160,26548,30959
+chocolate papas ensalada;Carnes;Agua,Cilantro,Pan;Grande,mediano,pequeÃ±o;62625,31892,8774
+chocolate papas chocolate;Comida de mar;Frijol,Cilantro,Lenteja;Familiar,mediano,personal;70366,49092,35825
+chocolate papas Filet;Panaderia;Harina,Cilantro,Lenteja;500 ml,200 ml,150 ml;58403,47728,19023
+chocolate papas bbq;Panaderia;Bacalao,Cilantro,Pan;Familiar,mediano,personal;66972,40390,45851
+chocolate papas ahumado;Adicionales;Bacalao,Leche,Lechuga;Familiar,mediano,personal;65724,49813,26084
+chocolate papas termino medio;Comida de mar;Harina,Huevos,Lechuga;500 ml,200 ml,150 ml;71414,41571,17600
+chocolate papas gourmet;Comida chatarra;Harina,Cebolla,Lechuga;Grande,mediano,pequeÃ±o;63472,27317,22638
+chocolate papas con salsa;Panaderia;Frijol,Huevos,Pan;500 ml,200 ml,150 ml;72061,39199,43031
+chocolate ensalada rico;Comida de mar;Frijol,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;69200,48510,30786
+chocolate ensalada papas;Adicionales;Frijol,Queso,Lechuga;8 onzas,5 onzas,3 onzas;70741,44961,27065
+chocolate ensalada ensalada;Comida chatarra;Frijol,Leche,Lenteja;8 onzas,5 onzas,3 onzas;64908,47112,36124
+chocolate ensalada chocolate;Panaderia;Naranja,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;74421,42243,8642
+chocolate ensalada Filet;Panaderia;Harina,Leche,Lechuga;8 onzas,5 onzas,3 onzas;59769,46748,21794
+chocolate ensalada bbq;Carnes;Harina,Queso,Tomate;500 ml,200 ml,150 ml;73498,37222,10747
+chocolate ensalada ahumado;Natural;Bacalao,Cebolla,Tomate;Grande,mediano,pequeÃ±o;66085,44496,40565
+chocolate ensalada termino medio;Natural;Bacalao,Queso,Tomate;Grande,mediano,pequeÃ±o;59274,35193,9216
+chocolate ensalada gourmet;Panaderia;Naranja,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;61029,47203,31876
+chocolate ensalada con salsa;Aperitivo;Bacalao,Pimenton,Lechuga;Familiar,mediano,personal;55425,33302,8217
+chocolate chocolate rico;Plato principal;Bacalao,Cilantro,Pan;8 onzas,5 onzas,3 onzas;67596,48466,17779
+chocolate chocolate papas;Comida de mar;Frijol,Queso,Tomate;500 ml,200 ml,150 ml;68377,33488,20319
+chocolate chocolate ensalada;Comida de mar;Frijol,Huevos,Pan;Grande,mediano,pequeÃ±o;61348,35994,34488
+chocolate chocolate chocolate;Aperitivo;Bacalao,Leche,Pan;Grande,mediano,pequeÃ±o;55132,40566,16718
+chocolate chocolate Filet;Comida de mar;Harina,Cilantro,Pan;8 onzas,5 onzas,3 onzas;72631,29457,46891
+chocolate chocolate bbq;Natural;Frijol,Pimenton,Pan;Familiar,mediano,personal;63323,51408,8956
+chocolate chocolate ahumado;Comida chatarra;Frijol,Cebolla,Lechuga;500 ml,200 ml,150 ml;64027,54735,39361
+chocolate chocolate termino medio;Panaderia;Naranja,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;55742,44329,36363
+chocolate chocolate gourmet;Comida chatarra;Frijol,Huevos,Tomate;500 ml,200 ml,150 ml;70744,29114,44148
+chocolate chocolate con salsa;Aperitivo;Harina,Pimenton,Pan;8 onzas,5 onzas,3 onzas;63643,29284,31137
+chocolate Filet rico;Aperitivo;Bacalao,Huevos,Tomate;500 ml,200 ml,150 ml;57342,29047,28759
+chocolate Filet papas;Comida de mar;Bacalao,Leche,Tomate;500 ml,200 ml,150 ml;63367,43262,13586
+chocolate Filet ensalada;Bebida;Agua,Queso,Lenteja;500 ml,200 ml,150 ml;66354,36822,18811
+chocolate Filet chocolate;Bebida;Frijol,Leche,Tomate;8 onzas,5 onzas,3 onzas;56374,42815,21340
+chocolate Filet Filet;Adicionales;Naranja,Queso,Pan;Grande,mediano,pequeÃ±o;61030,44506,34127
+chocolate Filet bbq;Bebida;Bacalao,Leche,Tomate;Familiar,mediano,personal;67149,51930,22593
+chocolate Filet ahumado;Aperitivo;Naranja,Pimenton,Lenteja;Familiar,mediano,personal;65975,45757,21051
+chocolate Filet termino medio;Panaderia;Frijol,Huevos,Pan;500 ml,200 ml,150 ml;68034,42940,33969
+chocolate Filet gourmet;Bebida;Naranja,Pimenton,Lechuga;Grande,mediano,pequeÃ±o;55032,45137,20209
+chocolate Filet con salsa;Plato principal;Naranja,Cilantro,Pan;Familiar,mediano,personal;65531,42384,39587
+chocolate bbq rico;Aperitivo;Naranja,Cebolla,Lechuga;Familiar,mediano,personal;66902,35757,14920
+chocolate bbq papas;Panaderia;Naranja,Cilantro,Lechuga;Grande,mediano,pequeÃ±o;74593,43850,48586
+chocolate bbq ensalada;Natural;Bacalao,Huevos,Lechuga;Familiar,mediano,personal;71972,43147,43122
+chocolate bbq chocolate;Plato principal;Frijol,Queso,Pan;Familiar,mediano,personal;56365,49078,30742
+chocolate bbq Filet;Comida de mar;Bacalao,Queso,Lenteja;Grande,mediano,pequeÃ±o;68301,30618,32302
+chocolate bbq bbq;Comida de mar;Naranja,Cebolla,Pan;500 ml,200 ml,150 ml;62988,44177,38301
+chocolate bbq ahumado;Dulces;Agua,Pimenton,Lechuga;Familiar,mediano,personal;61959,51877,24450
+chocolate bbq termino medio;Panaderia;Agua,Cebolla,Pan;8 onzas,5 onzas,3 onzas;62748,47879,36088
+chocolate bbq gourmet;Comida de mar;Frijol,Cilantro,Tomate;Grande,mediano,pequeÃ±o;74341,34108,31689
+chocolate bbq con salsa;Bebida;Agua,Pimenton,Lenteja;500 ml,200 ml,150 ml;74042,45639,37663
+chocolate ahumado rico;Comida chatarra;Bacalao,Cilantro,Pan;500 ml,200 ml,150 ml;62082,38908,22630
+chocolate ahumado papas;Comida chatarra;Naranja,Pimenton,Lenteja;500 ml,200 ml,150 ml;62415,38806,32696
+chocolate ahumado ensalada;Bebida;Frijol,Pimenton,Tomate;Familiar,mediano,personal;66399,42143,31576
+chocolate ahumado chocolate;Panaderia;Frijol,Cebolla,Lenteja;Grande,mediano,pequeÃ±o;62921,47962,13174
+chocolate ahumado Filet;Adicionales;Naranja,Queso,Tomate;500 ml,200 ml,150 ml;55578,38119,14858
+chocolate ahumado bbq;Comida de mar;Bacalao,Cebolla,Tomate;Familiar,mediano,personal;69816,25563,40962
+chocolate ahumado ahumado;Bebida;Bacalao,Cilantro,Tomate;Grande,mediano,pequeÃ±o;66361,53982,30910
+chocolate ahumado termino medio;Comida chatarra;Naranja,Leche,Lenteja;Grande,mediano,pequeÃ±o;55641,45282,43335
+chocolate ahumado gourmet;Plato principal;Naranja,Cebolla,Tomate;Grande,mediano,pequeÃ±o;71005,41690,34449
+chocolate ahumado con salsa;Adicionales;Frijol,Leche,Pan;Grande,mediano,pequeÃ±o;68958,33094,29333
+chocolate termino medio rico;Carnes;Naranja,Pimenton,Tomate;Grande,mediano,pequeÃ±o;55984,41956,27215
+chocolate termino medio papas;Comida chatarra;Agua,Leche,Lechuga;Grande,mediano,pequeÃ±o;66447,54834,18168
+chocolate termino medio ensalada;Comida chatarra;Agua,Pimenton,Tomate;Grande,mediano,pequeÃ±o;61181,41828,41793
+chocolate termino medio chocolate;Carnes;Bacalao,Leche,Lechuga;8 onzas,5 onzas,3 onzas;68982,54143,41254
+chocolate termino medio Filet;Comida chatarra;Naranja,Huevos,Lechuga;Grande,mediano,pequeÃ±o;62817,44065,44010
+chocolate termino medio bbq;Natural;Agua,Cebolla,Tomate;Grande,mediano,pequeÃ±o;56682,43141,33741
+chocolate termino medio ahumado;Bebida;Bacalao,Queso,Pan;Grande,mediano,pequeÃ±o;70505,34451,26916
+chocolate termino medio termino medio;Comida chatarra;Agua,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;67624,27598,38590
+chocolate termino medio gourmet;Aperitivo;Naranja,Queso,Tomate;8 onzas,5 onzas,3 onzas;70196,37434,20762
+chocolate termino medio con salsa;Plato principal;Harina,Cilantro,Pan;500 ml,200 ml,150 ml;55569,52403,10974
+chocolate gourmet rico;Comida de mar;Harina,Cilantro,Tomate;Grande,mediano,pequeÃ±o;73646,49853,21564
+chocolate gourmet papas;Panaderia;Bacalao,Cebolla,Tomate;Familiar,mediano,personal;68816,33250,31595
+chocolate gourmet ensalada;Plato principal;Frijol,Huevos,Tomate;500 ml,200 ml,150 ml;72593,25354,26344
+chocolate gourmet chocolate;Natural;Frijol,Cilantro,Tomate;500 ml,200 ml,150 ml;70817,31144,17773
+chocolate gourmet Filet;Dulces;Agua,Pimenton,Lenteja;Grande,mediano,pequeÃ±o;61098,40619,49643
+chocolate gourmet bbq;Plato principal;Agua,Queso,Pan;500 ml,200 ml,150 ml;72209,42203,49551
+chocolate gourmet ahumado;Bebida;Bacalao,Cilantro,Lenteja;Familiar,mediano,personal;68727,28850,49227
+chocolate gourmet termino medio;Dulces;Harina,Queso,Lenteja;Familiar,mediano,personal;61019,38497,15321
+chocolate gourmet gourmet;Plato principal;Naranja,Leche,Lechuga;8 onzas,5 onzas,3 onzas;59288,50451,25368
+chocolate gourmet con salsa;Bebida;Frijol,Leche,Pan;8 onzas,5 onzas,3 onzas;68450,28621,10344
+chocolate con salsa rico;Plato principal;Naranja,Huevos,Tomate;Grande,mediano,pequeÃ±o;56371,37695,24825
+chocolate con salsa papas;Bebida;Frijol,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;60746,31407,23389
+chocolate con salsa ensalada;Dulces;Frijol,Leche,Tomate;500 ml,200 ml,150 ml;59362,38043,41999
+chocolate con salsa chocolate;Adicionales;Frijol,Pimenton,Pan;8 onzas,5 onzas,3 onzas;73961,37056,16551
+chocolate con salsa Filet;Panaderia;Bacalao,Cilantro,Tomate;500 ml,200 ml,150 ml;64759,38053,42720
+chocolate con salsa bbq;Plato principal;Frijol,Leche,Pan;8 onzas,5 onzas,3 onzas;66763,43821,8525
+chocolate con salsa ahumado;Carnes;Bacalao,Leche,Lechuga;8 onzas,5 onzas,3 onzas;64673,38526,34895
+chocolate con salsa termino medio;Comida chatarra;Harina,Queso,Pan;500 ml,200 ml,150 ml;55085,54608,18673
+chocolate con salsa gourmet;Bebida;Harina,Leche,Tomate;500 ml,200 ml,150 ml;61974,32850,9742
+chocolate con salsa con salsa;Aperitivo;Naranja,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;63441,33698,26558
+Filet rico rico;Plato principal;Bacalao,Queso,Lechuga;500 ml,200 ml,150 ml;72007,46079,33485
+Filet rico papas;Carnes;Frijol,Leche,Lenteja;8 onzas,5 onzas,3 onzas;64054,38907,10684
+Filet rico ensalada;Aperitivo;Agua,Pimenton,Tomate;500 ml,200 ml,150 ml;71109,35846,14381
+Filet rico chocolate;Panaderia;Bacalao,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;68776,34106,41152
+Filet rico Filet;Adicionales;Naranja,Leche,Lenteja;500 ml,200 ml,150 ml;64228,38376,17628
+Filet rico bbq;Aperitivo;Agua,Huevos,Pan;500 ml,200 ml,150 ml;62261,51506,17787
+Filet rico ahumado;Comida de mar;Harina,Cilantro,Lechuga;Familiar,mediano,personal;62702,27819,12949
+Filet rico termino medio;Carnes;Bacalao,Leche,Lechuga;Familiar,mediano,personal;65214,28350,45781
+Filet rico gourmet;Dulces;Frijol,Cilantro,Pan;Familiar,mediano,personal;63815,50031,11138
+Filet rico con salsa;Adicionales;Naranja,Pimenton,Tomate;500 ml,200 ml,150 ml;73616,53451,34814
+Filet papas rico;Dulces;Bacalao,Leche,Pan;Familiar,mediano,personal;62855,31181,31639
+Filet papas papas;Adicionales;Agua,Queso,Lechuga;Grande,mediano,pequeÃ±o;66563,45431,18785
+Filet papas ensalada;Adicionales;Frijol,Pimenton,Pan;Familiar,mediano,personal;61048,34935,28438
+Filet papas chocolate;Comida de mar;Naranja,Leche,Tomate;Familiar,mediano,personal;70066,54186,47101
+Filet papas Filet;Comida chatarra;Bacalao,Pimenton,Tomate;Familiar,mediano,personal;73263,31721,39513
+Filet papas bbq;Natural;Bacalao,Leche,Pan;Familiar,mediano,personal;71260,30300,44145
+Filet papas ahumado;Comida chatarra;Frijol,Cilantro,Tomate;Familiar,mediano,personal;65607,43821,24135
+Filet papas termino medio;Aperitivo;Bacalao,Cebolla,Pan;8 onzas,5 onzas,3 onzas;74465,30594,27847
+Filet papas gourmet;Aperitivo;Bacalao,Cilantro,Tomate;Familiar,mediano,personal;61660,54691,12035
+Filet papas con salsa;Aperitivo;Bacalao,Queso,Lenteja;500 ml,200 ml,150 ml;68337,50541,30190
+Filet ensalada rico;Panaderia;Frijol,Cebolla,Tomate;Familiar,mediano,personal;67549,27478,9514
+Filet ensalada papas;Natural;Bacalao,Queso,Lenteja;500 ml,200 ml,150 ml;69228,28377,37177
+Filet ensalada ensalada;Panaderia;Bacalao,Cebolla,Lechuga;500 ml,200 ml,150 ml;74422,48676,17576
+Filet ensalada chocolate;Carnes;Bacalao,Queso,Lenteja;8 onzas,5 onzas,3 onzas;68396,40480,21381
+Filet ensalada Filet;Bebida;Frijol,Cebolla,Lechuga;Familiar,mediano,personal;69569,33784,9415
+Filet ensalada bbq;Natural;Harina,Cilantro,Lechuga;500 ml,200 ml,150 ml;73468,28545,25158
+Filet ensalada ahumado;Aperitivo;Naranja,Cebolla,Pan;Grande,mediano,pequeÃ±o;63319,33702,19194
+Filet ensalada termino medio;Dulces;Agua,Huevos,Pan;8 onzas,5 onzas,3 onzas;72372,53885,15906
+Filet ensalada gourmet;Comida chatarra;Agua,Cebolla,Lenteja;500 ml,200 ml,150 ml;57535,39800,33031
+Filet ensalada con salsa;Carnes;Naranja,Queso,Pan;500 ml,200 ml,150 ml;57805,38635,36137
+Filet chocolate rico;Bebida;Harina,Pimenton,Pan;500 ml,200 ml,150 ml;58527,29931,41172
+Filet chocolate papas;Panaderia;Harina,Cilantro,Pan;500 ml,200 ml,150 ml;55296,30377,43466
+Filet chocolate ensalada;Panaderia;Bacalao,Queso,Pan;Familiar,mediano,personal;56131,38673,46955
+Filet chocolate chocolate;Dulces;Harina,Queso,Lenteja;Grande,mediano,pequeÃ±o;67216,27683,33289
+Filet chocolate Filet;Plato principal;Bacalao,Leche,Pan;Grande,mediano,pequeÃ±o;65516,53038,33454
+Filet chocolate bbq;Panaderia;Naranja,Cebolla,Pan;8 onzas,5 onzas,3 onzas;73119,50114,35636
+Filet chocolate ahumado;Bebida;Agua,Cilantro,Lechuga;500 ml,200 ml,150 ml;68387,43019,40265
+Filet chocolate termino medio;Panaderia;Bacalao,Huevos,Lechuga;Familiar,mediano,personal;73386,52966,39954
+Filet chocolate gourmet;Comida de mar;Naranja,Queso,Tomate;Familiar,mediano,personal;56736,29410,24749
+Filet chocolate con salsa;Comida chatarra;Harina,Huevos,Pan;Grande,mediano,pequeÃ±o;56855,32917,31190
+Filet Filet rico;Bebida;Bacalao,Queso,Tomate;Familiar,mediano,personal;72844,25810,22544
+Filet Filet papas;Aperitivo;Agua,Cebolla,Lenteja;Grande,mediano,pequeÃ±o;65220,51952,23422
+Filet Filet ensalada;Panaderia;Agua,Queso,Lechuga;Grande,mediano,pequeÃ±o;56684,29842,45405
+Filet Filet chocolate;Plato principal;Frijol,Cebolla,Tomate;500 ml,200 ml,150 ml;60060,39284,21180
+Filet Filet Filet;Comida chatarra;Naranja,Huevos,Pan;500 ml,200 ml,150 ml;56448,29598,35560
+Filet Filet bbq;Adicionales;Agua,Cilantro,Tomate;Familiar,mediano,personal;60990,28506,30541
+Filet Filet ahumado;Panaderia;Harina,Cilantro,Lechuga;Grande,mediano,pequeÃ±o;59965,44941,43679
+Filet Filet termino medio;Aperitivo;Agua,Queso,Lechuga;Grande,mediano,pequeÃ±o;55110,46610,17073
+Filet Filet gourmet;Bebida;Naranja,Leche,Tomate;Grande,mediano,pequeÃ±o;64996,34628,41439
+Filet Filet con salsa;Natural;Naranja,Cilantro,Pan;Grande,mediano,pequeÃ±o;64224,41625,20062
+Filet bbq rico;Comida chatarra;Naranja,Leche,Lechuga;8 onzas,5 onzas,3 onzas;66843,25399,35931
+Filet bbq papas;Natural;Harina,Cebolla,Tomate;Familiar,mediano,personal;63662,26812,36116
+Filet bbq ensalada;Carnes;Agua,Huevos,Lechuga;Familiar,mediano,personal;70966,51115,36633
+Filet bbq chocolate;Bebida;Agua,Queso,Lenteja;8 onzas,5 onzas,3 onzas;56443,50904,12966
+Filet bbq Filet;Comida de mar;Agua,Huevos,Pan;Grande,mediano,pequeÃ±o;59379,31323,30435
+Filet bbq bbq;Comida chatarra;Agua,Cilantro,Pan;8 onzas,5 onzas,3 onzas;58116,32877,12298
+Filet bbq ahumado;Dulces;Frijol,Huevos,Tomate;Grande,mediano,pequeÃ±o;55843,37383,39388
+Filet bbq termino medio;Bebida;Agua,Cebolla,Tomate;500 ml,200 ml,150 ml;71837,34519,45823
+Filet bbq gourmet;Aperitivo;Naranja,Leche,Pan;Grande,mediano,pequeÃ±o;71648,41698,29483
+Filet bbq con salsa;Panaderia;Agua,Leche,Pan;8 onzas,5 onzas,3 onzas;59563,48095,8447
+Filet ahumado rico;Comida chatarra;Harina,Cilantro,Lenteja;Grande,mediano,pequeÃ±o;71691,51481,21568
+Filet ahumado papas;Natural;Frijol,Cebolla,Lechuga;Grande,mediano,pequeÃ±o;57842,49340,28902
+Filet ahumado ensalada;Comida de mar;Harina,Cebolla,Tomate;500 ml,200 ml,150 ml;74463,30202,45381
+Filet ahumado chocolate;Adicionales;Naranja,Cebolla,Lechuga;Grande,mediano,pequeÃ±o;60072,27178,26048
+Filet ahumado Filet;Natural;Harina,Pimenton,Lenteja;8 onzas,5 onzas,3 onzas;66160,34551,11969
+Filet ahumado bbq;Plato principal;Bacalao,Cilantro,Lenteja;Grande,mediano,pequeÃ±o;56969,47018,45882
+Filet ahumado ahumado;Comida chatarra;Agua,Cilantro,Tomate;500 ml,200 ml,150 ml;67371,52733,30762
+Filet ahumado termino medio;Natural;Harina,Cebolla,Lechuga;Grande,mediano,pequeÃ±o;59762,53450,44183
+Filet ahumado gourmet;Comida de mar;Agua,Cilantro,Lechuga;500 ml,200 ml,150 ml;65366,43635,21224
+Filet ahumado con salsa;Panaderia;Bacalao,Leche,Lechuga;500 ml,200 ml,150 ml;57516,34136,11947
+Filet termino medio rico;Bebida;Frijol,Cilantro,Pan;8 onzas,5 onzas,3 onzas;60517,38192,14789
+Filet termino medio papas;Adicionales;Frijol,Queso,Tomate;500 ml,200 ml,150 ml;61331,50827,16362
+Filet termino medio ensalada;Adicionales;Bacalao,Queso,Lechuga;8 onzas,5 onzas,3 onzas;59942,53203,21157
+Filet termino medio chocolate;Dulces;Naranja,Leche,Lechuga;8 onzas,5 onzas,3 onzas;70951,45343,39895
+Filet termino medio Filet;Panaderia;Harina,Pimenton,Pan;Grande,mediano,pequeÃ±o;66295,29536,44431
+Filet termino medio bbq;Panaderia;Bacalao,Queso,Pan;8 onzas,5 onzas,3 onzas;63392,35874,16663
+Filet termino medio ahumado;Comida chatarra;Agua,Cebolla,Tomate;Grande,mediano,pequeÃ±o;58956,45338,30661
+Filet termino medio termino medio;Adicionales;Agua,Cilantro,Pan;Familiar,mediano,personal;63785,41376,46884
+Filet termino medio gourmet;Panaderia;Bacalao,Queso,Lechuga;Familiar,mediano,personal;59423,26673,38976
+Filet termino medio con salsa;Bebida;Harina,Queso,Lenteja;Familiar,mediano,personal;64944,54703,33236
+Filet gourmet rico;Natural;Bacalao,Queso,Lechuga;Familiar,mediano,personal;67894,30108,35240
+Filet gourmet papas;Panaderia;Agua,Cebolla,Pan;Grande,mediano,pequeÃ±o;63776,45291,14868
+Filet gourmet ensalada;Panaderia;Agua,Cilantro,Pan;8 onzas,5 onzas,3 onzas;68167,40955,20088
+Filet gourmet chocolate;Comida de mar;Naranja,Leche,Tomate;Grande,mediano,pequeÃ±o;56353,49777,48103
+Filet gourmet Filet;Adicionales;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;60944,42736,43876
+Filet gourmet bbq;Comida de mar;Bacalao,Leche,Tomate;8 onzas,5 onzas,3 onzas;69644,45223,18926
+Filet gourmet ahumado;Natural;Frijol,Queso,Tomate;Familiar,mediano,personal;66328,43243,11110
+Filet gourmet termino medio;Carnes;Bacalao,Leche,Lenteja;500 ml,200 ml,150 ml;69224,43550,35391
+Filet gourmet gourmet;Dulces;Harina,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;71617,39560,36717
+Filet gourmet con salsa;Bebida;Bacalao,Queso,Pan;Familiar,mediano,personal;67527,47851,40149
+Filet con salsa rico;Dulces;Bacalao,Leche,Lechuga;Grande,mediano,pequeÃ±o;64168,37654,45045
+Filet con salsa papas;Aperitivo;Bacalao,Leche,Lenteja;Familiar,mediano,personal;74660,46359,21957
+Filet con salsa ensalada;Bebida;Naranja,Cilantro,Tomate;Grande,mediano,pequeÃ±o;69567,45454,20823
+Filet con salsa chocolate;Bebida;Harina,Huevos,Lechuga;Familiar,mediano,personal;69644,37236,23673
+Filet con salsa Filet;Panaderia;Frijol,Cilantro,Lechuga;500 ml,200 ml,150 ml;69400,48256,15808
+Filet con salsa bbq;Dulces;Naranja,Huevos,Lechuga;Familiar,mediano,personal;64184,53577,9307
+Filet con salsa ahumado;Natural;Bacalao,Cebolla,Pan;500 ml,200 ml,150 ml;57927,44387,25702
+Filet con salsa termino medio;Plato principal;Frijol,Cebolla,Lechuga;Familiar,mediano,personal;71802,30482,49640
+Filet con salsa gourmet;Aperitivo;Naranja,Huevos,Pan;500 ml,200 ml,150 ml;71356,44217,11746
+Filet con salsa con salsa;Panaderia;Harina,Huevos,Pan;8 onzas,5 onzas,3 onzas;65713,35529,25618
+bbq rico rico;Dulces;Naranja,Cilantro,Lechuga;Familiar,mediano,personal;62035,34648,19496
+bbq rico papas;Carnes;Frijol,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;55435,46167,26151
+bbq rico ensalada;Plato principal;Naranja,Huevos,Lechuga;500 ml,200 ml,150 ml;64271,31696,25975
+bbq rico chocolate;Comida chatarra;Bacalao,Pimenton,Lenteja;8 onzas,5 onzas,3 onzas;65591,50416,44529
+bbq rico Filet;Carnes;Harina,Leche,Pan;500 ml,200 ml,150 ml;63862,47320,14554
+bbq rico bbq;Comida chatarra;Harina,Queso,Tomate;Grande,mediano,pequeÃ±o;64343,37073,17400
+bbq rico ahumado;Bebida;Naranja,Huevos,Lechuga;500 ml,200 ml,150 ml;63899,27750,36014
+bbq rico termino medio;Comida de mar;Bacalao,Huevos,Lechuga;Grande,mediano,pequeÃ±o;55002,42245,10341
+bbq rico gourmet;Bebida;Agua,Leche,Lechuga;500 ml,200 ml,150 ml;74522,25127,14468
+bbq rico con salsa;Plato principal;Harina,Pimenton,Tomate;Grande,mediano,pequeÃ±o;56792,35376,35707
+bbq papas rico;Carnes;Harina,Queso,Lechuga;Familiar,mediano,personal;74286,25428,40823
+bbq papas papas;Comida de mar;Frijol,Cilantro,Pan;500 ml,200 ml,150 ml;73313,39251,29752
+bbq papas ensalada;Carnes;Bacalao,Leche,Lechuga;Grande,mediano,pequeÃ±o;68850,42548,37633
+bbq papas chocolate;Adicionales;Harina,Cebolla,Lenteja;500 ml,200 ml,150 ml;74309,33497,35139
+bbq papas Filet;Aperitivo;Harina,Cebolla,Pan;Familiar,mediano,personal;65552,32286,40008
+bbq papas bbq;Adicionales;Naranja,Pimenton,Pan;8 onzas,5 onzas,3 onzas;65643,35907,43533
+bbq papas ahumado;Dulces;Frijol,Queso,Tomate;8 onzas,5 onzas,3 onzas;60387,35042,37722
+bbq papas termino medio;Dulces;Frijol,Cebolla,Pan;Familiar,mediano,personal;58185,28860,41256
+bbq papas gourmet;Aperitivo;Naranja,Queso,Lechuga;8 onzas,5 onzas,3 onzas;56513,48810,24903
+bbq papas con salsa;Comida de mar;Harina,Queso,Pan;Grande,mediano,pequeÃ±o;63666,46515,26552
+bbq ensalada rico;Aperitivo;Naranja,Cebolla,Lenteja;Grande,mediano,pequeÃ±o;67967,40882,17407
+bbq ensalada papas;Dulces;Harina,Pimenton,Tomate;Familiar,mediano,personal;68327,48801,27175
+bbq ensalada ensalada;Carnes;Bacalao,Pimenton,Pan;8 onzas,5 onzas,3 onzas;64422,37313,47255
+bbq ensalada chocolate;Panaderia;Frijol,Queso,Tomate;8 onzas,5 onzas,3 onzas;59362,40902,18313
+bbq ensalada Filet;Aperitivo;Naranja,Queso,Tomate;Grande,mediano,pequeÃ±o;57928,39158,24395
+bbq ensalada bbq;Aperitivo;Bacalao,Cebolla,Lechuga;Familiar,mediano,personal;70067,40694,12679
+bbq ensalada ahumado;Panaderia;Bacalao,Pimenton,Lenteja;500 ml,200 ml,150 ml;56234,28754,41668
+bbq ensalada termino medio;Panaderia;Naranja,Leche,Tomate;8 onzas,5 onzas,3 onzas;65235,27708,40560
+bbq ensalada gourmet;Comida de mar;Frijol,Cebolla,Lenteja;Grande,mediano,pequeÃ±o;55172,34469,27886
+bbq ensalada con salsa;Plato principal;Naranja,Pimenton,Lechuga;Familiar,mediano,personal;60447,42088,46632
+bbq chocolate rico;Panaderia;Bacalao,Cebolla,Pan;Grande,mediano,pequeÃ±o;57346,27271,10076
+bbq chocolate papas;Dulces;Frijol,Queso,Tomate;500 ml,200 ml,150 ml;73503,41354,20965
+bbq chocolate ensalada;Aperitivo;Bacalao,Huevos,Lenteja;500 ml,200 ml,150 ml;56382,47936,34629
+bbq chocolate chocolate;Plato principal;Naranja,Cilantro,Pan;Familiar,mediano,personal;58617,48458,27579
+bbq chocolate Filet;Dulces;Frijol,Cilantro,Pan;Grande,mediano,pequeÃ±o;71128,31478,46223
+bbq chocolate bbq;Comida de mar;Agua,Leche,Pan;8 onzas,5 onzas,3 onzas;68498,44841,44130
+bbq chocolate ahumado;Comida de mar;Naranja,Cilantro,Pan;Familiar,mediano,personal;73879,33305,36588
+bbq chocolate termino medio;Panaderia;Bacalao,Cilantro,Lechuga;500 ml,200 ml,150 ml;63555,40805,28861
+bbq chocolate gourmet;Panaderia;Frijol,Leche,Tomate;8 onzas,5 onzas,3 onzas;73903,42999,34314
+bbq chocolate con salsa;Bebida;Naranja,Huevos,Lenteja;Grande,mediano,pequeÃ±o;64372,38277,39142
+bbq Filet rico;Panaderia;Frijol,Pimenton,Lenteja;Familiar,mediano,personal;70007,53014,46489
+bbq Filet papas;Carnes;Agua,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;72964,43123,29993
+bbq Filet ensalada;Bebida;Harina,Leche,Lechuga;Grande,mediano,pequeÃ±o;65147,47794,41591
+bbq Filet chocolate;Comida chatarra;Bacalao,Pimenton,Pan;Grande,mediano,pequeÃ±o;68107,27584,42755
+bbq Filet Filet;Adicionales;Bacalao,Pimenton,Pan;500 ml,200 ml,150 ml;73097,42921,32111
+bbq Filet bbq;Aperitivo;Agua,Huevos,Tomate;8 onzas,5 onzas,3 onzas;67138,33468,24321
+bbq Filet ahumado;Aperitivo;Agua,Leche,Pan;Familiar,mediano,personal;63403,53099,28878
+bbq Filet termino medio;Comida chatarra;Harina,Pimenton,Pan;8 onzas,5 onzas,3 onzas;72816,38292,30080
+bbq Filet gourmet;Adicionales;Frijol,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;64943,33310,31828
+bbq Filet con salsa;Adicionales;Naranja,Queso,Lechuga;Grande,mediano,pequeÃ±o;56725,28276,38552
+bbq bbq rico;Carnes;Frijol,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;56474,48263,34517
+bbq bbq papas;Carnes;Agua,Pimenton,Lenteja;500 ml,200 ml,150 ml;61696,50174,22450
+bbq bbq ensalada;Plato principal;Frijol,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;66110,46344,45396
+bbq bbq chocolate;Bebida;Harina,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;73941,37609,41811
+bbq bbq Filet;Aperitivo;Agua,Cilantro,Lechuga;8 onzas,5 onzas,3 onzas;55919,40666,48409
+bbq bbq bbq;Comida de mar;Agua,Pimenton,Lechuga;Grande,mediano,pequeÃ±o;61392,39375,41735
+bbq bbq ahumado;Plato principal;Harina,Pimenton,Pan;8 onzas,5 onzas,3 onzas;68539,29268,36430
+bbq bbq termino medio;Adicionales;Naranja,Pimenton,Lenteja;Familiar,mediano,personal;62115,26187,13511
+bbq bbq gourmet;Plato principal;Harina,Leche,Pan;Familiar,mediano,personal;63971,38207,29968
+bbq bbq con salsa;Comida de mar;Frijol,Leche,Pan;8 onzas,5 onzas,3 onzas;59544,50763,12449
+bbq ahumado rico;Plato principal;Frijol,Leche,Pan;500 ml,200 ml,150 ml;74909,48577,13090
+bbq ahumado papas;Bebida;Frijol,Cilantro,Tomate;500 ml,200 ml,150 ml;60528,31316,33971
+bbq ahumado ensalada;Natural;Bacalao,Queso,Lechuga;Grande,mediano,pequeÃ±o;72734,35821,21731
+bbq ahumado chocolate;Aperitivo;Naranja,Cebolla,Pan;Familiar,mediano,personal;66187,35886,35137
+bbq ahumado Filet;Comida de mar;Harina,Huevos,Tomate;Familiar,mediano,personal;72668,52310,17830
+bbq ahumado bbq;Adicionales;Naranja,Pimenton,Pan;500 ml,200 ml,150 ml;63437,28532,24238
+bbq ahumado ahumado;Aperitivo;Frijol,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;61182,25013,41334
+bbq ahumado termino medio;Bebida;Harina,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;65952,52548,19930
+bbq ahumado gourmet;Dulces;Frijol,Huevos,Lechuga;Familiar,mediano,personal;59840,40505,14972
+bbq ahumado con salsa;Panaderia;Agua,Cilantro,Lechuga;8 onzas,5 onzas,3 onzas;56766,36696,33897
+bbq termino medio rico;Adicionales;Bacalao,Queso,Lechuga;500 ml,200 ml,150 ml;69081,39462,25574
+bbq termino medio papas;Adicionales;Harina,Queso,Lenteja;Grande,mediano,pequeÃ±o;65668,37891,42356
+bbq termino medio ensalada;Panaderia;Harina,Cebolla,Lenteja;Grande,mediano,pequeÃ±o;72258,54807,39815
+bbq termino medio chocolate;Carnes;Frijol,Leche,Lenteja;Familiar,mediano,personal;71678,37334,47313
+bbq termino medio Filet;Adicionales;Agua,Huevos,Tomate;500 ml,200 ml,150 ml;72953,25157,11395
+bbq termino medio bbq;Dulces;Frijol,Leche,Tomate;8 onzas,5 onzas,3 onzas;71502,41768,18018
+bbq termino medio ahumado;Natural;Naranja,Huevos,Lenteja;500 ml,200 ml,150 ml;58644,28150,24538
+bbq termino medio termino medio;Bebida;Harina,Pimenton,Pan;Grande,mediano,pequeÃ±o;67278,26735,49527
+bbq termino medio gourmet;Aperitivo;Naranja,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;65450,38415,45577
+bbq termino medio con salsa;Natural;Naranja,Pimenton,Pan;Familiar,mediano,personal;56455,33846,29124
+bbq gourmet rico;Panaderia;Naranja,Queso,Tomate;Familiar,mediano,personal;73549,34084,49137
+bbq gourmet papas;Panaderia;Harina,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;67517,43684,9411
+bbq gourmet ensalada;Carnes;Frijol,Pimenton,Pan;500 ml,200 ml,150 ml;63078,30145,20229
+bbq gourmet chocolate;Panaderia;Agua,Queso,Pan;Familiar,mediano,personal;66330,34890,8314
+bbq gourmet Filet;Aperitivo;Naranja,Leche,Lenteja;8 onzas,5 onzas,3 onzas;72842,49447,26027
+bbq gourmet bbq;Natural;Bacalao,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;57210,41871,17780
+bbq gourmet ahumado;Comida de mar;Agua,Leche,Lenteja;Familiar,mediano,personal;58004,40504,23596
+bbq gourmet termino medio;Dulces;Harina,Cilantro,Lenteja;500 ml,200 ml,150 ml;74909,26385,31687
+bbq gourmet gourmet;Aperitivo;Bacalao,Cebolla,Tomate;500 ml,200 ml,150 ml;67109,28328,31621
+bbq gourmet con salsa;Adicionales;Harina,Cilantro,Pan;8 onzas,5 onzas,3 onzas;68321,44543,20782
+bbq con salsa rico;Comida de mar;Frijol,Queso,Lechuga;Familiar,mediano,personal;72760,54915,17791
+bbq con salsa papas;Natural;Agua,Huevos,Tomate;500 ml,200 ml,150 ml;65136,41522,40502
+bbq con salsa ensalada;Dulces;Frijol,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;57622,30730,10410
+bbq con salsa chocolate;Dulces;Frijol,Cilantro,Tomate;500 ml,200 ml,150 ml;71999,39537,12243
+bbq con salsa Filet;Aperitivo;Frijol,Pimenton,Tomate;500 ml,200 ml,150 ml;68975,26502,15419
+bbq con salsa bbq;Aperitivo;Naranja,Queso,Tomate;Grande,mediano,pequeÃ±o;64043,45576,42278
+bbq con salsa ahumado;Dulces;Naranja,Cilantro,Lenteja;Grande,mediano,pequeÃ±o;66057,26517,40500
+bbq con salsa termino medio;Comida de mar;Agua,Queso,Lechuga;500 ml,200 ml,150 ml;61268,45541,11203
+bbq con salsa gourmet;Bebida;Bacalao,Cebolla,Lenteja;500 ml,200 ml,150 ml;62840,51419,41047
+bbq con salsa con salsa;Carnes;Frijol,Cilantro,Lechuga;Familiar,mediano,personal;57318,29329,28003
+ahumado rico rico;Adicionales;Agua,Queso,Lechuga;Grande,mediano,pequeÃ±o;69304,47843,21635
+ahumado rico papas;Carnes;Frijol,Leche,Lechuga;8 onzas,5 onzas,3 onzas;71207,25922,41927
+ahumado rico ensalada;Panaderia;Bacalao,Cebolla,Tomate;500 ml,200 ml,150 ml;58072,53370,32594
+ahumado rico chocolate;Dulces;Harina,Huevos,Pan;500 ml,200 ml,150 ml;59832,54808,43541
+ahumado rico Filet;Plato principal;Frijol,Pimenton,Lenteja;500 ml,200 ml,150 ml;57776,53635,11129
+ahumado rico bbq;Panaderia;Bacalao,Pimenton,Tomate;500 ml,200 ml,150 ml;64911,38492,46713
+ahumado rico ahumado;Comida de mar;Naranja,Leche,Lechuga;500 ml,200 ml,150 ml;64155,46354,20231
+ahumado rico termino medio;Dulces;Frijol,Queso,Lenteja;8 onzas,5 onzas,3 onzas;74950,52990,8664
+ahumado rico gourmet;Bebida;Frijol,Leche,Lenteja;8 onzas,5 onzas,3 onzas;73245,34479,32065
+ahumado rico con salsa;Comida chatarra;Frijol,Queso,Pan;500 ml,200 ml,150 ml;60172,39737,30458
+ahumado papas rico;Bebida;Harina,Cilantro,Lenteja;500 ml,200 ml,150 ml;60284,37750,34785
+ahumado papas papas;Adicionales;Agua,Pimenton,Lechuga;Grande,mediano,pequeÃ±o;65762,41373,25745
+ahumado papas ensalada;Comida chatarra;Bacalao,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;60286,34775,25980
+ahumado papas chocolate;Comida chatarra;Harina,Leche,Lechuga;Grande,mediano,pequeÃ±o;56664,25354,43805
+ahumado papas Filet;Comida de mar;Bacalao,Queso,Pan;8 onzas,5 onzas,3 onzas;58499,43226,30543
+ahumado papas bbq;Aperitivo;Harina,Pimenton,Lechuga;Grande,mediano,pequeÃ±o;63880,31985,34724
+ahumado papas ahumado;Comida chatarra;Frijol,Leche,Pan;Familiar,mediano,personal;72711,29755,32520
+ahumado papas termino medio;Bebida;Agua,Cilantro,Pan;Familiar,mediano,personal;73212,33037,35574
+ahumado papas gourmet;Bebida;Naranja,Pimenton,Lenteja;Familiar,mediano,personal;68398,51205,16486
+ahumado papas con salsa;Aperitivo;Bacalao,Pimenton,Lechuga;Grande,mediano,pequeÃ±o;59703,38193,16936
+ahumado ensalada rico;Bebida;Naranja,Queso,Lechuga;8 onzas,5 onzas,3 onzas;70312,30254,24035
+ahumado ensalada papas;Carnes;Harina,Leche,Tomate;8 onzas,5 onzas,3 onzas;59693,25034,37200
+ahumado ensalada ensalada;Adicionales;Bacalao,Cebolla,Lechuga;500 ml,200 ml,150 ml;55787,31901,19349
+ahumado ensalada chocolate;Plato principal;Harina,Cebolla,Tomate;Grande,mediano,pequeÃ±o;72489,33470,41153
+ahumado ensalada Filet;Carnes;Bacalao,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;61146,54107,16481
+ahumado ensalada bbq;Comida de mar;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;71282,41185,31772
+ahumado ensalada ahumado;Carnes;Naranja,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;73724,27723,43330
+ahumado ensalada termino medio;Plato principal;Bacalao,Pimenton,Tomate;Familiar,mediano,personal;56721,53418,33684
+ahumado ensalada gourmet;Carnes;Naranja,Cilantro,Pan;8 onzas,5 onzas,3 onzas;63734,48104,41869
+ahumado ensalada con salsa;Carnes;Naranja,Leche,Tomate;8 onzas,5 onzas,3 onzas;68921,54972,43809
+ahumado chocolate rico;Adicionales;Agua,Leche,Tomate;Grande,mediano,pequeÃ±o;60882,26861,18979
+ahumado chocolate papas;Carnes;Harina,Pimenton,Lenteja;8 onzas,5 onzas,3 onzas;62512,27428,13959
+ahumado chocolate ensalada;Panaderia;Agua,Pimenton,Lechuga;500 ml,200 ml,150 ml;70764,46006,28948
+ahumado chocolate chocolate;Comida chatarra;Harina,Cilantro,Tomate;500 ml,200 ml,150 ml;62400,54853,15900
+ahumado chocolate Filet;Comida chatarra;Harina,Leche,Lenteja;8 onzas,5 onzas,3 onzas;68124,34432,11205
+ahumado chocolate bbq;Dulces;Bacalao,Cilantro,Lenteja;Grande,mediano,pequeÃ±o;71235,35871,20222
+ahumado chocolate ahumado;Dulces;Frijol,Cebolla,Lechuga;Familiar,mediano,personal;68681,50686,17958
+ahumado chocolate termino medio;Carnes;Naranja,Pimenton,Tomate;Familiar,mediano,personal;58540,53853,9592
+ahumado chocolate gourmet;Natural;Agua,Huevos,Tomate;Grande,mediano,pequeÃ±o;62710,45068,17198
+ahumado chocolate con salsa;Plato principal;Bacalao,Queso,Lechuga;500 ml,200 ml,150 ml;74167,49039,11584
+ahumado Filet rico;Aperitivo;Bacalao,Cilantro,Tomate;500 ml,200 ml,150 ml;57071,50282,17654
+ahumado Filet papas;Plato principal;Frijol,Cilantro,Tomate;Grande,mediano,pequeÃ±o;61707,39784,18403
+ahumado Filet ensalada;Comida chatarra;Naranja,Leche,Tomate;8 onzas,5 onzas,3 onzas;57155,34023,40682
+ahumado Filet chocolate;Carnes;Frijol,Huevos,Tomate;8 onzas,5 onzas,3 onzas;70697,52898,44039
+ahumado Filet Filet;Natural;Naranja,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;59273,48279,34617
+ahumado Filet bbq;Plato principal;Agua,Cebolla,Tomate;500 ml,200 ml,150 ml;73936,44817,49164
+ahumado Filet ahumado;Comida de mar;Bacalao,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;69847,54465,20859
+ahumado Filet termino medio;Carnes;Harina,Queso,Tomate;8 onzas,5 onzas,3 onzas;65597,54627,49431
+ahumado Filet gourmet;Panaderia;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;71861,26116,47407
+ahumado Filet con salsa;Panaderia;Agua,Huevos,Lechuga;Familiar,mediano,personal;72677,26440,13417
+ahumado bbq rico;Carnes;Bacalao,Queso,Lenteja;Familiar,mediano,personal;74552,28664,8559
+ahumado bbq papas;Dulces;Agua,Leche,Tomate;8 onzas,5 onzas,3 onzas;69718,36377,25447
+ahumado bbq ensalada;Carnes;Agua,Huevos,Tomate;8 onzas,5 onzas,3 onzas;72985,51473,33813
+ahumado bbq chocolate;Carnes;Bacalao,Huevos,Tomate;Grande,mediano,pequeÃ±o;74234,49357,37046
+ahumado bbq Filet;Comida de mar;Agua,Leche,Lenteja;Familiar,mediano,personal;67348,31913,37956
+ahumado bbq bbq;Panaderia;Harina,Pimenton,Lechuga;Familiar,mediano,personal;61284,32766,14188
+ahumado bbq ahumado;Bebida;Agua,Leche,Lechuga;Grande,mediano,pequeÃ±o;59408,34635,19042
+ahumado bbq termino medio;Adicionales;Bacalao,Queso,Lenteja;Grande,mediano,pequeÃ±o;67033,49779,21146
+ahumado bbq gourmet;Adicionales;Frijol,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;73285,54042,22991
+ahumado bbq con salsa;Comida chatarra;Agua,Queso,Lechuga;8 onzas,5 onzas,3 onzas;59275,49810,47351
+ahumado ahumado rico;Panaderia;Harina,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;55915,49989,32097
+ahumado ahumado papas;Comida de mar;Agua,Pimenton,Tomate;Grande,mediano,pequeÃ±o;65406,53734,32253
+ahumado ahumado ensalada;Natural;Agua,Cebolla,Lenteja;Familiar,mediano,personal;73690,39584,24674
+ahumado ahumado chocolate;Comida chatarra;Naranja,Huevos,Lechuga;Familiar,mediano,personal;55880,45007,41462
+ahumado ahumado Filet;Panaderia;Agua,Cilantro,Tomate;Grande,mediano,pequeÃ±o;60239,25709,13280
+ahumado ahumado bbq;Aperitivo;Naranja,Cebolla,Lechuga;Grande,mediano,pequeÃ±o;65444,40520,35353
+ahumado ahumado ahumado;Carnes;Frijol,Leche,Lenteja;500 ml,200 ml,150 ml;55578,33793,39250
+ahumado ahumado termino medio;Comida de mar;Agua,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;61728,39718,22696
+ahumado ahumado gourmet;Comida de mar;Agua,Queso,Lechuga;Grande,mediano,pequeÃ±o;57758,46259,37307
+ahumado ahumado con salsa;Aperitivo;Naranja,Cebolla,Lenteja;Grande,mediano,pequeÃ±o;74287,34918,39729
+ahumado termino medio rico;Aperitivo;Bacalao,Pimenton,Lechuga;Grande,mediano,pequeÃ±o;62758,34387,16736
+ahumado termino medio papas;Natural;Bacalao,Huevos,Pan;8 onzas,5 onzas,3 onzas;71164,25870,31970
+ahumado termino medio ensalada;Carnes;Harina,Cebolla,Lenteja;500 ml,200 ml,150 ml;71805,46263,14118
+ahumado termino medio chocolate;Natural;Naranja,Queso,Lechuga;8 onzas,5 onzas,3 onzas;68198,42331,17337
+ahumado termino medio Filet;Plato principal;Bacalao,Cilantro,Lechuga;Familiar,mediano,personal;62563,46000,33043
+ahumado termino medio bbq;Comida chatarra;Frijol,Queso,Tomate;Familiar,mediano,personal;69085,32897,22839
+ahumado termino medio ahumado;Panaderia;Agua,Queso,Tomate;500 ml,200 ml,150 ml;61646,43723,27037
+ahumado termino medio termino medio;Plato principal;Agua,Pimenton,Pan;8 onzas,5 onzas,3 onzas;70181,36136,41014
+ahumado termino medio gourmet;Plato principal;Harina,Cebolla,Lenteja;Familiar,mediano,personal;56563,34540,26505
+ahumado termino medio con salsa;Comida chatarra;Agua,Leche,Pan;Familiar,mediano,personal;73328,45349,12628
+ahumado gourmet rico;Dulces;Bacalao,Huevos,Tomate;8 onzas,5 onzas,3 onzas;72503,33015,8712
+ahumado gourmet papas;Plato principal;Naranja,Leche,Pan;Familiar,mediano,personal;57218,53884,48334
+ahumado gourmet ensalada;Dulces;Agua,Pimenton,Lechuga;500 ml,200 ml,150 ml;66710,27002,18041
+ahumado gourmet chocolate;Natural;Agua,Queso,Pan;Familiar,mediano,personal;56223,54439,44811
+ahumado gourmet Filet;Natural;Naranja,Huevos,Lenteja;Grande,mediano,pequeÃ±o;72251,43852,11483
+ahumado gourmet bbq;Comida chatarra;Harina,Huevos,Pan;Familiar,mediano,personal;61119,35407,16844
+ahumado gourmet ahumado;Carnes;Agua,Cilantro,Lechuga;Grande,mediano,pequeÃ±o;65877,31576,45103
+ahumado gourmet termino medio;Carnes;Naranja,Queso,Lechuga;Familiar,mediano,personal;62991,54975,35081
+ahumado gourmet gourmet;Natural;Agua,Cebolla,Lechuga;500 ml,200 ml,150 ml;60784,30865,23910
+ahumado gourmet con salsa;Comida chatarra;Harina,Queso,Tomate;Familiar,mediano,personal;58965,43107,22302
+ahumado con salsa rico;Plato principal;Harina,Cebolla,Tomate;Familiar,mediano,personal;63188,43571,9366
+ahumado con salsa papas;Panaderia;Naranja,Cebolla,Lechuga;Familiar,mediano,personal;66107,38643,16037
+ahumado con salsa ensalada;Comida chatarra;Harina,Leche,Pan;Familiar,mediano,personal;67657,36008,40008
+ahumado con salsa chocolate;Comida chatarra;Frijol,Cilantro,Tomate;500 ml,200 ml,150 ml;68905,37151,36173
+ahumado con salsa Filet;Aperitivo;Naranja,Queso,Pan;Grande,mediano,pequeÃ±o;73302,30622,13946
+ahumado con salsa bbq;Plato principal;Bacalao,Leche,Pan;500 ml,200 ml,150 ml;67931,41234,23796
+ahumado con salsa ahumado;Comida chatarra;Agua,Cilantro,Lechuga;8 onzas,5 onzas,3 onzas;56574,41595,15103
+ahumado con salsa termino medio;Comida de mar;Frijol,Leche,Lechuga;Grande,mediano,pequeÃ±o;66114,33628,31521
+ahumado con salsa gourmet;Bebida;Agua,Pimenton,Lechuga;Familiar,mediano,personal;56667,38255,48858
+ahumado con salsa con salsa;Panaderia;Bacalao,Cebolla,Pan;8 onzas,5 onzas,3 onzas;57527,54775,27172
+termino medio rico rico;Aperitivo;Frijol,Pimenton,Lechuga;Familiar,mediano,personal;56114,50231,22602
+termino medio rico papas;Dulces;Frijol,Huevos,Tomate;Grande,mediano,pequeÃ±o;64467,25610,26724
+termino medio rico ensalada;Plato principal;Frijol,Huevos,Tomate;Familiar,mediano,personal;72812,45496,23135
+termino medio rico chocolate;Dulces;Bacalao,Huevos,Lenteja;Grande,mediano,pequeÃ±o;56529,52905,47335
+termino medio rico Filet;Carnes;Bacalao,Cilantro,Pan;8 onzas,5 onzas,3 onzas;72098,30303,28358
+termino medio rico bbq;Bebida;Agua,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;69609,30952,17440
+termino medio rico ahumado;Plato principal;Naranja,Huevos,Lenteja;Familiar,mediano,personal;55489,48454,38218
+termino medio rico termino medio;Carnes;Bacalao,Cebolla,Pan;8 onzas,5 onzas,3 onzas;70004,31405,32040
+termino medio rico gourmet;Carnes;Bacalao,Queso,Pan;Grande,mediano,pequeÃ±o;56540,29641,41418
+termino medio rico con salsa;Comida chatarra;Harina,Leche,Pan;Grande,mediano,pequeÃ±o;60766,29530,12868
+termino medio papas rico;Panaderia;Naranja,Pimenton,Pan;Grande,mediano,pequeÃ±o;70852,34208,34581
+termino medio papas papas;Dulces;Agua,Queso,Tomate;Familiar,mediano,personal;63967,36863,29810
+termino medio papas ensalada;Comida chatarra;Harina,Cilantro,Lechuga;500 ml,200 ml,150 ml;74640,32049,19704
+termino medio papas chocolate;Comida chatarra;Naranja,Cebolla,Pan;500 ml,200 ml,150 ml;56083,37234,43044
+termino medio papas Filet;Bebida;Harina,Queso,Lechuga;Familiar,mediano,personal;70469,30359,24423
+termino medio papas bbq;Comida chatarra;Frijol,Pimenton,Tomate;500 ml,200 ml,150 ml;65436,29350,39768
+termino medio papas ahumado;Bebida;Agua,Leche,Lechuga;Grande,mediano,pequeÃ±o;63192,42196,25256
+termino medio papas termino medio;Plato principal;Agua,Cilantro,Pan;500 ml,200 ml,150 ml;71823,29902,26292
+termino medio papas gourmet;Bebida;Naranja,Queso,Tomate;500 ml,200 ml,150 ml;63980,29580,31799
+termino medio papas con salsa;Bebida;Agua,Pimenton,Pan;8 onzas,5 onzas,3 onzas;70596,49535,20161
+termino medio ensalada rico;Comida de mar;Bacalao,Cebolla,Tomate;500 ml,200 ml,150 ml;63048,38840,43838
+termino medio ensalada papas;Adicionales;Harina,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;65322,28284,42730
+termino medio ensalada ensalada;Dulces;Harina,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;58066,43727,43931
+termino medio ensalada chocolate;Carnes;Frijol,Huevos,Lechuga;Grande,mediano,pequeÃ±o;63278,44920,28864
+termino medio ensalada Filet;Comida chatarra;Harina,Pimenton,Pan;Grande,mediano,pequeÃ±o;60584,29429,8184
+termino medio ensalada bbq;Natural;Frijol,Huevos,Pan;Familiar,mediano,personal;55990,38963,8758
+termino medio ensalada ahumado;Adicionales;Harina,Pimenton,Lenteja;Grande,mediano,pequeÃ±o;68935,48995,43410
+termino medio ensalada termino medio;Adicionales;Frijol,Pimenton,Lenteja;500 ml,200 ml,150 ml;70995,28862,18892
+termino medio ensalada gourmet;Aperitivo;Harina,Queso,Pan;Grande,mediano,pequeÃ±o;63613,52676,36241
+termino medio ensalada con salsa;Comida de mar;Bacalao,Huevos,Tomate;500 ml,200 ml,150 ml;56147,33125,34897
+termino medio chocolate rico;Comida chatarra;Naranja,Pimenton,Pan;500 ml,200 ml,150 ml;68011,49361,37881
+termino medio chocolate papas;Comida de mar;Agua,Leche,Tomate;500 ml,200 ml,150 ml;65229,42145,26603
+termino medio chocolate ensalada;Dulces;Harina,Queso,Tomate;8 onzas,5 onzas,3 onzas;73844,48729,22680
+termino medio chocolate chocolate;Aperitivo;Naranja,Queso,Tomate;500 ml,200 ml,150 ml;66793,32194,41715
+termino medio chocolate Filet;Aperitivo;Harina,Cilantro,Lechuga;500 ml,200 ml,150 ml;64787,40789,40950
+termino medio chocolate bbq;Aperitivo;Bacalao,Cebolla,Pan;Grande,mediano,pequeÃ±o;74152,51092,14510
+termino medio chocolate ahumado;Panaderia;Harina,Leche,Tomate;Familiar,mediano,personal;59714,36660,30816
+termino medio chocolate termino medio;Bebida;Naranja,Cilantro,Tomate;500 ml,200 ml,150 ml;64478,50258,26385
+termino medio chocolate gourmet;Natural;Naranja,Cebolla,Pan;8 onzas,5 onzas,3 onzas;56315,42992,8357
+termino medio chocolate con salsa;Carnes;Frijol,Pimenton,Tomate;Grande,mediano,pequeÃ±o;62735,34782,40525
+termino medio Filet rico;Aperitivo;Harina,Leche,Tomate;8 onzas,5 onzas,3 onzas;67494,32220,27602
+termino medio Filet papas;Comida chatarra;Harina,Cilantro,Lenteja;Familiar,mediano,personal;71930,46331,37201
+termino medio Filet ensalada;Plato principal;Frijol,Cilantro,Pan;Grande,mediano,pequeÃ±o;65496,40203,45171
+termino medio Filet chocolate;Comida chatarra;Agua,Queso,Pan;Grande,mediano,pequeÃ±o;72123,37754,14588
+termino medio Filet Filet;Aperitivo;Agua,Huevos,Lenteja;500 ml,200 ml,150 ml;72532,46264,38390
+termino medio Filet bbq;Dulces;Frijol,Cebolla,Lenteja;500 ml,200 ml,150 ml;65650,44752,38832
+termino medio Filet ahumado;Comida chatarra;Harina,Pimenton,Lechuga;8 onzas,5 onzas,3 onzas;58226,51355,40430
+termino medio Filet termino medio;Comida de mar;Agua,Cilantro,Pan;Grande,mediano,pequeÃ±o;70437,35031,48343
+termino medio Filet gourmet;Natural;Bacalao,Cilantro,Lechuga;Familiar,mediano,personal;70826,51893,21055
+termino medio Filet con salsa;Aperitivo;Naranja,Cilantro,Lechuga;500 ml,200 ml,150 ml;69416,25922,30818
+termino medio bbq rico;Adicionales;Naranja,Huevos,Lenteja;Familiar,mediano,personal;59206,49359,26119
+termino medio bbq papas;Panaderia;Frijol,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;69108,37977,16497
+termino medio bbq ensalada;Carnes;Harina,Cebolla,Lechuga;500 ml,200 ml,150 ml;65300,30049,27339
+termino medio bbq chocolate;Comida de mar;Naranja,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;72227,51170,46038
+termino medio bbq Filet;Natural;Agua,Pimenton,Lechuga;500 ml,200 ml,150 ml;65479,50101,40501
+termino medio bbq bbq;Panaderia;Frijol,Queso,Lechuga;Familiar,mediano,personal;61484,32412,11604
+termino medio bbq ahumado;Comida chatarra;Agua,Leche,Lenteja;Grande,mediano,pequeÃ±o;69970,45553,45931
+termino medio bbq termino medio;Plato principal;Agua,Huevos,Lechuga;500 ml,200 ml,150 ml;72353,45690,44200
+termino medio bbq gourmet;Dulces;Agua,Leche,Pan;Familiar,mediano,personal;64161,29389,45116
+termino medio bbq con salsa;Bebida;Bacalao,Huevos,Lenteja;Grande,mediano,pequeÃ±o;61761,26350,49746
+termino medio ahumado rico;Comida de mar;Frijol,Leche,Tomate;8 onzas,5 onzas,3 onzas;65337,35760,18224
+termino medio ahumado papas;Dulces;Harina,Huevos,Pan;8 onzas,5 onzas,3 onzas;56035,32374,24453
+termino medio ahumado ensalada;Carnes;Naranja,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;55166,44101,28491
+termino medio ahumado chocolate;Adicionales;Agua,Leche,Lechuga;Familiar,mediano,personal;67766,29369,23172
+termino medio ahumado Filet;Dulces;Naranja,Cebolla,Lenteja;8 onzas,5 onzas,3 onzas;60669,52831,38237
+termino medio ahumado bbq;Carnes;Agua,Pimenton,Pan;Grande,mediano,pequeÃ±o;67779,25681,47184
+termino medio ahumado ahumado;Comida de mar;Bacalao,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;61674,44279,42703
+termino medio ahumado termino medio;Panaderia;Agua,Cebolla,Lenteja;Grande,mediano,pequeÃ±o;73915,28935,33454
+termino medio ahumado gourmet;Plato principal;Naranja,Huevos,Lenteja;Familiar,mediano,personal;64280,42961,19973
+termino medio ahumado con salsa;Panaderia;Harina,Queso,Lenteja;Grande,mediano,pequeÃ±o;63662,43880,30374
+termino medio termino medio rico;Adicionales;Agua,Huevos,Lenteja;Familiar,mediano,personal;69952,30977,45503
+termino medio termino medio papas;Plato principal;Agua,Cebolla,Lenteja;Grande,mediano,pequeÃ±o;70820,45515,38199
+termino medio termino medio ensalada;Dulces;Frijol,Queso,Lechuga;500 ml,200 ml,150 ml;57311,49324,31347
+termino medio termino medio chocolate;Bebida;Agua,Leche,Pan;Grande,mediano,pequeÃ±o;69774,30715,47797
+termino medio termino medio Filet;Carnes;Harina,Pimenton,Tomate;Familiar,mediano,personal;59105,28049,12074
+termino medio termino medio bbq;Comida chatarra;Bacalao,Huevos,Tomate;Familiar,mediano,personal;59808,45157,21848
+termino medio termino medio ahumado;Dulces;Naranja,Leche,Lenteja;8 onzas,5 onzas,3 onzas;61492,41604,34272
+termino medio termino medio termino medio;Plato principal;Frijol,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;68336,42880,32135
+termino medio termino medio gourmet;Bebida;Naranja,Leche,Lechuga;8 onzas,5 onzas,3 onzas;59975,53567,20758
+termino medio termino medio con salsa;Carnes;Naranja,Queso,Tomate;Grande,mediano,pequeÃ±o;57550,48374,13839
+termino medio gourmet rico;Natural;Bacalao,Cebolla,Lechuga;Grande,mediano,pequeÃ±o;73096,53136,26957
+termino medio gourmet papas;Dulces;Frijol,Queso,Lechuga;Grande,mediano,pequeÃ±o;62416,26274,38233
+termino medio gourmet ensalada;Adicionales;Harina,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;67159,49026,48833
+termino medio gourmet chocolate;Panaderia;Naranja,Cilantro,Pan;Familiar,mediano,personal;59712,33728,16904
+termino medio gourmet Filet;Natural;Agua,Cebolla,Lenteja;500 ml,200 ml,150 ml;72542,31600,20820
+termino medio gourmet bbq;Carnes;Naranja,Huevos,Pan;Familiar,mediano,personal;71153,42810,33978
+termino medio gourmet ahumado;Panaderia;Agua,Leche,Pan;Familiar,mediano,personal;72191,52063,16682
+termino medio gourmet termino medio;Panaderia;Bacalao,Cebolla,Pan;500 ml,200 ml,150 ml;74625,52303,44827
+termino medio gourmet gourmet;Bebida;Frijol,Leche,Pan;Grande,mediano,pequeÃ±o;72487,48518,18992
+termino medio gourmet con salsa;Comida de mar;Agua,Huevos,Pan;Familiar,mediano,personal;70649,36487,12693
+termino medio con salsa rico;Plato principal;Agua,Queso,Lenteja;Grande,mediano,pequeÃ±o;66453,46306,17574
+termino medio con salsa papas;Panaderia;Frijol,Huevos,Lechuga;Familiar,mediano,personal;56597,46716,29236
+termino medio con salsa ensalada;Comida chatarra;Frijol,Cebolla,Pan;Familiar,mediano,personal;71956,35862,9910
+termino medio con salsa chocolate;Carnes;Naranja,Pimenton,Tomate;Grande,mediano,pequeÃ±o;62783,53657,47359
+termino medio con salsa Filet;Natural;Harina,Pimenton,Lechuga;Familiar,mediano,personal;59394,25641,17533
+termino medio con salsa bbq;Natural;Bacalao,Pimenton,Pan;8 onzas,5 onzas,3 onzas;65999,37588,41611
+termino medio con salsa ahumado;Adicionales;Harina,Huevos,Lechuga;500 ml,200 ml,150 ml;60797,35363,16532
+termino medio con salsa termino medio;Natural;Naranja,Queso,Lenteja;Grande,mediano,pequeÃ±o;67487,39462,17396
+termino medio con salsa gourmet;Panaderia;Frijol,Cebolla,Lenteja;500 ml,200 ml,150 ml;68686,45268,19847
+termino medio con salsa con salsa;Panaderia;Naranja,Cebolla,Tomate;8 onzas,5 onzas,3 onzas;74672,39231,36712
+gourmet rico rico;Panaderia;Agua,Huevos,Pan;8 onzas,5 onzas,3 onzas;62222,35923,43044
+gourmet rico papas;Panaderia;Agua,Huevos,Tomate;500 ml,200 ml,150 ml;69393,52376,45471
+gourmet rico ensalada;Plato principal;Naranja,Leche,Pan;Grande,mediano,pequeÃ±o;61361,35358,26347
+gourmet rico chocolate;Comida chatarra;Agua,Pimenton,Lenteja;8 onzas,5 onzas,3 onzas;58498,39859,27133
+gourmet rico Filet;Adicionales;Naranja,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;67220,34180,27751
+gourmet rico bbq;Adicionales;Agua,Cilantro,Tomate;8 onzas,5 onzas,3 onzas;64452,49766,48242
+gourmet rico ahumado;Adicionales;Naranja,Huevos,Lenteja;8 onzas,5 onzas,3 onzas;70254,40715,18981
+gourmet rico termino medio;Panaderia;Bacalao,Cilantro,Pan;8 onzas,5 onzas,3 onzas;72752,46194,30206
+gourmet rico gourmet;Panaderia;Frijol,Huevos,Pan;500 ml,200 ml,150 ml;65043,25612,39237
+gourmet rico con salsa;Carnes;Bacalao,Pimenton,Pan;Familiar,mediano,personal;74314,31077,45462
+gourmet papas rico;Carnes;Naranja,Leche,Tomate;500 ml,200 ml,150 ml;70314,54419,37677
+gourmet papas papas;Comida de mar;Frijol,Cebolla,Tomate;Grande,mediano,pequeÃ±o;61832,40413,47703
+gourmet papas ensalada;Carnes;Frijol,Huevos,Lenteja;Grande,mediano,pequeÃ±o;61482,41411,33868
+gourmet papas chocolate;Bebida;Agua,Huevos,Tomate;500 ml,200 ml,150 ml;59395,33760,19187
+gourmet papas Filet;Comida chatarra;Frijol,Queso,Pan;Grande,mediano,pequeÃ±o;74593,28680,15499
+gourmet papas bbq;Bebida;Harina,Cebolla,Lechuga;Familiar,mediano,personal;57705,52469,14436
+gourmet papas ahumado;Aperitivo;Harina,Huevos,Pan;8 onzas,5 onzas,3 onzas;73093,47944,47740
+gourmet papas termino medio;Carnes;Naranja,Cebolla,Pan;8 onzas,5 onzas,3 onzas;69984,44631,15957
+gourmet papas gourmet;Natural;Harina,Cebolla,Pan;500 ml,200 ml,150 ml;55147,39222,26003
+gourmet papas con salsa;Plato principal;Naranja,Cilantro,Lechuga;Grande,mediano,pequeÃ±o;73520,34395,40471
+gourmet ensalada rico;Natural;Naranja,Cilantro,Tomate;Grande,mediano,pequeÃ±o;70700,41213,44531
+gourmet ensalada papas;Dulces;Naranja,Pimenton,Lenteja;Grande,mediano,pequeÃ±o;60852,51209,33193
+gourmet ensalada ensalada;Bebida;Agua,Pimenton,Tomate;Grande,mediano,pequeÃ±o;57033,49337,23041
+gourmet ensalada chocolate;Bebida;Harina,Queso,Lechuga;Familiar,mediano,personal;60735,37381,36901
+gourmet ensalada Filet;Comida chatarra;Frijol,Leche,Lenteja;500 ml,200 ml,150 ml;56516,53951,34890
+gourmet ensalada bbq;Bebida;Naranja,Leche,Tomate;Grande,mediano,pequeÃ±o;70143,34619,14115
+gourmet ensalada ahumado;Bebida;Harina,Huevos,Lechuga;Grande,mediano,pequeÃ±o;69129,51114,45826
+gourmet ensalada termino medio;Plato principal;Harina,Cebolla,Lechuga;Familiar,mediano,personal;65355,53262,45710
+gourmet ensalada gourmet;Comida chatarra;Naranja,Huevos,Pan;Grande,mediano,pequeÃ±o;59459,50468,49126
+gourmet ensalada con salsa;Comida chatarra;Naranja,Leche,Tomate;Familiar,mediano,personal;69395,48104,17224
+gourmet chocolate rico;Panaderia;Agua,Pimenton,Tomate;8 onzas,5 onzas,3 onzas;63073,51497,20522
+gourmet chocolate papas;Dulces;Frijol,Pimenton,Pan;8 onzas,5 onzas,3 onzas;58918,46207,11659
+gourmet chocolate ensalada;Natural;Naranja,Leche,Tomate;Familiar,mediano,personal;64940,40788,45383
+gourmet chocolate chocolate;Bebida;Naranja,Queso,Pan;Familiar,mediano,personal;67547,43413,22572
+gourmet chocolate Filet;Plato principal;Harina,Leche,Lenteja;Grande,mediano,pequeÃ±o;60175,38449,32696
+gourmet chocolate bbq;Bebida;Agua,Cebolla,Lenteja;Familiar,mediano,personal;69384,31839,49487
+gourmet chocolate ahumado;Plato principal;Naranja,Leche,Lenteja;Grande,mediano,pequeÃ±o;73690,53378,43712
+gourmet chocolate termino medio;Adicionales;Frijol,Queso,Pan;500 ml,200 ml,150 ml;70586,26550,40703
+gourmet chocolate gourmet;Carnes;Harina,Pimenton,Tomate;Grande,mediano,pequeÃ±o;68692,44864,18091
+gourmet chocolate con salsa;Bebida;Frijol,Queso,Pan;Familiar,mediano,personal;58783,53569,47031
+gourmet Filet rico;Comida chatarra;Frijol,Cilantro,Lenteja;Familiar,mediano,personal;73361,52709,30215
+gourmet Filet papas;Panaderia;Bacalao,Cebolla,Lechuga;8 onzas,5 onzas,3 onzas;62609,27434,41206
+gourmet Filet ensalada;Comida de mar;Harina,Cilantro,Lechuga;500 ml,200 ml,150 ml;63674,39166,19470
+gourmet Filet chocolate;Comida chatarra;Bacalao,Pimenton,Lenteja;Grande,mediano,pequeÃ±o;65876,49496,14985
+gourmet Filet Filet;Dulces;Harina,Leche,Pan;Grande,mediano,pequeÃ±o;68971,52981,40616
+gourmet Filet bbq;Aperitivo;Harina,Pimenton,Pan;8 onzas,5 onzas,3 onzas;69183,30459,28288
+gourmet Filet ahumado;Plato principal;Harina,Cilantro,Pan;500 ml,200 ml,150 ml;63130,35326,13172
+gourmet Filet termino medio;Bebida;Bacalao,Pimenton,Tomate;Familiar,mediano,personal;60396,39130,29285
+gourmet Filet gourmet;Dulces;Agua,Pimenton,Pan;8 onzas,5 onzas,3 onzas;67491,48185,29842
+gourmet Filet con salsa;Carnes;Harina,Cebolla,Lenteja;Familiar,mediano,personal;70783,35636,13624
+gourmet bbq rico;Aperitivo;Agua,Pimenton,Lenteja;Familiar,mediano,personal;72039,26262,8813
+gourmet bbq papas;Comida chatarra;Frijol,Cilantro,Lenteja;8 onzas,5 onzas,3 onzas;69871,32729,25074
+gourmet bbq ensalada;Comida de mar;Naranja,Huevos,Pan;Grande,mediano,pequeÃ±o;71910,42848,41241
+gourmet bbq chocolate;Comida de mar;Agua,Huevos,Lechuga;Familiar,mediano,personal;57211,34753,25465
+gourmet bbq Filet;Dulces;Harina,Cebolla,Lenteja;Grande,mediano,pequeÃ±o;58919,26504,20154
+gourmet bbq bbq;Natural;Harina,Huevos,Lenteja;500 ml,200 ml,150 ml;70396,40063,17509
+gourmet bbq ahumado;Plato principal;Bacalao,Cilantro,Pan;500 ml,200 ml,150 ml;68427,48860,47591
+gourmet bbq termino medio;Panaderia;Agua,Pimenton,Pan;8 onzas,5 onzas,3 onzas;67417,31861,27951
+gourmet bbq gourmet;Plato principal;Frijol,Queso,Lechuga;Familiar,mediano,personal;60905,33636,8946
+gourmet bbq con salsa;Natural;Bacalao,Pimenton,Lenteja;Familiar,mediano,personal;68651,39674,15591
+gourmet ahumado rico;Comida chatarra;Frijol,Queso,Pan;Grande,mediano,pequeÃ±o;58633,27548,26044
+gourmet ahumado papas;Bebida;Frijol,Huevos,Lechuga;8 onzas,5 onzas,3 onzas;69310,33988,18256
+gourmet ahumado ensalada;Carnes;Frijol,Huevos,Tomate;Grande,mediano,pequeÃ±o;55556,47650,20102
+gourmet ahumado chocolate;Comida chatarra;Frijol,Pimenton,Lechuga;500 ml,200 ml,150 ml;55492,30199,35086
+gourmet ahumado Filet;Natural;Harina,Cebolla,Tomate;500 ml,200 ml,150 ml;73625,53431,10805
+gourmet ahumado bbq;Comida chatarra;Pimenton,Lechuga,Frijol;Grande,mediano,pequeÃ±o;66787,29000,24229
+gourmet ahumado ahumado;Panaderia;Queso,Lenteja,Frijol;Familiar,mediano,personal;66299,33857,40946
+gourmet ahumado termino medio;Comida chatarra;Queso,Tomate,Agua;8 onzas,5 onzas,3 onzas;58574,37358,48014
+gourmet ahumado gourmet;Plato principal;Cebolla,Lechuga,Harina;Familiar,mediano,personal;67913,39988,17586
+gourmet ahumado con salsa;Plato principal;Cebolla,Lenteja,Bacalao;Grande,mediano,pequeÃ±o;58418,34906,42544
+gourmet termino medio rico;Plato principal;Queso,Lechuga,Agua;Grande,mediano,pequeÃ±o;57088,31364,10907
+gourmet termino medio papas;Bebida;Queso,Tomate,Agua;Familiar,mediano,personal;64883,35722,46338
+gourmet termino medio ensalada;Bebida;Queso,Lenteja,Harina;Familiar,mediano,personal;71739,50801,36968
+gourmet termino medio chocolate;Comida de mar;Huevos,Lenteja,Agua;8 onzas,5 onzas,3 onzas;66598,46610,38852
+gourmet termino medio Filet;Comida de mar;Leche,Lenteja,Naranja;500 ml,200 ml,150 ml;63174,49587,33379
+gourmet termino medio bbq;Panaderia;Cilantro,Lechuga,Frijol;Grande,mediano,pequeÃ±o;60803,29933,35741
+gourmet termino medio ahumado;Plato principal;Cilantro,Tomate,Frijol;500 ml,200 ml,150 ml;67513,35101,15708
+gourmet termino medio termino medio;Plato principal;Cilantro,Lechuga,Bacalao;Grande,mediano,pequeÃ±o;57760,36706,37793
+gourmet termino medio gourmet;Plato principal;Pimenton,Lechuga,Naranja;8 onzas,5 onzas,3 onzas;56306,48688,9794
+gourmet termino medio con salsa;Adicionales;Huevos,Tomate,Frijol;Familiar,mediano,personal;70953,31394,39002
+gourmet gourmet rico;Aperitivo;Huevos,Lenteja,Naranja;Grande,mediano,pequeÃ±o;57575,28840,31594
+gourmet gourmet papas;Panaderia;Cebolla,Tomate,Bacalao;500 ml,200 ml,150 ml;70728,44083,37444
+gourmet gourmet ensalada;Natural;Leche,Tomate,Naranja;500 ml,200 ml,150 ml;55017,27909,16171
+gourmet gourmet chocolate;Natural;Pimenton,Lechuga,Agua;500 ml,200 ml,150 ml;74480,37036,11801
+gourmet gourmet Filet;Carnes;Leche,Tomate,Frijol;Familiar,mediano,personal;69460,47150,29974
+gourmet gourmet bbq;Bebida;Leche,Lenteja,Agua;Familiar,mediano,personal;71929,51678,49576
+gourmet gourmet ahumado;Plato principal;Queso,Lechuga,Bacalao;8 onzas,5 onzas,3 onzas;56620,50220,32781
+gourmet gourmet termino medio;Plato principal;Huevos,Lechuga,Agua;8 onzas,5 onzas,3 onzas;67912,30755,26649
+gourmet gourmet gourmet;Dulces;Leche,Tomate,Harina;Familiar,mediano,personal;57174,47022,19790
+gourmet gourmet con salsa;Plato principal;Queso,Lenteja,Agua;Grande,mediano,pequeÃ±o;72501,40509,47532
+gourmet con salsa rico;Panaderia;Leche,Tomate,Frijol;500 ml,200 ml,150 ml;55509,30968,10457
+gourmet con salsa papas;Comida chatarra;Cilantro,Lechuga,Frijol;Grande,mediano,pequeÃ±o;66068,54833,35980
+gourmet con salsa ensalada;Natural;Queso,Lenteja,Frijol;Grande,mediano,pequeÃ±o;69989,33079,23866
+gourmet con salsa chocolate;Carnes;Queso,Tomate,Naranja;Familiar,mediano,personal;59724,54259,16164
+gourmet con salsa Filet;Plato principal;Pan,Lechuga,Bacalao;8 onzas,5 onzas,3 onzas;69634,32961,31602
+gourmet con salsa bbq;Adicionales;Leche,Lenteja,Bacalao;Grande,mediano,pequeÃ±o;62581,29701,33011
+gourmet con salsa ahumado;Comida chatarra;Cilantro,Lechuga,Frijol;Grande,mediano,pequeÃ±o;71662,43766,49801
+gourmet con salsa termino medio;Bebida;Pan,Lechuga,Agua;Grande,mediano,pequeÃ±o;61619,51666,41403
+gourmet con salsa gourmet;Aperitivo;Cebolla,Lechuga,Harina;Familiar,mediano,personal;58058,35538,23524
+gourmet con salsa con salsa;Comida chatarra;Queso,Tomate,Agua;Familiar,mediano,personal;65465,28246,29600
+con salsa rico rico;Comida chatarra;Huevos,Lenteja,Bacalao;Grande,mediano,pequeÃ±o;59309,50774,36441
+con salsa rico papas;Aperitivo;Cilantro,Lenteja,Agua;8 onzas,5 onzas,3 onzas;63493,42331,25214
+con salsa rico ensalada;Natural;Pimenton,Lenteja,Agua;8 onzas,5 onzas,3 onzas;61032,35545,47331
+con salsa rico chocolate;Plato principal;Queso,Tomate,Naranja;Grande,mediano,pequeÃ±o;55003,33557,21915
+con salsa rico Filet;Panaderia;Cilantro,Lenteja,Frijol;Familiar,mediano,personal;63805,53301,46110
+con salsa rico bbq;Bebida;Cilantro,Lechuga,Harina;Grande,mediano,pequeÃ±o;70089,44724,20515
+con salsa rico ahumado;Comida chatarra;Cebolla,Lechuga,Harina;500 ml,200 ml,150 ml;55362,40118,37633
+con salsa rico termino medio;Dulces;Cebolla,Lenteja,Bacalao;Familiar,mediano,personal;64509,25074,31981
+con salsa rico gourmet;Aperitivo;Huevos,Lenteja,Naranja;Familiar,mediano,personal;64711,53729,40708
+con salsa rico con salsa;Carnes;Queso,Lechuga,Bacalao;Familiar,mediano,personal;74482,45428,32729
+con salsa papas rico;Plato principal;Pimenton,Lenteja,Naranja;Familiar,mediano,personal;66400,32362,32943
+con salsa papas papas;Carnes;Cebolla,Lenteja,Frijol;8 onzas,5 onzas,3 onzas;64284,44661,38603
+con salsa papas ensalada;Carnes;Huevos,Tomate,Harina;8 onzas,5 onzas,3 onzas;73344,39960,36408
+con salsa papas chocolate;Plato principal;Pan,Lechuga,Frijol;Grande,mediano,pequeÃ±o;72624,47892,34149
+con salsa papas Filet;Aperitivo;Leche,Tomate,Naranja;Familiar,mediano,personal;65978,27249,15364
+con salsa papas bbq;Plato principal;Cebolla,Tomate,Naranja;Familiar,mediano,personal;69714,49984,24195
+con salsa papas ahumado;Adicionales;Cebolla,Lechuga,Naranja;Familiar,mediano,personal;70444,52874,13360
+con salsa papas termino medio;Plato principal;Pan,Lenteja,Bacalao;500 ml,200 ml,150 ml;74668,33824,42066
+con salsa papas gourmet;Comida de mar;Cilantro,Lenteja,Agua;Familiar,mediano,personal;64088,28516,13916
+con salsa papas con salsa;Aperitivo;Queso,Tomate,Agua;Familiar,mediano,personal;61129,43767,24320
+con salsa ensalada rico;Natural;Pan,Lenteja,Harina;8 onzas,5 onzas,3 onzas;56136,33243,31469
+con salsa ensalada papas;Panaderia;Queso,Lechuga,Harina;8 onzas,5 onzas,3 onzas;67149,49756,19088
+con salsa ensalada ensalada;Comida chatarra;Cebolla,Lenteja,Agua;Grande,mediano,pequeÃ±o;58848,25242,31734
+con salsa ensalada chocolate;Comida chatarra;Cilantro,Lechuga,Harina;Familiar,mediano,personal;69055,50809,38236
+con salsa ensalada Filet;Bebida;Huevos,Tomate,Harina;8 onzas,5 onzas,3 onzas;66190,34974,14336
+con salsa ensalada bbq;Comida chatarra;Cebolla,Lenteja,Naranja;8 onzas,5 onzas,3 onzas;65869,37473,41980
+con salsa ensalada ahumado;Natural;Cebolla,Lechuga,Agua;Familiar,mediano,personal;57857,52008,39455
+con salsa ensalada termino medio;Natural;Leche,Lenteja,Agua;500 ml,200 ml,150 ml;72999,35647,44199
+con salsa ensalada gourmet;Carnes;Huevos,Tomate,Naranja;8 onzas,5 onzas,3 onzas;64999,29867,38174
+con salsa ensalada con salsa;Plato principal;Cilantro,Tomate,Agua;Grande,mediano,pequeÃ±o;59604,28112,14445
+con salsa chocolate rico;Comida chatarra;Pimenton,Lenteja,Bacalao;Grande,mediano,pequeÃ±o;66035,44394,21324
+con salsa chocolate papas;Carnes;Huevos,Tomate,Frijol;Familiar,mediano,personal;68601,30981,43678
+con salsa chocolate ensalada;Carnes;Cilantro,Lenteja,Bacalao;Grande,mediano,pequeÃ±o;61622,31725,28145
+con salsa chocolate chocolate;Panaderia;Cilantro,Lechuga,Agua;8 onzas,5 onzas,3 onzas;64810,49860,14478
+con salsa chocolate Filet;Carnes;Pimenton,Lechuga,Bacalao;Grande,mediano,pequeÃ±o;72557,45159,48165
+con salsa chocolate bbq;Comida de mar;Queso,Lechuga,Naranja;8 onzas,5 onzas,3 onzas;61544,26622,14334
+con salsa chocolate ahumado;Adicionales;Leche,Tomate,Agua;Grande,mediano,pequeÃ±o;70909,50817,44272
+con salsa chocolate termino medio;Adicionales;Huevos,Tomate,Harina;Grande,mediano,pequeÃ±o;64700,45837,25410
+con salsa chocolate gourmet;Panaderia;Leche,Lechuga,Frijol;500 ml,200 ml,150 ml;59665,35635,29877
+con salsa chocolate con salsa;Aperitivo;Pimenton,Lechuga,Bacalao;8 onzas,5 onzas,3 onzas;63505,50687,46879
+con salsa Filet rico;Panaderia;Cilantro,Lenteja,Frijol;500 ml,200 ml,150 ml;55547,25481,44465
+con salsa Filet papas;Dulces;Leche,Lenteja,Harina;500 ml,200 ml,150 ml;65878,46738,34786
+con salsa Filet ensalada;Aperitivo;Pimenton,Tomate,Bacalao;Familiar,mediano,personal;58354,28829,25477
+con salsa Filet chocolate;Comida de mar;Leche,Tomate,Naranja;8 onzas,5 onzas,3 onzas;72855,37135,44361
+con salsa Filet Filet;Bebida;Leche,Tomate,Agua;8 onzas,5 onzas,3 onzas;62471,27267,42796
+con salsa Filet bbq;Aperitivo;Leche,Tomate,Harina;Familiar,mediano,personal;70072,35127,46154
+con salsa Filet ahumado;Adicionales;Cilantro,Lenteja,Harina;500 ml,200 ml,150 ml;72482,44871,21536
+con salsa Filet termino medio;Carnes;Cebolla,Lechuga,Naranja;500 ml,200 ml,150 ml;68779,36512,47890
+con salsa Filet gourmet;Plato principal;Pan,Lechuga,Frijol;Familiar,mediano,personal;64172,43029,49969
+con salsa Filet con salsa;Bebida;Queso,Lechuga,Frijol;8 onzas,5 onzas,3 onzas;57236,49939,43014
+con salsa bbq rico;Carnes;Cebolla,Tomate,Harina;8 onzas,5 onzas,3 onzas;61595,26894,43767
+con salsa bbq papas;Plato principal;Cilantro,Lenteja,Naranja;500 ml,200 ml,150 ml;64536,32341,25655
+con salsa bbq ensalada;Bebida;Pimenton,Lechuga,Harina;500 ml,200 ml,150 ml;60714,45739,49994
+con salsa bbq chocolate;Plato principal;Cebolla,Lenteja,Agua;Grande,mediano,pequeÃ±o;69651,27858,29050
+con salsa bbq Filet;Natural;Queso,Lenteja,Naranja;500 ml,200 ml,150 ml;56733,45892,21311
+con salsa bbq bbq;Carnes;Pimenton,Lenteja,Harina;500 ml,200 ml,150 ml;58840,27277,14147
+con salsa bbq ahumado;Carnes;Cebolla,Lechuga,Naranja;500 ml,200 ml,150 ml;66483,39611,16662
+con salsa bbq termino medio;Natural;Cebolla,Lechuga,Frijol;8 onzas,5 onzas,3 onzas;69463,51390,40837
+con salsa bbq gourmet;Carnes;Cebolla,Tomate,Agua;8 onzas,5 onzas,3 onzas;69814,49813,14341
+con salsa bbq con salsa;Adicionales;Cilantro,Lenteja,Naranja;8 onzas,5 onzas,3 onzas;69651,49929,44281
+con salsa ahumado rico;Panaderia;Pan,Lechuga,Frijol;Grande,mediano,pequeÃ±o;55654,50106,31618
+con salsa ahumado papas;Comida de mar;Pan,Tomate,Naranja;Familiar,mediano,personal;59822,46066,14366
+con salsa ahumado ensalada;Panaderia;Cebolla,Tomate,Naranja;Familiar,mediano,personal;60774,49237,35342
+con salsa ahumado chocolate;Dulces;Queso,Lenteja,Frijol;Familiar,mediano,personal;65631,53885,45445
+con salsa ahumado Filet;Dulces;Huevos,Lenteja,Agua;Familiar,mediano,personal;65425,46754,24560
+con salsa ahumado bbq;Natural;Cilantro,Lenteja,Bacalao;500 ml,200 ml,150 ml;56034,54313,36155
+con salsa ahumado ahumado;Dulces;Pan,Lenteja,Naranja;8 onzas,5 onzas,3 onzas;59269,52529,31833
+con salsa ahumado termino medio;Comida chatarra;Queso,Lenteja,Frijol;Grande,mediano,pequeÃ±o;63890,50197,39330
+con salsa ahumado gourmet;Dulces;Cilantro,Lenteja,Naranja;500 ml,200 ml,150 ml;71575,30836,21574
+con salsa ahumado con salsa;Aperitivo;Cilantro,Lechuga,Agua;8 onzas,5 onzas,3 onzas;64304,26068,49960
+con salsa termino medio rico;Comida de mar;Pan,Lenteja,Frijol;Familiar,mediano,personal;62508,36049,10758
+con salsa termino medio papas;Carnes;Pimenton,Tomate,Agua;Familiar,mediano,personal;57966,32659,41013
+con salsa termino medio ensalada;Comida chatarra;Cilantro,Lechuga,Bacalao;500 ml,200 ml,150 ml;62075,36940,44605
+con salsa termino medio chocolate;Carnes;Pimenton,Lechuga,Frijol;Grande,mediano,pequeÃ±o;64944,50083,19717
+con salsa termino medio Filet;Comida de mar;Queso,Lenteja,Naranja;8 onzas,5 onzas,3 onzas;58714,29721,35781
+con salsa termino medio bbq;Dulces;Pan,Tomate,Naranja;Grande,mediano,pequeÃ±o;71903,36300,16266
+con salsa termino medio ahumado;Adicionales;Cebolla,Tomate,Naranja;Familiar,mediano,personal;68183,45138,49497
+con salsa termino medio termino medio;Adicionales;Cilantro,Lechuga,Frijol;Familiar,mediano,personal;71264,38511,10961
+con salsa termino medio gourmet;Aperitivo;Pimenton,Lenteja,Frijol;8 onzas,5 onzas,3 onzas;73139,53496,21490
+con salsa termino medio con salsa;Dulces;Cebolla,Lechuga,Agua;500 ml,200 ml,150 ml;70996,53161,9619
+con salsa gourmet rico;Comida de mar;Pan,Tomate,Frijol;8 onzas,5 onzas,3 onzas;73034,27800,39323
+con salsa gourmet papas;Aperitivo;Pimenton,Tomate,Harina;Familiar,mediano,personal;70598,33766,24020
+con salsa gourmet ensalada;Comida de mar;Cilantro,Lenteja,Frijol;Grande,mediano,pequeÃ±o;73616,34240,42494
+con salsa gourmet chocolate;Dulces;Queso,Lechuga,Agua;Grande,mediano,pequeÃ±o;73628,34973,37319
+con salsa gourmet Filet;Dulces;Queso,Lenteja,Frijol;500 ml,200 ml,150 ml;73894,36502,32954
+con salsa gourmet bbq;Panaderia;Huevos,Lechuga,Naranja;Familiar,mediano,personal;70251,26163,36006
+con salsa gourmet ahumado;Comida chatarra;Pan,Lechuga,Naranja;Familiar,mediano,personal;68868,53711,45314
+con salsa gourmet termino medio;Carnes;Cilantro,Tomate,Agua;500 ml,200 ml,150 ml;66542,50540,40210
+con salsa gourmet gourmet;Comida de mar;Cebolla,Lechuga,Naranja;Familiar,mediano,personal;66039,47714,10906
+con salsa gourmet con salsa;Comida de mar;Pan,Lenteja,Harina;Familiar,mediano,personal;58716,48062,39766
+con salsa con salsa rico;Adicionales;Cebolla,Lenteja,Naranja;Grande,mediano,pequeÃ±o;71079,47442,40613
+con salsa con salsa papas;Dulces;Huevos,Lechuga,Agua;Familiar,mediano,personal;59256,28829,21852
+con salsa con salsa ensalada;Aperitivo;Queso,Lechuga,Agua;8 onzas,5 onzas,3 onzas;71258,43462,14226
+con salsa con salsa chocolate;Natural;Pan,Lenteja,Harina;Grande,mediano,pequeÃ±o;69458,52117,28026
+con salsa con salsa Filet;Natural;Pan,Lenteja,Naranja;500 ml,200 ml,150 ml;60454,52108,38299
+con salsa con salsa bbq;Panaderia;Queso,Lenteja,Harina;500 ml,200 ml,150 ml;62525,54311,17352
+con salsa con salsa ahumado;Bebida;Pimenton,Tomate,Frijol;500 ml,200 ml,150 ml;65066,43906,18747
+con salsa con salsa termino medio;Carnes;Cebolla,Lechuga,Agua;Familiar,mediano,personal;60065,29134,44034
+con salsa con salsa gourmet;Dulces;Huevos,Lechuga,Bacalao;Grande,mediano,pequeÃ±o;64320,36482,38823
+con salsa con salsa con salsa;Plato principal;Cilantro,Lechuga,Frijol;8 onzas,5 onzas,3 onzas;58209,51535,24350
+papas rico rico rico;Natural;Queso,Lenteja,Frijol;Familiar,mediano,personal;66004,48415,34149
+papas rico rico papas;Panaderia;Huevos,Lechuga,Frijol;8 onzas,5 onzas,3 onzas;71912,36028,26309

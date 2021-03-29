@@ -15,14 +15,13 @@
             <TableView fx:id="orderTBV" editable="true" prefHeight="450.0" prefWidth="570.0" HBox.hgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="codeCol" editable="false" minWidth="-Infinity" prefWidth="85.0" text="Código" />
-                <TableColumn fx:id="enabledOrderCol" minWidth="-Infinity" onEditCommit="#editEnabledOrder" prefWidth="93.0" text="Habilitado" />
                   <TableColumn fx:id="statusOrderCol" minWidth="-Infinity" onEditCommit="#editStatusOrder" prefWidth="85.0" text="Estado" />
-                  <TableColumn fx:id="prodOrderCol" minWidth="-Infinity" onEditCommit="#editProdOrder" prefWidth="93.0" text="Productos" />
-                  <TableColumn fx:id="quantityOrderCol" minWidth="-Infinity" onEditCommit="#editQuantityCol" prefWidth="117.0" text="Cantidad" />
+                  <TableColumn fx:id="prodOrderCol" minWidth="-Infinity" prefWidth="93.0" text="Productos" />
+                  <TableColumn fx:id="quantityOrderCol" minWidth="-Infinity" prefWidth="117.0" text="Cantidad" />
                   <TableColumn fx:id="ordererCol" editable="false" minWidth="-Infinity" prefWidth="117.0" text="Solicitado Por" />
-                  <TableColumn fx:id="serverCol" minWidth="-Infinity" onEditCommit="#editServer" prefWidth="117.0" text="Entregado Por" />
+                  <TableColumn fx:id="serverCol" minWidth="-Infinity" prefWidth="117.0" text="Entregado Por" />
                   <TableColumn fx:id="orderedDateCol" editable="false" minWidth="-Infinity" prefWidth="117.0" text="Fecha" />
-                  <TableColumn fx:id="obsOrderCol" minWidth="-Infinity" onEditCommit="#editObsOrder" prefWidth="117.0" text="Observaciones" />
+                  <TableColumn fx:id="obsOrderCol" minWidth="-Infinity" prefWidth="117.0" text="Observaciones" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

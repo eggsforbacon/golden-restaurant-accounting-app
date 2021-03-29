@@ -21,6 +21,7 @@ public class Main extends Application {
 
   public Main() {
     GH = new Restaurant();
+
     controller = new MainGUIController(GH);
     logController = new LoginGUIController(GH);
     System.out.println(GH.checkFirstTime());

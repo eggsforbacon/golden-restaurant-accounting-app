@@ -74,6 +74,7 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
+            e.printStackTrace();
         }
     }
 
@@ -86,6 +87,7 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
+            e.printStackTrace();
         }
     }
 
@@ -98,6 +100,7 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
+            e.printStackTrace();
         }
     }
 
@@ -110,6 +113,7 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
+            e.printStackTrace();
         }
     }
 
@@ -122,6 +126,7 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
+            e.printStackTrace();
         }
     }
 
@@ -139,6 +144,7 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
+            e.printStackTrace();
         }
     }
 
@@ -151,6 +157,7 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
+            e.printStackTrace();
         }
     }
 
