@@ -1650,7 +1650,7 @@ public class Restaurant{
 	  */
 	 public boolean changeEmployeeId(int index,String newId) {
 		 if(index!=-1) {
-			 int employeeIsRepeated = employeeIndexWithId(newId);
+			 int employeeIsRepeated = employeeIndexWithId(newId); 
 			 if(employeeIsRepeated==-1) {
 				 Employee changeId=restaurantEmployees.get(index);
 				 restaurantUsers.get(indexOfAnUser(changeId)).setId(newId);
