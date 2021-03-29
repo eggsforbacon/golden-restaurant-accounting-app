@@ -82,6 +82,7 @@ public class Restaurant{
 	//Import methods
 	public void importClientInformation(String fileName) throws IOException{
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		br.readLine();
 		String line = br.readLine();
 		while(line!=null){
 			String[] parts = line.split(";");
@@ -98,6 +99,7 @@ public class Restaurant{
 	}
 	public void importProductInformation(String fileName) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		br.readLine();
 		String line = br.readLine();
 		while(line!=null){
 			String[] parts = line.split(";");
@@ -136,6 +138,53 @@ public class Restaurant{
 			line = br.readLine();
 		}
 		br.close();
+	}
+	
+	public void importOrderInformation(String fileName) throws IOException{
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		br.readLine();
+		String line = br.readLine();
+		while(line!=null){
+			String[] parts = line.split(";");
+			String[] productsString = parts[0].split(",");
+			String[] productsSizes = parts[1].split(",");
+			String[] productsQuantitys = parts[2].split(",");
+			ArrayList<Product> ordProd = new ArrayList<Product>();
+			ArrayList<Integer> ordPQuantitys = new ArrayList<Integer>();
+			for(int i=0;i<productsString.length;i++) {
+				if(productIndexWithName(productsString[i])!=-1) {
+					Product auxProd = restaurantProducts.get(productIndexWithName(productsString[i]));
+					int sizeIndex = sizeIndexWithName(auxProd.getProductsSizes(), productsSizes[i]);
+					ordProd.add(new Product(auxProd.getName(),currentUser,auxProd.getPlateType(),auxProd.getIngrdnts(),auxProd.getProductsSizes(),auxProd.getSizesPrices(),sizeIndex));
+				}
+			}
+			for(int i=0;i<productsQuantitys.length;i++) {
+				ordPQuantitys.add(Integer.parseInt(productsQuantitys[i]));
+			}
+			String[] clientNameAndLastName = parts[3].split(" ");
+			Client clientOfOrder=null;
+			if(clientIndexWithNameAndLastname(clientNameAndLastName[0], clientNameAndLastName[0])!=-1) {
+				clientOfOrder=restaurantClients.get(clientIndexWithNameAndLastname(clientNameAndLastName[0], clientNameAndLastName[0]));
+			}
+			
+			String employeeName = parts[4];
+			String employeeLastname = parts[5];
+			String employeeId = parts[6];
+			Employee employeeOfTheOrder = new Employee(employeeName,currentUser,employeeLastname,employeeId);
+			String observations = parts[7];
+			createAnOrder(ordProd, ordPQuantitys, clientOfOrder, employeeOfTheOrder, observations);
+			line = br.readLine();
+		}
+		br.close();
+	}
+	
+	public int sizeIndexWithName(ArrayList<String> al,String name) {
+		for(int i=0;i<al.size();i++) {
+			if(al.get(i).equalsIgnoreCase(name)) {
+				return i;
+			}
+		}
+		return -1;
 	}
 	
 	//Export methods

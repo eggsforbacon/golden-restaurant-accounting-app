@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Product extends SystemObject implements Serializable{
 
-	private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 2;
 	
 	private PlateType pt;
 	private ArrayList<Ingredient> ingrdnts;
@@ -205,7 +205,11 @@ public class Product extends SystemObject implements Serializable{
 	}
 
 	//Getters
-
+	
+	public ArrayList<String> getProductsSizes(){
+		return productSizes;
+	}
+	
 	/**
 	 * @return An arrayList that contains the ingredients of the dish.<br>
 	 */
@@ -218,7 +222,12 @@ public class Product extends SystemObject implements Serializable{
 	public String getPt() { 
 		return pt.getName();
 	}
-
+	public PlateType getPlateType() {
+		return pt;
+	}
+	public ArrayList<Double> getSizesPrices(){
+		return sizesPrices;
+	}
 	/**
 	 * @return productActualSize A String that indicates the size chosen for the product
 	 */
