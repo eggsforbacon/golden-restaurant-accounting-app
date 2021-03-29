@@ -21,7 +21,6 @@ public class MainGUIController implements Initializable {
     CenterPanesGUIController cenPaneController;
 
     public MainGUIController(Restaurant GH) {
-        this.GH = GH;
         cenPaneController = new CenterPanesGUIController(GH);
     }
 
@@ -53,8 +52,6 @@ public class MainGUIController implements Initializable {
     @FXML
     private Label spacer1;
 
-    private Restaurant GH;
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         label = progress;
@@ -63,6 +60,7 @@ public class MainGUIController implements Initializable {
 
         homeScreenIMV.fitHeightProperty().bind(mainPane.heightProperty());
         homeScreenIMV.fitWidthProperty().bind(mainPane.widthProperty());
+        homeScreenIMV.setVisible(true);
         currentScene.prefHeightProperty().bind(mainPane.heightProperty());
         currentScene.prefWidthProperty().bind(mainPane.widthProperty());
     }
@@ -125,6 +123,21 @@ public class MainGUIController implements Initializable {
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
         }
+    }
+
+    @FXML
+    void loginClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ordersClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void plateTypesClicked(ActionEvent event) {
+
     }
 
     @FXML

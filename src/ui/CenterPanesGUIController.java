@@ -218,6 +218,19 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Label cliEditorInfoLBL;
 
+    /*Types Pane*/
+    @FXML
+    private BorderPane typesPane;
+
+    @FXML
+    private TableView<PlateType> typesTBV;
+
+    @FXML
+    private TableColumn<PlateType, String> nameTypeCol;
+
+    @FXML
+    private TableColumn<PlateType, String> enabledTypeCol;
+
 
     private final Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
