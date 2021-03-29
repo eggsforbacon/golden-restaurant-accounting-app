@@ -132,10 +132,12 @@ public class Product extends SystemObject implements Serializable{
 	@return True if the ingredient was deleted, false if not
 	 */
 	public boolean deleteAnIngredient(String name) {
-		int index=binarySearchAnIngredient(name);
-		if(index!=-1) {
-			ingrdnts.remove(index);
-			return true;
+		if(ingrdnts.size()>1) {
+			int index=binarySearchAnIngredient(name);
+			if(index!=-1) {
+				ingrdnts.remove(index);
+				return true;
+			}
 		}
 		return false;
 	}
