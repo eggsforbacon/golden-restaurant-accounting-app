@@ -127,7 +127,11 @@ public class Restaurant{
 			}
 			
 			String[] sizesStringArray = parts[3].split(",");
-			ArrayList<String> productsSizes = (ArrayList<String>)Arrays.asList(sizesStringArray);
+			
+			ArrayList<String> productsSizes = new ArrayList<String>();
+			for(int i=0;i<sizesStringArray.length;i++) {
+				productsSizes.add(sizesStringArray[i]);
+			}
 			
 			String[] pricesStringArray = parts[4].split(",");
 			ArrayList<Double> productsPrices = new ArrayList<Double>();
