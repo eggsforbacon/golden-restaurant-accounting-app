@@ -176,7 +176,7 @@ public class Restaurant{
 			String employeeId = parts[6];
 			Employee employeeOfTheOrder = new Employee(employeeName,currentUser,employeeLastname,employeeId);
 			String observations = parts[7];
-			createAnOrder(ordProd, ordPQuantitys, clientOfOrder, employeeOfTheOrder, observations);
+			System.out.println(createAnOrder(ordProd, ordPQuantitys, clientOfOrder, employeeOfTheOrder, observations)) ;
 			line = br.readLine();
 		}
 		br.close();
