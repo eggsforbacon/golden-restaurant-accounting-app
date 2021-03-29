@@ -193,8 +193,33 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private TextArea newCliObsTA;
 
+    //Info Pane
+    @FXML
+    private Label cliFullNameInfoLBL;
 
-    private Restaurant GH;
+    @FXML
+    private Label cliEnabledInfoLBL;
+
+    @FXML
+    private Label cliIDInfoLBL;
+
+    @FXML
+    private Label cliTeleInfoLBL;
+
+    @FXML
+    private Label cliAddressInfoLBL;
+
+    @FXML
+    private Label cliObsInfoLBL;
+
+    @FXML
+    private Label cliCreatorInfoLBL;
+
+    @FXML
+    private Label cliEditorInfoLBL;
+
+
+    private final Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
         this.GH = GH;
     }
@@ -440,6 +465,7 @@ public class CenterPanesGUIController implements Initializable {
         prodCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
         prodEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
         ((Stage)prodNameInfoLBL.getScene().getWindow()).setMaxWidth(520.0);
+        ((Stage)prodNameInfoLBL.getScene().getWindow()).setMinHeight(520.0);
     }
 
     private void initProductPane() {
@@ -735,6 +761,7 @@ public class CenterPanesGUIController implements Initializable {
         ingEnabledInfoLBL.setId("enabled-label");
         ingCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
         ingEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
+        ((Stage)ingNameInfoLBL.getScene().getWindow()).setResizable(false);
     }
 
     private void initClientPane() {
@@ -768,15 +795,44 @@ public class CenterPanesGUIController implements Initializable {
             row.setOnContextMenuRequested(event -> {
                 if (! row.isEmpty()) {
                     Client rowData = row.getItem();
-                    fullClientData(rowData);
+                    fullClientDetails(rowData);
                 }
             });
             return row ;
         });
     }
 
-    private void fullClientData(Client rowData) {
+    private void fullClientDetails(Client rowData) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("clientsGUI/clientsInfo.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage ingredientInfo = new Stage();
+            ingredientInfo.setScene(new Scene(root));
+            ingredientInfo.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            ingredientInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            ingredientInfo.getIcons().add(icon);
+            ingredientInfo.setTitle("Información de Cliente");
+            initClientInfo(rowData);
+            ingredientInfo.show();
+        } catch (Exception e) {
+            System.out.println("Can't load window at the moment.");
+            System.out.println(e.getMessage());
+        }
+    }
 
+    private void initClientInfo(Client rowData) {
+        cliFullNameInfoLBL.setText(rowData.getName() + " " + rowData.getLastname());
+        cliEnabledInfoLBL.setText((rowData.getEnabled()) ? "Habilitado" : "Deshabilitado");
+        cliIDInfoLBL.setText(rowData.getId());
+        cliTeleInfoLBL.setText(rowData.getPhoneNumber());
+        cliAddressInfoLBL.setText(rowData.getAddress());
+        cliObsInfoLBL.setText(rowData.getObservations());
+        cliCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
+        cliEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
+        ((Stage)cliFullNameInfoLBL.getScene().getWindow()).setMaxWidth(590.0);
+        ((Stage)cliFullNameInfoLBL.getScene().getWindow()).setMinHeight(458.0);
     }
 
     @FXML
