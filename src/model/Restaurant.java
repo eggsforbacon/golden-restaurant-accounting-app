@@ -445,6 +445,14 @@ public class Restaurant{
 		int index = binarySearchForEmployees(restaurantUsers,id);
 		return index;
 	}
+	public int userIndexWithUsername(String userName) {
+		for(int i=0;i<restaurantUsersSize;i++) {
+			if(restaurantUsers.get(i).getUsername().equalsIgnoreCase(userName)) {
+				return i;
+			}
+		}
+		return -1;
+	}
 	/**
 	 * Given the user, returns the index of that user in the users ArrayList<br>
 	 * <b>Pre: </b>To be useful, there must be at least one user in the ArrayList<br>
@@ -458,9 +466,12 @@ public class Restaurant{
 	}
 	public boolean changeUsername(int index,String newUsername) {
 		if(index!=-1) {
-			restaurantUsers.get(index).setUsername(newUsername);
-			restaurantUsers.get(index).setModifierUser(currentUser);
-			return true;
+			int userIsRepeated = userIndexWithUsername(newUsername);
+			if(userIsRepeated==-1) {
+				restaurantUsers.get(index).setUsername(newUsername);
+				restaurantUsers.get(index).setModifierUser(currentUser);
+				return true;
+			}
 		}
 		return false;
 	}
