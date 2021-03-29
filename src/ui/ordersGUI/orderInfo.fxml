@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="563.0" style="-fx-background-color: #211917;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Codigo de Orden:" />
+                  <Label fx:id="orderCodeInfoLBL" text="Label" />
+                  <Label fx:id="orderEnabledInfoLBL" text="(Label)" />
+               </children></HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Estado:" />
+                  <Label fx:id="orderStatusInfoLBL" text="Label" />
+                  <Separator prefHeight="0.0" prefWidth="37.0" visible="false" />
+                  <Label text="Fecha:" />
+                  <Label fx:id="orderDateInfoLBL" text="Label" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Productos:" />
+                  <Label fx:id="orderProdInfoLBL" text="Label" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Solicitado por:" />
+                  <Label fx:id="orderClientInfoLBL" alignment="CENTER" text="Label" wrapText="true" />
+                  <Separator prefHeight="0.0" prefWidth="37.0" visible="false" />
+                  <Label text="Entregado por:" />
+                  <Label fx:id="orderEmployeeInfoLBL" alignment="CENTER" text="Label" wrapText="true" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Observaciones:" />
+                  <Label fx:id="orderObservationsInfoLBL" alignment="CENTER" text="Label" wrapText="true" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Creado por:" />
+                  <Label fx:id="orderCreatorInfoLBL" text="Label" />
+                  <Separator prefHeight="0.0" prefWidth="37.0" visible="false" />
+                  <Label text="Editado por:" />
+                  <Label fx:id="orderEditorInfoLBL" text="Label" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

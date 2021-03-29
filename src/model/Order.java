@@ -120,6 +120,9 @@ public class Order extends SystemObject implements Serializable {
 	public Employee getOrderEmployee() {
 		return orderEmployee;
 	}
+	public String getOrderEmployeeName() {
+		return orderEmployee.name + " " + orderEmployee.getLastname();
+	}
 	/**
 	 * @return The status of the order.<br>
 	 */
@@ -138,11 +141,28 @@ public class Order extends SystemObject implements Serializable {
 	public ArrayList<Product> getOrderProducts(){
 		return orderProducts;
 	}
+	public String getOrderProductsString(){
+		StringBuilder sb = new StringBuilder();
+		for (Product p: orderProducts) {
+			sb.append(p.name).append(",");
+		}
+		return sb.toString();
+	}
 	public ArrayList<Integer> getProductsQuantity(){
 		return productsQuantity;
 	}
+	public String getProductsQuantityString() {
+		StringBuilder sb = new StringBuilder();
+		for (int i: productsQuantity) {
+			sb.append(i).append(",");
+		}
+		return sb.toString();
+	}
 	public Client getOrderclient() {
 		return orderClient;
+	}
+	public String getOrderClientName() {
+		return orderClient.name + " " + orderClient.getLastname();
 	}
 	public double getPriceOfTheOrder() {
 		return priceOfTheOrder;

@@ -251,6 +251,73 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Label typeEditorInfoLBL;
 
+    /*Order Pane*/
+    @FXML
+    private TableView<Order> orderTBV;
+
+    @FXML
+    private TableColumn<Order, String> codeCol;
+
+    @FXML
+    private TableColumn<Order, String> enabledOrderCol;
+
+    @FXML
+    private TableColumn<Order, String> statusOrderCol;
+
+    @FXML
+    private TableColumn<Order, String> prodOrderCol;
+
+    @FXML
+    private TableColumn<Order, String> quantityOrderCol;
+
+    @FXML
+    private TableColumn<Order, String> ordererCol;
+
+    @FXML
+    private TableColumn<Order, String> serverCol;
+
+    @FXML
+    private TableColumn<Order, String> orderedDateCol;
+
+    @FXML
+    private TableColumn<Order, String> obsOrderCol;
+
+    @FXML
+    private Label spacer5;
+
+    //Add Pane
+
+    //Info Pane
+    @FXML
+    private Label orderCodeInfoLBL;
+
+    @FXML
+    private Label orderEnabledInfoLBL;
+
+    @FXML
+    private Label orderStatusInfoLBL;
+
+    @FXML
+    private Label orderDateInfoLBL;
+
+    @FXML
+    private Label orderProdInfoLBL;
+
+    @FXML
+    private Label orderClientInfoLBL;
+
+    @FXML
+    private Label orderEmployeeInfoLBL;
+
+    @FXML
+    private Label orderObservationsInfoLBL;
+
+    @FXML
+    private Label orderCreatorInfoLBL;
+
+    @FXML
+    private Label orderEditorInfoLBL;
+
 
     private final Restaurant GH;
     public CenterPanesGUIController(Restaurant GH) {
@@ -263,6 +330,7 @@ public class CenterPanesGUIController implements Initializable {
         initIngredientPane();
         initClientPane();
         initPlateTypePane();
+        initOrderPane();
     }
 
     @FXML
@@ -567,27 +635,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void importProductData(ActionEvent event) throws IOException {
-        String fileName = "src/data/PRODUCTS.csv";
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
-        String line = br.readLine();
-        while(line!=null) {
-            String[] parts = line.split(SEPARATOR);
-            GH.addAPlateTypeToTheRestaurant(parts[1]);
-            ArrayList<Ingredient> newIng = new ArrayList<>();
-            for (String s: parts[2].split(",")) {
-                GH.addAnIngredientToTheRestaurant(s);
-                newIng.add(GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(s)));
-            }
-            ArrayList<String> newSizes = new ArrayList<>();
-            ArrayList<Double> newPrices = new ArrayList<>();
-            for (int i = 3; i < parts.length; i++) {
-                newSizes.add(parts[i].split(",")[0]);
-                newPrices.add(Double.parseDouble(parts[i].split(",")[1]));
-            }
-            GH.addProduct(parts[0],new PlateType(parts[1],GH.getCurrentUser()),newIng,newSizes,newPrices);
-            line = br.readLine();
-        }
-        br.close();
+        GH.importProductInformation("src/data/generatedData/PRODUCT_GENERATED_DATA.csv");
         initProductPane();
     }
 
@@ -1225,6 +1273,139 @@ public class CenterPanesGUIController implements Initializable {
         typeCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
         typeEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
         ((Stage)typeNameInfoLBL.getScene().getWindow()).setResizable(false);
+    }
+
+    private void initOrderPane() {
+        codeCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        codeCol.setStyle( "\n-fx-alignment: CENTER;");
+        enabledOrderCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
+        enabledOrderCol.setStyle( "\n-fx-alignment: CENTER;");
+        statusOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderStatus"));
+        statusOrderCol.setStyle( "\n-fx-alignment: CENTER;");
+        prodOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderProductsString"));
+        prodOrderCol.setStyle( "\n-fx-alignment: CENTER;");
+        quantityOrderCol.setCellValueFactory(new PropertyValueFactory<>("productsQuantityString"));
+        quantityOrderCol.setStyle( "\n-fx-alignment: CENTER;");
+        ordererCol.setCellValueFactory(new PropertyValueFactory<>("orderClientName"));
+        ordererCol.setStyle("\n-fx-alignment: CENTER;");
+        serverCol.setCellValueFactory(new PropertyValueFactory<>("orderEmployeeName"));
+        serverCol.setStyle("\n-fx-alignment: CENTER;");
+        orderedDateCol.setCellValueFactory(new PropertyValueFactory<>("dateString"));
+        orderedDateCol.setStyle("\n-fx-alignment: CENTER;");
+        obsOrderCol.setCellValueFactory(new PropertyValueFactory<>("observations"));
+        obsOrderCol.setStyle("\n-fx-alignment: CENTER;");
+        ObservableList<Order> ordersList = FXCollections.observableArrayList(GH.getRestaurantOrders());
+        orderTBV.setItems(ordersList);
+
+        codeCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        enabledOrderCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        statusOrderCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        prodOrderCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        quantityOrderCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        ordererCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        serverCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        orderedDateCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        obsOrderCol.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        orderTBV.setRowFactory(tv -> {
+            TableRow<Order> row = new TableRow<>();
+            row.setOnContextMenuRequested(event -> {
+                if (! row.isEmpty()) {
+                    Order rowData = row.getItem();
+                    fullOrderDetails(rowData);
+                }
+            });
+            return row ;
+        });
+    }
+
+    private void fullOrderDetails(Order rowData) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ordersGUI/orderInfo.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage orderInfo = new Stage();
+            orderInfo.setScene(new Scene(root));
+            orderInfo.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            orderInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            orderInfo.getIcons().add(icon);
+            orderInfo.setTitle("Información de Orden");
+            initOrderInfo(rowData);
+            orderInfo.show();
+        } catch (Exception e) {
+            System.out.println("Can't load window at the moment.");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private void initOrderInfo(Order rowData) {
+        orderCodeInfoLBL.setText(rowData.getName());
+        orderEnabledInfoLBL.setText((rowData.getEnabled()) ? "Habilitado" : "Deshabilitado");
+        orderDateInfoLBL.setText(rowData.getDateString());
+        StringBuilder prodAndQuant = new StringBuilder();
+        for (int i = 0, size = rowData.getOrderProducts().size(); i < size; i++) {
+            String s = rowData.getOrderProducts().get(i).getName();
+            int q = rowData.getProductsQuantity().get(i);
+            prodAndQuant.append(s).append(" (").append(q).append(")\n");
+        }
+        orderProdInfoLBL.setText(prodAndQuant.toString());
+        orderClientInfoLBL.setText(rowData.getOrderClientName());
+        orderEmployeeInfoLBL.setText(rowData.getOrderEmployeeName());
+        orderObservationsInfoLBL.setText(rowData.getObservations());
+        orderCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
+        orderEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
+        ((Stage)orderCodeInfoLBL.getScene().getWindow()).setResizable(false);
+    }
+
+    @FXML
+    void cancelOrderClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void createOrderClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editEnabledOrder(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editObsOrder(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editProdOrder(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editQuantityCol(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editServer(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editStatusOrder(ActionEvent event) {
+
+    }
+
+    @FXML
+    void exportOrderData(ActionEvent event) {
+
+    }
+
+    @FXML
+    void importOrderData(ActionEvent event) {
+
     }
 }
 

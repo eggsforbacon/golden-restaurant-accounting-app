@@ -132,7 +132,14 @@ public class MainGUIController implements Initializable {
 
     @FXML
     void ordersClicked(ActionEvent event) {
-
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ordersGUI/order-center.fxml"));
+            fxmlLoader.setController(cenPaneController);
+            Parent root = fxmlLoader.load();
+            currentScene.setCenter(root);
+        } catch (Exception e) {
+            System.out.println("Can't load scene at the moment");
+        }
     }
 
     @FXML

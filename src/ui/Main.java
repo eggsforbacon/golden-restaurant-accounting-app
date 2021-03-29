@@ -21,22 +21,6 @@ public class Main extends Application {
 
   public Main() {
     GH = new Restaurant();
-    PlateType pt = new PlateType("Tipo",GH.getRootUser());
-    ArrayList<Ingredient> ingredients = new ArrayList<>();
-    ingredients.add(new Ingredient("Papa",GH.getRootUser()));
-    //ingredients.add(new Ingredient("Tomate",GH.getRootUser()));
-    ArrayList<String> sizes = new ArrayList<>();
-    sizes.add("Tamaño");
-    sizes.add("Tamañito");
-    sizes.add("Tamañote");
-    ArrayList<Double> prices = new ArrayList<>();
-    prices.add(5.0);
-    prices.add(3.0);
-    prices.add(7.9);
-    GH.addProduct("Nombre", pt, ingredients, sizes, prices);
-    GH.addAnIngredientToTheRestaurant("Papa");
-    GH.addAnIngredientToTheRestaurant("Tomate");
-    GH.addAPlateTypeToTheRestaurant(pt.getName());
     controller = new MainGUIController(GH);
     logController = new LoginGUIController(GH);
     System.out.println(GH.checkFirstTime());
