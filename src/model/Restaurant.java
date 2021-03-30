@@ -1816,7 +1816,7 @@ public class Restaurant{
 
 	//Getters
 
-	public ArrayList<Client> getSearchResults() {
+	public ArrayList<Client> getSearchResults() { 
 		return searchResults;
 	}
 	public ArrayList<Product> getRestaurantProducts() {
