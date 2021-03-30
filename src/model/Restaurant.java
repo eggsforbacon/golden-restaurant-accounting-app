@@ -1730,8 +1730,8 @@ public class Restaurant{
 			 int employeeIsRepeated = employeeIndexWithId(newId); 
 			 if(employeeIsRepeated==-1) {
 				 Employee changeId=restaurantEmployees.get(index);
-				 restaurantUsers.get(indexOfAnUser(changeId)).setId(newId);
 				 restaurantUsers.get(indexOfAnUser(changeId)).setModifierUser(currentUser);
+				 restaurantUsers.get(indexOfAnUser(changeId)).setId(newId);
 				 restaurantEmployees.get(index).setId(newId);
 				 restaurantEmployees.get(index).setModifierUser(currentUser);
 				 return true; 
