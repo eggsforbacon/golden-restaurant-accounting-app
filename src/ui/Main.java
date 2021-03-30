@@ -22,13 +22,10 @@ public class Main extends Application {
     try {
       controller = new MainGUIController(GH);
     } catch (IOException ioe) {
-      System.out.println("ioe");
       ioe.printStackTrace();
     } catch (ClassNotFoundException cnfe) {
-      System.out.println("cnfe");
       cnfe.printStackTrace();
     }
-    System.out.println(GH.checkFirstTime());
   }
 
   public static void main(String[] args) {

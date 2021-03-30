@@ -96,3 +96,7 @@
   -fx-text-fill: #ab645b;
   -fx-font-weight: bold;
 }
+
+.table-column {
+  -fx-alignment: CENTER;
+}

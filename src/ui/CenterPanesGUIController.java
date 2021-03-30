@@ -517,7 +517,7 @@ public class CenterPanesGUIController implements Initializable {
                 productInfo.show();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }
         initProductPane();
@@ -579,7 +579,7 @@ public class CenterPanesGUIController implements Initializable {
             createProduct.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         GH.saveAllData();
     }
@@ -599,7 +599,6 @@ public class CenterPanesGUIController implements Initializable {
         String newProdName = newProdNameTF.getText();
         ArrayList<Ingredient> newProdIngredients = new ArrayList<>();
         for (String ingName : selectedItemsLV.getSelectionModel().getSelectedItems()) {
-            System.out.println(GH.ingredientIndexWithName(ingName) + "\n" + ingName + "\n" + GH.getRestaurantIngredientsString() + GH.getRestaurantIngredients().toString());
             Ingredient ingtoadd = GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(ingName));
             newProdIngredients.add(ingtoadd);
         }
@@ -612,8 +611,6 @@ public class CenterPanesGUIController implements Initializable {
         boolean productIngredientsValid = !selectedItemsLV.getItems().isEmpty();
         boolean ptIsValid = !newProdTypeTF.getText().isEmpty();
         boolean sizesAndPricesValid = newProdPrices.size() == newProdSizes.size() && !newProdPrices.isEmpty();
-        System.out.println(newProdPrices.toString());
-        System.out.println(newProdSizes.toString());
         if (productNameValid && productIngredientsValid && ptIsValid && sizesAndPricesValid) {
             GH.addAPlateTypeToTheRestaurant(newProdTypeTF.getText());
             GH.addProduct(newProdName, GH.getRestaurantPlateTypes().get(GH.plateTypeIndexWithName(newProdTypeTF.getText())), newProdIngredients, newProdSizes, newProdPrices);
@@ -641,7 +638,7 @@ public class CenterPanesGUIController implements Initializable {
                 productInfo.setResizable(false);
                 productInfo.show();
             } catch (Exception e) {
-                System.out.println("Can't load window at the moment. EEEEEEEE");
+                System.out.println("Can't load window at  mothement.");
                 e.printStackTrace();
             }
         }
@@ -664,14 +661,13 @@ public class CenterPanesGUIController implements Initializable {
             productInfo.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
     @FXML
     void deleteProductClicked(ActionEvent event) throws IOException {
         boolean noSelection = productTBV.getSelectionModel().getSelectedItems().isEmpty();
-        System.out.println(noSelection);
         if (!noSelection) {
             for (int i = 0; i < productTBV.getSelectionModel().getSelectedItems().size(); i++) {
                 Product removed = productTBV.getSelectionModel().getSelectedItems().get(i);
@@ -697,7 +693,7 @@ public class CenterPanesGUIController implements Initializable {
                 productInfo.show();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }
         GH.saveAllData();
@@ -779,7 +775,6 @@ public class CenterPanesGUIController implements Initializable {
     void importProductData(ActionEvent event) throws IOException {
         GH.importProductInformation("src/data/generatedData/PRODUCT_GENERATED_DATA.csv");
         initProductPane();
-        System.out.println("It is in");
         GH.saveAllData();
     }
 
@@ -821,7 +816,7 @@ public class CenterPanesGUIController implements Initializable {
             createIngredient.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         GH.saveAllData();
     }
@@ -892,7 +887,7 @@ public class CenterPanesGUIController implements Initializable {
                 productInfo.show();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         } else if (GH.deleteIngredient(GH.ingredientIndexWithIngredient(removed))) {
             ingredientsTBV.getItems().removeAll(ingredientsTBV.getSelectionModel().getSelectedItems());
@@ -915,7 +910,7 @@ public class CenterPanesGUIController implements Initializable {
                 productInfo.show();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }
         GH.saveAllData();
@@ -986,7 +981,7 @@ public class CenterPanesGUIController implements Initializable {
             ingredientInfo.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -1046,7 +1041,7 @@ public class CenterPanesGUIController implements Initializable {
             ingredientInfo.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -1080,7 +1075,7 @@ public class CenterPanesGUIController implements Initializable {
             createIngredient.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         GH.saveAllData();
     }
@@ -1088,7 +1083,6 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void deleteClientClicked(ActionEvent event) throws IOException {
         boolean noSelection = clientsTBV.getSelectionModel().getSelectedItems().isEmpty();
-        System.out.println(noSelection);
         if (!noSelection) {
             for (int i = 0; i < clientsTBV.getSelectionModel().getSelectedItems().size(); i++) {
                 Client removed = clientsTBV.getSelectionModel().getSelectedItems().get(i);
@@ -1114,7 +1108,7 @@ public class CenterPanesGUIController implements Initializable {
                 productInfo.show();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }
         GH.saveAllData();
@@ -1180,7 +1174,6 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void searchPressed(ActionEvent event) {
-        System.out.println("Enter!");
         GH.setSearchResults(searchUserTF.getText().trim());
 
         nameCliCol.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -1235,7 +1228,6 @@ public class CenterPanesGUIController implements Initializable {
         boolean canCreateClient = !newName.isEmpty() && !newLastName.isEmpty() && !newAddress.isEmpty() && !newId.isEmpty() && !newTelephone.isEmpty();
         if (canCreateClient) {
             boolean userCreated = GH.addAClientToTheRestaurant(newName, newLastName, newId, newAddress, newTelephone, newObs);
-            System.out.println("User created: " + userCreated);
             initClientPane();
             try {
                 ((Stage) clientPane.getScene().getWindow()).close();
@@ -1261,7 +1253,7 @@ public class CenterPanesGUIController implements Initializable {
                 ((Stage) clientPane.getScene().getWindow()).close();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }
         GH.saveAllData();
@@ -1302,7 +1294,7 @@ public class CenterPanesGUIController implements Initializable {
             createIngredient.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         GH.saveAllData();
     }
@@ -1328,7 +1320,7 @@ public class CenterPanesGUIController implements Initializable {
                 error.show();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         } else if (GH.deletePlateType(GH.plateTypeIndexWithplateType(removed))) {
             typesTBV.getItems().removeAll(typesTBV.getSelectionModel().getSelectedItems());
@@ -1351,7 +1343,7 @@ public class CenterPanesGUIController implements Initializable {
                 error.show();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }
         GH.saveAllData();
@@ -1455,7 +1447,7 @@ public class CenterPanesGUIController implements Initializable {
             plateTypeInfo.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -1517,7 +1509,7 @@ public class CenterPanesGUIController implements Initializable {
             orderInfo.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -1558,7 +1550,7 @@ public class CenterPanesGUIController implements Initializable {
             createOrder.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         GH.saveAllData();
     }
@@ -1586,7 +1578,6 @@ public class CenterPanesGUIController implements Initializable {
         ObservableList<String> selectedProducts = selectedProductsLV.getSelectionModel().getSelectedItems();
         for (String selectedItem : selectedProducts) {
             String[] prodName = selectedItem.split("[()]");
-            System.out.println(prodName[0] + " " +prodName[1]);
             Product prodtoadd = GH.getProductsWithTheirSizes().get(GH.productWithSizeIndexWithNameAndSize(prodName[0], prodName[1]));
             newProducts.add(prodtoadd);
         }
@@ -1631,7 +1622,7 @@ public class CenterPanesGUIController implements Initializable {
                 productInfo.setResizable(false);
                 productInfo.show();
             } catch (Exception e) {
-                System.out.println("Can't load window at the moment. EEEEEEEE");
+                System.out.println("Can't load window at the moment.");
                 e.printStackTrace();
             }
         }
@@ -1687,7 +1678,7 @@ public class CenterPanesGUIController implements Initializable {
             createUsers.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         GH.saveAllData();
     }
@@ -1710,7 +1701,7 @@ public class CenterPanesGUIController implements Initializable {
                 userDetails.show();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         } else {
             try {
@@ -1738,7 +1729,6 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void deleteEmployeeClicked(ActionEvent event) throws IOException {
         boolean noSelection = employeesTBV.getSelectionModel().getSelectedItems().isEmpty();
-        System.out.println(noSelection);
         if (!noSelection) {
             for (int i = 0; i < employeesTBV.getSelectionModel().getSelectedItems().size(); i++) {
                 User removed = employeesTBV.getSelectionModel().getSelectedItems().get(i);
@@ -1764,7 +1754,7 @@ public class CenterPanesGUIController implements Initializable {
                 productInfo.show();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }
         GH.saveAllData();
@@ -1890,7 +1880,6 @@ public class CenterPanesGUIController implements Initializable {
         if (canCreateClient) {
             boolean employeeCreated = GH.addAnEmployeeToTheRestaurant(newName,newLastName,newId);
             boolean userCreated = GH.initializeUser(GH.employeeIndexWithId(newId),newUserName,newPassword);
-            System.out.println("User created: " + userCreated);
             initEmployeePane();
             try {
                 ((Stage) userPane.getScene().getWindow()).close();
@@ -1916,7 +1905,7 @@ public class CenterPanesGUIController implements Initializable {
                 ((Stage) clientPane.getScene().getWindow()).close();
             } catch (Exception e) {
                 System.out.println("Can't load window at the moment.");
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }
         GH.saveAllData();
@@ -1963,7 +1952,7 @@ public class CenterPanesGUIController implements Initializable {
             userInfo.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -1976,7 +1965,6 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void loginPressed(ActionEvent event) {
-        System.out.println();
         switch (GH.login(userNameLoginTF.getText(),passwordLoginPF.getText())) {
             case -1:
                 try {
@@ -1997,7 +1985,7 @@ public class CenterPanesGUIController implements Initializable {
                     ((Stage) clientPane.getScene().getWindow()).close();
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");
-                    System.out.println(e.getMessage());
+                    e.printStackTrace();
                 }
                 break;
             case -2:
@@ -2019,7 +2007,7 @@ public class CenterPanesGUIController implements Initializable {
                     ((Stage) clientPane.getScene().getWindow()).close();
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");
-                    System.out.println(e.getMessage());
+                    e.printStackTrace();
                 }
                 loginPaneOrsmnt.setVisible(false);
                 break;
@@ -2043,7 +2031,7 @@ public class CenterPanesGUIController implements Initializable {
                     ((Stage) clientPane.getScene().getWindow()).close();
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");
-                    System.out.println(e.getMessage());
+                    e.printStackTrace();
                 }
                 loginPaneOrsmnt.setVisible(false);
         }
@@ -2070,7 +2058,7 @@ public class CenterPanesGUIController implements Initializable {
             productInfo.show();
         } catch (Exception e) {
             System.out.println("Can't load window at the moment.");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 

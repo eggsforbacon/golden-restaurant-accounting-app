@@ -198,6 +198,7 @@ public class MainGUIController implements Initializable {
             currentScene.setStyle("\n-fx-background-color: black;");
         } catch (Exception e) {
             System.out.println("Can't load image at the moment");
+            e.printStackTrace();
         }
     }
 
