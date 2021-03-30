@@ -18,7 +18,6 @@ import java.util.ArrayList;
 public class Main extends Application {
 
   MainGUIController controller;
-  LoginGUIController logController;
   Restaurant GH;
 
   public Main() {
@@ -26,7 +25,6 @@ public class Main extends Application {
 
     try {
       controller = new MainGUIController(GH);
-      logController = new LoginGUIController(GH);
     } catch (IOException ioe) {
       System.out.println("ioe");
       ioe.printStackTrace();

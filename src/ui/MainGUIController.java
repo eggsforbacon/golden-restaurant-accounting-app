@@ -21,10 +21,12 @@ import java.util.ResourceBundle;
 public class MainGUIController implements Initializable {
 
     CenterPanesGUIController cenPaneController;
+    Restaurant GH;
 
     public MainGUIController(Restaurant GH) throws IOException, ClassNotFoundException {
-        load(GH);
-        cenPaneController = new CenterPanesGUIController(GH);
+        //load(GH);
+        this.GH = GH;
+        cenPaneController = new CenterPanesGUIController(this.GH);
     }
 
     public void load(Restaurant GH) throws IOException, ClassNotFoundException {
@@ -70,12 +72,15 @@ public class MainGUIController implements Initializable {
         label = progress;
         spacer1.prefHeightProperty().bind(mainPane.heightProperty());
         randomIMV.setImage(new Image(String.valueOf(getClass().getResource(randomImage()))));
-
         homeScreenIMV.fitHeightProperty().bind(mainPane.heightProperty());
         homeScreenIMV.fitWidthProperty().bind(mainPane.widthProperty());
         homeScreenIMV.setVisible(true);
         currentScene.prefHeightProperty().bind(mainPane.heightProperty());
         currentScene.prefWidthProperty().bind(mainPane.widthProperty());
+        if (GH.checkFirstTime()) {
+            login();
+            GH.setFirstTime(false);
+        }
     }
 
     @FXML
@@ -90,6 +95,7 @@ public class MainGUIController implements Initializable {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     void ingredientsClicked(ActionEvent event) {
@@ -132,7 +138,27 @@ public class MainGUIController implements Initializable {
 
     @FXML
     void loginClicked(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+            fxmlLoader.setController(cenPaneController);
+            Parent root = fxmlLoader.load();
+            currentScene.setCenter(root);
+        } catch (Exception e) {
+            System.out.println("Can't load scene at the moment");
+            e.printStackTrace();
+        }
+    }
 
+    void login() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+            fxmlLoader.setController(cenPaneController);
+            Parent root = fxmlLoader.load();
+            currentScene.setCenter(root);
+        } catch (Exception e) {
+            System.out.println("Can't load scene at the moment");
+            e.printStackTrace();
+        }
     }
 
     @FXML

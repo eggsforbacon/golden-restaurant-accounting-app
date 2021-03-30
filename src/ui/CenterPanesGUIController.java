@@ -422,6 +422,19 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Label wrongLBL;
 
+    /*Login pane*/
+    @FXML
+    private TextField userNameLoginTF;
+
+    @FXML
+    private PasswordField passwordLoginPF;
+
+    @FXML
+    private Button loginBTN;
+
+    @FXML
+    private Button registerBTN;
+
     private  Restaurant GH;
 
     public CenterPanesGUIController(Restaurant GH) {
@@ -753,7 +766,6 @@ public class CenterPanesGUIController implements Initializable {
         System.out.println("It is in");
         GH.saveAllData();
     }
-
 
     private void initIngredientPane() {
         nameIngCol.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -1944,6 +1956,16 @@ public class CenterPanesGUIController implements Initializable {
         empEnabledInfoLBL.setText(rowData.getEnabled() ? "(Habilitado)":"(Deshabilitado)");
         empDInfoLBL.setText(rowData.getId());
         empUserInfoLBL.setText(rowData.getUsername());
+    }
+
+    @FXML
+    void loginPressed(ActionEvent event) {
+
+    }
+
+    @FXML
+    void registerPressed(ActionEvent event) {
+
     }
 }
 

@@ -515,7 +515,6 @@ public class Restaurant{
 	 */
 	public boolean checkFirstTime() {
 		if(firstTime&&currentUser.equals(rootUser)) {
-			firstTime = false;
 			return true;
 		}
 		return false;
@@ -1920,5 +1919,9 @@ public class Restaurant{
 	}
 	public void setCurrentUser(User currentUser) {
 		this.currentUser=currentUser;
+	}
+
+	public void setFirstTime(boolean firstTime) {
+		this.firstTime = firstTime;
 	}
 }
