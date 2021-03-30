@@ -72,15 +72,16 @@ public class MainGUIController implements Initializable {
         label = progress;
         spacer1.prefHeightProperty().bind(mainPane.heightProperty());
         randomIMV.setImage(new Image(String.valueOf(getClass().getResource(randomImage()))));
-        homeScreenIMV.fitHeightProperty().bind(mainPane.heightProperty());
-        homeScreenIMV.fitWidthProperty().bind(mainPane.widthProperty());
-        homeScreenIMV.setVisible(true);
-        currentScene.prefHeightProperty().bind(mainPane.heightProperty());
-        currentScene.prefWidthProperty().bind(mainPane.widthProperty());
         if (GH.checkFirstTime()) {
             login();
             GH.setFirstTime(false);
+        } else {
+            homeScreenIMV.setVisible(true);
         }
+        homeScreenIMV.fitHeightProperty().bind(mainPane.heightProperty());
+        homeScreenIMV.fitWidthProperty().bind(mainPane.widthProperty());
+        currentScene.prefHeightProperty().bind(mainPane.heightProperty());
+        currentScene.prefWidthProperty().bind(mainPane.widthProperty());
     }
 
     @FXML
@@ -188,12 +189,16 @@ public class MainGUIController implements Initializable {
     }
 
     @FXML
-    void houseClicked(MouseEvent event) {
+    public void houseClicked(MouseEvent event) {
         try {
             currentScene.setCenter(homeScreenIMV);
+            if (!GH.checkFirstTime()) {
+                homeScreenIMV.setVisible(true);
+            }
             currentScene.setStyle("\n-fx-background-color: black;");
         } catch (Exception e) {
             System.out.println("Can't load image at the moment");
+            e.printStackTrace();
         }
     }
 

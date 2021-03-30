@@ -8,12 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import model.Ingredient;
-import model.PlateType;
 import model.Restaurant;
-
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -25,14 +21,9 @@ public class Main extends Application {
 
     try {
       controller = new MainGUIController(GH);
-    } catch (IOException ioe) {
-      System.out.println("ioe");
+    } catch (IOException | ClassNotFoundException ioe) {
       ioe.printStackTrace();
-    } catch (ClassNotFoundException cnfe) {
-      System.out.println("cnfe");
-      cnfe.printStackTrace();
     }
-    System.out.println(GH.checkFirstTime());
   }
 
   public static void main(String[] args) {
