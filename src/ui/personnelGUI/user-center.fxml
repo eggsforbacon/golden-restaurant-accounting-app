@@ -23,11 +23,12 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="450.0" prefWidth="232.0" spacing="10.0">
+            <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="450.0" prefWidth="189.0" spacing="10.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#addEmployeeClicked" text="Agregar" />
                   <Button mnemonicParsing="false" onAction="#deleteEmployeeClicked" text="Eliminar" />
-                  <Button layoutX="81.0" layoutY="319.0" mnemonicParsing="false" onAction="#changeUserDeetsClicked" text="Cambiar Contraseña" />
+                  <Button layoutX="81.0" layoutY="319.0" mnemonicParsing="false" onAction="#changeUserDeetsClicked" prefHeight="49.0" prefWidth="155.0" text="Gestionar" wrapText="true" />
+                  <Button disable="true" mnemonicParsing="false" onAction="#genEmpReport" text="Reporte" visible="false" />
                </children>
             </VBox>
          </children>

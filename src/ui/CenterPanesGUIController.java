@@ -435,6 +435,22 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Button registerBTN;
 
+    @FXML
+    private BorderPane loginPaneOrsmnt;
+
+    /*Reports Pane*/
+    @FXML
+    private BorderPane reportPane;
+
+    @FXML
+    private DatePicker startDate;
+
+    @FXML
+    private DatePicker endDate;
+
+    @FXML
+    private Label destinationLBL;
+
     private  Restaurant GH;
 
     public CenterPanesGUIController(Restaurant GH) {
@@ -1960,12 +1976,108 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void loginPressed(ActionEvent event) {
-
+        System.out.println();
+        switch (GH.login(userNameLoginTF.getText(),passwordLoginPF.getText())) {
+            case -1:
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                    fxmlLoader.setController(this);
+                    Parent root = fxmlLoader.load();
+                    Stage productInfo = new Stage();
+                    productInfo.setScene(new Scene(root));
+                    productInfo.initModality(Modality.APPLICATION_MODAL);
+                    Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                    productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                    productInfo.getIcons().add(icon);
+                    productInfo.setTitle("Error");
+                    deleteMessageLBL.setText("Datos erroneos. Intente de nuevo.");
+                    deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                    productInfo.setResizable(false);
+                    productInfo.show();
+                    ((Stage) clientPane.getScene().getWindow()).close();
+                } catch (Exception e) {
+                    System.out.println("Can't load window at the moment.");
+                    System.out.println(e.getMessage());
+                }
+                break;
+            case -2:
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                    fxmlLoader.setController(this);
+                    Parent root = fxmlLoader.load();
+                    Stage productInfo = new Stage();
+                    productInfo.setScene(new Scene(root));
+                    productInfo.initModality(Modality.APPLICATION_MODAL);
+                    Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                    productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                    productInfo.getIcons().add(icon);
+                    productInfo.setTitle("Advertencia");
+                    deleteMessageLBL.setText("El uso del usuario root no es recomendado. Proceder con precaución.");
+                    deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                    productInfo.setResizable(false);
+                    productInfo.show();
+                    ((Stage) clientPane.getScene().getWindow()).close();
+                } catch (Exception e) {
+                    System.out.println("Can't load window at the moment.");
+                    System.out.println(e.getMessage());
+                }
+                loginPaneOrsmnt.setVisible(false);
+                break;
+            default:
+                GH.setCurrentUser(GH.getRestaurantUsers().get(GH.userIndexWithUsername(userNameLoginTF.getText())));
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                    fxmlLoader.setController(this);
+                    Parent root = fxmlLoader.load();
+                    Stage productInfo = new Stage();
+                    productInfo.setScene(new Scene(root));
+                    productInfo.initModality(Modality.APPLICATION_MODAL);
+                    Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                    productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                    productInfo.getIcons().add(icon);
+                    productInfo.setTitle("Bienvenido");
+                    deleteMessageLBL.setText("Inicio de sesión correcto. Bienvenid@!\nPresione el ícono de la casa para comenzar.");
+                    deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                    productInfo.setResizable(false);
+                    productInfo.show();
+                    ((Stage) clientPane.getScene().getWindow()).close();
+                } catch (Exception e) {
+                    System.out.println("Can't load window at the moment.");
+                    System.out.println(e.getMessage());
+                }
+                loginPaneOrsmnt.setVisible(false);
+        }
     }
 
     @FXML
-    void registerPressed(ActionEvent event) {
+    void registerPressed(ActionEvent event) throws IOException {
+        addEmployeeClicked(event);
+    }
 
+    @FXML
+    void genEmpReport(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("reportGen.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage productInfo = new Stage();
+            productInfo.setScene(new Scene(root));
+            productInfo.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            productInfo.getIcons().add(icon);
+            productInfo.setResizable(false);
+            productInfo.show();
+        } catch (Exception e) {
+            System.out.println("Can't load window at the moment.");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void confirmReport(ActionEvent event) {
+        LocalDateTime startingDate;
+        LocalDateTime endingDate;
     }
 }
 

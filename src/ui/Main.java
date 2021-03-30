@@ -8,12 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import model.Ingredient;
-import model.PlateType;
 import model.Restaurant;
-
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Main extends Application {
 
