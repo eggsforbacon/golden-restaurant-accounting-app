@@ -12,6 +12,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import model.Restaurant;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -20,8 +22,19 @@ public class MainGUIController implements Initializable {
 
     CenterPanesGUIController cenPaneController;
 
-    public MainGUIController(Restaurant GH) {
+    public MainGUIController(Restaurant GH) throws IOException, ClassNotFoundException {
+        load(GH);
         cenPaneController = new CenterPanesGUIController(GH);
+    }
+
+    public void load(Restaurant GH) throws IOException, ClassNotFoundException {
+        GH.loadPlateTypeData();
+        GH.loadIngredientData();
+        GH.loadProductData();
+        GH.loadClientData();
+        GH.loadEmployeesData();
+        GH.loadUserData();
+        GH.loadOrderData();
     }
 
     /*Splash screen*/
