@@ -18,13 +18,13 @@ import java.util.Comparator;
 
 public class Restaurant{
 	
-	public final static String PRODUCT_SAVE_PATH_FILE = "data/savedfiles/product.z&1";
-	public final static String INGREDIENT_SAVE_PATH_FILE = "data/savedfiles/ingredient.z&1";
-	public final static String PLATETYPE_SAVE_PATH_FILE = "data/savedfiles/platetype.z&1";
-	public final static String CLIENT_SAVE_PATH_FILE = "data/savedfiles/client.z&1";
-	public final static String EMPLOYEE_SAVE_PATH_FILE = "data/savedfiles/employee.z&1";
-	public final static String USER_SAVE_PATH_FILE = "data/savedfiles/user.z&1";
-	public final static String ORDER_SAVE_PATH_FILE = "data/savedfiles/order.z&1";
+	public final static String PRODUCT_SAVE_PATH_FILE = "src/data/savedfiles/product.z&1";
+	public final static String INGREDIENT_SAVE_PATH_FILE = "src/data/savedfiles/ingredient.z&1";
+	public final static String PLATETYPE_SAVE_PATH_FILE = "src/data/savedfiles/platetype.z&1";
+	public final static String CLIENT_SAVE_PATH_FILE = "src/data/savedfiles/client.z&1";
+	public final static String EMPLOYEE_SAVE_PATH_FILE = "src/data/savedfiles/employee.z&1";
+	public final static String USER_SAVE_PATH_FILE = "src/data/savedfiles/user.z&1";
+	public final static String ORDER_SAVE_PATH_FILE = "src/data/savedfiles/order.z&1";
 	
 	private User rootUser;
 	private boolean firstTime;
@@ -342,8 +342,8 @@ public class Restaurant{
 		 if(f.exists()){
 			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
 			 restaurantEmployees = (ArrayList<Employee>)ois.readObject();
-			 ois.close();
 			 loaded = true;
+			 ois.close();
 		 }
 		 return loaded;
 	 }
@@ -515,6 +515,7 @@ public class Restaurant{
 	 */
 	public boolean checkFirstTime() {
 		if(firstTime&&currentUser.equals(rootUser)) {
+			firstTime = false;
 			return true;
 		}
 		return false;

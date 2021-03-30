@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 import model.Ingredient;
 import model.PlateType;
 import model.Restaurant;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main extends Application {
@@ -22,8 +24,16 @@ public class Main extends Application {
   public Main() {
     GH = new Restaurant();
 
-    controller = new MainGUIController(GH);
-    logController = new LoginGUIController(GH);
+    try {
+      controller = new MainGUIController(GH);
+      logController = new LoginGUIController(GH);
+    } catch (IOException ioe) {
+      System.out.println("ioe");
+      ioe.printStackTrace();
+    } catch (ClassNotFoundException cnfe) {
+      System.out.println("cnfe");
+      cnfe.printStackTrace();
+    }
     System.out.println(GH.checkFirstTime());
   }
 
