@@ -1175,7 +1175,8 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void searchPressed(ActionEvent event) {
         GH.setSearchResults(searchUserTF.getText().trim());
-
+        ObservableList<Client> clientEmpty = FXCollections.emptyObservableList();
+        clientsTBV.setItems(clientEmpty);
         nameCliCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         enabledCliCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
         lastNameCliCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
