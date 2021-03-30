@@ -27,13 +27,12 @@
                   <Button mnemonicParsing="false" onAction="#clientsClicked" prefHeight="31.0" prefWidth="159.0" text="Clientes" />
                   <Label fx:id="spacer1" disable="true" VBox.vgrow="ALWAYS" />
                   <Button mnemonicParsing="false" onAction="#personnelClicked" prefHeight="31.0" prefWidth="159.0" text="Personal" />
-                  <Button mnemonicParsing="false" onAction="#usersClicked" prefHeight="31.0" prefWidth="159.0" text="Usuarios" />
-                  <ImageView fx:id="randomIMV" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                   <Button mnemonicParsing="false" onAction="#loginClicked" prefHeight="31.0" prefWidth="159.0" text="Iniciar Sesión">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
+                  <ImageView fx:id="randomIMV" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </VBox>
          </left>

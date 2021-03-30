@@ -94,7 +94,7 @@ public class MainGUIController implements Initializable {
     @FXML
     void personnelClicked(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("personnelGUI/personnel-center.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("personnelGUI/user-center.fxml"));
             fxmlLoader.setController(cenPaneController);
             Parent root = fxmlLoader.load();
             currentScene.setCenter(root);
@@ -108,19 +108,6 @@ public class MainGUIController implements Initializable {
     void productsClicked(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productGUI/product-center.fxml"));
-            fxmlLoader.setController(cenPaneController);
-            Parent root = fxmlLoader.load();
-            currentScene.setCenter(root);
-        } catch (Exception e) {
-            System.out.println("Can't load scene at the moment");
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    void usersClicked(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("usersGUI/users-center.fxml"));
             fxmlLoader.setController(cenPaneController);
             Parent root = fxmlLoader.load();
             currentScene.setCenter(root);
