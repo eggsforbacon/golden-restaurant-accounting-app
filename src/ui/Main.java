@@ -21,10 +21,8 @@ public class Main extends Application {
 
     try {
       controller = new MainGUIController(GH);
-    } catch (IOException ioe) {
+    } catch (IOException | ClassNotFoundException ioe) {
       ioe.printStackTrace();
-    } catch (ClassNotFoundException cnfe) {
-      cnfe.printStackTrace();
     }
   }
 

@@ -1533,7 +1533,7 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     @FXML
-    void createOrderClicked(ActionEvent event) throws IOException {
+    void createOrderClicked(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ordersGUI/add-order.fxml"));
             fxmlLoader.setController(this);
@@ -1552,7 +1552,6 @@ public class CenterPanesGUIController implements Initializable {
             System.out.println("Can't load window at the moment.");
             e.printStackTrace();
         }
-        GH.saveAllData();
     }
 
     private void initAddOrderPane() {

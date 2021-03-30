@@ -56,7 +56,7 @@
       <HBox alignment="CENTER" prefHeight="64.0" prefWidth="569.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
             <Button alignment="CENTER" mnemonicParsing="false" onAction="#confirmOrder" text="Confirmar" />
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#cancelOrder" text="Cancelar" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#cancelOrderClicked" text="Cancelar" />
          </children>
       </HBox>
    </bottom>
