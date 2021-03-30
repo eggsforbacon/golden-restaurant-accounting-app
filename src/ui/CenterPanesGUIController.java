@@ -43,25 +43,25 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane productPane;
 
     @FXML
-    private  TableView<Product> productTBV = new TableView<>();
+    private TableView<Product> productTBV = new TableView<>();
 
     @FXML
-    private  TableColumn<Product, String> nameProdCol = new TableColumn<>();
+    private TableColumn<Product, String> nameProdCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Product, String> enabledProdCol = new TableColumn<>() ;
+    private TableColumn<Product, String> enabledProdCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Product, String> ingredientsProdCol = new TableColumn<>();
+    private TableColumn<Product, String> ingredientsProdCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Product, String> typeProdCol = new TableColumn<>();
+    private TableColumn<Product, String> typeProdCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Product, String> sizesProdCol = new TableColumn<>();
+    private TableColumn<Product, String> sizesProdCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Product, Double> pricesProdCol = new TableColumn<>();
+    private TableColumn<Product, Double> pricesProdCol = new TableColumn<>();
 
     @FXML
     private Label spacer2;
@@ -115,13 +115,13 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane ingredientsPane;
 
     @FXML
-    private  TableView<Ingredient> ingredientsTBV = new TableView<>();
+    private TableView<Ingredient> ingredientsTBV = new TableView<>();
 
     @FXML
-    private  TableColumn<Ingredient, String> nameIngCol = new TableColumn<>();
+    private TableColumn<Ingredient, String> nameIngCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Ingredient, String> enabledIngCol = new TableColumn<>();
+    private TableColumn<Ingredient, String> enabledIngCol = new TableColumn<>();
 
     @FXML
     private Label spacer3;
@@ -151,28 +151,28 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane clientsPane;
 
     @FXML
-    private  TableView<Client> clientsTBV = new TableView<>();
+    private TableView<Client> clientsTBV = new TableView<>();
 
     @FXML
-    private  TableColumn<Client, String> nameCliCol = new TableColumn<>();
+    private TableColumn<Client, String> nameCliCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Client, String> lastNameCliCol = new TableColumn<>();
+    private TableColumn<Client, String> lastNameCliCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Client, String> idCliCol = new TableColumn<>();
+    private TableColumn<Client, String> idCliCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Client, String> addressCliCol = new TableColumn<>();
+    private TableColumn<Client, String> addressCliCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Client, String> teleCliCol = new TableColumn<>();
+    private TableColumn<Client, String> teleCliCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Client, String> enabledCliCol = new TableColumn<>();
+    private TableColumn<Client, String> enabledCliCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Client, String> obsCliCol = new TableColumn<>();
+    private TableColumn<Client, String> obsCliCol = new TableColumn<>();
 
     @FXML
     private Label spacer4;
@@ -235,13 +235,13 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane typesPane;
 
     @FXML
-    private  TableView<PlateType> typesTBV = new TableView<>();
+    private TableView<PlateType> typesTBV = new TableView<>();
 
     @FXML
-    private  TableColumn<PlateType, String> nameTypeCol = new TableColumn<>();
+    private TableColumn<PlateType, String> nameTypeCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<PlateType, String> enabledTypeCol = new TableColumn<>();
+    private TableColumn<PlateType, String> enabledTypeCol = new TableColumn<>();
 
     //Add Pane
     @FXML
@@ -265,31 +265,31 @@ public class CenterPanesGUIController implements Initializable {
 
     /*Order Pane*/
     @FXML
-    private  TableView<Order> orderTBV = new TableView<>();
+    private TableView<Order> orderTBV = new TableView<>();
 
     @FXML
-    private  TableColumn<Order, String> codeCol = new TableColumn<>();
+    private TableColumn<Order, String> codeCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Order, String> statusOrderCol = new TableColumn<>();
+    private TableColumn<Order, String> statusOrderCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Order, String> prodOrderCol = new TableColumn<>();
+    private TableColumn<Order, String> prodOrderCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Order, String> quantityOrderCol = new TableColumn<>();
+    private TableColumn<Order, String> quantityOrderCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Order, String> ordererCol = new TableColumn<>();
+    private TableColumn<Order, String> ordererCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Order, String> serverCol = new TableColumn<>();
+    private TableColumn<Order, String> serverCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Order, String> orderedDateCol = new TableColumn<>();
+    private TableColumn<Order, String> orderedDateCol = new TableColumn<>();
 
     @FXML
-    private  TableColumn<Order, String> obsOrderCol = new TableColumn<>();
+    private TableColumn<Order, String> obsOrderCol = new TableColumn<>();
 
     @FXML
     private Label spacer5;
@@ -389,6 +389,23 @@ public class CenterPanesGUIController implements Initializable {
     private TextField newEmpIDTF;
 
     //Info Pane
+    @FXML
+    private Label empFullNameInfoLBL;
+
+    @FXML
+    private Label empEnabledInfoLBL;
+
+    @FXML
+    private Label empDInfoLBL;
+
+    @FXML
+    private Label empUserInfoLBL;
+
+    @FXML
+    private Label empCreatorInfoLBL;
+
+    @FXML
+    private Label empEditorInfoLBL;
 
     //Edit pane
     @FXML
@@ -1650,7 +1667,36 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void deleteEmployeeClicked(ActionEvent event) {
-
+        boolean noSelection = employeesTBV.getSelectionModel().getSelectedItems().isEmpty();
+        System.out.println(noSelection);
+        if (!noSelection) {
+            for (int i = 0; i < employeesTBV.getSelectionModel().getSelectedItems().size(); i++) {
+                User removed = employeesTBV.getSelectionModel().getSelectedItems().get(i);
+                GH.deleteEmployee(GH.employeeIndexWithId(removed.getId()));
+            }
+            employeesTBV.getItems().removeAll(employeesTBV.getSelectionModel().getSelectedItems());
+            initEmployeePane();
+        } else {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                fxmlLoader.setController(this);
+                Parent root = fxmlLoader.load();
+                Stage productInfo = new Stage();
+                productInfo.setScene(new Scene(root));
+                productInfo.initModality(Modality.APPLICATION_MODAL);
+                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                productInfo.getIcons().add(icon);
+                productInfo.setTitle("Error");
+                deleteMessageLBL.setText("No hay selección. Intente de nuevo.");
+                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                productInfo.setResizable(false);
+                productInfo.show();
+            } catch (Exception e) {
+                System.out.println("Can't load window at the moment.");
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     @FXML
@@ -1799,12 +1845,11 @@ public class CenterPanesGUIController implements Initializable {
     private void initEmployeePane() {
         nameEmpCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         enabledEmpCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));
-        lastNameEmpCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        lastNameEmpCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
         idEmpCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         usernameEmpCol.setCellValueFactory(new PropertyValueFactory<>("username"));
         ObservableList<User> userList = FXCollections.observableArrayList(GH.getRestaurantUsers());
         employeesTBV.setItems(userList);
-
         nameEmpCol.setCellFactory(TextFieldTableCell.forTableColumn());
         enabledEmpCol.setCellFactory(TextFieldTableCell.forTableColumn());
         idEmpCol.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -1814,7 +1859,7 @@ public class CenterPanesGUIController implements Initializable {
             TableRow<User> row = new TableRow<>();
             row.setOnContextMenuRequested(event -> {
                 if (!row.isEmpty()) {
-                    Employee rowData = row.getItem();
+                    User rowData = row.getItem();
                     fullUserDetails(rowData);
                 }
             });
@@ -1822,7 +1867,7 @@ public class CenterPanesGUIController implements Initializable {
         });
     }
 
-    private void fullUserDetails(Employee rowData) {
+    private void fullUserDetails(User rowData) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("personnelGUI/userInfo.fxml"));
             fxmlLoader.setController(this);
@@ -1842,8 +1887,11 @@ public class CenterPanesGUIController implements Initializable {
         }
     }
 
-    private void initUserInfo(Employee rowData) {
-
+    private void initUserInfo(User rowData) {
+        empFullNameInfoLBL.setText(rowData.getName() + " " + rowData.getLastname());
+        empEnabledInfoLBL.setText(rowData.getEnabled() ? "(Habilitado)":"(Deshabilitado)");
+        empDInfoLBL.setText(rowData.getId());
+        empUserInfoLBL.setText(rowData.getUsername());
     }
 }
 
