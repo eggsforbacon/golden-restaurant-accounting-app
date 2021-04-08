@@ -12,7 +12,7 @@
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="orderTBV" editable="true" prefHeight="450.0" prefWidth="570.0" HBox.hgrow="ALWAYS">
+            <TableView fx:id="orderTBV" prefHeight="450.0" prefWidth="570.0" HBox.hgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="codeCol" editable="false" minWidth="-Infinity" prefWidth="85.0" text="Código" />
                   <TableColumn fx:id="statusOrderCol" minWidth="-Infinity" onEditCommit="#editStatusOrder" prefWidth="85.0" text="Estado" />
@@ -29,11 +29,12 @@
             </TableView>
             <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="450.0" prefWidth="203.0" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
+                  <Button mnemonicParsing="false" onAction="#advanceStatusClicked" text="STATUS_QUEUE" />
                   <Button mnemonicParsing="false" onAction="#importOrderData" text="Importar" />
                   <Button mnemonicParsing="false" onAction="#exportOrderData" text="Exportar" />
                   <Label fx:id="spacer5" prefHeight="65.0" prefWidth="0.0" />
                   <Button mnemonicParsing="false" onAction="#createOrderClicked" text="Nueva Orden" />
-                  <Button mnemonicParsing="false" onAction="#cancelOrderClicked" text="Cancelar Orden" />
+                  <Button mnemonicParsing="false" onAction="#cancelStatusClicked" text="Cancelar Orden" />
                </children></VBox>
          </children>
       </HBox>

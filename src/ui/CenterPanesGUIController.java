@@ -293,6 +293,9 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Label spacer5;
 
+    @FXML
+    private Button queueBTN;
+
     //Add Pane
     @FXML
     private BorderPane orderPane;
@@ -1461,6 +1464,7 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     private void initOrderPane() {
+        queueBTN.setText("-");
         codeCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         statusOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderStatus"));
         prodOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderProductsString"));
@@ -1488,6 +1492,12 @@ public class CenterPanesGUIController implements Initializable {
                 if (!row.isEmpty()) {
                     Order rowData = row.getItem();
                     fullOrderDetails(rowData);
+                }
+            });
+            row.setOnMouseClicked(event -> {
+                if (!row.isEmpty()) {
+                    int currentIndex = row.getItem().getStatusIndicator();
+                    String nextStatus = Status
                 }
             });
             return row;
@@ -1640,11 +1650,13 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     @FXML
-    void editStatusOrder(CellEditEvent<Order, String> event) throws IOException {
-        GH.changeOrderStatus(GH.searchAnOrder(event.getRowValue().getName()),Integer.parseInt(event.getNewValue()));
-        event.getRowValue().setModifierUser(GH.getCurrentUser());
-        initOrderPane();
-        GH.saveAllData();
+    void advanceStatusClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void cancelStatusClicked(ActionEvent event) {
+
     }
 
     @FXML
