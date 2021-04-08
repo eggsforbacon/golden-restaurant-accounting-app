@@ -202,6 +202,19 @@ public class MainGUIController implements Initializable {
         }
     }
 
+    @FXML
+    void genReportClicked(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("reportGen.fxml"));
+            fxmlLoader.setController(cenPaneController);
+            Parent root = fxmlLoader.load();
+            currentScene.setCenter(root);
+        } catch (Exception e) {
+            System.out.println("Can't load scene at the moment");
+            e.printStackTrace();
+        }
+    }
+
     String randomImage() {
         Random r = new Random();
         int max  = 4; //Exclusive

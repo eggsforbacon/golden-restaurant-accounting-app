@@ -27,7 +27,8 @@
                   <Button mnemonicParsing="false" onAction="#clientsClicked" prefHeight="31.0" prefWidth="159.0" text="Clientes" />
                   <Label fx:id="spacer1" disable="true" VBox.vgrow="ALWAYS" />
                   <Button mnemonicParsing="false" onAction="#personnelClicked" prefHeight="31.0" prefWidth="159.0" text="Personal" />
-                  <Button mnemonicParsing="false" onAction="#loginClicked" prefHeight="31.0" prefWidth="159.0" text="Iniciar Sesión">
+                  <Button mnemonicParsing="false" onAction="#loginClicked" prefHeight="31.0" prefWidth="159.0" text="Iniciar Sesión" />
+                  <Button mnemonicParsing="false" onAction="#genReportClicked" prefHeight="31.0" prefWidth="159.0" text="Reportes">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>

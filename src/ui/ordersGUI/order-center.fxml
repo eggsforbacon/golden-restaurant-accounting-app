@@ -29,7 +29,7 @@
             </TableView>
             <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="450.0" prefWidth="203.0" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Button mnemonicParsing="false" onAction="#advanceStatusClicked" text="STATUS_QUEUE" />
+                  <Button fx:id="queueBTN" mnemonicParsing="false" onAction="#advanceStatusClicked" text="STATUS_QUEUE" />
                   <Button mnemonicParsing="false" onAction="#importOrderData" text="Importar" />
                   <Button mnemonicParsing="false" onAction="#exportOrderData" text="Exportar" />
                   <Label fx:id="spacer5" prefHeight="65.0" prefWidth="0.0" />

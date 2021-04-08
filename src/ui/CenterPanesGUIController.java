@@ -294,7 +294,7 @@ public class CenterPanesGUIController implements Initializable {
     private Label spacer5;
 
     @FXML
-    private Button queueBTN;
+    private Button queueBTN = new Button();
 
     //Add Pane
     @FXML
@@ -1471,7 +1471,7 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     private void initOrderPane() {
-        //queueBTN.setText("-");
+        queueBTN.setText("-");
         codeCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         statusOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderStatus"));
         prodOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderProductsString"));
@@ -1499,12 +1499,6 @@ public class CenterPanesGUIController implements Initializable {
                 if (!row.isEmpty()) {
                     Order rowData = row.getItem();
                     fullOrderDetails(rowData);
-                }
-            });
-            row.setOnMouseClicked(event -> {
-                if (!row.isEmpty()) {
-                    int currentIndex = row.getItem().getStatusIndicator();
-                    String nextStatus = Status.get(currentIndex);
                 }
             });
             return row;
@@ -1658,12 +1652,12 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void advanceStatusClicked(ActionEvent event) {
-
+        System.out.println("idk");
     }
 
     @FXML
     void cancelStatusClicked(ActionEvent event) {
-
+        System.out.println("tis me, mario");
     }
 
     @FXML
