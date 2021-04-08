@@ -1208,7 +1208,14 @@ public class CenterPanesGUIController implements Initializable {
             });
             return row;
         });
-        searchTimeLBL.setText(Long.toString(GH.getTimeOfSearch()));
+        String[] nameAndLastName = searchUserTF.getText().trim().split(" ");
+        if(nameAndLastName.length<=1) {
+        	searchTimeLBL.setText(Long.toString(GH.getTimeOfSearch()));
+        }
+        else {
+        	GH.binarySearchForClients(GH.getRestaurantClients(),nameAndLastName[1],nameAndLastName[0]);
+            searchTimeLBL.setText(Long.toString(GH.getTimeOfSearch()));
+        }
     }
 
     @FXML
@@ -1464,7 +1471,7 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     private void initOrderPane() {
-        queueBTN.setText("-");
+        //queueBTN.setText("-");
         codeCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         statusOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderStatus"));
         prodOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderProductsString"));
@@ -1497,7 +1504,7 @@ public class CenterPanesGUIController implements Initializable {
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty()) {
                     int currentIndex = row.getItem().getStatusIndicator();
-                    String nextStatus = Status
+                    String nextStatus = Status.get(currentIndex);
                 }
             });
             return row;

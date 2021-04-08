@@ -145,7 +145,6 @@ public class Restaurant{
 	}
 	
 	public void importOrderInformation(String fileName) throws IOException{
-		System.out.println("Esta ingresando pero Juan David hizo algo mal yei");
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
 		br.readLine();
 		String line = br.readLine();
@@ -157,12 +156,10 @@ public class Restaurant{
 			ArrayList<Product> ordProd = new ArrayList<Product>();
 			ArrayList<Integer> ordPQuantitys = new ArrayList<Integer>();
 			for(int i=0;i<productsString.length;i++) {
-				System.out.println(productsString[i]);
 				if(productIndexWithName(productsString[i])!=-1) {
 					Product auxProd = restaurantProducts.get(productIndexWithName(productsString[i]));
 					int sizeIndex = sizeIndexWithName(auxProd.getProductsSizes(), productsSizes[i]);
 					ordProd.add(new Product(auxProd.getName(),currentUser,auxProd.getPlateType(),auxProd.getIngrdnts(),auxProd.getProductsSizes(),auxProd.getSizesPrices(),sizeIndex));
-					System.out.println("Entro");
 				}
 			}
 			for(int i=0;i<productsQuantitys.length;i++) {
@@ -170,8 +167,6 @@ public class Restaurant{
 			}
 			String[] clientNameAndLastName = parts[3].split(" ");
 			Client clientOfOrder=null;
-			System.out.println(clientNameAndLastName[0]);
-			System.out.println(clientNameAndLastName[1]);
 			if(clientIndexWithNameAndLastname(clientNameAndLastName[0], clientNameAndLastName[1])!=-1) {
 				clientOfOrder=restaurantClients.get(clientIndexWithNameAndLastname(clientNameAndLastName[0], clientNameAndLastName[1]));
 			}
@@ -182,8 +177,6 @@ public class Restaurant{
 			String employeeId = parts[6];
 			Employee employeeOfTheOrder = new Employee(employeeName,currentUser,employeeLastname,employeeId);
 			String observations = parts[7];
-			//System.out.println(ordPQuantitys);
-			//System.out.println(ordProd);
 			createAnOrder(ordProd, ordPQuantitys, clientOfOrder, employeeOfTheOrder, observations) ;
 			line = br.readLine();
 		}
@@ -1321,30 +1314,25 @@ public class Restaurant{
 		int i = 0;
 		int j = aL.size()-1;
 		String valueToSearch = (lastname+name).toLowerCase();
-		System.out.println(valueToSearch+" esto es lo que se busca");
 		while(i<=j && pos<0) {
 			int m = (i+j)/2;
 			String stringOfArrayList = (aL.get(m).getLastname()+aL.get(m).getName()).toLowerCase();
-			System.out.println(aL.get(m).getLastname()+aL.get(m).getName());
 			if(stringOfArrayList.equalsIgnoreCase(valueToSearch)) {
 				pos=m;
-				System.out.println("ENCONTRADO");
 				return m;
 				
 			}
 			else if(stringOfArrayList.compareTo(valueToSearch)<0){   ///Changed because is descending
 				j=m-1;
-				System.out.println("avanzo");
 			}
 			else {
 				i=m+1;
-				System.out.println("Retrocedio");
 			}
 		}
 		long endTime = System.nanoTime();
 		long timeElapsed = endTime - startTime;
 		timeOfSearch=timeElapsed;
-		System.out.println(aL.get(pos).getLastname()+aL.get(pos).getName());
+		System.out.println(timeElapsed);
 		return pos;
 	}
 
@@ -1823,10 +1811,15 @@ public class Restaurant{
 	 }
 
 	 public void setSearchResults(String match) {
+		 long startTime = System.nanoTime();
+		 searchResults = new ArrayList<>();
 		 for (Client c : restaurantClients) {
 		 	String compare = c.getName() + " " + c.getLastname();
 		 	if (compare.contains(match)) searchResults.add(c);
 		 }
+		 long endTime = System.nanoTime();
+		 long timeElapsed = endTime-startTime;
+		 timeOfSearch=timeElapsed;
 	}
 
 

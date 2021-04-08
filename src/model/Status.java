@@ -8,20 +8,20 @@ public enum Status{
 		this.index = index;
 	}
 
-	public Status get(int index) throws IndexOutOfBoundsException {
+	public static String get(int index){
 		switch (index) {
 			case 0:
-				return CANCELADO;
+				return CANCELADO.name();
 			case 1:
-				return SOLICITADO;
+				return SOLICITADO.name();
 			case 2:
-				return EN_PROCESO;
+				return EN_PROCESO.name();
 			case 3:
-				return ENVIADO;
+				return ENVIADO.name();
 			case 4:
-				return ENTREGADO;
+				return ENTREGADO.name();
 			default:
-				throw new IndexOutOfBoundsException("Index not part of the enum.");
+				return "ERROR";
 		}
 	}
 }
