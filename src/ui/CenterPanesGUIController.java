@@ -490,11 +490,6 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editIngredientProd(CellEditEvent<Product, String> event) throws IOException {
-       /*
-    	for (String s : event.getRowValue().getTheIngredients().split(",")) {
-            GH.deleteAnIngredientOfAProduct(GH.productIndexWithName(event.getRowValue().getName()), s);
-        }
-        */
     	boolean done = false;
         StringBuilder unAddedIngredients = new StringBuilder();
         for (String s : event.getNewValue().split(",")) {
@@ -778,7 +773,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void exportProductData(ActionEvent event) throws Exception {
-        GH.generateProductReport("src/data/generatedData/PRODUCT_GENERATED_DATA.csv", SEPARATOR, START, LocalDateTime.now());
+        GH.generateProductReport("src/data/reports/PRODUCT_REPORT.csv", SEPARATOR, START, LocalDateTime.now());
     }
 
     @FXML
@@ -952,7 +947,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void exportIngredientData(ActionEvent event) throws FileNotFoundException {
-        String fileName = "src/data/INGREDIENTS.csv";
+        String fileName = "src/data/otherExports/INGREDIENTS.csv";
         PrintWriter pw = new PrintWriter(fileName);
         for (int i = 0; i < GH.getRestaurantIngredientsSize(); i++) {
             Ingredient ing = GH.getRestaurantIngredients().get(i);
@@ -963,7 +958,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void importIngredientData(ActionEvent event) throws IOException {
-        String fileName = "src/data/INGREDIENTS.csv";
+        String fileName = "src/data/OtherExports/INGREDIENTS.csv";
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         String line = br.readLine();
         while (line != null) {
@@ -1279,7 +1274,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void exportClientData(ActionEvent event) throws FileNotFoundException {
-        String fileName = "src/data/CLIENTS.csv";
+        String fileName = "src/data/otherExports/CLIENTS.csv";
         PrintWriter pw = new PrintWriter(fileName);
         for (int i = 0; i < GH.getRestaurantClientsSize(); i++) {
             Client client = GH.getRestaurantClients().get(i);
@@ -1670,7 +1665,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void exportOrderData(ActionEvent event) throws IOException {
-        GH.generateOrderReport("src/data/generatedData/ORDER_GENERATED_DATA.csv",SEPARATOR,START,LocalDateTime.now());
+        GH.generateOrderReport("src/data/reports/ORDER_REPORT.csv",SEPARATOR,START,LocalDateTime.now());
     }
 
     @FXML
