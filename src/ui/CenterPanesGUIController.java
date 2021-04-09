@@ -2001,7 +2001,7 @@ public class CenterPanesGUIController implements Initializable {
                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
                     productInfo.setResizable(false);
                     productInfo.show();
-                    ((Stage) clientPane.getScene().getWindow()).close();
+                    //((Stage) loginPaneOrsmnt.getScene().getWindow()).close();
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");
                     e.printStackTrace();
@@ -2023,7 +2023,7 @@ public class CenterPanesGUIController implements Initializable {
                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
                     productInfo.setResizable(false);
                     productInfo.show();
-                    ((Stage) clientPane.getScene().getWindow()).close();
+                    //((Stage) loginPaneOrsmnt.getScene().getWindow()).close();
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");
                     e.printStackTrace();
@@ -2047,7 +2047,7 @@ public class CenterPanesGUIController implements Initializable {
                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
                     productInfo.setResizable(false);
                     productInfo.show();
-                    ((Stage) clientPane.getScene().getWindow()).close();
+                    //((Stage) loginPaneOrsmnt.getScene().getWindow()).close();
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");
                     e.printStackTrace();

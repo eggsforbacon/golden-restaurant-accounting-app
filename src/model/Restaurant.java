@@ -547,7 +547,7 @@ public class Restaurant{
 	 * @return index
 	 */
 	public int login(String username,String password) {
-		int index = -1;
+		int index = -1; //Not found
 		boolean band = false;
 		for(int i=0;i<restaurantUsersSize&&!band;i++) {
 			if((restaurantUsers.get(i).getUsername().equals(username))&&(restaurantUsers.get(i).getPassword().equals(password))) {
@@ -556,7 +556,7 @@ public class Restaurant{
 			}
 		}
 		if(rootUser.getUsername().equals(username)&&rootUser.getPassword().equals(password)) {
-			index = -2;
+			index = -2; // The user is the rootUser
 		}
 		return index;
 	}
