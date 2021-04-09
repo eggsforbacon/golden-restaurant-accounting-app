@@ -34,7 +34,7 @@
                   <Button mnemonicParsing="false" onAction="#exportOrderData" text="Exportar" />
                   <Label fx:id="spacer5" prefHeight="65.0" prefWidth="0.0" />
                   <Button mnemonicParsing="false" onAction="#createOrderClicked" text="Nueva Orden" />
-                  <Button mnemonicParsing="false" onAction="#cancelStatusClicked" text="Cancelar Orden" />
+                  <Button fx:id="cancelOrderBTN" mnemonicParsing="false" onAction="#cancelStatusClicked" text="Cancelar Orden" />
                </children></VBox>
          </children>
       </HBox>

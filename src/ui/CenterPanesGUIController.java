@@ -296,6 +296,9 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Button queueBTN = new Button();
 
+    @FXML
+    private Button cancelOrderBTN = new Button();
+
     //Add Pane
     @FXML
     private BorderPane orderPane;
@@ -1474,6 +1477,23 @@ public class CenterPanesGUIController implements Initializable {
 
     private void initOrderPane() {
         queueBTN.setText("-");
+        orderTBV.setOnMouseClicked(event -> {
+            if (!orderTBV.getSelectionModel().getSelectedItems().isEmpty()) {
+                int current = orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator();
+                if (current != 0 && current != 4) {
+                    queueBTN.setText(Status.get(current + 1));
+                    queueBTN.setDisable(false);
+                    cancelOrderBTN.setDisable(false);
+                } else {
+                    queueBTN.setText(Status.get(current));
+                    queueBTN.setDisable(true);
+                    if (current == 0) cancelOrderBTN.setDisable(true);
+                }
+            } else {
+                queueBTN.setText("-");
+                queueBTN.setDisable(true);
+            }
+        });
         codeCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         statusOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderStatus"));
         prodOrderCol.setCellValueFactory(new PropertyValueFactory<>("orderProductsString"));
@@ -1656,11 +1676,18 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void advanceStatusClicked(ActionEvent event) {
         System.out.println("idk");
+        if (!orderTBV.getSelectionModel().getSelectedItems().isEmpty()) {
+            orderTBV.getSelectionModel().getSelectedItem().setStatusIndicator(orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator()+1);
+        }
+        if (orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator() == 4) {
+            cancelOrderBTN.setDisable(true);
+        }
     }
 
     @FXML
     void cancelStatusClicked(ActionEvent event) {
         System.out.println("tis me, mario");
+        queueBTN.setDisable(true);
     }
 
     @FXML
