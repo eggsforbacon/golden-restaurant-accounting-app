@@ -16,7 +16,7 @@ public class Order extends SystemObject implements Serializable {
 	private ArrayList<Integer> productsQuantity;
 	private Client orderClient;
 	private Employee orderEmployee;
-	DateTimeFormatter formatter;
+	private transient DateTimeFormatter formatter;
 	private LocalDateTime date;
 	private String dateString;
 	private String observations;

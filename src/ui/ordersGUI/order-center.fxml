@@ -15,7 +15,7 @@
             <TableView fx:id="orderTBV" prefHeight="450.0" prefWidth="570.0" HBox.hgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="codeCol" editable="false" minWidth="-Infinity" prefWidth="85.0" text="Código" />
-                  <TableColumn fx:id="statusOrderCol" minWidth="-Infinity" onEditCommit="#editStatusOrder" prefWidth="85.0" text="Estado" />
+                  
                   <TableColumn fx:id="prodOrderCol" minWidth="-Infinity" prefWidth="93.0" text="Productos" />
                   <TableColumn fx:id="quantityOrderCol" minWidth="-Infinity" prefWidth="117.0" text="Cantidad" />
                   <TableColumn fx:id="ordererCol" editable="false" minWidth="-Infinity" prefWidth="117.0" text="Solicitado Por" />
