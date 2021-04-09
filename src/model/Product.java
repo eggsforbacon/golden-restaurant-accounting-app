@@ -141,6 +141,10 @@ public class Product extends SystemObject implements Serializable{
 		}
 		return false;
 	}
+	
+	public void deleteAllIngredients() {
+		ingrdnts.clear();
+	}
 
 	/**
 	Organizes the ingredients in a String <br>

@@ -490,12 +490,19 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editIngredientProd(CellEditEvent<Product, String> event) throws IOException {
-        for (String s : event.getRowValue().getTheIngredients().split(",")) {
+       /*
+    	for (String s : event.getRowValue().getTheIngredients().split(",")) {
             GH.deleteAnIngredientOfAProduct(GH.productIndexWithName(event.getRowValue().getName()), s);
         }
+        */
+    	boolean done = false;
         StringBuilder unAddedIngredients = new StringBuilder();
         for (String s : event.getNewValue().split(",")) {
-            if (GH.getRestaurantIngredientsString().contains(s)) {
+            if (GH.getRestaurantIngredientsString().contains(s) && GH.ingredientIndexWithName(s) != -1) {
+            	if(!done) {
+            		GH.deleteAllIngredients(GH.productIndexWithName(event.getRowValue().getName()));
+            		done = true;
+            	}
                 GH.addAnIngredientToAProduct(GH.productIndexWithName(event.getRowValue().getName()), GH.getRestaurantIngredients().get(GH.ingredientIndexWithName(s)));
             } else {
                 unAddedIngredients.append(s).append("\n");

@@ -892,6 +892,10 @@ public class Restaurant{
 		}
 		return b;
 	}
+	
+	public void deleteAllIngredients(int index) {
+		restaurantProducts.get(index).deleteAllIngredients();
+	}
 
 	/**
 	 * Adds an ingredient to the products of the productsWithTheirSizes ArrayList<br>
