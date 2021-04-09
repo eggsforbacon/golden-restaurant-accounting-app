@@ -2043,7 +2043,7 @@ public class CenterPanesGUIController implements Initializable {
                     productInfo.show();
                     //((Stage) loginPaneOrsmnt.getScene().getWindow()).close();
                 } catch (Exception e) {
-                    System.out.println("Can't load window at the moment.");
+                    System.out.println("Can't load window at the moment.");  //-_-
                     e.printStackTrace();
                 }
                 loginPaneOrsmnt.setVisible(false);
