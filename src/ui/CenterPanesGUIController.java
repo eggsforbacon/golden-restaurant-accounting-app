@@ -1589,6 +1589,7 @@ public class CenterPanesGUIController implements Initializable {
         ObservableList<String> selectedProducts = selectedProductsLV.getSelectionModel().getSelectedItems();
         for (String selectedItem : selectedProducts) {
             String[] prodName = selectedItem.split("[()]");
+            prodName[0]= prodName[0].substring(0, prodName[0].length()-1);
             Product prodtoadd = GH.getProductsWithTheirSizes().get(GH.productWithSizeIndexWithNameAndSize(prodName[0], prodName[1]));
             newProducts.add(prodtoadd);
         }

@@ -1332,7 +1332,6 @@ public class Restaurant{
 		long endTime = System.nanoTime();
 		long timeElapsed = endTime - startTime;
 		timeOfSearch=timeElapsed;
-		System.out.println(timeElapsed);
 		return pos;
 	}
 
