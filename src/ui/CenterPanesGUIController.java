@@ -1104,13 +1104,38 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void deleteClientClicked(ActionEvent event) throws IOException {
         boolean noSelection = clientsTBV.getSelectionModel().getSelectedItems().isEmpty();
+        boolean canDelete = true;
         if (!noSelection) {
             for (int i = 0; i < clientsTBV.getSelectionModel().getSelectedItems().size(); i++) {
                 Client removed = clientsTBV.getSelectionModel().getSelectedItems().get(i);
-                GH.deleteClient(GH.clientIndexWithNameAndLastname(removed.getName(), removed.getLastname()));
+                canDelete=GH.deleteClient(GH.clientIndexWithNameAndLastname(removed.getName(), removed.getLastname()));
             }
-            clientsTBV.getItems().removeAll(clientsTBV.getSelectionModel().getSelectedItems());
-            initProductPane();
+            if(canDelete) {
+            	clientsTBV.getItems().removeAll(clientsTBV.getSelectionModel().getSelectedItems());
+                initProductPane();
+            } else {
+            	 try {
+                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+                     fxmlLoader.setController(this);
+                     Parent root = fxmlLoader.load();
+                     Stage productInfo = new Stage();
+                     productInfo.setScene(new Scene(root));
+                     productInfo.initModality(Modality.APPLICATION_MODAL);
+                     Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+                     productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+                     productInfo.getIcons().add(icon);
+                     productInfo.setTitle("Error");
+                     deleteMessageLBL.setText("El cliente no pudo ser eliminado");
+                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+                     productInfo.setResizable(false);
+                     productInfo.show();
+                 } catch (Exception e) {
+                     System.out.println("Can't load window at the moment.");
+                     e.printStackTrace();
+                 }
+            }
+            
+            
         } else {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
