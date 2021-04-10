@@ -457,10 +457,21 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private Label destinationLBL;
 
-    private  Restaurant GH;
+    private BorderPane mainPane;
 
-    public CenterPanesGUIController(Restaurant GH) {
+    private Restaurant GH;
+
+    public CenterPanesGUIController(Restaurant GH, BorderPane mainPane) {
         this.GH = GH;
+        this.mainPane = mainPane;
+    }
+
+    public BorderPane getMainPane() {
+        return mainPane;
+    }
+
+    public void setMainPane(BorderPane mainPane) {
+        this.mainPane = mainPane;
     }
 
     @Override
@@ -2025,7 +2036,6 @@ public class CenterPanesGUIController implements Initializable {
                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
                     productInfo.setResizable(false);
                     productInfo.show();
-                    //((Stage) loginPaneOrsmnt.getScene().getWindow()).close();
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");
                     e.printStackTrace();
@@ -2047,12 +2057,11 @@ public class CenterPanesGUIController implements Initializable {
                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
                     productInfo.setResizable(false);
                     productInfo.show();
-                    //((Stage) loginPaneOrsmnt.getScene().getWindow()).close();
+                    //Necesito reactivar los botones aquí pero no sé cómo
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");
                     e.printStackTrace();
                 }
-                loginPaneOrsmnt.setVisible(false);
                 break;
             default:
                 GH.setCurrentUser(GH.getRestaurantUsers().get(GH.userIndexWithUsername(userNameLoginTF.getText())));
@@ -2071,12 +2080,11 @@ public class CenterPanesGUIController implements Initializable {
                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
                     productInfo.setResizable(false);
                     productInfo.show();
-                    //((Stage) loginPaneOrsmnt.getScene().getWindow()).close();
+                    //Aquí también
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");  //-_-
                     e.printStackTrace();
                 }
-                loginPaneOrsmnt.setVisible(false);
         }
     }
 

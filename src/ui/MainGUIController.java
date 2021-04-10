@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,7 +27,7 @@ public class MainGUIController implements Initializable {
     public MainGUIController(Restaurant GH) throws IOException, ClassNotFoundException {
         //load(GH);
         this.GH = GH;
-        cenPaneController = new CenterPanesGUIController(this.GH);
+        cenPaneController = new CenterPanesGUIController(this.GH, mainPane);
     }
 
     public void load(Restaurant GH) throws IOException, ClassNotFoundException {
@@ -56,13 +57,37 @@ public class MainGUIController implements Initializable {
     private BorderPane currentScene;
 
     @FXML
-    private BorderPane mainPane;
+    private BorderPane mainPane = new BorderPane();
 
     @FXML
     private ImageView randomIMV;
 
     @FXML
     private VBox sidebarVBOX;
+
+    @FXML
+    private Button mainOrderBTN;
+
+    @FXML
+    private Button mainProdBTN;
+
+    @FXML
+    private Button mainIngBTN;
+
+    @FXML
+    private Button mainTpBTN;
+
+    @FXML
+    private Button mainClientBTN;
+
+    @FXML
+    private Button mainEmpBTN;
+
+    @FXML
+    private Button loginBTN;
+
+    @FXML
+    private Button reportsBTN;
 
     @FXML
     private Label spacer1;
@@ -73,15 +98,28 @@ public class MainGUIController implements Initializable {
         spacer1.prefHeightProperty().bind(mainPane.heightProperty());
         randomIMV.setImage(new Image(String.valueOf(getClass().getResource(randomImage()))));
         if (GH.checkFirstTime()) {
+            toggleButtons(true);
             login();
             GH.setFirstTime(false);
         } else {
-            homeScreenIMV.setVisible(true);
+            toggleButtons(false);
         }
         homeScreenIMV.fitHeightProperty().bind(mainPane.heightProperty());
         homeScreenIMV.fitWidthProperty().bind(mainPane.widthProperty());
         currentScene.prefHeightProperty().bind(mainPane.heightProperty());
         currentScene.prefWidthProperty().bind(mainPane.widthProperty());
+
+
+    }
+
+    public void toggleButtons(boolean state) {
+        mainOrderBTN.setDisable(state);
+        mainClientBTN.setDisable(state);
+        mainEmpBTN.setDisable(state);
+        mainIngBTN.setDisable(state);
+        mainTpBTN.setDisable(state);
+        mainProdBTN.setDisable(state);
+        reportsBTN.setDisable(state);
     }
 
     @FXML
