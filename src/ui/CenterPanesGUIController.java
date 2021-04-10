@@ -33,6 +33,7 @@ public class CenterPanesGUIController implements Initializable {
 
     private static final String SEPARATOR = ";";
     private static final LocalDateTime START = LocalDateTime.of(Year.now().getValue(), YearMonth.now().getMonth(), MonthDay.now().getDayOfMonth(), 0, 0, 0);
+    private boolean loginSuccesfull;
     /*Delete Pane (General use)*/
     @FXML
     private Label deleteMessageLBL;
@@ -464,6 +465,7 @@ public class CenterPanesGUIController implements Initializable {
     public CenterPanesGUIController(Restaurant GH, BorderPane mainPane) {
         this.GH = GH;
         this.mainPane = mainPane;
+        loginSuccesfull=false;
     }
 
     public BorderPane getMainPane() {
@@ -2057,6 +2059,7 @@ public class CenterPanesGUIController implements Initializable {
                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
                     productInfo.setResizable(false);
                     productInfo.show();
+                    loginSuccesfull=true;
                     //Necesito reactivar los botones aquí pero no sé cómo
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");
@@ -2080,12 +2083,16 @@ public class CenterPanesGUIController implements Initializable {
                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
                     productInfo.setResizable(false);
                     productInfo.show();
+                    loginSuccesfull=true;
                     //Aquí también
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");  //-_-
                     e.printStackTrace();
                 }
         }
+    }
+    public boolean getLoginSuccesful() {
+    	return loginSuccesfull;
     }
 
     @FXML

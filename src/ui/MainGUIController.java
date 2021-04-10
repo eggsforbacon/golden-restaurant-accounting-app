@@ -233,6 +233,9 @@ public class MainGUIController implements Initializable {
             if (!GH.checkFirstTime()) {
                 homeScreenIMV.setVisible(true);
             }
+            if(cenPaneController.getLoginSuccesful()) {
+            	toggleButtons(false);
+            }
             currentScene.setStyle("\n-fx-background-color: black;");
         } catch (Exception e) {
             System.out.println("Can't load image at the moment");
