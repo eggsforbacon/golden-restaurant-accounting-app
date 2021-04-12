@@ -1069,6 +1069,7 @@ public class CenterPanesGUIController implements Initializable {
     private void initClientInfo(Client rowData) {
         cliFullNameInfoLBL.setText(rowData.getName() + " " + rowData.getLastname());
         cliEnabledInfoLBL.setText((rowData.getEnabled()) ? "Habilitado" : "Deshabilitado");
+        cliEnabledInfoLBL.setId("enabled-label");
         cliIDInfoLBL.setText(rowData.getId());
         cliTeleInfoLBL.setText(rowData.getPhoneNumber());
         cliAddressInfoLBL.setText(rowData.getAddress());
@@ -1508,6 +1509,7 @@ public class CenterPanesGUIController implements Initializable {
     private void initTypeInfo(PlateType rowData) {
         typeNameInfoLBL.setText(rowData.getName());
         typeEnabledInfoLBL.setText((rowData.getEnabled()) ? "Habilitado" : "Deshabilitado");
+        typeEnabledInfoLBL.setId("enabled-label");
         typeCreatorInfoLBL.setText(rowData.getCreatorUser().getUsername());
         typeEditorInfoLBL.setText(rowData.getModifierUser().getUsername());
         ((Stage) typeNameInfoLBL.getScene().getWindow()).setResizable(false);
@@ -1518,11 +1520,14 @@ public class CenterPanesGUIController implements Initializable {
         orderTBV.setOnMouseClicked(event -> {
             if (!orderTBV.getSelectionModel().getSelectedItems().isEmpty()) {
                 int current = orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator();
+                System.out.println(current);
                 if (current != 0 && current != 4) {
+                    System.out.println("here");
                     queueBTN.setText(Status.get(current + 1));
                     queueBTN.setDisable(false);
                     cancelOrderBTN.setDisable(false);
                 } else {
+                    System.out.println("cancel?");
                     queueBTN.setText(Status.get(current));
                     queueBTN.setDisable(true);
                     if (current == 0) cancelOrderBTN.setDisable(true);
@@ -1588,6 +1593,7 @@ public class CenterPanesGUIController implements Initializable {
     private void initOrderInfo(Order rowData) {
         orderCodeInfoLBL.setText(rowData.getName());
         orderEnabledInfoLBL.setText((rowData.getEnabled()) ? "Habilitado" : "Deshabilitado");
+        orderEnabledInfoLBL.setId("enabled-label");
         orderDateInfoLBL.setText(rowData.getDateString());
         StringBuilder prodAndQuant = new StringBuilder();
         for (int i = 0, size = rowData.getOrderProducts().size(); i < size; i++) {
@@ -1715,17 +1721,23 @@ public class CenterPanesGUIController implements Initializable {
     void advanceStatusClicked(ActionEvent event) {
         System.out.println("idk");
         if (!orderTBV.getSelectionModel().getSelectedItems().isEmpty()) {
-            orderTBV.getSelectionModel().getSelectedItem().setStatusIndicator(orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator()+1);
+            orderTBV.getSelectionModel().getSelectedItem().setStatusIndicator(orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator());
+            int currentIndex = orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator();
+            System.out.println(currentIndex);
+            GH.changeOrderStatus(GH.searchAnOrder(orderTBV.getSelectionModel().getSelectedItem().getName()),1);
         }
         if (orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator() == 4) {
             cancelOrderBTN.setDisable(true);
         }
+        initOrderPane();
     }
 
     @FXML
     void cancelStatusClicked(ActionEvent event) {
         System.out.println("tis me, mario");
+        initOrderPane();
         queueBTN.setDisable(true);
+        GH.changeOrderStatus(GH.searchAnOrder(orderTBV.getSelectionModel().getSelectedItem().getName()),0);
     }
 
     @FXML
@@ -2040,6 +2052,7 @@ public class CenterPanesGUIController implements Initializable {
     private void initUserInfo(User rowData) {
         empFullNameInfoLBL.setText(rowData.getName() + " " + rowData.getLastname());
         empEnabledInfoLBL.setText(rowData.getEnabled() ? "(Habilitado)":"(Deshabilitado)");
+        empEnabledInfoLBL.setId("enabled-label");
         empDInfoLBL.setText(rowData.getId());
         empUserInfoLBL.setText(rowData.getUsername());
     }
@@ -2059,7 +2072,7 @@ public class CenterPanesGUIController implements Initializable {
                     productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
                     productInfo.getIcons().add(icon);
                     productInfo.setTitle("Error");
-                    deleteMessageLBL.setText("Datos erroneos. Intente de nuevo.");
+                    deleteMessageLBL.setText("Datos erroneos o incompletos. Intente de nuevo.");
                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
                     productInfo.setResizable(false);
                     productInfo.show();
@@ -2080,12 +2093,11 @@ public class CenterPanesGUIController implements Initializable {
                     productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
                     productInfo.getIcons().add(icon);
                     productInfo.setTitle("Advertencia");
-                    deleteMessageLBL.setText("El uso del usuario root no es recomendado. Proceder con precaución.");
+                    deleteMessageLBL.setText("El uso del usuario root no es recomendado. Proceder con precaución.\nPresione el ícono de la casa para comenzar. ");
                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
                     productInfo.setResizable(false);
                     productInfo.show();
                     loginSuccesfull=true;
-                    //Necesito reactivar los botones aquí pero no sé cómo
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");
                     e.printStackTrace();
@@ -2109,7 +2121,6 @@ public class CenterPanesGUIController implements Initializable {
                     productInfo.setResizable(false);
                     productInfo.show();
                     loginSuccesfull=true;
-                    //Aquí también
                 } catch (Exception e) {
                     System.out.println("Can't load window at the moment.");  //-_-
                     e.printStackTrace();

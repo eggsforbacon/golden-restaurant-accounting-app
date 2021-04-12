@@ -1,11 +1,17 @@
 package model;
 public enum Status{
-	CANCELADO(0),SOLICITADO(1),EN_PROCESO(2),ENVIADO(3),ENTREGADO(4);
+	CANCELADO(0,"Cancelado"),SOLICITADO(1,"Solicitado"),EN_PROCESO(2,"En Proceso"),ENVIADO(3,"Enviado"),ENTREGADO(4,"Entregado");
 
 	int index;
+	String name;
 
-	Status(int index) {
+	Status(int index, String name) {
 		this.index = index;
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 	public static String get(int index){

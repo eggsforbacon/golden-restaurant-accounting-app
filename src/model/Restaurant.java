@@ -1777,11 +1777,12 @@ public class Restaurant{
 	 }
 	 public boolean changeOrderStatus(int index,int indicator) { 
 		 if(index!=-1) {
+			 System.out.println(indicator);
 			 String check = restaurantOrders.get(index).getOrderStatus();
 			 if(!check.equals("ENTREGADO") && !check.equals("CANCELADO")) {
 				 restaurantOrders.get(index).setStatusIndicator(indicator);
 				 restaurantOrders.get(index).setModifierUser(currentUser);
-				 if(restaurantOrders.get(index).getOrderStatus()=="ENTREGADO") {
+				 if(restaurantOrders.get(index).getOrderStatus().equals("ENTREGADO")) {
 					 double priceOfTheOrder = restaurantOrders.get(index).getPriceOfTheOrder();
 					 int employeeIndex = employeeIndexWithemployee(restaurantOrders.get(index).getOrderEmployee());
 					 restaurantEmployees.get(employeeIndex).addAnOrderDelivered();
