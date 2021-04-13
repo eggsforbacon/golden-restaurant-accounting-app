@@ -1520,16 +1520,18 @@ public class CenterPanesGUIController implements Initializable {
         orderTBV.setOnMouseClicked(event -> {
             if (!orderTBV.getSelectionModel().getSelectedItems().isEmpty()) {
                 int current = orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator();
-                System.out.println(current);
+                String stat = orderTBV.getSelectionModel().getSelectedItem().getOrderStatus();
+                System.out.println(current + ": " + stat);
                 if (current != 0 && current != 4) {
                     System.out.println("here");
-                    queueBTN.setText(Status.get(current + 1));
+                    queueBTN.setText(">>" + Status.get(current + 1));
                     queueBTN.setDisable(false);
                     cancelOrderBTN.setDisable(false);
                 } else {
                     System.out.println("cancel?");
                     queueBTN.setText(Status.get(current));
                     queueBTN.setDisable(true);
+                    cancelOrderBTN.setDisable(true);
                     if (current == 0) cancelOrderBTN.setDisable(true);
                 }
             } else {
@@ -1668,15 +1670,21 @@ public class CenterPanesGUIController implements Initializable {
             newProdQuantities = new ArrayList<>();
         }
         String observations = newOrderObsTA.getText();
-        String[] clientNames = clientOrderTF.getText().split(",");
+        String[] clientNames = clientOrderTF.getText().trim().split("\\s");
         int newClientIndex;
         try {
-             newClientIndex = GH.clientIndexWithNameAndLastname(clientNames[0], clientNames[1]);
+            newClientIndex = GH.clientIndexWithNameAndLastname(clientNames[0], clientNames[1]);
         } catch (Exception e) {
+            System.out.println(clientNames[0]);
+            System.out.println(clientNames[1]);
             newClientIndex = -1;
         }
-        int newEmployeeIndex = GH.employeeIndexWithId(employeeOrderTF.getText());
+        int newEmployeeIndex = GH.employeeIndexWithId(employeeOrderTF.getText().trim());
         boolean canAdd = !newProducts.isEmpty() && !newProdQuantities.isEmpty() && newClientIndex != -1 && newEmployeeIndex != -1;
+        System.out.println(!newProducts.isEmpty());
+        System.out.println(!newProdQuantities.isEmpty());
+        System.out.println(newClientIndex != -1);
+        System.out.println(newEmployeeIndex != -1);
         if (canAdd) {
             Employee newEmployee = GH.getRestaurantEmployees().get(newEmployeeIndex);
             Client newClient = GH.getRestaurantClients().get(newClientIndex);
@@ -1719,25 +1727,26 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void advanceStatusClicked(ActionEvent event) {
-        System.out.println("idk");
+        System.out.println("Advancing...");
         if (!orderTBV.getSelectionModel().getSelectedItems().isEmpty()) {
-            orderTBV.getSelectionModel().getSelectedItem().setStatusIndicator(orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator());
             int currentIndex = orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator();
-            System.out.println(currentIndex);
+            System.out.println("---" + currentIndex);
             GH.changeOrderStatus(GH.searchAnOrder(orderTBV.getSelectionModel().getSelectedItem().getName()),1);
         }
         if (orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator() == 4) {
             cancelOrderBTN.setDisable(true);
         }
+        System.out.println("Advanced!");
         initOrderPane();
     }
 
     @FXML
     void cancelStatusClicked(ActionEvent event) {
         System.out.println("tis me, mario");
-        initOrderPane();
-        queueBTN.setDisable(true);
         GH.changeOrderStatus(GH.searchAnOrder(orderTBV.getSelectionModel().getSelectedItem().getName()),0);
+        queueBTN.setDisable(true);
+        cancelOrderBTN.setDisable(true);
+        initOrderPane();
     }
 
     @FXML

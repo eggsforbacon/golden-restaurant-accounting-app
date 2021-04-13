@@ -193,7 +193,7 @@ public class Restaurant{
 	}
 	
 	//Export methods
-	
+
 	public void generateOrderReport(String fileName,String separator,LocalDateTime startDate,LocalDateTime endDate) throws FileNotFoundException{
 	    PrintWriter pw = new PrintWriter(fileName);
 	    sortOrdersByDate();
@@ -254,158 +254,149 @@ public class Restaurant{
 	
 	//Serialization methods
 	
-	 public void saveProductData() throws IOException{
-		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(PRODUCT_SAVE_PATH_FILE));
-		 oos.writeObject(restaurantProducts);
-		 oos.close();
-	 }
+	public void saveProductData() throws IOException{
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(PRODUCT_SAVE_PATH_FILE));
+		oos.writeObject(restaurantProducts);
+		oos.close();
+	}
 	 
-	 @SuppressWarnings("unchecked")
-	 public boolean loadProductData() throws IOException, ClassNotFoundException{
-		 File f = new File(PRODUCT_SAVE_PATH_FILE);
-		 boolean loaded = false;
-		 if(f.exists()){
-			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
-			 restaurantProducts = (ArrayList<Product>)ois.readObject();
-			 ois.close();
-			 loaded = true;
-		 }
-		 return loaded;
-	 }
-	 public void saveIngredientData() throws IOException{
-		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(INGREDIENT_SAVE_PATH_FILE));
-		 oos.writeObject(restaurantIngredients);
-		 oos.close();
-	 }
-	 
-	 @SuppressWarnings("unchecked")
-	 public boolean loadIngredientData() throws IOException, ClassNotFoundException{
-		 File f = new File(INGREDIENT_SAVE_PATH_FILE);
-		 boolean loaded = false;
-		 if(f.exists()){
-			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
-			 restaurantIngredients = (ArrayList<Ingredient>)ois.readObject();
-			 ois.close();
-			 loaded = true;
-		 }
-		 return loaded;
-	 }
-	 
-	 public void savePlateTypeData() throws IOException{
-		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(PLATETYPE_SAVE_PATH_FILE));
-		 oos.writeObject(restaurantProducts);
-		 oos.close();
-	 }
-	 
-	 @SuppressWarnings("unchecked")
-	 public boolean loadPlateTypeData() throws IOException, ClassNotFoundException{
-		 File f = new File(PLATETYPE_SAVE_PATH_FILE);
-		 boolean loaded = false;
-		 if(f.exists()){
-			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
-			 restaurantPlateTypes = (ArrayList<PlateType>)ois.readObject();
-			 ois.close();
-			 loaded = true;
-		 }
-		 return loaded;
-	 }
-	 
-	 public void saveClientData() throws IOException{
-		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(CLIENT_SAVE_PATH_FILE));
-		 oos.writeObject(restaurantClients);
-		 oos.close();
-	 }
-	 
-	 @SuppressWarnings("unchecked")
-	 public boolean loadClientData() throws IOException, ClassNotFoundException{
-		 File f = new File(CLIENT_SAVE_PATH_FILE);
-		 boolean loaded = false;
-		 if(f.exists()){
-			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
-			 restaurantClients = (ArrayList<Client>)ois.readObject();
-			 ois.close();
-			 loaded = true;
-		 }
-		 return loaded;
-	 }
-	 
-	 public void saveEmployeeData() throws IOException{
-		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(EMPLOYEE_SAVE_PATH_FILE));
-		 oos.writeObject(restaurantEmployees);
-		 oos.close();
-	 }
-	 
-	 @SuppressWarnings("unchecked")
-	 public boolean loadEmployeesData() throws IOException, ClassNotFoundException{
-		 File f = new File(EMPLOYEE_SAVE_PATH_FILE);
-		 boolean loaded = false;
-		 if(f.exists()){
-			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
-			 restaurantEmployees = (ArrayList<Employee>)ois.readObject();
-			 loaded = true;
-			 ois.close();
-		 }
-		 return loaded;
-	 }
-	 
-	 public void saveUserData() throws IOException{
-		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(USER_SAVE_PATH_FILE));
-		 oos.writeObject(restaurantUsers);
-		 oos.close();
-	 }
-	 
-	 @SuppressWarnings("unchecked")
-	 public boolean loadUserData() throws IOException, ClassNotFoundException{
-		 File f = new File(USER_SAVE_PATH_FILE);
-		 boolean loaded = false;
-		 if(f.exists()){
-			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
-			 restaurantUsers = (ArrayList<User>)ois.readObject();
-			 ois.close();
-			 loaded = true;
-		 }
-		 return loaded;
-	 }
-	 
-	 public void saveOrderData() throws IOException{
-		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ORDER_SAVE_PATH_FILE));
-		 oos.writeObject(restaurantOrders);
-		 oos.close();
-	 }
-	 
-	 @SuppressWarnings("unchecked")
-	 public boolean loadOrderData() throws IOException, ClassNotFoundException{
-		 File f = new File(PRODUCT_SAVE_PATH_FILE);
-		 boolean loaded = false;
-		 if(f.exists()){
-			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
-			 restaurantOrders = (ArrayList<Order>)ois.readObject();
-			 ois.close();
-			 loaded = true;
-		 }
-		 return loaded;
-	 }
-	 
-	 public void saveAllData() throws IOException{
-		 saveProductData();
-		 saveIngredientData();
-		 savePlateTypeData();
-		 saveClientData();
-		 saveEmployeeData();
-		 saveUserData();
-		 saveOrderData();
-	 }
+	@SuppressWarnings("unchecked")
+	public boolean loadProductData() throws IOException, ClassNotFoundException{
+		File f = new File(PRODUCT_SAVE_PATH_FILE);
+		boolean loaded = false;
+		if(f.exists()){
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			restaurantProducts = (ArrayList<Product>)ois.readObject();
+			ois.close();
+			loaded = true;
+		}
+		return loaded;
+	}
 
+	public void saveIngredientData() throws IOException{
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(INGREDIENT_SAVE_PATH_FILE));
+		oos.writeObject(restaurantIngredients);
+		oos.close();
+	}
+	 
+	@SuppressWarnings("unchecked")
+	public boolean loadIngredientData() throws IOException, ClassNotFoundException{
+		File f = new File(INGREDIENT_SAVE_PATH_FILE);
+		boolean loaded = false;
+		if(f.exists()){
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			restaurantIngredients = (ArrayList<Ingredient>)ois.readObject();
+			ois.close();
+			loaded = true;
+		}
+		return loaded;
+	}
+	 
+	public void savePlateTypeData() throws IOException{
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(PLATETYPE_SAVE_PATH_FILE));
+		oos.writeObject(restaurantProducts);
+		oos.close();
+	}
+	 
+	@SuppressWarnings("unchecked")
+	public boolean loadPlateTypeData() throws IOException, ClassNotFoundException{
+		File f = new File(PLATETYPE_SAVE_PATH_FILE);
+		boolean loaded = false;
+		if(f.exists()){
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			restaurantPlateTypes = (ArrayList<PlateType>)ois.readObject();
+			ois.close();
+			loaded = true;
+		}
+		return loaded;
+	}
+	 
+	public void saveClientData() throws IOException{
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(CLIENT_SAVE_PATH_FILE));
+		oos.writeObject(restaurantClients);
+		oos.close();
+	}
+	 
+	@SuppressWarnings("unchecked")
+	public boolean loadClientData() throws IOException, ClassNotFoundException{
+		File f = new File(CLIENT_SAVE_PATH_FILE);
+		boolean loaded = false;
+		if(f.exists()){
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			restaurantClients = (ArrayList<Client>)ois.readObject();
+			ois.close();
+			loaded = true;
+		}
+		return loaded;
+	}
+	 
+	public void saveEmployeeData() throws IOException{
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(EMPLOYEE_SAVE_PATH_FILE));
+		oos.writeObject(restaurantEmployees);
+		oos.close();
+	}
+	 
+	@SuppressWarnings("unchecked")
+	public boolean loadEmployeesData() throws IOException, ClassNotFoundException{
+		File f = new File(EMPLOYEE_SAVE_PATH_FILE);
+		boolean loaded = false;
+		if(f.exists()){
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			restaurantEmployees = (ArrayList<Employee>)ois.readObject();
+			loaded = true;
+			ois.close();
+		}
+		return loaded;
+	}
+	 
+	public void saveUserData() throws IOException{
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(USER_SAVE_PATH_FILE));
+		oos.writeObject(restaurantUsers);
+		oos.close();
+	}
+	 
+	@SuppressWarnings("unchecked")
+	public boolean loadUserData() throws IOException, ClassNotFoundException{
+		File f = new File(USER_SAVE_PATH_FILE);
+		boolean loaded = false;
+		if(f.exists()){
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			restaurantUsers = (ArrayList<User>)ois.readObject();
+			ois.close();
+			loaded = true;
+		}
+		return loaded;
+	}
+	 
+	public void saveOrderData() throws IOException{
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ORDER_SAVE_PATH_FILE));
+		oos.writeObject(restaurantOrders);
+		oos.close();
+	}
+	 
+	@SuppressWarnings("unchecked")
+	public boolean loadOrderData() throws IOException, ClassNotFoundException{
+		File f = new File(PRODUCT_SAVE_PATH_FILE);
+		boolean loaded = false;
+		if(f.exists()){
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			restaurantOrders = (ArrayList<Order>)ois.readObject();
+			ois.close();
+			loaded = true;
+		}
+		return loaded;
+	}
+	 
+	public void saveAllData() throws IOException{
+		saveProductData();
+		saveIngredientData();
+		savePlateTypeData();
+		saveClientData();
+		saveEmployeeData();
+		saveUserData();
+		saveOrderData();
+	}
 
-
-	/**
-	Does a search in the restaurant <br>
-	<b> pre: </b>The arrayList it receives must be sorted<br>
-	<b> post: </b>The object is found or doesn't exist<br>
-	@param aL The ArrayList in which the object will be searched
-	@param name The name of the object that will be searched
-	@return index
-	 */
 	public int binarySearch(ArrayList<?> aL,String name) {
 		int pos = -1;
 		int i = 0;
@@ -442,13 +433,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Given the id, returns the index of a user of the user ArrayList<br>
-	 * <b>Pre: </b>The arrayList "restaurantUsers" must be sorted. To be useful, there must be at least one user in the ArrayList<br>
-	 * <b>Post: </b>The index of the user is obtained if it exists<br>
-	 * @param id The id of the user
-	 * @return index
-	 */
+
 	public int userIndexWithId(String id) {	//Use it when you have the user id but not the user itself
 		int index = binarySearchForEmployees(restaurantUsers,id);
 		return index;
@@ -461,13 +446,7 @@ public class Restaurant{
 		}
 		return -1;
 	}
-	/**
-	 * Given the user, returns the index of that user in the users ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one user in the ArrayList<br>
-	 * <b>Post: </b>The index of the user is obtained if it exists<br>
-	 * @param user The user searched
-	 * @return index
-	 */
+
 	public int UserIndexWithUser(User user) { //Use it when you have the user itself
 		int index = restaurantUsers.indexOf(user);
 		return index;
@@ -507,25 +486,14 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Checks if the user that is being used isn't the root user.<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>It is stated whether or not the root user is being used<br>
-	 * @return true if the current user is the root user, false if not
-	 */
+
 	public boolean checkFirstTime() {
 		if(firstTime&&currentUser.equals(rootUser)) {
 			return true;
 		}
 		return false;
 	}
-	/**
-	 * Changes the user that is being used.<br>
-	 * <b>Pre: </b>Needs an index indicating what user will be used<br>
-	 * <b>Post: </b>The user is changed<br>
-	 * @param index The index of the user in the users ArrayList
-	 * @return true if the user was changed, false if not
-	 */
+
 	public boolean changeUser(int index) {
 		if(index!=-1) {
 			currentUser=restaurantUsers.get(index);
@@ -538,14 +506,7 @@ public class Restaurant{
 		return false;
 
 	}
-	/**
-	 * Searchs for a user from the ArrayList or uses the rootUser<br>
-	 * <b>Pre: </b>There must be at least one user <br>
-	 * <b>Post: </b>Finds the user if it existed<br>
-	 * @param username The username of the user that will be searched
-	 * @param password The password of the user that will be searched
-	 * @return index
-	 */
+
 	public int login(String username,String password) {
 		int index = -1; //Not found
 		boolean band = false;
@@ -564,18 +525,6 @@ public class Restaurant{
 
 	//Product Options
 
-
-	/**
-	 * Adds a product to the products ArrayList<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>Adds a product to the products ArrayList if there isn't conflicts with it<br>
-	 * @param name The name of the product
-	 * @param pt The plate type of the product
-	 * @param ingrdnts The ingredients of the product
-	 * @param productSizes The sizes of the product
-	 * @param sizesPrices The respective prices of the sizes of the product
-	 * @return True if the product was added, false if not
-	 */
 	public boolean addProduct(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
 		int index = productIndexWithName(name);
 		if(index==-1&&pt.getEnabled()) {
@@ -587,12 +536,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Adds a product for each size to the productsWithTheirSizes ArrayList<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>Adds a product for each size to the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
-	 * @param product The original product in the restaurantProducts ArrayList
-	 */
+
 	private void addToproductsWithTheirSizes(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
 		for(int i=0;i<productSizes.size();i++) {
 			productsWithTheirSizes.add(new Product(name,currentUser,pt,ingrdnts,productSizes,sizesPrices,i));
@@ -600,14 +544,6 @@ public class Restaurant{
 		}
 	}
 
-
-	/**
-	 * Given the name, returns the index of a product of the products ArrayList<br>
-	 * <b>Pre: </b>The arrayList "restaurantProducts" must be sorted. To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>The index of the product is obtained if it exists<br>
-	 * @param name The name of the product
-	 * @return index
-	 */
 	public int productIndexWithName(String name) {	//Use it when you have the product name but not the product itself
 		ProductInsertionSortByName();
 		int index =  binarySearch(restaurantProducts,name);
@@ -622,25 +558,11 @@ public class Restaurant{
 		return -1;
 	}
 
-	/**
-	 * Given the product, returns the index of that product in the products ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>The index of the product is obtained if it exists<br>
-	 * @param product The product searched
-	 * @return index
-	 */
 	public int productIndexWithProduct(Product product) { //Use it when you have the product itself
 		int index = restaurantProducts.indexOf(product);
 		return index;
 	}
 
-	/**
-	 * Deletes a product of the products ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Deletes a product of the products ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the product that is going to be deleted
-	 * @return True if the product was deleted, false if not
-	 */
 	public boolean deleteProduct(int index) {
 		if(index!=-1) {
 			Product deleted = restaurantProducts.get(index);
@@ -654,13 +576,6 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Checks if a product exists in the orders ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one order in the ArrayList<br>
-	 * <b>Post: </b>Indicates if the product is used or not<br>
-	 * @param product The product that will be searched
-	 * @return True if the product was found, false if not
-	 */
 	public boolean OrderHasTheProduct(Product product) {
 		for(int i=0;i<restaurantOrdersSize;i++) {
 			ArrayList<Product> pdcts = restaurantOrders.get(i).getOrderProducts();
@@ -670,12 +585,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Deletes products of the productsWithTheirSizes ArrayList for each size of the product in the original ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Deletes products of the productsWithTheirSizes ArrayList for each size of the product in the original ArrayList if there isn't conflicts with it<br>
-	 * @param product The original product in the restaurantProducts ArrayList
-	 */
+
 	private void deleteInproductsWithTheirSizes(Product product) {
 		ArrayList<Product> productsToDelete = new ArrayList<Product>();
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
@@ -689,13 +599,6 @@ public class Restaurant{
 		}
 	}
 
-	/**
-	 * Disables a product of the restaurantProducts ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Disables a product of the products ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the product that is going to be disabled
-	 * @return True if the product was disabled, false if not
-	 */
 	public boolean disableProduct(int index) {
 		if(index!=-1) {
 			Product disabled = restaurantProducts.get(index);
@@ -706,12 +609,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Disables products of the productsWithTheirSizes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Disables products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
-	 * @param product The original product in the restaurantProducts ArrayList
-	 */
+
 	private void disableInproductsWithTheirSizes(Product product) {
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
@@ -721,13 +619,6 @@ public class Restaurant{
 		}
 	}
 
-	/**
-	 * Enables a product of the products ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Enables a product of the products ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the product that is going to be enabled
-	 * @return True if the product was enabled, false if not
-	 */
 	public boolean enableProduct(int index) {
 		if(index!=-1) {
 			Product enabled = restaurantProducts.get(index);
@@ -739,12 +630,6 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Enables products of the productsWithTheirSizes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Enables products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
-	 * @param product The original product in the restaurantProducts ArrayList
-	 */
 	private void enableInproductsWithTheirSizes(Product product) {
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
@@ -754,11 +639,6 @@ public class Restaurant{
 		}
 	}
 
-	/**
-	 * Sorts the products in the ArrayList<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>Now the products in the ArrayList are sorted <br>
-	 */
 	public void ProductInsertionSortByName(){                                            
 		int i=0;
 		int j=0;
@@ -780,14 +660,6 @@ public class Restaurant{
 		Collections.sort(productsWithTheirSizes,priceComparator);
 	}
 
-	/**
-	 * Changes the name of a product of the products ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Changes the name of a product of the products ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the product whose name will be changed
-	 * @param newName The new name of the product
-	 * @return True if the product's name was changed, false if not
-	 */
 	public boolean changeProductName(int index,String newName) {
 		if(index!=-1) {
 			int nameIsRepeated = productIndexWithName(newName);
@@ -801,13 +673,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Changes names of the products of the productsWithTheirSizes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Changes names of the products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
-	 * @param product The original product in the restaurantProducts ArrayList
-	 * @param name The new name for the products
-	 */
+
 	private void changeNameInproductsWithTheirSizes(Product product,String name) {
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
@@ -817,14 +683,6 @@ public class Restaurant{
 		}
 	}
 
-	/**
-	 * Changes the Plate Type of a product of the products ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Changes the plate type of a product of the products ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the product whose name will be changed
-	 * @param newPlateType The new plate type of the product
-	 * @return True if the product's name was changed, false if not
-	 */
 	public boolean changeProductPlateType(int index,PlateType newPlateType) {
 		if(index!=-1 && newPlateType.getEnabled()) {
 			Product productToChangePlateType=restaurantProducts.get(index);
@@ -835,13 +693,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Changes the plate type of the products of the productsWithTheirSizes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Changes the plate type of the products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
-	 * @param product The original product in the restaurantProducts ArrayList
-	 * @param pt The new plate type for the products
-	 */
+
 	private void changePlateTypeInproductsWithTheirSizes(Product product,PlateType pt) {
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
@@ -851,14 +703,6 @@ public class Restaurant{
 		}
 	}
 
-	/**
-	 * Adds an ingredient to a product of the products ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Adds an ingredient to a product of the products ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the product to which an ingredient will be added
-	 * @param ingredient The ingredient that will be added
-	 * @return b True if the ingredient was added, false if not
-	 */
 	public boolean addAnIngredientToAProduct(int index,Ingredient ingredient) {
 		boolean b=false;
 		if(index!=-1) {
@@ -870,16 +714,6 @@ public class Restaurant{
 		return b;
 	}
 
-	
-
-	/**
-	 * Deletes an ingredient of a product of the products ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Deletes an ingredient of a product of the products ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the product to which an ingredient will be added
-	 * @param ingredient The name of the ingredient that will be deleted
-	 * @return b True if the ingredient was deleted, false if not
-	 */
 	public boolean deleteAnIngredientOfAProduct(int index,String ingredientName) {
 		boolean b=false;
 		if(index!=-1) {
@@ -897,13 +731,6 @@ public class Restaurant{
 		restaurantProducts.get(index).deleteAllIngredients();
 	}
 
-	/**
-	 * Adds an ingredient to the products of the productsWithTheirSizes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Adds an ingredient to the products of the productsWithTheirSizes ArrayList if there isn't conflicts with it<br>
-	 * @param product The original product in the restaurantProducts ArrayList
-	 * @param ingredient The ingredient that will be added
-	 */
 	private void deletesAnIngredientInproductsWithTheirSizes(Product product,String name) {
 		for(int i=0;i<productsWithTheirSizesSize;i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
@@ -958,13 +785,6 @@ public class Restaurant{
 
 	//Ingredients Methods
 
-	/**
-	 * Adds an ingredient to the ingredients ArrayList<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>Adds an ingredient to the ingredients ArrayList if there isn't conflicts with it<br>
-	 * @param name The name of the ingredient
-	 * @return True if the product was added, false if not
-	 */
 	public boolean addAnIngredientToTheRestaurant(String name) {
 		int index = ingredientIndexWithName(name);
 		if(index==-1) {
@@ -976,37 +796,18 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Given the name, returns the index of a ingredient of the ingredient ArrayList<br>
-	 * <b>Pre: </b>The arrayList "restaurantIngredients" must be sorted. To be useful, there must be at least one ingredient in the ArrayList<br>
-	 * <b>Post: </b>The index of the ingredient is obtained if it exists<br>
-	 * @param name The name of the ingredient
-	 * @return index
-	 */
 	public int ingredientIndexWithName(String name) {	//Use it when you have the ingredient name but not the ingredient itself
 		selectionSortIngredients();
 		int index =  binarySearch(restaurantIngredients,name);
 		return index;
 	}
 
-	/**
-	 * Given the ingredient, returns the index of that ingredient in the ingredients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
-	 * <b>Post: </b>The index of the ingredient is obtained if it exists<br>
-	 * @param ingredient The ingredient searched
-	 * @return index
-	 */
 	public int ingredientIndexWithIngredient(Ingredient ingredient) { //Use it when you have the ingredient itself
 		int index = restaurantIngredients.indexOf(ingredient);
 		return index;
 	}
 
-	/**
-	 * Sorts the ingredients in the ArrayList<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>Now the products in the ArrayList are sorted <br>
-	 */
-	public void selectionSortIngredients() { 
+	public void selectionSortIngredients() {
 		int n = restaurantIngredientsSize;
 		for (int i = 0; i < n-1; i++){ 
 			int min_idx = i; 
@@ -1025,14 +826,7 @@ public class Restaurant{
 		Comparator<Ingredient> nameComparator = new IngredientNameComparator();
 		Collections.sort(restaurantIngredients,nameComparator);
 	}
-	
-	/**
-	 * Deletes an ingredient of the ingredients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
-	 * <b>Post: </b>Deletes a ingredient of the ingredients ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the ingredient that is going to be deleted
-	 * @return True if the ingredient was deleted, false if not
-	 */
+
 	public boolean deleteIngredient(int index) {
 		if(index!=-1) {
 			Ingredient deleted = restaurantIngredients.get(index);
@@ -1045,13 +839,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Checks if a ingredient is in one of the ingredients ArrayList of the products ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Indicates if the ingredient is used or not<br>
-	 * @param ingredient The ingredient that will be searched
-	 * @return True if the ingredient was found, false if not
-	 */
+
 	public boolean productHasTheIngredient(Ingredient ingredient) {
 		for(int i=0;i<restaurantProductsSize;i++) {
 			ArrayList<Ingredient> ingredients = restaurantProducts.get(i).getIngrdnts();
@@ -1062,13 +850,6 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Enables an ingredient of the ingredients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
-	 * <b>Post: </b>Enables a ingredient of the ingredients ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the ingredient that is going to be enabled
-	 * @return True if the ingredient was enabled, false if not
-	 */
 	public boolean enableIngredient(int index) {
 		if(index!=-1) {
 			restaurantIngredients.get(index).setEnabled(true);
@@ -1078,13 +859,6 @@ public class Restaurant{
 		return false;
 	}
 
-	/*
-	 * Disables an ingredient of the ingredients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
-	 * <b>Post: </b>Disables a ingredient of the ingredients ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the ingredient that is going to be disabled
-	 * @return True if the ingredient was disabled, false if not
-	 */
 	public boolean disableIngredient(int index) {
 		if(index!=-1) {
 			restaurantIngredients.get(index).setEnabled(false);
@@ -1094,14 +868,6 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Changes the name of a ingredient of the ingredients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one ingredient in the ArrayList<br>
-	 * <b>Post: </b>Changes the name of a ingredient of the ingredients ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the ingredient whose name will be changed
-	 * @param newName The new name of the ingredient
-	 * @return True if the ingredient's name was changed, false if not
-	 */
 	public boolean changeingredientName(int index,String newName) {
 		if(index!=-1) {
 			int ingredientIsRepeated = ingredientIndexWithName(newName);
@@ -1116,13 +882,6 @@ public class Restaurant{
 
 
 	//PlateType methods
-	/**
-	 * Adds a plateType to the plateTypes ArrayList<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>Adds a plateType to the plateTypes ArrayList if there isn't conflicts with it<br>
-	 * @param name The name of the plateType
-	 * @return True if the product was added, false if not
-	 */
 	public boolean addAPlateTypeToTheRestaurant(String name) {
 		int index = plateTypeIndexWithName(name);
 		if(index==-1) {
@@ -1139,38 +898,17 @@ public class Restaurant{
 		Collections.sort(restaurantPlateTypes,PlateTypeNameComparator);
 	}
 
-	/**
-	 * Given the name, returns the index of a plateType of the plateType ArrayList<br>
-	 * <b>Pre: </b>The arrayList "restaurantPlateTypes" must be sorted. To be useful, there must be at least one plateType in the ArrayList<br>
-	 * <b>Post: </b>The index of the plateType is obtained if it exists<br>
-	 * @param name The name of the plateType
-	 * @return index
-	 */
 	public int plateTypeIndexWithName(String name) {	//Use it when you have the plateType name but not the plateType itself
 		collectionSortPlateTypes();
 		int index =  binarySearch(restaurantPlateTypes,name);
 		return index;
 	}
 
-	/**
-	 * Given the plateType, returns the index of that plateType in the plateTypes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one plateType in the ArrayList<br>
-	 * <b>Post: </b>The index of the plateType is obtained if it exists<br>
-	 * @param plateType The plateType searched
-	 * @return index
-	 */
 	public int plateTypeIndexWithplateType(PlateType plateType) { //Use it when you have the plateType itself
 		int index = restaurantPlateTypes.indexOf(plateType);
 		return index;
 	}
 
-	/**
-	 * Deletes a plateType of the plateTypes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one plateType in the ArrayList<br>
-	 * <b>Post: </b>Deletes a plateType of the plateTypes ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the plateType that is going to be deleted
-	 * @return True if the plateType was deleted, false if not
-	 */
 	public boolean deletePlateType(int index) {
 		if(index!=-1) {
 			PlateType deleted = restaurantPlateTypes.get(index);
@@ -1183,13 +921,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Checks if a plateType is in one of the plateTypes ArrayList of the products ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one product in the ArrayList<br>
-	 * <b>Post: </b>Indicates if the plateType is used or not<br>
-	 * @param plateType The plateType that will be searched
-	 * @return True if the plateType was found, false if not
-	 */
+
 	public boolean productHasThePlateType(PlateType plateType) {
 		for(int i=0;i<restaurantProductsSize;i++) {
 			if(restaurantProducts.get(i).getPt().equalsIgnoreCase(plateType.getName())) {
@@ -1198,13 +930,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Enables a plateType of the plateTypes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one plateType in the ArrayList<br>
-	 * <b>Post: </b>Enables a plateType of the plateTypes ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the plateType that is going to be enabled
-	 * @return True if the plateType was enabled, false if not
-	 */
+
 	public boolean enablePlateType(int index) {
 		if(index!=-1) {
 			restaurantPlateTypes.get(index).setEnabled(true);
@@ -1214,13 +940,6 @@ public class Restaurant{
 		return false;
 	}
 
-	/*
-	 * Disables a plateType of the plateTypes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one plateType in the ArrayList<br>
-	 * <b>Post: </b>Disables a plateType of the plateTypes ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the plateType that is going to be disabled
-	 * @return True if the plateType was disabled, false if not
-	 */
 	public boolean disablePlateType(int index) {
 		if(index!=-1) {
 			restaurantPlateTypes.get(index).setEnabled(false);
@@ -1230,14 +949,6 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Changes the name of a plateType of the plateTypes ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one plateType in the ArrayList<br>
-	 * <b>Post: </b>Changes the name of a plateType of the plateTypes ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the plateType whose name will be changed
-	 * @param newName The new name of the plateType
-	 * @return True if the plateType's name was chaged, false if not
-	 */
 	public boolean changePlateTypeName(int index,String newName) {
 		if(index!=-1) {
 			int plateTypeIsRepeated = plateTypeIndexWithName(newName);
@@ -1250,18 +961,7 @@ public class Restaurant{
 	}
 
 	//Clients
-	/**
-	 * Adds a client to the clients ArrayList<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>Adds a client to the clients ArrayList if there isn't conflicts with it<br>
-	 * @param name The name of the client
-	 * @param lastname The lastname of the client
-	 * @param id The id of the client
-	 * @param address The address of the client
-	 * @param phoneNumber The phone number of the client
-	 * @param observations The observations of the client
-	 * @return True if the product was added, false if not
-	 */
+
 	public boolean addAClientToTheRestaurant(String name,String lastname,String id,String address,String phoneNumber,String observations) {
 		if(restaurantClients.isEmpty()) {
 			Client toAdd = new Client(name,currentUser,lastname,id,address,phoneNumber,observations);
@@ -1339,37 +1039,16 @@ public class Restaurant{
 		return pos;
 	}
 
-	/**
-	 * Given the name, returns the index of a client of the client ArrayList<br>
-	 * <b>Pre: </b>The arrayList "restaurantClients" must be sorted. To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>The index of the client is obtained if it exists<br>
-	 * @param name The name of the client
-	 * @return index
-	 */
 	public int clientIndexWithNameAndLastname(String name,String lastname) {	//Use it when you have the client name but not the client itself
 		int index =  binarySearchForClients(restaurantClients,name,lastname);
 		return index;
 	}
 
-	/**
-	 * Given the client, returns the index of that client in the clients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>The index of the client is obtained if it exists<br>
-	 * @param client The client searched
-	 * @return index
-	 */
 	public int clientIndexWithclient(Client client) { //Use it when you have the client itself
 		int index = restaurantClients.indexOf(client);
 		return index;
 	}
 
-	/**
-	 * Deletes a client of the clients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>Deletes a client of the clients ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the client that is going to be deleted
-	 * @return True if the client was deleted, false if not
-	 */
 	public boolean deleteClient(int index) {
 		if(index!=-1) {
 			Client deleted = restaurantClients.get(index);
@@ -1393,13 +1072,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Enables a client of the clients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>Enables a client of the clients ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the client that is going to be enabled
-	 * @return True if the client was enabled, false if not
-	 */
+
 	public boolean enableClient(int index) {
 		if(index!=-1) {
 			restaurantClients.get(index).setEnabled(true);
@@ -1409,13 +1082,7 @@ public class Restaurant{
 		return false;
 	}
 
-	/*
-	 * Disables a client of the clients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>Disables a client of the clients ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the client that is going to be disabled
-	 * @return True if the client was disabled, false if not
-	 */
+
 	public boolean disableClient(int index) {
 		if(index!=-1) {
 			restaurantClients.get(index).setEnabled(false);
@@ -1424,14 +1091,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Changes the name of a client of the clients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>Changes the name of a client of the clients ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the client whose name will be changed
-	 * @param newName The new name of the client
-	 * @return True if the client's name was changed, false if not
-	 */
+
 	public boolean changeClientName(int index,String newName) {
 		if(index!=-1) {
 			int clientIsRepeated = clientIndexWithNameAndLastname(newName,restaurantClients.get(index).getLastname());
@@ -1444,14 +1104,6 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Changes the lastname of a client of the clients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>Changes the lastname of a client of the clients ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the client whose lastname will be changed
-	 * @param newLastname The new lastname of the client
-	 * @return True if the client's lastname was changed, false if not
-	 */
 	public boolean changeClientLastname(int index,String newLastname) {
 		if(index!=-1) {
 			int clientIsRepeated = clientIndexWithNameAndLastname(restaurantClients.get(index).getName(),newLastname);
@@ -1464,14 +1116,6 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Changes the id of a client of the clients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>Changes the id of a client of the clients ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the client whose id will be changed
-	 * @param newId The new id of the client
-	 * @return True if the client's id was changed, false if not
-	 */
 	public boolean changeClientId(int index,String newId) {
 		if(index!=-1) {
 			restaurantClients.get(index).setId(newId);
@@ -1481,14 +1125,7 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Changes the address of a client of the clients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>Changes the address of a client of the clients ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the client whose address will be changed
-	 * @param newAddress The new address of the client
-	 * @return True if the client's address was changed, false if not
-	 */
+
 	public boolean changeClientAddress(int index,String newAddress) {
 		if(index!=-1) {
 			restaurantClients.get(index).setAddress(newAddress);
@@ -1498,14 +1135,7 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Changes the phoneNumber of a client of the clients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>Changes the phoneNumber of a client of the clients ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the client whose phoneNumber will be changed
-	 * @param newPhoneNumber The new phoneNumber of the client
-	 * @return True if the client's phoneNumber was changed, false if not
-	 */
+
 	public boolean changeClientPhoneNumber(int index,String newPhoneNumber) {
 		if(index!=-1) {
 			restaurantClients.get(index).setPhoneNumber(newPhoneNumber);
@@ -1515,14 +1145,6 @@ public class Restaurant{
 		return false;
 	}
 
-	/**
-	 * Changes the observations of a client of the clients ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one client in the ArrayList<br>
-	 * <b>Post: </b>Changes the observations of a client of the clients ArrayList if there isn't conflicts with it<br>
-	 * @param index the index of the client whose observations will be changed
-	 * @param newObservations The new observations of the client
-	 * @return True if the client's observations was changed, false if not
-	 */
 	public boolean changeClientObservations(int index,String newObservations) {
 		if(index!=-1) {
 			restaurantClients.get(index).setObservations(newObservations);
@@ -1533,15 +1155,7 @@ public class Restaurant{
 	}
 
 	//Employee methods
-	/**
-	 * Adds a employee to the employees ArrayList<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>Adds a employee to the employees ArrayList if there isn't conflicts with it<br>
-	 * @param name The name of the employee
-	 * @param lastname The lastname of the employee
-	 * @param id The id of the employee
-	 * @return True if the product was added, false if not
-	 */
+
 	public boolean addAnEmployeeToTheRestaurant(String name,String lastname,String id) { //Remember to work in this
 		sortEmployeesById();
 		int index = employeeIndexWithId(id);
@@ -1556,24 +1170,12 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	 * Given the id, returns the index of a employee of the employee ArrayList<br>
-	 * <b>Pre: </b>The arrayList "restaurantEmployees" must be sorted. To be useful, there must be at least one employee in the ArrayList<br>
-	 * <b>Post: </b>The index of the employee is obtained if it exists<br>
-	 * @param id The id of the employee
-	 * @return index
-	 */
+
 	public int employeeIndexWithId(String id) {
 		int index = binarySearchForEmployees(restaurantEmployees,id);
 		return index;
 	}
-	/**
-	 * Given the employee, returns the index of that employee in the employees ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
-	 * <b>Post: </b>The index of the employee is obtained if it exists<br>
-	 * @param employee The employee searched
-	 * @return index
-	 */
+
 	public int employeeIndexWithemployee(Employee employee) { //Use it when you have the employee itself
 		int index = restaurantEmployees.indexOf(employee);
 		return index;
@@ -1601,13 +1203,6 @@ public class Restaurant{
 		Collections.sort(restaurantEmployees,idComparator);
 	}
 
-	/**
-	 * Deletes a employee of the employees ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
-	 * <b>Post: </b>Deletes a employee of the employees ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the employee that is going to be deleted
-	 * @return True if the employee was deleted, false if not
-	 */
 	public boolean deleteEmployee(int index) {
 		if(index!=-1) {
 			Employee deleted = restaurantEmployees.get(index);
@@ -1644,14 +1239,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	
-	/**
-	 * Enables a employee of the employees ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
-	 * <b>Post: </b>Enables a employee of the employees ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the employee that is going to be enabled
-	 * @return True if the employee was enabled, false if not
-	 */
+
 	public boolean enableEmployee(int index) {
 		if(index!=-1) {
 			Employee enabled = restaurantEmployees.get(index);
@@ -1664,14 +1252,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	
-	/*
-	 * Disables a employee of the employees ArrayList<br>
-	 * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
-	 * <b>Post: </b>Disables a employee of the employees ArrayList if there isn't conflicts with it<br>
-	 * @param The index of the employee that is going to be disabled
-	 * @return True if the employee was disabled, false if not
-	 */
+
 	public boolean disableEmployee(int index) {
 		if(index!=-1) {
 			Employee disabled = restaurantEmployees.get(index);
@@ -1683,14 +1264,7 @@ public class Restaurant{
 		}
 		return false;
 	}
-	/**
-	  * Changes the name of a employee of the employees ArrayList<br>
-	  * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
-	  * <b>Post: </b>Changes the name of a employee of the employees ArrayList if there isn't conflicts with it<br>
-	  * @param index the index of the employee whose name will be changed
-	  * @param newName The new name of the employee
-	  * @return True if the employee's name was changed, false if not
-	  */
+
 	public boolean changeEmployeeName(int index,String newName) {
 		 if(index!=-1) {
 			 Employee changeName=restaurantEmployees.get(index);
@@ -1702,130 +1276,110 @@ public class Restaurant{
 		 }
 		 return false;
 	}
-	 
-	 /**
-	  * Changes the lastname of a employee of the employees ArrayList<br>
-	  * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
-	  * <b>Post: </b>Changes the lastname of a employee of the employees ArrayList if there isn't conflicts with it<br>
-	  * @param index the index of the employee whose lastname will be changed
-	  * @param newLastname The new lastname of the employee
-	  * @return True if the employee's lastname was changed, false if not
-	  */
-	 public boolean changeEmployeeLastname(int index,String newLastname) {
-		 if(index!=-1) {
-			 Employee changeLastname=restaurantEmployees.get(index);
-			 restaurantEmployees.get(index).setLastname(newLastname);
-			 restaurantEmployees.get(index).setModifierUser(currentUser);
-			 restaurantUsers.get(indexOfAnUser(changeLastname)).setLastname(newLastname);
-			 restaurantUsers.get(indexOfAnUser(changeLastname)).setModifierUser(currentUser);
-			 return true;
-		 }
-		 return false;
-	 }
-	
-	 /**
-	  * Changes the id of a employee of the employees ArrayList<br>
-	  * <b>Pre: </b>To be useful, there must be at least one employee in the ArrayList<br>
-	  * <b>Post: </b>Changes the id of a employee of the employees ArrayList if there isn't conflicts with it<br>
-	  * @param index the index of the employee whose id will be changed
-	  * @param newId The new id of the employee
-	  * @return True if the employee's id was changed, false if not
-	  */
-	 public boolean changeEmployeeId(int index,String newId) {
-		 if(index!=-1) {
-			 int employeeIsRepeated = employeeIndexWithId(newId); 
-			 if(employeeIsRepeated==-1) {
-				 Employee changeId=restaurantEmployees.get(index);
-				 restaurantUsers.get(indexOfAnUser(changeId)).setModifierUser(currentUser);
-				 restaurantUsers.get(indexOfAnUser(changeId)).setId(newId);
-				 restaurantEmployees.get(index).setId(newId);
-				 restaurantEmployees.get(index).setModifierUser(currentUser);
-				 return true; 
-			 }
-		 }
-		 return false;
-	 }
-	 
-	 //Order methods
-	 
-	 public boolean createAnOrder(ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
-		 //boolean validQuantitys = productsQuantity.size()==orderProducts.size();
-		 int count1 = productsQuantity.size();
-		 int count2 = orderProducts.size();
-		 int areTheSame = count1-count2;
-		 if(orderProductsAreEnabled(orderProducts) && areTheSame==0 && orderClient.getEnabled() && orderEmployee.getEnabled()) {
-			 Order newOrder = new Order(currentUser, orderIDs,orderProducts,productsQuantity,orderClient,orderEmployee,observations);
-			 restaurantOrders.add(newOrder);
-			 orderIDs.add(newOrder.getName());
-			 restaurantOrdersSize++;
-			 return true;
-		 }
-		 return false;
-	 }
-	 
-	 public void sortOrdersByDate() {
-		 Comparator<Order> orderComparator = new OrderDateComparator();
-		 Collections.sort(restaurantOrders,orderComparator);
-	 }
-	 public boolean orderProductsAreEnabled(ArrayList<Product> p) {
-		 for(int i=0;i<p.size();i++) {
-			 if(!p.get(i).getEnabled()) {
-				 return false;
-			 }
-		 }
-		 return true;
-	 }
-	 public boolean changeOrderStatus(int index,int indicator) { 
-		 if(index!=-1) {
-			 System.out.println(indicator);
-			 String check = restaurantOrders.get(index).getOrderStatus();
-			 if(!check.equals("ENTREGADO") && !check.equals("CANCELADO")) {
-				 restaurantOrders.get(index).setStatusIndicator(indicator);
-				 restaurantOrders.get(index).setModifierUser(currentUser);
-				 if(restaurantOrders.get(index).getOrderStatus().equals("ENTREGADO")) {
-					 double priceOfTheOrder = restaurantOrders.get(index).getPriceOfTheOrder();
-					 int employeeIndex = employeeIndexWithemployee(restaurantOrders.get(index).getOrderEmployee());
-					 restaurantEmployees.get(employeeIndex).addAnOrderDelivered();
-					 restaurantEmployees.get(employeeIndex).addAPriceOfAnOrder(priceOfTheOrder);
-					 ArrayList<Product> products = restaurantOrders.get(index).getOrderProducts();
-					 ArrayList<Integer> quantitys = restaurantOrders.get(index).getProductsQuantity();
-					 addTimesRequestedToProducts(products, quantitys);
-				 }
-				 return true;
-			 }
-		 }
-		 return false;
-	 }
-	 public void addTimesRequestedToProducts(ArrayList<Product> products,ArrayList<Integer> quantity) {
-		 for(int i=0;i<products.size();i++) {
-			 String productSearched = products.get(i).getName();
-			 int productIndex = productIndexWithName(productSearched);
-			 restaurantProducts.get(productIndex).addDateOfRequest();
-			 restaurantProducts.get(productIndex).addTimesItWasRequested(quantity.get(i));
-			 restaurantProducts.get(productIndex).addPricesPaidForProduct(products.get(i).getProductPrice()*quantity.get(i));
-		 }
-	 }
-	 public int searchAnOrder(String id) {
-		 for(int i=0;i<restaurantOrdersSize;i++) {
-			 if(id.equals(restaurantOrders.get(i).getName())) {
-				 return i;
-			 }
-		 }
-		 return -1;
-	 }
 
-	 public void setSearchResults(String match) {
-		 long startTime = System.nanoTime();
-		 searchResults = new ArrayList<>();
-		 for (Client c : restaurantClients) {
-		 	String compare = c.getName() + " " + c.getLastname();
-		 	if (compare.contains(match)) searchResults.add(c);
-		 }
-		 long endTime = System.nanoTime();
-		 long timeElapsed = endTime-startTime;
-		 timeOfSearch=timeElapsed;
+	public boolean changeEmployeeLastname(int index,String newLastname) {
+		if(index!=-1) {
+			Employee changeLastname=restaurantEmployees.get(index);
+			restaurantEmployees.get(index).setLastname(newLastname);
+			restaurantEmployees.get(index).setModifierUser(currentUser);
+			restaurantUsers.get(indexOfAnUser(changeLastname)).setLastname(newLastname);
+			restaurantUsers.get(indexOfAnUser(changeLastname)).setModifierUser(currentUser);
+			return true;
+		}
+		return false;
 	}
 
+	public boolean changeEmployeeId(int index,String newId) {
+		if(index!=-1) {
+			int employeeIsRepeated = employeeIndexWithId(newId);
+			if(employeeIsRepeated==-1) {
+				Employee changeId=restaurantEmployees.get(index);
+				restaurantUsers.get(indexOfAnUser(changeId)).setModifierUser(currentUser);
+				restaurantUsers.get(indexOfAnUser(changeId)).setId(newId);
+				restaurantEmployees.get(index).setId(newId);
+				restaurantEmployees.get(index).setModifierUser(currentUser);
+				return true;
+			}
+		}
+		return false;
+	}
+	 
+	//Order methods
+	 
+	public boolean createAnOrder(ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
+		//boolean validQuantitys = productsQuantity.size()==orderProducts.size();
+		int count1 = productsQuantity.size();
+		int count2 = orderProducts.size();
+		int areTheSame = count1-count2;
+		if(orderProductsAreEnabled(orderProducts) && areTheSame==0 && orderClient.getEnabled() && orderEmployee.getEnabled()) {
+			Order newOrder = new Order(currentUser, orderIDs,orderProducts,productsQuantity,orderClient,orderEmployee,observations);
+			restaurantOrders.add(newOrder);
+			orderIDs.add(newOrder.getName());
+			restaurantOrdersSize++;
+			return true;
+		}
+		return false;
+	}
+	 
+	public void sortOrdersByDate() {
+		Comparator<Order> orderComparator = new OrderDateComparator();
+		Collections.sort(restaurantOrders,orderComparator);
+	}
+
+	public boolean orderProductsAreEnabled(ArrayList<Product> p) {
+		for (Product product : p) {
+			if (!product.getEnabled()) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public boolean changeOrderStatus(int index,int indicator) {
+		if(index!=-1) {
+			System.out.println("(" + indicator + ")");
+			String check = restaurantOrders.get(index).getOrderStatus().trim();
+			boolean unCanceledAndUnDelivered = !check.equals("ENTREGADO") && !check.equals("CANCELADO");
+			System.out.println(unCanceledAndUnDelivered);
+			System.out.println("----------------------\n" + restaurantOrders.get(index).getOrderStatus());
+			if(unCanceledAndUnDelivered) {
+				restaurantOrders.get(index).setStatusIndicator(indicator);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public void addTimesRequestedToProducts(ArrayList<Product> products,ArrayList<Integer> quantity) {
+		for(int i=0;i<products.size();i++) {
+			String productSearched = products.get(i).getName();
+			int productIndex = productIndexWithName(productSearched);
+			restaurantProducts.get(productIndex).addDateOfRequest();
+			restaurantProducts.get(productIndex).addTimesItWasRequested(quantity.get(i));
+			restaurantProducts.get(productIndex).addPricesPaidForProduct(products.get(i).getProductPrice()*quantity.get(i));
+		}
+	}
+
+	public int searchAnOrder(String id) {
+		for(int i=0;i<restaurantOrdersSize;i++) {
+			if(id.equals(restaurantOrders.get(i).getName())) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public void setSearchResults(String match) {
+		long startTime = System.nanoTime();
+		searchResults = new ArrayList<>();
+		for (Client c : restaurantClients) {
+			String compare = c.getName() + " " + c.getLastname();
+		 	if (compare.contains(match)) searchResults.add(c);
+		}
+		long endTime = System.nanoTime();
+		long timeElapsed = endTime-startTime;
+		timeOfSearch=timeElapsed;
+	}
 
 
 	//Getters

@@ -172,14 +172,14 @@ public class Order extends SystemObject implements Serializable {
 	 * @param statusIndicator The status indicator of the order
 	 */
 	public void setStatusIndicator(int statusIndicator) {
-		if(statusIndicator==1) {
-			this.statusIndicator = statusIndicator+1;
-			orderStatus=Status.values()[statusIndicator];
+		if (statusIndicator == 1) {
+			this.statusIndicator++;
+			System.out.println(this.statusIndicator + "||" + statusIndicator);
 		}
-		else {
-			this.statusIndicator = 0;
-			orderStatus=Status.values()[statusIndicator];
+		else if (statusIndicator == 0) {
+			this.statusIndicator = statusIndicator;
 		}
+		orderStatus=Status.getS(this.statusIndicator);
 	}
 	/**
 	 * @param orderClient The client who requested the order

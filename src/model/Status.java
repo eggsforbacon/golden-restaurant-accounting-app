@@ -17,17 +17,34 @@ public enum Status{
 	public static String get(int index){
 		switch (index) {
 			case 0:
-				return CANCELADO.name();
+				return CANCELADO.name;
 			case 1:
-				return SOLICITADO.name();
+				return SOLICITADO.name;
 			case 2:
-				return EN_PROCESO.name();
+				return EN_PROCESO.name;
 			case 3:
-				return ENVIADO.name();
+				return ENVIADO.name;
 			case 4:
-				return ENTREGADO.name();
+				return ENTREGADO.name;
 			default:
 				return "ERROR";
+		}
+	}
+
+	public static Status getS(int index){
+		switch (index) {
+			case 0:
+				return CANCELADO;
+			case 1:
+				return SOLICITADO;
+			case 2:
+				return EN_PROCESO;
+			case 3:
+				return ENVIADO;
+			case 4:
+				return ENTREGADO;
+			default:
+				return null;
 		}
 	}
 }
