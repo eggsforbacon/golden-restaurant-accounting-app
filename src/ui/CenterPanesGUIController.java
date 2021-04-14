@@ -534,25 +534,7 @@ public class CenterPanesGUIController implements Initializable {
         }
 
         if (unAddedIngredients.length() != 0) {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("Los siguientes ingredientes no existen en el restaurante:\n" + unAddedIngredients.toString());
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
+            launchError("Los siguientes ingredientes no existen en el restaurante:\n" + unAddedIngredients.toString(),"Error");
         }
         initProductPane();
         GH.saveAllData();
@@ -654,28 +636,7 @@ public class CenterPanesGUIController implements Initializable {
             } catch (Exception e) {
                 System.out.println("Something went wrong.");
             }
-        } else {
-            try {
-                ((Stage) productPane.getScene().getWindow()).close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("No fue posible agregar el producto.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Can't load window at  mothement.");
-                e.printStackTrace();
-            }
-        }
+        } else launchError("No fue posible agregar el producto.","Error");
         GH.saveAllData();
     }
 
@@ -709,27 +670,7 @@ public class CenterPanesGUIController implements Initializable {
             }
             productTBV.getItems().removeAll(productTBV.getSelectionModel().getSelectedItems());
             initProductPane();
-        } else {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("No hay selección. Intente de nuevo.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
-        }
+        } else launchError("No hay selección. Intente de nuevo.", "Error");
         GH.saveAllData();
     }
 
@@ -868,27 +809,8 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void confirmIngredient(ActionEvent event) throws IOException {
         String newIngName = newIngNameTF.getText();
-        if (!GH.addAnIngredientToTheRestaurant(newIngName)) {
-            try {
-                ((Stage) ingredientPane.getScene().getWindow()).close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("El ingrediente no pudo ser agregado");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Something went wrong.");
-            }
-        } else {
+        if (!GH.addAnIngredientToTheRestaurant(newIngName)) launchError("El ingrediente no pudo ser agregado.", "Error");
+        else {
             try {
                 ((Stage) ingredientPane.getScene().getWindow()).close();
             } catch (Exception e) {
@@ -903,50 +825,11 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void deleteIngredientClicked(ActionEvent event) throws IOException {
         Ingredient removed = ingredientsTBV.getSelectionModel().getSelectedItems().get(0);
-        if (removed == null) {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("No hay selección. Intente de nuevo.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
-        } else if (GH.deleteIngredient(GH.ingredientIndexWithIngredient(removed))) {
+        if (removed == null) launchError("No hay selección. Intente de nuevo.", "Error");
+        else if (GH.deleteIngredient(GH.ingredientIndexWithIngredient(removed))) {
             ingredientsTBV.getItems().removeAll(ingredientsTBV.getSelectionModel().getSelectedItems());
             ingredientsTBV.refresh();
-        } else {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("El ingrediente no pudo ser eliminado.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
-        }
+        } else launchError("El ingrediente no pudo ser eliminado.", "Error");
         GH.saveAllData();
     }
 
@@ -1124,53 +1007,13 @@ public class CenterPanesGUIController implements Initializable {
                 Client removed = clientsTBV.getSelectionModel().getSelectedItems().get(i);
                 canDelete=GH.deleteClient(GH.clientIndexWithNameAndLastname(removed.getName(), removed.getLastname()));
             }
-            if(canDelete) {
+            if (canDelete) {
             	clientsTBV.getItems().removeAll(clientsTBV.getSelectionModel().getSelectedItems());
                 initProductPane();
-            } else {
-            	 try {
-                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                     fxmlLoader.setController(this);
-                     Parent root = fxmlLoader.load();
-                     Stage productInfo = new Stage();
-                     productInfo.setScene(new Scene(root));
-                     productInfo.initModality(Modality.APPLICATION_MODAL);
-                     Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                     productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                     productInfo.getIcons().add(icon);
-                     productInfo.setTitle("Error");
-                     deleteMessageLBL.setText("El cliente no pudo ser eliminado");
-                     deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                     productInfo.setResizable(false);
-                     productInfo.show();
-                 } catch (Exception e) {
-                     System.out.println("Can't load window at the moment.");
-                     e.printStackTrace();
-                 }
-            }
+            } else launchError("El cliente no pudo ser eliminado", "Error");
             
             
-        } else {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("No hay selección. Intente de nuevo.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
-        }
+        } else launchError("No hay selección. Intente de nuevo.", "Error");
         GH.saveAllData();
     }
 
@@ -1303,26 +1146,7 @@ public class CenterPanesGUIController implements Initializable {
                 System.out.println("Something went wrong.");
             }
         } else {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("El cliente no pudo ser creado.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-                ((Stage) clientPane.getScene().getWindow()).close();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
+            launchError("El cliente no pudo ser creado.","Error");
         }
         GH.saveAllData();
     }
@@ -1370,50 +1194,10 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void deleteTypeClicked(ActionEvent event) throws IOException {
         PlateType removed = typesTBV.getSelectionModel().getSelectedItems().get(0);
-        if (removed == null) {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage error = new Stage();
-                error.setScene(new Scene(root));
-                error.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                error.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                error.getIcons().add(icon);
-                error.setTitle("Error");
-                deleteMessageLBL.setText("No hay selección. Intente de nuevo.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                error.setResizable(false);
-                error.show();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
-        } else if (GH.deletePlateType(GH.plateTypeIndexWithplateType(removed))) {
-            typesTBV.getItems().removeAll(typesTBV.getSelectionModel().getSelectedItems());
-            typesTBV.refresh();
-        } else {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage error = new Stage();
-                error.setScene(new Scene(root));
-                error.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                error.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                error.getIcons().add(icon);
-                error.setTitle("Error");
-                deleteMessageLBL.setText("El tipo de plato no pudo ser eliminado.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                error.setResizable(false);
-                error.show();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
-        }
+        if (removed == null) launchError("No hay selección. Intente de nuevo.", "Error");
+        else if (GH.deletePlateType(GH.plateTypeIndexWithplateType(removed))) typesTBV.getItems().removeAll(typesTBV.getSelectionModel().getSelectedItems());
+        else launchError("El tipo de plato no pudo ser eliminado.", "Error");
+        typesTBV.refresh();
         GH.saveAllData();
     }
 
@@ -1446,27 +1230,8 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void confirmType(ActionEvent event) throws IOException {
         String newTypeName = newTypeNameTF.getText();
-        if (!GH.addAPlateTypeToTheRestaurant(newTypeName)) {
-            try {
-                ((Stage) ingredientPane.getScene().getWindow()).close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("El tipo no pudo ser agregado");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Something went wrong.");
-            }
-        } else {
+        if (!GH.addAPlateTypeToTheRestaurant(newTypeName)) launchError("El tipo no pudo ser agregado", "Error");
+        else {
             try {
                 ((Stage) typePane.getScene().getWindow()).close();
             } catch (Exception e) {
@@ -1703,28 +1468,7 @@ public class CenterPanesGUIController implements Initializable {
             Client newClient = GH.getRestaurantClients().get(newClientIndex);
             GH.createAnOrder(newProducts,newProdQuantities,newClient,newEmployee,observations);
             initOrderPane();
-        } else {
-            try {
-                ((Stage) orderPane.getScene().getWindow()).close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("No fue posible crear la orden.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
-        }
+        } else launchError("No fue posible crear la orden.", "Error");
         GH.saveAllData();
     }
 
@@ -1818,26 +1562,7 @@ public class CenterPanesGUIController implements Initializable {
                 System.out.println("Can't load window at the moment.");
                 e.printStackTrace();
             }
-        } else {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("No hay selección. Intente de nuevo.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Something went wrong.");
-            }
-        }
+        } else launchError("No hay selección. Intente de nuevo.", "Error");
         GH.saveAllData();
     }
 
@@ -1851,27 +1576,7 @@ public class CenterPanesGUIController implements Initializable {
             }
             employeesTBV.getItems().removeAll(employeesTBV.getSelectionModel().getSelectedItems());
             initEmployeePane();
-        } else {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("No hay selección. Intente de nuevo.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
-        }
+        } else launchError("No hay selección. Intente de nuevo.", "Error");
         GH.saveAllData();
     }
 
@@ -1890,46 +1595,8 @@ public class CenterPanesGUIController implements Initializable {
         if (userNameTF.getText().equals(employeesTBV.getSelectionModel().getSelectedItem().getUsername())) {
             GH.changePassword(GH.userIndexWithUsername(employeesTBV.getSelectionModel().getSelectedItem().getUsername()),newPassPWF.getText());
             employeesTBV.getSelectionModel().getSelectedItem().setModifierUser(GH.getCurrentUser());
-            try {
-                ((Stage) editUser.getScene().getWindow()).close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Datos guardados");
-                deleteMessageLBL.setText("Datos guardados con éxito!");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Something went wrong.");
-            }
-        } else {
-            try {
-                ((Stage) editUser.getScene().getWindow()).close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("Datos erroneos.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-            } catch (Exception e) {
-                System.out.println("Something went wrong.");
-            }
-        }
+            launchError("Datos guardados con éxito!", "Datos guardados");
+        } else launchError("Datos erroneos.", "Error");
         GH.saveAllData();
     }
 
@@ -2001,28 +1668,7 @@ public class CenterPanesGUIController implements Initializable {
             } catch (Exception e) {
                 System.out.println("Something went wrong.");
             }
-        } else {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                fxmlLoader.setController(this);
-                Parent root = fxmlLoader.load();
-                Stage productInfo = new Stage();
-                productInfo.setScene(new Scene(root));
-                productInfo.initModality(Modality.APPLICATION_MODAL);
-                Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                productInfo.getIcons().add(icon);
-                productInfo.setTitle("Error");
-                deleteMessageLBL.setText("El empleado no pudo ser creado.");
-                deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                productInfo.setResizable(false);
-                productInfo.show();
-                ((Stage) clientPane.getScene().getWindow()).close();
-            } catch (Exception e) {
-                System.out.println("Can't load window at the moment.");
-                e.printStackTrace();
-            }
-        }
+        } else launchError("El empleado no pudo ser creado.", "Error");
         GH.saveAllData();
     }
 
@@ -2083,70 +1729,14 @@ public class CenterPanesGUIController implements Initializable {
     void loginPressed(ActionEvent event) {
         switch (GH.login(userNameLoginTF.getText(),passwordLoginPF.getText())) {
             case -1:
-                try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                    fxmlLoader.setController(this);
-                    Parent root = fxmlLoader.load();
-                    Stage productInfo = new Stage();
-                    productInfo.setScene(new Scene(root));
-                    productInfo.initModality(Modality.APPLICATION_MODAL);
-                    Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                    productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                    productInfo.getIcons().add(icon);
-                    productInfo.setTitle("Error");
-                    deleteMessageLBL.setText("Datos erroneos o incompletos. Intente de nuevo.");
-                    deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                    productInfo.setResizable(false);
-                    productInfo.show();
-                } catch (Exception e) {
-                    System.out.println("Can't load window at the moment.");
-                    e.printStackTrace();
-                }
+                launchError("Datos erroneos o incompletos. Intente de nuevo.", "Error");
                 break;
             case -2:
-                try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                    fxmlLoader.setController(this);
-                    Parent root = fxmlLoader.load();
-                    Stage productInfo = new Stage();
-                    productInfo.setScene(new Scene(root));
-                    productInfo.initModality(Modality.APPLICATION_MODAL);
-                    Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                    productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                    productInfo.getIcons().add(icon);
-                    productInfo.setTitle("Advertencia");
-                    deleteMessageLBL.setText("El uso del usuario root no es recomendado. Proceder con precaución.\nPresione el ícono de la casa para comenzar. ");
-                    deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                    productInfo.setResizable(false);
-                    productInfo.show();
-                    loginSuccesfull=true;
-                } catch (Exception e) {
-                    System.out.println("Can't load window at the moment.");
-                    e.printStackTrace();
-                }
+                launchError("El uso del usuario root no es recomendado. Proceder con precaución.\nPresione el ícono de la casa para comenzar. ", "Advertencia");
                 break;
             default:
                 GH.setCurrentUser(GH.getRestaurantUsers().get(GH.userIndexWithUsername(userNameLoginTF.getText())));
-                try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
-                    fxmlLoader.setController(this);
-                    Parent root = fxmlLoader.load();
-                    Stage productInfo = new Stage();
-                    productInfo.setScene(new Scene(root));
-                    productInfo.initModality(Modality.APPLICATION_MODAL);
-                    Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
-                    productInfo.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-                    productInfo.getIcons().add(icon);
-                    productInfo.setTitle("Bienvenido");
-                    deleteMessageLBL.setText("Inicio de sesión correcto. Bienvenid@!\nPresione el ícono de la casa para comenzar.");
-                    deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
-                    productInfo.setResizable(false);
-                    productInfo.show();
-                    loginSuccesfull=true;
-                } catch (Exception e) {
-                    System.out.println("Can't load window at the moment.");  //-_-
-                    e.printStackTrace();
-                }
+                launchError("Inicio de sesión correcto. Bienvenid@!\nPresione el ícono de la casa para comenzar.", "Bienvenid@");
         }
     }
     public boolean getLoginSuccesful() {
@@ -2234,15 +1824,52 @@ public class CenterPanesGUIController implements Initializable {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         LocalDateTime startingDate = LocalDateTime.parse(starto.toString(), formatter);
         LocalDateTime endingDate = LocalDateTime.parse(endo.toString(), formatter);
-
+        String message = "";
+        String title = "";
+        String file = reportCBX.getSelectionModel().getSelectedItem().trim();
         try {
-            generate(reportCBX.getSelectionModel().getSelectedItem().trim(),startingDate,endingDate);
-            System.out.println("Success");
+            generate(file,startingDate,endingDate);
+            title = "Reporte generado";
+            message = "El reporte fue generado con exito (Guarado en:\n" + fileLoc(file);
+            launchError(message,title);
         } catch (FileNotFoundException | NullPointerException fnf) {
             fnf.printStackTrace();
-            System.out.println("Fail");
+            title = "Error";
+            message = "No se pudo generar el reporte";
         }
     }
 
-}
+    public String fileLoc(String file) {
+        switch (file) {
+            case "Empleados":
+                return "src/data/reports/EMPLOYEE_REPORT.csv";
+            case "Ordenes":
+                return "src/data/reports/ORDER_REPORT.csv";
+            case "Productos":
+                return "src/data/reports/PRODUCT_REPORT.csv";
+            default:
+                return "No hay selección";
+        }
+    }
 
+    public void launchError(String message, String title) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("error.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = fxmlLoader.load();
+            Stage errorPane = new Stage();
+            errorPane.setScene(new Scene(root));
+            errorPane.initModality(Modality.APPLICATION_MODAL);
+            Image icon = new Image(String.valueOf(getClass().getResource("resources/gh-icon.png")));
+            errorPane.getScene().getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
+            errorPane.getIcons().add(icon);
+            errorPane.setTitle(title);
+            deleteMessageLBL.setText(message);
+            deleteMessageLBL.setStyle("\n-fx-font-style: italic;");
+            errorPane.setResizable(false);
+            errorPane.show();
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
+    }
+}

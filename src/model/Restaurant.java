@@ -1337,13 +1337,20 @@ public class Restaurant{
 
 	public boolean changeOrderStatus(int index,int indicator) {
 		if(index!=-1) {
-			System.out.println("(" + indicator + ")");
 			String check = restaurantOrders.get(index).getOrderStatus().trim();
 			boolean unCanceledAndUnDelivered = !check.equals("ENTREGADO") && !check.equals("CANCELADO");
-			System.out.println(unCanceledAndUnDelivered);
-			System.out.println("----------------------\n" + restaurantOrders.get(index).getOrderStatus());
 			if(unCanceledAndUnDelivered) {
 				restaurantOrders.get(index).setStatusIndicator(indicator);
+				if(restaurantOrders.get(index).getOrderStatus().equals("ENTREGADO")) {
+					double priceOfTheOrder = restaurantOrders.get(index).getPriceOfTheOrder();
+					System.out.println(priceOfTheOrder);
+					int employeeIndex = employeeIndexWithemployee(restaurantOrders.get(index).getOrderEmployee());
+					restaurantEmployees.get(employeeIndex).addAnOrderDelivered();
+					restaurantEmployees.get(employeeIndex).addAPriceOfAnOrder(priceOfTheOrder);
+					ArrayList<Product> products = restaurantOrders.get(index).getOrderProducts();
+					ArrayList<Integer> quantities = restaurantOrders.get(index).getProductsQuantity();
+					addTimesRequestedToProducts(products, quantities);
+				}
 				return true;
 			}
 		}
