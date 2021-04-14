@@ -2204,17 +2204,23 @@ public class CenterPanesGUIController implements Initializable {
         reportCBX.setItems(reports);
     }
 
-    private String where(String type) throws NullPointerException {
+    private void generate(String type, LocalDateTime start, LocalDateTime end) throws NullPointerException, FileNotFoundException {
+        String file;
         switch (type) {
             case "Empleados":
-                return "src/data/reports/EMPLOYEE_REPORT.csv";
+                 file = "src/data/reports/EMPLOYEE_REPORT.csv";
+                 GH.generateEmployeeReport(file,";",start,end);
+                 break;
             case "Ordenes":
-                return "src/data/reports/ORDER_REPORT.csv";
+                file = "src/data/reports/ORDER_REPORT.csv";
+                GH.generateOrderReport(file,";",start,end);
+                break;
             case "Productos":
-                return "src/data/reports/PRODUCT_REPORT.csv";
+                file = "src/data/reports/PRODUCT_REPORT.csv";
+                GH.generateProductReport(file,";",start,end);
+                break;
             default:
-                throw new NullPointerException("The string is either out of range.");
-
+                throw new NullPointerException("The string is either out of range. " + type);
         }
     }
 
@@ -2225,14 +2231,17 @@ public class CenterPanesGUIController implements Initializable {
         String starto = stParts[2] + "/" + stParts[1] + "/" + stParts[0] + " " + startTimeTB.getText();
         String endo = endParts[2] + "/" + endParts[1] + "/" + endParts[0] + " " + endDateTB.getText();
 
-        System.out.println(starto);
-        System.out.println(endo);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         LocalDateTime startingDate = LocalDateTime.parse(starto.toString(), formatter);
         LocalDateTime endingDate = LocalDateTime.parse(endo.toString(), formatter);
 
-        System.out.println(startingDate.toString());
-        System.out.println(endingDate.toString());
+        try {
+            generate(reportCBX.getSelectionModel().getSelectedItem().trim(),startingDate,endingDate);
+            System.out.println("Success");
+        } catch (FileNotFoundException | NullPointerException fnf) {
+            fnf.printStackTrace();
+            System.out.println("Fail");
+        }
     }
 
 }
