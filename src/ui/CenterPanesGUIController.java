@@ -17,17 +17,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 import javafx.util.converter.DoubleStringConverter;
 import model.*;
 import java.io.*;
 import java.net.URL;
-import java.time.LocalDateTime;
-import java.time.MonthDay;
-import java.time.Year;
-import java.time.YearMonth;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.ResourceBundle;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class CenterPanesGUIController implements Initializable {
 
@@ -450,13 +447,28 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane reportPane;
 
     @FXML
-    private DatePicker startDate;
-
-    @FXML
-    private DatePicker endDate;
-
-    @FXML
     private Label destinationLBL;
+
+    @FXML
+    private DatePicker startDate = new DatePicker();
+
+    @FXML
+    private DatePicker endDate = new DatePicker();
+
+    @FXML
+    private TextField startTimeTB;
+
+    @FXML
+    private TextField endDateTB;
+
+    @FXML
+    private Label dateTitLBL = new Label();
+
+    @FXML
+    private Label timeTitLBL = new Label();
+
+    @FXML
+    private ChoiceBox<String> reportCBX = new ChoiceBox<>();
 
     private BorderPane mainPane;
 
@@ -484,6 +496,7 @@ public class CenterPanesGUIController implements Initializable {
         initPlateTypePane();
         initOrderPane();
         initEmployeePane();
+        initReportsPane();
     }
 
     @FXML
@@ -2165,10 +2178,62 @@ public class CenterPanesGUIController implements Initializable {
         }
     }
 
+    public void initReportsPane() {
+
+        StringConverter<LocalDate> converter = new StringConverter<LocalDate>() {
+            final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+            @Override
+            public String toString(LocalDate localDate) {
+                if(localDate == null) return "";
+                return dateTimeFormatter.format(localDate);
+            }
+
+            @Override
+            public LocalDate fromString(String dateString) {
+                if(dateString == null || dateString.trim().isEmpty()) return null;
+                return LocalDate.parse(dateString,dateTimeFormatter);
+            }
+        };
+
+        startDate.setConverter(converter);
+        endDate.setConverter(converter);
+        dateTitLBL.setId("reports-titles");
+        timeTitLBL.setId("reports-titles");
+        ObservableList<String> reports = FXCollections.observableArrayList("Empleados","Ordenes","Productos");
+        reportCBX.setItems(reports);
+    }
+
+    private String where(String type) throws NullPointerException {
+        switch (type) {
+            case "Empleados":
+                return "src/data/reports/EMPLOYEE_REPORT.csv";
+            case "Ordenes":
+                return "src/data/reports/ORDER_REPORT.csv";
+            case "Productos":
+                return "src/data/reports/PRODUCT_REPORT.csv";
+            default:
+                throw new NullPointerException("The string is either out of range.");
+
+        }
+    }
+
     @FXML
     void confirmReport(ActionEvent event) {
-        LocalDateTime startingDate;
-        LocalDateTime endingDate;
+        String[] stParts = startDate.getValue().toString().split("-");
+        String[] endParts = endDate.getValue().toString().split("-");
+        String starto = stParts[2] + "/" + stParts[1] + "/" + stParts[0] + " " + startTimeTB.getText();
+        String endo = endParts[2] + "/" + endParts[1] + "/" + endParts[0] + " " + endDateTB.getText();
+
+        System.out.println(starto);
+        System.out.println(endo);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        LocalDateTime startingDate = LocalDateTime.parse(starto.toString(), formatter);
+        LocalDateTime endingDate = LocalDateTime.parse(endo.toString(), formatter);
+
+        System.out.println(startingDate.toString());
+        System.out.println(endingDate.toString());
     }
+
 }
 

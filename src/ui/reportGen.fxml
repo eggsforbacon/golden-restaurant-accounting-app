@@ -2,38 +2,44 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="reportPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #675E5B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="reportPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #675E5B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
                <children>
+                  <Label fx:id="dateTitLBL" text="Fecha" />
+                  <Separator orientation="VERTICAL" prefHeight="64.0" prefWidth="10.0" visible="false" />
                   <Label text="Desde:" />
-                  <DatePicker fx:id="startDate" prefHeight="6.0" prefWidth="218.0" />
+                  <DatePicker fx:id="startDate" prefHeight="6.0" prefWidth="218.0" promptText="mm/dd/aa" showWeekNumbers="true" />
+                  <Separator orientation="VERTICAL" prefHeight="27.0" prefWidth="4.0" visible="false" />
+                  <Label text="Hasta:" />
+                  <DatePicker fx:id="endDate" prefHeight="30.0" prefWidth="218.0" promptText="mm/dd/aa" showWeekNumbers="true" />
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
                <children>
+                  <Label fx:id="timeTitLBL" text="Hora" />
+                  <Separator orientation="VERTICAL" prefHeight="64.0" prefWidth="10.0" visible="false" />
+                  <Label text="Desde:" />
+                  <TextField fx:id="startTimeTB" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="6.0" prefWidth="218.0" promptText="HH:mm (24h)" />
+                  <Separator orientation="VERTICAL" prefHeight="27.0" prefWidth="4.0" visible="false" />
                   <Label text="Hasta:" />
-                  <DatePicker fx:id="endDate" prefHeight="30.0" prefWidth="218.0" />
+                  <TextField fx:id="endDateTB" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="6.0" prefWidth="218.0" promptText="HH:mm (24h)" />
                </children>
             </VBox>
          </children>
       </HBox>
    </center>
-   <top>
-      <Label fx:id="destinationLBL" text="REPORT_DESTINATION" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets top="10.0" />
-         </BorderPane.margin>
-      </Label>
-   </top>
    <bottom>
       <Button mnemonicParsing="false" onAction="#confirmReport" text="Generar" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -41,4 +47,20 @@
          </BorderPane.margin>
       </Button>
    </bottom>
+   <top>
+      <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0" spacing="5.0" BorderPane.alignment="BOTTOM_CENTER">
+         <children>
+            <Label fx:id="destinationLBL" text="Generar reporte de:">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Label>
+            <ChoiceBox fx:id="reportCBX" prefHeight="31.0" prefWidth="177.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </ChoiceBox>
+         </children>
+      </HBox>
+   </top>
 </BorderPane>
