@@ -1180,18 +1180,17 @@ public class Restaurant{
 		int index = restaurantEmployees.indexOf(employee);
 		return index;
 	}
+
 	public int binarySearchForEmployees(ArrayList<?> aL,String id) {
 		int pos = -1;
 		int i = 0;
 		int j = aL.size()-1;
 		while(i<=j && pos<0) {
 			int m = (i+j)/2;
-			if((((Employee)aL.get(m)).getId().equalsIgnoreCase(id))) {
-				pos=m;
-			}
-			else if(((((Employee)aL.get(m)).getId()).compareTo(id))>0){
-				j=m-1;
-			}
+			System.out.println(m);
+			System.out.println(((Employee)aL.get(m)).getName());
+			if (((Employee)aL.get(m)).getId().equalsIgnoreCase(id)) pos = m;
+			else if(((((Employee)aL.get(m)).getId()).compareTo(id))>0) j = m - 1;
 			else {
 				i=m+1;
 			}

@@ -13,7 +13,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import model.Restaurant;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
@@ -24,13 +23,21 @@ public class MainGUIController implements Initializable {
     CenterPanesGUIController cenPaneController;
     Restaurant GH;
 
-    public MainGUIController(Restaurant GH) throws IOException, ClassNotFoundException {
-        //load(GH);
+    public MainGUIController(Restaurant GH) {
         this.GH = GH;
+        try {
+            load();
+        } catch (IOException e) {
+            System.out.println("ioe");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Class not found");
+        } catch (Exception e) {
+            System.out.println("Something else");
+        }
         cenPaneController = new CenterPanesGUIController(this.GH, mainPane);
     }
 
-    public void load(Restaurant GH) throws IOException, ClassNotFoundException {
+    public void load() throws IOException, ClassNotFoundException {
         GH.loadPlateTypeData();
         GH.loadIngredientData();
         GH.loadProductData();
@@ -97,6 +104,7 @@ public class MainGUIController implements Initializable {
         label = progress;
         spacer1.prefHeightProperty().bind(mainPane.heightProperty());
         randomIMV.setImage(new Image(String.valueOf(getClass().getResource(randomImage()))));
+        System.out.println(GH.checkFirstTime());
         if (GH.checkFirstTime()) {
             toggleButtons(true);
             login();
@@ -233,7 +241,7 @@ public class MainGUIController implements Initializable {
             if (!GH.checkFirstTime()) {
                 homeScreenIMV.setVisible(true);
             }
-            if(cenPaneController.getLoginSuccesful()) {
+            if (cenPaneController.getLoginSuccesful()) {
             	toggleButtons(false);
             }
             currentScene.setStyle("\n-fx-background-color: black;");

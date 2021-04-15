@@ -1733,10 +1733,13 @@ public class CenterPanesGUIController implements Initializable {
                 break;
             case -2:
                 launchError("El uso del usuario root no es recomendado. Proceder con precaución.\nPresione el ícono de la casa para comenzar. ", "Advertencia");
+                loginSuccesfull = true;
                 break;
             default:
                 GH.setCurrentUser(GH.getRestaurantUsers().get(GH.userIndexWithUsername(userNameLoginTF.getText())));
                 launchError("Inicio de sesión correcto. Bienvenid@!\nPresione el ícono de la casa para comenzar.", "Bienvenid@");
+                loginSuccesfull = true;
+                break;
         }
     }
     public boolean getLoginSuccesful() {

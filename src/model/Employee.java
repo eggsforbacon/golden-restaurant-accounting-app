@@ -28,6 +28,7 @@ public class Employee extends Person implements Serializable{
 		info += getId()+getSeparator();
 		return info;
 	}
+
 	public String showReportInformation(LocalDateTime startDate,LocalDateTime endDate) {
 		String info = getName()+getSeparator();
 		info+= getLastname()+getSeparator();
@@ -42,9 +43,11 @@ public class Employee extends Person implements Serializable{
 		dateOfTheOrdersDelivered.add(LocalDateTime.now());
 		allOrdersDelivered++;
 	}
+
 	public void addAPriceOfAnOrder(double priceOfAnOrder) {
 		priceOfTheOrdersDelivered.add(priceOfAnOrder);
 	}
+
 	public int getAllEmployeeOrdersDelivered() {
 		return allOrdersDelivered;
 	}
@@ -59,11 +62,11 @@ public class Employee extends Person implements Serializable{
 		}
 		return total;
 	}
+
 	public ArrayList<LocalDateTime> getDateOfTheOrdersDelivered(){
 		return dateOfTheOrdersDelivered;
 	}
 	public int getSpecifiedOrdersDelivered() {
 		return specifiedOrdersDelivered;
 	}
-
 }

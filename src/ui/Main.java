@@ -18,12 +18,7 @@ public class Main extends Application {
 
   public Main() {
     GH = new Restaurant();
-
-    try {
-      controller = new MainGUIController(GH);
-    } catch (IOException | ClassNotFoundException ioe) {
-      ioe.printStackTrace();
-    }
+    controller = new MainGUIController(GH);
   }
 
   public static void main(String[] args) {

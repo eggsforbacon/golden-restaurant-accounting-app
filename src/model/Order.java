@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Order extends SystemObject implements Serializable {	
 
-	private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 3;
 	
 	private Status orderStatus;
 	private int statusIndicator;
@@ -38,11 +38,6 @@ public class Order extends SystemObject implements Serializable {
 		this.observations=observations;
 	}
 
-	/**
-	 * Generates a unique 8 digit ID for each order.<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>The ID is generated.<br>
-	 */
 	private void generateID(ArrayList<String> IDs) {
 		final char[] ALPHABET = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvwxyz").toCharArray();
 		StringBuilder sb = new StringBuilder();
@@ -61,13 +56,7 @@ public class Order extends SystemObject implements Serializable {
 		}
 		this.priceOfTheOrder=price;
 	}
-	
-	/**
-	 * Shows the products of the order with their respective size, quantity and size.<br>
-	 * <b>Pre: </b><br>
-	 * <b>Post: </b>The String with the organized data is returned<br>
-	 * @return info
-	 */
+
 	public String showProducts() {
 		String info = "";
 		for(int i=0;i<orderProductsSize;i++) {
@@ -96,42 +85,25 @@ public class Order extends SystemObject implements Serializable {
 	}
 
 	//Getters
-	/**
-	 * @return The observations of the order<br>
-	 */
+
 	public String getObservations() {
 		return observations;
 	}
-	/**
-	 * @return The status indicator of the order.<br>
-	 */
 	public int getStatusIndicator() {
 		return statusIndicator;
 	}
-	/**
-	 * @return The client who requested the order.<br>
-	 */
 	public Client getOrderClient() {
 		return orderClient;
 	}
-	/**
-	 * @return The employee who made the order.<br>
-	 */
 	public Employee getOrderEmployee() {
 		return orderEmployee;
 	}
 	public String getOrderEmployeeName() {
 		return orderEmployee.name + " " + orderEmployee.getLastname();
 	}
-	/**
-	 * @return The status of the order.<br>
-	 */
 	public String getOrderStatus() {
 		return orderStatus.toString();
 	}
-	/**
-	 * @return The date of the order.<br>
-	 */
 	public String getDateString() {
 		return dateString;
 	}
@@ -167,10 +139,9 @@ public class Order extends SystemObject implements Serializable {
 	public double getPriceOfTheOrder() {
 		return priceOfTheOrder;
 	}
+
 	//Setters
-	/**
-	 * @param statusIndicator The status indicator of the order
-	 */
+
 	public void setStatusIndicator(int statusIndicator) {
 		if (statusIndicator == 1) {
 			this.statusIndicator++;
@@ -181,25 +152,13 @@ public class Order extends SystemObject implements Serializable {
 		}
 		orderStatus=Status.getS(this.statusIndicator);
 	}
-	/**
-	 * @param orderClient The client who requested the order
-	 */
 	public void setOrderClient(Client orderClient) {
 		this.orderClient = orderClient;
 	}
-	/**
-	 * @param orderEmployee The employee who made the order
-	 */
 	public void setOrderEmployee(Employee orderEmployee) {
 		this.orderEmployee = orderEmployee;
 	}
-	/**
-	 * @param observations The observations of the order
-	 */
 	public void setObservations(String observations) {
 		this.observations = observations;
 	}
-	
-
-
 }
