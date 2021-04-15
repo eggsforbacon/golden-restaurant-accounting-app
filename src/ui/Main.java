@@ -9,15 +9,18 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Restaurant;
-import java.io.IOException;
+
+import java.io.*;
 
 public class Main extends Application {
 
   MainGUIController controller;
   Restaurant GH;
+  private static final String RESTAURANT_PATH_FILE = "src/data/savedfiles/restaurant.z&1";
 
   public Main() {
     GH = new Restaurant();
+    System.out.println(loadRestaurantData());
     controller = new MainGUIController(GH);
   }
 
@@ -51,4 +54,34 @@ public class Main extends Application {
       LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
     }
   }
+
+  @Override
+  public void stop() {
+    ObjectOutputStream oos;
+    try {
+      oos = new ObjectOutputStream(new FileOutputStream(RESTAURANT_PATH_FILE));
+      oos.writeObject(GH);
+      oos.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public boolean loadRestaurantData() {
+    File f = new File(RESTAURANT_PATH_FILE);
+    boolean loaded = false;
+    if(f.exists()){
+      ObjectInputStream ois = null;
+      try {
+        ois = new ObjectInputStream(new FileInputStream(f));
+        GH = (Restaurant)ois.readObject();
+        ois.close();
+      } catch (IOException | ClassNotFoundException e) {
+        e.printStackTrace();
+      }
+      loaded = true;
+    }
+    return loaded;
+  }
+
 }

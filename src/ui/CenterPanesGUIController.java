@@ -504,7 +504,6 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeProductName(GH.productIndexWithName(event.getRowValue().getName()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initProductPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -514,7 +513,6 @@ public class CenterPanesGUIController implements Initializable {
         else GH.disableProduct(GH.productIndexWithName(event.getRowValue().getName()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initProductPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -537,7 +535,6 @@ public class CenterPanesGUIController implements Initializable {
             launchError("Los siguientes ingredientes no existen en el restaurante:\n" + unAddedIngredients.toString(),"Error");
         }
         initProductPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -553,14 +550,12 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeProductPlateType(GH.productIndexWithName(event.getRowValue().getName()), newPlateType);
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initProductPane();
-        GH.saveAllData();
     }
 
     @FXML
     void editSizesProd(CellEditEvent<Product, String> event) throws IOException {
         GH.changeSizeOfTheProduct(GH.productIndexWithName(event.getRowValue().getName()),event.getRowValue().getProductActualSize(),event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
-        GH.saveAllData();
     }
 
     @FXML
@@ -568,7 +563,6 @@ public class CenterPanesGUIController implements Initializable {
         Double db = event.getNewValue();
         GH.changePriceOfTheProduct(GH.productIndexWithName(event.getRowValue().getName()),event.getRowValue().getProductActualSize(),db);
         event.getRowValue().setModifierUser(GH.getCurrentUser());
-        GH.saveAllData();
     }
 
     @FXML
@@ -597,7 +591,6 @@ public class CenterPanesGUIController implements Initializable {
             System.out.println("Can't load window at the moment.");
             e.printStackTrace();
         }
-        GH.saveAllData();
     }
 
     @FXML
@@ -607,7 +600,6 @@ public class CenterPanesGUIController implements Initializable {
         } catch (Exception e) {
             System.out.println("Something went wrong.");
         }
-        GH.saveAllData();
     }
 
     @FXML
@@ -637,7 +629,6 @@ public class CenterPanesGUIController implements Initializable {
                 System.out.println("Something went wrong.");
             }
         } else launchError("No fue posible agregar el producto.","Error");
-        GH.saveAllData();
     }
 
     void fullProductDetails(Product rowData) {
@@ -671,7 +662,6 @@ public class CenterPanesGUIController implements Initializable {
             productTBV.getItems().removeAll(productTBV.getSelectionModel().getSelectedItems());
             initProductPane();
         } else launchError("No hay selección. Intente de nuevo.", "Error");
-        GH.saveAllData();
     }
 
     private void initProductInfo(Product rowData) {
@@ -750,7 +740,6 @@ public class CenterPanesGUIController implements Initializable {
     void importProductData(ActionEvent event) throws IOException {
         GH.importProductInformation("src/data/generatedData/PRODUCT_GENERATED_DATA.csv");
         initProductPane();
-        GH.saveAllData();
     }
 
     private void initIngredientPane() {
@@ -793,7 +782,6 @@ public class CenterPanesGUIController implements Initializable {
             System.out.println("Can't load window at the moment.");
             e.printStackTrace();
         }
-        GH.saveAllData();
     }
 
     @FXML
@@ -803,7 +791,6 @@ public class CenterPanesGUIController implements Initializable {
         } catch (Exception e) {
             System.out.println("Something went wrong.");
         }
-        GH.saveAllData();
     }
 
     @FXML
@@ -818,7 +805,6 @@ public class CenterPanesGUIController implements Initializable {
             }
         }
         initIngredientPane();
-        GH.saveAllData();
     }
 
 
@@ -830,7 +816,6 @@ public class CenterPanesGUIController implements Initializable {
             ingredientsTBV.getItems().removeAll(ingredientsTBV.getSelectionModel().getSelectedItems());
             ingredientsTBV.refresh();
         } else launchError("El ingrediente no pudo ser eliminado.", "Error");
-        GH.saveAllData();
     }
 
     @FXML
@@ -840,7 +825,6 @@ public class CenterPanesGUIController implements Initializable {
         else GH.disableIngredient(GH.ingredientIndexWithName(event.getRowValue().getName()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initIngredientPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -848,7 +832,6 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeingredientName(GH.ingredientIndexWithName(event.getRowValue().getName()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initIngredientPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -879,7 +862,6 @@ public class CenterPanesGUIController implements Initializable {
         }
         br.close();
         initIngredientPane();
-        GH.saveAllData();
     }
 
     public void fullIngredientDetails(Ingredient rowData) {
@@ -995,7 +977,6 @@ public class CenterPanesGUIController implements Initializable {
             System.out.println("Can't load window at the moment.");
             e.printStackTrace();
         }
-        GH.saveAllData();
     }
 
     @FXML
@@ -1014,7 +995,6 @@ public class CenterPanesGUIController implements Initializable {
             
             
         } else launchError("No hay selección. Intente de nuevo.", "Error");
-        GH.saveAllData();
     }
 
     @FXML
@@ -1022,7 +1002,6 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeClientAddress(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -1032,7 +1011,6 @@ public class CenterPanesGUIController implements Initializable {
         else
             GH.disableClient(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
-        GH.saveAllData();
     }
 
     @FXML
@@ -1040,7 +1018,6 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeClientId(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -1048,7 +1025,6 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeClientLastname(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -1056,7 +1032,6 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeClientName(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -1064,7 +1039,6 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeClientObservations(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -1072,7 +1046,6 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeClientPhoneNumber(GH.clientIndexWithNameAndLastname(event.getRowValue().getName(), event.getRowValue().getLastname()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initClientPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -1125,7 +1098,6 @@ public class CenterPanesGUIController implements Initializable {
         } catch (Exception e) {
             System.out.println("Something went wrong.");
         }
-        GH.saveAllData();
     }
 
     @FXML
@@ -1148,7 +1120,6 @@ public class CenterPanesGUIController implements Initializable {
         } else {
             launchError("El cliente no pudo ser creado.","Error");
         }
-        GH.saveAllData();
     }
 
     @FXML
@@ -1166,7 +1137,6 @@ public class CenterPanesGUIController implements Initializable {
     void importClientData(ActionEvent event) throws IOException {
         GH.importClientInformation("src/data/generatedData/CLIENT_MOCK_DATA.csv");
         initClientPane();
-        GH.saveAllData();
     }
 
     @FXML
@@ -1188,7 +1158,6 @@ public class CenterPanesGUIController implements Initializable {
             System.out.println("Can't load window at the moment.");
             e.printStackTrace();
         }
-        GH.saveAllData();
     }
 
     @FXML
@@ -1198,7 +1167,6 @@ public class CenterPanesGUIController implements Initializable {
         else if (GH.deletePlateType(GH.plateTypeIndexWithplateType(removed))) typesTBV.getItems().removeAll(typesTBV.getSelectionModel().getSelectedItems());
         else launchError("El tipo de plato no pudo ser eliminado.", "Error");
         typesTBV.refresh();
-        GH.saveAllData();
     }
 
     @FXML
@@ -1207,14 +1175,12 @@ public class CenterPanesGUIController implements Initializable {
             GH.enablePlateType(GH.plateTypeIndexWithName(event.getRowValue().getName()));
         else GH.disablePlateType(GH.plateTypeIndexWithName(event.getRowValue().getName()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
-        GH.saveAllData();
     }
 
     @FXML
     void editNameType(CellEditEvent<PlateType, String> event) throws IOException {
         GH.changePlateTypeName(GH.plateTypeIndexWithName(event.getRowValue().getName()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
-        GH.saveAllData();
     }
 
     @FXML
@@ -1224,7 +1190,6 @@ public class CenterPanesGUIController implements Initializable {
         } catch (Exception e) {
             System.out.println("Something went wrong.");
         }
-        GH.saveAllData();
     }
 
     @FXML
@@ -1239,7 +1204,6 @@ public class CenterPanesGUIController implements Initializable {
             }
         }
         initPlateTypePane();
-        GH.saveAllData();
     }
 
     private void initPlateTypePane() {
@@ -1426,7 +1390,7 @@ public class CenterPanesGUIController implements Initializable {
         } catch (Exception e) {
             System.out.println("Something went wrong.");
         }
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1453,8 +1417,6 @@ public class CenterPanesGUIController implements Initializable {
         try {
             newClientIndex = GH.clientIndexWithNameAndLastname(clientNames[0], clientNames[1]);
         } catch (Exception e) {
-            System.out.println(clientNames[0]);
-            System.out.println(clientNames[1]);
             newClientIndex = -1;
         }
         int newEmployeeIndex = GH.employeeIndexWithId(employeeOrderTF.getText().trim());
@@ -1469,7 +1431,7 @@ public class CenterPanesGUIController implements Initializable {
             GH.createAnOrder(newProducts,newProdQuantities,newClient,newEmployee,observations);
             initOrderPane();
         } else launchError("No fue posible crear la orden.", "Error");
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1517,7 +1479,7 @@ public class CenterPanesGUIController implements Initializable {
         GH.importClientInformation("src/data/generatedData/CLIENT_MOCK_DATA.csv");
         GH.importOrderInformation("src/data/generatedData/ORDER_GENERATED_DATA.csv");
         initOrderPane();
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1539,7 +1501,7 @@ public class CenterPanesGUIController implements Initializable {
             System.out.println("Can't load window at the moment.");
             e.printStackTrace();
         }
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1563,7 +1525,7 @@ public class CenterPanesGUIController implements Initializable {
                 e.printStackTrace();
             }
         } else launchError("No hay selección. Intente de nuevo.", "Error");
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1577,7 +1539,7 @@ public class CenterPanesGUIController implements Initializable {
             employeesTBV.getItems().removeAll(employeesTBV.getSelectionModel().getSelectedItems());
             initEmployeePane();
         } else launchError("No hay selección. Intente de nuevo.", "Error");
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1587,7 +1549,7 @@ public class CenterPanesGUIController implements Initializable {
         } catch (Exception e) {
             System.out.println("Something went wrong.");
         }
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1597,7 +1559,7 @@ public class CenterPanesGUIController implements Initializable {
             employeesTBV.getSelectionModel().getSelectedItem().setModifierUser(GH.getCurrentUser());
             launchError("Datos guardados con éxito!", "Datos guardados");
         } else launchError("Datos erroneos.", "Error");
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1605,7 +1567,7 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeEmployeeLastname(GH.employeeIndexWithId(event.getRowValue().getId()),event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initEmployeePane();
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1613,7 +1575,7 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeEmployeeName(GH.employeeIndexWithId(event.getRowValue().getId()),event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initEmployeePane();
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1621,7 +1583,7 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeUsername(GH.userIndexWithId(event.getRowValue().getId()),event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initEmployeePane();
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1630,7 +1592,7 @@ public class CenterPanesGUIController implements Initializable {
             GH.enableUser(GH.userIndexWithUsername(event.getRowValue().getUsername()));
         else GH.disableUser(GH.userIndexWithUsername(event.getRowValue().getUsername()));
         event.getRowValue().setModifierUser(GH.getCurrentUser());
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1638,7 +1600,7 @@ public class CenterPanesGUIController implements Initializable {
         GH.changeEmployeeId(GH.employeeIndexWithId(event.getOldValue()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initEmployeePane();
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1648,7 +1610,7 @@ public class CenterPanesGUIController implements Initializable {
         } catch (Exception e) {
             System.out.println("Something went wrong.");
         }
-        GH.saveAllData();
+        
     }
 
     @FXML
@@ -1669,7 +1631,6 @@ public class CenterPanesGUIController implements Initializable {
                 System.out.println("Something went wrong.");
             }
         } else launchError("El empleado no pudo ser creado.", "Error");
-        GH.saveAllData();
     }
 
     private void initEmployeePane() {

@@ -25,27 +25,7 @@ public class MainGUIController implements Initializable {
 
     public MainGUIController(Restaurant GH) {
         this.GH = GH;
-        try {
-            load();
-        } catch (IOException e) {
-            System.out.println("ioe");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Class not found");
-        } catch (Exception e) {
-            System.out.println("Something else");
-        }
         cenPaneController = new CenterPanesGUIController(this.GH, mainPane);
-    }
-
-    public void load() throws IOException, ClassNotFoundException {
-        GH.loadPlateTypeData();
-        GH.loadIngredientData();
-        GH.loadProductData();
-        GH.loadProductWithTheirSizesData();
-        GH.loadClientData();
-        GH.loadEmployeesData();
-        GH.loadUserData();
-        GH.loadOrderData();
     }
 
     /*Splash screen*/
@@ -112,6 +92,8 @@ public class MainGUIController implements Initializable {
             System.out.println("Primera vez");
             GH.setFirstTime(false);
         } else {
+            currentScene.setCenter(homeScreenIMV);
+            homeScreenIMV.setVisible(true);
             toggleButtons(false);
         }
         homeScreenIMV.fitHeightProperty().bind(mainPane.heightProperty());
