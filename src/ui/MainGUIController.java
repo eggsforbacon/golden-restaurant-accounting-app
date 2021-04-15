@@ -41,6 +41,7 @@ public class MainGUIController implements Initializable {
         GH.loadPlateTypeData();
         GH.loadIngredientData();
         GH.loadProductData();
+        GH.loadProductWithTheirSizesData();
         GH.loadClientData();
         GH.loadEmployeesData();
         GH.loadUserData();
@@ -108,6 +109,7 @@ public class MainGUIController implements Initializable {
         if (GH.checkFirstTime()) {
             toggleButtons(true);
             login();
+            System.out.println("Primera vez");
             GH.setFirstTime(false);
         } else {
             toggleButtons(false);
@@ -129,6 +131,8 @@ public class MainGUIController implements Initializable {
         mainProdBTN.setDisable(state);
         reportsBTN.setDisable(state);
     }
+    
+    
 
     @FXML
     void clientsClicked(ActionEvent event) {

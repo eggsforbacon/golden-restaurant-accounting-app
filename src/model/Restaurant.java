@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,6 +19,9 @@ import java.util.Comparator;
 
 public class Restaurant{
 	
+	/**
+	 * 
+	 */
 	public final static String PRODUCT_SAVE_PATH_FILE = "src/data/savedfiles/product.z&1";
 	public final static String INGREDIENT_SAVE_PATH_FILE = "src/data/savedfiles/ingredient.z&1";
 	public final static String PLATETYPE_SAVE_PATH_FILE = "src/data/savedfiles/platetype.z&1";
@@ -25,6 +29,7 @@ public class Restaurant{
 	public final static String EMPLOYEE_SAVE_PATH_FILE = "src/data/savedfiles/employee.z&1";
 	public final static String USER_SAVE_PATH_FILE = "src/data/savedfiles/user.z&1";
 	public final static String ORDER_SAVE_PATH_FILE = "src/data/savedfiles/order.z&1";
+	public final static String PRODUCT_WTS_PATH_FILE = "src/data/savedfiles/productsWithTheirSizes.z&1";
 	
 	private User rootUser;
 	private boolean firstTime;
@@ -259,6 +264,12 @@ public class Restaurant{
 		oos.writeObject(restaurantProducts);
 		oos.close();
 	}
+	
+	public void saveProductWithTheirSizes() throws IOException {
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(PRODUCT_WTS_PATH_FILE));
+		oos.writeObject(productsWithTheirSizes);
+		oos.close();
+	}
 	 
 	@SuppressWarnings("unchecked")
 	public boolean loadProductData() throws IOException, ClassNotFoundException{
@@ -267,6 +278,19 @@ public class Restaurant{
 		if(f.exists()){
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
 			restaurantProducts = (ArrayList<Product>)ois.readObject();
+			ois.close();
+			loaded = true;
+		}
+		return loaded;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public boolean loadProductWithTheirSizesData() throws IOException, ClassNotFoundException{
+		File f = new File(PRODUCT_WTS_PATH_FILE);
+		boolean loaded = false;
+		if(f.exists()){
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			productsWithTheirSizes = (ArrayList<Product>)ois.readObject();
 			ois.close();
 			loaded = true;
 		}
@@ -294,7 +318,7 @@ public class Restaurant{
 	 
 	public void savePlateTypeData() throws IOException{
 		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(PLATETYPE_SAVE_PATH_FILE));
-		oos.writeObject(restaurantProducts);
+		oos.writeObject(restaurantPlateTypes);
 		oos.close();
 	}
 	 
@@ -376,7 +400,7 @@ public class Restaurant{
 	 
 	@SuppressWarnings("unchecked")
 	public boolean loadOrderData() throws IOException, ClassNotFoundException{
-		File f = new File(PRODUCT_SAVE_PATH_FILE);
+		File f = new File(ORDER_SAVE_PATH_FILE);
 		boolean loaded = false;
 		if(f.exists()){
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
@@ -389,6 +413,7 @@ public class Restaurant{
 	 
 	public void saveAllData() throws IOException{
 		saveProductData();
+		saveProductWithTheirSizes();
 		saveIngredientData();
 		savePlateTypeData();
 		saveClientData();
@@ -1448,6 +1473,7 @@ public class Restaurant{
 	public ArrayList<User> getRestaurantUsers(){
 		return restaurantUsers;
 	}
+	
 	public ArrayList<Client> getRestaurantClients() {
 		return restaurantClients;
 	}
