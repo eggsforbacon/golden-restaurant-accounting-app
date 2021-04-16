@@ -91,7 +91,6 @@ public class MainGUIController implements Initializable {
         if (GH.checkFirstTime()) {
             toggleButtons(true);
             login();
-            System.out.println("Primera vez");
             GH.setFirstTime(false);
         } else {
             currentScene.setCenter(homeScreenIMV);
@@ -227,7 +226,7 @@ public class MainGUIController implements Initializable {
             if (!GH.checkFirstTime()) {
                 homeScreenIMV.setVisible(true);
             }
-            if (cenPaneController.getLoginSuccesful()) {
+            if (cenPaneController.getLoginSuccessful()) {
             	toggleButtons(false);
             }
             currentScene.setStyle("\n-fx-background-color: black;");

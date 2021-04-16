@@ -70,9 +70,8 @@ public class Main extends Application {
     }
   }
 
-  public boolean loadRestaurantData() {
+  public void loadRestaurantData() {
     File f = new File(RESTAURANT_PATH_FILE);
-    boolean loaded = false;
     if(f.exists()){
       ObjectInputStream ois;
       try {
@@ -84,9 +83,7 @@ public class Main extends Application {
         e.fillInStackTrace();
         e.printStackTrace();
       }
-      loaded = true;
     }
-    return loaded;
   }
 
 }
