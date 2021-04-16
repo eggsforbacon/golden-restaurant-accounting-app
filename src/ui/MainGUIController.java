@@ -44,7 +44,7 @@ public class MainGUIController implements Initializable {
     private BorderPane currentScene;
 
     @FXML
-    private final BorderPane mainPane = new BorderPane();
+    private BorderPane mainPane = new BorderPane();
 
     @FXML
     private ImageView randomIMV;
