@@ -7,9 +7,9 @@ import java.util.ArrayList;
 public class Employee extends Person implements Serializable{
 
 	private static final long serialVersionUID = 2;
-	
-	private final ArrayList<LocalDateTime> dateOfTheOrdersDelivered;
-	private final ArrayList<Double> priceOfTheOrdersDelivered;
+
+	private ArrayList<LocalDateTime> dateOfTheOrdersDelivered;
+	private ArrayList<Double> priceOfTheOrdersDelivered;
 	private int allOrdersDelivered;
 	private int specifiedOrdersDelivered;
 

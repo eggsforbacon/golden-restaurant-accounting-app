@@ -6,19 +6,19 @@ import java.util.ArrayList;
 
 public class Product extends SystemObject implements Serializable {
 
-	private static final long serialVersionUID = 3;
+	private static long serialVersionUID = 4;
 
 	private PlateType pt;
-	private final ArrayList<Ingredient> ingrdnts;
-	private final ArrayList<String> productSizes;
-	private final int productSizesSize;
-	private final ArrayList<Double> sizesPrices;
+	private ArrayList<Ingredient> ingrdnts;
+	private ArrayList<String> productSizes;
+	private int productSizesSize;
+	private ArrayList<Double> sizesPrices;
 	private double productPrice;
 	private String productActualSize;
-	private final ArrayList<Integer> timesItWasRequested;
+	private ArrayList<Integer> timesItWasRequested;
 	private int timesItWasRequestedSize;
-	private final ArrayList<LocalDateTime> datesOfTimeItWasRequested;
-	private final ArrayList<Double> pricesPaidForProduct;
+	private ArrayList<LocalDateTime> datesOfTimeItWasRequested;
+	private ArrayList<Double> pricesPaidForProduct;
 
 	public Product(String name, User creatorUser, PlateType pt, ArrayList<Ingredient> ingrdnts, ArrayList<String> productSizes, ArrayList<Double> sizesPrices, int indicator) {
 		super(name, creatorUser);

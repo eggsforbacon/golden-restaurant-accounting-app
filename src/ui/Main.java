@@ -23,6 +23,7 @@ public class Main extends Application {
 
   public Main() {
     GH = new Restaurant();
+    loadRestaurantData();
     controller = new MainGUIController(GH);
   }
 
@@ -81,6 +82,7 @@ public class Main extends Application {
       } catch (IOException | ClassNotFoundException e) {
         System.out.println("File is empty or something else went wrong.");
         e.fillInStackTrace();
+        e.printStackTrace();
       }
       loaded = true;
     }

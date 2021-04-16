@@ -40,25 +40,25 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane productPane;
 
     @FXML
-    private final TableView<Product> productTBV = new TableView<>();
+    private TableView<Product> productTBV = new TableView<>();
 
     @FXML
-    private final TableColumn<Product, String> nameProdCol = new TableColumn<>();
+    private TableColumn<Product, String> nameProdCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Product, String> enabledProdCol = new TableColumn<>();
+    private TableColumn<Product, String> enabledProdCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Product, String> ingredientsProdCol = new TableColumn<>();
+    private TableColumn<Product, String> ingredientsProdCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Product, String> typeProdCol = new TableColumn<>();
+    private TableColumn<Product, String> typeProdCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Product, String> sizesProdCol = new TableColumn<>();
+    private TableColumn<Product, String> sizesProdCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Product, Double> pricesProdCol = new TableColumn<>();
+    private TableColumn<Product, Double> pricesProdCol = new TableColumn<>();
 
     @FXML
     private Label spacer2;
@@ -109,13 +109,13 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane ingredientsPane;
 
     @FXML
-    private final TableView<Ingredient> ingredientsTBV = new TableView<>();
+    private TableView<Ingredient> ingredientsTBV = new TableView<>();
 
     @FXML
-    private final TableColumn<Ingredient, String> nameIngCol = new TableColumn<>();
+    private TableColumn<Ingredient, String> nameIngCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Ingredient, String> enabledIngCol = new TableColumn<>();
+    private TableColumn<Ingredient, String> enabledIngCol = new TableColumn<>();
 
     @FXML
     private Label spacer3;
@@ -145,28 +145,28 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane clientsPane;
 
     @FXML
-    private final TableView<Client> clientsTBV = new TableView<>();
+    private TableView<Client> clientsTBV = new TableView<>();
 
     @FXML
-    private final TableColumn<Client, String> nameCliCol = new TableColumn<>();
+    private TableColumn<Client, String> nameCliCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Client, String> lastNameCliCol = new TableColumn<>();
+    private TableColumn<Client, String> lastNameCliCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Client, String> idCliCol = new TableColumn<>();
+    private TableColumn<Client, String> idCliCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Client, String> addressCliCol = new TableColumn<>();
+    private TableColumn<Client, String> addressCliCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Client, String> teleCliCol = new TableColumn<>();
+    private TableColumn<Client, String> teleCliCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Client, String> enabledCliCol = new TableColumn<>();
+    private TableColumn<Client, String> enabledCliCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Client, String> obsCliCol = new TableColumn<>();
+    private TableColumn<Client, String> obsCliCol = new TableColumn<>();
 
     @FXML
     private Label spacer4;
@@ -229,13 +229,13 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane typesPane;
 
     @FXML
-    private final TableView<PlateType> typesTBV = new TableView<>();
+    private TableView<PlateType> typesTBV = new TableView<>();
 
     @FXML
-    private final TableColumn<PlateType, String> nameTypeCol = new TableColumn<>();
+    private TableColumn<PlateType, String> nameTypeCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<PlateType, String> enabledTypeCol = new TableColumn<>();
+    private TableColumn<PlateType, String> enabledTypeCol = new TableColumn<>();
 
     //Add Pane
     @FXML
@@ -259,40 +259,40 @@ public class CenterPanesGUIController implements Initializable {
 
     /*Order Pane*/
     @FXML
-    private final TableView<Order> orderTBV = new TableView<>();
+    private TableView<Order> orderTBV = new TableView<>();
 
     @FXML
-    private final TableColumn<Order, String> codeCol = new TableColumn<>();
+    private TableColumn<Order, String> codeCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Order, String> statusOrderCol = new TableColumn<>();
+    private TableColumn<Order, String> statusOrderCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Order, String> prodOrderCol = new TableColumn<>();
+    private TableColumn<Order, String> prodOrderCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Order, String> quantityOrderCol = new TableColumn<>();
+    private TableColumn<Order, String> quantityOrderCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Order, String> ordererCol = new TableColumn<>();
+    private TableColumn<Order, String> ordererCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Order, String> serverCol = new TableColumn<>();
+    private TableColumn<Order, String> serverCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Order, String> orderedDateCol = new TableColumn<>();
+    private TableColumn<Order, String> orderedDateCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Order, String> obsOrderCol = new TableColumn<>();
+    private TableColumn<Order, String> obsOrderCol = new TableColumn<>();
 
     @FXML
     private Label spacer5;
 
     @FXML
-    private final Button queueBTN = new Button();
+    private Button queueBTN = new Button();
 
     @FXML
-    private final Button cancelOrderBTN = new Button();
+    private Button cancelOrderBTN = new Button();
 
     //Add Pane
     @FXML
@@ -352,22 +352,22 @@ public class CenterPanesGUIController implements Initializable {
     private BorderPane employeesPane;
 
     @FXML
-    private final TableView<User> employeesTBV = new TableView<>();
+    private TableView<User> employeesTBV = new TableView<>();
 
     @FXML
-    private final TableColumn<User, String> nameEmpCol = new TableColumn<>();
+    private TableColumn<User, String> nameEmpCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<User, String> lastNameEmpCol = new TableColumn<>();
+    private TableColumn<User, String> lastNameEmpCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<User, String> idEmpCol = new TableColumn<>();
+    private TableColumn<User, String> idEmpCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<User, String> enabledEmpCol = new TableColumn<>();
+    private TableColumn<User, String> enabledEmpCol = new TableColumn<>();
 
     @FXML
-    private final TableColumn<User, String> usernameEmpCol = new TableColumn<>();
+    private TableColumn<User, String> usernameEmpCol = new TableColumn<>();
 
     //Add Pane
     @FXML
@@ -450,10 +450,10 @@ public class CenterPanesGUIController implements Initializable {
     private Label destinationLBL;
 
     @FXML
-    private final DatePicker startDate = new DatePicker();
+    private DatePicker startDate = new DatePicker();
 
     @FXML
-    private final DatePicker endDate = new DatePicker();
+    private DatePicker endDate = new DatePicker();
 
     @FXML
     private TextField startTimeTB;
@@ -462,15 +462,15 @@ public class CenterPanesGUIController implements Initializable {
     private TextField endDateTB;
 
     @FXML
-    private final Label dateTitLBL = new Label();
+    private Label dateTitLBL = new Label();
 
     @FXML
-    private final Label timeTitLBL = new Label();
+    private Label timeTitLBL = new Label();
 
     @FXML
-    private final ChoiceBox<String> reportCBX = new ChoiceBox<>();
+    private ChoiceBox<String> reportCBX = new ChoiceBox<>();
 
-    private final Restaurant GH;
+    private Restaurant GH;
     private final Tooltip tableViewTTP;
     private final Tooltip listViewTTP;
 
@@ -1585,7 +1585,7 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     @FXML
-    void confirmEmployee(ActionEvent event) {
+    void confirmEmployee(ActionEvent event) throws IOException {
         String newName = newEmpNameTF.getText();
         String newLastName = newEmpLastNameTF.getText();
         String newUserName = newUserNameTF.getText();

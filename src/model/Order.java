@@ -8,17 +8,17 @@ import java.util.Random;
 @SuppressWarnings("Unused")
 public class Order extends SystemObject implements Serializable {	
 
-	private static final long serialVersionUID = 4;
+	private static long serialVersionUID = 5;
 	
 	private Status orderStatus;
 	private int statusIndicator;
-	private final ArrayList<Product> orderProducts;
-	private final int orderProductsSize;
-	private final ArrayList<Integer> productsQuantity;
+	private ArrayList<Product> orderProducts;
+	private int orderProductsSize;
+	private ArrayList<Integer> productsQuantity;
 	private Client orderClient;
 	private Employee orderEmployee;
-	private final LocalDateTime date;
-	private final String dateString;
+	private LocalDateTime date;
+	private String dateString;
 	private String observations;
 	private double priceOfTheOrder;
 
