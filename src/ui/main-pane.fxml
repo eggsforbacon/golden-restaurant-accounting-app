@@ -15,6 +15,11 @@
          <left>
             <VBox fx:id="sidebarVBOX" alignment="CENTER" minWidth="15.0" prefHeight="541.0" prefWidth="228.0" spacing="10.0" style="-fx-background-color: #211917;" BorderPane.alignment="CENTER">
                <children>
+                  <Label fx:id="currentUserLBL" text="Sin iniciar sesión">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Label>
                   <ImageView fitHeight="160.0" fitWidth="171.0" onMouseClicked="#houseClicked" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                      <image>
                         <Image url="@resources/golden-house.png" />

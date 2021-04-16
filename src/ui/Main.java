@@ -12,6 +12,9 @@ import model.Restaurant;
 
 import java.io.*;
 
+/*Total warnings (16-04-21): 3 (Product) + 15 (Restaurant) -> 18 Warnings total
+  Total testing souts (16-04-21) -> 0 */
+
 public class Main extends Application {
 
   MainGUIController controller;
@@ -20,7 +23,6 @@ public class Main extends Application {
 
   public Main() {
     GH = new Restaurant();
-    System.out.println(loadRestaurantData());
     controller = new MainGUIController(GH);
   }
 
@@ -39,7 +41,7 @@ public class Main extends Application {
     Scene scene = new Scene(root);
     primaryStage.setScene(scene);
     scene.getStylesheets().addAll(String.valueOf(getClass().getResource("css/stylesheet.css")));
-    primaryStage.setMinHeight(708.0);
+    primaryStage.setMinHeight(718.0);
     primaryStage.setMinWidth(1250.0);
     primaryStage.setTitle("Golden House Restaurant: Inicio");
     primaryStage.show();
@@ -71,13 +73,14 @@ public class Main extends Application {
     File f = new File(RESTAURANT_PATH_FILE);
     boolean loaded = false;
     if(f.exists()){
-      ObjectInputStream ois = null;
+      ObjectInputStream ois;
       try {
         ois = new ObjectInputStream(new FileInputStream(f));
         GH = (Restaurant)ois.readObject();
         ois.close();
       } catch (IOException | ClassNotFoundException e) {
-        e.printStackTrace();
+        System.out.println("File is empty or something else went wrong.");
+        e.fillInStackTrace();
       }
       loaded = true;
     }

@@ -23,8 +23,7 @@
             <HBox alignment="CENTER" prefHeight="136.0" prefWidth="580.0" spacing="15.0" VBox.vgrow="ALWAYS">
                <children>
                   <Label text="Productos:" />
-                  <ListView fx:id="selectedProductsLV" minHeight="-Infinity" onMouseEntered="#showProdInfo" onMouseExited="#hideProdInfo" prefHeight="33.0" prefWidth="164.0" />
-                  <Label fx:id="productsInfoLabel" alignment="CENTER" prefHeight="122.0" prefWidth="189.0" text="(Para seleccionar varios productos, presionar la tecla CTRL mientras hace click sobre el producto a seleccionar)" textAlignment="JUSTIFY" visible="false" wrapText="true" />
+                  <ListView fx:id="selectedProductsLV" minHeight="-Infinity" prefHeight="117.0" prefWidth="301.0" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="139.0" prefWidth="584.0" spacing="15.0">
                <children>

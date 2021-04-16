@@ -21,7 +21,7 @@
                   <Label text="Identificación:" />
                   <Label fx:id="empDInfoLBL" text="Label" />
                   <Separator prefHeight="0.0" prefWidth="37.0" visible="false" />
-                  <Label text="Telefono:" />
+                  <Label text="Usuario:" />
                   <Label fx:id="empUserInfoLBL" text="Label" />
                </children>
             </HBox>

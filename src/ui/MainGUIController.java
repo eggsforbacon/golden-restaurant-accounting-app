@@ -13,7 +13,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import model.Restaurant;
-import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -25,7 +24,7 @@ public class MainGUIController implements Initializable {
 
     public MainGUIController(Restaurant GH) {
         this.GH = GH;
-        cenPaneController = new CenterPanesGUIController(this.GH, mainPane);
+        cenPaneController = new CenterPanesGUIController(this.GH);
     }
 
     /*Splash screen*/
@@ -45,7 +44,7 @@ public class MainGUIController implements Initializable {
     private BorderPane currentScene;
 
     @FXML
-    private BorderPane mainPane = new BorderPane();
+    private final BorderPane mainPane = new BorderPane();
 
     @FXML
     private ImageView randomIMV;
@@ -80,6 +79,9 @@ public class MainGUIController implements Initializable {
     @FXML
     private Label spacer1;
 
+    @FXML
+    private Label currentUserLBL;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         label = progress;
@@ -113,11 +115,10 @@ public class MainGUIController implements Initializable {
         mainProdBTN.setDisable(state);
         reportsBTN.setDisable(state);
     }
-    
-    
 
     @FXML
     void clientsClicked(ActionEvent event) {
+        credentials();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("clientsGUI/clients-center.fxml"));
             fxmlLoader.setController(cenPaneController);
@@ -125,13 +126,13 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
-            e.printStackTrace();
         }
     }
 
 
     @FXML
     void ingredientsClicked(ActionEvent event) {
+        credentials();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ingredientsGUI/ingredients-center.fxml"));
             fxmlLoader.setController(cenPaneController);
@@ -139,12 +140,12 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
-            e.printStackTrace();
         }
     }
 
     @FXML
     void personnelClicked(ActionEvent event) {
+        credentials();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("personnelGUI/user-center.fxml"));
             fxmlLoader.setController(cenPaneController);
@@ -152,12 +153,12 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
-            e.printStackTrace();
         }
     }
 
     @FXML
     void productsClicked(ActionEvent event) {
+        credentials();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productGUI/product-center.fxml"));
             fxmlLoader.setController(cenPaneController);
@@ -165,12 +166,12 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
-            e.printStackTrace();
         }
     }
 
     @FXML
     void loginClicked(ActionEvent event) {
+        credentials();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
             fxmlLoader.setController(cenPaneController);
@@ -178,7 +179,6 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
-            e.printStackTrace();
         }
     }
 
@@ -190,12 +190,12 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
-            e.printStackTrace();
         }
     }
 
     @FXML
     void ordersClicked(ActionEvent event) {
+        credentials();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ordersGUI/order-center.fxml"));
             fxmlLoader.setController(cenPaneController);
@@ -203,12 +203,12 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
-            e.printStackTrace();
         }
     }
 
     @FXML
     void plateTypesClicked(ActionEvent event) {
+        credentials();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("typesGUI/types-center.fxml"));
             fxmlLoader.setController(cenPaneController);
@@ -216,12 +216,12 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
-            e.printStackTrace();
         }
     }
 
     @FXML
     public void houseClicked(MouseEvent event) {
+        credentials();
         try {
             currentScene.setCenter(homeScreenIMV);
             if (!GH.checkFirstTime()) {
@@ -233,12 +233,12 @@ public class MainGUIController implements Initializable {
             currentScene.setStyle("\n-fx-background-color: black;");
         } catch (Exception e) {
             System.out.println("Can't load image at the moment");
-            e.printStackTrace();
         }
     }
 
     @FXML
     void genReportClicked(ActionEvent event) {
+        credentials();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("reportGen.fxml"));
             fxmlLoader.setController(cenPaneController);
@@ -246,7 +246,6 @@ public class MainGUIController implements Initializable {
             currentScene.setCenter(root);
         } catch (Exception e) {
             System.out.println("Can't load scene at the moment");
-            e.printStackTrace();
         }
     }
 
@@ -263,6 +262,23 @@ public class MainGUIController implements Initializable {
                 return "resources/gh-food3.png";
             default:
                 return null;
+        }
+    }
+
+    void credentials() {
+        try {
+            if (GH.getCurrentUser().getUsername().equals(GH.getRootUser().getUsername())) {
+                currentUserLBL.setText("Administrador");
+                currentUserLBL.setStyle("\n-fx-text-fill: #de260d;");
+            } else {
+                currentUserLBL.setText(cenPaneController.getCurrentUser());
+                currentUserLBL.setStyle("" +
+                        "-fx-text-fill: #e1be66;\n" +
+                        "-fx-font-weight: bold;");
+            }
+        } catch (NullPointerException npe) {
+            currentUserLBL.setText("Sin iniciar sesión");
+            npe.fillInStackTrace();
         }
     }
 }

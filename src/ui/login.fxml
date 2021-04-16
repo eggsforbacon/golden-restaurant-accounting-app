@@ -35,7 +35,7 @@
       </VBox>
    </center>
    <top>
-      <Label fx:id="currentUser" alignment="CENTER_RIGHT" contentDisplay="CENTER" styleClass="#enabled-label" text="Por favor iniciar sesión" textAlignment="JUSTIFY" BorderPane.alignment="BOTTOM_RIGHT">
+      <Label fx:id="currentUserLBL" alignment="CENTER_RIGHT" contentDisplay="CENTER" styleClass="#enabled-label" text="Por favor iniciar sesión" textAlignment="JUSTIFY" BorderPane.alignment="BOTTOM_RIGHT">
          <BorderPane.margin>
             <Insets right="15.0" top="10.0" />
          </BorderPane.margin>

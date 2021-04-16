@@ -5,20 +5,20 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Random;
 
+@SuppressWarnings("Unused")
 public class Order extends SystemObject implements Serializable {	
 
-	private static final long serialVersionUID = 3;
+	private static final long serialVersionUID = 4;
 	
 	private Status orderStatus;
 	private int statusIndicator;
-	private ArrayList<Product> orderProducts;
-	private int orderProductsSize;
-	private ArrayList<Integer> productsQuantity;
+	private final ArrayList<Product> orderProducts;
+	private final int orderProductsSize;
+	private final ArrayList<Integer> productsQuantity;
 	private Client orderClient;
 	private Employee orderEmployee;
-	private transient DateTimeFormatter formatter;
-	private LocalDateTime date;
-	private String dateString;
+	private final LocalDateTime date;
+	private final String dateString;
 	private String observations;
 	private double priceOfTheOrder;
 
@@ -32,7 +32,7 @@ public class Order extends SystemObject implements Serializable {
 		this.productsQuantity=productsQuantity;
 		this.orderClient=orderClient;
 		this.orderEmployee=orderEmployee;
-		formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		date = LocalDateTime.now();
 		dateString= date.format(formatter);
 		this.observations=observations;
@@ -58,13 +58,13 @@ public class Order extends SystemObject implements Serializable {
 	}
 
 	public String showProducts() {
-		String info = "";
+		StringBuilder info = new StringBuilder();
 		for(int i=0;i<orderProductsSize;i++) {
-			info += orderProducts.get(i).getName()+getSeparator();
-			info += productsQuantity.get(i)+getSeparator();
-			info += orderProducts.get(i).getProductPrice()+getSeparator();
+			info.append(orderProducts.get(i).getName()).append(getSeparator());
+			info.append(productsQuantity.get(i)).append(getSeparator());
+			info.append(orderProducts.get(i).getProductPrice()).append(getSeparator());
 		}
-		return info;
+		return info.toString();
 	}
 	@Override
 	public String showInformation() {
@@ -89,30 +89,39 @@ public class Order extends SystemObject implements Serializable {
 	public String getObservations() {
 		return observations;
 	}
+
 	public int getStatusIndicator() {
 		return statusIndicator;
 	}
+
 	public Client getOrderClient() {
 		return orderClient;
 	}
+
 	public Employee getOrderEmployee() {
 		return orderEmployee;
 	}
+
 	public String getOrderEmployeeName() {
 		return orderEmployee.name + " " + orderEmployee.getLastname();
 	}
+
 	public String getOrderStatus() {
 		return orderStatus.toString();
 	}
+
 	public String getDateString() {
 		return dateString;
 	}
+
 	public LocalDateTime getDate() {
 		return date;
 	}
+
 	public ArrayList<Product> getOrderProducts(){
 		return orderProducts;
 	}
+
 	public String getOrderProductsString(){
 		StringBuilder sb = new StringBuilder();
 		for (Product p: orderProducts) {
@@ -120,9 +129,11 @@ public class Order extends SystemObject implements Serializable {
 		}
 		return sb.toString();
 	}
+
 	public ArrayList<Integer> getProductsQuantity(){
 		return productsQuantity;
 	}
+
 	public String getProductsQuantityString() {
 		StringBuilder sb = new StringBuilder();
 		for (int i: productsQuantity) {
@@ -133,9 +144,11 @@ public class Order extends SystemObject implements Serializable {
 	public Client getOrderclient() {
 		return orderClient;
 	}
+
 	public String getOrderClientName() {
 		return orderClient.name + " " + orderClient.getLastname();
 	}
+
 	public double getPriceOfTheOrder() {
 		return priceOfTheOrder;
 	}
@@ -152,12 +165,15 @@ public class Order extends SystemObject implements Serializable {
 		}
 		orderStatus=Status.getS(this.statusIndicator);
 	}
+
 	public void setOrderClient(Client orderClient) {
 		this.orderClient = orderClient;
 	}
+
 	public void setOrderEmployee(Employee orderEmployee) {
 		this.orderEmployee = orderEmployee;
 	}
+
 	public void setObservations(String observations) {
 		this.observations = observations;
 	}

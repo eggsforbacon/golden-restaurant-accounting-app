@@ -6,17 +6,17 @@ import java.util.ArrayList;
 
 public class Employee extends Person implements Serializable{
 
-	private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 2;
 	
-	private ArrayList<LocalDateTime> dateOfTheOrdersDelivered;
-	private ArrayList<Double> priceOfTheOrdersDelivered;
+	private final ArrayList<LocalDateTime> dateOfTheOrdersDelivered;
+	private final ArrayList<Double> priceOfTheOrdersDelivered;
 	private int allOrdersDelivered;
 	private int specifiedOrdersDelivered;
 
 	public Employee(String name,User creatorUser,String lastname,String id) {
 		super(name,creatorUser,lastname,id);
-		dateOfTheOrdersDelivered = new ArrayList<LocalDateTime>();
-		priceOfTheOrdersDelivered = new ArrayList<Double>();
+		dateOfTheOrdersDelivered = new ArrayList<>();
+		priceOfTheOrdersDelivered = new ArrayList<>();
 		allOrdersDelivered=0;
 		specifiedOrdersDelivered=0;
 	}
@@ -51,6 +51,7 @@ public class Employee extends Person implements Serializable{
 	public int getAllEmployeeOrdersDelivered() {
 		return allOrdersDelivered;
 	}
+
 	public double getTotalPriceOfTheOrders(LocalDateTime startDate,LocalDateTime endDate) {
 		double total = 0;
 		specifiedOrdersDelivered=0;
@@ -66,6 +67,7 @@ public class Employee extends Person implements Serializable{
 	public ArrayList<LocalDateTime> getDateOfTheOrdersDelivered(){
 		return dateOfTheOrdersDelivered;
 	}
+
 	public int getSpecifiedOrdersDelivered() {
 		return specifiedOrdersDelivered;
 	}

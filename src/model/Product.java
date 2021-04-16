@@ -6,19 +6,19 @@ import java.util.ArrayList;
 
 public class Product extends SystemObject implements Serializable {
 
-	private static final long serialVersionUID = 2;
+	private static final long serialVersionUID = 3;
 
 	private PlateType pt;
-	private ArrayList<Ingredient> ingrdnts;
-	private ArrayList<String> productSizes;
-	private int productSizesSize;
-	private ArrayList<Double> sizesPrices;
+	private final ArrayList<Ingredient> ingrdnts;
+	private final ArrayList<String> productSizes;
+	private final int productSizesSize;
+	private final ArrayList<Double> sizesPrices;
 	private double productPrice;
 	private String productActualSize;
-	private ArrayList<Integer> timesItWasRequested;
+	private final ArrayList<Integer> timesItWasRequested;
 	private int timesItWasRequestedSize;
-	private ArrayList<LocalDateTime> datesOfTimeItWasRequested;
-	private ArrayList<Double> pricesPaidForProduct;
+	private final ArrayList<LocalDateTime> datesOfTimeItWasRequested;
+	private final ArrayList<Double> pricesPaidForProduct;
 
 	public Product(String name, User creatorUser, PlateType pt, ArrayList<Ingredient> ingrdnts, ArrayList<String> productSizes, ArrayList<Double> sizesPrices, int indicator) {
 		super(name, creatorUser);
@@ -29,10 +29,10 @@ public class Product extends SystemObject implements Serializable {
 		this.sizesPrices = sizesPrices;
 		setProductActualSize(indicator);
 		setProductPrice(indicator);
-		timesItWasRequested = new ArrayList<Integer>();
+		timesItWasRequested = new ArrayList<>();
 		timesItWasRequestedSize = timesItWasRequested.size();
-		datesOfTimeItWasRequested = new ArrayList<LocalDateTime>();
-		pricesPaidForProduct = new ArrayList<Double>();
+		datesOfTimeItWasRequested = new ArrayList<>();
+		pricesPaidForProduct = new ArrayList<>();
 	}
 
 
@@ -50,7 +50,7 @@ public class Product extends SystemObject implements Serializable {
 	}
 
 	public double[] getTotalTimesAndPrice(LocalDateTime startDate, LocalDateTime endDate) {
-		double timesAndPrice[] = new double[2];
+		double[] timesAndPrice = new double[2];
 		int times = 0;
 		double price = 0;
 		for (int i = 0; i < timesItWasRequestedSize; i++) {
@@ -122,26 +122,25 @@ public class Product extends SystemObject implements Serializable {
 	}
 
 	public String getTheIngredients() {
-		String ingredients = "";
-		for (int i = 0; i < ingrdnts.size(); i++) {
-			ingredients += (ingrdnts.get(i).getName()) + (",");
+		StringBuilder ingredients = new StringBuilder();
+		for (Ingredient ingrdnt : ingrdnts) {
+			ingredients.append(ingrdnt.getName()).append(",");
 		}
-		ingredients = ingredients.substring(0, ingredients.length() - 1);
-		return ingredients;
+		ingredients = new StringBuilder(ingredients.substring(0, ingredients.length() - 1));
+		return ingredients.toString();
 	}
 
 	public String chooseASize() {
-		String info = productActualSize + " " + getName();
-		return info;
+		return productActualSize + " " + getName();
 	}
 
 	public String sizesInformation() {
-		String info = "";
+		StringBuilder info = new StringBuilder();
 		for (int i = 0; i < productSizesSize; i++) {
-			info += productSizes.get(i) + ",";
-			info += sizesPrices.get(i) + getSeparator();
+			info.append(productSizes.get(i)).append(",");
+			info.append(sizesPrices.get(i)).append(getSeparator());
 		}
-		return info;
+		return info.toString();
 	}
 
 	@Override

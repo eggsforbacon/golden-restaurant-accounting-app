@@ -7,7 +7,7 @@ public class OrderDateComparator implements Comparator<Order>{
 
 	@Override
 	public int compare(Order o1, Order o2) {
-		int indicator = 0;
+		int indicator;
 		LocalDateTime o1Date = o1.getDate();
 		LocalDateTime o2Date = o2.getDate();
 		if(o1Date.isBefore(o2Date)) {

@@ -45,7 +45,7 @@
 }
 
 .text-field {
-  -fx-background-color: #845650;
+  -fx-background-color: #8f5b54;
   -fx-text-fill: #efcf74;
   -fx-border-color: #471c09;
   -fx-background-radius: 7;
@@ -101,28 +101,30 @@
   -fx-alignment: CENTER;
 }
 
-.date-picker {
-  -fx-background-insets: 3;
-}
-
 .choice-box {
   -fx-background-color: #845650;
 }
 
-.table-view .track, .table-view .filler {
+.table-view .track, .table-view .filler, .list-view .track {
   -fx-background-color: #5c524f;
 }
 
-.table-view .thumb {
+.table-view .thumb, .list-view .thumb {
   -fx-background-color: #e1be66;
 }
 
-.table-view .increment-button, .table-view .decrement-button {
+.table-view .increment-button, .table-view .decrement-button,
+.list-view .increment-button, .list-view .decrement-button {
   -fx-background-color: #ab904b;
   -fx-border-color: #ab904b;
   -fx-border-width: 2;
 }
 
-.table-view .increment-arrow, .table-view .decrement-arrow {
+.table-view .increment-arrow, .table-view .decrement-arrow,
+.list-view .increment-arrow, .list-view .decrement-arrow {
   -fx-background-color: #e1be66;
+}
+
+.date-picker {
+  -fx-background-insets: 3;
 }
