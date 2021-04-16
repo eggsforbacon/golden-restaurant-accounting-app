@@ -182,6 +182,8 @@ public class MainGUIController implements Initializable {
     }
 
     void login() {
+        credentials();
+        if (cenPaneController.getLoginSuccessful()) toggleButtons(false);
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
             fxmlLoader.setController(cenPaneController);
@@ -266,7 +268,7 @@ public class MainGUIController implements Initializable {
 
     void credentials() {
         try {
-            if (GH.getCurrentUser().getUsername().equals(GH.getRootUser().getUsername())) {
+            if (GH.getCurrentUser().getUsername().equals(GH.getRootUser().getUsername()) && !GH.checkFirstTime()) {
                 currentUserLBL.setText("Administrador");
                 currentUserLBL.setStyle("\n-fx-text-fill: #de260d;");
             } else {

@@ -254,6 +254,7 @@ public class Restaurant implements Serializable {
 	public void initializeUser(int index, String username, String password) { //<-- was boolean, IOException marked as not thrown
 		if(index != -1) {
 			int userIsRepeated = userIndexWithUsername(username);
+			System.out.println(userIsRepeated);
 			if(userIsRepeated == -1) {
 				restaurantUsers.get(index).setUsername(username);
 				restaurantUsers.get(index).setPassword(password);

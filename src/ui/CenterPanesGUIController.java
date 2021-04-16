@@ -520,6 +520,7 @@ public class CenterPanesGUIController implements Initializable {
             errorPane.show();
         } catch (Exception e) {
             System.out.println("Something went wrong.");
+            e.printStackTrace();
         }
     }
 
@@ -1581,7 +1582,7 @@ public class CenterPanesGUIController implements Initializable {
     }
 
     @FXML
-    void confirmEmployee(ActionEvent event) throws IOException {
+    void confirmEmployee(ActionEvent event) {
         String newName = newEmpNameTF.getText();
         String newLastName = newEmpLastNameTF.getText();
         String newUserName = newUserNameTF.getText();
@@ -1701,9 +1702,13 @@ public class CenterPanesGUIController implements Initializable {
 
     private void initLogin() {
         try {
-            if (!GH.getCurrentUser().getName().equals("Root"))
+            if (!GH.getCurrentUser().getUsername().equals("Root"))
                 currentUserLBL.setText("Usuario actual: " + GH.getCurrentUser().getUsername());
-            else currentUserLBL.setText("Por favor iniciar sesión");
+            else if (GH.checkFirstTime()) currentUserLBL.setText("Por favor iniciar sesión");
+            else {
+                currentUserLBL.setText("Usuario actual: Administrador");
+                currentUserLBL.setStyle("\n-fx-text-fill: #de260d;");
+            }
         } catch (NullPointerException npe) {
             npe.fillInStackTrace();
         }
