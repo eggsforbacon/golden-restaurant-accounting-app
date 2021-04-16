@@ -1080,7 +1080,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void editNameIng(CellEditEvent<Ingredient, String> event)  {
-        GH.changeingredientName(GH.ingredientIndexWithName(event.getRowValue().getName()), event.getNewValue());
+        GH.changeIngredientName(GH.ingredientIndexWithName(event.getRowValue().getName()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
         initIngredientPane();
     }
@@ -1241,7 +1241,7 @@ public class CenterPanesGUIController implements Initializable {
     void deleteTypeClicked(ActionEvent event)  {
         PlateType removed = typesTBV.getSelectionModel().getSelectedItems().get(0);
         if (removed == null) launchError("No hay selección. Intente de nuevo.", "Error");
-        else if (GH.deletePlateType(GH.plateTypeIndexWithplateType(removed))) typesTBV.getItems().removeAll(typesTBV.getSelectionModel().getSelectedItems());
+        else if (GH.deletePlateType(GH.plateTypeIndexWithPlateType(removed))) typesTBV.getItems().removeAll(typesTBV.getSelectionModel().getSelectedItems());
         else launchError("El tipo de plato no pudo ser eliminado.", "Error");
         typesTBV.refresh();
     }

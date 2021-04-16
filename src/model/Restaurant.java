@@ -4,6 +4,7 @@ import java.io.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -38,30 +39,30 @@ public class Restaurant implements Serializable {
 		rootUser = new User("Generic",null,"user","none","Root","admin");
 		firstTime = true;
 		currentUser = rootUser;
-		restaurantUsers = new ArrayList<User>();
-		restaurantUsersSize=restaurantUsers.size();
-		restaurantProducts = new ArrayList<Product>();
-		productsWithTheirSizes = new ArrayList<Product>();
+		restaurantUsers = new ArrayList<>();
+		restaurantUsersSize = 0;
+		restaurantProducts = new ArrayList<>();
+		productsWithTheirSizes = new ArrayList<>();
 		restaurantProductsSize = restaurantProducts.size();
-		productsWithTheirSizesSize=0;
-		restaurantIngredients = new ArrayList<Ingredient>();
-		restaurantIngredientsSize=restaurantIngredients.size();
-		restaurantPlateTypes = new ArrayList<PlateType>();
+		productsWithTheirSizesSize =0;
+		restaurantIngredients = new ArrayList<>();
+		restaurantIngredientsSize =restaurantIngredients.size();
+		restaurantPlateTypes = new ArrayList<>();
 		PlateType mainDish = new PlateType("Plato principal",currentUser);
 		PlateType sideDish = new PlateType("Plato adicional",currentUser);
 		PlateType drink = new PlateType("Bebida",currentUser);
 		restaurantPlateTypes.add(mainDish);
 		restaurantPlateTypes.add(sideDish);
 		restaurantPlateTypes.add(drink);
-		restaurantPlateTypesSize=restaurantPlateTypes.size();
-		restaurantClients = new ArrayList<Client>();
+		restaurantPlateTypesSize = restaurantPlateTypes.size();
+		restaurantClients = new ArrayList<>();
 		restaurantClientsSize = restaurantClients.size();
-		timeOfSearch=0;
-		restaurantOrders=new ArrayList<Order>();
+		timeOfSearch = 0;
+		restaurantOrders = new ArrayList<>();
 		restaurantOrdersSize=restaurantOrders.size();
-		restaurantEmployees = new ArrayList<Employee>();
+		restaurantEmployees = new ArrayList<>();
 		restaurantEmployeesSize = restaurantEmployees.size();
-		orderIDs=new ArrayList<String>();
+		orderIDs = new ArrayList<>();
 		searchResults = new ArrayList<>();
 	}
 
@@ -70,15 +71,15 @@ public class Restaurant implements Serializable {
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
 		br.readLine();
 		String line = br.readLine();
-		while(line!=null){
+		while(line != null){
 			String[] parts = line.split(";");
 			String name = parts[0];
 			String lastname = parts[1];
 			String id = parts[2];
-			String addresss = parts[3];
+			String addresses = parts[3];
 			String phoneNumber = parts[4];
 			String observations = parts[5];
-			addAClientToTheRestaurant(name, lastname, id, addresss, phoneNumber, observations);
+			addAClientToTheRestaurant(name, lastname, id, addresses, phoneNumber, observations);
 			line = br.readLine();
 		}
 		br.close();
@@ -92,38 +93,29 @@ public class Restaurant implements Serializable {
 			String productName = parts[0];
 			PlateType productPlateType;
 			String plateTypeName = parts[1];
-			if(plateTypeIndexWithName(plateTypeName)!=-1) {
-				productPlateType=restaurantPlateTypes.get(plateTypeIndexWithName(plateTypeName));
+			if(plateTypeIndexWithName(plateTypeName) != -1) {
+				productPlateType = restaurantPlateTypes.get(plateTypeIndexWithName(plateTypeName));
 			}
 			else {
 				productPlateType = new PlateType(plateTypeName,currentUser);
 				addAPlateTypeToTheRestaurant(plateTypeName);
 			}
 			String[] ingredientsParts = parts[2].split(",");
-			ArrayList<Ingredient> ingredientsOfProduct = new ArrayList<Ingredient>();
-			for(int i=0;i<ingredientsParts.length;i++) {
-				String ingredientName = ingredientsParts[i];
-				if(ingredientIndexWithName(ingredientName)!=-1) {
+			ArrayList<Ingredient> ingredientsOfProduct = new ArrayList<>();
+			for (String ingredientName : ingredientsParts) {
+				if (ingredientIndexWithName(ingredientName) != -1) {
 					ingredientsOfProduct.add(restaurantIngredients.get(ingredientIndexWithName(ingredientName)));
-				}
-				else {
-					ingredientsOfProduct.add(new Ingredient(ingredientName,currentUser));
+				} else {
+					ingredientsOfProduct.add(new Ingredient(ingredientName, currentUser));
 					addAnIngredientToTheRestaurant(ingredientName);
 				}
 			}
 
 			String[] sizesStringArray = parts[3].split(",");
-
-			ArrayList<String> productsSizes = new ArrayList<String>();
-			for(int i=0;i<sizesStringArray.length;i++) {
-				productsSizes.add(sizesStringArray[i]);
-			}
-
+			ArrayList<String> productsSizes = new ArrayList<>(Arrays.asList(sizesStringArray));
 			String[] pricesStringArray = parts[4].split(",");
-			ArrayList<Double> productsPrices = new ArrayList<Double>();
-			for(int i=0;i<pricesStringArray.length;i++) {
-				productsPrices.add(Double.parseDouble(pricesStringArray[i]));
-			}
+			ArrayList<Double> productsPrices = new ArrayList<>();
+			for (String s : pricesStringArray) productsPrices.add(Double.parseDouble(s));
 			addProduct(productName,productPlateType,ingredientsOfProduct,productsSizes,productsPrices);
 			line = br.readLine();
 		}
@@ -134,14 +126,14 @@ public class Restaurant implements Serializable {
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
 		br.readLine();
 		String line = br.readLine();
-		while(line!=null){
+		while(line != null){
 			System.out.println("Reading...");
 			String[] parts = line.split(";");
 			String[] productsString = parts[0].split(",");
 			String[] productsSizes = parts[1].split(",");
-			String[] productsQuantitys = parts[2].split(",");
-			ArrayList<Product> ordProd = new ArrayList<Product>();
-			ArrayList<Integer> ordPQuantitys = new ArrayList<Integer>();
+			String[] productsQuantities = parts[2].split(",");
+			ArrayList<Product> ordProd = new ArrayList<>();
+			ArrayList<Integer> ordPQuantities = new ArrayList<>();
 			for(int i=0;i<productsString.length;i++) {
 				if(productIndexWithName(productsString[i])!=-1) {
 					Product auxProd = restaurantProducts.get(productIndexWithName(productsString[i]));
@@ -149,32 +141,29 @@ public class Restaurant implements Serializable {
 					ordProd.add(new Product(auxProd.getName(),currentUser,auxProd.getPlateType(),auxProd.getIngrdnts(),auxProd.getProductsSizes(),auxProd.getSizesPrices(),sizeIndex));
 				}
 			}
-			for(int i=0;i<productsQuantitys.length;i++) {
-				ordPQuantitys.add(Integer.parseInt(productsQuantitys[i]));
+			for (String productsQuantity : productsQuantities) {
+				ordPQuantities.add(Integer.parseInt(productsQuantity));
 			}
 			String[] clientNameAndLastName = parts[3].split(" ");
-			Client clientOfOrder=null;
-			if(clientIndexWithNameAndLastname(clientNameAndLastName[0], clientNameAndLastName[1])!=-1) {
-				clientOfOrder=restaurantClients.get(clientIndexWithNameAndLastname(clientNameAndLastName[0], clientNameAndLastName[1]));
+			Client clientOfOrder = null;
+			if(clientIndexWithNameAndLastname(clientNameAndLastName[0], clientNameAndLastName[1]) != -1) {
+				clientOfOrder = restaurantClients.get(clientIndexWithNameAndLastname(clientNameAndLastName[0], clientNameAndLastName[1]));
 			}
-
 
 			String employeeName = parts[4];
 			String employeeLastname = parts[5];
 			String employeeId = parts[6];
 			Employee employeeOfTheOrder = new Employee(employeeName,currentUser,employeeLastname,employeeId);
 			String observations = parts[7];
-			createAnOrder(ordProd, ordPQuantitys, clientOfOrder, employeeOfTheOrder, observations) ;
+			createAnOrder(ordProd, ordPQuantities, clientOfOrder, employeeOfTheOrder, observations) ;
 			line = br.readLine();
 		}
 		br.close();
 	}
 
 	public int sizeIndexWithName(ArrayList<String> al,String name) {
-		for(int i=0;i<al.size();i++) {
-			if(al.get(i).equalsIgnoreCase(name)) {
-				return i;
-			}
+		for(int i = 0; i < al.size(); i++) {
+			if(al.get(i).equalsIgnoreCase(name)) return i;
 		}
 		return -1;
 	}
@@ -184,11 +173,11 @@ public class Restaurant implements Serializable {
 	public void generateOrderReport(String fileName,String separator,LocalDateTime startDate,LocalDateTime endDate) throws FileNotFoundException{
 	    PrintWriter pw = new PrintWriter(fileName);
 	    sortOrdersByDate();
-	    String columns = "Codigo"+separator+"Nombre del cliente"+separator+"Direccion del cliente"+separator+
-	    "Telefono del cliente"+separator+"Nombre del empleado que entrega el producto"+separator+
-	    "Estado del pedido"+separator+"Fecha y hora"+separator+"Observaciones";
+	    String columns = "Codigo" + separator + "Nombre del cliente" + separator + "Direccion del cliente" + separator +
+				"Telefono del cliente" + separator + "Nombre del empleado que entrega el producto" + separator +
+				"Estado del pedido" + separator + "Fecha y hora" + separator + "Observaciones";
 	    pw.println(columns);
-	    for(int i=0;i<restaurantOrdersSize;i++){
+	    for(int i = 0; i < restaurantOrdersSize; i++){
 	    	Order auxOrder = restaurantOrders.get(i);
 	    	LocalDateTime dateOfOrder = auxOrder.getDate();
 	    	if(dateOfOrder.isAfter(startDate) && dateOfOrder.isBefore(endDate)) {
@@ -196,7 +185,6 @@ public class Restaurant implements Serializable {
 	    		pw.println(auxOrder.showInformation());
 	    	}
 	    }
-
 	    pw.close();
 	  }
 
@@ -205,16 +193,16 @@ public class Restaurant implements Serializable {
 		double totalPrices = 0;
 		PrintWriter pw = new PrintWriter(fileName);
 		sortEmployeesById();
-		String columns = "Nombre"+separator+"Apellido"+separator+"ID"+separator+"Pedidos entregados"+
-		separator+"Valor total de los pedidos";
+		String columns = "Nombre" + separator + "Apellido" + separator + "ID" + separator + "Pedidos entregados" +
+		separator + "Valor total de los pedidos";
 		pw.println(columns);
-		 for(int i=0;i<restaurantEmployeesSize;i++) {
+		 for(int i = 0; i < restaurantEmployeesSize; i++) {
 			 pw.println(restaurantEmployees.get(i).showReportInformation(startDate, endDate));
 			 totalPrices+=restaurantEmployees.get(i).getTotalPriceOfTheOrders(startDate, endDate);
 			 totalDeliveries+=restaurantEmployees.get(i).getSpecifiedOrdersDelivered();
 		 }
-		String finalColumns = restaurantEmployeesSize+" empleados"+separator+""+separator+""+separator+
-		totalDeliveries+" pedidos entregados"+separator+totalPrices+" generados";
+		String finalColumns = restaurantEmployeesSize + " empleados" + separator + "" + separator + "" + separator +
+		totalDeliveries + " pedidos entregados" + separator + totalPrices + " generados";
 		pw.println(finalColumns);
 		pw.close();
 	}
@@ -224,17 +212,17 @@ public class Restaurant implements Serializable {
 		double totalPrice = 0;
 		PrintWriter pw = new PrintWriter(fileName);
 		ProductInsertionSortByName();
-		String columns = "Nombre del producto"+separator+"Tipo de producto"+separator+"Ingredientes"+separator+
-		"Numero de veces que se pidio"+separator+"Total pagado";
+		String columns = "Nombre del producto" + separator + "Tipo de producto" + separator + "Ingredientes" + separator +
+		"Numero de veces que se pidio" + separator + "Total pagado";
 		pw.println(columns);
-		for(int i=0;i<restaurantProductsSize;i++) {
+		for(int i = 0; i < restaurantProductsSize; i++) {
 			pw.println(restaurantProducts.get(i).showReportInformation(startDate, endDate));
 			double[] typ = restaurantProducts.get(i).getTotalTimesAndPrice(startDate, endDate);
 			allTimesRequired += typ[0];
 			totalPrice += typ[1];
 		}
-		String finalColumns = restaurantProductsSize+" productos en el restaurante"
-		+separator+""+separator+""+separator+allTimesRequired+" productos pedidos"+totalPrice;
+		String finalColumns = restaurantProductsSize + " productos en el restaurante"
+		+ separator + "" + separator + "" + separator + allTimesRequired + " productos pedidos" + totalPrice;
 		pw.println(finalColumns);
 		pw.close();
 	}
@@ -242,20 +230,20 @@ public class Restaurant implements Serializable {
 	public int binarySearch(ArrayList<?> aL,String name) {
 		int pos = -1;
 		int i = 0;
-		int j = aL.size()-1;
+		int j = aL.size() - 1;
 
 		while(i<=j && pos<0) {
-			int m = (i+j)/2;
+			int m = (i + j)/2;
 			String objectNameLowerCase = ((SystemObject) aL.get(m)).getName().toLowerCase();
 			String nameLowerCase = name.toLowerCase();
 			if(objectNameLowerCase.equals(nameLowerCase)) {
-				pos=m;
+				pos = m;
 			}
-			else if((objectNameLowerCase.compareTo(nameLowerCase))>0){
-				j=m-1;
+			else if((objectNameLowerCase.compareTo(nameLowerCase)) > 0){
+				j = m - 1;
 			}
 			else {
-				i=m+1;
+				i = m + 1;
 			}
 		}
 		return pos;
@@ -263,25 +251,22 @@ public class Restaurant implements Serializable {
 
 	//User options
 
-	public boolean initializeUser(int index,String username,String password) throws IOException {
-		if(index!=-1) {
+	public void initializeUser(int index, String username, String password) { //<-- was boolean, IOException marked as not thrown
+		if(index != -1) {
 			int userIsRepeated = userIndexWithUsername(username);
-			if(userIsRepeated==-1) {
+			if(userIsRepeated == -1) {
 				restaurantUsers.get(index).setUsername(username);
 				restaurantUsers.get(index).setPassword(password);
 				restaurantUsers.get(index).setModifierUser(currentUser);
-				return true;
 			}
 		}
-		return false;
 	}
 
 	public int userIndexWithId(String id) {	//Use it when you have the user id but not the user itself
-		int index = binarySearchForEmployees(restaurantUsers,id);
-		return index;
+		return binarySearchForEmployees(restaurantUsers,id);
 	}
 	public int userIndexWithUsername(String userName) {
-		for(int i=0;i<restaurantUsersSize;i++) {
+		for(int i = 0; i < restaurantUsersSize; i++) {
 			if(restaurantUsers.get(i).getUsername().equalsIgnoreCase(userName)) {
 				return i;
 			}
@@ -289,76 +274,62 @@ public class Restaurant implements Serializable {
 		return -1;
 	}
 
-	public int UserIndexWithUser(User user) { //Use it when you have the user itself
-		int index = restaurantUsers.indexOf(user);
-		return index;
+	public int UserIndexWithUser(User user) { //Use it when you have the user itself (never used)
+		return restaurantUsers.indexOf(user);
 	}
-	public boolean changeUsername(int index,String newUsername) {
-		if(index!=-1) {
+	public void changeUsername(int index, String newUsername) { //<-- was boolean
+		if(index != -1) {
 			int userIsRepeated = userIndexWithUsername(newUsername);
-			if(userIsRepeated==-1) {
+			if(userIsRepeated == -1) {
 				restaurantUsers.get(index).setUsername(newUsername);
 				restaurantUsers.get(index).setModifierUser(currentUser);
-				return true;
 			}
 		}
-		return false;
 	}
-	public boolean changePassword(int index,String newPassword) {
-		if(index!=-1) {
+	public void changePassword(int index, String newPassword) { //<-- was boolean
+		if(index != -1) {
 			restaurantUsers.get(index).setPassword(newPassword);
 			restaurantUsers.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
-	public boolean enableUser(int index) {
-		if(index!=-1) {
+	public void enableUser(int index) { //<-- was boolean
+		if(index != -1) {
 			restaurantUsers.get(index).setEnabled(true);
 			restaurantUsers.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
-	public boolean disableUser(int index) {
-		if(index!=-1) {
+	public void disableUser(int index) { //<-- was boolean
+		if(index != -1) {
 			restaurantUsers.get(index).setEnabled(false);
 			restaurantUsers.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
 	public boolean checkFirstTime() {
-		if(firstTime&&currentUser.equals(rootUser)) {
-			return true;
-		}
-		return false;
+		return firstTime && currentUser.equals(rootUser);
 	}
 
-	public boolean changeUser(int index) {
-		if(index!=-1) {
-			currentUser=restaurantUsers.get(index);
-			return true;
-		}
-		else if(index==-2) {
+	public boolean changeUser(int index) { //<-- never used, might be void
+		if (index == -2) {
 			currentUser=rootUser;
+			return true;
+		} else if (index != -1) {
+			currentUser = restaurantUsers.get(index);
 			return true;
 		}
 		return false;
-
 	}
 
 	public int login(String username,String password) {
 		int index = -1; //Not found
 		boolean band = false;
-		for(int i=0;i<restaurantUsersSize&&!band;i++) {
-			if((restaurantUsers.get(i).getUsername().equals(username))&&(restaurantUsers.get(i).getPassword().equals(password))) {
+		for(int i = 0; i < restaurantUsersSize && !band; i++) {
+			if((restaurantUsers.get(i).getUsername().equals(username)) && (restaurantUsers.get(i).getPassword().equals(password))) {
 				index = i;
 				band = true;
 			}
 		}
-		if(rootUser.getUsername().equals(username)&&rootUser.getPassword().equals(password)) {
+		if (rootUser.getUsername().equals(username) && rootUser.getPassword().equals(password)) {
 			index = -2; // The user is the rootUser
 		}
 		return index;
@@ -367,20 +338,19 @@ public class Restaurant implements Serializable {
 
 	//Product Options
 
-	public boolean addProduct(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
+	public void addProduct(String name, PlateType pt, ArrayList<Ingredient> ingrdnts,
+						   ArrayList<String> productSizes, ArrayList<Double> sizesPrices) { //<-- was boolean
 		int index = productIndexWithName(name);
-		if(index==-1&&pt.getEnabled()) {
+		if(index == -1 && pt.getEnabled()) {
 			Product toAdd = new Product(name,currentUser,pt,ingrdnts,productSizes,sizesPrices,-1);
 			restaurantProducts.add(toAdd);
-			addToproductsWithTheirSizes(name,pt,ingrdnts,productSizes,sizesPrices);
+			addToProductsWithTheirSizes(name,pt,ingrdnts,productSizes,sizesPrices);
 			restaurantProductsSize++;
-			return true;
 		}
-		return false;
 	}
 
-	private void addToproductsWithTheirSizes(String name,PlateType pt,ArrayList<Ingredient> ingrdnts,ArrayList<String> productSizes,ArrayList<Double> sizesPrices) {
-		for(int i=0;i<productSizes.size();i++) {
+	private void addToProductsWithTheirSizes(String name, PlateType pt, ArrayList<Ingredient> ingrdnts, ArrayList<String> productSizes, ArrayList<Double> sizesPrices) {
+		for(int i = 0; i < productSizes.size(); i++) {
 			productsWithTheirSizes.add(new Product(name,currentUser,pt,ingrdnts,productSizes,sizesPrices,i));
 			productsWithTheirSizesSize++;
 		}
@@ -388,11 +358,10 @@ public class Restaurant implements Serializable {
 
 	public int productIndexWithName(String name) {	//Use it when you have the product name but not the product itself
 		ProductInsertionSortByName();
-		int index =  binarySearch(restaurantProducts,name);
-		return index;
+		return binarySearch(restaurantProducts,name);
 	}
 	public int productWithSizeIndexWithNameAndSize(String name,String size) {
-		for(int i=0;i<productsWithTheirSizesSize;i++) {
+		for(int i = 0; i < productsWithTheirSizesSize; i++) {
 			if(productsWithTheirSizes.get(i).getName().equalsIgnoreCase(name) && productsWithTheirSizes.get(i).getProductActualSize().equalsIgnoreCase(size)) {
 				return 1;
 			}
@@ -400,60 +369,55 @@ public class Restaurant implements Serializable {
 		return -1;
 	}
 
-	public int productIndexWithProduct(Product product) { //Use it when you have the product itself
-		int index = restaurantProducts.indexOf(product);
-		return index;
+	public int productIndexWithProduct(Product product) { //Use it when you have the product itself (unused)
+		return restaurantProducts.indexOf(product);
 	}
 
-	public boolean deleteProduct(int index) {
-		if(index!=-1) {
+	public void deleteProduct(int index) { //<-- was boolean
+		if(index != -1) {
 			Product deleted = restaurantProducts.get(index);
 			if(!OrderHasTheProduct(deleted)) {
-				deleteInproductsWithTheirSizes(deleted);
+				deleteInProductsWithTheirSizes(deleted);
 				restaurantProducts.remove(index);
 				restaurantProductsSize--;
-				return true;
 			}
 		}
-		return false;
 	}
 
 	public boolean OrderHasTheProduct(Product product) {
-		for(int i=0;i<restaurantOrdersSize;i++) {
-			ArrayList<Product> pdcts = restaurantOrders.get(i).getOrderProducts();
-			if(pdcts.contains(product)) {
+		for(int i = 0; i < restaurantOrdersSize; i++) {
+			ArrayList<Product> orderProducts = restaurantOrders.get(i).getOrderProducts();
+			if(orderProducts.contains(product)) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	private void deleteInproductsWithTheirSizes(Product product) {
-		ArrayList<Product> productsToDelete = new ArrayList<Product>();
-		for(int i=0;i<productsWithTheirSizesSize;i++) {
+	private void deleteInProductsWithTheirSizes(Product product) {
+		ArrayList<Product> productsToDelete = new ArrayList<>();
+		for(int i = 0; i < productsWithTheirSizesSize; i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsToDelete.add(productsWithTheirSizes.get(i));
 			}
 		}
-		for(int i=0;i<productsToDelete.size();i++) {
-			productsWithTheirSizes.remove(productsToDelete.get(i));
+		for (Product value : productsToDelete) {
+			productsWithTheirSizes.remove(value);
 			productsWithTheirSizesSize--;
 		}
 	}
 
-	public boolean disableProduct(int index) {
-		if(index!=-1) {
+	public void disableProduct(int index) { //<-- was boolean
+		if(index != -1) {
 			Product disabled = restaurantProducts.get(index);
 			restaurantProducts.get(index).setEnabled(false);
 			restaurantProducts.get(index).setModifierUser(currentUser);
-			disableInproductsWithTheirSizes(disabled);
-			return true;
+			disableInProductsWithTheirSizes(disabled);
 		}
-		return false;
 	}
 
-	private void disableInproductsWithTheirSizes(Product product) {
-		for(int i=0;i<productsWithTheirSizesSize;i++) {
+	private void disableInProductsWithTheirSizes(Product product) {
+		for(int i = 0; i < productsWithTheirSizesSize; i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).setEnabled(false);
 				productsWithTheirSizes.get(i).setModifierUser(currentUser);
@@ -461,19 +425,17 @@ public class Restaurant implements Serializable {
 		}
 	}
 
-	public boolean enableProduct(int index) {
-		if(index!=-1) {
+	public void enableProduct(int index) { //<-- was boolean
+		if(index != -1) {
 			Product enabled = restaurantProducts.get(index);
 			restaurantProducts.get(index).setEnabled(true);
 			restaurantProducts.get(index).setModifierUser(currentUser);
-			enableInproductsWithTheirSizes(enabled);
-			return true;
+			enableInProductsWithTheirSizes(enabled);
 		}
-		return false;
 	}
 
-	private void enableInproductsWithTheirSizes(Product product) {
-		for(int i=0;i<productsWithTheirSizesSize;i++) {
+	private void enableInProductsWithTheirSizes(Product product) {
+		for(int i = 0; i < productsWithTheirSizesSize; i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).setEnabled(true);
 				productsWithTheirSizes.get(i).setModifierUser(currentUser);
@@ -482,8 +444,8 @@ public class Restaurant implements Serializable {
 	}
 
 	public void ProductInsertionSortByName(){
-		int i=0;
-		int j=0;
+		int i;
+		int j;
 		Product aux;
 		for (i = 1; i < restaurantProductsSize; i++){
 			aux = restaurantProducts.get(i);
@@ -502,22 +464,20 @@ public class Restaurant implements Serializable {
 		Collections.sort(productsWithTheirSizes,priceComparator);
 	}
 
-	public boolean changeProductName(int index,String newName) {
-		if(index!=-1) {
+	public void changeProductName(int index, String newName) { //<-- was boolean
+		if(index != -1) {
 			int nameIsRepeated = productIndexWithName(newName);
-			if(nameIsRepeated==-1) {
-				Product productToChangeName=restaurantProducts.get(index);
-				changeNameInproductsWithTheirSizes(productToChangeName, newName);
+			if(nameIsRepeated == -1) {
+				Product productToChangeName = restaurantProducts.get(index);
+				changeNameInProductsWithTheirSizes(productToChangeName, newName);
 				restaurantProducts.get(index).setName(newName);
 				restaurantProducts.get(index).setModifierUser(currentUser);
-				return true;
 			}
 		}
-		return false;
 	}
 
-	private void changeNameInproductsWithTheirSizes(Product product,String name) {
-		for(int i=0;i<productsWithTheirSizesSize;i++) {
+	private void changeNameInProductsWithTheirSizes(Product product, String name) {
+		for(int i = 0; i < productsWithTheirSizesSize; i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).setName(name);
 				productsWithTheirSizes.get(i).setModifierUser(currentUser);
@@ -525,19 +485,17 @@ public class Restaurant implements Serializable {
 		}
 	}
 
-	public boolean changeProductPlateType(int index,PlateType newPlateType) {
-		if(index!=-1 && newPlateType.getEnabled()) {
-			Product productToChangePlateType=restaurantProducts.get(index);
+	public void changeProductPlateType(int index, PlateType newPlateType) { //<-- was boolean
+		if(index != -1 && newPlateType.getEnabled()) {
+			Product productToChangePlateType = restaurantProducts.get(index);
 			restaurantProducts.get(index).setPt(newPlateType);
 			restaurantProducts.get(index).setModifierUser(currentUser);
-			changePlateTypeInproductsWithTheirSizes(productToChangePlateType, newPlateType);
-			return true;
+			changePlateTypeInProductsWithTheirSizes(productToChangePlateType, newPlateType);
 		}
-		return false;
 	}
 
-	private void changePlateTypeInproductsWithTheirSizes(Product product,PlateType pt) {
-		for(int i=0;i<productsWithTheirSizesSize;i++) {
+	private void changePlateTypeInProductsWithTheirSizes(Product product, PlateType pt) {
+		for(int i = 0; i < productsWithTheirSizesSize; i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).setPt(pt);
 				productsWithTheirSizes.get(i).setModifierUser(currentUser);
@@ -545,25 +503,24 @@ public class Restaurant implements Serializable {
 		}
 	}
 
-	public boolean addAnIngredientToAProduct(int index,Ingredient ingredient) {
-		boolean b=false;
+	public void addAnIngredientToAProduct(int index, Ingredient ingredient) { //<-- was boolean
+		boolean b;
 		if(index!=-1) {
-			b=restaurantProducts.get(index).addAnIngredient(ingredient);
+			b = restaurantProducts.get(index).addAnIngredient(ingredient);
 			if(b) {
 				restaurantProducts.get(index).setModifierUser(currentUser);
 			}
 		}
-		return b;
 	}
 
 	public boolean deleteAnIngredientOfAProduct(int index,String ingredientName) {
-		boolean b=false;
-		if(index!=-1) {
+		boolean b = false;
+		if(index != -1) {
 			Product productToDeleteAnIngredient = restaurantProducts.get(index);
-			b=restaurantProducts.get(index).deleteAnIngredient(ingredientName);
+			b = restaurantProducts.get(index).deleteAnIngredient(ingredientName);
 			if(b) {
 				restaurantProducts.get(index).setModifierUser(currentUser);
-				deletesAnIngredientInproductsWithTheirSizes(productToDeleteAnIngredient, ingredientName);
+				deleteAnIngredientInProductsWithTheirSizes(productToDeleteAnIngredient, ingredientName);
 			}
 		}
 		return b;
@@ -573,63 +530,57 @@ public class Restaurant implements Serializable {
 		restaurantProducts.get(index).deleteAllIngredients();
 	}
 
-	private void deletesAnIngredientInproductsWithTheirSizes(Product product,String name) {
-		for(int i=0;i<productsWithTheirSizesSize;i++) {
+	private void deleteAnIngredientInProductsWithTheirSizes(Product product, String name) {
+		for(int i = 0; i < productsWithTheirSizesSize; i++) {
 			if(product.getName().equalsIgnoreCase(productsWithTheirSizes.get(i).getName())) {
 				productsWithTheirSizes.get(i).deleteAnIngredient(name);
 				productsWithTheirSizes.get(i).setModifierUser(currentUser);
-
 			}
 		}
 	}
 
-	public boolean changeSizeOfTheProduct(int index,String oldSize,String newSize) {
-		if(index!=-1) {
+	public void changeSizeOfTheProduct(int index, String oldSize, String newSize) { //<-- was boolean
+		if(index != -1) {
 			int sizeIndex = sizeIndexWithName(restaurantProducts.get(index).getProductsSizes(),oldSize);
-			if(sizeIndex!=-1) {
+			if(sizeIndex != -1) {
 				int sizeIsRepeated = sizeIndexWithName(restaurantProducts.get(index).getProductsSizes(),newSize);
-				if(sizeIsRepeated==-1) {
+				if(sizeIsRepeated == -1) {
 					restaurantProducts.get(index).getProductsSizes().set(sizeIndex, newSize);
 					changeRespectiveSize(restaurantProducts.get(index).getName(),oldSize,sizeIndex);
 				}
 			}
 		}
-		return false;
 	}
 
 	private void changeRespectiveSize(String name,String size,int sizeIndex) {
-		for(int i=0;i<productsWithTheirSizesSize;i++) {
-			if(productsWithTheirSizes.get(i).getName().equalsIgnoreCase(name)&&productsWithTheirSizes.get(i).getProductActualSize().equalsIgnoreCase(size)) {
-				productsWithTheirSizes.get(i).setProductActualSize(sizeIndex);
-			}
+		for(int i = 0; i < productsWithTheirSizesSize;i++) {
+			boolean foundProduct = productsWithTheirSizes.get(i).getName().equalsIgnoreCase(name) && productsWithTheirSizes.get(i).getProductActualSize().equalsIgnoreCase(size);
+			if(foundProduct) productsWithTheirSizes.get(i).setProductActualSize(sizeIndex);
 		}
 	}
 
-	public boolean changePriceOfTheProduct(int index,String size,Double newPrice) {
-		if(index!=-1) {
+	public void changePriceOfTheProduct(int index, String size, Double newPrice) { //<-- was boolean
+		if(index != -1) {
 			int sizeIndex = sizeIndexWithName(restaurantProducts.get(index).getProductsSizes(),size);
-			if(sizeIndex!=-1) {
+			if(sizeIndex != -1) {
 				restaurantProducts.get(index).getSizesPrices().set(sizeIndex, newPrice);
-				//ch
-			}
-		}
-		return false;
-	}
-
-	public void changeRespectivePrice(String name,String size,int sizeIndex) {
-		for(int i=0;i<productsWithTheirSizesSize;i++) {
-			if(productsWithTheirSizes.get(i).getName().equalsIgnoreCase(name)&&productsWithTheirSizes.get(i).getProductActualSize().equalsIgnoreCase(size)) {
-				productsWithTheirSizes.get(i).setProductPrice(sizeIndex);
+				//ch xd
 			}
 		}
 	}
 
+	public void changeRespectivePrice(String name,String size,int sizeIndex) { //<-- (unused)
+		for(int i = 0; i < productsWithTheirSizesSize; i++) {
+			boolean foundProduct = productsWithTheirSizes.get(i).getName().equalsIgnoreCase(name) && productsWithTheirSizes.get(i).getProductActualSize().equalsIgnoreCase(size);
+			if(foundProduct) productsWithTheirSizes.get(i).setProductPrice(sizeIndex);
+		}
+	}
 
 	//Ingredients Methods
 
 	public boolean addAnIngredientToTheRestaurant(String name) {
 		int index = ingredientIndexWithName(name);
-		if(index==-1) {
+		if(index == -1) {
 			Ingredient toAdd = new Ingredient(name,currentUser);
 			restaurantIngredients.add(toAdd);
 			restaurantIngredientsSize++;
@@ -638,25 +589,21 @@ public class Restaurant implements Serializable {
 		return false;
 	}
 
-	public int ingredientIndexWithName(String name) {	//Use it when you have the ingredient name but not the ingredient itself
+	public int ingredientIndexWithName(String name) { //Use it when you have the ingredient name but not the ingredient itself
 		selectionSortIngredients();
-		int index =  binarySearch(restaurantIngredients,name);
-		return index;
+		return binarySearch(restaurantIngredients,name);
 	}
 
 	public int ingredientIndexWithIngredient(Ingredient ingredient) { //Use it when you have the ingredient itself
-		int index = restaurantIngredients.indexOf(ingredient);
-		return index;
+		return restaurantIngredients.indexOf(ingredient);
 	}
 
 	public void selectionSortIngredients() {
 		int n = restaurantIngredientsSize;
-		for (int i = 0; i < n-1; i++){
+		for (int i = 0; i < n - 1; i++){
 			int min_idx = i;
-			for (int j = i+1; j < n; j++) {
-				if (restaurantIngredients.get(j).compareTo(restaurantIngredients.get(min_idx))<0 ) {
-					min_idx = j;
-				}
+			for (int j = i + 1; j < n; j++) {
+				if (restaurantIngredients.get(j).compareTo(restaurantIngredients.get(min_idx)) < 0 ) min_idx = j;
 			}
 			Ingredient temp = restaurantIngredients.get(min_idx);
 			restaurantIngredients.set(min_idx,restaurantIngredients.get(i));
@@ -670,7 +617,7 @@ public class Restaurant implements Serializable {
 	}
 
 	public boolean deleteIngredient(int index) {
-		if(index!=-1) {
+		if(index != -1) {
 			Ingredient deleted = restaurantIngredients.get(index);
 			if(!productHasTheIngredient(deleted)) {
 				restaurantIngredients.remove(index);
@@ -683,7 +630,7 @@ public class Restaurant implements Serializable {
 	}
 
 	public boolean productHasTheIngredient(Ingredient ingredient) {
-		for(int i=0;i<restaurantProductsSize;i++) {
+		for(int i = 0; i < restaurantProductsSize; i++) {
 			ArrayList<Ingredient> ingredients = restaurantProducts.get(i).getIngrdnts();
 			if(ingredients.contains(ingredient)) {
 				return true;
@@ -692,41 +639,35 @@ public class Restaurant implements Serializable {
 		return false;
 	}
 
-	public boolean enableIngredient(int index) {
-		if(index!=-1) {
+	public void enableIngredient(int index) { //<-- was boolean
+		if(index != -1) {
 			restaurantIngredients.get(index).setEnabled(true);
 			restaurantIngredients.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
-	public boolean disableIngredient(int index) {
-		if(index!=-1) {
+	public void disableIngredient(int index) { //<-- was boolean
+		if(index != -1) {
 			restaurantIngredients.get(index).setEnabled(false);
 			restaurantIngredients.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
-	public boolean changeingredientName(int index,String newName) {
-		if(index!=-1) {
+	public void changeIngredientName(int index, String newName) { //<-- was boolean
+		if(index != -1) {
 			int ingredientIsRepeated = ingredientIndexWithName(newName);
-			if(ingredientIsRepeated==-1) {
+			if(ingredientIsRepeated == -1) {
 				restaurantIngredients.get(index).setName(newName);
 				restaurantIngredients.get(index).setModifierUser(currentUser);
-				return true;
 			}
 		}
-		return false;
 	}
 
 
 	//PlateType methods
 	public boolean addAPlateTypeToTheRestaurant(String name) {
 		int index = plateTypeIndexWithName(name);
-		if(index==-1) {
+		if(index == -1) {
 			PlateType toAdd = new PlateType(name,currentUser);
 			restaurantPlateTypes.add(toAdd);
 			restaurantPlateTypesSize++;
@@ -740,19 +681,17 @@ public class Restaurant implements Serializable {
 		Collections.sort(restaurantPlateTypes,PlateTypeNameComparator);
 	}
 
-	public int plateTypeIndexWithName(String name) {	//Use it when you have the plateType name but not the plateType itself
+	public int plateTypeIndexWithName(String name) { //Use it when you have the plateType name but not the plateType itself
 		collectionSortPlateTypes();
-		int index =  binarySearch(restaurantPlateTypes,name);
-		return index;
+		return binarySearch(restaurantPlateTypes,name);
 	}
 
-	public int plateTypeIndexWithplateType(PlateType plateType) { //Use it when you have the plateType itself
-		int index = restaurantPlateTypes.indexOf(plateType);
-		return index;
+	public int plateTypeIndexWithPlateType(PlateType plateType) { //Use it when you have the plateType itself
+		return restaurantPlateTypes.indexOf(plateType);
 	}
 
 	public boolean deletePlateType(int index) {
-		if(index!=-1) {
+		if(index != -1) {
 			PlateType deleted = restaurantPlateTypes.get(index);
 			if(!productHasThePlateType(deleted)) {
 				restaurantPlateTypes.remove(index);
@@ -765,62 +704,51 @@ public class Restaurant implements Serializable {
 	}
 
 	public boolean productHasThePlateType(PlateType plateType) {
-		for(int i=0;i<restaurantProductsSize;i++) {
-			if(restaurantProducts.get(i).getPt().equalsIgnoreCase(plateType.getName())) {
-				return true;
-			}
+		for(int i = 0; i < restaurantProductsSize;i++) {
+			if(restaurantProducts.get(i).getPt().equalsIgnoreCase(plateType.getName())) return true;
 		}
 		return false;
 	}
 
-	public boolean enablePlateType(int index) {
-		if(index!=-1) {
+	public void enablePlateType(int index) { //<-- was boolean
+		if(index != -1) {
 			restaurantPlateTypes.get(index).setEnabled(true);
 			restaurantPlateTypes.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
-	public boolean disablePlateType(int index) {
-		if(index!=-1) {
+	public void disablePlateType(int index) { //<-- was boolean
+		if(index != -1) {
 			restaurantPlateTypes.get(index).setEnabled(false);
 			restaurantPlateTypes.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
-	public boolean changePlateTypeName(int index,String newName) {
-		if(index!=-1) {
+	public void changePlateTypeName(int index, String newName) { //<-- was boolean
+		if(index != -1) {
 			int plateTypeIsRepeated = plateTypeIndexWithName(newName);
-			if(plateTypeIsRepeated==-1) {
+			if(plateTypeIsRepeated == -1) {
 				restaurantPlateTypes.get(index).setName(newName);
-				return true;
 			}
 		}
-		return false;
 	}
 
 	//Clients
 
-	public boolean addAClientToTheRestaurant(String name,String lastname,String id,String address,String phoneNumber,String observations) {
+	public void addAClientToTheRestaurant(String name, String lastname, String id, String address, String phoneNumber, String observations) { //<-- was boolean
 		if(restaurantClients.isEmpty()) {
 			Client toAdd = new Client(name,currentUser,lastname,id,address,phoneNumber,observations);
 			restaurantClients.add(toAdd);
 			restaurantClientsSize++;
-			return true;
 		}
 		else {
 			int index = neatlyInsertClients(name,lastname);
-			if(index!=-1) {
+			if(index != -1) {
 				Client toAdd = new Client(name,currentUser,lastname,id,address,phoneNumber,observations);
 				restaurantClients.add(index,toAdd);
 				restaurantClientsSize++;
-				return true;
 			}
 		}
-		return false;
 
 	}
 
@@ -848,9 +776,9 @@ public class Restaurant implements Serializable {
 		return indexToInsert;
 	}
 
-	public void sortClientsByLastnameAndName() {   //Note: This method should be used because when the first or last name is modified, the order of these in the arrayList is changed.
-		Comparator<Client> nylnComparator = new LastNameAndNameComparator();
-		Collections.sort(restaurantClients,nylnComparator);
+	public void sortClientsByLastnameAndName() {   //Note: This method must be used because when the first or last name is modified, the order of these in the arrayList is changed.
+		Comparator<Client> n_LnComparator = new LastNameAndNameComparator();
+		Collections.sort(restaurantClients,n_LnComparator);
 	}
 
 	public int binarySearchForClients(ArrayList<Client> aL,String name,String lastname) {
@@ -860,39 +788,35 @@ public class Restaurant implements Serializable {
 		int i = 0;
 		int j = aL.size()-1;
 		String valueToSearch = (lastname+name).toLowerCase();
-		while(i<=j && pos<0) {
+		while(i <= j) {
 			int m = (i+j)/2;
 			String stringOfArrayList = (aL.get(m).getLastname()+aL.get(m).getName()).toLowerCase();
 			if(stringOfArrayList.equalsIgnoreCase(valueToSearch)) {
-				pos=m;
 				return m;
 
 			}
-			else if(stringOfArrayList.compareTo(valueToSearch)<0){   ///Changed because is descending
-				j=m-1;
+			else if(stringOfArrayList.compareTo(valueToSearch)<0){  //Changed because is descending
+				j = m - 1;
 			}
 			else {
-				i=m+1;
+				i = m + 1;
 			}
 		}
 		long endTime = System.nanoTime();
-		long timeElapsed = endTime - startTime;
-		timeOfSearch=timeElapsed;
+		timeOfSearch= endTime - startTime;
 		return pos;
 	}
 
-	public int clientIndexWithNameAndLastname(String name,String lastname) {	//Use it when you have the client name but not the client itself
-		int index =  binarySearchForClients(restaurantClients,name,lastname);
-		return index;
+	public int clientIndexWithNameAndLastname(String name,String lastname) { //Use it when you have the client name but not the client itself
+		return binarySearchForClients(restaurantClients,name,lastname);
 	}
 
-	public int clientIndexWithclient(Client client) { //Use it when you have the client itself
-		int index = restaurantClients.indexOf(client);
-		return index;
+	public int clientIndexWithClient(Client client) { //Use it when you have the client itself (unused)
+		return restaurantClients.indexOf(client);
 	}
 
 	public boolean deleteClient(int index) {
-		if(index!=-1) {
+		if(index != -1) {
 			Client deleted = restaurantClients.get(index);
 			if(!orderHasTheClient(deleted)) {
 				restaurantClients.remove(index);
@@ -905,9 +829,9 @@ public class Restaurant implements Serializable {
 
 	public boolean orderHasTheClient(Client client) {
 		String aux1 = client.getLastname()+client.getName();
-		for(int i=0;i<restaurantOrdersSize;i++) {
+		for(int i = 0; i < restaurantOrdersSize;i++) {
 			Client check = restaurantOrders.get(i).getOrderclient();
-			String aux2 = check.getLastname()+check.getName();
+			String aux2 = check.getLastname() + check.getName();
 			if(aux1.equalsIgnoreCase(aux2)) {
 				return true;
 			}
@@ -915,126 +839,105 @@ public class Restaurant implements Serializable {
 		return false;
 	}
 
-	public boolean enableClient(int index) {
-		if(index!=-1) {
+	public void enableClient(int index) { //<-- was boolean
+		if(index != -1) {
 			restaurantClients.get(index).setEnabled(true);
 			restaurantClients.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
-
-	public boolean disableClient(int index) {
-		if(index!=-1) {
+	public void disableClient(int index) { //<-- was boolean
+		if(index != -1) {
 			restaurantClients.get(index).setEnabled(false);
 			restaurantClients.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
-	public boolean changeClientName(int index,String newName) {
-		if(index!=-1) {
+	public void changeClientName(int index, String newName) { //<-- was boolean
+		if(index != -1) {
 			int clientIsRepeated = clientIndexWithNameAndLastname(newName,restaurantClients.get(index).getLastname());
-			if(clientIsRepeated==-1) {
+			if(clientIsRepeated == -1) {
 				restaurantClients.get(index).setName(newName);
 				restaurantClients.get(index).setModifierUser(currentUser);
-				return true;
 			}
 		}
-		return false;
 	}
 
-	public boolean changeClientLastname(int index,String newLastname) {
-		if(index!=-1) {
+	public void changeClientLastname(int index, String newLastname) { //<-- was boolean
+		if(index != -1) {
 			int clientIsRepeated = clientIndexWithNameAndLastname(restaurantClients.get(index).getName(),newLastname);
-			if(clientIsRepeated==-1) {
+			if(clientIsRepeated == -1) {
 				restaurantClients.get(index).setLastname(newLastname);
 				restaurantClients.get(index).setModifierUser(currentUser);
-				return true;
 			}
 		}
-		return false;
 	}
 
-	public boolean changeClientId(int index,String newId) {
-		if(index!=-1) {
+	public void changeClientId(int index, String newId) { //<-- was boolean
+		if(index != -1) {
 			restaurantClients.get(index).setId(newId);
 			restaurantClients.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
 
-	public boolean changeClientAddress(int index,String newAddress) {
-		if(index!=-1) {
+	public void changeClientAddress(int index, String newAddress) { //<-- was boolean
+		if(index != -1) {
 			restaurantClients.get(index).setAddress(newAddress);
 			restaurantClients.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
 
-	public boolean changeClientPhoneNumber(int index,String newPhoneNumber) {
-		if(index!=-1) {
+	public void changeClientPhoneNumber(int index, String newPhoneNumber) { //<-- was boolean
+		if(index != -1) {
 			restaurantClients.get(index).setPhoneNumber(newPhoneNumber);
 			restaurantClients.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
-	public boolean changeClientObservations(int index,String newObservations) {
-		if(index!=-1) {
+	public void changeClientObservations(int index, String newObservations) { //<-- was boolean
+		if(index != -1) {
 			restaurantClients.get(index).setObservations(newObservations);
 			restaurantClients.get(index).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
 	//Employee methods
 
-	public boolean addAnEmployeeToTheRestaurant(String name,String lastname,String id) { //Remember to work in this
+	public void addAnEmployeeToTheRestaurant(String name, String lastname, String id) { //Remember to work on this, <-- was boolean
 		sortEmployeesById();
 		int index = employeeIndexWithId(id);
-		if(index==-1) {
+		if(index == -1) {
 			Employee toAdd = new Employee(name,currentUser,lastname,id);
 			restaurantEmployees.add(toAdd);
 			User employeeUser = new User(name,currentUser,lastname,id,name,id);
 			restaurantUsers.add(employeeUser);
 			restaurantUsersSize++;
 			restaurantEmployeesSize++;
-			return true;
 		}
-		return false;
 	}
 
 	public int employeeIndexWithId(String id) {
-		int index = binarySearchForEmployees(restaurantEmployees,id);
-		return index;
+		return binarySearchForEmployees(restaurantEmployees,id);
 	}
 
 	public int employeeIndexWithemployee(Employee employee) { //Use it when you have the employee itself
-		int index = restaurantEmployees.indexOf(employee);
-		return index;
+		return restaurantEmployees.indexOf(employee);
 	}
 
 	public int binarySearchForEmployees(ArrayList<?> aL,String id) {
 		int pos = -1;
 		int i = 0;
 		int j = aL.size()-1;
-		while(i<=j && pos<0) {
-			int m = (i+j)/2;
+		while(i <= j && pos < 0) {
+			int m = (i +j ) / 2;
 			System.out.println(m);
 			System.out.println(((Employee)aL.get(m)).getName());
 			if (((Employee)aL.get(m)).getId().equalsIgnoreCase(id)) pos = m;
 			else if(((((Employee)aL.get(m)).getId()).compareTo(id))>0) j = m - 1;
 			else {
-				i=m+1;
+				i = m + 1;
 			}
 		}
 		return pos;
@@ -1044,58 +947,51 @@ public class Restaurant implements Serializable {
 		Collections.sort(restaurantEmployees,idComparator);
 	}
 
-	public boolean deleteEmployee(int index) {
-		if(index!=-1) {
+	public void deleteEmployee(int index) { //<-- was boolean
+		if(index != -1) {
 			Employee deleted = restaurantEmployees.get(index);
 			if(!orderHasTheEmployee(deleted)) {
 				restaurantEmployees.remove(index);
-				restaurantUsers.remove(deleted);
+				restaurantUsers.remove(deleted); // <-- "Suspicious call to ArrayList.remove()"
 				restaurantUsers.remove(indexOfAnUser(deleted));
 				restaurantUsersSize--;
 				restaurantEmployeesSize--;
-				return true;
 			}
 		}
-		return false;
 	}
 
 	public int indexOfAnUser(Employee employee) {
 		String aux = employee.getId();
-		for(int i=0;i<restaurantUsersSize;i++) {
-			if(aux.equalsIgnoreCase(restaurantUsers.get(i).getId())) {
-				return i;
-			}
+		for(int i = 0; i < restaurantUsersSize; i++) {
+			if(aux.equalsIgnoreCase(restaurantUsers.get(i).getId())) return i;
 		}
 		return -1;
 	}
 
 	public boolean orderHasTheEmployee(Employee employee) {
 		String aux1 = employee.getId();
-		for(int i=0;i<restaurantOrdersSize;i++) {
+		for(int i = 0; i < restaurantOrdersSize; i++) {
 			Employee check = restaurantOrders.get(i).getOrderEmployee();
 			String aux2 = check.getId();
-			if(aux1.equalsIgnoreCase(aux2)) {
-				return true;
-			}
+			if(aux1.equalsIgnoreCase(aux2)) return true;
 		}
 		return false;
 	}
 
-	public boolean enableEmployee(int index) {
-		if(index!=-1) {
+	public boolean enableEmployee(int index) { // (unused)
+		if(index != -1) {
 			Employee enabled = restaurantEmployees.get(index);
 			restaurantEmployees.get(index).setEnabled(true);
 			restaurantEmployees.get(index).setModifierUser(currentUser);
 			restaurantUsers.get(indexOfAnUser(enabled)).setEnabled(true);
 			restaurantUsers.get(indexOfAnUser(enabled)).setModifierUser(currentUser);
-
 			return true;
 		}
 		return false;
 	}
 
-	public boolean disableEmployee(int index) {
-		if(index!=-1) {
+	public boolean disableEmployee(int index) { // unused
+		if(index != -1) {
 			Employee disabled = restaurantEmployees.get(index);
 			restaurantEmployees.get(index).setEnabled(false);
 			restaurantEmployees.get(index).setModifierUser(currentUser);
@@ -1106,60 +1002,52 @@ public class Restaurant implements Serializable {
 		return false;
 	}
 
-	public boolean changeEmployeeName(int index,String newName) {
-		 if(index!=-1) {
-			 Employee changeName=restaurantEmployees.get(index);
+	public void changeEmployeeName(int index, String newName) { //<-- was boolean
+		 if(index != -1) {
+			 Employee changeName = restaurantEmployees.get(index);
 			 restaurantEmployees.get(index).setName(newName);
 			 restaurantEmployees.get(index).setModifierUser(currentUser);
 			 restaurantUsers.get(indexOfAnUser(changeName)).setName(newName);
 			 restaurantUsers.get(indexOfAnUser(changeName)).setModifierUser(currentUser);
-			 return true;
 		 }
-		 return false;
 	}
 
-	public boolean changeEmployeeLastname(int index,String newLastname) {
-		if(index!=-1) {
-			Employee changeLastname=restaurantEmployees.get(index);
+	public void changeEmployeeLastname(int index, String newLastname) { //<-- was boolean
+		if(index != -1) {
+			Employee changeLastname = restaurantEmployees.get(index);
 			restaurantEmployees.get(index).setLastname(newLastname);
 			restaurantEmployees.get(index).setModifierUser(currentUser);
 			restaurantUsers.get(indexOfAnUser(changeLastname)).setLastname(newLastname);
 			restaurantUsers.get(indexOfAnUser(changeLastname)).setModifierUser(currentUser);
-			return true;
 		}
-		return false;
 	}
 
-	public boolean changeEmployeeId(int index,String newId) {
-		if(index!=-1) {
+	public void changeEmployeeId(int index, String newId) { //<-- was boolean
+		if(index != -1) {
 			int employeeIsRepeated = employeeIndexWithId(newId);
-			if(employeeIsRepeated==-1) {
-				Employee changeId=restaurantEmployees.get(index);
+			if(employeeIsRepeated == -1) {
+				Employee changeId = restaurantEmployees.get(index);
 				restaurantUsers.get(indexOfAnUser(changeId)).setModifierUser(currentUser);
 				restaurantUsers.get(indexOfAnUser(changeId)).setId(newId);
 				restaurantEmployees.get(index).setId(newId);
 				restaurantEmployees.get(index).setModifierUser(currentUser);
-				return true;
 			}
 		}
-		return false;
 	}
 
 	//Order methods
 
-	public boolean createAnOrder(ArrayList<Product> orderProducts,ArrayList<Integer> productsQuantity,Client orderClient,Employee orderEmployee,String observations) {
-		//boolean validQuantitys = productsQuantity.size()==orderProducts.size();
+	public void createAnOrder(ArrayList<Product> orderProducts, ArrayList<Integer> productsQuantity, Client orderClient, Employee orderEmployee, String observations) { //<-- was boolean
+		//boolean validQuantities = productsQuantity.size()==orderProducts.size();
 		int count1 = productsQuantity.size();
 		int count2 = orderProducts.size();
 		int areTheSame = count1-count2;
-		if(orderProductsAreEnabled(orderProducts) && areTheSame==0 && orderClient.getEnabled() && orderEmployee.getEnabled()) {
+		if(orderProductsAreEnabled(orderProducts) && areTheSame == 0 && orderClient.getEnabled() && orderEmployee.getEnabled()) {
 			Order newOrder = new Order(currentUser, orderIDs,orderProducts,productsQuantity,orderClient,orderEmployee,observations);
 			restaurantOrders.add(newOrder);
 			orderIDs.add(newOrder.getName());
 			restaurantOrdersSize++;
-			return true;
 		}
-		return false;
 	}
 
 	public void sortOrdersByDate() {
@@ -1169,15 +1057,13 @@ public class Restaurant implements Serializable {
 
 	public boolean orderProductsAreEnabled(ArrayList<Product> p) {
 		for (Product product : p) {
-			if (!product.getEnabled()) {
-				return false;
-			}
+			if (!product.getEnabled()) return false;
 		}
 		return true;
 	}
 
-	public boolean changeOrderStatus(int index,int indicator) {
-		if(index!=-1) {
+	public void changeOrderStatus(int index, int indicator) { //<-- was boolean
+		if(index != -1) {
 			String check = restaurantOrders.get(index).getOrderStatus().trim();
 			boolean unCanceledAndUnDelivered = !check.equals("ENTREGADO") && !check.equals("CANCELADO");
 			if(unCanceledAndUnDelivered) {
@@ -1192,14 +1078,12 @@ public class Restaurant implements Serializable {
 					ArrayList<Integer> quantities = restaurantOrders.get(index).getProductsQuantity();
 					addTimesRequestedToProducts(products, quantities);
 				}
-				return true;
 			}
 		}
-		return false;
 	}
 
 	public void addTimesRequestedToProducts(ArrayList<Product> products,ArrayList<Integer> quantity) {
-		for(int i=0;i<products.size();i++) {
+		for(int i = 0; i < products.size(); i++) {
 			String productSearched = products.get(i).getName();
 			int productIndex = productIndexWithName(productSearched);
 			restaurantProducts.get(productIndex).addDateOfRequest();
@@ -1209,12 +1093,10 @@ public class Restaurant implements Serializable {
 	}
 
 	public int searchAnOrder(String id) {
-		for(int i=0;i<restaurantOrdersSize;i++) {
-			if(id.equals(restaurantOrders.get(i).getName())) {
-				return i;
-			}
+		for(int i = 0; i < restaurantOrdersSize; i++) {
+			if(id.equals(restaurantOrders.get(i).getName())) return i;
 		}
-		return -1;
+		return - 1;
 	}
 
 	public void setSearchResults(String match) {
@@ -1225,68 +1107,81 @@ public class Restaurant implements Serializable {
 		 	if (compare.contains(match)) searchResults.add(c);
 		}
 		long endTime = System.nanoTime();
-		long timeElapsed = endTime-startTime;
-		timeOfSearch=timeElapsed;
+		timeOfSearch = endTime - startTime;
 	}
-
 
 	//Getters
 
 	public ArrayList<Client> getSearchResults() {
 		return searchResults;
 	}
+
 	public ArrayList<Product> getRestaurantProducts() {
 		return restaurantProducts;
 	}
+
 	public String getRestaurantProductsString() {
-		String info="";
-		for(int i = 0;i<restaurantProductsSize;i++) {
-			info += (restaurantProducts.get(i).showInformation()) + (",");
+		StringBuilder info = new StringBuilder();
+		for(int i = 0; i < restaurantProductsSize; i++) {
+			info.append(restaurantProducts.get(i).showInformation()).append(",");
 		}
-		return info;
+		return info.toString();
 	}
+
 	public ArrayList<Product> getProductsWithTheirSizes() {
 		return productsWithTheirSizes;
 	}
+
 	public int getRestaurantProductsSize() {
 		return restaurantProductsSize;
 	}
+
 	public int getProductsWithTheirSizesSize() {
 		return productsWithTheirSizesSize;
 	}
+
 	public ArrayList<Ingredient> getRestaurantIngredients() {
 		return restaurantIngredients;
 	}
+
 	public String getRestaurantIngredientsString() {
-		String info="";
-		for(int i = 0;i<restaurantIngredientsSize;i++) {
-			info += (restaurantIngredients.get(i).showInformation()) + (",");
+		StringBuilder info = new StringBuilder();
+		for(int i = 0; i < restaurantIngredientsSize; i++) {
+			info.append(restaurantIngredients.get(i).showInformation()).append(",");
 		}
-		return info;
+		return info.toString();
 	}
+
 	public int getRestaurantIngredientsSize() {
 		return restaurantIngredientsSize;
 	}
+
 	public ArrayList<PlateType> getRestaurantPlateTypes() {
 		return restaurantPlateTypes;
 	}
+
 	public String getRestaurantPlateTypesString() {
-		String info="";
-		for(int i = 0;i<restaurantPlateTypesSize;i++) {
-			info += (restaurantPlateTypes.get(i).showInformation()) + (",");
+		StringBuilder info= new StringBuilder();
+		for(int i = 0; i < restaurantPlateTypesSize; i++) {
+			info.append(restaurantPlateTypes.get(i).showInformation()).append(",");
 		}
-		return info;
+		return info.toString();
 	}
+
 	public int getRestaurantPlateTypesSize() {
 		return restaurantPlateTypesSize;
 	}
+
 	public long getTimeOfSearch() {
 		return timeOfSearch;
 	}
+
 	public ArrayList<Employee> getRestaurantEmployees() {return restaurantEmployees;}
+
 	public int getRestaurantEmployeesSize() {
 		return restaurantEmployeesSize;
 	}
+
 	public ArrayList<User> getRestaurantUsers(){
 		return restaurantUsers;
 	}
@@ -1294,47 +1189,61 @@ public class Restaurant implements Serializable {
 	public ArrayList<Client> getRestaurantClients() {
 		return restaurantClients;
 	}
+
 	public int getRestaurantClientsSize() {
 		return restaurantClientsSize;
 	}
+
 	public ArrayList<Order> getRestaurantOrders(){
 		return restaurantOrders;
 	}
+
 	public User getRootUser() {
 		return rootUser;
 	}
+
 	public User getCurrentUser() {
 		return currentUser;
 	}
 
 	//Setters
+
 	public void setRestaurantProducts(ArrayList<Product> restaurantProducts) {
 		this.restaurantProducts = restaurantProducts;
 	}
+
 	public void setProductsWithTheirSizes(ArrayList<Product> productsWithTheirSizes) {
 		this.productsWithTheirSizes = productsWithTheirSizes;
 	}
+
 	public void setRestaurantProductsSize(int restaurantProductsSize) {
 		this.restaurantProductsSize = restaurantProductsSize;
 	}
+
 	public void setProductsWithTheirSizesSize(int productsWithTheirSizesSize) {
 		this.productsWithTheirSizesSize = productsWithTheirSizesSize;
 	}
+
 	public void setRestaurantIngredients(ArrayList<Ingredient> restaurantIngredients) {
 		this.restaurantIngredients = restaurantIngredients;
 	}
+
 	public void setRestaurantIngredientsSize(int restaurantIngredientsSize) {
 		this.restaurantIngredientsSize = restaurantIngredientsSize;
 	}
+
 	public void setRestaurantPlateTypes(ArrayList<PlateType> restaurantPlateTypes) {
 		this.restaurantPlateTypes = restaurantPlateTypes;
 	}
+
 	public void setRestaurantPlateTypesSize(int restaurantPlateTypesSize) {
 		this.restaurantPlateTypesSize = restaurantPlateTypesSize;
 	}
+
 	public void setRootUser(User rootUser) {
 		this.rootUser=rootUser;
 	}
+
 	public void setCurrentUser(User currentUser) {
 		this.currentUser=currentUser;
 	}
