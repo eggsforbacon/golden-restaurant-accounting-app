@@ -11,7 +11,7 @@ import java.util.Comparator;
 
 public class Restaurant implements Serializable {
 
-	private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 2;
 
 	private User rootUser;
 	private boolean firstTime;
@@ -138,7 +138,7 @@ public class Restaurant implements Serializable {
 				if(productIndexWithName(productsString[i])!=-1) {
 					Product auxProd = restaurantProducts.get(productIndexWithName(productsString[i]));
 					int sizeIndex = sizeIndexWithName(auxProd.getProductsSizes(), productsSizes[i]);
-					ordProd.add(new Product(auxProd.getName(),currentUser,auxProd.getPlateType(),auxProd.getIngrdnts(),auxProd.getProductsSizes(),auxProd.getSizesPrices(),sizeIndex));
+					ordProd.add(new Product(auxProd.getName(),currentUser,auxProd.getPlateType(),auxProd.getIngredients(),auxProd.getProductsSizes(),auxProd.getSizesPrices(),sizeIndex));
 				}
 			}
 			for (String productsQuantity : productsQuantities) {
@@ -631,7 +631,7 @@ public class Restaurant implements Serializable {
 
 	public boolean productHasTheIngredient(Ingredient ingredient) {
 		for(int i = 0; i < restaurantProductsSize; i++) {
-			ArrayList<Ingredient> ingredients = restaurantProducts.get(i).getIngrdnts();
+			ArrayList<Ingredient> ingredients = restaurantProducts.get(i).getIngredients();
 			if(ingredients.contains(ingredient)) {
 				return true;
 			}

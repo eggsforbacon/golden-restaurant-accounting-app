@@ -9,7 +9,7 @@ public class Product extends SystemObject implements Serializable {
 	private static long serialVersionUID = 4;
 
 	private PlateType pt;
-	private ArrayList<Ingredient> ingrdnts;
+	private ArrayList<Ingredient> ingredients;
 	private ArrayList<String> productSizes;
 	private int productSizesSize;
 	private ArrayList<Double> sizesPrices;
@@ -23,7 +23,7 @@ public class Product extends SystemObject implements Serializable {
 	public Product(String name, User creatorUser, PlateType pt, ArrayList<Ingredient> ingrdnts, ArrayList<String> productSizes, ArrayList<Double> sizesPrices, int indicator) {
 		super(name, creatorUser);
 		this.pt = pt;
-		this.ingrdnts = ingrdnts;
+		this.ingredients = ingrdnts;
 		this.productSizes = productSizes;
 		productSizesSize = productSizes.size();
 		this.sizesPrices = sizesPrices;
@@ -67,7 +67,7 @@ public class Product extends SystemObject implements Serializable {
 	public boolean addAnIngredient(Ingredient ingredient) {
 		String check = ingredient.getName();
 		if (binarySearchAnIngredient(check) == -1 && ingredient.getEnabled()) {
-			ingrdnts.add(ingredient);
+			ingredients.add(ingredient);
 			return true;
 		}
 		return false;
@@ -77,12 +77,12 @@ public class Product extends SystemObject implements Serializable {
 		ingredientsBubbleSort();
 		int pos = -1;
 		int i = 0;
-		int j = ingrdnts.size() - 1;
+		int j = ingredients.size() - 1;
 		while (i <= j && pos < 0) {
 			int m = (i + j) / 2;
-			if (ingrdnts.get(m).getName().equalsIgnoreCase(name)) {
+			if (ingredients.get(m).getName().equalsIgnoreCase(name)) {
 				pos = m;
-			} else if ((ingrdnts.get(m).getName().compareTo(name)) > 0) {
+			} else if ((ingredients.get(m).getName().compareTo(name)) > 0) {
 				j = m - 1;
 			} else {
 				i = m + 1;
@@ -93,13 +93,13 @@ public class Product extends SystemObject implements Serializable {
 
 	private void ingredientsBubbleSort() {
 		int changes = 0;
-		for (int i = 1; i < ingrdnts.size() && changes > 0; i++) {
+		for (int i = 1; i < ingredients.size() && changes > 0; i++) {
 			changes = 0;
-			for (int j = 0; j < ingrdnts.size() - i; j++) {
-				if (ingrdnts.get(j).compareTo(ingrdnts.get(j + 1)) > 0) {
-					Ingredient temp = ingrdnts.get(j);
-					ingrdnts.set(j, ingrdnts.get(j + 1));
-					ingrdnts.set(j + 1, temp);
+			for (int j = 0; j < ingredients.size() - i; j++) {
+				if (ingredients.get(j).compareTo(ingredients.get(j + 1)) > 0) {
+					Ingredient temp = ingredients.get(j);
+					ingredients.set(j, ingredients.get(j + 1));
+					ingredients.set(j + 1, temp);
 					changes++;
 				}
 			}
@@ -107,10 +107,10 @@ public class Product extends SystemObject implements Serializable {
 	}
 
 	public boolean deleteAnIngredient(String name) {
-		if (ingrdnts.size() > 1) {
+		if (ingredients.size() > 1) {
 			int index = binarySearchAnIngredient(name);
 			if (index != -1) {
-				ingrdnts.remove(index);
+				ingredients.remove(index);
 				return true;
 			}
 		}
@@ -118,12 +118,12 @@ public class Product extends SystemObject implements Serializable {
 	}
 
 	public void deleteAllIngredients() {
-		ingrdnts.clear();
+		ingredients.clear();
 	}
 
 	public String getTheIngredients() {
 		StringBuilder ingredients = new StringBuilder();
-		for (Ingredient ingrdnt : ingrdnts) {
+		for (Ingredient ingrdnt : this.ingredients) {
 			ingredients.append(ingrdnt.getName()).append(",");
 		}
 		ingredients = new StringBuilder(ingredients.substring(0, ingredients.length() - 1));
@@ -172,8 +172,8 @@ public class Product extends SystemObject implements Serializable {
 		return productSizes;
 	}
 
-	public ArrayList<Ingredient> getIngrdnts() {
-		return ingrdnts;
+	public ArrayList<Ingredient> getIngredients() {
+		return ingredients;
 	}
 
 	public String getPt() {
