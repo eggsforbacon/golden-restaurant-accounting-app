@@ -150,6 +150,7 @@ public class Order extends SystemObject implements Serializable {
 	}
 
 	public double getPriceOfTheOrder() {
+		calculatePriceOfTheOrder();
 		return priceOfTheOrder;
 	}
 

@@ -23,6 +23,7 @@ import java.io.*;
 import java.net.URL;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 
 public class CenterPanesGUIController implements Initializable {
@@ -690,6 +691,8 @@ public class CenterPanesGUIController implements Initializable {
             newClientIndex = -1;
         }
         int newEmployeeIndex = GH.employeeIndexWithId(employeeOrderTF.getText().trim());
+        System.out.println("Indice del cliente: "+newClientIndex);
+        System.out.println("Indice del Empleado: "+newEmployeeIndex);
         boolean canAdd = !newProducts.isEmpty() && !newProdQuantities.isEmpty() && newClientIndex != -1 && newEmployeeIndex != -1;
         if (canAdd) {
             Employee newEmployee = GH.getRestaurantEmployees().get(newEmployeeIndex);
@@ -707,10 +710,18 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     void advanceStatusClicked(ActionEvent event) {
         if (!orderTBV.getSelectionModel().getSelectedItems().isEmpty()) {
-            GH.changeOrderStatus(GH.searchAnOrder(orderTBV.getSelectionModel().getSelectedItem().getName()),1);
-        }
-        if (orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator() == 4) {
-            cancelOrderBTN.setDisable(true);
+        	int index = GH.searchAnOrder(orderTBV.getSelectionModel().getSelectedItem().getName());
+        	if(index!=-1) {
+        		try {
+        			GH.changeOrderStatus(index,1);
+        		}catch(ArrayIndexOutOfBoundsException e) {
+        			//
+        		}
+        		
+                if (orderTBV.getSelectionModel().getSelectedItem().getStatusIndicator() == 4) {
+                    cancelOrderBTN.setDisable(true);
+                }
+        	}
         }
         initOrderPane();
     }
@@ -1830,27 +1841,41 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void confirmReport(ActionEvent event) {
-        String[] stParts = startDate.getValue().toString().split("-");
-        String[] endParts = endDate.getValue().toString().split("-");
-        String starto = stParts[2] + "/" + stParts[1] + "/" + stParts[0] + " " + startTimeTB.getText();
-        String endo = endParts[2] + "/" + endParts[1] + "/" + endParts[0] + " " + endDateTB.getText();
+    	if(startDate.getValue() != null) {
+    		String[] stParts = startDate.getValue().toString().split("-");
+            String[] endParts = endDate.getValue().toString().split("-");
+            String starto = stParts[2] + "/" + stParts[1] + "/" + stParts[0] + " " + startTimeTB.getText();
+            String endo = endParts[2] + "/" + endParts[1] + "/" + endParts[0] + " " + endDateTB.getText();
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        LocalDateTime startingDate = LocalDateTime.parse(starto, formatter);
-        LocalDateTime endingDate = LocalDateTime.parse(endo, formatter);
-        String message;
-        String title;
-        String file = reportCBX.getSelectionModel().getSelectedItem().trim();
-        try {
-            generate(file,startingDate,endingDate);
-            title = "Reporte generado";
-            message = "El reporte fue generado con exito (Guarado en:\n" + fileLoc(file);
-            launchError(message, title);
-        } catch (FileNotFoundException | NullPointerException fnf) {
-            fnf.fillInStackTrace();
-            title = "Error";
-            message = "No se pudo generar el reporte";
-            launchError(message, title);
-        }
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+            LocalDateTime startingDate=LocalDateTime.now();
+            LocalDateTime endingDate =LocalDateTime.now();
+            try {
+            	startingDate = LocalDateTime.parse(starto, formatter);
+            	endingDate = LocalDateTime.parse(endo, formatter);
+            }catch(DateTimeParseException e) {
+            	launchError("Por favor ingrese la hora en el formato especificado","Error");
+            }
+            String message;
+            String title;
+            String file = "";
+            try {
+            	file=reportCBX.getSelectionModel().getSelectedItem().trim();
+            }catch(NullPointerException e) {
+            	launchError("Seleccione que reporte desea generar","Error");
+            }
+            try {
+                generate(file,startingDate,endingDate);
+                title = "Reporte generado";
+                message = "El reporte fue generado con exito (Guarado en:\n" + fileLoc(file);
+                launchError(message, title);
+            } catch (FileNotFoundException | NullPointerException fnf) {
+                fnf.fillInStackTrace();
+                title = "Error";
+                message = "No se pudo generar el reporte";
+                launchError(message, title);
+            }
+    	}
+        
     }
 }

@@ -80,8 +80,8 @@ public class Main extends Application {
         ois.close();
       } catch (IOException | ClassNotFoundException e) {
         System.out.println("File is empty or something else went wrong.");
-        e.fillInStackTrace();
-        e.printStackTrace();
+        //e.fillInStackTrace();
+        //e.printStackTrace();
       }
     }
   }

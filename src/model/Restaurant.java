@@ -11,7 +11,7 @@ import java.util.Comparator;
 
 public class Restaurant implements Serializable {
 
-	private static final long serialVersionUID = 2;
+	private static final long serialVersionUID = 3;
 
 	private User rootUser;
 	private boolean firstTime;
@@ -32,7 +32,6 @@ public class Restaurant implements Serializable {
 	private ArrayList<Order> restaurantOrders;
 	private int restaurantOrdersSize;
 	private ArrayList<Employee> restaurantEmployees;
-	private int restaurantEmployeesSize;
 	private ArrayList<String> orderIDs;
 	private ArrayList<Client> searchResults;
 	public Restaurant() {
@@ -61,7 +60,6 @@ public class Restaurant implements Serializable {
 		restaurantOrders = new ArrayList<>();
 		restaurantOrdersSize=restaurantOrders.size();
 		restaurantEmployees = new ArrayList<>();
-		restaurantEmployeesSize = restaurantEmployees.size();
 		orderIDs = new ArrayList<>();
 		searchResults = new ArrayList<>();
 	}
@@ -153,7 +151,11 @@ public class Restaurant implements Serializable {
 			String employeeName = parts[4];
 			String employeeLastname = parts[5];
 			String employeeId = parts[6];
-			Employee employeeOfTheOrder = new Employee(employeeName,currentUser,employeeLastname,employeeId);
+			addAnEmployeeToTheRestaurant(employeeName, employeeLastname, employeeId);
+			Employee employeeOfTheOrder = null;
+			if(employeeIndexWithId(employeeId)!= -1) {
+				employeeOfTheOrder = restaurantEmployees.get(employeeIndexWithId(employeeId));
+			}
 			String observations = parts[7];
 			createAnOrder(ordProd, ordPQuantities, clientOfOrder, employeeOfTheOrder, observations) ;
 			line = br.readLine();
@@ -196,12 +198,12 @@ public class Restaurant implements Serializable {
 		String columns = "Nombre" + separator + "Apellido" + separator + "ID" + separator + "Pedidos entregados" +
 		separator + "Valor total de los pedidos";
 		pw.println(columns);
-		 for(int i = 0; i < restaurantEmployeesSize; i++) {
+		 for(int i = 0; i < restaurantEmployees.size(); i++) {
 			 pw.println(restaurantEmployees.get(i).showReportInformation(startDate, endDate));
 			 totalPrices+=restaurantEmployees.get(i).getTotalPriceOfTheOrders(startDate, endDate);
 			 totalDeliveries+=restaurantEmployees.get(i).getSpecifiedOrdersDelivered();
 		 }
-		String finalColumns = restaurantEmployeesSize + " empleados" + separator + "" + separator + "" + separator +
+		String finalColumns = restaurantEmployees.size() + " empleados" + separator + "" + separator + "" + separator +
 		totalDeliveries + " pedidos entregados" + separator + totalPrices + " generados";
 		pw.println(finalColumns);
 		pw.close();
@@ -915,7 +917,6 @@ public class Restaurant implements Serializable {
 			User employeeUser = new User(name,currentUser,lastname,id,name,id);
 			restaurantUsers.add(employeeUser);
 			restaurantUsersSize++;
-			restaurantEmployeesSize++;
 		}
 	}
 
@@ -928,14 +929,13 @@ public class Restaurant implements Serializable {
 	}
 
 	public int binarySearchForEmployees(ArrayList<?> aL,String id) {
+		sortEmployeesById();
 		int pos = -1;
 		int i = 0;
 		int j = aL.size()-1;
 		while(i <= j && pos < 0) {
 			int m = (i +j ) / 2;
-			System.out.println(m);
-			System.out.println(((Employee)aL.get(m)).getName());
-			if (((Employee)aL.get(m)).getId().equalsIgnoreCase(id)) pos = m;
+			if (((Employee)aL.get(m)).getId().equalsIgnoreCase(id))pos = m;
 			else if(((((Employee)aL.get(m)).getId()).compareTo(id))>0) j = m - 1;
 			else {
 				i = m + 1;
@@ -956,7 +956,6 @@ public class Restaurant implements Serializable {
 				restaurantUsers.remove(deleted); // <-- "Suspicious call to ArrayList.remove()"
 				restaurantUsers.remove(indexOfAnUser(deleted));
 				restaurantUsersSize--;
-				restaurantEmployeesSize--;
 			}
 		}
 	}
@@ -1180,7 +1179,7 @@ public class Restaurant implements Serializable {
 	public ArrayList<Employee> getRestaurantEmployees() {return restaurantEmployees;}
 
 	public int getRestaurantEmployeesSize() {
-		return restaurantEmployeesSize;
+		return restaurantEmployees.size();
 	}
 
 	public ArrayList<User> getRestaurantUsers(){
