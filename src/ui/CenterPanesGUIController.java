@@ -1247,6 +1247,7 @@ public class CenterPanesGUIController implements Initializable {
     void editNameType(CellEditEvent<PlateType, String> event)  {
         GH.changePlateTypeName(GH.plateTypeIndexWithName(event.getRowValue().getName()), event.getNewValue());
         event.getRowValue().setModifierUser(GH.getCurrentUser());
+        initPlateTypePane();
     }
 
     @FXML
@@ -1647,7 +1648,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void saveUserAndPass(ActionEvent event)  {
-        if (userNameTF.getText().equals(employeesTBV.getSelectionModel().getSelectedItem().getUsername())) {
+        if (userNameTF.getText().equals(employeesTBV.getSelectionModel().getSelectedItem().getUsername()) && oldPassPWF.getText().equals(employeesTBV.getSelectionModel().getSelectedItem().getPassword())) {
             GH.changePassword(GH.userIndexWithUsername(employeesTBV.getSelectionModel().getSelectedItem().getUsername()),newPassPWF.getText());
             employeesTBV.getSelectionModel().getSelectedItem().setModifierUser(GH.getCurrentUser());
             launchError("Datos guardados con éxito!", "Datos guardados");
