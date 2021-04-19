@@ -19,7 +19,7 @@ public class Main extends Application {
 
   MainGUIController controller;
   Restaurant GH;
-  private static final String RESTAURANT_PATH_FILE = "src/data/savedfiles/restaurant.z&1";
+  private static final String RESTAURANT_PATH_FILE = "data/savedfiles/restaurant.z&1";
 
   public Main() {
     GH = new Restaurant();

@@ -736,14 +736,14 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void exportOrderData(ActionEvent event) throws IOException {
-        GH.generateOrderReport("src/data/reports/ORDER_REPORT.csv",SEPARATOR,START,LocalDateTime.now());
+        GH.generateOrderReport("data/reports/ORDER_REPORT.csv",SEPARATOR,START,LocalDateTime.now());
     }
 
     @FXML
     void importOrderData(ActionEvent event) throws IOException {
-        GH.importProductInformation("src/data/generatedData/PRODUCT_GENERATED_DATA.csv");
-        GH.importClientInformation("src/data/generatedData/CLIENT_MOCK_DATA.csv");
-        GH.importOrderInformation("src/data/generatedData/ORDER_GENERATED_DATA.csv");
+        GH.importProductInformation("data/generatedData/PRODUCT_GENERATED_DATA.csv");
+        GH.importClientInformation("data/generatedData/CLIENT_MOCK_DATA.csv");
+        GH.importOrderInformation("data/generatedData/ORDER_GENERATED_DATA.csv");
         initOrderPane();
     }
 
@@ -975,12 +975,12 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void exportProductData(ActionEvent event) throws Exception {
-        GH.generateProductReport("src/data/reports/PRODUCT_REPORT.csv", SEPARATOR, START, LocalDateTime.now());
+        GH.generateProductReport("data/reports/PRODUCT_REPORT.csv", SEPARATOR, START, LocalDateTime.now());
     }
 
     @FXML
     void importProductData(ActionEvent event) throws IOException {
-        GH.importProductInformation("src/data/generatedData/PRODUCT_GENERATED_DATA.csv");
+        GH.importProductInformation("data/generatedData/PRODUCT_GENERATED_DATA.csv");
         initProductPane();
     }
 
@@ -1115,7 +1115,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void exportIngredientData(ActionEvent event) throws FileNotFoundException {
-        String fileName = "src/data/otherExports/INGREDIENTS.csv";
+        String fileName = "data/otherExports/INGREDIENTS.csv";
         PrintWriter pw = new PrintWriter(fileName);
         for (int i = 0; i < GH.getRestaurantIngredientsSize(); i++) {
             Ingredient ing = GH.getRestaurantIngredients().get(i);
@@ -1126,7 +1126,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void importIngredientData(ActionEvent event) throws IOException {
-        String fileName = "src/data/OtherExports/INGREDIENTS.csv";
+        String fileName = "data/OtherExports/INGREDIENTS.csv";
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         String line = br.readLine();
         while (line != null) {
@@ -1489,7 +1489,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void exportClientData(ActionEvent event) throws FileNotFoundException {
-        String fileName = "src/data/otherExports/CLIENTS.csv";
+        String fileName = "data/otherExports/CLIENTS.csv";
         PrintWriter pw = new PrintWriter(fileName);
         for (int i = 0; i < GH.getRestaurantClientsSize(); i++) {
             Client client = GH.getRestaurantClients().get(i);
@@ -1500,7 +1500,7 @@ public class CenterPanesGUIController implements Initializable {
 
     @FXML
     void importClientData(ActionEvent event) throws IOException {
-        GH.importClientInformation("src/data/generatedData/CLIENT_MOCK_DATA.csv");
+        GH.importClientInformation("data/generatedData/CLIENT_MOCK_DATA.csv");
         initClientPane();
     }
 
@@ -1810,15 +1810,15 @@ public class CenterPanesGUIController implements Initializable {
         String file;
         switch (type) {
             case "Empleados":
-                file = "src/data/reports/EMPLOYEE_REPORT.csv";
+                file = "data/reports/EMPLOYEE_REPORT.csv";
                 GH.generateEmployeeReport(file,";",start,end);
                 break;
             case "Ordenes":
-                file = "src/data/reports/ORDER_REPORT.csv";
+                file = "data/reports/ORDER_REPORT.csv";
                 GH.generateOrderReport(file,";",start,end);
                 break;
             case "Productos":
-                file = "src/data/reports/PRODUCT_REPORT.csv";
+                file = "data/reports/PRODUCT_REPORT.csv";
                 GH.generateProductReport(file,";",start,end);
                 break;
             default:
@@ -1829,11 +1829,11 @@ public class CenterPanesGUIController implements Initializable {
     private String fileLoc(String file) {
         switch (file) {
             case "Empleados":
-                return "src/data/reports/EMPLOYEE_REPORT.csv";
+                return "data/reports/EMPLOYEE_REPORT.csv";
             case "Ordenes":
-                return "src/data/reports/ORDER_REPORT.csv";
+                return "data/reports/ORDER_REPORT.csv";
             case "Productos":
-                return "src/data/reports/PRODUCT_REPORT.csv";
+                return "data/reports/PRODUCT_REPORT.csv";
             default:
                 return "No hay selección";
         }
