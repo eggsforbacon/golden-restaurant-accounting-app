@@ -1140,6 +1140,7 @@ public class CenterPanesGUIController implements Initializable {
     /*********************TYPES PANE***********************/
 
     private void initPlateTypePane() {
+    	GH.collectionSortPlateTypes();
         typesTBV.setTooltip(tableViewTTP);
         nameTypeCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         enabledTypeCol.setCellValueFactory(new PropertyValueFactory<>("enabledString"));

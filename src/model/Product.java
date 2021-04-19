@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Product extends SystemObject implements Serializable {
 
-	private static long serialVersionUID = 4;
+	private static final long serialVersionUID = 4;
 
 	private PlateType pt;
 	private ArrayList<Ingredient> ingredients;

@@ -11,7 +11,7 @@ import java.util.Comparator;
 
 public class Restaurant implements Serializable {
 
-	private static final long serialVersionUID = 3;
+	private static final long serialVersionUID = 4;
 
 	private User rootUser;
 	private boolean firstTime;
@@ -680,8 +680,7 @@ public class Restaurant implements Serializable {
 	}
 
 	public void collectionSortPlateTypes() {
-		Comparator<PlateType> PlateTypeNameComparator = new PlateTypeNameComparator();
-		Collections.sort(restaurantPlateTypes,PlateTypeNameComparator);
+		Collections.sort(restaurantPlateTypes);
 	}
 
 	public int plateTypeIndexWithName(String name) { //Use it when you have the plateType name but not the plateType itself
