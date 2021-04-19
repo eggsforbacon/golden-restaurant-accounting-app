@@ -224,7 +224,7 @@ public class Restaurant implements Serializable {
 			totalPrice += typ[1];
 		}
 		String finalColumns = restaurantProductsSize + " productos en el restaurante"
-		+ separator + "" + separator + "" + separator + allTimesRequired + " productos pedidos" + totalPrice;
+		+ separator + "" + separator + "" + separator + allTimesRequired + " productos pedidos" +separator+ totalPrice;
 		pw.println(finalColumns);
 		pw.close();
 	}
