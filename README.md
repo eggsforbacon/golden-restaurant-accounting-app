@@ -10,3 +10,6 @@
 #### Panel Lateral
 
 //TODO
+
+##### 
+[Cambios con respecto a la primera entrega](docs/Changelog.pdf)
