@@ -48,19 +48,37 @@
       </Button>
    </bottom>
    <top>
-      <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0" spacing="5.0" BorderPane.alignment="BOTTOM_CENTER">
+      <VBox prefHeight="109.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="destinationLBL" text="Generar reporte de:">
-               <HBox.margin>
-                  <Insets top="5.0" />
-               </HBox.margin>
-            </Label>
-            <ChoiceBox fx:id="reportCBX" prefHeight="31.0" prefWidth="177.0">
-               <HBox.margin>
-                  <Insets top="5.0" />
-               </HBox.margin>
-            </ChoiceBox>
+            <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0" spacing="5.0">
+               <children>
+                  <Label fx:id="destinationLBL" text="Generar reporte de:">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ChoiceBox fx:id="reportCBX" prefHeight="31.0" prefWidth="177.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0" spacing="5.0">
+               <children>
+                  <Label fx:id="destinationLBL1" text="Elegir Separador:">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ChoiceBox fx:id="separatorCBX" prefHeight="31.0" prefWidth="98.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+            </HBox>
          </children>
-      </HBox>
+      </VBox>
    </top>
 </BorderPane>

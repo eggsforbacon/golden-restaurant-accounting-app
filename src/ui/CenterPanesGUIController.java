@@ -480,6 +480,9 @@ public class CenterPanesGUIController implements Initializable {
     @FXML
     private ChoiceBox<String> reportCBX = new ChoiceBox<>();
 
+    @FXML
+    private ChoiceBox<String> separatorCBX = new ChoiceBox<>();
+
     private Restaurant GH;
     private final Tooltip tableViewTTP;
     private final Tooltip listViewTTP;
@@ -1785,6 +1788,8 @@ public class CenterPanesGUIController implements Initializable {
         dateTitLBL.setId("reports-titles");
         timeTitLBL.setId("reports-titles");
         ObservableList<String> reports = FXCollections.observableArrayList("Empleados","Ordenes","Productos");
+        ObservableList<String> separators = FXCollections.observableArrayList(";",",",":","|","\\","/","?","¿","%","#","$","!","¡","^");
+        separatorCBX.setItems(separators);
         reportCBX.setItems(reports);
     }
 
@@ -1808,20 +1813,20 @@ public class CenterPanesGUIController implements Initializable {
         }
     }
 
-    private void generate(String type, LocalDateTime start, LocalDateTime end) throws NullPointerException, FileNotFoundException {
+    private void generate(String type, LocalDateTime start, LocalDateTime end, String separator) throws NullPointerException, FileNotFoundException {
         String file;
         switch (type) {
             case "Empleados":
                 file = "data/reports/EMPLOYEE_REPORT.csv";
-                GH.generateEmployeeReport(file,";",start,end);
+                GH.generateEmployeeReport(file,separator,start,end);
                 break;
             case "Ordenes":
                 file = "data/reports/ORDER_REPORT.csv";
-                GH.generateOrderReport(file,";",start,end);
+                GH.generateOrderReport(file,separator,start,end);
                 break;
             case "Productos":
                 file = "data/reports/PRODUCT_REPORT.csv";
-                GH.generateProductReport(file,";",start,end);
+                GH.generateProductReport(file,separator,start,end);
                 break;
             default:
                 throw new NullPointerException("The string is either out of range. " + type);
@@ -1861,13 +1866,15 @@ public class CenterPanesGUIController implements Initializable {
             String message;
             String title;
             String file = "";
+            String separator = "";
             try {
-            	file=reportCBX.getSelectionModel().getSelectedItem().trim();
+            	file = reportCBX.getSelectionModel().getSelectedItem().trim();
+            	separator = separatorCBX.getSelectionModel().getSelectedItem().trim();
             }catch(NullPointerException e) {
             	launchError("Seleccione que reporte desea generar","Error");
             }
             try {
-                generate(file,startingDate,endingDate);
+                generate(file,startingDate,endingDate,separator);
                 title = "Reporte generado";
                 message = "El reporte fue generado con exito (Guarado en:\n" + fileLoc(file);
                 launchError(message, title);
@@ -1878,6 +1885,5 @@ public class CenterPanesGUIController implements Initializable {
                 launchError(message, title);
             }
     	}
-        
     }
 }
